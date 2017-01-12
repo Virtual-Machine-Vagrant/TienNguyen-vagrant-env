@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="MongoDB\Tests\Operation\AggregateTest" namespace="MongoDB\Tests\Operation" name="AggregateTest" abstract="false" final="false" start="7" end="102">
+  <file path="/home/web/example/src/freegame_developer/vendor/mongodb/mongodb/tests/Operation" file="AggregateTest.php" realpath="/home/web/example/src/freegame_developer/vendor/mongodb/mongodb/tests/Operation/AggregateTest.php" size="3212" time="2016-09-23T19:38:29+00:00" unixtime="1474659509" sha1="50eea952cd0c09be213b56665f9139cb22625b67" relative="freegame_developer/vendor/mongodb/mongodb/tests/Operation/AggregateTest.php"/>
+  <extends full="MongoDB\Tests\Operation\TestCase" namespace="MongoDB\Tests\Operation" name="TestCase"/>
+  <method name="testConstructorPipelineArgumentMustNotBeEmpty" start="13" end="16" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <expectedexception value="MongoDB\Exception\InvalidArgumentException"/>
+      <expectedexceptionmessage value="$pipeline is empty"/>
+    </docblock>
+  </method>
+  <method name="testConstructorPipelineArgumentMustBeAList" start="22" end="25" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <expectedexception value="MongoDB\Exception\InvalidArgumentException"/>
+      <expectedexceptionmessage value="$pipeline is not a list (unexpected index: &quot;1&quot;)"/>
+    </docblock>
+  </method>
+  <method name="testConstructorOptionTypeChecks" start="31" end="34" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <expectedexception value="MongoDB\Exception\InvalidArgumentException"/>
+      <dataprovider value="provideInvalidConstructorOptions"/>
+    </docblock>
+    <parameter name="options" byreference="false" type="array"/>
+  </method>
+  <method name="provideInvalidConstructorOptions" start="36" end="73" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testConstructorBatchSizeOptionRequiresUseCursor" start="79" end="87" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <expectedexception value="MongoDB\Exception\InvalidArgumentException"/>
+      <expectedexceptionmessage value="&quot;batchSize&quot; option should not be used if &quot;useCursor&quot; is false"/>
+    </docblock>
+  </method>
+  <method name="testConstructorTypeMapOptionRequiresUseCursor" start="93" end="101" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <expectedexception value="MongoDB\Exception\InvalidArgumentException"/>
+      <expectedexceptionmessage value="&quot;typeMap&quot; option should not be used if &quot;useCursor&quot; is false"/>
+    </docblock>
+  </method>
+</class>

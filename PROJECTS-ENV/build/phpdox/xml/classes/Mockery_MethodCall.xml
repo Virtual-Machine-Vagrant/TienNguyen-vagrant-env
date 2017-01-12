@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="Mockery\MethodCall" namespace="Mockery" name="MethodCall" abstract="false" final="false" start="5" end="25">
+  <file path="/home/web/example/src/freegame_developer/vendor/mockery/mockery/library/Mockery" file="MethodCall.php" realpath="/home/web/example/src/freegame_developer/vendor/mockery/mockery/library/Mockery/MethodCall.php" size="357" time="2015-04-02T19:54:00+00:00" unixtime="1428004440" sha1="858bd70b93524dc3138a1a54f23c9763fe186d3e" relative="freegame_developer/vendor/mockery/mockery/library/Mockery/MethodCall.php"/>
+  <member name="method" visibility="private" static="false" line="7"/>
+  <member name="args" visibility="private" static="false" line="8"/>
+  <constructor name="__construct" start="10" end="14" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="method" byreference="false" type="{unknown}"/>
+    <parameter name="args" byreference="false" type="{unknown}"/>
+  </constructor>
+  <method name="getMethod" start="16" end="19" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="getArgs" start="21" end="24" abstract="false" final="false" static="false" visibility="public"/>
+</class>

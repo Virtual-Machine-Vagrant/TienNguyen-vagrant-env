@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="Symfony\Component\HttpFoundation\Exception\ConflictingHeadersException" namespace="Symfony\Component\HttpFoundation\Exception" name="ConflictingHeadersException" abstract="false" final="false" start="21" end="23">
+  <file path="/home/web/example/src/freegame_developer/vendor/symfony/http-foundation/Exception" file="ConflictingHeadersException.php" realpath="/home/web/example/src/freegame_developer/vendor/symfony/http-foundation/Exception/ConflictingHeadersException.php" size="565" time="2016-10-24T14:36:35+00:00" unixtime="1477319795" sha1="9af32d7d0fcf788e28fb5f247d1aa3b15e15f756" relative="freegame_developer/vendor/symfony/http-foundation/Exception/ConflictingHeadersException.php"/>
+  <docblock>
+    <description compact="The HTTP request contains headers with conflicting information.">This exception should trigger an HTTP 400 response in your application code.</description>
+    <author value="Magnus Nordlander &lt;magnus@fervo.se&gt;"/>
+  </docblock>
+  <extends full="RuntimeException" namespace="" name="RuntimeException"/>
+</class>

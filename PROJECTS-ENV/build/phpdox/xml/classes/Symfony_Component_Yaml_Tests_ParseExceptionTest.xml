@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="Symfony\Component\Yaml\Tests\ParseExceptionTest" namespace="Symfony\Component\Yaml\Tests" name="ParseExceptionTest" abstract="false" final="false" start="16" end="33">
+  <file path="/home/web/example/src/freegame_developer/vendor/symfony/yaml/Tests" file="ParseExceptionTest.php" realpath="/home/web/example/src/freegame_developer/vendor/symfony/yaml/Tests/ParseExceptionTest.php" size="1014" time="2016-10-24T18:41:13+00:00" unixtime="1477334473" sha1="e12e54905b59fa2ddbaa69663fe176a98c515177" relative="freegame_developer/vendor/symfony/yaml/Tests/ParseExceptionTest.php"/>
+  <extends full="PHPUnit_Framework_TestCase" namespace="" name="PHPUnit_Framework_TestCase"/>
+  <method name="testGetMessage" start="18" end="24" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testGetMessageWithUnicodeInFilename" start="26" end="32" abstract="false" final="false" static="false" visibility="public"/>
+</class>

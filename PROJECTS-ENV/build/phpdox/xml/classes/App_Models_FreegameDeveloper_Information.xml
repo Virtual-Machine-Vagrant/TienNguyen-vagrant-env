@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="App\Models\FreegameDeveloper\Information" namespace="App\Models\FreegameDeveloper" name="Information" abstract="false" final="false" start="5" end="66">
+  <file path="/home/web/example/src/freegame_developer/app/Models/FreegameDeveloper" file="Information.php" realpath="/home/web/example/src/freegame_developer/app/Models/FreegameDeveloper/Information.php" size="2093" time="2016-11-16T01:52:54+00:00" unixtime="1479261174" sha1="d3c0f0c36dc55982140c590c777d8c1f8b0bafbc" relative="freegame_developer/app/Models/FreegameDeveloper/Information.php"/>
+  <extends full="App\Models\FreegameDeveloper\FreegameDeveloper" namespace="App\Models\FreegameDeveloper" name="FreegameDeveloper"/>
+  <member name="table" type="string" default="'information'" visibility="protected" static="false" line="7"/>
+  <member name="timestamps" type="boolean" default="false" visibility="public" static="false" line="9"/>
+  <member name="guarded" type="array" default="" visibility="protected" static="false" line="11"/>
+  <member name="dates" type="array" default="" visibility="protected" static="false" line="15"/>
+  <method name="getList" start="24" end="52" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Get information list by condition"/>
+      <param type="array" variable="$condition"/>
+      <return type="object">
+        <type full="App\Models\FreegameDeveloper\Object" namespace="App\Models\FreegameDeveloper" name="Object"/>
+      </return>
+    </docblock>
+    <parameter name="condition" byreference="false" type="array" default=""/>
+  </method>
+  <method name="getOne" start="59" end="65" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Get information by condition"/>
+      <param type="array" variable="$condition"/>
+      <return type="object">
+        <type full="App\Models\FreegameDeveloper\Object" namespace="App\Models\FreegameDeveloper" name="Object"/>
+      </return>
+    </docblock>
+    <parameter name="condition" byreference="false" type="{unknown}"/>
+  </method>
+</class>

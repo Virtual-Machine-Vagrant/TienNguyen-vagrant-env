@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="Psr\Log\AbstractLogger" namespace="Psr\Log" name="AbstractLogger" abstract="true" final="false" start="12" end="128">
+  <file path="/home/web/example/src/freegame_developer/vendor/psr/log/Psr/Log" file="AbstractLogger.php" realpath="/home/web/example/src/freegame_developer/vendor/psr/log/Psr/Log/AbstractLogger.php" size="3088" time="2016-10-10T12:19:37+00:00" unixtime="1476101977" sha1="17eeb8829f2bd1cca908c29df8c61c8d52461b43" relative="freegame_developer/vendor/psr/log/Psr/Log/AbstractLogger.php"/>
+  <docblock>
+    <description compact="This is a simple Logger implementation that other Loggers can inherit from.">It simply delegates all log-level-specific methods to the `log` method to
+reduce boilerplate code that a simple Logger that does the same thing with
+messages regardless of the error level has to implement.</description>
+  </docblock>
+  <implements full="Psr\Log\LoggerInterface" namespace="Psr\Log" name="LoggerInterface"/>
+  <method name="emergency" start="22" end="25" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="System is unusable."/>
+      <param type="string" variable="$message"/>
+      <param type="array" variable="$context"/>
+      <return type="object">
+        <type full="Psr\Log\void" namespace="Psr\Log" name="void"/>
+      </return>
+    </docblock>
+    <parameter name="message" byreference="false" type="{unknown}"/>
+    <parameter name="context" byreference="false" type="array" default=""/>
+  </method>
+  <method name="alert" start="38" end="41" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Action must be taken immediately.">Example: Entire website down, database unavailable, etc. This should
+trigger the SMS alerts and wake you up.</description>
+      <param type="string" variable="$message"/>
+      <param type="array" variable="$context"/>
+      <return type="object">
+        <type full="Psr\Log\void" namespace="Psr\Log" name="void"/>
+      </return>
+    </docblock>
+    <parameter name="message" byreference="false" type="{unknown}"/>
+    <parameter name="context" byreference="false" type="array" default=""/>
+  </method>
+  <method name="critical" start="53" end="56" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Critical conditions.">Example: Application component unavailable, unexpected exception.</description>
+      <param type="string" variable="$message"/>
+      <param type="array" variable="$context"/>
+      <return type="object">
+        <type full="Psr\Log\void" namespace="Psr\Log" name="void"/>
+      </return>
+    </docblock>
+    <parameter name="message" byreference="false" type="{unknown}"/>
+    <parameter name="context" byreference="false" type="array" default=""/>
+  </method>
+  <method name="error" start="67" end="70" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Runtime errors that do not require immediate action but should typically be logged and monitored."/>
+      <param type="string" variable="$message"/>
+      <param type="array" variable="$context"/>
+      <return type="object">
+        <type full="Psr\Log\void" namespace="Psr\Log" name="void"/>
+      </return>
+    </docblock>
+    <parameter name="message" byreference="false" type="{unknown}"/>
+    <parameter name="context" byreference="false" type="array" default=""/>
+  </method>
+  <method name="warning" start="83" end="86" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Exceptional occurrences that are not errors.">Example: Use of deprecated APIs, poor use of an API, undesirable things
+that are not necessarily wrong.</description>
+      <param type="string" variable="$message"/>
+      <param type="array" variable="$context"/>
+      <return type="object">
+        <type full="Psr\Log\void" namespace="Psr\Log" name="void"/>
+      </return>
+    </docblock>
+    <parameter name="message" byreference="false" type="{unknown}"/>
+    <parameter name="context" byreference="false" type="array" default=""/>
+  </method>
+  <method name="notice" start="96" end="99" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Normal but significant events."/>
+      <param type="string" variable="$message"/>
+      <param type="array" variable="$context"/>
+      <return type="object">
+        <type full="Psr\Log\void" namespace="Psr\Log" name="void"/>
+      </return>
+    </docblock>
+    <parameter name="message" byreference="false" type="{unknown}"/>
+    <parameter name="context" byreference="false" type="array" default=""/>
+  </method>
+  <method name="info" start="111" end="114" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Interesting events.">Example: User logs in, SQL logs.</description>
+      <param type="string" variable="$message"/>
+      <param type="array" variable="$context"/>
+      <return type="object">
+        <type full="Psr\Log\void" namespace="Psr\Log" name="void"/>
+      </return>
+    </docblock>
+    <parameter name="message" byreference="false" type="{unknown}"/>
+    <parameter name="context" byreference="false" type="array" default=""/>
+  </method>
+  <method name="debug" start="124" end="127" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Detailed debug information."/>
+      <param type="string" variable="$message"/>
+      <param type="array" variable="$context"/>
+      <return type="object">
+        <type full="Psr\Log\void" namespace="Psr\Log" name="void"/>
+      </return>
+    </docblock>
+    <parameter name="message" byreference="false" type="{unknown}"/>
+    <parameter name="context" byreference="false" type="array" default=""/>
+  </method>
+</class>

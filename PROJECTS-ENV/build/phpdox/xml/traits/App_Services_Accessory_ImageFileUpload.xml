@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<trait xmlns="http://xml.phpdox.net/src" full="App\Services\Accessory\ImageFileUpload" namespace="App\Services\Accessory" name="ImageFileUpload" abstract="false" final="false" start="7" end="188">
+  <file path="/home/web/example/src/freegame_developer/app/Services/Accessory" file="ImageFileUpload.php" realpath="/home/web/example/src/freegame_developer/app/Services/Accessory/ImageFileUpload.php" size="6916" time="2016-10-31T07:00:31+00:00" unixtime="1477897231" sha1="09d95b06af2ae24104f4eb96274f6d044fbe8329" relative="freegame_developer/app/Services/Accessory/ImageFileUpload.php"/>
+  <method name="uploadFile" start="19" end="50" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="upload image files To img-freegames.dmm.com"/>
+      <param type="string" variable="$localFilePath"/>
+      <param type="string" variable="$fileName"/>
+      <param type="string" variable="$uploadPath"/>
+      <return type="array"/>
+    </docblock>
+    <parameter name="localFilePath" byreference="false" type="{unknown}"/>
+    <parameter name="fileName" byreference="false" type="{unknown}"/>
+    <parameter name="uploadPath" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="uploadFileToPics" start="61" end="92" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="upload image files to master server To pics.dmm.com"/>
+      <param type="string" variable="$localFilePath"/>
+      <param type="string" variable="$fileName"/>
+      <param type="string" variable="$uploadPath"/>
+      <return type="array"/>
+    </docblock>
+    <parameter name="localFilePath" byreference="false" type="{unknown}"/>
+    <parameter name="fileName" byreference="false" type="{unknown}"/>
+    <parameter name="uploadPath" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="deleteImgaeCache" start="101" end="136" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="delete cache image files"/>
+      <param type="string" variable="$uploadFile"/>
+      <param type="integer" variable="$retryCnt"/>
+      <return type="boolean"/>
+    </docblock>
+    <parameter name="uploadFile" byreference="false" type="{unknown}"/>
+    <parameter name="retryCnt" byreference="false" type="integer" default="0"/>
+  </method>
+  <method name="deleteImgaeCacheToPics" start="145" end="187" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="delete cache image files to pics"/>
+      <param type="string" variable="$uploadFile"/>
+      <param type="integer" variable="$retryCnt"/>
+      <return type="boolean"/>
+    </docblock>
+    <parameter name="uploadFile" byreference="false" type="{unknown}"/>
+    <parameter name="retryCnt" byreference="false" type="integer" default="0"/>
+  </method>
+</trait>

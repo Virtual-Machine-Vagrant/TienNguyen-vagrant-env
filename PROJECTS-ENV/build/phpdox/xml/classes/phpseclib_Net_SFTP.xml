@@ -1,0 +1,1142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="phpseclib\Net\SFTP" namespace="phpseclib\Net" name="SFTP" abstract="false" final="false" start="47" end="2959">
+  <file path="/home/web/example/src/freegame_developer/vendor/phpseclib/phpseclib/phpseclib/Net" file="SFTP.php" realpath="/home/web/example/src/freegame_developer/vendor/phpseclib/phpseclib/phpseclib/Net/SFTP.php" size="93650" time="2016-10-04T00:57:04+00:00" unixtime="1475542624" sha1="8146408eebec0f830fe0e6ae8ee67129057978b9" relative="freegame_developer/vendor/phpseclib/phpseclib/phpseclib/Net/SFTP.php"/>
+  <docblock>
+    <description compact="Pure-PHP implementations of SFTP."/>
+    <package value="SFTP"/>
+    <author value="Jim Wigginton &lt;terrafrost@php.net&gt;"/>
+    <access value="public"/>
+  </docblock>
+  <extends full="phpseclib\Net\SSH2" namespace="phpseclib\Net" name="SSH2"/>
+  <constant type="integer" name="CHANNEL" value="0x100">
+    <docblock>
+      <description compact="SFTP channel constant">\phpseclib\Net\SSH2::exec() uses 0 and \phpseclib\Net\SSH2::read() / \phpseclib\Net\SSH2::write() use 1.</description>
+      <see value="\phpseclib\Net\SSH2::_send_channel_packet()"/>
+      <see value="\phpseclib\Net\SSH2::_get_channel_packet()"/>
+      <access value="private"/>
+    </docblock>
+  </constant>
+  <constant type="integer" name="SOURCE_LOCAL_FILE" value="1">
+    <docblock>
+      <description compact="Reads data from a local file."/>
+    </docblock>
+  </constant>
+  <constant type="integer" name="SOURCE_STRING" value="2"/>
+  <constant type="integer" name="SOURCE_CALLBACK" value="16">
+    <docblock>
+      <description compact="Reads data from callback: function callback($length) returns string to proceed, null for EOF"/>
+    </docblock>
+  </constant>
+  <constant type="integer" name="RESUME" value="4">
+    <docblock>
+      <description compact="Resumes an upload"/>
+    </docblock>
+  </constant>
+  <constant type="integer" name="RESUME_START" value="8">
+    <docblock>
+      <description compact="Append a local file to an already existing remote file"/>
+    </docblock>
+  </constant>
+  <member name="packet_types" type="array" default="" visibility="public" static="false" line="95">
+    <docblock>
+      <description compact="Packet Types"/>
+      <see value="self::__construct()"/>
+      <var type="array"/>
+      <access value="private"/>
+    </docblock>
+  </member>
+  <member name="status_codes" type="array" default="" visibility="public" static="false" line="104">
+    <docblock>
+      <description compact="Status Codes"/>
+      <see value="self::__construct()"/>
+      <var type="array"/>
+      <access value="private"/>
+    </docblock>
+  </member>
+  <member name="request_id" type="boolean" default="false" visibility="public" static="false" line="116">
+    <docblock>
+      <description compact="The Request ID">The request ID exists in the off chance that a packet is sent out-of-order.  Of course, this library doesn't support
+concurrent actions, so it's somewhat academic, here.</description>
+      <var type="int"/>
+      <see value="self::_send_sftp_packet()"/>
+      <access value="private"/>
+    </docblock>
+  </member>
+  <member name="packet_type" type="integer" default="1" visibility="public" static="false" line="128">
+    <docblock>
+      <description compact="The Packet Type">The request ID exists in the off chance that a packet is sent out-of-order.  Of course, this library doesn't support
+concurrent actions, so it's somewhat academic, here.</description>
+      <var type="int"/>
+      <see value="self::_get_sftp_packet()"/>
+      <access value="private"/>
+    </docblock>
+  </member>
+  <member name="packet_buffer" type="string" default="''" visibility="public" static="false" line="137">
+    <docblock>
+      <description compact="Packet Buffer"/>
+      <var type="string"/>
+      <see value="self::_get_sftp_packet()"/>
+      <access value="private"/>
+    </docblock>
+  </member>
+  <member name="extensions" type="array" default="" visibility="public" static="false" line="146">
+    <docblock>
+      <description compact="Extensions supported by the server"/>
+      <var type="array"/>
+      <see value="self::_initChannel()"/>
+      <access value="private"/>
+    </docblock>
+  </member>
+  <member name="version" visibility="public" static="false" line="155">
+    <docblock>
+      <description compact="Server SFTP version"/>
+      <var type="int"/>
+      <see value="self::_initChannel()"/>
+      <access value="private"/>
+    </docblock>
+  </member>
+  <member name="pwd" type="boolean" default="false" visibility="public" static="false" line="165">
+    <docblock>
+      <description compact="Current working directory"/>
+      <var type="string"/>
+      <see value="self::_realpath()"/>
+      <see value="self::chdir()"/>
+      <access value="private"/>
+    </docblock>
+  </member>
+  <member name="packet_type_log" type="array" default="" visibility="public" static="false" line="174">
+    <docblock>
+      <description compact="Packet Type Log"/>
+      <see value="self::getLog()"/>
+      <var type="array"/>
+      <access value="private"/>
+    </docblock>
+  </member>
+  <member name="packet_log" type="array" default="" visibility="public" static="false" line="183">
+    <docblock>
+      <description compact="Packet Log"/>
+      <see value="self::getLog()"/>
+      <var type="array"/>
+      <access value="private"/>
+    </docblock>
+  </member>
+  <member name="sftp_errors" type="array" default="" visibility="public" static="false" line="193">
+    <docblock>
+      <description compact="Error information"/>
+      <see value="self::getSFTPErrors()"/>
+      <see value="self::getLastSFTPError()"/>
+      <var type="string"/>
+      <access value="private"/>
+    </docblock>
+  </member>
+  <member name="stat_cache" type="array" default="" visibility="public" static="false" line="207">
+    <docblock>
+      <description compact="Stat Cache">Rather than always having to open a directory and close it immediately there after to see if a file is a directory
+we'll cache the results.</description>
+      <see value="self::_update_stat_cache()"/>
+      <see value="self::_remove_from_stat_cache()"/>
+      <see value="self::_query_stat_cache()"/>
+      <var type="array"/>
+      <access value="private"/>
+    </docblock>
+  </member>
+  <member name="max_sftp_packet" visibility="public" static="false" line="217">
+    <docblock>
+      <description compact="Max SFTP Packet Size"/>
+      <see value="self::__construct()"/>
+      <see value="self::get()"/>
+      <var type="array"/>
+      <access value="private"/>
+    </docblock>
+  </member>
+  <member name="use_stat_cache" type="boolean" default="true" visibility="public" static="false" line="227">
+    <docblock>
+      <description compact="Stat Cache Flag"/>
+      <see value="self::disableStatCache()"/>
+      <see value="self::enableStatCache()"/>
+      <var type="object">
+        <type full="phpseclib\Net\bool" namespace="phpseclib\Net" name="bool"/>
+      </var>
+      <access value="private"/>
+    </docblock>
+  </member>
+  <member name="sortOptions" type="array" default="" visibility="public" static="false" line="237">
+    <docblock>
+      <description compact="Sort Options"/>
+      <see value="self::_comparator()"/>
+      <see value="self::setListOrder()"/>
+      <var type="array"/>
+      <access value="private"/>
+    </docblock>
+  </member>
+  <constructor name="__construct" start="250" end="377" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Default Constructor.">Connects to an SFTP server</description>
+      <param type="string" variable="$host"/>
+      <param type="int" variable="$port"/>
+      <param type="int" variable="$timeout"/>
+      <return type="object">
+        <type full="\phpseclib\Net\SFTP" namespace="\phpseclib\Net" name="SFTP"/>
+      </return>
+      <access value="public"/>
+    </docblock>
+    <parameter name="host" byreference="false" type="{unknown}"/>
+    <parameter name="port" byreference="false" type="integer" default="22"/>
+    <parameter name="timeout" byreference="false" type="integer" default="10"/>
+    <inline>
+      <comment value="http://tools.ietf.org/html/draft-ietf-secsh-filexfer-13#section-7.1" line="327"/>
+      <comment value="the order, in this case, matters quite a lot - see \phpseclib\Net\SFTP::_parseAttributes() to understand why" line="328"/>
+      <comment value="http://tools.ietf.org/html/draft-ietf-secsh-filexfer-04#section-6.3" line="340"/>
+      <comment value="the flag definitions change somewhat in SFTPv5+.  if SFTPv5+ support is added to this library, maybe name" line="341"/>
+      <comment value="the array for that $this-&gt;open5_flags and similarly alter the constant names." line="342"/>
+      <comment value="http://tools.ietf.org/html/draft-ietf-secsh-filexfer-04#section-5.2" line="351"/>
+      <comment value="see \phpseclib\Net\SFTP::_parseLongname() for an explanation" line="352"/>
+    </inline>
+  </constructor>
+  <method name="login" start="387" end="537" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Login"/>
+      <param type="string" variable="$username"/>
+      <param type="string" variable="$password"/>
+      <return type="object">
+        <type full="phpseclib\Net\bool" namespace="phpseclib\Net" name="bool"/>
+      </return>
+      <access value="public"/>
+    </docblock>
+    <parameter name="username" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="SFTPv4+ defines a 'newline' extension.  SFTPv3 seems to have unofficial support for it via 'newline@vandyke.com'," line="485"/>
+      <comment xmlns="http://xml.phpdox.net/src" value="however, I'm not sure what 'newline@vandyke.com' is supposed to do (the fact that it's unofficial means that it's" line="486"/>
+      <comment xmlns="http://xml.phpdox.net/src" value="not in the official SFTPv3 specs) and 'newline@vandyke.com' / 'newline' are likely not drop-in substitutes for" line="487"/>
+      <comment xmlns="http://xml.phpdox.net/src" value="one another due to the fact that 'newline' comes with a SSH_FXF_TEXT bitmask whereas it seems unlikely that" line="488"/>
+      <comment xmlns="http://xml.phpdox.net/src" value="'newline@vandyke.com' would." line="489"/>
+      <comment value="if (isset($this-&gt;extensions['newline@vandyke.com'])) {" line="492"/>
+      <comment xmlns="http://xml.phpdox.net/src" value="$this-&gt;extensions['newline'] = $this-&gt;extensions['newline@vandyke.com'];" line="493"/>
+      <comment xmlns="http://xml.phpdox.net/src" value="unset($this-&gt;extensions['newline@vandyke.com']);" line="494"/>
+      <comment xmlns="http://xml.phpdox.net/src" value="}" line="495"/>
+      <comment value="A Note on SFTPv4/5/6 support:" line="501"/>
+      <comment xmlns="http://xml.phpdox.net/src" value="&lt;http://tools.ietf.org/html/draft-ietf-secsh-filexfer-13#section-5.1&gt; states the following:" line="502"/>
+      <comment xmlns="http://xml.phpdox.net/src" value="&quot;If the client wishes to interoperate with servers that support noncontiguous version" line="503"/>
+      <comment xmlns="http://xml.phpdox.net/src" value="numbers it SHOULD send '3'&quot;" line="504"/>
+      <comment xmlns="http://xml.phpdox.net/src" value="Given that the server only sends its version number after the client has already done so, the above" line="505"/>
+      <comment xmlns="http://xml.phpdox.net/src" value="seems to be suggesting that v3 should be the default version.  This makes sense given that v3 is the" line="506"/>
+      <comment xmlns="http://xml.phpdox.net/src" value="most popular." line="507"/>
+      <comment xmlns="http://xml.phpdox.net/src" value="&lt;http://tools.ietf.org/html/draft-ietf-secsh-filexfer-13#section-5.5&gt; states the following;" line="508"/>
+      <comment xmlns="http://xml.phpdox.net/src" value="&quot;If the server did not send the &quot;versions&quot; extension, or the version-from-list was not included, the" line="509"/>
+      <comment xmlns="http://xml.phpdox.net/src" value="server MAY send a status response describing the failure, but MUST then close the channel without" line="510"/>
+      <comment xmlns="http://xml.phpdox.net/src" value="processing any further requests.&quot;" line="511"/>
+      <comment xmlns="http://xml.phpdox.net/src" value="So what do you do if you have a client whose initial SSH_FXP_INIT packet says it implements v3 and" line="512"/>
+      <comment xmlns="http://xml.phpdox.net/src" value="a server whose initial SSH_FXP_VERSION reply says it implements v4 and only v4?  If it only implements" line="513"/>
+      <comment xmlns="http://xml.phpdox.net/src" value="v4, the &quot;versions&quot; extension is likely not going to have been sent so version re-negotiation as discussed" line="514"/>
+      <comment xmlns="http://xml.phpdox.net/src" value="in draft-ietf-secsh-filexfer-13 would be quite impossible.  As such, what \phpseclib\Net\SFTP would do is close the" line="515"/>
+      <comment xmlns="http://xml.phpdox.net/src" value="channel and reopen it with a new and updated SSH_FXP_INIT packet." line="516"/>
+    </inline>
+  </method>
+  <method name="disableStatCache" start="544" end="547" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Disable the stat cache"/>
+      <access value="public"/>
+    </docblock>
+  </method>
+  <method name="enableStatCache" start="554" end="557" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Enable the stat cache"/>
+      <access value="public"/>
+    </docblock>
+  </method>
+  <method name="clearStatCache" start="564" end="567" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Clear the stat cache"/>
+      <access value="public"/>
+    </docblock>
+  </method>
+  <method name="pwd" start="575" end="578" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Returns the current directory name"/>
+      <return type="mixed"/>
+      <access value="public"/>
+    </docblock>
+  </method>
+  <method name="_logError" start="587" end="601" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Logs errors"/>
+      <param type="string" variable="$response"/>
+      <param type="int" variable="$status"/>
+      <access value="public"/>
+    </docblock>
+    <parameter name="response" byreference="false" type="{unknown}"/>
+    <parameter name="status" byreference="false" type="integer" default="1"/>
+  </method>
+  <method name="realpath" start="613" end="616" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Returns canonicalized absolute pathname">realpath() expands all symbolic links and resolves references to '/./', '/../' and extra '/' characters in the input
+path and returns the canonicalized absolute pathname.</description>
+      <param type="string" variable="$path"/>
+      <return type="mixed"/>
+      <access value="public"/>
+    </docblock>
+    <parameter name="path" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="_realpath" start="629" end="676" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Canonicalize the Server-Side Path Name">SFTP doesn't provide a mechanism by which the current working directory can be changed, so we'll emulate it.  Returns
+the absolute (canonicalized) path.</description>
+      <see value="self::chdir()"/>
+      <param type="string" variable="$path"/>
+      <return type="mixed"/>
+      <access value="private"/>
+    </docblock>
+    <parameter name="path" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="chdir" start="685" end="738" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Changes the current directory"/>
+      <param type="string" variable="$dir"/>
+      <return type="object">
+        <type full="phpseclib\Net\bool" namespace="phpseclib\Net" name="bool"/>
+      </return>
+      <access value="public"/>
+    </docblock>
+    <parameter name="dir" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="assume current dir if $dir is empty" line="691"/>
+      <comment value="confirm that $dir is, in fact, a valid directory" line="701"/>
+      <comment value="we could do a stat on the alleged $dir to see if it's a directory but that doesn't tell us" line="707"/>
+      <comment value="the currently logged in user has the appropriate permissions or not. maybe you could see if" line="708"/>
+      <comment value="the file's uid / gid match the currently logged in user's uid / gid but how there's no easy" line="709"/>
+      <comment value="way to get those with SFTP" line="710"/>
+      <comment value="see \phpseclib\Net\SFTP::nlist() for a more thorough explanation of the following" line="716"/>
+    </inline>
+  </method>
+  <method name="nlist" start="748" end="751" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Returns a list of files in the given directory"/>
+      <param type="string" variable="$dir"/>
+      <param type="object" variable="$recursive">
+        <type full="phpseclib\Net\bool" namespace="phpseclib\Net" name="bool"/>
+      </param>
+      <return type="mixed"/>
+      <access value="public"/>
+    </docblock>
+    <parameter name="dir" byreference="false" type="string" default="'.'"/>
+    <parameter name="recursive" byreference="false" type="boolean" default="false"/>
+  </method>
+  <method name="_nlist_helper" start="762" end="787" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Helper method for nlist"/>
+      <param type="string" variable="$dir"/>
+      <param type="object" variable="$recursive">
+        <type full="phpseclib\Net\bool" namespace="phpseclib\Net" name="bool"/>
+      </param>
+      <param type="string" variable="$relativeDir"/>
+      <return type="mixed"/>
+      <access value="private"/>
+    </docblock>
+    <parameter name="dir" byreference="false" type="{unknown}"/>
+    <parameter name="recursive" byreference="false" type="{unknown}"/>
+    <parameter name="relativeDir" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="rawlist" start="797" end="821" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Returns a detailed list of files in the given directory"/>
+      <param type="string" variable="$dir"/>
+      <param type="object" variable="$recursive">
+        <type full="phpseclib\Net\bool" namespace="phpseclib\Net" name="bool"/>
+      </param>
+      <return type="mixed"/>
+      <access value="public"/>
+    </docblock>
+    <parameter name="dir" byreference="false" type="string" default="'.'"/>
+    <parameter name="recursive" byreference="false" type="boolean" default="false"/>
+  </method>
+  <method name="_list" start="831" end="929" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Reads a list, be it detailed or not, of files in the given directory"/>
+      <param type="string" variable="$dir"/>
+      <param type="object" variable="$raw">
+        <type full="phpseclib\Net\bool" namespace="phpseclib\Net" name="bool"/>
+      </param>
+      <return type="mixed"/>
+      <access value="private"/>
+    </docblock>
+    <parameter name="dir" byreference="false" type="{unknown}"/>
+    <parameter name="raw" byreference="false" type="boolean" default="true"/>
+    <inline>
+      <comment value="http://tools.ietf.org/html/draft-ietf-secsh-filexfer-13#section-8.1.2" line="842"/>
+    </inline>
+  </method>
+  <method name="_comparator" start="941" end="993" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Compares two rawlist entries using parameters set by setListOrder()">Intended for use with uasort()</description>
+      <param type="array" variable="$a"/>
+      <param type="array" variable="$b"/>
+      <return type="int"/>
+      <access value="private"/>
+    </docblock>
+    <parameter name="a" byreference="false" type="{unknown}"/>
+    <parameter name="b" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="setListOrder" start="1015" end="1029" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Defines how nlist() and rawlist() will be sorted - if at all.">If sorting is enabled directories and files will be sorted independently with
+directories appearing before files in the resultant array that is returned.
+
+Any parameter returned by stat is a valid sort parameter for this function.
+Filename comparisons are case insensitive.
+
+Examples:
+
+$sftp-&gt;setListOrder('filename', SORT_ASC);
+$sftp-&gt;setListOrder('size', SORT_DESC, 'filename', SORT_ASC);
+$sftp-&gt;setListOrder(true);
+   Separates directories from files but doesn't do any sorting beyond that
+$sftp-&gt;setListOrder();
+   Don't do any sort of sorting</description>
+      <access value="public"/>
+    </docblock>
+  </method>
+  <method name="size" start="1040" end="1051" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Returns the file size, in bytes, or false, on failure">Files larger than 4GB will show up as being exactly 4GB.</description>
+      <param type="string" variable="$filename"/>
+      <return type="mixed"/>
+      <access value="public"/>
+    </docblock>
+    <parameter name="filename" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="_update_stat_cache" start="1060" end="1095" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Save files / directories to cache"/>
+      <param type="string" variable="$path"/>
+      <param type="mixed" variable="$value"/>
+      <access value="private"/>
+    </docblock>
+    <parameter name="path" byreference="false" type="{unknown}"/>
+    <parameter name="value" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="preg_replace('#^/|/(?=/)|/$#', '', $dir) == str_replace('//', '/', trim($path, '/'))" line="1066"/>
+    </inline>
+  </method>
+  <method name="_remove_from_stat_cache" start="1104" end="1120" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Remove files / directories from cache"/>
+      <param type="string" variable="$path"/>
+      <return type="object">
+        <type full="phpseclib\Net\bool" namespace="phpseclib\Net" name="bool"/>
+      </return>
+      <access value="private"/>
+    </docblock>
+    <parameter name="path" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="_query_stat_cache" start="1131" end="1143" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Checks cache for path">Mainly used by file_exists</description>
+      <param type="string" variable="$dir"/>
+      <return type="mixed"/>
+      <access value="private"/>
+    </docblock>
+    <parameter name="path" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="stat" start="1154" end="1200" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Returns general information about a file.">Returns an array on success and false otherwise.</description>
+      <param type="string" variable="$filename"/>
+      <return type="mixed"/>
+      <access value="public"/>
+    </docblock>
+    <parameter name="filename" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="lstat" start="1211" end="1265" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Returns general information about a file or symbolic link.">Returns an array on success and false otherwise.</description>
+      <param type="string" variable="$filename"/>
+      <return type="mixed"/>
+      <access value="public"/>
+    </docblock>
+    <parameter name="filename" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="_stat" start="1278" end="1297" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Returns general information about a file or symbolic link">Determines information without calling \phpseclib\Net\SFTP::_realpath().
+The second parameter can be either NET_SFTP_STAT or NET_SFTP_LSTAT.</description>
+      <param type="string" variable="$filename"/>
+      <param type="int" variable="$type"/>
+      <return type="mixed"/>
+      <access value="private"/>
+    </docblock>
+    <parameter name="filename" byreference="false" type="{unknown}"/>
+    <parameter name="type" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="SFTPv4+ adds an additional 32-bit integer field - flags - to the following:" line="1280"/>
+    </inline>
+  </method>
+  <method name="truncate" start="1307" end="1312" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Truncates a file to a given length"/>
+      <param type="string" variable="$filename"/>
+      <param type="int" variable="$new_size"/>
+      <return type="object">
+        <type full="phpseclib\Net\bool" namespace="phpseclib\Net" name="bool"/>
+      </return>
+      <access value="public"/>
+    </docblock>
+    <parameter name="filename" byreference="false" type="{unknown}"/>
+    <parameter name="new_size" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="4294967296 == 0x100000000 == 1&lt;&lt;32" line="1309"/>
+    </inline>
+  </method>
+  <method name="touch" start="1325" end="1363" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Sets access and modification time of file.">If the file does not exist, it will be created.</description>
+      <param type="string" variable="$filename"/>
+      <param type="int" variable="$time"/>
+      <param type="int" variable="$atime"/>
+      <return type="object">
+        <type full="phpseclib\Net\bool" namespace="phpseclib\Net" name="bool"/>
+      </return>
+      <access value="public"/>
+    </docblock>
+    <parameter name="filename" byreference="false" type="{unknown}"/>
+    <parameter name="time" byreference="false" type="{unknown}" default="" constant="null"/>
+    <parameter name="atime" byreference="false" type="{unknown}" default="" constant="null"/>
+  </method>
+  <method name="chown" start="1376" end="1383" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Changes file or directory owner">Returns true on success or false on error.</description>
+      <param type="string" variable="$filename"/>
+      <param type="int" variable="$uid"/>
+      <param type="object" variable="$recursive">
+        <type full="phpseclib\Net\bool" namespace="phpseclib\Net" name="bool"/>
+      </param>
+      <return type="object">
+        <type full="phpseclib\Net\bool" namespace="phpseclib\Net" name="bool"/>
+      </return>
+      <access value="public"/>
+    </docblock>
+    <parameter name="filename" byreference="false" type="{unknown}"/>
+    <parameter name="uid" byreference="false" type="{unknown}"/>
+    <parameter name="recursive" byreference="false" type="boolean" default="false"/>
+    <inline>
+      <comment value="quoting from &lt;http://www.kernel.org/doc/man-pages/online/pages/man2/chown.2.html&gt;," line="1378"/>
+      <comment value="&quot;if the owner or group is specified as -1, then that ID is not changed&quot;" line="1379"/>
+    </inline>
+  </method>
+  <method name="chgrp" start="1396" end="1401" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Changes file or directory group">Returns true on success or false on error.</description>
+      <param type="string" variable="$filename"/>
+      <param type="int" variable="$gid"/>
+      <param type="object" variable="$recursive">
+        <type full="phpseclib\Net\bool" namespace="phpseclib\Net" name="bool"/>
+      </param>
+      <return type="object">
+        <type full="phpseclib\Net\bool" namespace="phpseclib\Net" name="bool"/>
+      </return>
+      <access value="public"/>
+    </docblock>
+    <parameter name="filename" byreference="false" type="{unknown}"/>
+    <parameter name="gid" byreference="false" type="{unknown}"/>
+    <parameter name="recursive" byreference="false" type="boolean" default="false"/>
+  </method>
+  <method name="chmod" start="1415" end="1452" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Set permissions on a file.">Returns the new file permissions on success or false on error.
+If $recursive is true than this just returns true or false.</description>
+      <param type="int" variable="$mode"/>
+      <param type="string" variable="$filename"/>
+      <param type="object" variable="$recursive">
+        <type full="phpseclib\Net\bool" namespace="phpseclib\Net" name="bool"/>
+      </param>
+      <return type="mixed"/>
+      <access value="public"/>
+    </docblock>
+    <parameter name="mode" byreference="false" type="{unknown}"/>
+    <parameter name="filename" byreference="false" type="{unknown}"/>
+    <parameter name="recursive" byreference="false" type="boolean" default="false"/>
+    <inline>
+      <comment value="rather than return what the permissions *should* be, we'll return what they actually are.  this will also" line="1432"/>
+      <comment value="tell us if the file actually exists." line="1433"/>
+      <comment value="incidentally, SFTPv4+ adds an additional 32-bit integer field - flags - to the following:" line="1434"/>
+    </inline>
+  </method>
+  <method name="_setstat" start="1463" end="1509" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Sets information about a file"/>
+      <param type="string" variable="$filename"/>
+      <param type="string" variable="$attr"/>
+      <param type="object" variable="$recursive">
+        <type full="phpseclib\Net\bool" namespace="phpseclib\Net" name="bool"/>
+      </param>
+      <return type="object">
+        <type full="phpseclib\Net\bool" namespace="phpseclib\Net" name="bool"/>
+      </return>
+      <access value="private"/>
+    </docblock>
+    <parameter name="filename" byreference="false" type="{unknown}"/>
+    <parameter name="attr" byreference="false" type="{unknown}"/>
+    <parameter name="recursive" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="SFTPv4+ has an additional byte field - type - that would need to be sent, as well. setting it to" line="1483"/>
+      <comment value="SSH_FILEXFER_TYPE_UNKNOWN might work. if not, we'd have to do an SSH_FXP_STAT before doing an SSH_FXP_SETSTAT." line="1484"/>
+      <comment value="&quot;Because some systems must use separate system calls to set various attributes, it is possible that a failure" line="1489"/>
+      <comment xmlns="http://xml.phpdox.net/src" value="response will be returned, but yet some of the attributes may be have been successfully modified.  If possible," line="1490"/>
+      <comment xmlns="http://xml.phpdox.net/src" value="servers SHOULD avoid this situation; however, clients MUST be aware that this is possible.&quot;" line="1491"/>
+      <comment xmlns="http://xml.phpdox.net/src" value="-- http://tools.ietf.org/html/draft-ietf-secsh-filexfer-13#section-8.6" line="1492"/>
+    </inline>
+  </method>
+  <method name="_setstat_recursive" start="1522" end="1581" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Recursively sets information on directories on the SFTP server">Minimizes directory lookups and SSH_FXP_STATUS requests for speed.</description>
+      <param type="string" variable="$path"/>
+      <param type="string" variable="$attr"/>
+      <param type="int" variable="$i"/>
+      <return type="object">
+        <type full="phpseclib\Net\bool" namespace="phpseclib\Net" name="bool"/>
+      </return>
+      <access value="private"/>
+    </docblock>
+    <parameter name="path" byreference="false" type="{unknown}"/>
+    <parameter name="attr" byreference="false" type="{unknown}"/>
+    <parameter name="i" byreference="true" type="{unknown}"/>
+    <inline>
+      <comment value="normally $entries would have at least . and .. but it might not if the directories" line="1534"/>
+      <comment value="permissions didn't allow reading" line="1535"/>
+    </inline>
+  </method>
+  <method name="readlink" start="1590" end="1622" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Return the target of a symbolic link"/>
+      <param type="string" variable="$link"/>
+      <return type="mixed"/>
+      <access value="public"/>
+    </docblock>
+    <parameter name="link" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="the file isn't a symlink" line="1615"/>
+    </inline>
+  </method>
+  <method name="symlink" start="1634" end="1661" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Create a symlink">symlink() creates a symbolic link to the existing target with the specified name link.</description>
+      <param type="string" variable="$target"/>
+      <param type="string" variable="$link"/>
+      <return type="object">
+        <type full="phpseclib\Net\bool" namespace="phpseclib\Net" name="bool"/>
+      </return>
+      <access value="public"/>
+    </docblock>
+    <parameter name="target" byreference="false" type="{unknown}"/>
+    <parameter name="link" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="$target = $this-&gt;_realpath($target);" line="1640"/>
+    </inline>
+  </method>
+  <method name="mkdir" start="1670" end="1696" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Creates a directory."/>
+      <param type="string" variable="$dir"/>
+      <return type="object">
+        <type full="phpseclib\Net\bool" namespace="phpseclib\Net" name="bool"/>
+      </return>
+      <access value="public"/>
+    </docblock>
+    <parameter name="dir" byreference="false" type="{unknown}"/>
+    <parameter name="mode" byreference="false" type="integer" default="1"/>
+    <parameter name="recursive" byreference="false" type="boolean" default="false"/>
+    <inline>
+      <comment value="by not providing any permissions, hopefully the server will use the logged in users umask - their" line="1677"/>
+      <comment value="default permissions." line="1678"/>
+    </inline>
+  </method>
+  <method name="_mkdir_helper" start="1705" end="1724" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Helper function for directory creation"/>
+      <param type="string" variable="$dir"/>
+      <return type="object">
+        <type full="phpseclib\Net\bool" namespace="phpseclib\Net" name="bool"/>
+      </return>
+      <access value="private"/>
+    </docblock>
+    <parameter name="dir" byreference="false" type="{unknown}"/>
+    <parameter name="attr" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="rmdir" start="1733" end="1768" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Removes a directory."/>
+      <param type="string" variable="$dir"/>
+      <return type="object">
+        <type full="phpseclib\Net\bool" namespace="phpseclib\Net" name="bool"/>
+      </return>
+      <access value="public"/>
+    </docblock>
+    <parameter name="dir" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="the following will do a soft delete, which would be useful if you deleted a file" line="1762"/>
+      <comment value="and then tried to do a stat on the deleted file. the above, in contrast, does" line="1763"/>
+      <comment value="a hard delete" line="1764"/>
+      <comment value="$this-&gt;_update_stat_cache($dir, false);" line="1765"/>
+    </inline>
+  </method>
+  <method name="put" start="1815" end="1958" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Uploads a file to the SFTP server.">By default, \phpseclib\Net\SFTP::put() does not read from the local filesystem.  $data is dumped directly into $remote_file.
+So, for example, if you set $data to 'filename.ext' and then do \phpseclib\Net\SFTP::get(), you will get a file, twelve bytes
+long, containing 'filename.ext' as its contents.
+
+Setting $mode to self::SOURCE_LOCAL_FILE will change the above behavior.  With self::SOURCE_LOCAL_FILE, $remote_file will
+contain as many bytes as filename.ext does on your local filesystem.  If your filename.ext is 1MB then that is how
+large $remote_file will be, as well.
+
+Setting $mode to self::SOURCE_CALLBACK will use $data as callback function, which gets only one parameter -- number of bytes to return, and returns a string if there is some data or null if there is no more data
+
+If $data is a resource then it'll be used as a resource instead.
+
+Currently, only binary mode is supported.  As such, if the line endings need to be adjusted, you will need to take
+care of that, yourself.
+
+$mode can take an additional two parameters - self::RESUME and self::RESUME_START. These are bitwise AND'd with
+$mode. So if you want to resume upload of a 300mb file on the local file system you'd set $mode to the following:
+
+self::SOURCE_LOCAL_FILE | self::RESUME
+
+If you wanted to simply append the full contents of a local file to the full contents of a remote file you'd replace
+self::RESUME with self::RESUME_START.
+
+If $mode &amp; (self::RESUME | self::RESUME_START) then self::RESUME_START will be assumed.
+
+$start and $local_start give you more fine grained control over this process and take precident over self::RESUME
+when they're non-negative. ie. $start could let you write at the end of a file (like self::RESUME) or in the middle
+of one. $local_start could let you start your reading from the end of a file (like self::RESUME_START) or in the
+middle of one.
+
+Setting $local_start to &gt; 0 or $mode | self::RESUME_START doesn't do anything unless $mode | self::SOURCE_LOCAL_FILE.</description>
+      <param type="string" variable="$remote_file"/>
+      <param type="object" variable="$data">
+        <type full="phpseclib\Net\string|resource" namespace="phpseclib\Net" name="string|resource"/>
+      </param>
+      <param type="int" variable="$mode"/>
+      <param type="int" variable="$start"/>
+      <param type="int" variable="$local_start"/>
+      <param type="object" variable="$progressCallback">
+        <type full="phpseclib\Net\callable|null" namespace="phpseclib\Net" name="callable|null"/>
+      </param>
+      <return type="object">
+        <type full="phpseclib\Net\bool" namespace="phpseclib\Net" name="bool"/>
+      </return>
+      <access value="public"/>
+      <internal>ASCII mode for SFTPv4/5/6 can be supported by adding a new function - \phpseclib\Net\SFTP::setMode().</internal>
+    </docblock>
+    <parameter name="remote_file" byreference="false" type="{unknown}"/>
+    <parameter name="data" byreference="false" type="{unknown}"/>
+    <parameter name="mode" byreference="false" type="{unknown}" default="" constant="self::SOURCE_STRING"/>
+    <parameter name="start" byreference="false" type="integer" default="1"/>
+    <parameter name="local_start" byreference="false" type="integer" default="1"/>
+    <parameter name="progressCallback" byreference="false" type="{unknown}" default="" constant="null"/>
+    <inline>
+      <comment value="according to the SFTP specs, NET_SFTP_OPEN_APPEND should &quot;force all writes to append data at the end of the file.&quot;" line="1829"/>
+      <comment value="in practice, it doesn't seem to do that." line="1830"/>
+      <comment value="$flags|= ($mode &amp; self::RESUME) ? NET_SFTP_OPEN_APPEND : NET_SFTP_OPEN_TRUNCATE;" line="1831"/>
+      <comment value="http://tools.ietf.org/html/draft-ietf-secsh-filexfer-13#section-8.2.3" line="1862"/>
+      <comment value="PuTTY uses 4096" line="1904"/>
+      <comment value="make the SFTP packet be exactly 4096 bytes by including the bytes in the NET_SFTP_WRITE packets &quot;header&quot;" line="1905"/>
+    </inline>
+  </method>
+  <method name="_read_put_responses" start="1970" end="1987" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Reads multiple successive SSH_FXP_WRITE responses">Sending an SSH_FXP_WRITE packet and immediately reading its response isn't as efficient as blindly sending out $i
+SSH_FXP_WRITEs, in succession, and then reading $i responses.</description>
+      <param type="int" variable="$i"/>
+      <return type="object">
+        <type full="phpseclib\Net\bool" namespace="phpseclib\Net" name="bool"/>
+      </return>
+      <access value="private"/>
+    </docblock>
+    <parameter name="i" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="_close_handle" start="1996" end="2017" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Close handle"/>
+      <param type="string" variable="$handle"/>
+      <return type="object">
+        <type full="phpseclib\Net\bool" namespace="phpseclib\Net" name="bool"/>
+      </return>
+      <access value="private"/>
+    </docblock>
+    <parameter name="handle" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="&quot;The client MUST release all resources associated with the handle regardless of the status.&quot;" line="2002"/>
+      <comment value="-- http://tools.ietf.org/html/draft-ietf-secsh-filexfer-13#section-8.1.3" line="2003"/>
+    </inline>
+  </method>
+  <method name="get" start="2035" end="2167" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Downloads a file from the SFTP server.">Returns a string containing the contents of $remote_file if $local_file is left undefined or a boolean false if
+the operation was unsuccessful.  If $local_file is defined, returns true or false depending on the success of the
+operation.
+
+$offset and $length can be used to download files in chunks.</description>
+      <param type="string" variable="$remote_file"/>
+      <param type="string" variable="$local_file"/>
+      <param type="int" variable="$offset"/>
+      <param type="int" variable="$length"/>
+      <return type="mixed"/>
+      <access value="public"/>
+    </docblock>
+    <parameter name="remote_file" byreference="false" type="{unknown}"/>
+    <parameter name="local_file" byreference="false" type="boolean" default="false"/>
+    <parameter name="offset" byreference="false" type="integer" default="0"/>
+    <parameter name="length" byreference="false" type="integer" default="1"/>
+    <inline>
+      <comment value="if $content isn't set that means a file was written to" line="2165"/>
+    </inline>
+  </method>
+  <method name="delete" start="2177" end="2215" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Deletes a file on the SFTP server."/>
+      <param type="string" variable="$path"/>
+      <param type="object" variable="$recursive">
+        <type full="phpseclib\Net\bool" namespace="phpseclib\Net" name="bool"/>
+      </param>
+      <return type="object">
+        <type full="phpseclib\Net\bool" namespace="phpseclib\Net" name="bool"/>
+      </return>
+      <access value="public"/>
+    </docblock>
+    <parameter name="path" byreference="false" type="{unknown}"/>
+    <parameter name="recursive" byreference="false" type="boolean" default="true"/>
+    <inline>
+      <comment value="http://tools.ietf.org/html/draft-ietf-secsh-filexfer-13#section-8.3" line="2188"/>
+      <comment value="if $status isn't SSH_FX_OK it's probably SSH_FX_NO_SUCH_FILE or SSH_FX_PERMISSION_DENIED" line="2199"/>
+    </inline>
+  </method>
+  <method name="_delete_recursive" start="2227" end="2284" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Recursively deletes directories on the SFTP server">Minimizes directory lookups and SSH_FXP_STATUS requests for speed.</description>
+      <param type="string" variable="$path"/>
+      <param type="int" variable="$i"/>
+      <return type="object">
+        <type full="phpseclib\Net\bool" namespace="phpseclib\Net" name="bool"/>
+      </return>
+      <access value="private"/>
+    </docblock>
+    <parameter name="path" byreference="false" type="{unknown}"/>
+    <parameter name="i" byreference="true" type="{unknown}"/>
+    <inline>
+      <comment value="normally $entries would have at least . and .. but it might not if the directories" line="2235"/>
+      <comment value="permissions didn't allow reading" line="2236"/>
+    </inline>
+  </method>
+  <method name="file_exists" start="2293" end="2307" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Checks whether a file or directory exists"/>
+      <param type="string" variable="$path"/>
+      <return type="object">
+        <type full="phpseclib\Net\bool" namespace="phpseclib\Net" name="bool"/>
+      </return>
+      <access value="public"/>
+    </docblock>
+    <parameter name="path" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="is_dir" start="2316" end="2323" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Tells whether the filename is a directory"/>
+      <param type="string" variable="$path"/>
+      <return type="object">
+        <type full="phpseclib\Net\bool" namespace="phpseclib\Net" name="bool"/>
+      </return>
+      <access value="public"/>
+    </docblock>
+    <parameter name="path" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="is_file" start="2332" end="2339" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Tells whether the filename is a regular file"/>
+      <param type="string" variable="$path"/>
+      <return type="object">
+        <type full="phpseclib\Net\bool" namespace="phpseclib\Net" name="bool"/>
+      </return>
+      <access value="public"/>
+    </docblock>
+    <parameter name="path" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="is_link" start="2348" end="2355" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Tells whether the filename is a symbolic link"/>
+      <param type="string" variable="$path"/>
+      <return type="object">
+        <type full="phpseclib\Net\bool" namespace="phpseclib\Net" name="bool"/>
+      </return>
+      <access value="public"/>
+    </docblock>
+    <parameter name="path" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="is_readable" start="2364" end="2383" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Tells whether a file exists and is readable"/>
+      <param type="string" variable="$path"/>
+      <return type="object">
+        <type full="phpseclib\Net\bool" namespace="phpseclib\Net" name="bool"/>
+      </return>
+      <access value="public"/>
+    </docblock>
+    <parameter name="path" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="is_writable" start="2392" end="2411" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Tells whether the filename is writable"/>
+      <param type="string" variable="$path"/>
+      <return type="object">
+        <type full="phpseclib\Net\bool" namespace="phpseclib\Net" name="bool"/>
+      </return>
+      <access value="public"/>
+    </docblock>
+    <parameter name="path" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="is_writeable" start="2422" end="2425" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Tells whether the filename is writeable">Alias of is_writable</description>
+      <param type="string" variable="$path"/>
+      <return type="object">
+        <type full="phpseclib\Net\bool" namespace="phpseclib\Net" name="bool"/>
+      </return>
+      <access value="public"/>
+    </docblock>
+    <parameter name="path" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="fileatime" start="2434" end="2437" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Gets last access time of file"/>
+      <param type="string" variable="$path"/>
+      <return type="mixed"/>
+      <access value="public"/>
+    </docblock>
+    <parameter name="path" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="filemtime" start="2446" end="2449" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Gets file modification time"/>
+      <param type="string" variable="$path"/>
+      <return type="mixed"/>
+      <access value="public"/>
+    </docblock>
+    <parameter name="path" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="fileperms" start="2458" end="2461" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Gets file permissions"/>
+      <param type="string" variable="$path"/>
+      <return type="mixed"/>
+      <access value="public"/>
+    </docblock>
+    <parameter name="path" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="fileowner" start="2470" end="2473" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Gets file owner"/>
+      <param type="string" variable="$path"/>
+      <return type="mixed"/>
+      <access value="public"/>
+    </docblock>
+    <parameter name="path" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="filegroup" start="2482" end="2485" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Gets file group"/>
+      <param type="string" variable="$path"/>
+      <return type="mixed"/>
+      <access value="public"/>
+    </docblock>
+    <parameter name="path" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="filesize" start="2494" end="2497" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Gets file size"/>
+      <param type="string" variable="$path"/>
+      <return type="mixed"/>
+      <access value="public"/>
+    </docblock>
+    <parameter name="path" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="filetype" start="2506" end="2529" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Gets file type"/>
+      <param type="string" variable="$path"/>
+      <return type="mixed"/>
+      <access value="public"/>
+    </docblock>
+    <parameter name="path" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="_get_stat_cache_prop" start="2541" end="2544" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Return a stat properity">Uses cache if appropriate.</description>
+      <param type="string" variable="$path"/>
+      <param type="string" variable="$prop"/>
+      <return type="mixed"/>
+      <access value="private"/>
+    </docblock>
+    <parameter name="path" byreference="false" type="{unknown}"/>
+    <parameter name="prop" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="_get_lstat_cache_prop" start="2556" end="2559" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Return an lstat properity">Uses cache if appropriate.</description>
+      <param type="string" variable="$path"/>
+      <param type="string" variable="$prop"/>
+      <return type="mixed"/>
+      <access value="private"/>
+    </docblock>
+    <parameter name="path" byreference="false" type="{unknown}"/>
+    <parameter name="prop" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="_get_xstat_cache_prop" start="2571" end="2590" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Return a stat or lstat properity">Uses cache if appropriate.</description>
+      <param type="string" variable="$path"/>
+      <param type="string" variable="$prop"/>
+      <return type="mixed"/>
+      <access value="private"/>
+    </docblock>
+    <parameter name="path" byreference="false" type="{unknown}"/>
+    <parameter name="prop" byreference="false" type="{unknown}"/>
+    <parameter name="type" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="rename" start="2600" end="2638" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Renames a file or a directory on the SFTP server"/>
+      <param type="string" variable="$oldname"/>
+      <param type="string" variable="$newname"/>
+      <return type="object">
+        <type full="phpseclib\Net\bool" namespace="phpseclib\Net" name="bool"/>
+      </return>
+      <access value="public"/>
+    </docblock>
+    <parameter name="oldname" byreference="false" type="{unknown}"/>
+    <parameter name="newname" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="http://tools.ietf.org/html/draft-ietf-secsh-filexfer-13#section-8.3" line="2612"/>
+      <comment value="if $status isn't SSH_FX_OK it's probably SSH_FX_NO_SUCH_FILE or SSH_FX_PERMISSION_DENIED" line="2624"/>
+      <comment value="don't move the stat cache entry over since this operation could very well change the" line="2631"/>
+      <comment value="atime and mtime attributes" line="2632"/>
+      <comment value="$this-&gt;_update_stat_cache($newname, $this-&gt;_query_stat_cache($oldname));" line="2633"/>
+    </inline>
+  </method>
+  <method name="_parseAttributes" start="2649" end="2692" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Parse Attributes">See '7.  File Attributes' of draft-ietf-secsh-filexfer-13 for more info.</description>
+      <param type="string" variable="$response"/>
+      <return type="array"/>
+      <access value="private"/>
+    </docblock>
+    <parameter name="response" byreference="true" type="{unknown}"/>
+    <inline>
+      <comment value="SFTPv4+ have a type field (a byte) that follows the above flag field" line="2653"/>
+    </inline>
+  </method>
+  <method name="_parseMode" start="2703" end="2733" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Attempt to identify the file type">Quoting the SFTP RFC, "Implementations MUST NOT send bits that are not defined" but they seem to anyway</description>
+      <param type="int" variable="$mode"/>
+      <return type="int"/>
+      <access value="private"/>
+    </docblock>
+    <parameter name="mode" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="values come from http://lxr.free-electrons.com/source/include/uapi/linux/stat.h#L12" line="2705"/>
+      <comment value="see, also, http://linux.die.net/man/2/stat" line="2706"/>
+    </inline>
+  </method>
+  <method name="_parseLongname" start="2750" end="2768" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Parse Longname">SFTPv3 doesn't provide any easy way of identifying a file type.  You could try to open
+a file as a directory and see if an error is returned or you could try to parse the
+SFTPv3-specific longname field of the SSH_FXP_NAME packet.  That's what this function does.
+The result is returned using the
+{@link http://tools.ietf.org/html/draft-ietf-secsh-filexfer-04#section-5.2 SFTPv4 type constants}.
+
+If the longname is in an unrecognized format bool(false) is returned.</description>
+      <param type="string" variable="$longname"/>
+      <return type="mixed"/>
+      <access value="private"/>
+    </docblock>
+    <parameter name="longname" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="http://en.wikipedia.org/wiki/Unix_file_types" line="2752"/>
+      <comment value="http://en.wikipedia.org/wiki/Filesystem_permissions#Notation_of_traditional_Unix_permissions" line="2753"/>
+    </inline>
+  </method>
+  <method name="_send_sftp_packet" start="2782" end="2808" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Sends SFTP Packets">See '6. General Packet Format' of draft-ietf-secsh-filexfer-13 for more info.</description>
+      <param type="int" variable="$type"/>
+      <param type="string" variable="$data"/>
+      <see value="self::_get_sftp_packet()"/>
+      <see value="self::_send_channel_packet()"/>
+      <return type="object">
+        <type full="phpseclib\Net\bool" namespace="phpseclib\Net" name="bool"/>
+      </return>
+      <access value="private"/>
+    </docblock>
+    <parameter name="type" byreference="false" type="{unknown}"/>
+    <parameter name="data" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="http://php.net/microtime#61838" line="2788"/>
+    </inline>
+  </method>
+  <method name="_get_sftp_packet" start="2823" end="2884" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Receives SFTP Packets">See '6. General Packet Format' of draft-ietf-secsh-filexfer-13 for more info.
+
+Incidentally, the number of SSH_MSG_CHANNEL_DATA messages has no bearing on the number of SFTP packets present.
+There can be one SSH_MSG_CHANNEL_DATA messages containing two SFTP packets or there can be two SSH_MSG_CHANNEL_DATA
+messages containing one SFTP packet.</description>
+      <see value="self::_send_sftp_packet()"/>
+      <return type="string"/>
+      <access value="private"/>
+    </docblock>
+    <inline>
+      <comment value="http://php.net/microtime#61838" line="2827"/>
+      <comment value="SFTP packet length" line="2829"/>
+      <comment value="SFTP packet type and data payload" line="2843"/>
+    </inline>
+  </method>
+  <method name="getSFTPLog" start="2894" end="2908" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Returns a log of the packets that have been sent and received.">Returns a string if NET_SFTP_LOGGING == NET_SFTP_LOG_COMPLEX, an array if NET_SFTP_LOGGING == NET_SFTP_LOG_SIMPLE and false if !defined('NET_SFTP_LOGGING')</description>
+      <access value="public"/>
+      <return description="or Array" type="string"/>
+    </docblock>
+  </method>
+  <method name="getSFTPErrors" start="2916" end="2919" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Returns all errors"/>
+      <return type="string"/>
+      <access value="public"/>
+    </docblock>
+  </method>
+  <method name="getLastSFTPError" start="2927" end="2930" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Returns the last error"/>
+      <return type="string"/>
+      <access value="public"/>
+    </docblock>
+  </method>
+  <method name="getSupportedVersions" start="2938" end="2945" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Get supported SFTP versions"/>
+      <return type="array"/>
+      <access value="public"/>
+    </docblock>
+  </method>
+  <method name="_disconnect" start="2954" end="2958" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Disconnect"/>
+      <param type="int" variable="$reason"/>
+      <return type="object">
+        <type full="phpseclib\Net\bool" namespace="phpseclib\Net" name="bool"/>
+      </return>
+      <access value="private"/>
+    </docblock>
+    <parameter name="reason" byreference="false" type="{unknown}"/>
+  </method>
+</class>

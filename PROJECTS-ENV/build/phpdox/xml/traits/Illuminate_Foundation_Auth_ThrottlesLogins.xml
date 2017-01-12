@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<trait xmlns="http://xml.phpdox.net/src" full="Illuminate\Foundation\Auth\ThrottlesLogins" namespace="Illuminate\Foundation\Auth" name="ThrottlesLogins" abstract="false" final="false" start="9" end="128">
+  <file path="/home/web/example/src/freegame_developer/vendor/laravel/framework/src/Illuminate/Foundation/Auth" file="ThrottlesLogins.php" realpath="/home/web/example/src/freegame_developer/vendor/laravel/framework/src/Illuminate/Foundation/Auth/ThrottlesLogins.php" size="3396" time="2016-02-24T15:13:21+00:00" unixtime="1456326801" sha1="67d32fea8971115e1bda5e853ada82dc32e53ba5" relative="freegame_developer/vendor/laravel/framework/src/Illuminate/Foundation/Auth/ThrottlesLogins.php"/>
+  <method name="hasTooManyLoginAttempts" start="17" end="23" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Determine if the user has too many failed login attempts."/>
+      <param type="object" variable="$request">
+        <type full="\Illuminate\Http\Request" namespace="\Illuminate\Http" name="Request"/>
+      </param>
+      <return type="object">
+        <type full="Illuminate\Foundation\Auth\bool" namespace="Illuminate\Foundation\Auth" name="bool"/>
+      </return>
+    </docblock>
+    <parameter name="request" byreference="false" type="object">
+      <type full="Illuminate\Http\Request" namespace="Illuminate\Http" name="Request"/>
+    </parameter>
+  </method>
+  <method name="incrementLoginAttempts" start="31" end="36" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Increment the login attempts for the user."/>
+      <param type="object" variable="$request">
+        <type full="\Illuminate\Http\Request" namespace="\Illuminate\Http" name="Request"/>
+      </param>
+      <return type="int"/>
+    </docblock>
+    <parameter name="request" byreference="false" type="object">
+      <type full="Illuminate\Http\Request" namespace="Illuminate\Http" name="Request"/>
+    </parameter>
+  </method>
+  <method name="retriesLeft" start="44" end="51" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Determine how many retries are left for the user."/>
+      <param type="object" variable="$request">
+        <type full="\Illuminate\Http\Request" namespace="\Illuminate\Http" name="Request"/>
+      </param>
+      <return type="int"/>
+    </docblock>
+    <parameter name="request" byreference="false" type="object">
+      <type full="Illuminate\Http\Request" namespace="Illuminate\Http" name="Request"/>
+    </parameter>
+  </method>
+  <method name="sendLockoutResponse" start="59" end="70" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Redirect the user after determining they are locked out."/>
+      <param type="object" variable="$request">
+        <type full="\Illuminate\Http\Request" namespace="\Illuminate\Http" name="Request"/>
+      </param>
+      <return type="object">
+        <type full="\Illuminate\Http\RedirectResponse" namespace="\Illuminate\Http" name="RedirectResponse"/>
+      </return>
+    </docblock>
+    <parameter name="request" byreference="false" type="object">
+      <type full="Illuminate\Http\Request" namespace="Illuminate\Http" name="Request"/>
+    </parameter>
+  </method>
+  <method name="getLockoutErrorMessage" start="78" end="83" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Get the login lockout error message."/>
+      <param type="int" variable="$seconds"/>
+      <return type="string"/>
+    </docblock>
+    <parameter name="seconds" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="clearLoginAttempts" start="91" end="96" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Clear the login locks for the given user credentials."/>
+      <param type="object" variable="$request">
+        <type full="\Illuminate\Http\Request" namespace="\Illuminate\Http" name="Request"/>
+      </param>
+      <return type="object">
+        <type full="Illuminate\Foundation\Auth\void" namespace="Illuminate\Foundation\Auth" name="void"/>
+      </return>
+    </docblock>
+    <parameter name="request" byreference="false" type="object">
+      <type full="Illuminate\Http\Request" namespace="Illuminate\Http" name="Request"/>
+    </parameter>
+  </method>
+  <method name="getThrottleKey" start="104" end="107" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Get the throttle key for the given request."/>
+      <param type="object" variable="$request">
+        <type full="\Illuminate\Http\Request" namespace="\Illuminate\Http" name="Request"/>
+      </param>
+      <return type="string"/>
+    </docblock>
+    <parameter name="request" byreference="false" type="object">
+      <type full="Illuminate\Http\Request" namespace="Illuminate\Http" name="Request"/>
+    </parameter>
+  </method>
+  <method name="maxLoginAttempts" start="114" end="117" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Get the maximum number of login attempts for delaying further attempts."/>
+      <return type="int"/>
+    </docblock>
+  </method>
+  <method name="lockoutTime" start="124" end="127" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="The number of seconds to delay further login attempts."/>
+      <return type="int"/>
+    </docblock>
+  </method>
+</trait>

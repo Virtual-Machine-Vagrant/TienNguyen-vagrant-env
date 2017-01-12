@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="phpseclib\Crypt\Blowfish" namespace="phpseclib\Crypt" name="Blowfish" abstract="false" final="false" start="48" end="574">
+  <file path="/home/web/example/src/freegame_developer/vendor/phpseclib/phpseclib/phpseclib/Crypt" file="Blowfish.php" realpath="/home/web/example/src/freegame_developer/vendor/phpseclib/phpseclib/phpseclib/Crypt/Blowfish.php" size="26213" time="2016-10-04T00:57:04+00:00" unixtime="1475542624" sha1="50fc015310f61e9720511b22abe71126d2623edc" relative="freegame_developer/vendor/phpseclib/phpseclib/phpseclib/Crypt/Blowfish.php"/>
+  <docblock>
+    <description compact="Pure-PHP implementation of Blowfish."/>
+    <package value="Blowfish"/>
+    <author value="Jim Wigginton &lt;terrafrost@php.net&gt;"/>
+    <author value="Hans-Juergen Petrich &lt;petrich@tronic-media.com&gt;"/>
+    <access value="public"/>
+  </docblock>
+  <extends full="phpseclib\Crypt\Base" namespace="phpseclib\Crypt" name="Base"/>
+  <member name="block_size" type="integer" default="8" visibility="public" static="false" line="57">
+    <docblock>
+      <description compact="Block Length of the cipher"/>
+      <see value="\phpseclib\Crypt\Base::block_size"/>
+      <var type="int"/>
+      <access value="private"/>
+    </docblock>
+  </member>
+  <member name="cipher_name_mcrypt" type="string" default="'blowfish'" visibility="public" static="false" line="66">
+    <docblock>
+      <description compact="The mcrypt specific name of the cipher"/>
+      <see value="\phpseclib\Crypt\Base::cipher_name_mcrypt"/>
+      <var type="string"/>
+      <access value="private"/>
+    </docblock>
+  </member>
+  <member name="cfb_init_len" type="integer" default="500" visibility="public" static="false" line="75">
+    <docblock>
+      <description compact="Optimizing value while CFB-encrypting"/>
+      <see value="\phpseclib\Crypt\Base::cfb_init_len"/>
+      <var type="int"/>
+      <access value="private"/>
+    </docblock>
+  </member>
+  <member name="sbox0" type="array" default="" visibility="public" static="false" line="85">
+    <docblock>
+      <description compact="The fixed subkeys boxes ($sbox0 - $sbox3) with 256 entries each">S-Box 0</description>
+      <access value="private"/>
+      <var type="array"/>
+    </docblock>
+  </member>
+  <member name="sbox1" type="array" default="" visibility="public" static="false" line="126">
+    <docblock>
+      <description compact="S-Box 1"/>
+      <access value="private"/>
+      <var type="array"/>
+    </docblock>
+  </member>
+  <member name="sbox2" type="array" default="" visibility="public" static="false" line="167">
+    <docblock>
+      <description compact="S-Box 2"/>
+      <access value="private"/>
+      <var type="array"/>
+    </docblock>
+  </member>
+  <member name="sbox3" type="array" default="" visibility="public" static="false" line="208">
+    <docblock>
+      <description compact="S-Box 3"/>
+      <access value="private"/>
+      <var type="array"/>
+    </docblock>
+  </member>
+  <member name="parray" type="array" default="" visibility="public" static="false" line="249">
+    <docblock>
+      <description compact="P-Array consists of 18 32-bit subkeys"/>
+      <var type="array"/>
+      <access value="private"/>
+    </docblock>
+  </member>
+  <member name="bctx" visibility="public" static="false" line="263">
+    <docblock>
+      <description compact="The BCTX-working Array">Holds the expanded key [p] and the key-depended s-boxes [sb]</description>
+      <var type="array"/>
+      <access value="private"/>
+    </docblock>
+  </member>
+  <member name="kl" visibility="public" static="false" line="271">
+    <docblock>
+      <description compact="Holds the last used key"/>
+      <var type="array"/>
+      <access value="private"/>
+    </docblock>
+  </member>
+  <member name="key_length" type="integer" default="16" visibility="public" static="false" line="284">
+    <docblock>
+      <description compact="The Key Length (in bytes)"/>
+      <see value="\phpseclib\Crypt\Base::setKeyLength()"/>
+      <var type="int"/>
+      <access value="private"/>
+      <internal>The max value is 256 / 8 = 32, the min value is 128 / 8 = 16.  Exists in conjunction with $Nk</internal>
+    </docblock>
+  </member>
+  <method name="setKeyLength" start="294" end="305" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Sets the key length.">Key lengths can be between 32 and 448 bits.</description>
+      <access value="public"/>
+      <param type="int" variable="$length"/>
+    </docblock>
+    <parameter name="length" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="isValidEngine" start="317" end="328" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Test for engine validity">This is mainly just a wrapper to set things up for \phpseclib\Crypt\Base::isValidEngine()</description>
+      <see value="\phpseclib\Crypt\Base::isValidEngine()"/>
+      <param type="int" variable="$engine"/>
+      <access value="public"/>
+      <return type="object">
+        <type full="phpseclib\Crypt\bool" namespace="phpseclib\Crypt" name="bool"/>
+      </return>
+    </docblock>
+    <parameter name="engine" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="_setupKey" start="336" end="384" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Setup the key (expansion)"/>
+      <see value="\phpseclib\Crypt\Base::_setupKey()"/>
+      <access value="private"/>
+    </docblock>
+    <inline>
+      <comment value="key-expanding p[] and S-Box building sb[]" line="344"/>
+      <comment value="unpack binary string in unsigned chars" line="355"/>
+      <comment value="encrypt the zero-string, replace P1 and P2 with the encrypted data," line="369"/>
+      <comment value="encrypt P3 and P4 with the new P1 and P2, do it with all P-array and subkeys" line="370"/>
+    </inline>
+  </method>
+  <method name="_encryptBlock" start="393" end="420" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Encrypts a block"/>
+      <access value="private"/>
+      <param type="string" variable="$in"/>
+      <return type="string"/>
+    </docblock>
+    <parameter name="in" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="extract($this-&gt;bctx[&quot;sb&quot;], EXTR_PREFIX_ALL, &quot;sb&quot;); // slower" line="396"/>
+    </inline>
+  </method>
+  <method name="_decryptBlock" start="429" end="455" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Decrypts a block"/>
+      <access value="private"/>
+      <param type="string" variable="$in"/>
+      <return type="string"/>
+    </docblock>
+    <parameter name="in" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="_setupInlineCrypt" start="463" end="573" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Setup the performance-optimized function for de/encrypt()"/>
+      <see value="\phpseclib\Crypt\Base::_setupInlineCrypt()"/>
+      <access value="private"/>
+    </docblock>
+    <inline>
+      <comment value="We create max. 10 hi-optimized code for memory reason. Means: For each $key one ultra fast inline-crypt function." line="467"/>
+      <comment value="(Currently, for Blowfish, one generated $lambda_function cost on php5.5@32bit ~100kb unfreeable mem and ~180kb on php5.5@64bit)" line="468"/>
+      <comment value="After that, we'll still create very fast optimized code but not the hi-ultimative code, for each $mode one." line="469"/>
+      <comment value="Generation of a unique hash for our generated code" line="472"/>
+    </inline>
+  </method>
+</class>

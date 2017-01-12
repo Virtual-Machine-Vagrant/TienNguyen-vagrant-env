@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="MongoDB\Operation\InsertMany" namespace="MongoDB\Operation" name="InsertMany" abstract="false" final="false" start="18" end="120">
+  <file path="/home/web/example/src/freegame_developer/vendor/mongodb/mongodb/src/Operation" file="InsertMany.php" realpath="/home/web/example/src/freegame_developer/vendor/mongodb/mongodb/src/Operation/InsertMany.php" size="4311" time="2016-09-23T19:38:29+00:00" unixtime="1474659509" sha1="9cb3cf3267e1791ff6f910719dc2c6728ebef213" relative="freegame_developer/vendor/mongodb/mongodb/src/Operation/InsertMany.php"/>
+  <docblock>
+    <description compact="Operation for inserting multiple documents with the insert command."/>
+    <api/>
+    <see value="MongoDB\Collection::insertMany()"/>
+    <see value="http://docs.mongodb.org/manual/reference/command/insert/"/>
+  </docblock>
+  <implements full="MongoDB\Operation\Executable" namespace="MongoDB\Operation" name="Executable"/>
+  <member name="wireVersionForDocumentLevelValidation" type="integer" default="4" visibility="private" static="true" line="20"/>
+  <member name="databaseName" visibility="private" static="false" line="22"/>
+  <member name="collectionName" visibility="private" static="false" line="23"/>
+  <member name="documents" visibility="private" static="false" line="24"/>
+  <member name="options" visibility="private" static="false" line="25"/>
+  <constructor name="__construct" start="47" end="85" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Constructs an insert command.">Supported options:
+
+ * bypassDocumentValidation (boolean): If true, allows the write to opt
+   out of document level validation.
+
+ * ordered (boolean): If true, when an insert fails, return without
+   performing the remaining writes. If false, when a write fails,
+   continue with the remaining writes, if any. The default is true.
+
+ * writeConcern (MongoDB\Driver\WriteConcern): Write concern.</description>
+      <param description="Database name" type="string" variable="$databaseName"/>
+      <param description="Collection name" type="string" variable="$collectionName"/>
+      <param description="List of documents to insert" type="array" variable="$documents" of="object">
+        <type full="MongoDB\Operation\array[]|object" namespace="MongoDB\Operation" name="array[]|object"/>
+      </param>
+      <param description="Command options" type="array" variable="$options"/>
+      <throws type="object">
+        <type full="MongoDB\Exception\InvalidArgumentException" namespace="MongoDB\Exception" name="InvalidArgumentException"/>
+      </throws>
+    </docblock>
+    <parameter name="databaseName" byreference="false" type="{unknown}"/>
+    <parameter name="collectionName" byreference="false" type="{unknown}"/>
+    <parameter name="documents" byreference="false" type="array"/>
+    <parameter name="options" byreference="false" type="array" default=""/>
+  </constructor>
+  <method name="execute" start="94" end="119" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Execute the operation."/>
+      <see value="Executable::execute()"/>
+      <param type="object" variable="$server">
+        <type full="MongoDB\Driver\Server" namespace="MongoDB\Driver" name="Server"/>
+      </param>
+      <return type="object">
+        <type full="MongoDB\InsertManyResult" namespace="MongoDB" name="InsertManyResult"/>
+      </return>
+    </docblock>
+    <parameter name="server" byreference="false" type="object">
+      <type full="MongoDB\Driver\Server" namespace="MongoDB\Driver" name="Server"/>
+    </parameter>
+  </method>
+</class>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="PhpSpec\Loader\Transformer\TypeHintRewriter" namespace="PhpSpec\Loader\Transformer" name="TypeHintRewriter" abstract="false" final="true" start="19" end="43">
+  <file path="/home/web/example/src/freegame_developer/vendor/phpspec/phpspec/src/PhpSpec/Loader/Transformer" file="TypeHintRewriter.php" realpath="/home/web/example/src/freegame_developer/vendor/phpspec/phpspec/src/PhpSpec/Loader/Transformer/TypeHintRewriter.php" size="975" time="2016-01-01T10:17:54+00:00" unixtime="1451643474" sha1="592bd82192d4aa890523cb10841e4fa11b5d97dc" relative="freegame_developer/vendor/phpspec/phpspec/src/PhpSpec/Loader/Transformer/TypeHintRewriter.php"/>
+  <implements full="PhpSpec\Loader\SpecTransformer" namespace="PhpSpec\Loader" name="SpecTransformer"/>
+  <member name="rewriter" visibility="private" static="false" line="24">
+    <docblock>
+      <description/>
+      <var type="object">
+        <type full="PhpSpec\CodeAnalysis\TypeHintRewriter" namespace="PhpSpec\CodeAnalysis" name="TypeHintRewriter"/>
+      </var>
+    </docblock>
+  </member>
+  <constructor name="__construct" start="29" end="32" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <param type="object" variable="$rewriter">
+        <type full="PhpSpec\CodeAnalysis\TypeHintRewriter" namespace="PhpSpec\CodeAnalysis" name="TypeHintRewriter"/>
+      </param>
+    </docblock>
+    <parameter name="rewriter" byreference="false" type="object">
+      <type full="PhpSpec\CodeAnalysis\TypeHintRewriter" namespace="PhpSpec\CodeAnalysis" name="TypeHintRewriter"/>
+    </parameter>
+  </constructor>
+  <method name="transform" start="39" end="42" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <param type="string" variable="$spec"/>
+      <return type="string"/>
+    </docblock>
+    <parameter name="spec" byreference="false" type="{unknown}"/>
+  </method>
+</class>

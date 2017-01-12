@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="PhpParser\Node\Expr\BinaryOp\Coalesce" namespace="PhpParser\Node\Expr\BinaryOp" name="Coalesce" abstract="false" final="false" start="7" end="9">
+  <file path="/home/web/example/src/freegame_developer/vendor/nikic/php-parser/lib/PhpParser/Node/Expr/BinaryOp" file="Coalesce.php" realpath="/home/web/example/src/freegame_developer/vendor/nikic/php-parser/lib/PhpParser/Node/Expr/BinaryOp/Coalesce.php" size="119" time="2016-09-16T12:04:44+00:00" unixtime="1474027484" sha1="51a9011a175a416733cdb9d11a3390ae728d5424" relative="freegame_developer/vendor/nikic/php-parser/lib/PhpParser/Node/Expr/BinaryOp/Coalesce.php"/>
+  <extends full="PhpParser\Node\Expr\BinaryOp" namespace="PhpParser\Node\Expr" name="BinaryOp"/>
+</class>

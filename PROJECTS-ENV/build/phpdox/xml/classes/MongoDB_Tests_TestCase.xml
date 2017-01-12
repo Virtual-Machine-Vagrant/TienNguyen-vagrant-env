@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="MongoDB\Tests\TestCase" namespace="MongoDB\Tests" name="TestCase" abstract="true" final="false" start="11" end="150">
+  <file path="/home/web/example/src/freegame_developer/vendor/mongodb/mongodb/tests" file="TestCase.php" realpath="/home/web/example/src/freegame_developer/vendor/mongodb/mongodb/tests/TestCase.php" size="3446" time="2016-09-23T19:38:29+00:00" unixtime="1474659509" sha1="be5627d10c0acde53d204b33ba9a859116a7b06a" relative="freegame_developer/vendor/mongodb/mongodb/tests/TestCase.php"/>
+  <extends full="PHPUnit_Framework_TestCase" namespace="" name="PHPUnit_Framework_TestCase"/>
+  <method name="provideInvalidDocumentValues" start="13" end="16" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="getCollectionName" start="23" end="28" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Return the test collection name."/>
+      <return type="string"/>
+    </docblock>
+  </method>
+  <method name="getDatabaseName" start="35" end="38" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Return the test database name."/>
+      <return type="string"/>
+    </docblock>
+  </method>
+  <method name="getInvalidArrayValues" start="45" end="48" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Return a list of invalid array values."/>
+      <return type="array"/>
+    </docblock>
+  </method>
+  <method name="getInvalidBooleanValues" start="55" end="58" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Return a list of invalid boolean values."/>
+      <return type="array"/>
+    </docblock>
+  </method>
+  <method name="getInvalidDocumentValues" start="65" end="68" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Return a list of invalid document values."/>
+      <return type="array"/>
+    </docblock>
+  </method>
+  <method name="getInvalidIntegerValues" start="75" end="78" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Return a list of invalid integer values."/>
+      <return type="array"/>
+    </docblock>
+  </method>
+  <method name="getInvalidReadConcernValues" start="85" end="88" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Return a list of invalid ReadPreference values."/>
+      <return type="array"/>
+    </docblock>
+  </method>
+  <method name="getInvalidReadPreferenceValues" start="95" end="98" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Return a list of invalid ReadPreference values."/>
+      <return type="array"/>
+    </docblock>
+  </method>
+  <method name="getInvalidStringValues" start="105" end="108" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Return a list of invalid string values."/>
+      <return type="array"/>
+    </docblock>
+  </method>
+  <method name="getInvalidWriteConcernValues" start="115" end="118" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Return a list of invalid WriteConcern values."/>
+      <return type="array"/>
+    </docblock>
+  </method>
+  <method name="getNamespace" start="125" end="128" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Return the test namespace."/>
+      <return type="string"/>
+    </docblock>
+  </method>
+  <method name="getUri" start="135" end="138" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Return the connection URI."/>
+      <return type="string"/>
+    </docblock>
+  </method>
+  <method name="wrapValuesForDataProvider" start="146" end="149" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Wrap a list of values for use as a single-argument data provider."/>
+      <param description="List of values" type="array" variable="$values"/>
+      <return type="array"/>
+    </docblock>
+    <parameter name="values" byreference="false" type="array"/>
+  </method>
+</class>

@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<trait xmlns="http://xml.phpdox.net/src" full="Jenssegers\Mongodb\Eloquent\HybridRelations" namespace="Jenssegers\Mongodb\Eloquent" name="HybridRelations" abstract="false" final="false" start="12" end="256">
+  <file path="/home/web/example/src/freegame_developer/vendor/jenssegers/mongodb/src/Jenssegers/Mongodb/Eloquent" file="HybridRelations.php" realpath="/home/web/example/src/freegame_developer/vendor/jenssegers/mongodb/src/Jenssegers/Mongodb/Eloquent/HybridRelations.php" size="9772" time="2016-10-07T08:39:24+00:00" unixtime="1475829564" sha1="b6e844f2824ede006b3aef43b8147ab235db1dfd" relative="freegame_developer/vendor/jenssegers/mongodb/src/Jenssegers/Mongodb/Eloquent/HybridRelations.php"/>
+  <method name="hasOne" start="22" end="36" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Define a one-to-one relationship."/>
+      <param type="string" variable="$related"/>
+      <param type="string" variable="$foreignKey"/>
+      <param type="string" variable="$localKey"/>
+      <return type="object">
+        <type full="\Illuminate\Database\Eloquent\Relations\HasOne" namespace="\Illuminate\Database\Eloquent\Relations" name="HasOne"/>
+      </return>
+    </docblock>
+    <parameter name="related" byreference="false" type="{unknown}"/>
+    <parameter name="foreignKey" byreference="false" type="{unknown}" default="" constant="null"/>
+    <parameter name="localKey" byreference="false" type="{unknown}" default="" constant="null"/>
+    <inline>
+      <comment value="Check if it is a relation with an original model." line="24"/>
+    </inline>
+  </method>
+  <method name="morphOne" start="48" end="64" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Define a polymorphic one-to-one relationship."/>
+      <param type="string" variable="$related"/>
+      <param type="string" variable="$name"/>
+      <param type="string" variable="$type"/>
+      <param type="string" variable="$id"/>
+      <param type="string" variable="$localKey"/>
+      <return type="object">
+        <type full="\Illuminate\Database\Eloquent\Relations\MorphOne" namespace="\Illuminate\Database\Eloquent\Relations" name="MorphOne"/>
+      </return>
+    </docblock>
+    <parameter name="related" byreference="false" type="{unknown}"/>
+    <parameter name="name" byreference="false" type="{unknown}"/>
+    <parameter name="type" byreference="false" type="{unknown}" default="" constant="null"/>
+    <parameter name="id" byreference="false" type="{unknown}" default="" constant="null"/>
+    <parameter name="localKey" byreference="false" type="{unknown}" default="" constant="null"/>
+    <inline>
+      <comment value="Check if it is a relation with an original model." line="50"/>
+    </inline>
+  </method>
+  <method name="hasMany" start="74" end="88" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Define a one-to-many relationship."/>
+      <param type="string" variable="$related"/>
+      <param type="string" variable="$foreignKey"/>
+      <param type="string" variable="$localKey"/>
+      <return type="object">
+        <type full="\Illuminate\Database\Eloquent\Relations\HasMany" namespace="\Illuminate\Database\Eloquent\Relations" name="HasMany"/>
+      </return>
+    </docblock>
+    <parameter name="related" byreference="false" type="{unknown}"/>
+    <parameter name="foreignKey" byreference="false" type="{unknown}" default="" constant="null"/>
+    <parameter name="localKey" byreference="false" type="{unknown}" default="" constant="null"/>
+    <inline>
+      <comment value="Check if it is a relation with an original model." line="76"/>
+    </inline>
+  </method>
+  <method name="morphMany" start="100" end="119" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Define a polymorphic one-to-many relationship."/>
+      <param type="string" variable="$related"/>
+      <param type="string" variable="$name"/>
+      <param type="string" variable="$type"/>
+      <param type="string" variable="$id"/>
+      <param type="string" variable="$localKey"/>
+      <return type="object">
+        <type full="\Illuminate\Database\Eloquent\Relations\MorphMany" namespace="\Illuminate\Database\Eloquent\Relations" name="MorphMany"/>
+      </return>
+    </docblock>
+    <parameter name="related" byreference="false" type="{unknown}"/>
+    <parameter name="name" byreference="false" type="{unknown}"/>
+    <parameter name="type" byreference="false" type="{unknown}" default="" constant="null"/>
+    <parameter name="id" byreference="false" type="{unknown}" default="" constant="null"/>
+    <parameter name="localKey" byreference="false" type="{unknown}" default="" constant="null"/>
+    <inline>
+      <comment value="Check if it is a relation with an original model." line="102"/>
+      <comment value="Here we will gather up the morph type and ID for the relationship so that we" line="109"/>
+      <comment value="can properly query the intermediate table of a relation. Finally, we will" line="110"/>
+      <comment value="get the table and create the relationship instances for the developers." line="111"/>
+    </inline>
+  </method>
+  <method name="belongsTo" start="130" end="163" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Define an inverse one-to-one or many relationship."/>
+      <param type="string" variable="$related"/>
+      <param type="string" variable="$foreignKey"/>
+      <param type="string" variable="$otherKey"/>
+      <param type="string" variable="$relation"/>
+      <return type="object">
+        <type full="\Illuminate\Database\Eloquent\Relations\BelongsTo" namespace="\Illuminate\Database\Eloquent\Relations" name="BelongsTo"/>
+      </return>
+    </docblock>
+    <parameter name="related" byreference="false" type="{unknown}"/>
+    <parameter name="foreignKey" byreference="false" type="{unknown}" default="" constant="null"/>
+    <parameter name="otherKey" byreference="false" type="{unknown}" default="" constant="null"/>
+    <parameter name="relation" byreference="false" type="{unknown}" default="" constant="null"/>
+    <inline>
+      <comment value="If no relation name was given, we will use this debug backtrace to extract" line="132"/>
+      <comment value="the calling method's name and use that as the relationship name as most" line="133"/>
+      <comment value="of the time this will be what we desire to use for the relationships." line="134"/>
+      <comment value="Check if it is a relation with an original model." line="141"/>
+      <comment value="If no foreign key was supplied, we can use a backtrace to guess the proper" line="146"/>
+      <comment value="foreign key name by using the name of the relationship function, which" line="147"/>
+      <comment value="when combined with an &quot;_id&quot; should conventionally match the columns." line="148"/>
+      <comment value="Once we have the foreign key names, we'll just create a new Eloquent query" line="155"/>
+      <comment value="for the related models and returns the relationship instance which will" line="156"/>
+      <comment value="actually be responsible for retrieving and hydrating every relations." line="157"/>
+    </inline>
+  </method>
+  <method name="morphTo" start="173" end="207" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Define a polymorphic, inverse one-to-one or many relationship."/>
+      <param type="string" variable="$name"/>
+      <param type="string" variable="$type"/>
+      <param type="string" variable="$id"/>
+      <return type="object">
+        <type full="\Illuminate\Database\Eloquent\Relations\MorphTo" namespace="\Illuminate\Database\Eloquent\Relations" name="MorphTo"/>
+      </return>
+    </docblock>
+    <parameter name="name" byreference="false" type="{unknown}" default="" constant="null"/>
+    <parameter name="type" byreference="false" type="{unknown}" default="" constant="null"/>
+    <parameter name="id" byreference="false" type="{unknown}" default="" constant="null"/>
+    <inline>
+      <comment value="If no name is provided, we will use the backtrace to get the function name" line="175"/>
+      <comment value="since that is most likely the name of the polymorphic interface. We can" line="176"/>
+      <comment value="use that to get both the class and foreign key that will be utilized." line="177"/>
+      <comment value="If the type value is null it is probably safe to assume we're eager loading" line="186"/>
+      <comment value="the relationship. When that is the case we will pass in a dummy query as" line="187"/>
+      <comment value="there are multiple types in the morph and we can't use single queries." line="188"/>
+    </inline>
+  </method>
+  <method name="belongsToMany" start="219" end="255" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Define a many-to-many relationship."/>
+      <param type="string" variable="$related"/>
+      <param type="string" variable="$collection"/>
+      <param type="string" variable="$foreignKey"/>
+      <param type="string" variable="$otherKey"/>
+      <param type="string" variable="$relation"/>
+      <return type="object">
+        <type full="\Illuminate\Database\Eloquent\Relations\BelongsToMany" namespace="\Illuminate\Database\Eloquent\Relations" name="BelongsToMany"/>
+      </return>
+    </docblock>
+    <parameter name="related" byreference="false" type="{unknown}"/>
+    <parameter name="collection" byreference="false" type="{unknown}" default="" constant="null"/>
+    <parameter name="foreignKey" byreference="false" type="{unknown}" default="" constant="null"/>
+    <parameter name="otherKey" byreference="false" type="{unknown}" default="" constant="null"/>
+    <parameter name="relation" byreference="false" type="{unknown}" default="" constant="null"/>
+    <inline>
+      <comment value="If no relationship name was passed, we will pull backtraces to get the" line="221"/>
+      <comment value="name of the calling function. We will use that function name as the" line="222"/>
+      <comment value="title of this relation since that is a great convention to apply." line="223"/>
+      <comment value="Check if it is a relation with an original model." line="228"/>
+      <comment value="First, we'll need to determine the foreign key and &quot;other key&quot; for the" line="233"/>
+      <comment value="relationship. Once we have determined the keys we'll make the query" line="234"/>
+      <comment value="instances as well as the relationship instances we need for this." line="235"/>
+      <comment value="If no table name was provided, we can guess it by concatenating the two" line="242"/>
+      <comment value="models using underscores in alphabetical order. The two model names" line="243"/>
+      <comment value="are transformed to snake case from their default CamelCase also." line="244"/>
+      <comment value="Now we're ready to create a new query builder for the related model and" line="249"/>
+      <comment value="the relationship instances for the relation. The relations will set" line="250"/>
+      <comment value="appropriate query constraint and entirely manages the hydrations." line="251"/>
+    </inline>
+  </method>
+</trait>

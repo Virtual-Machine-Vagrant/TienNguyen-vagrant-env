@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="Squiz_Sniffs_NamingConventions_ValidVariableNameSniff" namespace="" name="Squiz_Sniffs_NamingConventions_ValidVariableNameSniff" abstract="false" final="false" start="34" end="234">
+  <file path="/home/web/example/src/freegame_developer/vendor/squizlabs/php_codesniffer/CodeSniffer/Standards/Squiz/Sniffs/NamingConventions" file="ValidVariableNameSniff.php" realpath="/home/web/example/src/freegame_developer/vendor/squizlabs/php_codesniffer/CodeSniffer/Standards/Squiz/Sniffs/NamingConventions/ValidVariableNameSniff.php" size="9271" time="2016-01-19T23:39:10+00:00" unixtime="1453246750" sha1="71ff7cefb437aa932876d922e0ebb19c81f951cf" relative="freegame_developer/vendor/squizlabs/php_codesniffer/CodeSniffer/Standards/Squiz/Sniffs/NamingConventions/ValidVariableNameSniff.php"/>
+  <docblock>
+    <description compact="Squiz_Sniffs_NamingConventions_ValidVariableNameSniff.">Checks the naming of variables and member variables.</description>
+    <category value="PHP"/>
+    <package value="PHP_CodeSniffer"/>
+    <author value="Greg Sherwood &lt;gsherwood@squiz.net&gt;"/>
+    <author value="Marc McIntyre &lt;mmcintyre@squiz.net&gt;"/>
+    <copyright value="2006-2014 Squiz Pty Ltd (ABN 77 084 670 600)"/>
+    <license name="https://github.com/squizlabs/PHP_CodeSniffer/blob/master/licence.txt BSD Licence"/>
+    <version value="Release: @package_version@"/>
+    <link value="http://pear.php.net/package/PHP_CodeSniffer"/>
+  </docblock>
+  <extends full="PHP_CodeSniffer_Standards_AbstractVariableSniff" namespace="" name="PHP_CodeSniffer_Standards_AbstractVariableSniff"/>
+  <member name="_ignore" type="array" default="" visibility="private" static="false" line="42">
+    <docblock>
+      <description compact="Tokens to ignore so that we can find a DOUBLE_COLON."/>
+      <var type="array"/>
+    </docblock>
+  </member>
+  <method name="processVariable" start="57" end="133" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Processes this test, when one of its tokens is encountered."/>
+      <param description="The file being scanned." type="object" variable="$phpcsFile">
+        <type full="PHP_CodeSniffer_File" namespace="" name="PHP_CodeSniffer_File"/>
+      </param>
+      <param description="The position of the current token in the" type="int" variable="$stackPtr">stack passed in $tokens.</param>
+      <return type="object">
+        <type full="void" namespace="" name="void"/>
+      </return>
+    </docblock>
+    <parameter name="phpcsFile" byreference="false" type="object">
+      <type full="PHP_CodeSniffer_File" namespace="" name="PHP_CodeSniffer_File"/>
+    </parameter>
+    <parameter name="stackPtr" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="If it's a php reserved var, then its ok." line="77"/>
+      <comment value="end if" line="106"/>
+      <comment value="There is no way for us to know if the var is public or private," line="108"/>
+      <comment value="so we have to ignore a leading underscore if there is one and just" line="109"/>
+      <comment value="check the main part of the variable name." line="110"/>
+    </inline>
+  </method>
+  <method name="processMemberVar" start="145" end="185" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Processes class member variables."/>
+      <param description="The file being scanned." type="object" variable="$phpcsFile">
+        <type full="PHP_CodeSniffer_File" namespace="" name="PHP_CodeSniffer_File"/>
+      </param>
+      <param description="The position of the current token in the" type="int" variable="$stackPtr">stack passed in $tokens.</param>
+      <return type="object">
+        <type full="void" namespace="" name="void"/>
+      </return>
+    </docblock>
+    <parameter name="phpcsFile" byreference="false" type="object">
+      <type full="PHP_CodeSniffer_File" namespace="" name="PHP_CodeSniffer_File"/>
+    </parameter>
+    <parameter name="stackPtr" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="processVariableInString" start="197" end="231" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Processes the variable found within a double quoted string."/>
+      <param description="The file being scanned." type="object" variable="$phpcsFile">
+        <type full="PHP_CodeSniffer_File" namespace="" name="PHP_CodeSniffer_File"/>
+      </param>
+      <param description="The position of the double quoted" type="int" variable="$stackPtr">string.</param>
+      <return type="object">
+        <type full="void" namespace="" name="void"/>
+      </return>
+    </docblock>
+    <parameter name="phpcsFile" byreference="false" type="object">
+      <type full="PHP_CodeSniffer_File" namespace="" name="PHP_CodeSniffer_File"/>
+    </parameter>
+    <parameter name="stackPtr" byreference="false" type="{unknown}"/>
+  </method>
+</class>

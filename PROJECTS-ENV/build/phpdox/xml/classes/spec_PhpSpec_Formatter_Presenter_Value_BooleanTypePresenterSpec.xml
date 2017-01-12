@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="spec\PhpSpec\Formatter\Presenter\Value\BooleanTypePresenterSpec" namespace="spec\PhpSpec\Formatter\Presenter\Value" name="BooleanTypePresenterSpec" abstract="false" final="false" start="8" end="30">
+  <file path="/home/web/example/src/freegame_developer/vendor/phpspec/phpspec/spec/PhpSpec/Formatter/Presenter/Value" file="BooleanTypePresenterSpec.php" realpath="/home/web/example/src/freegame_developer/vendor/phpspec/phpspec/spec/PhpSpec/Formatter/Presenter/Value/BooleanTypePresenterSpec.php" size="718" time="2016-01-01T10:17:54+00:00" unixtime="1451643474" sha1="87e769a1f0bf564bfc4a038e665cf533851f3216" relative="freegame_developer/vendor/phpspec/phpspec/spec/PhpSpec/Formatter/Presenter/Value/BooleanTypePresenterSpec.php"/>
+  <extends full="PhpSpec\ObjectBehavior" namespace="PhpSpec" name="ObjectBehavior"/>
+  <method name="it_is_a_type_presenter" start="10" end="13" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="it_should_support_boolean_values" start="15" end="19" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="it_should_present_a_true_boolean_as_a_string" start="21" end="24" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="it_should_present_a_false_boolean_as_a_string" start="26" end="29" abstract="false" final="false" static="false" visibility="public"/>
+</class>

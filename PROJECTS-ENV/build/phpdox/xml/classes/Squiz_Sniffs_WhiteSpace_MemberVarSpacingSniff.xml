@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="Squiz_Sniffs_WhiteSpace_MemberVarSpacingSniff" namespace="" name="Squiz_Sniffs_WhiteSpace_MemberVarSpacingSniff" abstract="false" final="false" start="32" end="161">
+  <file path="/home/web/example/src/freegame_developer/vendor/squizlabs/php_codesniffer/CodeSniffer/Standards/Squiz/Sniffs/WhiteSpace" file="MemberVarSpacingSniff.php" realpath="/home/web/example/src/freegame_developer/vendor/squizlabs/php_codesniffer/CodeSniffer/Standards/Squiz/Sniffs/WhiteSpace/MemberVarSpacingSniff.php" size="6019" time="2016-01-19T23:39:10+00:00" unixtime="1453246750" sha1="e932af09bf61963668c8b9df6cc0aa8f0813379d" relative="freegame_developer/vendor/squizlabs/php_codesniffer/CodeSniffer/Standards/Squiz/Sniffs/WhiteSpace/MemberVarSpacingSniff.php"/>
+  <docblock>
+    <description compact="Verifies that class members are spaced correctly."/>
+    <category value="PHP"/>
+    <package value="PHP_CodeSniffer"/>
+    <author value="Greg Sherwood &lt;gsherwood@squiz.net&gt;"/>
+    <author value="Marc McIntyre &lt;mmcintyre@squiz.net&gt;"/>
+    <copyright value="2006-2014 Squiz Pty Ltd (ABN 77 084 670 600)"/>
+    <license name="https://github.com/squizlabs/PHP_CodeSniffer/blob/master/licence.txt BSD Licence"/>
+    <version value="Release: @package_version@"/>
+    <link value="http://pear.php.net/package/PHP_CodeSniffer"/>
+  </docblock>
+  <extends full="PHP_CodeSniffer_Standards_AbstractVariableSniff" namespace="" name="PHP_CodeSniffer_Standards_AbstractVariableSniff"/>
+  <method name="processMemberVar" start="44" end="124" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Processes the function tokens within the class."/>
+      <param description="The file where this token was found." type="object" variable="$phpcsFile">
+        <type full="PHP_CodeSniffer_File" namespace="" name="PHP_CodeSniffer_File"/>
+      </param>
+      <param description="The position where the token was found." type="int" variable="$stackPtr"/>
+      <return type="object">
+        <type full="void" namespace="" name="void"/>
+      </return>
+    </docblock>
+    <parameter name="phpcsFile" byreference="false" type="object">
+      <type full="PHP_CodeSniffer_File" namespace="" name="PHP_CodeSniffer_File"/>
+    </parameter>
+    <parameter name="stackPtr" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="end if" line="81"/>
+      <comment value="There needs to be 1 blank line before the var, not counting comments." line="83"/>
+      <comment value="end if" line="122"/>
+    </inline>
+  </method>
+  <method name="processVariable" start="135" end="141" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Processes normal variables."/>
+      <param description="The file where this token was found." type="object" variable="$phpcsFile">
+        <type full="PHP_CodeSniffer_File" namespace="" name="PHP_CodeSniffer_File"/>
+      </param>
+      <param description="The position where the token was found." type="int" variable="$stackPtr"/>
+      <return type="object">
+        <type full="void" namespace="" name="void"/>
+      </return>
+    </docblock>
+    <parameter name="phpcsFile" byreference="false" type="object">
+      <type full="PHP_CodeSniffer_File" namespace="" name="PHP_CodeSniffer_File"/>
+    </parameter>
+    <parameter name="stackPtr" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="We don't care about normal variables." line="137"/>
+    </inline>
+  </method>
+  <method name="processVariableInString" start="152" end="158" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Processes variables in double quoted strings."/>
+      <param description="The file where this token was found." type="object" variable="$phpcsFile">
+        <type full="PHP_CodeSniffer_File" namespace="" name="PHP_CodeSniffer_File"/>
+      </param>
+      <param description="The position where the token was found." type="int" variable="$stackPtr"/>
+      <return type="object">
+        <type full="void" namespace="" name="void"/>
+      </return>
+    </docblock>
+    <parameter name="phpcsFile" byreference="false" type="object">
+      <type full="PHP_CodeSniffer_File" namespace="" name="PHP_CodeSniffer_File"/>
+    </parameter>
+    <parameter name="stackPtr" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="We don't care about normal variables." line="154"/>
+    </inline>
+  </method>
+</class>

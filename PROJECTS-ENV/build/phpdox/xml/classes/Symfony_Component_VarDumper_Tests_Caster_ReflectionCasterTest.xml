@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="Symfony\Component\VarDumper\Tests\Caster\ReflectionCasterTest" namespace="Symfony\Component\VarDumper\Tests\Caster" name="ReflectionCasterTest" abstract="false" final="false" start="20" end="123">
+  <file path="/home/web/example/src/freegame_developer/vendor/symfony/var-dumper/Tests/Caster" file="ReflectionCasterTest.php" realpath="/home/web/example/src/freegame_developer/vendor/symfony/var-dumper/Tests/Caster/ReflectionCasterTest.php" size="2742" time="2016-10-06T08:40:01+00:00" unixtime="1475743201" sha1="a4fc0cc50f97db8b90d90b64e296debd8904f815" relative="freegame_developer/vendor/symfony/var-dumper/Tests/Caster/ReflectionCasterTest.php"/>
+  <docblock>
+    <description/>
+    <author value="Nicolas Grekas &lt;p@tchwork.com&gt;"/>
+  </docblock>
+  <extends full="Symfony\Component\VarDumper\Test\VarDumperTestCase" namespace="Symfony\Component\VarDumper\Test" name="VarDumperTestCase"/>
+  <method name="testReflectionCaster" start="22" end="63" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testReflectionParameter" start="65" end="80" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testReflectionParameterScalar" start="85" end="100" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <requires value="PHP 7.0"/>
+    </docblock>
+  </method>
+  <method name="testReturnType" start="105" end="122" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <requires value="PHP 7.0"/>
+    </docblock>
+  </method>
+</class>

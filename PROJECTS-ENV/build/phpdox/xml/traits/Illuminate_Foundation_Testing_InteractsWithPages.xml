@@ -1,0 +1,556 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<trait xmlns="http://xml.phpdox.net/src" full="Illuminate\Foundation\Testing\InteractsWithPages" namespace="Illuminate\Foundation\Testing" name="InteractsWithPages" abstract="false" final="false" start="13" end="825">
+  <file path="/home/web/example/src/freegame_developer/vendor/laravel/framework/src/Illuminate/Foundation/Testing" file="InteractsWithPages.php" realpath="/home/web/example/src/freegame_developer/vendor/laravel/framework/src/Illuminate/Foundation/Testing/InteractsWithPages.php" size="20972" time="2016-02-24T15:13:21+00:00" unixtime="1456326801" sha1="85356a3b316caf2040461dde2c1d988dbc03c5e4" relative="freegame_developer/vendor/laravel/framework/src/Illuminate/Foundation/Testing/InteractsWithPages.php"/>
+  <member name="crawler" visibility="protected" static="false" line="20">
+    <docblock>
+      <description compact="The DomCrawler instance."/>
+      <var type="object">
+        <type full="\Symfony\Component\DomCrawler\Crawler" namespace="\Symfony\Component\DomCrawler" name="Crawler"/>
+      </var>
+    </docblock>
+  </member>
+  <member name="inputs" type="array" default="" visibility="protected" static="false" line="27">
+    <docblock>
+      <description compact="All of the stored inputs for the current page."/>
+      <var type="array"/>
+    </docblock>
+  </member>
+  <member name="uploads" type="array" default="" visibility="protected" static="false" line="34">
+    <docblock>
+      <description compact="All of the stored uploads for the current page."/>
+      <var type="array"/>
+    </docblock>
+  </member>
+  <method name="visit" start="42" end="45" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Visit the given URI with a GET request."/>
+      <param type="string" variable="$uri"/>
+      <return type="object">
+        <type full="Illuminate\Foundation\Testing\$this" namespace="Illuminate\Foundation\Testing" name="$this"/>
+      </return>
+    </docblock>
+    <parameter name="uri" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="makeRequest" start="57" end="70" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Make a request to the application and create a Crawler instance."/>
+      <param type="string" variable="$method"/>
+      <param type="string" variable="$uri"/>
+      <param type="array" variable="$parameters"/>
+      <param type="array" variable="$cookies"/>
+      <param type="array" variable="$files"/>
+      <return type="object">
+        <type full="Illuminate\Foundation\Testing\$this" namespace="Illuminate\Foundation\Testing" name="$this"/>
+      </return>
+    </docblock>
+    <parameter name="method" byreference="false" type="{unknown}"/>
+    <parameter name="uri" byreference="false" type="{unknown}"/>
+    <parameter name="parameters" byreference="false" type="array" default=""/>
+    <parameter name="cookies" byreference="false" type="array" default=""/>
+    <parameter name="files" byreference="false" type="array" default=""/>
+  </method>
+  <method name="makeRequestUsingForm" start="79" end="86" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Make a request to the application using the given form."/>
+      <param type="object" variable="$form">
+        <type full="\Symfony\Component\DomCrawler\Form" namespace="\Symfony\Component\DomCrawler" name="Form"/>
+      </param>
+      <param type="array" variable="$uploads"/>
+      <return type="object">
+        <type full="Illuminate\Foundation\Testing\$this" namespace="Illuminate\Foundation\Testing" name="$this"/>
+      </return>
+    </docblock>
+    <parameter name="form" byreference="false" type="object">
+      <type full="Symfony\Component\DomCrawler\Form" namespace="Symfony\Component\DomCrawler" name="Form"/>
+    </parameter>
+    <parameter name="uploads" byreference="false" type="array" default=""/>
+  </method>
+  <method name="extractParametersFromForm" start="94" end="99" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Extract the parameters from the given form."/>
+      <param type="object" variable="$form">
+        <type full="\Symfony\Component\DomCrawler\Form" namespace="\Symfony\Component\DomCrawler" name="Form"/>
+      </param>
+      <return type="array"/>
+    </docblock>
+    <parameter name="form" byreference="false" type="object">
+      <type full="Symfony\Component\DomCrawler\Form" namespace="Symfony\Component\DomCrawler" name="Form"/>
+    </parameter>
+  </method>
+  <method name="followRedirects" start="106" end="113" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Follow redirects from the last response."/>
+      <return type="object">
+        <type full="Illuminate\Foundation\Testing\$this" namespace="Illuminate\Foundation\Testing" name="$this"/>
+      </return>
+    </docblock>
+  </method>
+  <method name="clearInputs" start="120" end="127" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Clear the inputs for the current page."/>
+      <return type="object">
+        <type full="Illuminate\Foundation\Testing\$this" namespace="Illuminate\Foundation\Testing" name="$this"/>
+      </return>
+    </docblock>
+  </method>
+  <method name="seePageIs" start="135" end="144" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Assert that the current page matches a given URI."/>
+      <param type="string" variable="$uri"/>
+      <return type="object">
+        <type full="Illuminate\Foundation\Testing\$this" namespace="Illuminate\Foundation\Testing" name="$this"/>
+      </return>
+    </docblock>
+    <parameter name="uri" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="assertPageLoaded" start="153" end="167" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Assert that a given page successfully loaded."/>
+      <param type="string" variable="$uri"/>
+      <param type="object" variable="$message">
+        <type full="Illuminate\Foundation\Testing\string|null" namespace="Illuminate\Foundation\Testing" name="string|null"/>
+      </param>
+      <return type="object">
+        <type full="Illuminate\Foundation\Testing\void" namespace="Illuminate\Foundation\Testing" name="void"/>
+      </return>
+    </docblock>
+    <parameter name="uri" byreference="false" type="{unknown}"/>
+    <parameter name="message" byreference="false" type="{unknown}" default="" constant="null"/>
+  </method>
+  <method name="see" start="176" end="190" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Assert that a given string is seen on the page."/>
+      <param type="string" variable="$text"/>
+      <param type="object" variable="$negate">
+        <type full="Illuminate\Foundation\Testing\bool" namespace="Illuminate\Foundation\Testing" name="bool"/>
+      </param>
+      <return type="object">
+        <type full="Illuminate\Foundation\Testing\$this" namespace="Illuminate\Foundation\Testing" name="$this"/>
+      </return>
+    </docblock>
+    <parameter name="text" byreference="false" type="{unknown}"/>
+    <parameter name="negate" byreference="false" type="boolean" default="false"/>
+  </method>
+  <method name="dontSee" start="198" end="201" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Assert that a given string is not seen on the page."/>
+      <param type="string" variable="$text"/>
+      <return type="object">
+        <type full="Illuminate\Foundation\Testing\$this" namespace="Illuminate\Foundation\Testing" name="$this"/>
+      </return>
+    </docblock>
+    <parameter name="text" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="seeInElement" start="211" end="223" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Assert that a given string is seen inside an element."/>
+      <param type="string" variable="$element"/>
+      <param type="string" variable="$text"/>
+      <param type="object" variable="$negate">
+        <type full="Illuminate\Foundation\Testing\bool" namespace="Illuminate\Foundation\Testing" name="bool"/>
+      </param>
+      <return type="object">
+        <type full="Illuminate\Foundation\Testing\$this" namespace="Illuminate\Foundation\Testing" name="$this"/>
+      </return>
+    </docblock>
+    <parameter name="element" byreference="false" type="{unknown}"/>
+    <parameter name="text" byreference="false" type="{unknown}"/>
+    <parameter name="negate" byreference="false" type="boolean" default="false"/>
+  </method>
+  <method name="dontSeeInElement" start="232" end="240" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Assert that a given string is not seen inside an element."/>
+      <param type="string" variable="$element"/>
+      <param type="string" variable="$text"/>
+      <return type="object">
+        <type full="Illuminate\Foundation\Testing\$this" namespace="Illuminate\Foundation\Testing" name="$this"/>
+      </return>
+    </docblock>
+    <parameter name="element" byreference="false" type="{unknown}"/>
+    <parameter name="text" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="hasInElement" start="249" end="269" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Check if the page contains text within the given element."/>
+      <param type="string" variable="$element"/>
+      <param type="string" variable="$text"/>
+      <return type="object">
+        <type full="Illuminate\Foundation\Testing\bool" namespace="Illuminate\Foundation\Testing" name="bool"/>
+      </return>
+    </docblock>
+    <parameter name="element" byreference="false" type="{unknown}"/>
+    <parameter name="text" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="seeLink" start="278" end="289" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Assert that a given link is seen on the page."/>
+      <param type="string" variable="$text"/>
+      <param type="object" variable="$url">
+        <type full="Illuminate\Foundation\Testing\string|null" namespace="Illuminate\Foundation\Testing" name="string|null"/>
+      </param>
+      <return type="object">
+        <type full="Illuminate\Foundation\Testing\$this" namespace="Illuminate\Foundation\Testing" name="$this"/>
+      </return>
+    </docblock>
+    <parameter name="text" byreference="false" type="{unknown}"/>
+    <parameter name="url" byreference="false" type="{unknown}" default="" constant="null"/>
+  </method>
+  <method name="dontSeeLink" start="298" end="309" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Assert that a given link is not seen on the page."/>
+      <param type="string" variable="$text"/>
+      <param type="object" variable="$url">
+        <type full="Illuminate\Foundation\Testing\string|null" namespace="Illuminate\Foundation\Testing" name="string|null"/>
+      </param>
+      <return type="object">
+        <type full="Illuminate\Foundation\Testing\$this" namespace="Illuminate\Foundation\Testing" name="$this"/>
+      </return>
+    </docblock>
+    <parameter name="text" byreference="false" type="{unknown}"/>
+    <parameter name="url" byreference="false" type="{unknown}" default="" constant="null"/>
+  </method>
+  <method name="hasLink" start="318" end="342" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Check if the page has a link with the given $text and optional $url."/>
+      <param type="string" variable="$text"/>
+      <param type="object" variable="$url">
+        <type full="Illuminate\Foundation\Testing\string|null" namespace="Illuminate\Foundation\Testing" name="string|null"/>
+      </param>
+      <return type="object">
+        <type full="Illuminate\Foundation\Testing\bool" namespace="Illuminate\Foundation\Testing" name="bool"/>
+      </return>
+    </docblock>
+    <parameter name="text" byreference="false" type="{unknown}"/>
+    <parameter name="url" byreference="false" type="{unknown}" default="" constant="null"/>
+    <inline>
+      <comment value="If the URL is null, we assume the developer only wants to find a link" line="326"/>
+      <comment value="with the given text regardless of the URL. So, if we find the link" line="327"/>
+      <comment value="we will return true now. Otherwise, we look for the given URL." line="328"/>
+    </inline>
+  </method>
+  <method name="addRootToRelativeUrl" start="350" end="357" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Add a root if the URL is relative (helper method of the hasLink function)."/>
+      <param type="string" variable="$url"/>
+      <return type="string"/>
+    </docblock>
+    <parameter name="url" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="seeInField" start="366" end="374" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Assert that an input field contains the given value."/>
+      <param type="string" variable="$selector"/>
+      <param type="string" variable="$expected"/>
+      <return type="object">
+        <type full="Illuminate\Foundation\Testing\$this" namespace="Illuminate\Foundation\Testing" name="$this"/>
+      </return>
+    </docblock>
+    <parameter name="selector" byreference="false" type="{unknown}"/>
+    <parameter name="expected" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="dontSeeInField" start="383" end="391" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Assert that an input field does not contain the given value."/>
+      <param type="string" variable="$selector"/>
+      <param type="string" variable="$value"/>
+      <return type="object">
+        <type full="Illuminate\Foundation\Testing\$this" namespace="Illuminate\Foundation\Testing" name="$this"/>
+      </return>
+    </docblock>
+    <parameter name="selector" byreference="false" type="{unknown}"/>
+    <parameter name="value" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="seeIsChecked" start="399" end="407" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Assert that the given checkbox is selected."/>
+      <param type="string" variable="$selector"/>
+      <return type="object">
+        <type full="Illuminate\Foundation\Testing\$this" namespace="Illuminate\Foundation\Testing" name="$this"/>
+      </return>
+    </docblock>
+    <parameter name="selector" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="dontSeeIsChecked" start="415" end="423" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Assert that the given checkbox is not selected."/>
+      <param type="string" variable="$selector"/>
+      <return type="object">
+        <type full="Illuminate\Foundation\Testing\$this" namespace="Illuminate\Foundation\Testing" name="$this"/>
+      </return>
+    </docblock>
+    <parameter name="selector" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="seeIsSelected" start="432" end="440" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Assert that the expected value is selected."/>
+      <param type="string" variable="$selector"/>
+      <param type="string" variable="$expected"/>
+      <return type="object">
+        <type full="Illuminate\Foundation\Testing\$this" namespace="Illuminate\Foundation\Testing" name="$this"/>
+      </return>
+    </docblock>
+    <parameter name="selector" byreference="false" type="{unknown}"/>
+    <parameter name="expected" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="dontSeeIsSelected" start="449" end="457" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Assert that the given value is not selected."/>
+      <param type="string" variable="$selector"/>
+      <param type="string" variable="$value"/>
+      <return type="object">
+        <type full="Illuminate\Foundation\Testing\$this" namespace="Illuminate\Foundation\Testing" name="$this"/>
+      </return>
+    </docblock>
+    <parameter name="selector" byreference="false" type="{unknown}"/>
+    <parameter name="value" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="getInputOrTextAreaValue" start="467" end="486" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Get the value of an input or textarea."/>
+      <param type="string" variable="$selector"/>
+      <return type="string"/>
+      <throws type="object">
+        <type full="\Exception" namespace="" name="Exception"/>
+      </throws>
+    </docblock>
+    <parameter name="selector" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="getSelectedValue" start="496" end="515" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Get the selected value of a select field or radio group."/>
+      <param type="string" variable="$selector"/>
+      <return type="object">
+        <type full="Illuminate\Foundation\Testing\string|null" namespace="Illuminate\Foundation\Testing" name="string|null"/>
+      </return>
+      <throws type="object">
+        <type full="\Exception" namespace="" name="Exception"/>
+      </throws>
+    </docblock>
+    <parameter name="selector" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="getSelectedValueFromSelect" start="525" end="538" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Get the selected value from a select field."/>
+      <param type="object" variable="$field">
+        <type full="\Symfony\Component\DomCrawler\Crawler" namespace="\Symfony\Component\DomCrawler" name="Crawler"/>
+      </param>
+      <return type="object">
+        <type full="Illuminate\Foundation\Testing\string|null" namespace="Illuminate\Foundation\Testing" name="string|null"/>
+      </return>
+      <throws type="object">
+        <type full="\Exception" namespace="" name="Exception"/>
+      </throws>
+    </docblock>
+    <parameter name="field" byreference="false" type="object">
+      <type full="Symfony\Component\DomCrawler\Crawler" namespace="Symfony\Component\DomCrawler" name="Crawler"/>
+    </parameter>
+  </method>
+  <method name="getCheckedValueFromRadioGroup" start="548" end="561" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Get the checked value from a radio group."/>
+      <param type="object" variable="$radioGroup">
+        <type full="\Symfony\Component\DomCrawler\Crawler" namespace="\Symfony\Component\DomCrawler" name="Crawler"/>
+      </param>
+      <return type="object">
+        <type full="Illuminate\Foundation\Testing\string|null" namespace="Illuminate\Foundation\Testing" name="string|null"/>
+      </return>
+      <throws type="object">
+        <type full="\Exception" namespace="" name="Exception"/>
+      </throws>
+    </docblock>
+    <parameter name="radioGroup" byreference="false" type="object">
+      <type full="Symfony\Component\DomCrawler\Crawler" namespace="Symfony\Component\DomCrawler" name="Crawler"/>
+    </parameter>
+  </method>
+  <method name="isChecked" start="571" end="580" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Return true if the given checkbox is checked, false otherwise."/>
+      <param type="string" variable="$selector"/>
+      <return type="object">
+        <type full="Illuminate\Foundation\Testing\bool" namespace="Illuminate\Foundation\Testing" name="bool"/>
+      </return>
+      <throws type="object">
+        <type full="\Exception" namespace="" name="Exception"/>
+      </throws>
+    </docblock>
+    <parameter name="selector" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="click" start="588" end="605" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Click a link with the given body, name, or ID attribute."/>
+      <param type="string" variable="$name"/>
+      <return type="object">
+        <type full="Illuminate\Foundation\Testing\$this" namespace="Illuminate\Foundation\Testing" name="$this"/>
+      </return>
+    </docblock>
+    <parameter name="name" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="type" start="614" end="617" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Fill an input field with the given text."/>
+      <param type="string" variable="$text"/>
+      <param type="string" variable="$element"/>
+      <return type="object">
+        <type full="Illuminate\Foundation\Testing\$this" namespace="Illuminate\Foundation\Testing" name="$this"/>
+      </return>
+    </docblock>
+    <parameter name="text" byreference="false" type="{unknown}"/>
+    <parameter name="element" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="check" start="625" end="628" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Check a checkbox on the page."/>
+      <param type="string" variable="$element"/>
+      <return type="object">
+        <type full="Illuminate\Foundation\Testing\$this" namespace="Illuminate\Foundation\Testing" name="$this"/>
+      </return>
+    </docblock>
+    <parameter name="element" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="uncheck" start="636" end="639" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Uncheck a checkbox on the page."/>
+      <param type="string" variable="$element"/>
+      <return type="object">
+        <type full="Illuminate\Foundation\Testing\$this" namespace="Illuminate\Foundation\Testing" name="$this"/>
+      </return>
+    </docblock>
+    <parameter name="element" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="select" start="648" end="651" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Select an option from a drop-down."/>
+      <param type="string" variable="$option"/>
+      <param type="string" variable="$element"/>
+      <return type="object">
+        <type full="Illuminate\Foundation\Testing\$this" namespace="Illuminate\Foundation\Testing" name="$this"/>
+      </return>
+    </docblock>
+    <parameter name="option" byreference="false" type="{unknown}"/>
+    <parameter name="element" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="attach" start="660" end="665" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Attach a file to a form field on the page."/>
+      <param type="string" variable="$absolutePath"/>
+      <param type="string" variable="$element"/>
+      <return type="object">
+        <type full="Illuminate\Foundation\Testing\$this" namespace="Illuminate\Foundation\Testing" name="$this"/>
+      </return>
+    </docblock>
+    <parameter name="absolutePath" byreference="false" type="{unknown}"/>
+    <parameter name="element" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="press" start="673" end="676" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Submit a form using the button with the given text value."/>
+      <param type="string" variable="$buttonText"/>
+      <return type="object">
+        <type full="Illuminate\Foundation\Testing\$this" namespace="Illuminate\Foundation\Testing" name="$this"/>
+      </return>
+    </docblock>
+    <parameter name="buttonText" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="submitForm" start="686" end="691" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Submit a form on the page with the given input."/>
+      <param type="string" variable="$buttonText"/>
+      <param type="array" variable="$inputs"/>
+      <param type="array" variable="$uploads"/>
+      <return type="object">
+        <type full="Illuminate\Foundation\Testing\$this" namespace="Illuminate\Foundation\Testing" name="$this"/>
+      </return>
+    </docblock>
+    <parameter name="buttonText" byreference="false" type="{unknown}"/>
+    <parameter name="inputs" byreference="false" type="array" default=""/>
+    <parameter name="uploads" byreference="false" type="array" default=""/>
+  </method>
+  <method name="fillForm" start="700" end="709" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Fill the form with the given data."/>
+      <param type="string" variable="$buttonText"/>
+      <param type="array" variable="$inputs"/>
+      <return type="object">
+        <type full="\Symfony\Component\DomCrawler\Form" namespace="\Symfony\Component\DomCrawler" name="Form"/>
+      </return>
+    </docblock>
+    <parameter name="buttonText" byreference="false" type="{unknown}"/>
+    <parameter name="inputs" byreference="false" type="array" default=""/>
+  </method>
+  <method name="getForm" start="717" end="730" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Get the form from the page with the given submit button text."/>
+      <param type="object" variable="$buttonText">
+        <type full="Illuminate\Foundation\Testing\string|null" namespace="Illuminate\Foundation\Testing" name="string|null"/>
+      </param>
+      <return type="object">
+        <type full="\Symfony\Component\DomCrawler\Form" namespace="\Symfony\Component\DomCrawler" name="Form"/>
+      </return>
+    </docblock>
+    <parameter name="buttonText" byreference="false" type="{unknown}" default="" constant="null"/>
+  </method>
+  <method name="storeInput" start="739" end="748" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Store a form input in the local array."/>
+      <param type="string" variable="$element"/>
+      <param type="string" variable="$text"/>
+      <return type="object">
+        <type full="Illuminate\Foundation\Testing\$this" namespace="Illuminate\Foundation\Testing" name="$this"/>
+      </return>
+    </docblock>
+    <parameter name="element" byreference="false" type="{unknown}"/>
+    <parameter name="text" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="assertFilterProducesResults" start="756" end="765" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Assert that a filtered Crawler returns nodes."/>
+      <param type="string" variable="$filter"/>
+      <return type="object">
+        <type full="Illuminate\Foundation\Testing\void" namespace="Illuminate\Foundation\Testing" name="void"/>
+      </return>
+    </docblock>
+    <parameter name="filter" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="filterByNameOrId" start="774" end="787" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Filter elements according to the given name or ID attribute."/>
+      <param type="string" variable="$name"/>
+      <param type="object" variable="$elements">
+        <type full="Illuminate\Foundation\Testing\array|string" namespace="Illuminate\Foundation\Testing" name="array|string"/>
+      </param>
+      <return type="object">
+        <type full="\Symfony\Component\DomCrawler\Crawler" namespace="\Symfony\Component\DomCrawler" name="Crawler"/>
+      </return>
+    </docblock>
+    <parameter name="name" byreference="false" type="{unknown}"/>
+    <parameter name="elements" byreference="false" type="string" default="'*'"/>
+  </method>
+  <method name="convertUploadsForTesting" start="796" end="809" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Convert the given uploads to UploadedFile instances."/>
+      <param type="object" variable="$form">
+        <type full="\Symfony\Component\DomCrawler\Form" namespace="\Symfony\Component\DomCrawler" name="Form"/>
+      </param>
+      <param type="array" variable="$uploads"/>
+      <return type="array"/>
+    </docblock>
+    <parameter name="form" byreference="false" type="object">
+      <type full="Symfony\Component\DomCrawler\Form" namespace="Symfony\Component\DomCrawler" name="Form"/>
+    </parameter>
+    <parameter name="uploads" byreference="false" type="array"/>
+  </method>
+  <method name="getUploadedFileForTesting" start="819" end="824" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Create an UploadedFile instance for testing."/>
+      <param type="array" variable="$file"/>
+      <param type="array" variable="$uploads"/>
+      <param type="string" variable="$name"/>
+      <return type="object">
+        <type full="\Symfony\Component\HttpFoundation\File\UploadedFile" namespace="\Symfony\Component\HttpFoundation\File" name="UploadedFile"/>
+      </return>
+    </docblock>
+    <parameter name="file" byreference="false" type="{unknown}"/>
+    <parameter name="uploads" byreference="false" type="{unknown}"/>
+    <parameter name="name" byreference="false" type="{unknown}"/>
+  </method>
+</trait>

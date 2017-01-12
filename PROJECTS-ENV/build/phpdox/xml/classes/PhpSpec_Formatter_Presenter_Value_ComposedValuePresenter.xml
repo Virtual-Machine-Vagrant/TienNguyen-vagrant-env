@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="PhpSpec\Formatter\Presenter\Value\ComposedValuePresenter" namespace="PhpSpec\Formatter\Presenter\Value" name="ComposedValuePresenter" abstract="false" final="true" start="16" end="49">
+  <file path="/home/web/example/src/freegame_developer/vendor/phpspec/phpspec/src/PhpSpec/Formatter/Presenter/Value" file="ComposedValuePresenter.php" realpath="/home/web/example/src/freegame_developer/vendor/phpspec/phpspec/src/PhpSpec/Formatter/Presenter/Value/ComposedValuePresenter.php" size="1274" time="2016-01-01T10:17:54+00:00" unixtime="1451643474" sha1="deaa278945a922edb1c585f28769dd8009235f36" relative="freegame_developer/vendor/phpspec/phpspec/src/PhpSpec/Formatter/Presenter/Value/ComposedValuePresenter.php"/>
+  <implements full="PhpSpec\Formatter\Presenter\Value\ValuePresenter" namespace="PhpSpec\Formatter\Presenter\Value" name="ValuePresenter"/>
+  <member name="typePresenters" type="array" default="" visibility="private" static="false" line="21">
+    <docblock>
+      <description/>
+      <var type="array" of="object">
+        <type full="PhpSpec\Formatter\Presenter\Value\TypePresenter" namespace="PhpSpec\Formatter\Presenter\Value" name="TypePresenter"/>
+      </var>
+    </docblock>
+  </member>
+  <method name="addTypePresenter" start="26" end="33" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <param type="object" variable="$typePresenter">
+        <type full="PhpSpec\Formatter\Presenter\Value\TypePresenter" namespace="PhpSpec\Formatter\Presenter\Value" name="TypePresenter"/>
+      </param>
+    </docblock>
+    <parameter name="typePresenter" byreference="false" type="object">
+      <type full="PhpSpec\Formatter\Presenter\Value\TypePresenter" namespace="PhpSpec\Formatter\Presenter\Value" name="TypePresenter"/>
+    </parameter>
+  </method>
+  <method name="presentValue" start="39" end="48" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <param type="mixed" variable="$value"/>
+      <return type="string"/>
+    </docblock>
+    <parameter name="value" byreference="false" type="{unknown}"/>
+  </method>
+</class>

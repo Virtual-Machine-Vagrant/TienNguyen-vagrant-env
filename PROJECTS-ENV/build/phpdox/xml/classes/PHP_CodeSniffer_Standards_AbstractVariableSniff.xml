@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="PHP_CodeSniffer_Standards_AbstractVariableSniff" namespace="" name="PHP_CodeSniffer_Standards_AbstractVariableSniff" abstract="true" final="false" start="39" end="244">
+  <file path="/home/web/example/src/freegame_developer/vendor/squizlabs/php_codesniffer/CodeSniffer/Standards" file="AbstractVariableSniff.php" realpath="/home/web/example/src/freegame_developer/vendor/squizlabs/php_codesniffer/CodeSniffer/Standards/AbstractVariableSniff.php" size="8049" time="2016-01-19T23:39:10+00:00" unixtime="1453246750" sha1="da663f138ae5198d41cca4e9d9539c3e9107711f" relative="freegame_developer/vendor/squizlabs/php_codesniffer/CodeSniffer/Standards/AbstractVariableSniff.php"/>
+  <docblock>
+    <description compact="A class to find T_VARIABLE tokens.">This class can distinguish between normal T_VARIABLE tokens, and those tokens
+that represent class members. If a class member is encountered, then then
+processMemberVar method is called so the extending class can process it. If
+the token is found to be a normal T_VARIABLE token, then processVariable is
+called.</description>
+    <category value="PHP"/>
+    <package value="PHP_CodeSniffer"/>
+    <author value="Greg Sherwood &lt;gsherwood@squiz.net&gt;"/>
+    <author value="Marc McIntyre &lt;mmcintyre@squiz.net&gt;"/>
+    <copyright value="2006-2014 Squiz Pty Ltd (ABN 77 084 670 600)"/>
+    <license name="https://github.com/squizlabs/PHP_CodeSniffer/blob/master/licence.txt BSD Licence"/>
+    <version value="Release: @package_version@"/>
+    <link value="http://pear.php.net/package/PHP_CodeSniffer"/>
+  </docblock>
+  <extends full="PHP_CodeSniffer_Standards_AbstractScopeSniff" namespace="" name="PHP_CodeSniffer_Standards_AbstractScopeSniff"/>
+  <member name="_endFunction" type="integer" default="1" visibility="private" static="false" line="47">
+    <docblock>
+      <description compact="The end token of the current function that we are in."/>
+      <var type="int"/>
+    </docblock>
+  </member>
+  <member name="_functionOpen" type="boolean" default="false" visibility="private" static="false" line="54">
+    <docblock>
+      <description compact="TRUE if a function is currently open."/>
+      <var type="boolean"/>
+    </docblock>
+  </member>
+  <member name="currentFile" type="{unknown}" default="" constant="null" visibility="protected" static="false" line="61">
+    <docblock>
+      <description compact="The current PHP_CodeSniffer file that we are processing."/>
+      <var type="object">
+        <type full="PHP_CodeSniffer_File" namespace="" name="PHP_CodeSniffer_File"/>
+      </var>
+    </docblock>
+  </member>
+  <constructor name="__construct" start="67" end="84" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Constructs an AbstractVariableTest."/>
+    </docblock>
+  </constructor>
+  <method name="processTokenWithinScope" start="97" end="161" abstract="false" final="true" static="false" visibility="protected">
+    <docblock>
+      <description compact="Processes the token in the specified PHP_CodeSniffer_File."/>
+      <param description="The PHP_CodeSniffer file where this" type="object" variable="$phpcsFile">token was found.<type full="PHP_CodeSniffer_File" namespace="" name="PHP_CodeSniffer_File"/></param>
+      <param description="The position where the token was found." type="int" variable="$stackPtr"/>
+      <param description="The current scope opener token." type="array" variable="$currScope"/>
+      <return type="object">
+        <type full="void" namespace="" name="void"/>
+      </return>
+    </docblock>
+    <parameter name="phpcsFile" byreference="false" type="object">
+      <type full="PHP_CodeSniffer_File" namespace="" name="PHP_CodeSniffer_File"/>
+    </parameter>
+    <parameter name="stackPtr" byreference="false" type="{unknown}"/>
+    <parameter name="currScope" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="end if" line="137"/>
+    </inline>
+  </method>
+  <method name="processTokenOutsideScope" start="173" end="191" abstract="false" final="true" static="false" visibility="protected">
+    <docblock>
+      <description compact="Processes the token outside the scope in the file."/>
+      <param description="The PHP_CodeSniffer file where this" type="object" variable="$phpcsFile">token was found.<type full="PHP_CodeSniffer_File" namespace="" name="PHP_CodeSniffer_File"/></param>
+      <param description="The position where the token was found." type="int" variable="$stackPtr"/>
+      <return type="object">
+        <type full="void" namespace="" name="void"/>
+      </return>
+    </docblock>
+    <parameter name="phpcsFile" byreference="false" type="object">
+      <type full="PHP_CodeSniffer_File" namespace="" name="PHP_CodeSniffer_File"/>
+    </parameter>
+    <parameter name="stackPtr" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="These variables are not member vars." line="178"/>
+    </inline>
+  </method>
+  <method name="processMemberVar" start="203" end="206" abstract="true" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Called to process class member vars."/>
+      <param description="The PHP_CodeSniffer file where this" type="object" variable="$phpcsFile">token was found.<type full="PHP_CodeSniffer_File" namespace="" name="PHP_CodeSniffer_File"/></param>
+      <param description="The position where the token was found." type="int" variable="$stackPtr"/>
+      <return type="object">
+        <type full="void" namespace="" name="void"/>
+      </return>
+    </docblock>
+    <parameter name="phpcsFile" byreference="false" type="object">
+      <type full="PHP_CodeSniffer_File" namespace="" name="PHP_CodeSniffer_File"/>
+    </parameter>
+    <parameter name="stackPtr" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="processVariable" start="218" end="221" abstract="true" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Called to process normal member vars."/>
+      <param description="The PHP_CodeSniffer file where this" type="object" variable="$phpcsFile">token was found.<type full="PHP_CodeSniffer_File" namespace="" name="PHP_CodeSniffer_File"/></param>
+      <param description="The position where the token was found." type="int" variable="$stackPtr"/>
+      <return type="object">
+        <type full="void" namespace="" name="void"/>
+      </return>
+    </docblock>
+    <parameter name="phpcsFile" byreference="false" type="object">
+      <type full="PHP_CodeSniffer_File" namespace="" name="PHP_CodeSniffer_File"/>
+    </parameter>
+    <parameter name="stackPtr" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="processVariableInString" start="237" end="241" abstract="true" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Called to process variables found in double quoted strings or heredocs.">Note that there may be more than one variable in the string, which will
+result only in one call for the string or one call per line for heredocs.</description>
+      <param description="The PHP_CodeSniffer file where this" type="object" variable="$phpcsFile">token was found.<type full="PHP_CodeSniffer_File" namespace="" name="PHP_CodeSniffer_File"/></param>
+      <param description="The position where the double quoted" type="int" variable="$stackPtr">string was found.</param>
+      <return type="object">
+        <type full="void" namespace="" name="void"/>
+      </return>
+    </docblock>
+    <parameter name="phpcsFile" byreference="false" type="object">
+      <type full="PHP_CodeSniffer_File" namespace="" name="PHP_CodeSniffer_File"/>
+    </parameter>
+    <parameter name="stackPtr" byreference="false" type="{unknown}"/>
+  </method>
+</class>

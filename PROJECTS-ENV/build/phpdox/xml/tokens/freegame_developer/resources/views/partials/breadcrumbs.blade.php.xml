@@ -1,0 +1,68 @@
+<?xml version="1.0"?>
+<source xmlns="http://xml.phpdox.net/token">
+  <file xmlns="http://xml.phpdox.net/src" path="/home/web/example/src/freegame_developer/resources/views/partials" file="breadcrumbs.blade.php" realpath="/home/web/example/src/freegame_developer/resources/views/partials/breadcrumbs.blade.php" size="773" time="2016-11-16T01:52:54+00:00" unixtime="1479261174" sha1="661ed40f684c9c129071ca8c4de0ff736d4bc4d5" relative="freegame_developer/resources/views/partials/breadcrumbs.blade.php"/>
+  <line no="1">
+    <token name="T_INLINE_HTML">@include('partials.env', ['environmentName' =&gt; $environmentName])</token>
+  </line>
+  <line no="2">
+    <token name="T_INLINE_HTML">&lt;div class="pankuz"&gt;</token>
+  </line>
+  <line no="3">
+    <token name="T_INLINE_HTML">    &lt;ul&gt;</token>
+  </line>
+  <line no="4">
+    <token name="T_INLINE_HTML">        &lt;li&gt;&lt;a href="/"&gt;TOP&lt;/a&gt;&lt;/li&gt;</token>
+  </line>
+  <line no="5">
+    <token name="T_INLINE_HTML">        @foreach($breadcrumbs as $i =&gt; $v)</token>
+  </line>
+  <line no="6">
+    <token name="T_INLINE_HTML">            @if(!is_array($v)) {{-- */ $v = [$v] /* --}} @endif</token>
+  </line>
+  <line no="7">
+    <token name="T_INLINE_HTML">            @if(count($v) == 1)</token>
+  </line>
+  <line no="8">
+    <token name="T_INLINE_HTML">                @if($i == count($breadcrumbs) - 1)</token>
+  </line>
+  <line no="9">
+    <token name="T_INLINE_HTML">                &lt;li&gt;{{ $v[0] }}&lt;/li&gt;</token>
+  </line>
+  <line no="10">
+    <token name="T_INLINE_HTML">                @else</token>
+  </line>
+  <line no="11">
+    <token name="T_INLINE_HTML">                &lt;li&gt;&lt;span class="tx-lightgray"&gt;{{ $v[0] }}&lt;/span&gt;&lt;/li&gt;</token>
+  </line>
+  <line no="12">
+    <token name="T_INLINE_HTML">                @endif</token>
+  </line>
+  <line no="13">
+    <token name="T_INLINE_HTML">            @elseif(count($v) == 2)</token>
+  </line>
+  <line no="14">
+    <token name="T_INLINE_HTML">                &lt;li&gt;&lt;a href="{{ route($v[1]) }}"&gt;{{ $v[0] }}&lt;/a&gt;&lt;/li&gt;</token>
+  </line>
+  <line no="15">
+    <token name="T_INLINE_HTML">            @elseif(count($v) == 3)</token>
+  </line>
+  <line no="16">
+    <token name="T_INLINE_HTML">                &lt;li&gt;&lt;a href="{{ route($v[1], $v[2]) }}"&gt;{{ $v[0] }}&lt;/a&gt;&lt;/li&gt;</token>
+  </line>
+  <line no="17">
+    <token name="T_INLINE_HTML">            @endif</token>
+  </line>
+  <line no="18">
+    <token name="T_INLINE_HTML">        @endforeach</token>
+  </line>
+  <line no="19">
+    <token name="T_INLINE_HTML">    &lt;/ul&gt;</token>
+  </line>
+  <line no="20">
+    <token name="T_INLINE_HTML">    &lt;!-- /.pankuz --&gt;</token>
+  </line>
+  <line no="21">
+    <token name="T_INLINE_HTML">&lt;/div&gt;</token>
+  </line>
+  <line no="22"/>
+</source>

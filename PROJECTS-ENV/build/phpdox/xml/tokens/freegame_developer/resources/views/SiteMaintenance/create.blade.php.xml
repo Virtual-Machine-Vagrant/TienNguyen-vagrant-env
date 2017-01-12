@@ -1,0 +1,193 @@
+<?xml version="1.0"?>
+<source xmlns="http://xml.phpdox.net/token">
+  <file xmlns="http://xml.phpdox.net/src" path="/home/web/example/src/freegame_developer/resources/views/SiteMaintenance" file="create.blade.php" realpath="/home/web/example/src/freegame_developer/resources/views/SiteMaintenance/create.blade.php" size="3144" time="2016-12-13T02:05:42+00:00" unixtime="1481594742" sha1="42a592a367db2de1237e62d17d00ade629d553a8" relative="freegame_developer/resources/views/SiteMaintenance/create.blade.php"/>
+  <line no="1">
+    <token name="T_INLINE_HTML">@extends('layout')</token>
+  </line>
+  <line no="2"/>
+  <line no="3">
+    <token name="T_INLINE_HTML">@section('content')</token>
+  </line>
+  <line no="4"/>
+  <line no="5">
+    <token name="T_INLINE_HTML">&lt;header id="gnavi"&gt;</token>
+  </line>
+  <line no="6">
+    <token name="T_INLINE_HTML">    @include('partials.breadcrumbs', [</token>
+  </line>
+  <line no="7">
+    <token name="T_INLINE_HTML">        'breadcrumbs' =&gt; array_merge(</token>
+  </line>
+  <line no="8">
+    <token name="T_INLINE_HTML">            $formData['menuName'],</token>
+  </line>
+  <line no="9">
+    <token name="T_INLINE_HTML">            [</token>
+  </line>
+  <line no="10">
+    <token name="T_INLINE_HTML">                [$formData['screenName'], 'SiteMaintenance.index'],</token>
+  </line>
+  <line no="11">
+    <token name="T_INLINE_HTML">                '&#x767B;&#x9332;'</token>
+  </line>
+  <line no="12">
+    <token name="T_INLINE_HTML">            ]</token>
+  </line>
+  <line no="13">
+    <token name="T_INLINE_HTML">        )</token>
+  </line>
+  <line no="14">
+    <token name="T_INLINE_HTML">    ])</token>
+  </line>
+  <line no="15">
+    <token name="T_INLINE_HTML">    &lt;!-- [#gnavi] --&gt;</token>
+  </line>
+  <line no="16">
+    <token name="T_INLINE_HTML">&lt;/header&gt;</token>
+  </line>
+  <line no="17"/>
+  <line no="18"/>
+  <line no="19">
+    <token name="T_INLINE_HTML">&lt;section&gt;</token>
+  </line>
+  <line no="20">
+    <token name="T_INLINE_HTML">    @include('partials.errormessage', ['errors' =&gt; $errors])</token>
+  </line>
+  <line no="21"/>
+  <line no="22">
+    <token name="T_INLINE_HTML">    &lt;div class="c-area"&gt;</token>
+  </line>
+  <line no="23">
+    <token name="T_INLINE_HTML">        &lt;h2 class="c-headline"&gt;&lt;i class="fa fa-sitemap"&gt;&lt;/i&gt;{{ $formData['screenName'] }}&#x65B0;&#x898F;&#x767B;&#x9332;&lt;/h2&gt;</token>
+  </line>
+  <line no="24">
+    <token name="T_INLINE_HTML">        {!! Form::open(['route' =&gt; ['SiteMaintenance.createconfirm'] + $url, 'id' =&gt; 'create-form']) !!}</token>
+  </line>
+  <line no="25">
+    <token name="T_INLINE_HTML">        &lt;table class="c-table"&gt;</token>
+  </line>
+  <line no="26">
+    <token name="T_INLINE_HTML">            &lt;colgroup&gt;</token>
+  </line>
+  <line no="27">
+    <token name="T_INLINE_HTML">                &lt;col class="col-s"&gt;</token>
+  </line>
+  <line no="28">
+    <token name="T_INLINE_HTML">                &lt;col class="null"&gt;</token>
+  </line>
+  <line no="29">
+    <token name="T_INLINE_HTML">            &lt;/colgroup&gt;</token>
+  </line>
+  <line no="30">
+    <token name="T_INLINE_HTML">            &lt;tbody&gt;</token>
+  </line>
+  <line no="31">
+    <token name="T_INLINE_HTML">                &lt;tr {{ error_class('maintenance_name') }}&gt;</token>
+  </line>
+  <line no="32">
+    <token name="T_INLINE_HTML">                    &lt;th&gt;&#x30E1;&#x30F3;&#x30C6;&#x30CA;&#x30F3;&#x30B9;&#x540D;&#x79F0;&lt;span class="tag is-danger"&gt;&#x5FC5;&#x9808;&lt;/span&gt;&lt;/th&gt;</token>
+  </line>
+  <line no="33">
+    <token name="T_INLINE_HTML">                    &lt;td&gt;{!! Form::input('text', 'maintenance_name', $request-&gt;get('maintenance_name'), ['class' =&gt; 'w50 placeholder']) !!}&lt;/td&gt;</token>
+  </line>
+  <line no="34">
+    <token name="T_INLINE_HTML">                &lt;/tr&gt;</token>
+  </line>
+  <line no="35">
+    <token name="T_INLINE_HTML">                &lt;tr {{ error_class('maintenance_message') }}&gt;</token>
+  </line>
+  <line no="36">
+    <token name="T_INLINE_HTML">                    &lt;th&gt;&#x30E1;&#x30C3;&#x30BB;&#x30FC;&#x30B8;&lt;span class="tag is-danger"&gt;&#x5FC5;&#x9808;&lt;/span&gt;&lt;/th&gt;</token>
+  </line>
+  <line no="37">
+    <token name="T_INLINE_HTML">                    &lt;td&gt;{!! Form::textarea('maintenance_message', $request-&gt;get('maintenance_message'), ['class' =&gt; 'w50 w-auto', 'rows' =&gt; '8']) !!}&lt;/td&gt;</token>
+  </line>
+  <line no="38">
+    <token name="T_INLINE_HTML">                &lt;/tr&gt;</token>
+  </line>
+  <line no="39">
+    <token name="T_INLINE_HTML">                &lt;tr {{ error_class('url') }}&gt;</token>
+  </line>
+  <line no="40">
+    <token name="T_INLINE_HTML">                    &lt;th&gt;&#x5BFE;&#x8C61;URL&lt;span class="tag is-danger"&gt;&#x5FC5;&#x9808;&lt;/span&gt;&lt;/th&gt;</token>
+  </line>
+  <line no="41">
+    <token name="T_INLINE_HTML">                    &lt;td class="v-top"&gt;</token>
+  </line>
+  <line no="42">
+    <token name="T_INLINE_HTML">                        {{ $siteUrl }} {!! Form::textarea('url', $request-&gt;get('url'), ['class' =&gt; 'w-auto', 'rows' =&gt; '4', 'cols' =&gt; '20']) !!}</token>
+  </line>
+  <line no="43">
+    <token name="T_INLINE_HTML">                        &lt;p class="tx-12 mg-t10"&gt;&#x203B;&#x6307;&#x5B9A;&#x3057;&#x305F;URL&#x306E;&#x914D;&#x4E0B;&#x304C;&#x3059;&#x3079;&#x3066;{{ $siteUrl }}mainte/&#x306B;&#x30EA;&#x30C0;&#x30A4;&#x30EC;&#x30AF;&#x30C8;&#x3055;&#x308C;&#x307E;&#x3059;&lt;br&gt;</token>
+  </line>
+  <line no="44">
+    <token name="T_INLINE_HTML">                        &#x203B;&#x8907;&#x6570;&#x8A2D;&#x5B9A;&#x3059;&#x308B;&#x5834;&#x5408;&#x306F;&#x6539;&#x884C;&#x3057;&#x3001;&#x5165;&#x529B;&#x3057;&#x3066;&#x304F;&#x3060;&#x3055;&#x3044;&lt;/p&gt;</token>
+  </line>
+  <line no="45">
+    <token name="T_INLINE_HTML">                    &lt;/td&gt;</token>
+  </line>
+  <line no="46">
+    <token name="T_INLINE_HTML">                &lt;/tr&gt;</token>
+  </line>
+  <line no="47">
+    <token name="T_INLINE_HTML">                &lt;tr {{ error_class('start_dt') }}&gt;</token>
+  </line>
+  <line no="48">
+    <token name="T_INLINE_HTML">                    &lt;th&gt;&#x958B;&#x59CB;&#x65E5;&#x6642;&lt;span class="tag is-danger"&gt;&#x5FC5;&#x9808;&lt;/span&gt;&lt;/th&gt;</token>
+  </line>
+  <line no="49">
+    <token name="T_INLINE_HTML">                    &lt;td&gt;{!! Form::input('text', 'start_dt', $request-&gt;get('start_dt'), ['id' =&gt; 'start-date', 'class' =&gt; 'datetime']) !!}&lt;/td&gt;</token>
+  </line>
+  <line no="50">
+    <token name="T_INLINE_HTML">                &lt;/tr&gt;</token>
+  </line>
+  <line no="51">
+    <token name="T_INLINE_HTML">                &lt;tr {{ error_class('end_dt') }}&gt;</token>
+  </line>
+  <line no="52">
+    <token name="T_INLINE_HTML">                    &lt;th&gt;&#x7D42;&#x4E86;&#x65E5;&#x6642;&lt;span class="tag is-danger"&gt;&#x5FC5;&#x9808;&lt;/span&gt;&lt;/th&gt;</token>
+  </line>
+  <line no="53">
+    <token name="T_INLINE_HTML">                    &lt;td&gt;{!! Form::input('text', 'end_dt', $request-&gt;get('end_dt'), ['id' =&gt; 'end-date', 'class' =&gt; 'datetime']) !!}&lt;/td&gt;</token>
+  </line>
+  <line no="54">
+    <token name="T_INLINE_HTML">                &lt;/tr&gt;</token>
+  </line>
+  <line no="55">
+    <token name="T_INLINE_HTML">            &lt;/tbody&gt;</token>
+  </line>
+  <line no="56">
+    <token name="T_INLINE_HTML">            &lt;!-- /.c-table --&gt;</token>
+  </line>
+  <line no="57">
+    <token name="T_INLINE_HTML">        &lt;/table&gt;</token>
+  </line>
+  <line no="58">
+    <token name="T_INLINE_HTML">        &lt;div class="center"&gt;</token>
+  </line>
+  <line no="59">
+    <token name="T_INLINE_HTML">            &lt;a href="{{ URL::route('SiteMaintenance.index', $url) }}" class="button is-medium"&gt;&lt;i class="fa fa-reply"&gt;&lt;/i&gt;&#x623B;&#x308B;&lt;/a&gt;</token>
+  </line>
+  <line no="60">
+    <token name="T_INLINE_HTML">            &lt;a href="javascript:void(0);" data-form="create-form" class="button is-warning is-medium is-submit"&gt;&lt;i class="fa fa-check"&gt;&lt;/i&gt;&#x78BA;&#x8A8D;&lt;/a&gt;</token>
+  </line>
+  <line no="61">
+    <token name="T_INLINE_HTML">        &lt;/div&gt;</token>
+  </line>
+  <line no="62">
+    <token name="T_INLINE_HTML">        {!! Form::close() !!}</token>
+  </line>
+  <line no="63">
+    <token name="T_INLINE_HTML">        &lt;!-- /.c-area --&gt;</token>
+  </line>
+  <line no="64">
+    <token name="T_INLINE_HTML">    &lt;/div&gt;</token>
+  </line>
+  <line no="65">
+    <token name="T_INLINE_HTML">&lt;/section&gt;</token>
+  </line>
+  <line no="66">
+    <token name="T_INLINE_HTML">@endsection</token>
+  </line>
+  <line no="67"/>
+</source>

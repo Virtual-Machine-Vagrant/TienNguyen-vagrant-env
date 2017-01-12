@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="Cron\HoursField" namespace="Cron" name="HoursField" abstract="false" final="false" start="8" end="68">
+  <file path="/home/web/example/src/freegame_developer/vendor/mtdowling/cron-expression/src/Cron" file="HoursField.php" realpath="/home/web/example/src/freegame_developer/vendor/mtdowling/cron-expression/src/Cron/HoursField.php" size="2182" time="2016-01-26T21:23:30+00:00" unixtime="1453843410" sha1="a37fe302b9a2048067fcc3417b1079ea8f9d79cf" relative="freegame_developer/vendor/mtdowling/cron-expression/src/Cron/HoursField.php"/>
+  <docblock>
+    <description compact="Hours field.  Allows: * , / -"/>
+  </docblock>
+  <extends full="Cron\AbstractField" namespace="Cron" name="AbstractField"/>
+  <method name="isSatisfiedBy" start="10" end="13" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="date" byreference="false" type="object">
+      <type full="DateTime" namespace="" name="DateTime"/>
+    </parameter>
+    <parameter name="value" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="increment" start="15" end="62" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="date" byreference="false" type="object">
+      <type full="DateTime" namespace="" name="DateTime"/>
+    </parameter>
+    <parameter name="invert" byreference="false" type="boolean" default="false"/>
+    <parameter name="parts" byreference="false" type="{unknown}" default="" constant="null"/>
+    <inline>
+      <comment value="Change timezone to UTC temporarily. This will" line="17"/>
+      <comment value="allow us to go back or forwards and hour even" line="18"/>
+      <comment value="if DST will be changed between the hours." line="19"/>
+    </inline>
+  </method>
+  <method name="validate" start="64" end="67" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="value" byreference="false" type="{unknown}"/>
+  </method>
+</class>

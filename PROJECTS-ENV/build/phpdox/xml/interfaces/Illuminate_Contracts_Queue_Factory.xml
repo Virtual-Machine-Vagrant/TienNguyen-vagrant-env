@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface xmlns="http://xml.phpdox.net/src" full="Illuminate\Contracts\Queue\Factory" namespace="Illuminate\Contracts\Queue" name="Factory" abstract="false" final="false" start="5" end="14">
+  <file path="/home/web/example/src/freegame_developer/vendor/laravel/framework/src/Illuminate/Contracts/Queue" file="Factory.php" realpath="/home/web/example/src/freegame_developer/vendor/laravel/framework/src/Illuminate/Contracts/Queue/Factory.php" size="259" time="2016-02-24T15:13:21+00:00" unixtime="1456326801" sha1="019ccd66e4c54e92dfbca10465a9c7e85e7c2f39" relative="freegame_developer/vendor/laravel/framework/src/Illuminate/Contracts/Queue/Factory.php"/>
+  <method name="connection" start="13" end="13" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Resolve a queue connection instance."/>
+      <param type="string" variable="$name"/>
+      <return type="object">
+        <type full="\Illuminate\Contracts\Queue\Queue" namespace="\Illuminate\Contracts\Queue" name="Queue"/>
+      </return>
+    </docblock>
+    <parameter name="name" byreference="false" type="{unknown}" default="" constant="null"/>
+  </method>
+</interface>

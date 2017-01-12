@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="App\Jobs\Job" namespace="App\Jobs" name="Job" abstract="true" final="false" start="7" end="21">
+  <file path="/home/web/example/src/freegame_developer/app/Jobs" file="Job.php" realpath="/home/web/example/src/freegame_developer/app/Jobs/Job.php" size="535" time="2016-10-31T07:00:31+00:00" unixtime="1477897231" sha1="338da2d6ee2113e7d546071312be4a69c45b6e80" relative="freegame_developer/app/Jobs/Job.php"/>
+  <uses full="Illuminate\Bus\Queueable" namespace="Illuminate\Bus" name="Queueable" start="20" end="20"/>
+</class>

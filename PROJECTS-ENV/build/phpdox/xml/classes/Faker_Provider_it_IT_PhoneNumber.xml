@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="Faker\Provider\it_IT\PhoneNumber" namespace="Faker\Provider\it_IT" name="PhoneNumber" abstract="false" final="false" start="5" end="21">
+  <file path="/home/web/example/src/freegame_developer/vendor/fzaninotto/faker/src/Faker/Provider/it_IT" file="PhoneNumber.php" realpath="/home/web/example/src/freegame_developer/vendor/fzaninotto/faker/src/Faker/Provider/it_IT/PhoneNumber.php" size="577" time="2015-05-29T06:29:14+00:00" unixtime="1432880954" sha1="b743690b2f83779b2b4602c5c09eee863e02ff0b" relative="freegame_developer/vendor/fzaninotto/faker/src/Faker/Provider/it_IT/PhoneNumber.php"/>
+  <extends full="Faker\Provider\PhoneNumber" namespace="Faker\Provider" name="PhoneNumber"/>
+  <member name="formats" type="array" default="" visibility="protected" static="true" line="7"/>
+</class>

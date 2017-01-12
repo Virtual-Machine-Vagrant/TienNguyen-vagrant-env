@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="DatabaseSeeder" namespace="" name="DatabaseSeeder" abstract="false" final="false" start="6" end="21">
+  <file path="/home/web/example/src/freegame_developer/database/seeds" file="DatabaseSeeder.php" realpath="/home/web/example/src/freegame_developer/database/seeds/DatabaseSeeder.php" size="329" time="2016-10-31T07:00:31+00:00" unixtime="1477897231" sha1="ef170e95da2af6e30d62f91d20c30e15a6f89797" relative="freegame_developer/database/seeds/DatabaseSeeder.php"/>
+  <extends full="Illuminate\Database\Seeder" namespace="Illuminate\Database" name="Seeder"/>
+  <method name="run" start="13" end="20" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Run the database seeds."/>
+      <return type="object">
+        <type full="void" namespace="" name="void"/>
+      </return>
+    </docblock>
+    <inline>
+      <comment value="$this-&gt;call('UserTableSeeder');" line="17"/>
+    </inline>
+  </method>
+</class>

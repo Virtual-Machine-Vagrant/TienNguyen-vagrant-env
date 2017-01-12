@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="phpDocumentor\Reflection\DocBlock\Tags\Param" namespace="phpDocumentor\Reflection\DocBlock\Tags" name="Param" abstract="false" final="true" start="25" end="141">
+  <file path="/home/web/example/src/freegame_developer/vendor/phpdocumentor/reflection-docblock/src/DocBlock/Tags" file="Param.php" realpath="/home/web/example/src/freegame_developer/vendor/phpdocumentor/reflection-docblock/src/DocBlock/Tags/Param.php" size="3963" time="2016-09-30T07:12:33+00:00" unixtime="1475219553" sha1="9030aa069c6bb1db2cad0cb07b61d991ef9865c0" relative="freegame_developer/vendor/phpdocumentor/reflection-docblock/src/DocBlock/Tags/Param.php"/>
+  <docblock>
+    <description compact="Reflection class for the {@}param tag in a Docblock."/>
+  </docblock>
+  <extends full="phpDocumentor\Reflection\DocBlock\Tags\BaseTag" namespace="phpDocumentor\Reflection\DocBlock\Tags" name="BaseTag"/>
+  <implements full="phpDocumentor\Reflection\DocBlock\Tags\Factory\StaticMethod" namespace="phpDocumentor\Reflection\DocBlock\Tags\Factory" name="StaticMethod"/>
+  <member name="name" type="string" default="'param'" visibility="protected" static="false" line="28">
+    <docblock>
+      <var type="string"/>
+    </docblock>
+  </member>
+  <member name="type" visibility="private" static="false" line="31">
+    <docblock>
+      <var type="object">
+        <type full="phpDocumentor\Reflection\Type" namespace="phpDocumentor\Reflection" name="Type"/>
+      </var>
+    </docblock>
+  </member>
+  <member name="variableName" type="string" default="''" visibility="private" static="false" line="34">
+    <docblock>
+      <var type="string"/>
+    </docblock>
+  </member>
+  <member name="isVariadic" type="boolean" default="false" visibility="private" static="false" line="37">
+    <docblock>
+      <var description="determines whether this is a variadic argument" type="object">
+        <type full="phpDocumentor\Reflection\DocBlock\Tags\bool" namespace="phpDocumentor\Reflection\DocBlock\Tags" name="bool"/>
+      </var>
+    </docblock>
+  </member>
+  <constructor name="__construct" start="45" end="54" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <param type="string" variable="$variableName"/>
+      <param type="object" variable="$type">
+        <type full="phpDocumentor\Reflection\Type" namespace="phpDocumentor\Reflection" name="Type"/>
+      </param>
+      <param type="object" variable="$isVariadic">
+        <type full="phpDocumentor\Reflection\DocBlock\Tags\bool" namespace="phpDocumentor\Reflection\DocBlock\Tags" name="bool"/>
+      </param>
+      <param type="object" variable="$description">
+        <type full="phpDocumentor\Reflection\DocBlock\Description" namespace="phpDocumentor\Reflection\DocBlock" name="Description"/>
+      </param>
+    </docblock>
+    <parameter name="variableName" byreference="false" type="{unknown}"/>
+    <parameter name="type" byreference="false" type="{unknown}" default="" constant="null">
+      <type full="phpDocumentor\Reflection\Type" namespace="phpDocumentor\Reflection" name="Type"/>
+    </parameter>
+    <parameter name="isVariadic" byreference="false" type="boolean" default="false"/>
+    <parameter name="description" byreference="false" type="{unknown}" default="" constant="null">
+      <type full="phpDocumentor\Reflection\DocBlock\Description" namespace="phpDocumentor\Reflection\DocBlock" name="Description"/>
+    </parameter>
+  </constructor>
+  <method name="create" start="59" end="97" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description compact="{@inheritdoc}"/>
+    </docblock>
+    <parameter name="body" byreference="false" type="{unknown}"/>
+    <parameter name="typeResolver" byreference="false" type="{unknown}" default="" constant="null">
+      <type full="phpDocumentor\Reflection\TypeResolver" namespace="phpDocumentor\Reflection" name="TypeResolver"/>
+    </parameter>
+    <parameter name="descriptionFactory" byreference="false" type="{unknown}" default="" constant="null">
+      <type full="phpDocumentor\Reflection\DocBlock\DescriptionFactory" namespace="phpDocumentor\Reflection\DocBlock" name="DescriptionFactory"/>
+    </parameter>
+    <parameter name="context" byreference="false" type="{unknown}" default="" constant="null">
+      <type full="phpDocumentor\Reflection\Types\Context" namespace="phpDocumentor\Reflection\Types" name="Context"/>
+    </parameter>
+    <inline>
+      <comment value="if the first item that is encountered is not a variable; it is a type" line="73"/>
+      <comment value="if the next item starts with a $ or ...$ it must be the variable name" line="79"/>
+    </inline>
+  </method>
+  <method name="getVariableName" start="104" end="107" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Returns the variable's name."/>
+      <return type="string"/>
+    </docblock>
+  </method>
+  <method name="getType" start="114" end="117" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Returns the variable's type or null if unknown."/>
+      <return type="object">
+        <type full="phpDocumentor\Reflection\DocBlock\Tags\Type|null" namespace="phpDocumentor\Reflection\DocBlock\Tags" name="Type|null"/>
+      </return>
+    </docblock>
+  </method>
+  <method name="isVariadic" start="124" end="127" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Returns whether this tag is variadic."/>
+      <return type="boolean"/>
+    </docblock>
+  </method>
+  <method name="__toString" start="134" end="140" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Returns a string representation for this tag."/>
+      <return type="string"/>
+    </docblock>
+  </method>
+</class>

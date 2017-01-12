@@ -1,0 +1,232 @@
+<?xml version="1.0"?>
+<source xmlns="http://xml.phpdox.net/token">
+  <file xmlns="http://xml.phpdox.net/src" path="/home/web/example/src/freegame_developer/resources/views/Faq" file="deleteconfirm.blade.php" realpath="/home/web/example/src/freegame_developer/resources/views/Faq/deleteconfirm.blade.php" size="2686" time="2016-12-06T02:39:57+00:00" unixtime="1480991997" sha1="f1d16ddcf3187e783022ac809497fbd15c41b1e0" relative="freegame_developer/resources/views/Faq/deleteconfirm.blade.php"/>
+  <line no="1">
+    <token name="T_INLINE_HTML">@extends('layout')</token>
+  </line>
+  <line no="2"/>
+  <line no="3">
+    <token name="T_INLINE_HTML">@section('content')</token>
+  </line>
+  <line no="4"/>
+  <line no="5">
+    <token name="T_INLINE_HTML">&lt;header id="gnavi"&gt;</token>
+  </line>
+  <line no="6">
+    <token name="T_INLINE_HTML">    @include('partials.breadcrumbs', [</token>
+  </line>
+  <line no="7">
+    <token name="T_INLINE_HTML">        'breadcrumbs' =&gt; array_merge(</token>
+  </line>
+  <line no="8">
+    <token name="T_INLINE_HTML">            $formData['menuName'],</token>
+  </line>
+  <line no="9">
+    <token name="T_INLINE_HTML">            [</token>
+  </line>
+  <line no="10">
+    <token name="T_INLINE_HTML">                [$formData['screenName'], 'Faq.index'],</token>
+  </line>
+  <line no="11">
+    <token name="T_INLINE_HTML">                '&#x524A;&#x9664;'</token>
+  </line>
+  <line no="12">
+    <token name="T_INLINE_HTML">            ]</token>
+  </line>
+  <line no="13">
+    <token name="T_INLINE_HTML">        )</token>
+  </line>
+  <line no="14">
+    <token name="T_INLINE_HTML">    ])</token>
+  </line>
+  <line no="15">
+    <token name="T_INLINE_HTML">    &lt;!-- [#gnavi] --&gt;</token>
+  </line>
+  <line no="16">
+    <token name="T_INLINE_HTML">&lt;/header&gt;</token>
+  </line>
+  <line no="17"/>
+  <line no="18">
+    <token name="T_INLINE_HTML">&lt;section&gt;</token>
+  </line>
+  <line no="19">
+    <token name="T_INLINE_HTML">    &lt;div class="c-area"&gt;</token>
+  </line>
+  <line no="20">
+    <token name="T_INLINE_HTML">        &lt;h2 class="c-headline"&gt;&lt;i class="fa fa-sitemap"&gt;&lt;/i&gt;FAQ&#x524A;&#x9664; &#x78BA;&#x8A8D;&lt;/h2&gt;</token>
+  </line>
+  <line no="21">
+    <token name="T_INLINE_HTML">        &lt;p class="mg-b10"&gt;&#x4E0B;&#x8A18;&#x5185;&#x5BB9;&#x3092;&#x524A;&#x9664;&#x3057;&#x3066;&#x3088;&#x308D;&#x3057;&#x3051;&#x308C;&#x3070;&#x300C;&#x524A;&#x9664;&#x300D;&#x30DC;&#x30BF;&#x30F3;&#x3092;&#x9078;&#x629E;&#x3057;&#x3066;&#x304F;&#x3060;&#x3055;&#x3044;&#x3002;&lt;/p&gt;</token>
+  </line>
+  <line no="22">
+    <token name="T_INLINE_HTML">        &lt;table class="c-table"&gt;</token>
+  </line>
+  <line no="23">
+    <token name="T_INLINE_HTML">            &lt;colgroup&gt;</token>
+  </line>
+  <line no="24">
+    <token name="T_INLINE_HTML">                &lt;col class="col-s"&gt;</token>
+  </line>
+  <line no="25">
+    <token name="T_INLINE_HTML">                &lt;col class="null"&gt;</token>
+  </line>
+  <line no="26">
+    <token name="T_INLINE_HTML">            &lt;/colgroup&gt;</token>
+  </line>
+  <line no="27">
+    <token name="T_INLINE_HTML">            &lt;tbody&gt;</token>
+  </line>
+  <line no="28">
+    <token name="T_INLINE_HTML">                &lt;tr&gt;</token>
+  </line>
+  <line no="29">
+    <token name="T_INLINE_HTML">                    &lt;th&gt;ID&lt;/th&gt;</token>
+  </line>
+  <line no="30">
+    <token name="T_INLINE_HTML">                    &lt;td&gt;</token>
+  </line>
+  <line no="31">
+    <token name="T_INLINE_HTML">                        {{ $faq['faq_id'] }}</token>
+  </line>
+  <line no="32">
+    <token name="T_INLINE_HTML">                    &lt;/td&gt;</token>
+  </line>
+  <line no="33">
+    <token name="T_INLINE_HTML">                &lt;/tr&gt;</token>
+  </line>
+  <line no="34">
+    <token name="T_INLINE_HTML">                &lt;tr&gt;</token>
+  </line>
+  <line no="35">
+    <token name="T_INLINE_HTML">                    &lt;th&gt;&#x8CEA;&#x554F;&lt;/th&gt;</token>
+  </line>
+  <line no="36">
+    <token name="T_INLINE_HTML">                    &lt;td&gt;</token>
+  </line>
+  <line no="37">
+    <token name="T_INLINE_HTML">                        {{ $faq['title'] }}</token>
+  </line>
+  <line no="38">
+    <token name="T_INLINE_HTML">                    &lt;/td&gt;</token>
+  </line>
+  <line no="39">
+    <token name="T_INLINE_HTML">                &lt;/tr&gt;</token>
+  </line>
+  <line no="40">
+    <token name="T_INLINE_HTML">                &lt;tr&gt;</token>
+  </line>
+  <line no="41">
+    <token name="T_INLINE_HTML">                    &lt;th&gt;&#x30AB;&#x30C6;&#x30B4;&#x30EA;&lt;/th&gt;</token>
+  </line>
+  <line no="42">
+    <token name="T_INLINE_HTML">                    &lt;td&gt;</token>
+  </line>
+  <line no="43">
+    <token name="T_INLINE_HTML">                        {{ isset($listCategory[$faq['category']]) ? $listCategory[$faq['category']] : '' }}</token>
+  </line>
+  <line no="44">
+    <token name="T_INLINE_HTML">                    &lt;/td&gt;</token>
+  </line>
+  <line no="45">
+    <token name="T_INLINE_HTML">                &lt;/tr&gt;</token>
+  </line>
+  <line no="46">
+    <token name="T_INLINE_HTML">                &lt;tr&gt;</token>
+  </line>
+  <line no="47">
+    <token name="T_INLINE_HTML">                    &lt;th&gt;&#x3088;&#x304F;&#x3042;&#x308B;&#x8CEA;&#x554F;&#x306B;&#x8868;&#x793A;&#x3059;&#x308B;&lt;/th&gt;</token>
+  </line>
+  <line no="48">
+    <token name="T_INLINE_HTML">                    &lt;td&gt;</token>
+  </line>
+  <line no="49">
+    <token name="T_INLINE_HTML">                        {{ isset($formData['questionStatus'][$faq['common_flg']]) ? $formData['questionStatus'][$faq['common_flg']] : '' }}</token>
+  </line>
+  <line no="50">
+    <token name="T_INLINE_HTML">                    &lt;/td&gt;</token>
+  </line>
+  <line no="51">
+    <token name="T_INLINE_HTML">                &lt;/tr&gt;</token>
+  </line>
+  <line no="52">
+    <token name="T_INLINE_HTML">                &lt;tr&gt;</token>
+  </line>
+  <line no="53">
+    <token name="T_INLINE_HTML">                    &lt;th&gt;&#x56DE;&#x7B54;&lt;/th&gt;</token>
+  </line>
+  <line no="54">
+    <token name="T_INLINE_HTML">                    &lt;td&gt;</token>
+  </line>
+  <line no="55">
+    <token name="T_INLINE_HTML">                        {!! $faq['message'] !!}</token>
+  </line>
+  <line no="56">
+    <token name="T_INLINE_HTML">                    &lt;/td&gt;</token>
+  </line>
+  <line no="57">
+    <token name="T_INLINE_HTML">                &lt;/tr&gt;</token>
+  </line>
+  <line no="58">
+    <token name="T_INLINE_HTML">                &lt;tr&gt;</token>
+  </line>
+  <line no="59">
+    <token name="T_INLINE_HTML">                    &lt;th&gt;&#x30B9;&#x30C6;&#x30FC;&#x30BF;&#x30B9;&lt;/th&gt;</token>
+  </line>
+  <line no="60">
+    <token name="T_INLINE_HTML">                    &lt;td&gt;</token>
+  </line>
+  <line no="61">
+    <token name="T_INLINE_HTML">                        {{ isset($formData['status'][$faq['faq_view_flg']]) ? $formData['status'][$faq['faq_view_flg']] : '' }}</token>
+  </line>
+  <line no="62">
+    <token name="T_INLINE_HTML">                    &lt;/td&gt;</token>
+  </line>
+  <line no="63">
+    <token name="T_INLINE_HTML">                &lt;/tr&gt;</token>
+  </line>
+  <line no="64">
+    <token name="T_INLINE_HTML">            &lt;/tbody&gt;</token>
+  </line>
+  <line no="65">
+    <token name="T_INLINE_HTML">            &lt;!-- /.c-table --&gt;</token>
+  </line>
+  <line no="66">
+    <token name="T_INLINE_HTML">        &lt;/table&gt;</token>
+  </line>
+  <line no="67">
+    <token name="T_INLINE_HTML">        &lt;div class="center"&gt;</token>
+  </line>
+  <line no="68">
+    <token name="T_INLINE_HTML">            &lt;a href="{{ route('Faq.index', $url) }}" class="button is-medium"&gt;&lt;i class="fa fa-reply"&gt;&lt;/i&gt;&#x623B;&#x308B;&lt;/a&gt;</token>
+  </line>
+  <line no="69">
+    <token name="T_INLINE_HTML">            &lt;a href="javascript:void(0);" class="button is-danger is-medium submit-button" data-form="destroy-form"&gt;&lt;i class="fa fa-trash-o"&gt;&lt;/i&gt;&#x524A;&#x9664;&lt;/a&gt;</token>
+  </line>
+  <line no="70">
+    <token name="T_INLINE_HTML">        &lt;/div&gt;</token>
+  </line>
+  <line no="71">
+    <token name="T_INLINE_HTML">        &lt;!-- /.c-area --&gt;</token>
+  </line>
+  <line no="72">
+    <token name="T_INLINE_HTML">        {!! Form::open(['route' =&gt; ['Faq.destroy'] + $url, 'id' =&gt; 'destroy-form']) !!}</token>
+  </line>
+  <line no="73">
+    <token name="T_INLINE_HTML">        {!! Form::hidden('faq_id', $id) !!}</token>
+  </line>
+  <line no="74">
+    <token name="T_INLINE_HTML">        {!! Form::close() !!}</token>
+  </line>
+  <line no="75"/>
+  <line no="76">
+    <token name="T_INLINE_HTML">    &lt;/div&gt;</token>
+  </line>
+  <line no="77"/>
+  <line no="78">
+    <token name="T_INLINE_HTML">&lt;/section&gt;</token>
+  </line>
+  <line no="79">
+    <token name="T_INLINE_HTML">@endsection</token>
+  </line>
+  <line no="80"/>
+</source>

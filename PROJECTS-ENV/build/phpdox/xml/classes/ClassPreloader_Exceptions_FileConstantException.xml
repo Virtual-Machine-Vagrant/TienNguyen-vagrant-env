@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="ClassPreloader\Exceptions\FileConstantException" namespace="ClassPreloader\Exceptions" name="FileConstantException" abstract="false" final="false" start="20" end="23">
+  <file path="/home/web/example/src/freegame_developer/vendor/classpreloader/classpreloader/src/Exceptions" file="FileConstantException.php" realpath="/home/web/example/src/freegame_developer/vendor/classpreloader/classpreloader/src/Exceptions/FileConstantException.php" size="482" time="2015-11-09T22:51:51+00:00" unixtime="1447109511" sha1="09717685b6822e7c95ab7208a274b5c772e32c21" relative="freegame_developer/vendor/classpreloader/classpreloader/src/Exceptions/FileConstantException.php"/>
+  <docblock>
+    <description compact="This is the file constant exception class."/>
+  </docblock>
+  <extends full="Exception" namespace="" name="Exception"/>
+  <implements full="ClassPreloader\Exceptions\VisitorExceptionInterface" namespace="ClassPreloader\Exceptions" name="VisitorExceptionInterface"/>
+</class>

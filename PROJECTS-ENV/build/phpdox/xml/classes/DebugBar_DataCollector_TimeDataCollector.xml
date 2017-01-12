@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="DebugBar\DataCollector\TimeDataCollector" namespace="DebugBar\DataCollector" name="TimeDataCollector" abstract="false" final="false" start="19" end="238">
+  <file path="/home/web/example/src/freegame_developer/vendor/maximebf/debugbar/src/DebugBar/DataCollector" file="TimeDataCollector.php" realpath="/home/web/example/src/freegame_developer/vendor/maximebf/debugbar/src/DebugBar/DataCollector/TimeDataCollector.php" size="5964" time="2016-09-15T14:01:59+00:00" unixtime="1473948119" sha1="3afc5f5cb920201168dfd099a2429e9a944a6848" relative="freegame_developer/vendor/maximebf/debugbar/src/DebugBar/DataCollector/TimeDataCollector.php"/>
+  <docblock>
+    <description compact="Collects info about the request duration as well as providing a way to log duration of any operations"/>
+  </docblock>
+  <extends full="DebugBar\DataCollector\DataCollector" namespace="DebugBar\DataCollector" name="DataCollector"/>
+  <implements full="DebugBar\DataCollector\Renderable" namespace="DebugBar\DataCollector" name="Renderable"/>
+  <member name="requestStartTime" visibility="protected" static="false" line="24">
+    <docblock>
+      <description/>
+      <var type="float"/>
+    </docblock>
+  </member>
+  <member name="requestEndTime" visibility="protected" static="false" line="29">
+    <docblock>
+      <description/>
+      <var type="float"/>
+    </docblock>
+  </member>
+  <member name="startedMeasures" type="array" default="" visibility="protected" static="false" line="34">
+    <docblock>
+      <description/>
+      <var type="array"/>
+    </docblock>
+  </member>
+  <member name="measures" type="array" default="" visibility="protected" static="false" line="39">
+    <docblock>
+      <description/>
+      <var type="array"/>
+    </docblock>
+  </member>
+  <constructor name="__construct" start="44" end="54" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <param type="float" variable="$requestStartTime"/>
+    </docblock>
+    <parameter name="requestStartTime" byreference="false" type="{unknown}" default="" constant="null"/>
+  </constructor>
+  <method name="startMeasure" start="63" end="71" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Starts a measure"/>
+      <param description="Internal name, used to stop the measure" type="string" variable="$name"/>
+      <param description="Public name" type="object" variable="$label">
+        <type full="DebugBar\DataCollector\string|null" namespace="DebugBar\DataCollector" name="string|null"/>
+      </param>
+      <param description="The source of the collector" type="object" variable="$collector">
+        <type full="DebugBar\DataCollector\string|null" namespace="DebugBar\DataCollector" name="string|null"/>
+      </param>
+    </docblock>
+    <parameter name="name" byreference="false" type="{unknown}"/>
+    <parameter name="label" byreference="false" type="{unknown}" default="" constant="null"/>
+    <parameter name="collector" byreference="false" type="{unknown}" default="" constant="null"/>
+  </method>
+  <method name="hasStartedMeasure" start="79" end="82" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Check a measure exists"/>
+      <param type="string" variable="$name"/>
+      <return type="object">
+        <type full="DebugBar\DataCollector\bool" namespace="DebugBar\DataCollector" name="bool"/>
+      </return>
+    </docblock>
+    <parameter name="name" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="stopMeasure" start="91" end="105" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Stops a measure"/>
+      <param type="string" variable="$name"/>
+      <param type="array" variable="$params"/>
+      <throws type="object">
+        <type full="DebugBar\DebugBarException" namespace="DebugBar" name="DebugBarException"/>
+      </throws>
+    </docblock>
+    <parameter name="name" byreference="false" type="{unknown}"/>
+    <parameter name="params" byreference="false" type="array" default=""/>
+  </method>
+  <method name="addMeasure" start="116" end="129" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Adds a measure"/>
+      <param type="string" variable="$label"/>
+      <param type="float" variable="$start"/>
+      <param type="float" variable="$end"/>
+      <param type="array" variable="$params"/>
+      <param type="object" variable="$collector">
+        <type full="DebugBar\DataCollector\string|null" namespace="DebugBar\DataCollector" name="string|null"/>
+      </param>
+    </docblock>
+    <parameter name="label" byreference="false" type="{unknown}"/>
+    <parameter name="start" byreference="false" type="{unknown}"/>
+    <parameter name="end" byreference="false" type="{unknown}"/>
+    <parameter name="params" byreference="false" type="array" default=""/>
+    <parameter name="collector" byreference="false" type="{unknown}" default="" constant="null"/>
+  </method>
+  <method name="measure" start="138" end="145" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Utility function to measure the execution of a Closure"/>
+      <param type="string" variable="$label"/>
+      <param type="object" variable="$closure">
+        <type full="\Closure" namespace="" name="Closure"/>
+      </param>
+      <param type="object" variable="$collector">
+        <type full="DebugBar\DataCollector\string|null" namespace="DebugBar\DataCollector" name="string|null"/>
+      </param>
+    </docblock>
+    <parameter name="label" byreference="false" type="{unknown}"/>
+    <parameter name="closure" byreference="false" type="object">
+      <type full="Closure" namespace="" name="Closure"/>
+    </parameter>
+    <parameter name="collector" byreference="false" type="{unknown}" default="" constant="null"/>
+  </method>
+  <method name="getMeasures" start="152" end="155" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Returns an array of all measures"/>
+      <return type="array"/>
+    </docblock>
+  </method>
+  <method name="getRequestStartTime" start="162" end="165" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Returns the request start time"/>
+      <return type="float"/>
+    </docblock>
+  </method>
+  <method name="getRequestEndTime" start="172" end="175" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Returns the request end time"/>
+      <return type="float"/>
+    </docblock>
+  </method>
+  <method name="getRequestDuration" start="182" end="188" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Returns the duration of a request"/>
+      <return type="float"/>
+    </docblock>
+  </method>
+  <method name="collect" start="194" end="208" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <return type="array"/>
+      <throws type="object">
+        <type full="DebugBar\DebugBarException" namespace="DebugBar" name="DebugBarException"/>
+      </throws>
+    </docblock>
+  </method>
+  <method name="getName" start="213" end="216" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <return type="string"/>
+    </docblock>
+  </method>
+  <method name="getWidgets" start="221" end="237" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <return type="array"/>
+    </docblock>
+  </method>
+</class>

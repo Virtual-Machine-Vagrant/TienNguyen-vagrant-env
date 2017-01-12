@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="spec\PhpSpec\Formatter\Presenter\Value\ComposedValuePresenterSpec" namespace="spec\PhpSpec\Formatter\Presenter\Value" name="ComposedValuePresenterSpec" abstract="false" final="false" start="9" end="93">
+  <file path="/home/web/example/src/freegame_developer/vendor/phpspec/phpspec/spec/PhpSpec/Formatter/Presenter/Value" file="ComposedValuePresenterSpec.php" realpath="/home/web/example/src/freegame_developer/vendor/phpspec/phpspec/spec/PhpSpec/Formatter/Presenter/Value/ComposedValuePresenterSpec.php" size="3070" time="2016-01-01T10:17:54+00:00" unixtime="1451643474" sha1="8439f9fcddc5bb1b06964fff5c4270996625deb0" relative="freegame_developer/vendor/phpspec/phpspec/spec/PhpSpec/Formatter/Presenter/Value/ComposedValuePresenterSpec.php"/>
+  <extends full="PhpSpec\ObjectBehavior" namespace="PhpSpec" name="ObjectBehavior"/>
+  <method name="it_is_a_value_presenter" start="11" end="14" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="it_should_accept_a_type_presenter" start="16" end="19" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="typePresenter" byreference="false" type="object">
+      <type full="PhpSpec\Formatter\Presenter\Value\TypePresenter" namespace="PhpSpec\Formatter\Presenter\Value" name="TypePresenter"/>
+    </parameter>
+  </method>
+  <method name="it_should_call_supports_on_value_presenters_until_one_returns_true" start="21" end="40" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="presenter1" byreference="false" type="object">
+      <type full="PhpSpec\Formatter\Presenter\Value\TypePresenter" namespace="PhpSpec\Formatter\Presenter\Value" name="TypePresenter"/>
+    </parameter>
+    <parameter name="presenter2" byreference="false" type="object">
+      <type full="PhpSpec\Formatter\Presenter\Value\TypePresenter" namespace="PhpSpec\Formatter\Presenter\Value" name="TypePresenter"/>
+    </parameter>
+    <parameter name="presenter3" byreference="false" type="object">
+      <type full="PhpSpec\Formatter\Presenter\Value\TypePresenter" namespace="PhpSpec\Formatter\Presenter\Value" name="TypePresenter"/>
+    </parameter>
+  </method>
+  <method name="it_should_order_presenters_by_their_priority_in_descending_order" start="42" end="58" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="presenter1" byreference="false" type="object">
+      <type full="PhpSpec\Formatter\Presenter\Value\TypePresenter" namespace="PhpSpec\Formatter\Presenter\Value" name="TypePresenter"/>
+    </parameter>
+    <parameter name="presenter2" byreference="false" type="object">
+      <type full="PhpSpec\Formatter\Presenter\Value\TypePresenter" namespace="PhpSpec\Formatter\Presenter\Value" name="TypePresenter"/>
+    </parameter>
+  </method>
+  <method name="it_should_call_present_on_a_supporting_type_presenter" start="60" end="69" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="typePresenter" byreference="false" type="object">
+      <type full="PhpSpec\Formatter\Presenter\Value\TypePresenter" namespace="PhpSpec\Formatter\Presenter\Value" name="TypePresenter"/>
+    </parameter>
+  </method>
+  <method name="it_should_return_the_type_presenter_presented_value" start="71" end="81" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="typePresenter" byreference="false" type="object">
+      <type full="PhpSpec\Formatter\Presenter\Value\TypePresenter" namespace="PhpSpec\Formatter\Presenter\Value" name="TypePresenter"/>
+    </parameter>
+  </method>
+  <method name="it_returns_a_default_when_no_type_presenters_support_the_value" start="83" end="86" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="it_should_present_a_simple_type_as_typed_value" start="88" end="92" abstract="false" final="false" static="false" visibility="public"/>
+</class>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="Barryvdh\Debugbar\Support\Clockwork\ClockworkCollector" namespace="Barryvdh\Debugbar\Support\Clockwork" name="ClockworkCollector" abstract="false" final="false" start="15" end="91">
+  <file path="/home/web/example/src/freegame_developer/vendor/barryvdh/laravel-debugbar/src/Support/Clockwork" file="ClockworkCollector.php" realpath="/home/web/example/src/freegame_developer/vendor/barryvdh/laravel-debugbar/src/Support/Clockwork/ClockworkCollector.php" size="2512" time="2016-09-15T14:05:56+00:00" unixtime="1473948356" sha1="7faae92e450cb89a9aad00208c5308094d9bb2c3" relative="freegame_developer/vendor/barryvdh/laravel-debugbar/src/Support/Clockwork/ClockworkCollector.php"/>
+  <docblock>
+    <description compact="Based on \Symfony\Component\HttpKernel\DataCollector\RequestDataCollector by Fabien Potencier &lt;fabien@symfony.com&gt;"/>
+  </docblock>
+  <extends full="DebugBar\DataCollector\DataCollector" namespace="DebugBar\DataCollector" name="DataCollector"/>
+  <implements full="DebugBar\DataCollector\DataCollectorInterface" namespace="DebugBar\DataCollector" name="DataCollectorInterface"/>
+  <implements full="DebugBar\DataCollector\Renderable" namespace="DebugBar\DataCollector" name="Renderable"/>
+  <member name="request" visibility="protected" static="false" line="18">
+    <docblock>
+      <var description="$request" type="object">
+        <type full="\Symfony\Component\HttpFoundation\Request" namespace="\Symfony\Component\HttpFoundation" name="Request"/>
+      </var>
+    </docblock>
+  </member>
+  <member name="response" visibility="protected" static="false" line="20">
+    <docblock>
+      <var description="$response" type="object">
+        <type full="\Symfony\Component\HttpFoundation\Request" namespace="\Symfony\Component\HttpFoundation" name="Request"/>
+      </var>
+    </docblock>
+  </member>
+  <member name="session" visibility="protected" static="false" line="22">
+    <docblock>
+      <var description="$session" type="object">
+        <type full="\Symfony\Component\HttpFoundation\Session\SessionInterface" namespace="\Symfony\Component\HttpFoundation\Session" name="SessionInterface"/>
+      </var>
+    </docblock>
+  </member>
+  <constructor name="__construct" start="31" end="36" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Create a new SymfonyRequestCollector"/>
+      <param type="object" variable="$request">
+        <type full="\Symfony\Component\HttpFoundation\Request" namespace="\Symfony\Component\HttpFoundation" name="Request"/>
+      </param>
+      <param type="object" variable="$response">
+        <type full="\Symfony\Component\HttpFoundation\Request" namespace="\Symfony\Component\HttpFoundation" name="Request"/>
+      </param>
+      <param type="object" variable="$session">
+        <type full="\Symfony\Component\HttpFoundation\Session\SessionInterface" namespace="\Symfony\Component\HttpFoundation\Session" name="SessionInterface"/>
+      </param>
+    </docblock>
+    <parameter name="request" byreference="false" type="{unknown}"/>
+    <parameter name="response" byreference="false" type="{unknown}"/>
+    <parameter name="session" byreference="false" type="{unknown}" default="" constant="null"/>
+  </constructor>
+  <method name="getName" start="41" end="44" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="{@inheritDoc}"/>
+    </docblock>
+  </method>
+  <method name="getWidgets" start="49" end="52" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="{@inheritDoc}"/>
+    </docblock>
+  </method>
+  <method name="collect" start="57" end="89" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="{@inheritdoc}"/>
+    </docblock>
+  </method>
+</class>

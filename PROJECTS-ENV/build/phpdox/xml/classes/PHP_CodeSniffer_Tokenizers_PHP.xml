@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="PHP_CodeSniffer_Tokenizers_PHP" namespace="" name="PHP_CodeSniffer_Tokenizers_PHP" abstract="false" final="false" start="26" end="1504">
+  <file path="/home/web/example/src/freegame_developer/vendor/squizlabs/php_codesniffer/CodeSniffer/Tokenizers" file="PHP.php" realpath="/home/web/example/src/freegame_developer/vendor/squizlabs/php_codesniffer/CodeSniffer/Tokenizers/PHP.php" size="68902" time="2016-01-19T23:39:10+00:00" unixtime="1453246750" sha1="3891a3ad64da23f409480ed22eb1e3586ace5da1" relative="freegame_developer/vendor/squizlabs/php_codesniffer/CodeSniffer/Tokenizers/PHP.php"/>
+  <docblock>
+    <description compact="Tokenizes PHP code."/>
+    <category value="PHP"/>
+    <package value="PHP_CodeSniffer"/>
+    <author value="Greg Sherwood &lt;gsherwood@squiz.net&gt;"/>
+    <copyright value="2006-2014 Squiz Pty Ltd (ABN 77 084 670 600)"/>
+    <license name="https://github.com/squizlabs/PHP_CodeSniffer/blob/master/licence.txt BSD Licence"/>
+    <version value="Release: @package_version@"/>
+    <link value="http://pear.php.net/package/PHP_CodeSniffer"/>
+  </docblock>
+  <member name="scopeOpeners" type="array" default="" visibility="public" static="false" line="39">
+    <docblock>
+      <description compact="A list of tokens that are allowed to open a scope.">This array also contains information about what kind of token the scope
+opener uses to open and close the scope, if the token strictly requires
+an opener, if the token can share a scope closer, and who it can be shared
+with. An example of a token that shares a scope closer is a CASE scope.</description>
+      <var type="array"/>
+    </docblock>
+  </member>
+  <member name="endScopeTokens" type="array" default="" visibility="public" static="false" line="278">
+    <docblock>
+      <description compact="A list of tokens that end the scope.">This array is just a unique collection of the end tokens
+from the _scopeOpeners array. The data is duplicated here to
+save time during parsing of the file.</description>
+      <var type="array"/>
+    </docblock>
+  </member>
+  <member name="_resolveTokenCache" type="array" default="" visibility="private" static="true" line="295">
+    <docblock>
+      <description compact="A cache of different token types, resolved into arrays."/>
+      <var type="object">
+        <type full="array()" namespace="" name="array()"/>
+      </var>
+      <see value="standardiseToken()"/>
+    </docblock>
+  </member>
+  <method name="tokenizeString" start="309" end="909" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Creates an array of tokens when given some PHP code.">Starts by using token_get_all() but does a lot of extra processing
+to insert information about the context of the token.</description>
+      <param description="The string to tokenize." type="string" variable="$string"/>
+      <param description="The EOL character to use for splitting strings." type="string" variable="$eolChar"/>
+      <return type="array"/>
+    </docblock>
+    <parameter name="string" byreference="false" type="{unknown}"/>
+    <parameter name="eolChar" byreference="false" type="string" default="'\n'"/>
+    <inline>
+      <comment value="end for" line="901"/>
+    </inline>
+  </method>
+  <method name="processAdditional" start="927" end="1315" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Performs additional processing after main tokenizing.">This additional processing checks for CASE statements that are using curly
+braces for scope openers and closers. It also turns some T_FUNCTION tokens
+into T_CLOSURE when they are not standard function definitions. It also
+detects short array syntax and converts those square brackets into new tokens.
+It also corrects some usage of the static and class keywords. It also
+assigns tokens to function return types.</description>
+      <param description="The array of tokens to process." type="array" variable="$tokens"/>
+      <param description="The EOL character to use for splitting strings." type="string" variable="$eolChar"/>
+      <return type="object">
+        <type full="void" namespace="" name="void"/>
+      </return>
+    </docblock>
+    <parameter name="tokens" byreference="true" type="{unknown}"/>
+    <parameter name="eolChar" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="end for" line="1309"/>
+    </inline>
+  </method>
+  <method name="standardiseToken" start="1326" end="1393" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description compact="Takes a token produced from &lt;code&gt;token_get_all()&lt;/code&gt; and produces a more uniform token."/>
+      <param description="The token to convert." type="object" variable="$token">
+        <type full="string|array" namespace="" name="string|array"/>
+      </param>
+      <return description="The new token." type="array"/>
+    </docblock>
+    <parameter name="token" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="end if" line="1388"/>
+    </inline>
+  </method>
+  <method name="resolveSimpleToken" start="1407" end="1501" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description compact="Converts simple tokens into a format that conforms to complex tokens produced by token_get_all().">Simple tokens are tokens that are not in array form when produced from
+token_get_all().</description>
+      <param description="The simple token to convert." type="string" variable="$token"/>
+      <return description="The new token in array format." type="array"/>
+    </docblock>
+    <parameter name="token" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="end switch" line="1493"/>
+    </inline>
+  </method>
+</class>

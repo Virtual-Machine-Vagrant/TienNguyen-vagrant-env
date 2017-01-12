@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="MongoDB\Model\CollectionInfoLegacyIterator" namespace="MongoDB\Model" name="CollectionInfoLegacyIterator" abstract="false" final="false" start="24" end="95">
+  <file path="/home/web/example/src/freegame_developer/vendor/mongodb/mongodb/src/Model" file="CollectionInfoLegacyIterator.php" realpath="/home/web/example/src/freegame_developer/vendor/mongodb/mongodb/src/Model/CollectionInfoLegacyIterator.php" size="2733" time="2016-09-23T19:38:29+00:00" unixtime="1474659509" sha1="e8277ea16dd24397ff4b67746d6d95f25ecd1da2" relative="freegame_developer/vendor/mongodb/mongodb/src/Model/CollectionInfoLegacyIterator.php"/>
+  <docblock>
+    <description compact="CollectionInfoIterator for legacy &quot;system.namespaces&quot; query results.">This iterator may be used to wrap a Cursor returned for queries on the
+"system.namespaces" collection. It includes logic to filter out internal
+collections and modify the collection name to be consistent with results from
+the listCollections command.</description>
+    <internal/>
+    <see value="MongoDB\Database::listCollections()"/>
+    <see value="https://github.com/mongodb/specifications/blob/master/source/enumerate-collections.rst"/>
+    <see value="http://docs.mongodb.org/manual/reference/command/listCollections/"/>
+    <see value="http://docs.mongodb.org/manual/reference/system-collections/"/>
+  </docblock>
+  <extends full="FilterIterator" namespace="" name="FilterIterator"/>
+  <implements full="MongoDB\Model\CollectionInfoIterator" namespace="MongoDB\Model" name="CollectionInfoIterator"/>
+  <constructor name="__construct" start="31" end="41" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Constructor."/>
+      <param type="object" variable="$iterator">
+        <type full="Traversable" namespace="" name="Traversable"/>
+      </param>
+    </docblock>
+    <parameter name="iterator" byreference="false" type="object">
+      <type full="Traversable" namespace="" name="Traversable"/>
+    </parameter>
+    <inline>
+      <comment value="FilterIterator requires an Iterator, so wrap all other Traversables" line="33"/>
+      <comment xmlns="http://xml.phpdox.net/src" value="with an IteratorIterator as a convenience." line="34"/>
+    </inline>
+  </constructor>
+  <method name="accept" start="49" end="73" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Filter out internal or invalid collections."/>
+      <see value="http://php.net/filteriterator.accept"/>
+      <return type="boolean"/>
+    </docblock>
+    <inline>
+      <comment value="Reject names with &quot;$&quot; characters (e.g. indexes, oplog)" line="57"/>
+      <comment value="Legacy collection names are a namespace and should be prefixed with" line="64"/>
+      <comment xmlns="http://xml.phpdox.net/src" value="the database name and a dot. Reject values that omit this prefix or" line="65"/>
+      <comment xmlns="http://xml.phpdox.net/src" value="are empty beyond it." line="66"/>
+    </inline>
+  </method>
+  <method name="current" start="82" end="94" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Return the current element as a CollectionInfo instance."/>
+      <see value="CollectionInfoIterator::current()"/>
+      <see value="http://php.net/iterator.current"/>
+      <return type="object">
+        <type full="MongoDB\Model\CollectionInfo" namespace="MongoDB\Model" name="CollectionInfo"/>
+      </return>
+    </docblock>
+    <inline>
+      <comment value="Trim the database prefix up to and including the first dot" line="86"/>
+    </inline>
+  </method>
+</class>

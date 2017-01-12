@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="Prophecy\Doubler\Generator\Node\ArgumentNode" namespace="Prophecy\Doubler\Generator\Node" name="ArgumentNode" abstract="false" final="false" start="19" end="91">
+  <file path="/home/web/example/src/freegame_developer/vendor/phpspec/prophecy/src/Prophecy/Doubler/Generator/Node" file="ArgumentNode.php" realpath="/home/web/example/src/freegame_developer/vendor/phpspec/prophecy/src/Prophecy/Doubler/Generator/Node/ArgumentNode.php" size="1762" time="2016-06-07T08:13:47+00:00" unixtime="1465287227" sha1="cc6a5e9a39353ad3abba1bae171dfd886c7e4d51" relative="freegame_developer/vendor/phpspec/prophecy/src/Prophecy/Doubler/Generator/Node/ArgumentNode.php"/>
+  <docblock>
+    <description compact="Argument node."/>
+    <author value="Konstantin Kudryashov &lt;ever.zet@gmail.com&gt;"/>
+  </docblock>
+  <member name="name" visibility="private" static="false" line="21"/>
+  <member name="typeHint" visibility="private" static="false" line="22"/>
+  <member name="default" visibility="private" static="false" line="23"/>
+  <member name="optional" type="boolean" default="false" visibility="private" static="false" line="24"/>
+  <member name="byReference" type="boolean" default="false" visibility="private" static="false" line="25"/>
+  <member name="isVariadic" type="boolean" default="false" visibility="private" static="false" line="26"/>
+  <constructor name="__construct" start="31" end="34" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <param type="string" variable="$name"/>
+    </docblock>
+    <parameter name="name" byreference="false" type="{unknown}"/>
+  </constructor>
+  <method name="getName" start="36" end="39" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="getTypeHint" start="41" end="44" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="setTypeHint" start="46" end="49" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="typeHint" byreference="false" type="{unknown}" default="" constant="null"/>
+  </method>
+  <method name="hasDefault" start="51" end="54" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="getDefault" start="56" end="59" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="setDefault" start="61" end="65" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="default" byreference="false" type="{unknown}" default="" constant="null"/>
+  </method>
+  <method name="isOptional" start="67" end="70" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="setAsPassedByReference" start="72" end="75" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="byReference" byreference="false" type="boolean" default="true"/>
+  </method>
+  <method name="isPassedByReference" start="77" end="80" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="setAsVariadic" start="82" end="85" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="isVariadic" byreference="false" type="boolean" default="true"/>
+  </method>
+  <method name="isVariadic" start="87" end="90" abstract="false" final="false" static="false" visibility="public"/>
+</class>

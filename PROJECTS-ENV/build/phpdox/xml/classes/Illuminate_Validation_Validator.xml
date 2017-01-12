@@ -1,0 +1,2020 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="Illuminate\Validation\Validator" namespace="Illuminate\Validation" name="Validator" abstract="false" final="false" start="23" end="2680">
+  <file path="/home/web/example/src/freegame_developer/vendor/laravel/framework/src/Illuminate/Validation" file="Validator.php" realpath="/home/web/example/src/freegame_developer/vendor/laravel/framework/src/Illuminate/Validation/Validator.php" size="71929" time="2016-02-24T15:13:21+00:00" unixtime="1456326801" sha1="b194ceb6dddc976f17b3f7167a7d7be46ffd7c40" relative="freegame_developer/vendor/laravel/framework/src/Illuminate/Validation/Validator.php"/>
+  <implements full="Illuminate\Contracts\Validation\Validator" namespace="Illuminate\Contracts\Validation" name="Validator"/>
+  <member name="translator" visibility="protected" static="false" line="30">
+    <docblock>
+      <description compact="The Translator implementation."/>
+      <var type="object">
+        <type full="\Symfony\Component\Translation\TranslatorInterface" namespace="\Symfony\Component\Translation" name="TranslatorInterface"/>
+      </var>
+    </docblock>
+  </member>
+  <member name="presenceVerifier" visibility="protected" static="false" line="37">
+    <docblock>
+      <description compact="The Presence Verifier implementation."/>
+      <var type="object">
+        <type full="\Illuminate\Validation\PresenceVerifierInterface" namespace="\Illuminate\Validation" name="PresenceVerifierInterface"/>
+      </var>
+    </docblock>
+  </member>
+  <member name="container" visibility="protected" static="false" line="44">
+    <docblock>
+      <description compact="The container instance."/>
+      <var type="object">
+        <type full="\Illuminate\Contracts\Container\Container" namespace="\Illuminate\Contracts\Container" name="Container"/>
+      </var>
+    </docblock>
+  </member>
+  <member name="failedRules" type="array" default="" visibility="protected" static="false" line="51">
+    <docblock>
+      <description compact="The failed validation rules."/>
+      <var type="array"/>
+    </docblock>
+  </member>
+  <member name="messages" visibility="protected" static="false" line="58">
+    <docblock>
+      <description compact="The message bag instance."/>
+      <var type="object">
+        <type full="\Illuminate\Support\MessageBag" namespace="\Illuminate\Support" name="MessageBag"/>
+      </var>
+    </docblock>
+  </member>
+  <member name="data" visibility="protected" static="false" line="65">
+    <docblock>
+      <description compact="The data under validation."/>
+      <var type="array"/>
+    </docblock>
+  </member>
+  <member name="files" type="array" default="" visibility="protected" static="false" line="72">
+    <docblock>
+      <description compact="The files under validation."/>
+      <var type="array"/>
+    </docblock>
+  </member>
+  <member name="rules" visibility="protected" static="false" line="79">
+    <docblock>
+      <description compact="The rules to be applied to the data."/>
+      <var type="array"/>
+    </docblock>
+  </member>
+  <member name="after" type="array" default="" visibility="protected" static="false" line="86">
+    <docblock>
+      <description compact="All of the registered &quot;after&quot; callbacks."/>
+      <var type="array"/>
+    </docblock>
+  </member>
+  <member name="customMessages" type="array" default="" visibility="protected" static="false" line="93">
+    <docblock>
+      <description compact="The array of custom error messages."/>
+      <var type="array"/>
+    </docblock>
+  </member>
+  <member name="fallbackMessages" type="array" default="" visibility="protected" static="false" line="100">
+    <docblock>
+      <description compact="The array of fallback error messages."/>
+      <var type="array"/>
+    </docblock>
+  </member>
+  <member name="customAttributes" type="array" default="" visibility="protected" static="false" line="107">
+    <docblock>
+      <description compact="The array of custom attribute names."/>
+      <var type="array"/>
+    </docblock>
+  </member>
+  <member name="customValues" type="array" default="" visibility="protected" static="false" line="114">
+    <docblock>
+      <description compact="The array of custom displayabled values."/>
+      <var type="array"/>
+    </docblock>
+  </member>
+  <member name="extensions" type="array" default="" visibility="protected" static="false" line="121">
+    <docblock>
+      <description compact="All of the custom validator extensions."/>
+      <var type="array"/>
+    </docblock>
+  </member>
+  <member name="replacers" type="array" default="" visibility="protected" static="false" line="128">
+    <docblock>
+      <description compact="All of the custom replacer extensions."/>
+      <var type="array"/>
+    </docblock>
+  </member>
+  <member name="sizeRules" type="array" default="" visibility="protected" static="false" line="135">
+    <docblock>
+      <description compact="The size related validation rules."/>
+      <var type="array"/>
+    </docblock>
+  </member>
+  <member name="numericRules" type="array" default="" visibility="protected" static="false" line="142">
+    <docblock>
+      <description compact="The numeric related validation rules."/>
+      <var type="array"/>
+    </docblock>
+  </member>
+  <member name="implicitRules" type="array" default="" visibility="protected" static="false" line="149">
+    <docblock>
+      <description compact="The validation rules that imply the field is required."/>
+      <var type="array"/>
+    </docblock>
+  </member>
+  <constructor name="__construct" start="163" end="170" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Create a new Validator instance."/>
+      <param type="object" variable="$translator">
+        <type full="\Symfony\Component\Translation\TranslatorInterface" namespace="\Symfony\Component\Translation" name="TranslatorInterface"/>
+      </param>
+      <param type="array" variable="$data"/>
+      <param type="array" variable="$rules"/>
+      <param type="array" variable="$messages"/>
+      <param type="array" variable="$customAttributes"/>
+      <return type="object">
+        <type full="Illuminate\Validation\void" namespace="Illuminate\Validation" name="void"/>
+      </return>
+    </docblock>
+    <parameter name="translator" byreference="false" type="object">
+      <type full="Symfony\Component\Translation\TranslatorInterface" namespace="Symfony\Component\Translation" name="TranslatorInterface"/>
+    </parameter>
+    <parameter name="data" byreference="false" type="array"/>
+    <parameter name="rules" byreference="false" type="array"/>
+    <parameter name="messages" byreference="false" type="array" default=""/>
+    <parameter name="customAttributes" byreference="false" type="array" default=""/>
+  </constructor>
+  <method name="parseData" start="179" end="201" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Parse the data and hydrate the files array."/>
+      <param type="array" variable="$data"/>
+      <param type="string" variable="$arrayKey"/>
+      <return type="array"/>
+    </docblock>
+    <parameter name="data" byreference="false" type="array"/>
+    <parameter name="arrayKey" byreference="false" type="{unknown}" default="" constant="null"/>
+  </method>
+  <method name="explodeRules" start="209" end="216" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Explode the rules into an array of rules."/>
+      <param type="object" variable="$rules">
+        <type full="Illuminate\Validation\string|array" namespace="Illuminate\Validation" name="string|array"/>
+      </param>
+      <return type="array"/>
+    </docblock>
+    <parameter name="rules" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="after" start="224" end="231" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="After an after validation callback."/>
+      <param type="object" variable="$callback">
+        <type full="Illuminate\Validation\callable|string" namespace="Illuminate\Validation" name="callable|string"/>
+      </param>
+      <return type="object">
+        <type full="Illuminate\Validation\$this" namespace="Illuminate\Validation" name="$this"/>
+      </return>
+    </docblock>
+    <parameter name="callback" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="sometimes" start="241" end="250" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Add conditions to a given field based on a Closure."/>
+      <param type="string" variable="$attribute"/>
+      <param type="object" variable="$rules">
+        <type full="Illuminate\Validation\string|array" namespace="Illuminate\Validation" name="string|array"/>
+      </param>
+      <param type="object" variable="$callback">
+        <type full="Illuminate\Validation\callable" namespace="Illuminate\Validation" name="callable"/>
+      </param>
+      <return type="object">
+        <type full="Illuminate\Validation\void" namespace="Illuminate\Validation" name="void"/>
+      </return>
+    </docblock>
+    <parameter name="attribute" byreference="false" type="{unknown}"/>
+    <parameter name="rules" byreference="false" type="{unknown}"/>
+    <parameter name="callback" byreference="false" type="object">
+      <type full="Illuminate\Validation\callable" namespace="Illuminate\Validation" name="callable"/>
+    </parameter>
+  </method>
+  <method name="each" start="261" end="282" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Define a set of rules that apply to each element in an array attribute."/>
+      <param type="string" variable="$attribute"/>
+      <param type="object" variable="$rules">
+        <type full="Illuminate\Validation\string|array" namespace="Illuminate\Validation" name="string|array"/>
+      </param>
+      <return type="object">
+        <type full="Illuminate\Validation\void" namespace="Illuminate\Validation" name="void"/>
+      </return>
+      <throws type="object">
+        <type full="\InvalidArgumentException" namespace="" name="InvalidArgumentException"/>
+      </throws>
+    </docblock>
+    <parameter name="attribute" byreference="false" type="{unknown}"/>
+    <parameter name="rules" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="mergeRules" start="291" end="298" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Merge additional rules into a given attribute."/>
+      <param type="string" variable="$attribute"/>
+      <param type="object" variable="$rules">
+        <type full="Illuminate\Validation\string|array" namespace="Illuminate\Validation" name="string|array"/>
+      </param>
+      <return type="object">
+        <type full="Illuminate\Validation\void" namespace="Illuminate\Validation" name="void"/>
+      </return>
+    </docblock>
+    <parameter name="attribute" byreference="false" type="{unknown}"/>
+    <parameter name="rules" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="passes" start="305" end="326" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Determine if the data passes the validation rules."/>
+      <return type="object">
+        <type full="Illuminate\Validation\bool" namespace="Illuminate\Validation" name="bool"/>
+      </return>
+    </docblock>
+    <inline>
+      <comment value="We'll spin through each rule, validating the attributes attached to that" line="309"/>
+      <comment value="rule. Any error messages will be added to the containers with each of" line="310"/>
+      <comment value="the other error messages, returning true if we don't have messages." line="311"/>
+      <comment value="Here we will spin through all of the &quot;after&quot; hooks on this validator and" line="318"/>
+      <comment value="fire them off. This gives the callbacks a chance to perform all kinds" line="319"/>
+      <comment value="of other validation that needs to get wrapped up in this operation." line="320"/>
+    </inline>
+  </method>
+  <method name="fails" start="333" end="336" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Determine if the data fails the validation rules."/>
+      <return type="object">
+        <type full="Illuminate\Validation\bool" namespace="Illuminate\Validation" name="bool"/>
+      </return>
+    </docblock>
+  </method>
+  <method name="validate" start="345" end="365" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Validate a given attribute against a rule."/>
+      <param type="string" variable="$attribute"/>
+      <param type="string" variable="$rule"/>
+      <return type="object">
+        <type full="Illuminate\Validation\void" namespace="Illuminate\Validation" name="void"/>
+      </return>
+    </docblock>
+    <parameter name="attribute" byreference="false" type="{unknown}"/>
+    <parameter name="rule" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="We will get the value for the given attribute from the array of data and then" line="353"/>
+      <comment value="verify that the attribute is indeed validatable. Unless the rule implies" line="354"/>
+      <comment value="that the attribute is required, rules are not run for missing values." line="355"/>
+    </inline>
+  </method>
+  <method name="valid" start="372" end="379" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Returns the data which was valid."/>
+      <return type="array"/>
+    </docblock>
+  </method>
+  <method name="invalid" start="386" end="393" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Returns the data which was invalid."/>
+      <return type="array"/>
+    </docblock>
+  </method>
+  <method name="getValue" start="401" end="408" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Get the value of a given attribute."/>
+      <param type="string" variable="$attribute"/>
+      <return type="mixed"/>
+    </docblock>
+    <parameter name="attribute" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="isValidatable" start="418" end="423" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Determine if the attribute is validatable."/>
+      <param type="string" variable="$rule"/>
+      <param type="string" variable="$attribute"/>
+      <param type="mixed" variable="$value"/>
+      <return type="object">
+        <type full="Illuminate\Validation\bool" namespace="Illuminate\Validation" name="bool"/>
+      </return>
+    </docblock>
+    <parameter name="rule" byreference="false" type="{unknown}"/>
+    <parameter name="attribute" byreference="false" type="{unknown}"/>
+    <parameter name="value" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="presentOrRuleIsImplicit" start="433" end="436" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Determine if the field is present, or the rule implies required."/>
+      <param type="string" variable="$rule"/>
+      <param type="string" variable="$attribute"/>
+      <param type="mixed" variable="$value"/>
+      <return type="object">
+        <type full="Illuminate\Validation\bool" namespace="Illuminate\Validation" name="bool"/>
+      </return>
+    </docblock>
+    <parameter name="rule" byreference="false" type="{unknown}"/>
+    <parameter name="attribute" byreference="false" type="{unknown}"/>
+    <parameter name="value" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="passesOptionalCheck" start="444" end="453" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Determine if the attribute passes any optional check."/>
+      <param type="string" variable="$attribute"/>
+      <return type="object">
+        <type full="Illuminate\Validation\bool" namespace="Illuminate\Validation" name="bool"/>
+      </return>
+    </docblock>
+    <parameter name="attribute" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="isImplicit" start="461" end="464" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Determine if a given rule implies the attribute is required."/>
+      <param type="string" variable="$rule"/>
+      <return type="object">
+        <type full="Illuminate\Validation\bool" namespace="Illuminate\Validation" name="bool"/>
+      </return>
+    </docblock>
+    <parameter name="rule" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="hasNotFailedPreviousRuleIfPresenceRule" start="475" end="479" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Determine if it's a necessary presence validation.">This is to avoid possible database type comparison errors.</description>
+      <param type="string" variable="$rule"/>
+      <param type="string" variable="$attribute"/>
+      <return type="object">
+        <type full="Illuminate\Validation\bool" namespace="Illuminate\Validation" name="bool"/>
+      </return>
+    </docblock>
+    <parameter name="rule" byreference="false" type="{unknown}"/>
+    <parameter name="attribute" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="addFailure" start="489" end="494" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Add a failed rule and error message to the collection."/>
+      <param type="string" variable="$attribute"/>
+      <param type="string" variable="$rule"/>
+      <param type="array" variable="$parameters"/>
+      <return type="object">
+        <type full="Illuminate\Validation\void" namespace="Illuminate\Validation" name="void"/>
+      </return>
+    </docblock>
+    <parameter name="attribute" byreference="false" type="{unknown}"/>
+    <parameter name="rule" byreference="false" type="{unknown}"/>
+    <parameter name="parameters" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="addError" start="504" end="511" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Add an error message to the validator's collection of messages."/>
+      <param type="string" variable="$attribute"/>
+      <param type="string" variable="$rule"/>
+      <param type="array" variable="$parameters"/>
+      <return type="object">
+        <type full="Illuminate\Validation\void" namespace="Illuminate\Validation" name="void"/>
+      </return>
+    </docblock>
+    <parameter name="attribute" byreference="false" type="{unknown}"/>
+    <parameter name="rule" byreference="false" type="{unknown}"/>
+    <parameter name="parameters" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="validateSometimes" start="520" end="523" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="&quot;Validate&quot; optional attributes.">Always returns true, just lets us put sometimes in rules.</description>
+      <return type="object">
+        <type full="Illuminate\Validation\bool" namespace="Illuminate\Validation" name="bool"/>
+      </return>
+    </docblock>
+  </method>
+  <method name="validateRequired" start="532" end="545" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Validate that a required attribute exists."/>
+      <param type="string" variable="$attribute"/>
+      <param type="mixed" variable="$value"/>
+      <return type="object">
+        <type full="Illuminate\Validation\bool" namespace="Illuminate\Validation" name="bool"/>
+      </return>
+    </docblock>
+    <parameter name="attribute" byreference="false" type="{unknown}"/>
+    <parameter name="value" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="validateFilled" start="554" end="561" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Validate the given attribute is filled if it is present."/>
+      <param type="string" variable="$attribute"/>
+      <param type="mixed" variable="$value"/>
+      <return type="object">
+        <type full="Illuminate\Validation\bool" namespace="Illuminate\Validation" name="bool"/>
+      </return>
+    </docblock>
+    <parameter name="attribute" byreference="false" type="{unknown}"/>
+    <parameter name="value" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="anyFailingRequired" start="569" end="578" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Determine if any of the given attributes fail the required test."/>
+      <param type="array" variable="$attributes"/>
+      <return type="object">
+        <type full="Illuminate\Validation\bool" namespace="Illuminate\Validation" name="bool"/>
+      </return>
+    </docblock>
+    <parameter name="attributes" byreference="false" type="array"/>
+  </method>
+  <method name="allFailingRequired" start="586" end="595" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Determine if all of the given attributes fail the required test."/>
+      <param type="array" variable="$attributes"/>
+      <return type="object">
+        <type full="Illuminate\Validation\bool" namespace="Illuminate\Validation" name="bool"/>
+      </return>
+    </docblock>
+    <parameter name="attributes" byreference="false" type="array"/>
+  </method>
+  <method name="validateRequiredWith" start="605" end="612" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Validate that an attribute exists when any other attribute exists."/>
+      <param type="string" variable="$attribute"/>
+      <param type="mixed" variable="$value"/>
+      <param type="mixed" variable="$parameters"/>
+      <return type="object">
+        <type full="Illuminate\Validation\bool" namespace="Illuminate\Validation" name="bool"/>
+      </return>
+    </docblock>
+    <parameter name="attribute" byreference="false" type="{unknown}"/>
+    <parameter name="value" byreference="false" type="{unknown}"/>
+    <parameter name="parameters" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="validateRequiredWithAll" start="622" end="629" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Validate that an attribute exists when all other attributes exists."/>
+      <param type="string" variable="$attribute"/>
+      <param type="mixed" variable="$value"/>
+      <param type="mixed" variable="$parameters"/>
+      <return type="object">
+        <type full="Illuminate\Validation\bool" namespace="Illuminate\Validation" name="bool"/>
+      </return>
+    </docblock>
+    <parameter name="attribute" byreference="false" type="{unknown}"/>
+    <parameter name="value" byreference="false" type="{unknown}"/>
+    <parameter name="parameters" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="validateRequiredWithout" start="639" end="646" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Validate that an attribute exists when another attribute does not."/>
+      <param type="string" variable="$attribute"/>
+      <param type="mixed" variable="$value"/>
+      <param type="mixed" variable="$parameters"/>
+      <return type="object">
+        <type full="Illuminate\Validation\bool" namespace="Illuminate\Validation" name="bool"/>
+      </return>
+    </docblock>
+    <parameter name="attribute" byreference="false" type="{unknown}"/>
+    <parameter name="value" byreference="false" type="{unknown}"/>
+    <parameter name="parameters" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="validateRequiredWithoutAll" start="656" end="663" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Validate that an attribute exists when all other attributes do not."/>
+      <param type="string" variable="$attribute"/>
+      <param type="mixed" variable="$value"/>
+      <param type="mixed" variable="$parameters"/>
+      <return type="object">
+        <type full="Illuminate\Validation\bool" namespace="Illuminate\Validation" name="bool"/>
+      </return>
+    </docblock>
+    <parameter name="attribute" byreference="false" type="{unknown}"/>
+    <parameter name="value" byreference="false" type="{unknown}"/>
+    <parameter name="parameters" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="validateRequiredIf" start="673" end="686" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Validate that an attribute exists when another attribute has a given value."/>
+      <param type="string" variable="$attribute"/>
+      <param type="mixed" variable="$value"/>
+      <param type="mixed" variable="$parameters"/>
+      <return type="object">
+        <type full="Illuminate\Validation\bool" namespace="Illuminate\Validation" name="bool"/>
+      </return>
+    </docblock>
+    <parameter name="attribute" byreference="false" type="{unknown}"/>
+    <parameter name="value" byreference="false" type="{unknown}"/>
+    <parameter name="parameters" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="validateRequiredUnless" start="696" end="709" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Validate that an attribute exists when another attribute does not have a given value."/>
+      <param type="string" variable="$attribute"/>
+      <param type="mixed" variable="$value"/>
+      <param type="mixed" variable="$parameters"/>
+      <return type="object">
+        <type full="Illuminate\Validation\bool" namespace="Illuminate\Validation" name="bool"/>
+      </return>
+    </docblock>
+    <parameter name="attribute" byreference="false" type="{unknown}"/>
+    <parameter name="value" byreference="false" type="{unknown}"/>
+    <parameter name="parameters" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="getPresentCount" start="717" end="728" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Get the number of attributes in a list that are present."/>
+      <param type="array" variable="$attributes"/>
+      <return type="int"/>
+    </docblock>
+    <parameter name="attributes" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="validateConfirmed" start="737" end="740" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Validate that an attribute has a matching confirmation."/>
+      <param type="string" variable="$attribute"/>
+      <param type="mixed" variable="$value"/>
+      <return type="object">
+        <type full="Illuminate\Validation\bool" namespace="Illuminate\Validation" name="bool"/>
+      </return>
+    </docblock>
+    <parameter name="attribute" byreference="false" type="{unknown}"/>
+    <parameter name="value" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="validateSame" start="750" end="757" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Validate that two attributes match."/>
+      <param type="string" variable="$attribute"/>
+      <param type="mixed" variable="$value"/>
+      <param type="array" variable="$parameters"/>
+      <return type="object">
+        <type full="Illuminate\Validation\bool" namespace="Illuminate\Validation" name="bool"/>
+      </return>
+    </docblock>
+    <parameter name="attribute" byreference="false" type="{unknown}"/>
+    <parameter name="value" byreference="false" type="{unknown}"/>
+    <parameter name="parameters" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="validateDifferent" start="767" end="774" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Validate that an attribute is different from another attribute."/>
+      <param type="string" variable="$attribute"/>
+      <param type="mixed" variable="$value"/>
+      <param type="array" variable="$parameters"/>
+      <return type="object">
+        <type full="Illuminate\Validation\bool" namespace="Illuminate\Validation" name="bool"/>
+      </return>
+    </docblock>
+    <parameter name="attribute" byreference="false" type="{unknown}"/>
+    <parameter name="value" byreference="false" type="{unknown}"/>
+    <parameter name="parameters" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="validateAccepted" start="785" end="790" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Validate that an attribute was &quot;accepted&quot;.">This validation rule implies the attribute is "required".</description>
+      <param type="string" variable="$attribute"/>
+      <param type="mixed" variable="$value"/>
+      <return type="object">
+        <type full="Illuminate\Validation\bool" namespace="Illuminate\Validation" name="bool"/>
+      </return>
+    </docblock>
+    <parameter name="attribute" byreference="false" type="{unknown}"/>
+    <parameter name="value" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="validateArray" start="799" end="802" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Validate that an attribute is an array."/>
+      <param type="string" variable="$attribute"/>
+      <param type="mixed" variable="$value"/>
+      <return type="object">
+        <type full="Illuminate\Validation\bool" namespace="Illuminate\Validation" name="bool"/>
+      </return>
+    </docblock>
+    <parameter name="attribute" byreference="false" type="{unknown}"/>
+    <parameter name="value" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="validateBoolean" start="811" end="816" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Validate that an attribute is a boolean."/>
+      <param type="string" variable="$attribute"/>
+      <param type="mixed" variable="$value"/>
+      <return type="object">
+        <type full="Illuminate\Validation\bool" namespace="Illuminate\Validation" name="bool"/>
+      </return>
+    </docblock>
+    <parameter name="attribute" byreference="false" type="{unknown}"/>
+    <parameter name="value" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="validateInteger" start="825" end="828" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Validate that an attribute is an integer."/>
+      <param type="string" variable="$attribute"/>
+      <param type="mixed" variable="$value"/>
+      <return type="object">
+        <type full="Illuminate\Validation\bool" namespace="Illuminate\Validation" name="bool"/>
+      </return>
+    </docblock>
+    <parameter name="attribute" byreference="false" type="{unknown}"/>
+    <parameter name="value" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="validateNumeric" start="837" end="840" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Validate that an attribute is numeric."/>
+      <param type="string" variable="$attribute"/>
+      <param type="mixed" variable="$value"/>
+      <return type="object">
+        <type full="Illuminate\Validation\bool" namespace="Illuminate\Validation" name="bool"/>
+      </return>
+    </docblock>
+    <parameter name="attribute" byreference="false" type="{unknown}"/>
+    <parameter name="value" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="validateString" start="849" end="852" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Validate that an attribute is a string."/>
+      <param type="string" variable="$attribute"/>
+      <param type="mixed" variable="$value"/>
+      <return type="object">
+        <type full="Illuminate\Validation\bool" namespace="Illuminate\Validation" name="bool"/>
+      </return>
+    </docblock>
+    <parameter name="attribute" byreference="false" type="{unknown}"/>
+    <parameter name="value" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="validateJson" start="861" end="866" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Validate the attribute is a valid JSON string."/>
+      <param type="string" variable="$attribute"/>
+      <param type="mixed" variable="$value"/>
+      <return type="object">
+        <type full="Illuminate\Validation\bool" namespace="Illuminate\Validation" name="bool"/>
+      </return>
+    </docblock>
+    <parameter name="attribute" byreference="false" type="{unknown}"/>
+    <parameter name="value" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="validateDigits" start="876" end="882" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Validate that an attribute has a given number of digits."/>
+      <param type="string" variable="$attribute"/>
+      <param type="mixed" variable="$value"/>
+      <param type="array" variable="$parameters"/>
+      <return type="object">
+        <type full="Illuminate\Validation\bool" namespace="Illuminate\Validation" name="bool"/>
+      </return>
+    </docblock>
+    <parameter name="attribute" byreference="false" type="{unknown}"/>
+    <parameter name="value" byreference="false" type="{unknown}"/>
+    <parameter name="parameters" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="validateDigitsBetween" start="892" end="900" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Validate that an attribute is between a given number of digits."/>
+      <param type="string" variable="$attribute"/>
+      <param type="mixed" variable="$value"/>
+      <param type="array" variable="$parameters"/>
+      <return type="object">
+        <type full="Illuminate\Validation\bool" namespace="Illuminate\Validation" name="bool"/>
+      </return>
+    </docblock>
+    <parameter name="attribute" byreference="false" type="{unknown}"/>
+    <parameter name="value" byreference="false" type="{unknown}"/>
+    <parameter name="parameters" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="validateSize" start="910" end="915" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Validate the size of an attribute."/>
+      <param type="string" variable="$attribute"/>
+      <param type="mixed" variable="$value"/>
+      <param type="array" variable="$parameters"/>
+      <return type="object">
+        <type full="Illuminate\Validation\bool" namespace="Illuminate\Validation" name="bool"/>
+      </return>
+    </docblock>
+    <parameter name="attribute" byreference="false" type="{unknown}"/>
+    <parameter name="value" byreference="false" type="{unknown}"/>
+    <parameter name="parameters" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="validateBetween" start="925" end="932" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Validate the size of an attribute is between a set of values."/>
+      <param type="string" variable="$attribute"/>
+      <param type="mixed" variable="$value"/>
+      <param type="array" variable="$parameters"/>
+      <return type="object">
+        <type full="Illuminate\Validation\bool" namespace="Illuminate\Validation" name="bool"/>
+      </return>
+    </docblock>
+    <parameter name="attribute" byreference="false" type="{unknown}"/>
+    <parameter name="value" byreference="false" type="{unknown}"/>
+    <parameter name="parameters" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="validateMin" start="942" end="947" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Validate the size of an attribute is greater than a minimum value."/>
+      <param type="string" variable="$attribute"/>
+      <param type="mixed" variable="$value"/>
+      <param type="array" variable="$parameters"/>
+      <return type="object">
+        <type full="Illuminate\Validation\bool" namespace="Illuminate\Validation" name="bool"/>
+      </return>
+    </docblock>
+    <parameter name="attribute" byreference="false" type="{unknown}"/>
+    <parameter name="value" byreference="false" type="{unknown}"/>
+    <parameter name="parameters" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="validateMax" start="957" end="966" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Validate the size of an attribute is less than a maximum value."/>
+      <param type="string" variable="$attribute"/>
+      <param type="mixed" variable="$value"/>
+      <param type="array" variable="$parameters"/>
+      <return type="object">
+        <type full="Illuminate\Validation\bool" namespace="Illuminate\Validation" name="bool"/>
+      </return>
+    </docblock>
+    <parameter name="attribute" byreference="false" type="{unknown}"/>
+    <parameter name="value" byreference="false" type="{unknown}"/>
+    <parameter name="parameters" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="getSize" start="975" end="992" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Get the size of an attribute."/>
+      <param type="string" variable="$attribute"/>
+      <param type="mixed" variable="$value"/>
+      <return type="mixed"/>
+    </docblock>
+    <parameter name="attribute" byreference="false" type="{unknown}"/>
+    <parameter name="value" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="This method will determine if the attribute is a number, string, or file and" line="979"/>
+      <comment value="return the proper size accordingly. If it is a number, then number itself" line="980"/>
+      <comment value="is the size. If it is a file, we take kilobytes, and for a string the" line="981"/>
+      <comment value="entire length of the string will be considered the attribute size." line="982"/>
+    </inline>
+  </method>
+  <method name="validateIn" start="1002" end="1009" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Validate an attribute is contained within a list of values."/>
+      <param type="string" variable="$attribute"/>
+      <param type="mixed" variable="$value"/>
+      <param type="array" variable="$parameters"/>
+      <return type="object">
+        <type full="Illuminate\Validation\bool" namespace="Illuminate\Validation" name="bool"/>
+      </return>
+    </docblock>
+    <parameter name="attribute" byreference="false" type="{unknown}"/>
+    <parameter name="value" byreference="false" type="{unknown}"/>
+    <parameter name="parameters" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="validateNotIn" start="1019" end="1022" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Validate an attribute is not contained within a list of values."/>
+      <param type="string" variable="$attribute"/>
+      <param type="mixed" variable="$value"/>
+      <param type="array" variable="$parameters"/>
+      <return type="object">
+        <type full="Illuminate\Validation\bool" namespace="Illuminate\Validation" name="bool"/>
+      </return>
+    </docblock>
+    <parameter name="attribute" byreference="false" type="{unknown}"/>
+    <parameter name="value" byreference="false" type="{unknown}"/>
+    <parameter name="parameters" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="validateUnique" start="1034" end="1071" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Validate the uniqueness of an attribute value on a given database table.">If a database column is not specified, the attribute will be used.</description>
+      <param type="string" variable="$attribute"/>
+      <param type="mixed" variable="$value"/>
+      <param type="array" variable="$parameters"/>
+      <return type="object">
+        <type full="Illuminate\Validation\bool" namespace="Illuminate\Validation" name="bool"/>
+      </return>
+    </docblock>
+    <parameter name="attribute" byreference="false" type="{unknown}"/>
+    <parameter name="value" byreference="false" type="{unknown}"/>
+    <parameter name="parameters" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="The second parameter position holds the name of the column that needs to" line="1040"/>
+      <comment value="be verified as unique. If this parameter isn't specified we will just" line="1041"/>
+      <comment value="assume that this column to be verified shares the attribute's name." line="1042"/>
+      <comment value="The presence verifier is responsible for counting rows within this store" line="1055"/>
+      <comment value="mechanism which might be a relational database or any other permanent" line="1056"/>
+      <comment value="data store like Redis, etc. We will use it to determine uniqueness." line="1057"/>
+    </inline>
+  </method>
+  <method name="parseTable" start="1079" end="1082" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Parse the connection / table for the unique / exists rules."/>
+      <param type="string" variable="$table"/>
+      <return type="array"/>
+    </docblock>
+    <parameter name="table" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="getUniqueIds" start="1090" end="1095" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Get the excluded ID column and value for the unique rule."/>
+      <param type="array" variable="$parameters"/>
+      <return type="array"/>
+    </docblock>
+    <parameter name="parameters" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="getUniqueExtra" start="1103" end="1110" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Get the extra conditions for a unique rule."/>
+      <param type="array" variable="$parameters"/>
+      <return type="array"/>
+    </docblock>
+    <parameter name="parameters" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="validateExists" start="1120" end="1134" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Validate the existence of an attribute value in a database table."/>
+      <param type="string" variable="$attribute"/>
+      <param type="mixed" variable="$value"/>
+      <param type="array" variable="$parameters"/>
+      <return type="object">
+        <type full="Illuminate\Validation\bool" namespace="Illuminate\Validation" name="bool"/>
+      </return>
+    </docblock>
+    <parameter name="attribute" byreference="false" type="{unknown}"/>
+    <parameter name="value" byreference="false" type="{unknown}"/>
+    <parameter name="parameters" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="The second parameter position holds the name of the column that should be" line="1126"/>
+      <comment value="verified as existing. If this parameter is not specified we will guess" line="1127"/>
+      <comment value="that the columns being &quot;verified&quot; shares the given attribute's name." line="1128"/>
+    </inline>
+  </method>
+  <method name="getExistCount" start="1146" end="1161" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Get the number of records that exist in storage."/>
+      <param type="mixed" variable="$connection"/>
+      <param type="string" variable="$table"/>
+      <param type="string" variable="$column"/>
+      <param type="mixed" variable="$value"/>
+      <param type="array" variable="$parameters"/>
+      <return type="int"/>
+    </docblock>
+    <parameter name="connection" byreference="false" type="{unknown}"/>
+    <parameter name="table" byreference="false" type="{unknown}"/>
+    <parameter name="column" byreference="false" type="{unknown}"/>
+    <parameter name="value" byreference="false" type="{unknown}"/>
+    <parameter name="parameters" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="getExtraExistConditions" start="1169" end="1172" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Get the extra exist conditions."/>
+      <param type="array" variable="$parameters"/>
+      <return type="array"/>
+    </docblock>
+    <parameter name="parameters" byreference="false" type="array"/>
+  </method>
+  <method name="getExtraConditions" start="1180" end="1191" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Get the extra conditions for a unique / exists rule."/>
+      <param type="array" variable="$segments"/>
+      <return type="array"/>
+    </docblock>
+    <parameter name="segments" byreference="false" type="array"/>
+  </method>
+  <method name="validateIp" start="1200" end="1203" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Validate that an attribute is a valid IP."/>
+      <param type="string" variable="$attribute"/>
+      <param type="mixed" variable="$value"/>
+      <return type="object">
+        <type full="Illuminate\Validation\bool" namespace="Illuminate\Validation" name="bool"/>
+      </return>
+    </docblock>
+    <parameter name="attribute" byreference="false" type="{unknown}"/>
+    <parameter name="value" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="validateEmail" start="1212" end="1215" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Validate that an attribute is a valid e-mail address."/>
+      <param type="string" variable="$attribute"/>
+      <param type="mixed" variable="$value"/>
+      <return type="object">
+        <type full="Illuminate\Validation\bool" namespace="Illuminate\Validation" name="bool"/>
+      </return>
+    </docblock>
+    <parameter name="attribute" byreference="false" type="{unknown}"/>
+    <parameter name="value" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="validateUrl" start="1224" end="1227" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Validate that an attribute is a valid URL."/>
+      <param type="string" variable="$attribute"/>
+      <param type="mixed" variable="$value"/>
+      <return type="object">
+        <type full="Illuminate\Validation\bool" namespace="Illuminate\Validation" name="bool"/>
+      </return>
+    </docblock>
+    <parameter name="attribute" byreference="false" type="{unknown}"/>
+    <parameter name="value" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="validateActiveUrl" start="1236" end="1243" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Validate that an attribute is an active URL."/>
+      <param type="string" variable="$attribute"/>
+      <param type="mixed" variable="$value"/>
+      <return type="object">
+        <type full="Illuminate\Validation\bool" namespace="Illuminate\Validation" name="bool"/>
+      </return>
+    </docblock>
+    <parameter name="attribute" byreference="false" type="{unknown}"/>
+    <parameter name="value" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="validateImage" start="1252" end="1255" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Validate the MIME type of a file is an image MIME type."/>
+      <param type="string" variable="$attribute"/>
+      <param type="mixed" variable="$value"/>
+      <return type="object">
+        <type full="Illuminate\Validation\bool" namespace="Illuminate\Validation" name="bool"/>
+      </return>
+    </docblock>
+    <parameter name="attribute" byreference="false" type="{unknown}"/>
+    <parameter name="value" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="validateMimes" start="1265" end="1272" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Validate the guessed extension of a file upload is in a set of file extensions."/>
+      <param type="string" variable="$attribute"/>
+      <param type="mixed" variable="$value"/>
+      <param type="array" variable="$parameters"/>
+      <return type="object">
+        <type full="Illuminate\Validation\bool" namespace="Illuminate\Validation" name="bool"/>
+      </return>
+    </docblock>
+    <parameter name="attribute" byreference="false" type="{unknown}"/>
+    <parameter name="value" byreference="false" type="{unknown}"/>
+    <parameter name="parameters" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="validateMimetypes" start="1282" end="1289" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Validate the MIME type of a file upload attribute is in a set of MIME types."/>
+      <param type="string" variable="$attribute"/>
+      <param type="mixed" variable="$value"/>
+      <param type="array" variable="$parameters"/>
+      <return type="object">
+        <type full="Illuminate\Validation\bool" namespace="Illuminate\Validation" name="bool"/>
+      </return>
+    </docblock>
+    <parameter name="attribute" byreference="false" type="{unknown}"/>
+    <parameter name="value" byreference="false" type="{unknown}"/>
+    <parameter name="parameters" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="isAValidFileInstance" start="1297" end="1304" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Check that the given value is a valid file instance."/>
+      <param type="mixed" variable="$value"/>
+      <return type="object">
+        <type full="Illuminate\Validation\bool" namespace="Illuminate\Validation" name="bool"/>
+      </return>
+    </docblock>
+    <parameter name="value" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="validateAlpha" start="1313" end="1316" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Validate that an attribute contains only alphabetic characters."/>
+      <param type="string" variable="$attribute"/>
+      <param type="mixed" variable="$value"/>
+      <return type="object">
+        <type full="Illuminate\Validation\bool" namespace="Illuminate\Validation" name="bool"/>
+      </return>
+    </docblock>
+    <parameter name="attribute" byreference="false" type="{unknown}"/>
+    <parameter name="value" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="validateAlphaNum" start="1325" end="1332" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Validate that an attribute contains only alpha-numeric characters."/>
+      <param type="string" variable="$attribute"/>
+      <param type="mixed" variable="$value"/>
+      <return type="object">
+        <type full="Illuminate\Validation\bool" namespace="Illuminate\Validation" name="bool"/>
+      </return>
+    </docblock>
+    <parameter name="attribute" byreference="false" type="{unknown}"/>
+    <parameter name="value" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="validateAlphaDash" start="1341" end="1348" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Validate that an attribute contains only alpha-numeric characters, dashes, and underscores."/>
+      <param type="string" variable="$attribute"/>
+      <param type="mixed" variable="$value"/>
+      <return type="object">
+        <type full="Illuminate\Validation\bool" namespace="Illuminate\Validation" name="bool"/>
+      </return>
+    </docblock>
+    <parameter name="attribute" byreference="false" type="{unknown}"/>
+    <parameter name="value" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="validateRegex" start="1358" end="1367" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Validate that an attribute passes a regular expression check."/>
+      <param type="string" variable="$attribute"/>
+      <param type="mixed" variable="$value"/>
+      <param type="array" variable="$parameters"/>
+      <return type="object">
+        <type full="Illuminate\Validation\bool" namespace="Illuminate\Validation" name="bool"/>
+      </return>
+    </docblock>
+    <parameter name="attribute" byreference="false" type="{unknown}"/>
+    <parameter name="value" byreference="false" type="{unknown}"/>
+    <parameter name="parameters" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="validateDate" start="1376" end="1389" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Validate that an attribute is a valid date."/>
+      <param type="string" variable="$attribute"/>
+      <param type="mixed" variable="$value"/>
+      <return type="object">
+        <type full="Illuminate\Validation\bool" namespace="Illuminate\Validation" name="bool"/>
+      </return>
+    </docblock>
+    <parameter name="attribute" byreference="false" type="{unknown}"/>
+    <parameter name="value" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="validateDateFormat" start="1399" end="1406" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Validate that an attribute matches a date format."/>
+      <param type="string" variable="$attribute"/>
+      <param type="mixed" variable="$value"/>
+      <param type="array" variable="$parameters"/>
+      <return type="object">
+        <type full="Illuminate\Validation\bool" namespace="Illuminate\Validation" name="bool"/>
+      </return>
+    </docblock>
+    <parameter name="attribute" byreference="false" type="{unknown}"/>
+    <parameter name="value" byreference="false" type="{unknown}"/>
+    <parameter name="parameters" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="validateBefore" start="1416" end="1429" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Validate the date is before a given date."/>
+      <param type="string" variable="$attribute"/>
+      <param type="mixed" variable="$value"/>
+      <param type="array" variable="$parameters"/>
+      <return type="object">
+        <type full="Illuminate\Validation\bool" namespace="Illuminate\Validation" name="bool"/>
+      </return>
+    </docblock>
+    <parameter name="attribute" byreference="false" type="{unknown}"/>
+    <parameter name="value" byreference="false" type="{unknown}"/>
+    <parameter name="parameters" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="validateBeforeWithFormat" start="1439" end="1444" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Validate the date is before a given date with a given format."/>
+      <param type="string" variable="$format"/>
+      <param type="mixed" variable="$value"/>
+      <param type="array" variable="$parameters"/>
+      <return type="object">
+        <type full="Illuminate\Validation\bool" namespace="Illuminate\Validation" name="bool"/>
+      </return>
+    </docblock>
+    <parameter name="format" byreference="false" type="{unknown}"/>
+    <parameter name="value" byreference="false" type="{unknown}"/>
+    <parameter name="parameters" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="validateAfter" start="1454" end="1467" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Validate the date is after a given date."/>
+      <param type="string" variable="$attribute"/>
+      <param type="mixed" variable="$value"/>
+      <param type="array" variable="$parameters"/>
+      <return type="object">
+        <type full="Illuminate\Validation\bool" namespace="Illuminate\Validation" name="bool"/>
+      </return>
+    </docblock>
+    <parameter name="attribute" byreference="false" type="{unknown}"/>
+    <parameter name="value" byreference="false" type="{unknown}"/>
+    <parameter name="parameters" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="validateAfterWithFormat" start="1477" end="1482" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Validate the date is after a given date with a given format."/>
+      <param type="string" variable="$format"/>
+      <param type="mixed" variable="$value"/>
+      <param type="array" variable="$parameters"/>
+      <return type="object">
+        <type full="Illuminate\Validation\bool" namespace="Illuminate\Validation" name="bool"/>
+      </return>
+    </docblock>
+    <parameter name="format" byreference="false" type="{unknown}"/>
+    <parameter name="value" byreference="false" type="{unknown}"/>
+    <parameter name="parameters" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="checkDateTimeOrder" start="1492" end="1499" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Given two date/time strings, check that one is after the other."/>
+      <param type="string" variable="$format"/>
+      <param type="string" variable="$before"/>
+      <param type="string" variable="$after"/>
+      <return type="object">
+        <type full="Illuminate\Validation\bool" namespace="Illuminate\Validation" name="bool"/>
+      </return>
+    </docblock>
+    <parameter name="format" byreference="false" type="{unknown}"/>
+    <parameter name="before" byreference="false" type="{unknown}"/>
+    <parameter name="after" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="getDateTimeWithOptionalFormat" start="1508" end="1521" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Get a DateTime instance from a string."/>
+      <param type="string" variable="$format"/>
+      <param type="string" variable="$value"/>
+      <return type="object">
+        <type full="\DateTime|null" namespace="" name="DateTime|null"/>
+      </return>
+    </docblock>
+    <parameter name="format" byreference="false" type="{unknown}"/>
+    <parameter name="value" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="validateTimezone" start="1530" end="1539" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Validate that an attribute is a valid timezone."/>
+      <param type="string" variable="$attribute"/>
+      <param type="mixed" variable="$value"/>
+      <return type="object">
+        <type full="Illuminate\Validation\bool" namespace="Illuminate\Validation" name="bool"/>
+      </return>
+    </docblock>
+    <parameter name="attribute" byreference="false" type="{unknown}"/>
+    <parameter name="value" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="getDateFormat" start="1547" end="1552" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Get the date format for an attribute if it has one."/>
+      <param type="string" variable="$attribute"/>
+      <return type="object">
+        <type full="Illuminate\Validation\string|null" namespace="Illuminate\Validation" name="string|null"/>
+      </return>
+    </docblock>
+    <parameter name="attribute" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="getMessage" start="1561" end="1604" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Get the validation message for an attribute and rule."/>
+      <param type="string" variable="$attribute"/>
+      <param type="string" variable="$rule"/>
+      <return type="string"/>
+    </docblock>
+    <parameter name="attribute" byreference="false" type="{unknown}"/>
+    <parameter name="rule" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="First we will retrieve the custom message for the validation rule if one" line="1567"/>
+      <comment value="exists. If a custom validation message is being used we'll return the" line="1568"/>
+      <comment value="custom message, otherwise we'll keep searching for a valid message." line="1569"/>
+      <comment value="First we check for a custom defined validation message for the attribute" line="1578"/>
+      <comment value="and rule. This allows the developer to specify specific messages for" line="1579"/>
+      <comment value="only some attributes and rules that need to get specially formed." line="1580"/>
+      <comment value="Finally, if no developer specified messages have been set, and no other" line="1592"/>
+      <comment value="special messages apply for this rule, we will just pull the default" line="1593"/>
+      <comment value="messages out of the translator service for this validation rule." line="1594"/>
+    </inline>
+  </method>
+  <method name="getInlineMessage" start="1614" end="1628" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Get the inline message for a rule if it exists."/>
+      <param type="string" variable="$attribute"/>
+      <param type="string" variable="$lowerRule"/>
+      <param type="array" variable="$source"/>
+      <return type="object">
+        <type full="Illuminate\Validation\string|null" namespace="Illuminate\Validation" name="string|null"/>
+      </return>
+    </docblock>
+    <parameter name="attribute" byreference="false" type="{unknown}"/>
+    <parameter name="lowerRule" byreference="false" type="{unknown}"/>
+    <parameter name="source" byreference="false" type="{unknown}" default="" constant="null"/>
+    <inline>
+      <comment value="First we will check for a custom message for an attribute specific rule" line="1620"/>
+      <comment value="message for the fields, then we will check for a general custom line" line="1621"/>
+      <comment value="that is not attribute specific. If we find either we'll return it." line="1622"/>
+    </inline>
+  </method>
+  <method name="getSizeMessage" start="1637" end="1649" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Get the proper error message for an attribute and size rule."/>
+      <param type="string" variable="$attribute"/>
+      <param type="string" variable="$rule"/>
+      <return type="string"/>
+    </docblock>
+    <parameter name="attribute" byreference="false" type="{unknown}"/>
+    <parameter name="rule" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="There are three different types of size validations. The attribute may be" line="1641"/>
+      <comment value="either a number, file, or string so we will check a few things to know" line="1642"/>
+      <comment value="which type of value it is and return the correct line for that type." line="1643"/>
+    </inline>
+  </method>
+  <method name="getAttributeType" start="1657" end="1671" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Get the data type of the given attribute."/>
+      <param type="string" variable="$attribute"/>
+      <return type="string"/>
+    </docblock>
+    <parameter name="attribute" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="We assume that the attributes present in the file array are files so that" line="1659"/>
+      <comment value="means that if the attribute does not have a numeric rule and the files" line="1660"/>
+      <comment value="list doesn't have it we'll just consider it a string by elimination." line="1661"/>
+    </inline>
+  </method>
+  <method name="doReplacements" start="1682" end="1693" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Replace all error message place-holders with actual values."/>
+      <param type="string" variable="$message"/>
+      <param type="string" variable="$attribute"/>
+      <param type="string" variable="$rule"/>
+      <param type="array" variable="$parameters"/>
+      <return type="string"/>
+    </docblock>
+    <parameter name="message" byreference="false" type="{unknown}"/>
+    <parameter name="attribute" byreference="false" type="{unknown}"/>
+    <parameter name="rule" byreference="false" type="{unknown}"/>
+    <parameter name="parameters" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="getAttributeList" start="1701" end="1713" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Transform an array of attributes to their displayable form."/>
+      <param type="array" variable="$values"/>
+      <return type="array"/>
+    </docblock>
+    <parameter name="values" byreference="false" type="array"/>
+    <inline>
+      <comment value="For each attribute in the list we will simply get its displayable form as" line="1705"/>
+      <comment value="this is convenient when replacing lists of parameters like some of the" line="1706"/>
+      <comment value="replacement functions do when formatting out the validation message." line="1707"/>
+    </inline>
+  </method>
+  <method name="getAttribute" start="1721" end="1743" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Get the displayable name of the attribute."/>
+      <param type="string" variable="$attribute"/>
+      <return type="string"/>
+    </docblock>
+    <parameter name="attribute" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="The developer may dynamically specify the array of custom attributes" line="1723"/>
+      <comment value="on this Validator instance. If the attribute exists in this array" line="1724"/>
+      <comment value="it takes precedence over all other ways we can pull attributes." line="1725"/>
+      <comment value="We allow for the developer to specify language lines for each of the" line="1732"/>
+      <comment value="attributes allowing for more displayable counterparts of each of" line="1733"/>
+      <comment value="the attributes. This provides the ability for simple formats." line="1734"/>
+      <comment value="If no language line has been specified for the attribute all of the" line="1739"/>
+      <comment value="underscores are removed from the attribute name and that will be" line="1740"/>
+      <comment value="used as default versions of the attribute's displayable names." line="1741"/>
+    </inline>
+  </method>
+  <method name="getDisplayableValue" start="1752" end="1765" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Get the displayable name of the value."/>
+      <param type="string" variable="$attribute"/>
+      <param type="mixed" variable="$value"/>
+      <return type="string"/>
+    </docblock>
+    <parameter name="attribute" byreference="false" type="{unknown}"/>
+    <parameter name="value" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="replaceBetween" start="1776" end="1779" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Replace all place-holders for the between rule."/>
+      <param type="string" variable="$message"/>
+      <param type="string" variable="$attribute"/>
+      <param type="string" variable="$rule"/>
+      <param type="array" variable="$parameters"/>
+      <return type="string"/>
+    </docblock>
+    <parameter name="message" byreference="false" type="{unknown}"/>
+    <parameter name="attribute" byreference="false" type="{unknown}"/>
+    <parameter name="rule" byreference="false" type="{unknown}"/>
+    <parameter name="parameters" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="replaceDigits" start="1790" end="1793" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Replace all place-holders for the digits rule."/>
+      <param type="string" variable="$message"/>
+      <param type="string" variable="$attribute"/>
+      <param type="string" variable="$rule"/>
+      <param type="array" variable="$parameters"/>
+      <return type="string"/>
+    </docblock>
+    <parameter name="message" byreference="false" type="{unknown}"/>
+    <parameter name="attribute" byreference="false" type="{unknown}"/>
+    <parameter name="rule" byreference="false" type="{unknown}"/>
+    <parameter name="parameters" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="replaceDigitsBetween" start="1804" end="1807" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Replace all place-holders for the digits (between) rule."/>
+      <param type="string" variable="$message"/>
+      <param type="string" variable="$attribute"/>
+      <param type="string" variable="$rule"/>
+      <param type="array" variable="$parameters"/>
+      <return type="string"/>
+    </docblock>
+    <parameter name="message" byreference="false" type="{unknown}"/>
+    <parameter name="attribute" byreference="false" type="{unknown}"/>
+    <parameter name="rule" byreference="false" type="{unknown}"/>
+    <parameter name="parameters" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="replaceSize" start="1818" end="1821" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Replace all place-holders for the size rule."/>
+      <param type="string" variable="$message"/>
+      <param type="string" variable="$attribute"/>
+      <param type="string" variable="$rule"/>
+      <param type="array" variable="$parameters"/>
+      <return type="string"/>
+    </docblock>
+    <parameter name="message" byreference="false" type="{unknown}"/>
+    <parameter name="attribute" byreference="false" type="{unknown}"/>
+    <parameter name="rule" byreference="false" type="{unknown}"/>
+    <parameter name="parameters" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="replaceMin" start="1832" end="1835" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Replace all place-holders for the min rule."/>
+      <param type="string" variable="$message"/>
+      <param type="string" variable="$attribute"/>
+      <param type="string" variable="$rule"/>
+      <param type="array" variable="$parameters"/>
+      <return type="string"/>
+    </docblock>
+    <parameter name="message" byreference="false" type="{unknown}"/>
+    <parameter name="attribute" byreference="false" type="{unknown}"/>
+    <parameter name="rule" byreference="false" type="{unknown}"/>
+    <parameter name="parameters" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="replaceMax" start="1846" end="1849" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Replace all place-holders for the max rule."/>
+      <param type="string" variable="$message"/>
+      <param type="string" variable="$attribute"/>
+      <param type="string" variable="$rule"/>
+      <param type="array" variable="$parameters"/>
+      <return type="string"/>
+    </docblock>
+    <parameter name="message" byreference="false" type="{unknown}"/>
+    <parameter name="attribute" byreference="false" type="{unknown}"/>
+    <parameter name="rule" byreference="false" type="{unknown}"/>
+    <parameter name="parameters" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="replaceIn" start="1860" end="1867" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Replace all place-holders for the in rule."/>
+      <param type="string" variable="$message"/>
+      <param type="string" variable="$attribute"/>
+      <param type="string" variable="$rule"/>
+      <param type="array" variable="$parameters"/>
+      <return type="string"/>
+    </docblock>
+    <parameter name="message" byreference="false" type="{unknown}"/>
+    <parameter name="attribute" byreference="false" type="{unknown}"/>
+    <parameter name="rule" byreference="false" type="{unknown}"/>
+    <parameter name="parameters" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="replaceNotIn" start="1878" end="1881" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Replace all place-holders for the not_in rule."/>
+      <param type="string" variable="$message"/>
+      <param type="string" variable="$attribute"/>
+      <param type="string" variable="$rule"/>
+      <param type="array" variable="$parameters"/>
+      <return type="string"/>
+    </docblock>
+    <parameter name="message" byreference="false" type="{unknown}"/>
+    <parameter name="attribute" byreference="false" type="{unknown}"/>
+    <parameter name="rule" byreference="false" type="{unknown}"/>
+    <parameter name="parameters" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="replaceMimes" start="1892" end="1895" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Replace all place-holders for the mimes rule."/>
+      <param type="string" variable="$message"/>
+      <param type="string" variable="$attribute"/>
+      <param type="string" variable="$rule"/>
+      <param type="array" variable="$parameters"/>
+      <return type="string"/>
+    </docblock>
+    <parameter name="message" byreference="false" type="{unknown}"/>
+    <parameter name="attribute" byreference="false" type="{unknown}"/>
+    <parameter name="rule" byreference="false" type="{unknown}"/>
+    <parameter name="parameters" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="replaceRequiredWith" start="1906" end="1911" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Replace all place-holders for the required_with rule."/>
+      <param type="string" variable="$message"/>
+      <param type="string" variable="$attribute"/>
+      <param type="string" variable="$rule"/>
+      <param type="array" variable="$parameters"/>
+      <return type="string"/>
+    </docblock>
+    <parameter name="message" byreference="false" type="{unknown}"/>
+    <parameter name="attribute" byreference="false" type="{unknown}"/>
+    <parameter name="rule" byreference="false" type="{unknown}"/>
+    <parameter name="parameters" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="replaceRequiredWithAll" start="1922" end="1925" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Replace all place-holders for the required_with_all rule."/>
+      <param type="string" variable="$message"/>
+      <param type="string" variable="$attribute"/>
+      <param type="string" variable="$rule"/>
+      <param type="array" variable="$parameters"/>
+      <return type="string"/>
+    </docblock>
+    <parameter name="message" byreference="false" type="{unknown}"/>
+    <parameter name="attribute" byreference="false" type="{unknown}"/>
+    <parameter name="rule" byreference="false" type="{unknown}"/>
+    <parameter name="parameters" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="replaceRequiredWithout" start="1936" end="1939" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Replace all place-holders for the required_without rule."/>
+      <param type="string" variable="$message"/>
+      <param type="string" variable="$attribute"/>
+      <param type="string" variable="$rule"/>
+      <param type="array" variable="$parameters"/>
+      <return type="string"/>
+    </docblock>
+    <parameter name="message" byreference="false" type="{unknown}"/>
+    <parameter name="attribute" byreference="false" type="{unknown}"/>
+    <parameter name="rule" byreference="false" type="{unknown}"/>
+    <parameter name="parameters" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="replaceRequiredWithoutAll" start="1950" end="1953" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Replace all place-holders for the required_without_all rule."/>
+      <param type="string" variable="$message"/>
+      <param type="string" variable="$attribute"/>
+      <param type="string" variable="$rule"/>
+      <param type="array" variable="$parameters"/>
+      <return type="string"/>
+    </docblock>
+    <parameter name="message" byreference="false" type="{unknown}"/>
+    <parameter name="attribute" byreference="false" type="{unknown}"/>
+    <parameter name="rule" byreference="false" type="{unknown}"/>
+    <parameter name="parameters" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="replaceRequiredIf" start="1964" end="1971" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Replace all place-holders for the required_if rule."/>
+      <param type="string" variable="$message"/>
+      <param type="string" variable="$attribute"/>
+      <param type="string" variable="$rule"/>
+      <param type="array" variable="$parameters"/>
+      <return type="string"/>
+    </docblock>
+    <parameter name="message" byreference="false" type="{unknown}"/>
+    <parameter name="attribute" byreference="false" type="{unknown}"/>
+    <parameter name="rule" byreference="false" type="{unknown}"/>
+    <parameter name="parameters" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="replaceRequiredUnless" start="1982" end="1987" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Replace all place-holders for the required_unless rule."/>
+      <param type="string" variable="$message"/>
+      <param type="string" variable="$attribute"/>
+      <param type="string" variable="$rule"/>
+      <param type="array" variable="$parameters"/>
+      <return type="string"/>
+    </docblock>
+    <parameter name="message" byreference="false" type="{unknown}"/>
+    <parameter name="attribute" byreference="false" type="{unknown}"/>
+    <parameter name="rule" byreference="false" type="{unknown}"/>
+    <parameter name="parameters" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="replaceSame" start="1998" end="2001" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Replace all place-holders for the same rule."/>
+      <param type="string" variable="$message"/>
+      <param type="string" variable="$attribute"/>
+      <param type="string" variable="$rule"/>
+      <param type="array" variable="$parameters"/>
+      <return type="string"/>
+    </docblock>
+    <parameter name="message" byreference="false" type="{unknown}"/>
+    <parameter name="attribute" byreference="false" type="{unknown}"/>
+    <parameter name="rule" byreference="false" type="{unknown}"/>
+    <parameter name="parameters" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="replaceDifferent" start="2012" end="2015" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Replace all place-holders for the different rule."/>
+      <param type="string" variable="$message"/>
+      <param type="string" variable="$attribute"/>
+      <param type="string" variable="$rule"/>
+      <param type="array" variable="$parameters"/>
+      <return type="string"/>
+    </docblock>
+    <parameter name="message" byreference="false" type="{unknown}"/>
+    <parameter name="attribute" byreference="false" type="{unknown}"/>
+    <parameter name="rule" byreference="false" type="{unknown}"/>
+    <parameter name="parameters" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="replaceDateFormat" start="2026" end="2029" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Replace all place-holders for the date_format rule."/>
+      <param type="string" variable="$message"/>
+      <param type="string" variable="$attribute"/>
+      <param type="string" variable="$rule"/>
+      <param type="array" variable="$parameters"/>
+      <return type="string"/>
+    </docblock>
+    <parameter name="message" byreference="false" type="{unknown}"/>
+    <parameter name="attribute" byreference="false" type="{unknown}"/>
+    <parameter name="rule" byreference="false" type="{unknown}"/>
+    <parameter name="parameters" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="replaceBefore" start="2040" end="2047" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Replace all place-holders for the before rule."/>
+      <param type="string" variable="$message"/>
+      <param type="string" variable="$attribute"/>
+      <param type="string" variable="$rule"/>
+      <param type="array" variable="$parameters"/>
+      <return type="string"/>
+    </docblock>
+    <parameter name="message" byreference="false" type="{unknown}"/>
+    <parameter name="attribute" byreference="false" type="{unknown}"/>
+    <parameter name="rule" byreference="false" type="{unknown}"/>
+    <parameter name="parameters" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="replaceAfter" start="2058" end="2061" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Replace all place-holders for the after rule."/>
+      <param type="string" variable="$message"/>
+      <param type="string" variable="$attribute"/>
+      <param type="string" variable="$rule"/>
+      <param type="array" variable="$parameters"/>
+      <return type="string"/>
+    </docblock>
+    <parameter name="message" byreference="false" type="{unknown}"/>
+    <parameter name="attribute" byreference="false" type="{unknown}"/>
+    <parameter name="rule" byreference="false" type="{unknown}"/>
+    <parameter name="parameters" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="hasRule" start="2070" end="2073" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Determine if the given attribute has a rule in the given set."/>
+      <param type="string" variable="$attribute"/>
+      <param type="object" variable="$rules">
+        <type full="Illuminate\Validation\string|array" namespace="Illuminate\Validation" name="string|array"/>
+      </param>
+      <return type="object">
+        <type full="Illuminate\Validation\bool" namespace="Illuminate\Validation" name="bool"/>
+      </return>
+    </docblock>
+    <parameter name="attribute" byreference="false" type="{unknown}"/>
+    <parameter name="rules" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="getRule" start="2082" end="2097" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Get a rule and its parameters for a given attribute."/>
+      <param type="string" variable="$attribute"/>
+      <param type="object" variable="$rules">
+        <type full="Illuminate\Validation\string|array" namespace="Illuminate\Validation" name="string|array"/>
+      </param>
+      <return type="object">
+        <type full="Illuminate\Validation\array|null" namespace="Illuminate\Validation" name="array|null"/>
+      </return>
+    </docblock>
+    <parameter name="attribute" byreference="false" type="{unknown}"/>
+    <parameter name="rules" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="parseRule" start="2105" end="2116" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Extract the rule name and parameters from a rule."/>
+      <param type="object" variable="$rules">
+        <type full="Illuminate\Validation\array|string" namespace="Illuminate\Validation" name="array|string"/>
+      </param>
+      <return type="array"/>
+    </docblock>
+    <parameter name="rules" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="parseArrayRule" start="2124" end="2127" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Parse an array based rule."/>
+      <param type="array" variable="$rules"/>
+      <return type="array"/>
+    </docblock>
+    <parameter name="rules" byreference="false" type="array"/>
+  </method>
+  <method name="parseStringRule" start="2135" end="2149" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Parse a string based rule."/>
+      <param type="string" variable="$rules"/>
+      <return type="array"/>
+    </docblock>
+    <parameter name="rules" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="The format for specifying validation rules and parameters follows an" line="2139"/>
+      <comment value="easy {rule}:{parameters} formatting convention. For instance the" line="2140"/>
+      <comment value="rule &quot;Max:3&quot; states that the value may only be three letters." line="2141"/>
+    </inline>
+  </method>
+  <method name="parseParameters" start="2158" end="2165" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Parse a parameter list."/>
+      <param type="string" variable="$rule"/>
+      <param type="string" variable="$parameter"/>
+      <return type="array"/>
+    </docblock>
+    <parameter name="rule" byreference="false" type="{unknown}"/>
+    <parameter name="parameter" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="normalizeRule" start="2173" end="2183" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Normalizes a rule so that we can accept short types."/>
+      <param type="string" variable="$rule"/>
+      <return type="string"/>
+    </docblock>
+    <parameter name="rule" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="getExtensions" start="2190" end="2193" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Get the array of custom validator extensions."/>
+      <return type="array"/>
+    </docblock>
+  </method>
+  <method name="addExtensions" start="2201" end="2210" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Register an array of custom validator extensions."/>
+      <param type="array" variable="$extensions"/>
+      <return type="object">
+        <type full="Illuminate\Validation\void" namespace="Illuminate\Validation" name="void"/>
+      </return>
+    </docblock>
+    <parameter name="extensions" byreference="false" type="array"/>
+  </method>
+  <method name="addImplicitExtensions" start="2218" end="2225" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Register an array of custom implicit validator extensions."/>
+      <param type="array" variable="$extensions"/>
+      <return type="object">
+        <type full="Illuminate\Validation\void" namespace="Illuminate\Validation" name="void"/>
+      </return>
+    </docblock>
+    <parameter name="extensions" byreference="false" type="array"/>
+  </method>
+  <method name="addExtension" start="2234" end="2237" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Register a custom validator extension."/>
+      <param type="string" variable="$rule"/>
+      <param type="object" variable="$extension">
+        <type full="\Closure|string" namespace="" name="Closure|string"/>
+      </param>
+      <return type="object">
+        <type full="Illuminate\Validation\void" namespace="Illuminate\Validation" name="void"/>
+      </return>
+    </docblock>
+    <parameter name="rule" byreference="false" type="{unknown}"/>
+    <parameter name="extension" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="addImplicitExtension" start="2246" end="2251" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Register a custom implicit validator extension."/>
+      <param type="string" variable="$rule"/>
+      <param type="object" variable="$extension">
+        <type full="\Closure|string" namespace="" name="Closure|string"/>
+      </param>
+      <return type="object">
+        <type full="Illuminate\Validation\void" namespace="Illuminate\Validation" name="void"/>
+      </return>
+    </docblock>
+    <parameter name="rule" byreference="false" type="{unknown}"/>
+    <parameter name="extension" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="getReplacers" start="2258" end="2261" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Get the array of custom validator message replacers."/>
+      <return type="array"/>
+    </docblock>
+  </method>
+  <method name="addReplacers" start="2269" end="2278" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Register an array of custom validator message replacers."/>
+      <param type="array" variable="$replacers"/>
+      <return type="object">
+        <type full="Illuminate\Validation\void" namespace="Illuminate\Validation" name="void"/>
+      </return>
+    </docblock>
+    <parameter name="replacers" byreference="false" type="array"/>
+  </method>
+  <method name="addReplacer" start="2287" end="2290" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Register a custom validator message replacer."/>
+      <param type="string" variable="$rule"/>
+      <param type="object" variable="$replacer">
+        <type full="\Closure|string" namespace="" name="Closure|string"/>
+      </param>
+      <return type="object">
+        <type full="Illuminate\Validation\void" namespace="Illuminate\Validation" name="void"/>
+      </return>
+    </docblock>
+    <parameter name="rule" byreference="false" type="{unknown}"/>
+    <parameter name="replacer" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="getData" start="2297" end="2300" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Get the data under validation."/>
+      <return type="array"/>
+    </docblock>
+  </method>
+  <method name="setData" start="2308" end="2311" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Set the data under validation."/>
+      <param type="array" variable="$data"/>
+      <return type="object">
+        <type full="Illuminate\Validation\void" namespace="Illuminate\Validation" name="void"/>
+      </return>
+    </docblock>
+    <parameter name="data" byreference="false" type="array"/>
+  </method>
+  <method name="getRules" start="2318" end="2321" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Get the validation rules."/>
+      <return type="array"/>
+    </docblock>
+  </method>
+  <method name="setRules" start="2329" end="2334" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Set the validation rules."/>
+      <param type="array" variable="$rules"/>
+      <return type="object">
+        <type full="Illuminate\Validation\$this" namespace="Illuminate\Validation" name="$this"/>
+      </return>
+    </docblock>
+    <parameter name="rules" byreference="false" type="array"/>
+  </method>
+  <method name="setAttributeNames" start="2342" end="2347" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Set the custom attributes on the validator."/>
+      <param type="array" variable="$attributes"/>
+      <return type="object">
+        <type full="Illuminate\Validation\$this" namespace="Illuminate\Validation" name="$this"/>
+      </return>
+    </docblock>
+    <parameter name="attributes" byreference="false" type="array"/>
+  </method>
+  <method name="setValueNames" start="2355" end="2360" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Set the custom values on the validator."/>
+      <param type="array" variable="$values"/>
+      <return type="object">
+        <type full="Illuminate\Validation\$this" namespace="Illuminate\Validation" name="$this"/>
+      </return>
+    </docblock>
+    <parameter name="values" byreference="false" type="array"/>
+  </method>
+  <method name="getFiles" start="2367" end="2370" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Get the files under validation."/>
+      <return type="array"/>
+    </docblock>
+  </method>
+  <method name="setFiles" start="2378" end="2383" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Set the files under validation."/>
+      <param type="array" variable="$files"/>
+      <return type="object">
+        <type full="Illuminate\Validation\$this" namespace="Illuminate\Validation" name="$this"/>
+      </return>
+    </docblock>
+    <parameter name="files" byreference="false" type="array"/>
+  </method>
+  <method name="getPresenceVerifier" start="2392" end="2399" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Get the Presence Verifier implementation."/>
+      <return type="object">
+        <type full="\Illuminate\Validation\PresenceVerifierInterface" namespace="\Illuminate\Validation" name="PresenceVerifierInterface"/>
+      </return>
+      <throws type="object">
+        <type full="\RuntimeException" namespace="" name="RuntimeException"/>
+      </throws>
+    </docblock>
+  </method>
+  <method name="setPresenceVerifier" start="2407" end="2410" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Set the Presence Verifier implementation."/>
+      <param type="object" variable="$presenceVerifier">
+        <type full="\Illuminate\Validation\PresenceVerifierInterface" namespace="\Illuminate\Validation" name="PresenceVerifierInterface"/>
+      </param>
+      <return type="object">
+        <type full="Illuminate\Validation\void" namespace="Illuminate\Validation" name="void"/>
+      </return>
+    </docblock>
+    <parameter name="presenceVerifier" byreference="false" type="object">
+      <type full="Illuminate\Validation\PresenceVerifierInterface" namespace="Illuminate\Validation" name="PresenceVerifierInterface"/>
+    </parameter>
+  </method>
+  <method name="getTranslator" start="2417" end="2420" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Get the Translator implementation."/>
+      <return type="object">
+        <type full="\Symfony\Component\Translation\TranslatorInterface" namespace="\Symfony\Component\Translation" name="TranslatorInterface"/>
+      </return>
+    </docblock>
+  </method>
+  <method name="setTranslator" start="2428" end="2431" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Set the Translator implementation."/>
+      <param type="object" variable="$translator">
+        <type full="\Symfony\Component\Translation\TranslatorInterface" namespace="\Symfony\Component\Translation" name="TranslatorInterface"/>
+      </param>
+      <return type="object">
+        <type full="Illuminate\Validation\void" namespace="Illuminate\Validation" name="void"/>
+      </return>
+    </docblock>
+    <parameter name="translator" byreference="false" type="object">
+      <type full="Symfony\Component\Translation\TranslatorInterface" namespace="Symfony\Component\Translation" name="TranslatorInterface"/>
+    </parameter>
+  </method>
+  <method name="getCustomMessages" start="2438" end="2441" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Get the custom messages for the validator."/>
+      <return type="array"/>
+    </docblock>
+  </method>
+  <method name="setCustomMessages" start="2449" end="2452" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Set the custom messages for the validator."/>
+      <param type="array" variable="$messages"/>
+      <return type="object">
+        <type full="Illuminate\Validation\void" namespace="Illuminate\Validation" name="void"/>
+      </return>
+    </docblock>
+    <parameter name="messages" byreference="false" type="array"/>
+  </method>
+  <method name="getCustomAttributes" start="2459" end="2462" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Get the custom attributes used by the validator."/>
+      <return type="array"/>
+    </docblock>
+  </method>
+  <method name="addCustomAttributes" start="2470" end="2475" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Add custom attributes to the validator."/>
+      <param type="array" variable="$customAttributes"/>
+      <return type="object">
+        <type full="Illuminate\Validation\$this" namespace="Illuminate\Validation" name="$this"/>
+      </return>
+    </docblock>
+    <parameter name="customAttributes" byreference="false" type="array"/>
+  </method>
+  <method name="getCustomValues" start="2482" end="2485" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Get the custom values for the validator."/>
+      <return type="array"/>
+    </docblock>
+  </method>
+  <method name="addCustomValues" start="2493" end="2498" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Add the custom values for the validator."/>
+      <param type="array" variable="$customValues"/>
+      <return type="object">
+        <type full="Illuminate\Validation\$this" namespace="Illuminate\Validation" name="$this"/>
+      </return>
+    </docblock>
+    <parameter name="customValues" byreference="false" type="array"/>
+  </method>
+  <method name="getFallbackMessages" start="2505" end="2508" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Get the fallback messages for the validator."/>
+      <return type="array"/>
+    </docblock>
+  </method>
+  <method name="setFallbackMessages" start="2516" end="2519" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Set the fallback messages for the validator."/>
+      <param type="array" variable="$messages"/>
+      <return type="object">
+        <type full="Illuminate\Validation\void" namespace="Illuminate\Validation" name="void"/>
+      </return>
+    </docblock>
+    <parameter name="messages" byreference="false" type="array"/>
+  </method>
+  <method name="failed" start="2526" end="2529" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Get the failed validation rules."/>
+      <return type="array"/>
+    </docblock>
+  </method>
+  <method name="messages" start="2536" end="2543" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Get the message container for the validator."/>
+      <return type="object">
+        <type full="\Illuminate\Support\MessageBag" namespace="\Illuminate\Support" name="MessageBag"/>
+      </return>
+    </docblock>
+  </method>
+  <method name="errors" start="2550" end="2553" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="An alternative more semantic shortcut to the message container."/>
+      <return type="object">
+        <type full="\Illuminate\Support\MessageBag" namespace="\Illuminate\Support" name="MessageBag"/>
+      </return>
+    </docblock>
+  </method>
+  <method name="getMessageBag" start="2560" end="2563" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Get the messages for the instance."/>
+      <return type="object">
+        <type full="\Illuminate\Support\MessageBag" namespace="\Illuminate\Support" name="MessageBag"/>
+      </return>
+    </docblock>
+  </method>
+  <method name="setContainer" start="2571" end="2574" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Set the IoC container instance."/>
+      <param type="object" variable="$container">
+        <type full="\Illuminate\Contracts\Container\Container" namespace="\Illuminate\Contracts\Container" name="Container"/>
+      </param>
+      <return type="object">
+        <type full="Illuminate\Validation\void" namespace="Illuminate\Validation" name="void"/>
+      </return>
+    </docblock>
+    <parameter name="container" byreference="false" type="object">
+      <type full="Illuminate\Contracts\Container\Container" namespace="Illuminate\Contracts\Container" name="Container"/>
+    </parameter>
+  </method>
+  <method name="callExtension" start="2583" end="2592" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Call a custom validator extension."/>
+      <param type="string" variable="$rule"/>
+      <param type="array" variable="$parameters"/>
+      <return type="object">
+        <type full="Illuminate\Validation\bool|null" namespace="Illuminate\Validation" name="bool|null"/>
+      </return>
+    </docblock>
+    <parameter name="rule" byreference="false" type="{unknown}"/>
+    <parameter name="parameters" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="callClassBasedExtension" start="2601" end="2606" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Call a class based validator extension."/>
+      <param type="string" variable="$callback"/>
+      <param type="array" variable="$parameters"/>
+      <return type="object">
+        <type full="Illuminate\Validation\bool" namespace="Illuminate\Validation" name="bool"/>
+      </return>
+    </docblock>
+    <parameter name="callback" byreference="false" type="{unknown}"/>
+    <parameter name="parameters" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="callReplacer" start="2617" end="2626" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Call a custom validator message replacer."/>
+      <param type="string" variable="$message"/>
+      <param type="string" variable="$attribute"/>
+      <param type="string" variable="$rule"/>
+      <param type="array" variable="$parameters"/>
+      <return type="object">
+        <type full="Illuminate\Validation\string|null" namespace="Illuminate\Validation" name="string|null"/>
+      </return>
+    </docblock>
+    <parameter name="message" byreference="false" type="{unknown}"/>
+    <parameter name="attribute" byreference="false" type="{unknown}"/>
+    <parameter name="rule" byreference="false" type="{unknown}"/>
+    <parameter name="parameters" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="callClassBasedReplacer" start="2638" end="2643" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Call a class based validator message replacer."/>
+      <param type="string" variable="$callback"/>
+      <param type="string" variable="$message"/>
+      <param type="string" variable="$attribute"/>
+      <param type="string" variable="$rule"/>
+      <param type="array" variable="$parameters"/>
+      <return type="string"/>
+    </docblock>
+    <parameter name="callback" byreference="false" type="{unknown}"/>
+    <parameter name="message" byreference="false" type="{unknown}"/>
+    <parameter name="attribute" byreference="false" type="{unknown}"/>
+    <parameter name="rule" byreference="false" type="{unknown}"/>
+    <parameter name="parameters" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="requireParameterCount" start="2654" end="2659" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Require a certain number of parameters to be present."/>
+      <param type="int" variable="$count"/>
+      <param type="array" variable="$parameters"/>
+      <param type="string" variable="$rule"/>
+      <return type="object">
+        <type full="Illuminate\Validation\void" namespace="Illuminate\Validation" name="void"/>
+      </return>
+      <throws type="object">
+        <type full="\InvalidArgumentException" namespace="" name="InvalidArgumentException"/>
+      </throws>
+    </docblock>
+    <parameter name="count" byreference="false" type="{unknown}"/>
+    <parameter name="parameters" byreference="false" type="{unknown}"/>
+    <parameter name="rule" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="__call" start="2670" end="2679" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Handle dynamic calls to class methods."/>
+      <param type="string" variable="$method"/>
+      <param type="array" variable="$parameters"/>
+      <return type="mixed"/>
+      <throws type="object">
+        <type full="\BadMethodCallException" namespace="" name="BadMethodCallException"/>
+      </throws>
+    </docblock>
+    <parameter name="method" byreference="false" type="{unknown}"/>
+    <parameter name="parameters" byreference="false" type="{unknown}"/>
+  </method>
+</class>

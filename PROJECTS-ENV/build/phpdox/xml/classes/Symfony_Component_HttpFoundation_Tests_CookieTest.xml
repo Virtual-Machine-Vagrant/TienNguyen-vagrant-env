@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="Symfony\Component\HttpFoundation\Tests\CookieTest" namespace="Symfony\Component\HttpFoundation\Tests" name="CookieTest" abstract="false" final="false" start="24" end="154">
+  <file path="/home/web/example/src/freegame_developer/vendor/symfony/http-foundation/Tests" file="CookieTest.php" realpath="/home/web/example/src/freegame_developer/vendor/symfony/http-foundation/Tests/CookieTest.php" size="4932" time="2016-10-24T14:36:35+00:00" unixtime="1477319795" sha1="f35c8578399d4f283b76e6e455cb88e2346ed841" relative="freegame_developer/vendor/symfony/http-foundation/Tests/CookieTest.php"/>
+  <docblock>
+    <description compact="CookieTest."/>
+    <author value="John Kary &lt;john@johnkary.net&gt;"/>
+    <author value="Hugo Hamon &lt;hugo.hamon@sensio.com&gt;"/>
+    <group value="time-sensitive"/>
+  </docblock>
+  <extends full="PHPUnit_Framework_TestCase" namespace="" name="PHPUnit_Framework_TestCase"/>
+  <method name="invalidNames" start="26" end="39" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testInstantiationThrowsExceptionIfCookieNameContainsInvalidCharacters" start="45" end="48" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <dataprovider value="invalidNames"/>
+      <expectedexception value="\InvalidArgumentException"/>
+    </docblock>
+    <parameter name="name" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="testInvalidExpiration" start="53" end="56" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <expectedexception value="\InvalidArgumentException"/>
+    </docblock>
+  </method>
+  <method name="testGetValue" start="58" end="64" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testGetPath" start="66" end="71" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testGetExpiresTime" start="73" end="78" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testConstructorWithDateTime" start="80" end="86" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testConstructorWithDateTimeImmutable" start="91" end="97" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <requires value="PHP 5.5"/>
+    </docblock>
+  </method>
+  <method name="testGetExpiresTimeWithStringValue" start="99" end="106" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testGetDomain" start="108" end="113" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testIsSecure" start="115" end="120" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testIsHttpOnly" start="122" end="127" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testCookieIsNotCleared" start="129" end="134" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testCookieIsCleared" start="136" end="141" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testToString" start="143" end="153" abstract="false" final="false" static="false" visibility="public"/>
+</class>

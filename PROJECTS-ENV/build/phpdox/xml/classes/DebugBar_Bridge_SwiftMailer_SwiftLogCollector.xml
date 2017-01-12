@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="DebugBar\Bridge\SwiftMailer\SwiftLogCollector" namespace="DebugBar\Bridge\SwiftMailer" name="SwiftLogCollector" abstract="false" final="false" start="23" end="44">
+  <file path="/home/web/example/src/freegame_developer/vendor/maximebf/debugbar/src/DebugBar/Bridge/SwiftMailer" file="SwiftLogCollector.php" realpath="/home/web/example/src/freegame_developer/vendor/maximebf/debugbar/src/DebugBar/Bridge/SwiftMailer/SwiftLogCollector.php" size="924" time="2016-09-15T14:01:59+00:00" unixtime="1473948119" sha1="ae7a212b8b2932c816f0e46ab356538ae597f589" relative="freegame_developer/vendor/maximebf/debugbar/src/DebugBar/Bridge/SwiftMailer/SwiftLogCollector.php"/>
+  <docblock>
+    <description compact="Collects log messages">http://swiftmailer.org/</description>
+  </docblock>
+  <extends full="DebugBar\DataCollector\MessagesCollector" namespace="DebugBar\DataCollector" name="MessagesCollector"/>
+  <implements full="Swift_Plugins_Logger" namespace="" name="Swift_Plugins_Logger"/>
+  <constructor name="__construct" start="25" end="28" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="mailer" byreference="false" type="object">
+      <type full="Swift_Mailer" namespace="" name="Swift_Mailer"/>
+    </parameter>
+  </constructor>
+  <method name="add" start="30" end="33" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="entry" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="dump" start="35" end="38" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="getName" start="40" end="43" abstract="false" final="false" static="false" visibility="public"/>
+</class>

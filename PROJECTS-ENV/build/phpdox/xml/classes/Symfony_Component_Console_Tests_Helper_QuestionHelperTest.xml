@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="Symfony\Component\Console\Tests\Helper\QuestionHelperTest" namespace="Symfony\Component\Console\Tests\Helper" name="QuestionHelperTest" abstract="false" final="false" start="26" end="435">
+  <file path="/home/web/example/src/freegame_developer/vendor/symfony/console/Tests/Helper" file="QuestionHelperTest.php" realpath="/home/web/example/src/freegame_developer/vendor/symfony/console/Tests/Helper/QuestionHelperTest.php" size="18036" time="2016-10-05T17:26:56+00:00" unixtime="1475688416" sha1="e5efffcfdc246599f2df36d830f37f8fc3f71d14" relative="freegame_developer/vendor/symfony/console/Tests/Helper/QuestionHelperTest.php"/>
+  <docblock>
+    <description/>
+    <group value="tty"/>
+  </docblock>
+  <extends full="PHPUnit_Framework_TestCase" namespace="" name="PHPUnit_Framework_TestCase"/>
+  <method name="testAskChoice" start="28" end="86" abstract="false" final="false" static="false" visibility="public">
+    <inline>
+      <comment value="first answer is an empty answer, we're supposed to receive the default value" line="41"/>
+    </inline>
+  </method>
+  <method name="testAsk" start="88" end="102" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testAskWithAutocomplete" start="104" end="136" abstract="false" final="false" static="false" visibility="public">
+    <inline>
+      <comment value="Acm&lt;NEWLINE&gt;" line="110"/>
+      <comment value="Ac&lt;BACKSPACE&gt;&lt;BACKSPACE&gt;s&lt;TAB&gt;Test&lt;NEWLINE&gt;" line="111"/>
+      <comment value="&lt;NEWLINE&gt;" line="112"/>
+      <comment value="&lt;UP ARROW&gt;&lt;UP ARROW&gt;&lt;NEWLINE&gt;" line="113"/>
+      <comment value="&lt;UP ARROW&gt;&lt;UP ARROW&gt;&lt;UP ARROW&gt;&lt;UP ARROW&gt;&lt;UP ARROW&gt;&lt;TAB&gt;Test&lt;NEWLINE&gt;" line="114"/>
+      <comment value="&lt;DOWN ARROW&gt;&lt;NEWLINE&gt;" line="115"/>
+      <comment value="S&lt;BACKSPACE&gt;&lt;BACKSPACE&gt;&lt;DOWN ARROW&gt;&lt;DOWN ARROW&gt;&lt;NEWLINE&gt;" line="116"/>
+      <comment value="F00&lt;BACKSPACE&gt;&lt;BACKSPACE&gt;oo&lt;TAB&gt;&lt;NEWLINE&gt;" line="117"/>
+    </inline>
+  </method>
+  <method name="testAskWithAutocompleteWithNonSequentialKeys" start="138" end="156" abstract="false" final="false" static="false" visibility="public">
+    <inline>
+      <comment value="&lt;UP ARROW&gt;&lt;UP ARROW&gt;&lt;NEWLINE&gt;&lt;DOWN ARROW&gt;&lt;DOWN ARROW&gt;&lt;NEWLINE&gt;" line="144"/>
+    </inline>
+  </method>
+  <method name="testAskHiddenResponse" start="158" end="171" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testAskConfirmation" start="176" end="183" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <dataprovider value="getAskConfirmationData"/>
+    </docblock>
+    <parameter name="question" byreference="false" type="{unknown}"/>
+    <parameter name="expected" byreference="false" type="{unknown}"/>
+    <parameter name="default" byreference="false" type="boolean" default="true"/>
+  </method>
+  <method name="getAskConfirmationData" start="185" end="195" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testAskConfirmationWithCustomTrueAnswer" start="197" end="206" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testAskAndValidate" start="208" end="238" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testSelectChoiceFromSimpleChoices" start="243" end="261" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <dataprovider value="simpleAnswerProvider"/>
+    </docblock>
+    <parameter name="providedAnswer" byreference="false" type="{unknown}"/>
+    <parameter name="expectedValue" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="simpleAnswerProvider" start="263" end="273" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testChoiceFromChoicelistWithMixedKeys" start="278" end="297" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <dataprovider value="mixedKeysChoiceListAnswerProvider"/>
+    </docblock>
+    <parameter name="providedAnswer" byreference="false" type="{unknown}"/>
+    <parameter name="expectedValue" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="mixedKeysChoiceListAnswerProvider" start="299" end="309" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testSelectChoiceFromChoiceList" start="314" end="332" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <dataprovider value="answerProvider"/>
+    </docblock>
+    <parameter name="providedAnswer" byreference="false" type="{unknown}"/>
+    <parameter name="expectedValue" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="testAmbiguousChoiceFromChoicelist" start="338" end="355" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <expectedexception value="\InvalidArgumentException"/>
+      <expectedexceptionmessage value="The provided answer is ambiguous. Value should be one of env_2 or env_3."/>
+    </docblock>
+  </method>
+  <method name="answerProvider" start="357" end="365" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testNoInteraction" start="367" end="372" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testChoiceOutputFormattingQuestionForUtf8Keys" start="377" end="403" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <requires value="function mb_strwidth"/>
+    </docblock>
+  </method>
+  <method name="getInputStream" start="405" end="412" abstract="false" final="false" static="false" visibility="protected">
+    <parameter name="input" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="createOutputInterface" start="414" end="417" abstract="false" final="false" static="false" visibility="protected"/>
+  <method name="createInputInterfaceMock" start="419" end="427" abstract="false" final="false" static="false" visibility="protected">
+    <parameter name="interactive" byreference="false" type="boolean" default="true"/>
+  </method>
+  <method name="hasSttyAvailable" start="429" end="434" abstract="false" final="false" static="false" visibility="private"/>
+</class>

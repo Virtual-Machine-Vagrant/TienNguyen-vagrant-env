@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="Monolog\Handler\SocketHandler" namespace="Monolog\Handler" name="SocketHandler" abstract="false" final="false" start="22" end="346">
+  <file path="/home/web/example/src/freegame_developer/vendor/monolog/monolog/src/Monolog/Handler" file="SocketHandler.php" realpath="/home/web/example/src/freegame_developer/vendor/monolog/monolog/src/Monolog/Handler/SocketHandler.php" size="8884" time="2016-07-29T03:23:52+00:00" unixtime="1469762632" sha1="f21624889fe01514e6eb4b254aeb3374f3faf190" relative="freegame_developer/vendor/monolog/monolog/src/Monolog/Handler/SocketHandler.php"/>
+  <docblock>
+    <description compact="Stores to any socket - uses fsockopen() or pfsockopen()."/>
+    <author value="Pablo de Leon Belloc &lt;pablolb@gmail.com&gt;"/>
+    <see value="http://php.net/manual/en/function.fsockopen.php"/>
+  </docblock>
+  <extends full="Monolog\Handler\AbstractProcessingHandler" namespace="Monolog\Handler" name="AbstractProcessingHandler"/>
+  <member name="connectionString" visibility="private" static="false" line="24"/>
+  <member name="connectionTimeout" visibility="private" static="false" line="25"/>
+  <member name="resource" visibility="private" static="false" line="26"/>
+  <member name="timeout" type="integer" default="0" visibility="private" static="false" line="27"/>
+  <member name="writingTimeout" type="integer" default="10" visibility="private" static="false" line="28"/>
+  <member name="lastSentBytes" type="{unknown}" default="" constant="null" visibility="private" static="false" line="29"/>
+  <member name="persistent" type="boolean" default="false" visibility="private" static="false" line="30"/>
+  <member name="errno" visibility="private" static="false" line="31"/>
+  <member name="errstr" visibility="private" static="false" line="32"/>
+  <member name="lastWritingAt" visibility="private" static="false" line="33"/>
+  <constructor name="__construct" start="40" end="45" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <param description="Socket connection string" type="string" variable="$connectionString"/>
+      <param description="The minimum logging level at which this handler will be triggered" type="int" variable="$level"/>
+      <param description="Whether the messages that are handled can bubble up the stack or not" type="object" variable="$bubble">
+        <type full="Monolog\Handler\Boolean" namespace="Monolog\Handler" name="Boolean"/>
+      </param>
+    </docblock>
+    <parameter name="connectionString" byreference="false" type="{unknown}"/>
+    <parameter name="level" byreference="false" type="{unknown}" default="" constant="Logger::DEBUG"/>
+    <parameter name="bubble" byreference="false" type="boolean" default="true"/>
+  </constructor>
+  <method name="write" start="55" end="60" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Connect (if necessary) and write to the socket"/>
+      <param type="array" variable="$record"/>
+      <throws type="object">
+        <type full="\UnexpectedValueException" namespace="" name="UnexpectedValueException"/>
+      </throws>
+      <throws type="object">
+        <type full="\RuntimeException" namespace="" name="RuntimeException"/>
+      </throws>
+    </docblock>
+    <parameter name="record" byreference="false" type="array"/>
+  </method>
+  <method name="close" start="65" end="70" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="We will not close a PersistentSocket instance so it can be reused in other requests."/>
+    </docblock>
+  </method>
+  <method name="closeSocket" start="75" end="81" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Close socket, if open"/>
+    </docblock>
+  </method>
+  <method name="setPersistent" start="88" end="91" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Set socket connection to nbe persistent. It only has effect before the connection is initiated."/>
+      <param type="object" variable="$persistent">
+        <type full="Monolog\Handler\bool" namespace="Monolog\Handler" name="bool"/>
+      </param>
+    </docblock>
+    <parameter name="persistent" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="setConnectionTimeout" start="100" end="104" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Set connection timeout.  Only has effect before we connect."/>
+      <param type="float" variable="$seconds"/>
+      <see value="http://php.net/manual/en/function.fsockopen.php"/>
+    </docblock>
+    <parameter name="seconds" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="setTimeout" start="113" end="117" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Set write timeout. Only has effect before we connect."/>
+      <param type="float" variable="$seconds"/>
+      <see value="http://php.net/manual/en/function.stream-set-timeout.php"/>
+    </docblock>
+    <parameter name="seconds" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="setWritingTimeout" start="124" end="128" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Set writing timeout. Only has effect during connection in the writing cycle."/>
+      <param description="0 for no timeout" type="float" variable="$seconds"/>
+    </docblock>
+    <parameter name="seconds" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="getConnectionString" start="135" end="138" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Get current connection string"/>
+      <return type="string"/>
+    </docblock>
+  </method>
+  <method name="isPersistent" start="145" end="148" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Get persistent setting"/>
+      <return type="object">
+        <type full="Monolog\Handler\bool" namespace="Monolog\Handler" name="bool"/>
+      </return>
+    </docblock>
+  </method>
+  <method name="getConnectionTimeout" start="155" end="158" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Get current connection timeout setting"/>
+      <return type="float"/>
+    </docblock>
+  </method>
+  <method name="getTimeout" start="165" end="168" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Get current in-transfer timeout"/>
+      <return type="float"/>
+    </docblock>
+  </method>
+  <method name="getWritingTimeout" start="175" end="178" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Get current local writing timeout"/>
+      <return type="float"/>
+    </docblock>
+  </method>
+  <method name="isConnected" start="187" end="191" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Check to see if the socket is currently available.">UDP might appear to be connected but might fail when writing.  See http://php.net/fsockopen for details.</description>
+      <return type="object">
+        <type full="Monolog\Handler\bool" namespace="Monolog\Handler" name="bool"/>
+      </return>
+    </docblock>
+    <inline>
+      <comment value="on TCP - other party can close connection." line="190"/>
+    </inline>
+  </method>
+  <method name="pfsockopen" start="196" end="199" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Wrapper to allow mocking"/>
+    </docblock>
+  </method>
+  <method name="fsockopen" start="204" end="207" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Wrapper to allow mocking"/>
+    </docblock>
+  </method>
+  <method name="streamSetTimeout" start="214" end="220" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Wrapper to allow mocking"/>
+      <see value="http://php.net/manual/en/function.stream-set-timeout.php"/>
+    </docblock>
+  </method>
+  <method name="fwrite" start="225" end="228" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Wrapper to allow mocking"/>
+    </docblock>
+    <parameter name="data" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="streamGetMetadata" start="233" end="236" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Wrapper to allow mocking"/>
+    </docblock>
+  </method>
+  <method name="validateTimeout" start="238" end="244" abstract="false" final="false" static="false" visibility="private">
+    <parameter name="value" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="connectIfNotConnected" start="246" end="252" abstract="false" final="false" static="false" visibility="private"/>
+  <method name="generateDataStream" start="254" end="257" abstract="false" final="false" static="false" visibility="protected">
+    <parameter name="record" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="getResource" start="262" end="265" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description/>
+      <return type="object">
+        <type full="Monolog\Handler\resource|null" namespace="Monolog\Handler" name="resource|null"/>
+      </return>
+    </docblock>
+  </method>
+  <method name="connect" start="267" end="271" abstract="false" final="false" static="false" visibility="private"/>
+  <method name="createSocketResource" start="273" end="284" abstract="false" final="false" static="false" visibility="private"/>
+  <method name="setSocketTimeout" start="286" end="291" abstract="false" final="false" static="false" visibility="private"/>
+  <method name="writeToSocket" start="293" end="320" abstract="false" final="false" static="false" visibility="private">
+    <parameter name="data" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="writingIsTimedOut" start="322" end="345" abstract="false" final="false" static="false" visibility="private">
+    <parameter name="sent" byreference="false" type="{unknown}"/>
+  </method>
+</class>

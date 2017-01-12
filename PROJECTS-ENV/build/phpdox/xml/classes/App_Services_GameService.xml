@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="App\Services\GameService" namespace="App\Services" name="GameService" abstract="false" final="false" start="10" end="255">
+  <file path="/home/web/example/src/freegame_developer/app/Services" file="GameService.php" realpath="/home/web/example/src/freegame_developer/app/Services/GameService.php" size="6019" time="2016-11-16T01:52:54+00:00" unixtime="1479261174" sha1="267bf01009f97b87862efc43bbad6c8c75e52f60" relative="freegame_developer/app/Services/GameService.php"/>
+  <extends full="App\Services\CustomService" namespace="App\Services" name="CustomService"/>
+  <member name="clApplication" visibility="protected" static="false" line="12"/>
+  <member name="appMainGenre" visibility="protected" static="false" line="13"/>
+  <member name="appGenreRef" visibility="protected" static="false" line="14"/>
+  <member name="appSubGenre" visibility="protected" static="false" line="15"/>
+  <constructor name="__construct" start="17" end="27" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="clApplication" byreference="false" type="object">
+      <type full="App\Models\Freegame\ClApplication" namespace="App\Models\Freegame" name="ClApplication"/>
+    </parameter>
+    <parameter name="appMainGenre" byreference="false" type="object">
+      <type full="App\Models\Freegame\ApplicationMainGenre" namespace="App\Models\Freegame" name="ApplicationMainGenre"/>
+    </parameter>
+    <parameter name="appGenreRef" byreference="false" type="object">
+      <type full="App\Models\Freegame\ApplicationGenreRef" namespace="App\Models\Freegame" name="ApplicationGenreRef"/>
+    </parameter>
+    <parameter name="appSubGenre" byreference="false" type="object">
+      <type full="App\Models\Freegame\ApplicationSubGenre" namespace="App\Models\Freegame" name="ApplicationSubGenre"/>
+    </parameter>
+  </constructor>
+  <method name="getFormData" start="34" end="37" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Get config forms data"/>
+      <return type="array"/>
+    </docblock>
+  </method>
+  <method name="getGameManagementInfo" start="45" end="48" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Get game info from session"/>
+      <param type="object">
+        <type full="App\Services\none" namespace="App\Services" name="none"/>
+      </param>
+      <return type="object"/>
+    </docblock>
+  </method>
+  <method name="setGameImageUrl" start="57" end="68" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Set Game url server"/>
+      <param type="integer" variable="$gameId"/>
+      <param description="= null" type="string" variable="$hostUrl"/>
+      <return type="array"/>
+    </docblock>
+    <parameter name="gameId" byreference="false" type="{unknown}"/>
+    <parameter name="hostUrl" byreference="false" type="{unknown}" default="" constant="null"/>
+  </method>
+  <method name="getGameMainGenreValue" start="76" end="87" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Get game main genre value name."/>
+      <param type="integer" variable="$gameId"/>
+      <return type="string"/>
+    </docblock>
+    <parameter name="gameId" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="getGameMainGenreName" start="95" end="104" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Get Main genre name"/>
+      <param type="integer" variable="$id"/>
+      <return type="string"/>
+    </docblock>
+    <parameter name="id" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="getGameSubGenreValue" start="112" end="123" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Get game sub genre value name."/>
+      <param type="integer" variable="$gameId"/>
+      <return type="string"/>
+    </docblock>
+    <parameter name="gameId" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="getGameSubGenreName" start="131" end="140" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Get game sub genre"/>
+      <param type="integer" variable="$id"/>
+      <return type="string"/>
+    </docblock>
+    <parameter name="id" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="getGameGenreRefById" start="148" end="151" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Get game genre ref by id"/>
+      <param type="object" variable="$gameId">
+        <type full="App\Services\interger" namespace="App\Services" name="interger"/>
+      </param>
+      <return type="object"/>
+    </docblock>
+    <parameter name="gameId" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="getGameSubGenreList" start="158" end="161" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Get list Game sub genre"/>
+      <return description="object" type="array"/>
+    </docblock>
+  </method>
+  <method name="getGameMainGenreList" start="168" end="171" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Get list Game main genre"/>
+      <return description="object" type="array"/>
+    </docblock>
+  </method>
+  <method name="updateGameClApplication" start="182" end="192" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Update Game Clapplication"/>
+      <param type="integer" variable="$id"/>
+      <param type="string" variable="$url"/>
+      <param type="string" variable="$callbackurl"/>
+      <param type="string" variable="$descriptionMiddle"/>
+      <return type="boolean"/>
+    </docblock>
+    <parameter name="id" byreference="false" type="{unknown}"/>
+    <parameter name="url" byreference="false" type="{unknown}"/>
+    <parameter name="callbackurl" byreference="false" type="{unknown}"/>
+    <parameter name="descriptionMiddle" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="updateGameGenreRef" start="202" end="205" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Update Game genre Ref"/>
+      <param type="integer" variable="$appId"/>
+      <param type="integer" variable="$mainGenreId"/>
+      <param type="integer" variable="$subGenreId"/>
+      <return type="boolean"/>
+    </docblock>
+    <parameter name="appId" byreference="false" type="{unknown}"/>
+    <parameter name="mainGenreId" byreference="false" type="{unknown}"/>
+    <parameter name="subGenreId" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="createGameGenreRef" start="215" end="218" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Update Game genre Ref"/>
+      <param type="integer" variable="$appId"/>
+      <param type="integer" variable="$mainGenreId"/>
+      <param type="integer" variable="$subGenreId"/>
+      <return type="boolean"/>
+    </docblock>
+    <parameter name="appId" byreference="false" type="{unknown}"/>
+    <parameter name="mainGenreId" byreference="false" type="{unknown}"/>
+    <parameter name="subGenreId" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="getApplicationMainGenreById" start="226" end="229" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Get application main genre by id"/>
+      <param type="integer" variable="$id"/>
+      <return type="object"/>
+    </docblock>
+    <parameter name="id" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="getApplicationSubGenreById" start="237" end="240" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Get application sub genre by id"/>
+      <param type="integer" variable="$id"/>
+      <return type="object"/>
+    </docblock>
+    <parameter name="id" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="setDeveloperGameId" start="248" end="254" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Set game data into session"/>
+      <param type="integer" variable="$accountId"/>
+      <return type="boolean"/>
+    </docblock>
+    <parameter name="gameId" byreference="false" type="{unknown}"/>
+  </method>
+</class>

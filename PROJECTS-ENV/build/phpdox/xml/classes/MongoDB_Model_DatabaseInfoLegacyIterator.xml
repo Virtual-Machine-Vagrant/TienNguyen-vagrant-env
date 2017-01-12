@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="MongoDB\Model\DatabaseInfoLegacyIterator" namespace="MongoDB\Model" name="DatabaseInfoLegacyIterator" abstract="false" final="false" start="15" end="82">
+  <file path="/home/web/example/src/freegame_developer/vendor/mongodb/mongodb/src/Model" file="DatabaseInfoLegacyIterator.php" realpath="/home/web/example/src/freegame_developer/vendor/mongodb/mongodb/src/Model/DatabaseInfoLegacyIterator.php" size="1721" time="2016-09-23T19:38:29+00:00" unixtime="1474659509" sha1="a70e7e064e93015f6dd55edcaf1cc42bcb4e0c8d" relative="freegame_developer/vendor/mongodb/mongodb/src/Model/DatabaseInfoLegacyIterator.php"/>
+  <docblock>
+    <description compact="DatabaseInfoIterator for inline listDatabases command results.">This iterator may be used to wrap the array returned within the listDatabases
+command's single-document result.</description>
+    <internal/>
+    <see value="MongoDB\Client::listDatabases()"/>
+    <see value="http://docs.mongodb.org/manual/reference/command/listDatabases/"/>
+  </docblock>
+  <implements full="MongoDB\Model\DatabaseInfoIterator" namespace="MongoDB\Model" name="DatabaseInfoIterator"/>
+  <member name="databases" visibility="private" static="false" line="17"/>
+  <constructor name="__construct" start="24" end="27" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Constructor."/>
+      <param type="array" variable="$databases"/>
+    </docblock>
+    <parameter name="databases" byreference="false" type="array"/>
+  </constructor>
+  <method name="current" start="36" end="39" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Return the current element as a DatabaseInfo instance."/>
+      <see value="DatabaseInfoIterator::current()"/>
+      <see value="http://php.net/iterator.current"/>
+      <return type="object">
+        <type full="MongoDB\Model\DatabaseInfo" namespace="MongoDB\Model" name="DatabaseInfo"/>
+      </return>
+    </docblock>
+  </method>
+  <method name="key" start="47" end="50" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Return the key of the current element."/>
+      <see value="http://php.net/iterator.key"/>
+      <return type="integer"/>
+    </docblock>
+  </method>
+  <method name="next" start="57" end="60" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Move forward to next element."/>
+      <see value="http://php.net/iterator.next"/>
+    </docblock>
+  </method>
+  <method name="rewind" start="67" end="70" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Rewind the Iterator to the first element."/>
+      <see value="http://php.net/iterator.rewind"/>
+    </docblock>
+  </method>
+  <method name="valid" start="78" end="81" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Checks if current position is valid."/>
+      <see value="http://php.net/iterator.valid"/>
+      <return type="boolean"/>
+    </docblock>
+  </method>
+</class>

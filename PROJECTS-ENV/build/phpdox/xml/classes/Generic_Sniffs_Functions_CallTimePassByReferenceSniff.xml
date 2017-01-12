@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="Generic_Sniffs_Functions_CallTimePassByReferenceSniff" namespace="" name="Generic_Sniffs_Functions_CallTimePassByReferenceSniff" abstract="false" final="false" start="28" end="152">
+  <file path="/home/web/example/src/freegame_developer/vendor/squizlabs/php_codesniffer/CodeSniffer/Standards/Generic/Sniffs/Functions" file="CallTimePassByReferenceSniff.php" realpath="/home/web/example/src/freegame_developer/vendor/squizlabs/php_codesniffer/CodeSniffer/Standards/Generic/Sniffs/Functions/CallTimePassByReferenceSniff.php" size="5308" time="2016-01-19T23:39:10+00:00" unixtime="1453246750" sha1="646598a2839ae8a4b91d2ddf22701679a657696a" relative="freegame_developer/vendor/squizlabs/php_codesniffer/CodeSniffer/Standards/Generic/Sniffs/Functions/CallTimePassByReferenceSniff.php"/>
+  <docblock>
+    <description compact="Generic_Sniffs_Functions_CallTimePassByReferenceSniff.">Ensures that variables are not passed by reference when calling a function.</description>
+    <category value="PHP"/>
+    <package value="PHP_CodeSniffer"/>
+    <author value="Florian Grandel &lt;jerico.dev@gmail.com&gt;"/>
+    <copyright value="2009-2014 Florian Grandel"/>
+    <license name="https://github.com/squizlabs/PHP_CodeSniffer/blob/master/licence.txt BSD Licence"/>
+    <version value="Release: @package_version@"/>
+    <link value="http://pear.php.net/package/PHP_CodeSniffer"/>
+  </docblock>
+  <implements full="PHP_CodeSniffer_Sniff" namespace="" name="PHP_CodeSniffer_Sniff"/>
+  <method name="register" start="37" end="44" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Returns an array of tokens this test wants to listen for."/>
+      <return type="array"/>
+    </docblock>
+  </method>
+  <method name="process" start="56" end="149" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Processes this test, when one of its tokens is encountered."/>
+      <param description="The file being scanned." type="object" variable="$phpcsFile">
+        <type full="PHP_CodeSniffer_File" namespace="" name="PHP_CodeSniffer_File"/>
+      </param>
+      <param description="The position of the current token" type="int" variable="$stackPtr">in the stack passed in $tokens.</param>
+      <return type="object">
+        <type full="void" namespace="" name="void"/>
+      </return>
+    </docblock>
+    <parameter name="phpcsFile" byreference="false" type="object">
+      <type full="PHP_CodeSniffer_File" namespace="" name="PHP_CodeSniffer_File"/>
+    </parameter>
+    <parameter name="stackPtr" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="Skip tokens that are the names of functions or classes" line="67"/>
+      <comment value="within their definitions. For example: function myFunction..." line="68"/>
+      <comment value="&quot;myFunction&quot; is T_STRING but we should skip because it is not a" line="69"/>
+      <comment value="function or method *call*." line="70"/>
+      <comment value="Also skip if the return value is being assigned to a variable." line="71"/>
+      <comment value="If the next non-whitespace token after the function or method call" line="80"/>
+      <comment value="is not an opening parenthesis then it cant really be a *call*." line="81"/>
+      <comment value="end while" line="147"/>
+    </inline>
+  </method>
+</class>

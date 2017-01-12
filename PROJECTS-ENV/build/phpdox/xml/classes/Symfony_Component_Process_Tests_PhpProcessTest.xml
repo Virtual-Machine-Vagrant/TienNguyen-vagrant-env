@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="Symfony\Component\Process\Tests\PhpProcessTest" namespace="Symfony\Component\Process\Tests" name="PhpProcessTest" abstract="false" final="false" start="17" end="49">
+  <file path="/home/web/example/src/freegame_developer/vendor/symfony/process/Tests" file="PhpProcessTest.php" realpath="/home/web/example/src/freegame_developer/vendor/symfony/process/Tests/PhpProcessTest.php" size="1403" time="2016-09-29T02:20:21+00:00" unixtime="1475115621" sha1="e1bc20852b026b840a70a3765d7f479c9ff20115" relative="freegame_developer/vendor/symfony/process/Tests/PhpProcessTest.php"/>
+  <extends full="PHPUnit_Framework_TestCase" namespace="" name="PHPUnit_Framework_TestCase"/>
+  <method name="testNonBlockingWorks" start="19" end="29" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testCommandLine" start="31" end="48" abstract="false" final="false" static="false" visibility="public"/>
+</class>

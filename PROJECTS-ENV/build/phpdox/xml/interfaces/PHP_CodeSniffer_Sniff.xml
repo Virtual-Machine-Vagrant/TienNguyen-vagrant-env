@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface xmlns="http://xml.phpdox.net/src" full="PHP_CodeSniffer_Sniff" namespace="" name="PHP_CodeSniffer_Sniff" abstract="false" final="false" start="33" end="94">
+  <file path="/home/web/example/src/freegame_developer/vendor/squizlabs/php_codesniffer/CodeSniffer" file="Sniff.php" realpath="/home/web/example/src/freegame_developer/vendor/squizlabs/php_codesniffer/CodeSniffer/Sniff.php" size="3374" time="2016-01-19T23:39:10+00:00" unixtime="1453246750" sha1="28ca69009ff325b8b4e1943c65e0a72c9ca80a4f" relative="freegame_developer/vendor/squizlabs/php_codesniffer/CodeSniffer/Sniff.php"/>
+  <docblock>
+    <description compact="Represents a PHP_CodeSniffer sniff for sniffing coding standards.">A sniff registers what token types it wishes to listen for, then, when
+PHP_CodeSniffer encounters that token, the sniff is invoked and passed
+information about where the token was found in the stack, and the
+PHP_CodeSniffer file in which the token was found.</description>
+    <category value="PHP"/>
+    <package value="PHP_CodeSniffer"/>
+    <author value="Greg Sherwood &lt;gsherwood@squiz.net&gt;"/>
+    <author value="Marc McIntyre &lt;mmcintyre@squiz.net&gt;"/>
+    <copyright value="2006-2014 Squiz Pty Ltd (ABN 77 084 670 600)"/>
+    <license name="https://github.com/squizlabs/PHP_CodeSniffer/blob/master/licence.txt BSD Licence"/>
+    <version value="Release: @package_version@"/>
+    <link value="http://pear.php.net/package/PHP_CodeSniffer"/>
+  </docblock>
+  <method name="register" start="54" end="54" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Registers the tokens that this sniff wants to listen for.">An example return value for a sniff that wants to listen for whitespace
+and any comments would be:
+
+&lt;code&gt;
+   return array(
+           T_WHITESPACE,
+           T_DOC_COMMENT,
+           T_COMMENT,
+          );
+&lt;/code&gt;</description>
+      <return type="array" of="int"/>
+      <see value="Tokens.php"/>
+    </docblock>
+  </method>
+  <method name="process" start="91" end="91" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Called when one of the token types that this sniff is listening for is found.">The stackPtr variable indicates where in the stack the token was found.
+A sniff can acquire information this token, along with all the other
+tokens within the stack by first acquiring the token stack:
+
+&lt;code&gt;
+   $tokens = $phpcsFile-&gt;getTokens();
+   echo 'Encountered a '.$tokens[$stackPtr]['type'].' token';
+   echo 'token information: ';
+   print_r($tokens[$stackPtr]);
+&lt;/code&gt;
+
+If the sniff discovers an anomaly in the code, they can raise an error
+by calling addError() on the PHP_CodeSniffer_File object, specifying an error
+message and the position of the offending token:
+
+&lt;code&gt;
+   $phpcsFile-&gt;addError('Encountered an error', $stackPtr);
+&lt;/code&gt;</description>
+      <param description="The PHP_CodeSniffer file where the" type="object" variable="$phpcsFile">token was found.<type full="PHP_CodeSniffer_File" namespace="" name="PHP_CodeSniffer_File"/></param>
+      <param description="The position in the PHP_CodeSniffer" type="int" variable="$stackPtr">file's token stack where the token
+                                       was found.</param>
+      <return description="Optionally returns a stack pointer. The sniff will not be" type="object">called again on the current file until the returned stack
+                 pointer is reached. Return (count($tokens) + 1) to skip
+                 the rest of the file.<type full="void|int" namespace="" name="void|int"/></return>
+    </docblock>
+    <parameter name="phpcsFile" byreference="false" type="object">
+      <type full="PHP_CodeSniffer_File" namespace="" name="PHP_CodeSniffer_File"/>
+    </parameter>
+    <parameter name="stackPtr" byreference="false" type="{unknown}"/>
+  </method>
+</interface>

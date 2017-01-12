@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="PhpSpec\Factory\ReflectionFactory" namespace="PhpSpec\Factory" name="ReflectionFactory" abstract="false" final="false" start="20" end="30">
+  <file path="/home/web/example/src/freegame_developer/vendor/phpspec/phpspec/src/PhpSpec/Factory" file="ReflectionFactory.php" realpath="/home/web/example/src/freegame_developer/vendor/phpspec/phpspec/src/PhpSpec/Factory/ReflectionFactory.php" size="654" time="2016-01-01T10:17:54+00:00" unixtime="1451643474" sha1="4faa4605ba013d038cdd4a03c27aacedf76a595f" relative="freegame_developer/vendor/phpspec/phpspec/src/PhpSpec/Factory/ReflectionFactory.php"/>
+  <docblock>
+    <description compact="Class ReflectionFactory is a simple factory wrapper to create reflection classes"/>
+  </docblock>
+  <method name="create" start="26" end="29" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <param variable="$class"/>
+      <return type="object">
+        <type full="\ReflectionClass" namespace="" name="ReflectionClass"/>
+      </return>
+    </docblock>
+    <parameter name="class" byreference="false" type="{unknown}"/>
+  </method>
+</class>

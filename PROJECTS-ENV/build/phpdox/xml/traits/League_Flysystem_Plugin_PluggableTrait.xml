@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<trait xmlns="http://xml.phpdox.net/src" full="League\Flysystem\Plugin\PluggableTrait" namespace="League\Flysystem\Plugin" name="PluggableTrait" abstract="false" final="false" start="10" end="92">
+  <file path="/home/web/example/src/freegame_developer/vendor/league/flysystem/src/Plugin" file="PluggableTrait.php" realpath="/home/web/example/src/freegame_developer/vendor/league/flysystem/src/Plugin/PluggableTrait.php" size="2140" time="2016-10-19T20:38:46+00:00" unixtime="1476909526" sha1="c64787b0ded6c0d775861e58442978e2321b5d78" relative="freegame_developer/vendor/league/flysystem/src/Plugin/PluggableTrait.php"/>
+  <member name="plugins" type="array" default="" visibility="protected" static="false" line="15">
+    <docblock>
+      <description/>
+      <var type="array"/>
+    </docblock>
+  </member>
+  <method name="addPlugin" start="24" end="29" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Register a plugin."/>
+      <param type="object" variable="$plugin">
+        <type full="League\Flysystem\PluginInterface" namespace="League\Flysystem" name="PluginInterface"/>
+      </param>
+      <return type="object">
+        <type full="League\Flysystem\Plugin\$this" namespace="League\Flysystem\Plugin" name="$this"/>
+      </return>
+    </docblock>
+    <parameter name="plugin" byreference="false" type="object">
+      <type full="League\Flysystem\PluginInterface" namespace="League\Flysystem" name="PluginInterface"/>
+    </parameter>
+  </method>
+  <method name="findPlugin" start="40" end="51" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Find a specific plugin."/>
+      <param type="string" variable="$method"/>
+      <throws type="object">
+        <type full="LogicException" namespace="" name="LogicException"/>
+      </throws>
+      <return description="$plugin" type="object">
+        <type full="League\Flysystem\PluginInterface" namespace="League\Flysystem" name="PluginInterface"/>
+      </return>
+    </docblock>
+    <parameter name="method" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="invokePlugin" start="61" end="68" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Invoke a plugin by method name."/>
+      <param type="string" variable="$method"/>
+      <param type="array" variable="$arguments"/>
+      <return type="mixed"/>
+    </docblock>
+    <parameter name="method" byreference="false" type="{unknown}"/>
+    <parameter name="arguments" byreference="false" type="array"/>
+    <parameter name="filesystem" byreference="false" type="object">
+      <type full="League\Flysystem\FilesystemInterface" namespace="League\Flysystem" name="FilesystemInterface"/>
+    </parameter>
+  </method>
+  <method name="__call" start="80" end="91" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Plugins pass-through."/>
+      <param type="string" variable="$method"/>
+      <param type="array" variable="$arguments"/>
+      <throws type="object">
+        <type full="BadMethodCallException" namespace="" name="BadMethodCallException"/>
+      </throws>
+      <return type="mixed"/>
+    </docblock>
+    <parameter name="method" byreference="false" type="{unknown}"/>
+    <parameter name="arguments" byreference="false" type="array"/>
+  </method>
+</trait>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="Swift" namespace="" name="Swift" abstract="true" final="false" start="17" end="80">
+  <file path="/home/web/example/src/freegame_developer/vendor/swiftmailer/swiftmailer/lib/classes" file="Swift.php" realpath="/home/web/example/src/freegame_developer/vendor/swiftmailer/swiftmailer/lib/classes/Swift.php" size="2082" time="2016-07-08T11:51:25+00:00" unixtime="1467978685" sha1="1dd7654f788e1d2893ce41a7966ff262b20aeeff" relative="freegame_developer/vendor/swiftmailer/swiftmailer/lib/classes/Swift.php"/>
+  <docblock>
+    <description compact="General utility class in Swift Mailer, not to be instantiated."/>
+    <author value="Chris Corbyn"/>
+  </docblock>
+  <constant type="string" name="VERSION" value="'@SWIFT_VERSION_NUMBER@'">
+    <docblock>
+      <description compact="Swift Mailer Version number generated during dist release process"/>
+    </docblock>
+  </constant>
+  <member name="initialized" type="boolean" default="false" visibility="public" static="true" line="22"/>
+  <member name="inits" type="array" default="" visibility="public" static="true" line="23"/>
+  <method name="init" start="33" end="36" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description compact="Registers an initializer callable that will be called the first time a SwiftMailer class is autoloaded.">This enables you to tweak the default configuration in a lazy way.</description>
+      <param description="A valid PHP callable that will be called when autoloading the first Swift class" type="mixed" variable="$callable"/>
+    </docblock>
+    <parameter name="callable" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="autoload" start="43" end="64" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description compact="Internal autoloader for spl_autoload_register()."/>
+      <param type="string" variable="$class"/>
+    </docblock>
+    <parameter name="class" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="Don't interfere with other autoloaders" line="45"/>
+    </inline>
+  </method>
+  <method name="registerAutoload" start="73" end="79" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description compact="Configure autoloading using Swift Mailer.">This is designed to play nicely with other autoloaders.</description>
+      <param description="A valid PHP callable that will be called when autoloading the first Swift class" type="mixed" variable="$callable"/>
+    </docblock>
+    <parameter name="callable" byreference="false" type="{unknown}" default="" constant="null"/>
+  </method>
+</class>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="MongoDB\Tests\Operation\FindAndModifyTest" namespace="MongoDB\Tests\Operation" name="FindAndModifyTest" abstract="false" final="false" start="7" end="73">
+  <file path="/home/web/example/src/freegame_developer/vendor/mongodb/mongodb/tests/Operation" file="FindAndModifyTest.php" realpath="/home/web/example/src/freegame_developer/vendor/mongodb/mongodb/tests/Operation/FindAndModifyTest.php" size="2230" time="2016-09-23T19:38:29+00:00" unixtime="1474659509" sha1="56956264e89f4d742ad460faed723b1b0d1629a3" relative="freegame_developer/vendor/mongodb/mongodb/tests/Operation/FindAndModifyTest.php"/>
+  <extends full="MongoDB\Tests\Operation\TestCase" namespace="MongoDB\Tests\Operation" name="TestCase"/>
+  <method name="testConstructorOptionTypeChecks" start="13" end="16" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <expectedexception value="MongoDB\Exception\InvalidArgumentException"/>
+      <dataprovider value="provideInvalidConstructorOptions"/>
+    </docblock>
+    <parameter name="options" byreference="false" type="array"/>
+  </method>
+  <method name="provideInvalidConstructorOptions" start="18" end="63" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testConstructorUpdateAndRemoveOptionsAreMutuallyExclusive" start="69" end="72" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <expectedexception value="MongoDB\Exception\InvalidArgumentException"/>
+      <expectedexceptionmessage value="The &quot;remove&quot; option must be true or an &quot;update&quot; document must be specified, but not both"/>
+    </docblock>
+  </method>
+</class>

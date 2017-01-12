@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="Monolog\Handler\DeduplicationHandler" namespace="Monolog\Handler" name="DeduplicationHandler" abstract="false" final="false" start="36" end="169">
+  <file path="/home/web/example/src/freegame_developer/vendor/monolog/monolog/src/Monolog/Handler" file="DeduplicationHandler.php" realpath="/home/web/example/src/freegame_developer/vendor/monolog/monolog/src/Monolog/Handler/DeduplicationHandler.php" size="5479" time="2016-07-29T03:23:52+00:00" unixtime="1469762632" sha1="f4bfaa01a1220160290bd9038ce128c886f39f1a" relative="freegame_developer/vendor/monolog/monolog/src/Monolog/Handler/DeduplicationHandler.php"/>
+  <docblock>
+    <description compact="Simple handler wrapper that deduplicates log records across multiple requests">It also includes the BufferHandler functionality and will buffer
+all messages until the end of the request or flush() is called.
+
+This works by storing all log records' messages above $deduplicationLevel
+to the file specified by $deduplicationStore. When further logs come in at the end of the
+request (or when flush() is called), all those above $deduplicationLevel are checked
+against the existing stored logs. If they match and the timestamps in the stored log is
+not older than $time seconds, the new log record is discarded. If no log record is new, the
+whole data set is discarded.
+
+This is mainly useful in combination with Mail handlers or things like Slack or HipChat handlers
+that send messages to people, to avoid spamming with the same message over and over in case of
+a major component failure like a database server being down which makes all requests fail in the
+same way.</description>
+    <author value="Jordi Boggiano &lt;j.boggiano@seld.be&gt;"/>
+  </docblock>
+  <extends full="Monolog\Handler\BufferHandler" namespace="Monolog\Handler" name="BufferHandler"/>
+  <member name="deduplicationStore" visibility="protected" static="false" line="41">
+    <docblock>
+      <description/>
+      <var type="string"/>
+    </docblock>
+  </member>
+  <member name="deduplicationLevel" visibility="protected" static="false" line="46">
+    <docblock>
+      <description/>
+      <var type="int"/>
+    </docblock>
+  </member>
+  <member name="time" visibility="protected" static="false" line="51">
+    <docblock>
+      <description/>
+      <var type="int"/>
+    </docblock>
+  </member>
+  <member name="gc" type="boolean" default="false" visibility="private" static="false" line="56">
+    <docblock>
+      <description/>
+      <var type="object">
+        <type full="Monolog\Handler\bool" namespace="Monolog\Handler" name="bool"/>
+      </var>
+    </docblock>
+  </member>
+  <constructor name="__construct" start="65" end="72" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <param description="Handler." type="object" variable="$handler">
+        <type full="Monolog\Handler\HandlerInterface" namespace="Monolog\Handler" name="HandlerInterface"/>
+      </param>
+      <param description="The file/path where the deduplication log should be kept" type="string" variable="$deduplicationStore"/>
+      <param description="The minimum logging level for log records to be looked at for deduplication purposes" type="int" variable="$deduplicationLevel"/>
+      <param description="The period (in seconds) during which duplicate entries should be suppressed after a given log is sent through" type="int" variable="$time"/>
+      <param description="Whether the messages that are handled can bubble up the stack or not" type="object" variable="$bubble">
+        <type full="Monolog\Handler\Boolean" namespace="Monolog\Handler" name="Boolean"/>
+      </param>
+    </docblock>
+    <parameter name="handler" byreference="false" type="object">
+      <type full="Monolog\Handler\HandlerInterface" namespace="Monolog\Handler" name="HandlerInterface"/>
+    </parameter>
+    <parameter name="deduplicationStore" byreference="false" type="{unknown}" default="" constant="null"/>
+    <parameter name="deduplicationLevel" byreference="false" type="{unknown}" default="" constant="Logger::ERROR"/>
+    <parameter name="time" byreference="false" type="integer" default="60"/>
+    <parameter name="bubble" byreference="false" type="boolean" default="true"/>
+  </constructor>
+  <method name="flush" start="74" end="102" abstract="false" final="false" static="false" visibility="public">
+    <inline>
+      <comment value="default of null is valid as well as if no record matches duplicationLevel we just pass through" line="92"/>
+    </inline>
+  </method>
+  <method name="isDuplicate" start="104" end="132" abstract="false" final="false" static="false" visibility="private">
+    <parameter name="record" byreference="false" type="array"/>
+  </method>
+  <method name="collectLogs" start="134" end="163" abstract="false" final="false" static="false" visibility="private"/>
+  <method name="appendRecord" start="165" end="168" abstract="false" final="false" static="false" visibility="private">
+    <parameter name="record" byreference="false" type="array"/>
+  </method>
+</class>

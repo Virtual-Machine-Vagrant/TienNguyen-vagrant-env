@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="App\Models\NetgameCstool\MhfRights" namespace="App\Models\NetgameCstool" name="MhfRights" abstract="false" final="false" start="7" end="147">
+  <file path="/home/web/example/src/freegame_developer/app/Models/NetgameCstool" file="MhfRights.php" realpath="/home/web/example/src/freegame_developer/app/Models/NetgameCstool/MhfRights.php" size="4925" time="2017-01-03T08:24:56+00:00" unixtime="1483431896" sha1="e96493a5e5cef63ccd65ba319bfad74851195a3c" relative="freegame_developer/app/Models/NetgameCstool/MhfRights.php"/>
+  <extends full="App\Models\NetgameCstool\NetgameCstool" namespace="App\Models\NetgameCstool" name="NetgameCstool"/>
+  <member name="table" type="string" default="'mhf_rights'" visibility="protected" static="false" line="9"/>
+  <member name="fillable" type="array" default="" visibility="protected" static="false" line="10"/>
+  <member name="timestamps" type="boolean" default="false" visibility="public" static="false" line="25"/>
+  <method name="getListsMhfRights" start="32" end="61" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="get lists mhf_rights"/>
+      <param type="array" variable="$params"/>
+      <return type="object"/>
+    </docblock>
+    <parameter name="params" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="storeRight" start="67" end="87" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="store mhfRight"/>
+      <param type="array" variable="$params"/>
+      <return type="boolean"/>
+    </docblock>
+    <parameter name="params" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="updateRight" start="93" end="109" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="update mhfRight"/>
+      <param type="array" variable="$params"/>
+      <return type="boolean"/>
+    </docblock>
+    <parameter name="params" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="getOne" start="115" end="121" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="get one record"/>
+      <param type="integer" variable="$id"/>
+      <return type="object"/>
+    </docblock>
+    <parameter name="id" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="getListByGameId" start="128" end="135" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="get mhf right by game id"/>
+      <param type="integer" variable="$gameId"/>
+      <return type="object"/>
+    </docblock>
+    <parameter name="gameId" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="getListByGameIdAndId" start="141" end="146" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="get list by game id and id"/>
+      <param type="array" variable="$params"/>
+      <return type="object"/>
+    </docblock>
+    <parameter name="params" byreference="false" type="{unknown}"/>
+  </method>
+</class>

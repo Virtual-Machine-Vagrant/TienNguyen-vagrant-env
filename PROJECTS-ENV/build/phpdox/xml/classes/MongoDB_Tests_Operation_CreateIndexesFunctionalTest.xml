@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="MongoDB\Tests\Operation\CreateIndexesFunctionalTest" namespace="MongoDB\Tests\Operation" name="CreateIndexesFunctionalTest" abstract="false" final="false" start="11" end="194">
+  <file path="/home/web/example/src/freegame_developer/vendor/mongodb/mongodb/tests/Operation" file="CreateIndexesFunctionalTest.php" realpath="/home/web/example/src/freegame_developer/vendor/mongodb/mongodb/tests/Operation/CreateIndexesFunctionalTest.php" size="7394" time="2016-09-23T19:38:29+00:00" unixtime="1474659509" sha1="53cf431ca4984c68e3110a157bedaf8746216c0a" relative="freegame_developer/vendor/mongodb/mongodb/tests/Operation/CreateIndexesFunctionalTest.php"/>
+  <extends full="MongoDB\Tests\Operation\FunctionalTestCase" namespace="MongoDB\Tests\Operation" name="FunctionalTestCase"/>
+  <member name="wireVersionForCommand" type="integer" default="2" visibility="private" static="true" line="13"/>
+  <method name="testCreateSparseUniqueIndex" start="15" end="28" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testCreateCompoundIndex" start="30" end="43" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testCreateGeospatialIndex" start="45" end="58" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testCreateTTLIndex" start="60" end="73" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testCreateIndexes" start="75" end="114" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testCreateConflictingIndexesWithCommand" start="119" end="132" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <expectedexception value="MongoDB\Driver\Exception\RuntimeException"/>
+    </docblock>
+  </method>
+  <method name="testCreateConflictingIndexesWithLegacyInsert" start="134" end="158" abstract="false" final="false" static="false" visibility="public">
+    <inline>
+      <comment value="When creating indexes with legacy insert operations, the server" line="148"/>
+      <comment xmlns="http://xml.phpdox.net/src" value="ignores conflicting index specifications and leaves the original" line="149"/>
+      <comment xmlns="http://xml.phpdox.net/src" value="index in place." line="150"/>
+    </inline>
+  </method>
+  <method name="assertIndexExists" start="170" end="193" abstract="false" final="false" static="false" visibility="private">
+    <docblock>
+      <description compact="Asserts that an index with the given name exists for the collection.">An optional $callback may be provided, which should take an IndexInfo
+argument as its first and only parameter. If an IndexInfo matching the
+given name is found, it will be passed to the callback, which may perform
+additional assertions.</description>
+      <param type="object" variable="$callback">
+        <type full="MongoDB\Tests\Operation\callable" namespace="MongoDB\Tests\Operation" name="callable"/>
+      </param>
+    </docblock>
+    <parameter name="indexName" byreference="false" type="{unknown}"/>
+    <parameter name="callback" byreference="false" type="{unknown}" default="" constant="null"/>
+  </method>
+</class>

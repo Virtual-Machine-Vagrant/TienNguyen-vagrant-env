@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="Issue322Test" namespace="" name="Issue322Test" abstract="false" final="false" start="2" end="17">
+  <file path="/home/web/example/src/freegame_developer/vendor/phpunit/phpunit/tests/Regression/GitHub/322" file="Issue322Test.php" realpath="/home/web/example/src/freegame_developer/vendor/phpunit/phpunit/tests/Regression/GitHub/322/Issue322Test.php" size="217" time="2016-02-11T14:56:33+00:00" unixtime="1455202593" sha1="292e80b6fff4401e5bb4409a7ede1a6127e551b3" relative="freegame_developer/vendor/phpunit/phpunit/tests/Regression/GitHub/322/Issue322Test.php"/>
+  <extends full="PHPUnit_Framework_TestCase" namespace="" name="PHPUnit_Framework_TestCase"/>
+  <method name="testOne" start="7" end="9" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <group value="one"/>
+    </docblock>
+  </method>
+  <method name="testTwo" start="14" end="16" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <group value="two"/>
+    </docblock>
+  </method>
+</class>

@@ -1,0 +1,1154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="phpseclib\Crypt\RSA" namespace="phpseclib\Crypt" name="RSA" abstract="false" final="false" start="63" end="3044">
+  <file path="/home/web/example/src/freegame_developer/vendor/phpseclib/phpseclib/phpseclib/Crypt" file="RSA.php" realpath="/home/web/example/src/freegame_developer/vendor/phpseclib/phpseclib/phpseclib/Crypt/RSA.php" size="105512" time="2016-10-04T00:57:04+00:00" unixtime="1475542624" sha1="6dfb3e43e7df84802a5c2019a9f2ff158def0322" relative="freegame_developer/vendor/phpseclib/phpseclib/phpseclib/Crypt/RSA.php"/>
+  <docblock>
+    <description compact="Pure-PHP PKCS#1 compliant implementation of RSA."/>
+    <package value="RSA"/>
+    <author value="Jim Wigginton &lt;terrafrost@php.net&gt;"/>
+    <access value="public"/>
+  </docblock>
+  <constant type="integer" name="ENCRYPTION_OAEP" value="1">
+    <docblock>
+      <description compact="Use {@link http://en.wikipedia.org/wiki/Optimal_Asymmetric_Encryption_Padding Optimal Asymmetric Encryption Padding} (OAEP) for encryption / decryption.">Uses sha1 by default.</description>
+      <see value="self::setHash()"/>
+      <see value="self::setMGFHash()"/>
+    </docblock>
+  </constant>
+  <constant type="integer" name="ENCRYPTION_PKCS1" value="2">
+    <docblock>
+      <description compact="Use PKCS#1 padding.">Although self::ENCRYPTION_OAEP offers more security, including PKCS#1 padding is necessary for purposes of backwards
+compatibility with protocols (like SSH-1) written before OAEP's introduction.</description>
+    </docblock>
+  </constant>
+  <constant type="integer" name="ENCRYPTION_NONE" value="3">
+    <docblock>
+      <description compact="Do not use any padding">Although this method is not recommended it can none-the-less sometimes be useful if you're trying to decrypt some legacy
+stuff, if you're trying to diagnose why an encrypted message isn't decrypting, etc.</description>
+    </docblock>
+  </constant>
+  <constant type="integer" name="SIGNATURE_PSS" value="1">
+    <docblock>
+      <description compact="Use the Probabilistic Signature Scheme for signing">Uses sha1 by default.</description>
+      <see value="self::setSaltLength()"/>
+      <see value="self::setMGFHash()"/>
+    </docblock>
+  </constant>
+  <constant type="integer" name="SIGNATURE_PKCS1" value="2">
+    <docblock>
+      <description compact="Use the PKCS#1 scheme by default.">Although self::SIGNATURE_PSS offers more security, including PKCS#1 signing is necessary for purposes of backwards
+compatibility with protocols (like SSH-2) written before PSS's introduction.</description>
+    </docblock>
+  </constant>
+  <constant type="integer" name="ASN1_INTEGER" value="2">
+    <docblock>
+      <description compact="ASN1 Integer"/>
+    </docblock>
+  </constant>
+  <constant type="integer" name="ASN1_BITSTRING" value="3">
+    <docblock>
+      <description compact="ASN1 Bit String"/>
+    </docblock>
+  </constant>
+  <constant type="integer" name="ASN1_OCTETSTRING" value="4">
+    <docblock>
+      <description compact="ASN1 Octet String"/>
+    </docblock>
+  </constant>
+  <constant type="integer" name="ASN1_OBJECT" value="6">
+    <docblock>
+      <description compact="ASN1 Object Identifier"/>
+    </docblock>
+  </constant>
+  <constant type="integer" name="ASN1_SEQUENCE" value="48">
+    <docblock>
+      <description compact="ASN1 Sequence (with the constucted bit set)"/>
+    </docblock>
+  </constant>
+  <constant type="integer" name="MODE_INTERNAL" value="1">
+    <docblock>
+      <description compact="To use the pure-PHP implementation"/>
+    </docblock>
+  </constant>
+  <constant type="integer" name="MODE_OPENSSL" value="2">
+    <docblock>
+      <description compact="To use the OpenSSL library">(if enabled; otherwise, the internal implementation will be used)</description>
+    </docblock>
+  </constant>
+  <constant type="integer" name="PRIVATE_FORMAT_PKCS1" value="0">
+    <docblock>
+      <description compact="PKCS#1 formatted private key">Used by OpenSSH</description>
+    </docblock>
+  </constant>
+  <constant type="integer" name="PRIVATE_FORMAT_PUTTY" value="1">
+    <docblock>
+      <description compact="PuTTY formatted private key"/>
+    </docblock>
+  </constant>
+  <constant type="integer" name="PRIVATE_FORMAT_XML" value="2">
+    <docblock>
+      <description compact="XML formatted private key"/>
+    </docblock>
+  </constant>
+  <constant type="integer" name="PRIVATE_FORMAT_PKCS8" value="8">
+    <docblock>
+      <description compact="PKCS#8 formatted private key"/>
+    </docblock>
+  </constant>
+  <constant type="integer" name="PUBLIC_FORMAT_RAW" value="3">
+    <docblock>
+      <description compact="Raw public key">An array containing two \phpseclib\Math\BigInteger objects.
+
+The exponent can be indexed with any of the following:
+
+0, e, exponent, publicExponent
+
+The modulus can be indexed with any of the following:
+
+1, n, modulo, modulus</description>
+    </docblock>
+  </constant>
+  <constant type="integer" name="PUBLIC_FORMAT_PKCS1" value="4">
+    <docblock>
+      <description compact="PKCS#1 formatted public key (raw)">Used by File/X509.php
+
+Has the following header:
+
+-----BEGIN RSA PUBLIC KEY-----
+
+Analogous to ssh-keygen's pem format (as specified by -m)</description>
+    </docblock>
+  </constant>
+  <constant type="integer" name="PUBLIC_FORMAT_PKCS1_RAW" value="4"/>
+  <constant type="integer" name="PUBLIC_FORMAT_XML" value="5">
+    <docblock>
+      <description compact="XML formatted public key"/>
+    </docblock>
+  </constant>
+  <constant type="integer" name="PUBLIC_FORMAT_OPENSSH" value="6">
+    <docblock>
+      <description compact="OpenSSH formatted public key">Place in $HOME/.ssh/authorized_keys</description>
+    </docblock>
+  </constant>
+  <constant type="integer" name="PUBLIC_FORMAT_PKCS8" value="7">
+    <docblock>
+      <description compact="PKCS#1 formatted public key (encapsulated)">Used by PHP's openssl_public_encrypt() and openssl's rsautl (when -pubin is set)
+
+Has the following header:
+
+-----BEGIN PUBLIC KEY-----
+
+Analogous to ssh-keygen's pkcs8 format (as specified by -m). Although PKCS8
+is specific to private keys it's basically creating a DER-encoded wrapper
+for keys. This just extends that same concept to public keys (much like ssh-keygen)</description>
+    </docblock>
+  </constant>
+  <member name="zero" visibility="public" static="false" line="251">
+    <docblock>
+      <description compact="Precomputed Zero"/>
+      <var type="object">
+        <type full="\phpseclib\Math\BigInteger" namespace="\phpseclib\Math" name="BigInteger"/>
+      </var>
+      <access value="private"/>
+    </docblock>
+  </member>
+  <member name="one" visibility="public" static="false" line="259">
+    <docblock>
+      <description compact="Precomputed One"/>
+      <var type="object">
+        <type full="\phpseclib\Math\BigInteger" namespace="\phpseclib\Math" name="BigInteger"/>
+      </var>
+      <access value="private"/>
+    </docblock>
+  </member>
+  <member name="privateKeyFormat" type="{unknown}" default="" constant="self::PRIVATE_FORMAT_PKCS1" visibility="public" static="false" line="267">
+    <docblock>
+      <description compact="Private Key Format"/>
+      <var type="int"/>
+      <access value="private"/>
+    </docblock>
+  </member>
+  <member name="publicKeyFormat" type="{unknown}" default="" constant="self::PUBLIC_FORMAT_PKCS8" visibility="public" static="false" line="275">
+    <docblock>
+      <description compact="Public Key Format"/>
+      <var type="int"/>
+      <access value="public"/>
+    </docblock>
+  </member>
+  <member name="modulus" visibility="public" static="false" line="283">
+    <docblock>
+      <description compact="Modulus (ie. n)"/>
+      <var type="object">
+        <type full="\phpseclib\Math\BigInteger" namespace="\phpseclib\Math" name="BigInteger"/>
+      </var>
+      <access value="private"/>
+    </docblock>
+  </member>
+  <member name="k" visibility="public" static="false" line="291">
+    <docblock>
+      <description compact="Modulus length"/>
+      <var type="object">
+        <type full="\phpseclib\Math\BigInteger" namespace="\phpseclib\Math" name="BigInteger"/>
+      </var>
+      <access value="private"/>
+    </docblock>
+  </member>
+  <member name="exponent" visibility="public" static="false" line="299">
+    <docblock>
+      <description compact="Exponent (ie. e or d)"/>
+      <var type="object">
+        <type full="\phpseclib\Math\BigInteger" namespace="\phpseclib\Math" name="BigInteger"/>
+      </var>
+      <access value="private"/>
+    </docblock>
+  </member>
+  <member name="primes" visibility="public" static="false" line="307">
+    <docblock>
+      <description compact="Primes for Chinese Remainder Theorem (ie. p and q)"/>
+      <var type="array"/>
+      <access value="private"/>
+    </docblock>
+  </member>
+  <member name="exponents" visibility="public" static="false" line="315">
+    <docblock>
+      <description compact="Exponents for Chinese Remainder Theorem (ie. dP and dQ)"/>
+      <var type="array"/>
+      <access value="private"/>
+    </docblock>
+  </member>
+  <member name="coefficients" visibility="public" static="false" line="323">
+    <docblock>
+      <description compact="Coefficients for Chinese Remainder Theorem (ie. qInv)"/>
+      <var type="array"/>
+      <access value="private"/>
+    </docblock>
+  </member>
+  <member name="hashName" visibility="public" static="false" line="331">
+    <docblock>
+      <description compact="Hash name"/>
+      <var type="string"/>
+      <access value="private"/>
+    </docblock>
+  </member>
+  <member name="hash" visibility="public" static="false" line="339">
+    <docblock>
+      <description compact="Hash function"/>
+      <var type="object">
+        <type full="\phpseclib\Crypt\Hash" namespace="\phpseclib\Crypt" name="Hash"/>
+      </var>
+      <access value="private"/>
+    </docblock>
+  </member>
+  <member name="hLen" visibility="public" static="false" line="347">
+    <docblock>
+      <description compact="Length of hash function output"/>
+      <var type="int"/>
+      <access value="private"/>
+    </docblock>
+  </member>
+  <member name="sLen" visibility="public" static="false" line="355">
+    <docblock>
+      <description compact="Length of salt"/>
+      <var type="int"/>
+      <access value="private"/>
+    </docblock>
+  </member>
+  <member name="mgfHash" visibility="public" static="false" line="363">
+    <docblock>
+      <description compact="Hash function for the Mask Generation Function"/>
+      <var type="object">
+        <type full="\phpseclib\Crypt\Hash" namespace="\phpseclib\Crypt" name="Hash"/>
+      </var>
+      <access value="private"/>
+    </docblock>
+  </member>
+  <member name="mgfHLen" visibility="public" static="false" line="371">
+    <docblock>
+      <description compact="Length of MGF hash function output"/>
+      <var type="int"/>
+      <access value="private"/>
+    </docblock>
+  </member>
+  <member name="encryptionMode" type="{unknown}" default="" constant="self::ENCRYPTION_OAEP" visibility="public" static="false" line="379">
+    <docblock>
+      <description compact="Encryption mode"/>
+      <var type="int"/>
+      <access value="private"/>
+    </docblock>
+  </member>
+  <member name="signatureMode" type="{unknown}" default="" constant="self::SIGNATURE_PSS" visibility="public" static="false" line="387">
+    <docblock>
+      <description compact="Signature mode"/>
+      <var type="int"/>
+      <access value="private"/>
+    </docblock>
+  </member>
+  <member name="publicExponent" type="boolean" default="false" visibility="public" static="false" line="395">
+    <docblock>
+      <description compact="Public Exponent"/>
+      <var type="mixed"/>
+      <access value="private"/>
+    </docblock>
+  </member>
+  <member name="password" type="boolean" default="false" visibility="public" static="false" line="403">
+    <docblock>
+      <description compact="Password"/>
+      <var type="string"/>
+      <access value="private"/>
+    </docblock>
+  </member>
+  <member name="components" type="array" default="" visibility="public" static="false" line="415">
+    <docblock>
+      <description compact="Components">For use with parsing XML formatted keys.  PHP's XML Parser functions use utilized - instead of PHP's DOM functions -
+because PHP's XML Parser functions work on PHP4 whereas PHP's DOM functions - although surperior - don't.</description>
+      <see value="self::_start_element_handler()"/>
+      <var type="array"/>
+      <access value="private"/>
+    </docblock>
+  </member>
+  <member name="current" visibility="public" static="false" line="427">
+    <docblock>
+      <description compact="Current String">For use with parsing XML formatted keys.</description>
+      <see value="self::_character_handler()"/>
+      <see value="self::_stop_element_handler()"/>
+      <var type="mixed"/>
+      <access value="private"/>
+    </docblock>
+  </member>
+  <member name="configFile" visibility="public" static="false" line="437">
+    <docblock>
+      <description compact="OpenSSL configuration file name.">Set to null to use system configuration file.</description>
+      <see value="self::createKey()"/>
+      <var type="mixed"/>
+      <access value="public"/>
+    </docblock>
+  </member>
+  <member name="comment" type="string" default="'phpseclib-generated-key'" visibility="public" static="false" line="445">
+    <docblock>
+      <description compact="Public key comment field."/>
+      <var type="string"/>
+      <access value="private"/>
+    </docblock>
+  </member>
+  <constructor name="__construct" start="457" end="518" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="The constructor">If you want to make use of the openssl extension, you'll need to set the mode manually, yourself.  The reason
+\phpseclib\Crypt\RSA doesn't do it is because OpenSSL doesn't fail gracefully.  openssl_pkey_new(), in particular, requires
+openssl.cnf be present somewhere and, unfortunately, the only real way to find out is too late.</description>
+      <return type="object">
+        <type full="\phpseclib\Crypt\RSA" namespace="\phpseclib\Crypt" name="RSA"/>
+      </return>
+      <access value="public"/>
+    </docblock>
+  </constructor>
+  <method name="createKey" start="534" end="704" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Create public / private key pair">Returns an array with the following three elements:
+ - 'privatekey': The private key.
+ - 'publickey':  The public key.
+ - 'partialkey': A partially computed key (if the execution time exceeded $timeout).
+                 Will need to be passed back to \phpseclib\Crypt\RSA::createKey() as the third parameter for further processing.</description>
+      <access value="public"/>
+      <param type="int" variable="$bits"/>
+      <param type="int" variable="$timeout"/>
+      <param type="array" variable="$p"/>
+    </docblock>
+    <parameter name="bits" byreference="false" type="integer" default="1024"/>
+    <parameter name="timeout" byreference="false" type="boolean" default="false"/>
+    <parameter name="partial" byreference="false" type="array" default=""/>
+    <inline>
+      <comment value="per &lt;http://cseweb.ucsd.edu/~hovav/dist/survey.pdf#page=5&gt;, this number ought not result in primes smaller" line="540"/>
+      <comment value="than 256 bits. as a consequence if the key you're trying to create is 1024 bits and you've set CRYPT_RSA_SMALLEST_PRIME" line="541"/>
+      <comment value="to 384 bits then you're going to get a 384 bit prime and a 640 bit prime (384 + 1024 % 384). at least if" line="542"/>
+      <comment value="CRYPT_RSA_MODE is set to self::MODE_INTERNAL. if CRYPT_RSA_MODE is set to self::MODE_OPENSSL then" line="543"/>
+      <comment value="CRYPT_RSA_SMALLEST_PRIME is ignored (ie. multi-prime RSA support is more intended as a way to speed up RSA key" line="544"/>
+      <comment value="generation when there's a chance neither gmp nor OpenSSL are installed)" line="545"/>
+      <comment value="OpenSSL uses 65537 as the exponent and requires RSA keys be 384 bits minimum" line="550"/>
+      <comment value="divide by two to see how many bits P and Q would be" line="582"/>
+      <comment value="from &lt;http://tools.ietf.org/html/rfc3447#appendix-A.1.2&gt;:" line="685"/>
+      <comment value="RSAPrivateKey ::= SEQUENCE {" line="686"/>
+      <comment value="version           Version," line="687"/>
+      <comment value="modulus           INTEGER,  -- n" line="688"/>
+      <comment value="publicExponent    INTEGER,  -- e" line="689"/>
+      <comment value="privateExponent   INTEGER,  -- d" line="690"/>
+      <comment value="prime1            INTEGER,  -- p" line="691"/>
+      <comment value="prime2            INTEGER,  -- q" line="692"/>
+      <comment value="exponent1         INTEGER,  -- d mod (p-1)" line="693"/>
+      <comment value="exponent2         INTEGER,  -- d mod (q-1)" line="694"/>
+      <comment value="coefficient       INTEGER,  -- (inverse of q) mod p" line="695"/>
+      <comment value="otherPrimeInfos   OtherPrimeInfos OPTIONAL" line="696"/>
+      <comment value="}" line="697"/>
+    </inline>
+  </method>
+  <method name="_convertPrivateKey" start="714" end="933" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Convert a private key to the appropriate format."/>
+      <access value="private"/>
+      <see value="self::setPrivateKeyFormat()"/>
+      <param type="string" variable="$RSAPrivateKey"/>
+      <return type="string"/>
+    </docblock>
+    <parameter name="n" byreference="false" type="{unknown}"/>
+    <parameter name="e" byreference="false" type="{unknown}"/>
+    <parameter name="d" byreference="false" type="{unknown}"/>
+    <parameter name="primes" byreference="false" type="{unknown}"/>
+    <parameter name="exponents" byreference="false" type="{unknown}"/>
+    <parameter name="coefficients" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="if the format in question does not support multi-prime rsa and multi-prime rsa was used," line="730"/>
+      <comment value="call _convertPublicKey() instead." line="731"/>
+    </inline>
+  </method>
+  <method name="_convertPublicKey" start="943" end="1011" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Convert a public key to the appropriate format"/>
+      <access value="private"/>
+      <see value="self::setPublicKeyFormat()"/>
+      <param type="string" variable="$RSAPrivateKey"/>
+      <return type="string"/>
+    </docblock>
+    <parameter name="n" byreference="false" type="{unknown}"/>
+    <parameter name="e" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="_parseKey" start="1023" end="1408" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Break a public or private key down into its constituant components"/>
+      <access value="private"/>
+      <see value="self::_convertPublicKey()"/>
+      <see value="self::_convertPrivateKey()"/>
+      <param type="string" variable="$key"/>
+      <param type="int" variable="$type"/>
+      <return type="array"/>
+    </docblock>
+    <parameter name="key" byreference="false" type="{unknown}"/>
+    <parameter name="type" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="getSize" start="1418" end="1421" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Returns the key size">More specifically, this returns the size of the modulo in bits.</description>
+      <access value="public"/>
+      <return type="int"/>
+    </docblock>
+  </method>
+  <method name="_start_element_handler" start="1433" end="1462" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Start Element Handler">Called by xml_set_element_handler()</description>
+      <access value="private"/>
+      <param type="resource" variable="$parser"/>
+      <param type="string" variable="$name"/>
+      <param type="array" variable="$attribs"/>
+    </docblock>
+    <parameter name="parser" byreference="false" type="{unknown}"/>
+    <parameter name="name" byreference="false" type="{unknown}"/>
+    <parameter name="attribs" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="$name = strtoupper($name);" line="1435"/>
+    </inline>
+  </method>
+  <method name="_stop_element_handler" start="1473" end="1479" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Stop Element Handler">Called by xml_set_element_handler()</description>
+      <access value="private"/>
+      <param type="resource" variable="$parser"/>
+      <param type="string" variable="$name"/>
+    </docblock>
+    <parameter name="parser" byreference="false" type="{unknown}"/>
+    <parameter name="name" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="_data_handler" start="1490" end="1496" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Data Handler">Called by xml_set_character_data_handler()</description>
+      <access value="private"/>
+      <param type="resource" variable="$parser"/>
+      <param type="string" variable="$data"/>
+    </docblock>
+    <parameter name="parser" byreference="false" type="{unknown}"/>
+    <parameter name="data" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="loadKey" start="1507" end="1610" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Loads a public or private key">Returns true on success and false on failure (ie. an incorrect password was provided or the key was malformed)</description>
+      <access value="public"/>
+      <param type="string" variable="$key"/>
+      <param description="optional" type="int" variable="$type"/>
+    </docblock>
+    <parameter name="key" byreference="false" type="{unknown}"/>
+    <parameter name="type" byreference="false" type="boolean" default="false"/>
+  </method>
+  <method name="setPassword" start="1623" end="1626" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Sets the password">Private keys can be encrypted with a password.  To unset the password, pass in the empty string or false.
+Or rather, pass in $password such that empty($password) &amp;&amp; !is_string($password) is true.</description>
+      <see value="self::createKey()"/>
+      <see value="self::loadKey()"/>
+      <access value="public"/>
+      <param type="string" variable="$password"/>
+    </docblock>
+    <parameter name="password" byreference="false" type="boolean" default="false"/>
+  </method>
+  <method name="setPublicKey" start="1649" end="1691" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Defines the public key">Some private key formats define the public exponent and some don't.  Those that don't define it are problematic when
+used in certain contexts.  For example, in SSH-2, RSA authentication works by sending the public key along with a
+message signed by the private key to the server.  The SSH-2 server looks the public key up in an index of public keys
+and if it's present then proceeds to verify the signature.  Problem is, if your private key doesn't include the public
+exponent this won't work unless you manually add the public exponent. phpseclib tries to guess if the key being used
+is the public key but in the event that it guesses incorrectly you might still want to explicitly set the key as being
+public.
+
+Do note that when a new key is loaded the index will be cleared.
+
+Returns true on success, false on failure</description>
+      <see value="self::getPublicKey()"/>
+      <access value="public"/>
+      <param description="optional" type="string" variable="$key"/>
+      <param description="optional" type="int" variable="$type"/>
+      <return type="object">
+        <type full="phpseclib\Crypt\bool" namespace="phpseclib\Crypt" name="bool"/>
+      </return>
+    </docblock>
+    <parameter name="key" byreference="false" type="boolean" default="false"/>
+    <parameter name="type" byreference="false" type="boolean" default="false"/>
+    <inline>
+      <comment value="if a public key has already been loaded return false" line="1651"/>
+    </inline>
+  </method>
+  <method name="setPrivateKey" start="1709" end="1725" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Defines the private key">If phpseclib guessed a private key was a public key and loaded it as such it might be desirable to force
+phpseclib to treat the key as a private key. This function will do that.
+
+Do note that when a new key is loaded the index will be cleared.
+
+Returns true on success, false on failure</description>
+      <see value="self::getPublicKey()"/>
+      <access value="public"/>
+      <param description="optional" type="string" variable="$key"/>
+      <param description="optional" type="int" variable="$type"/>
+      <return type="object">
+        <type full="phpseclib\Crypt\bool" namespace="phpseclib\Crypt" name="bool"/>
+      </return>
+    </docblock>
+    <parameter name="key" byreference="false" type="boolean" default="false"/>
+    <parameter name="type" byreference="false" type="boolean" default="false"/>
+    <inline>
+      <comment value="don't overwrite the old key if the new key is invalid" line="1722"/>
+    </inline>
+  </method>
+  <method name="getPublicKey" start="1739" end="1750" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Returns the public key">The public key is only returned under two circumstances - if the private key had the public key embedded within it
+or if the public key was set via setPublicKey().  If the currently loaded key is supposed to be the public key this
+function won't return it since this library, for the most part, doesn't distinguish between public and private keys.</description>
+      <see value="self::getPublicKey()"/>
+      <access value="public"/>
+      <param type="string" variable="$key"/>
+      <param description="optional" type="int" variable="$type"/>
+    </docblock>
+    <parameter name="type" byreference="false" type="{unknown}" default="" constant="self::PUBLIC_FORMAT_PKCS8"/>
+  </method>
+  <method name="getPublicKeyFingerprint" start="1764" end="1785" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Returns the public key's fingerprint">The public key's fingerprint is returned, which is equivalent to running `ssh-keygen -lf rsa.pub`. If there is
+no public key currently loaded, false is returned.
+Example output (md5): "c1:b1:30:29:d7:b8:de:6c:97:77:10:d7:46:41:63:87" (as specified by RFC 4716)</description>
+      <access value="public"/>
+      <param description="The hashing algorithm to be used. Valid options are 'md5' and 'sha256'. False is returned" type="string" variable="$algorithm">for invalid values.</param>
+      <return type="mixed"/>
+    </docblock>
+    <parameter name="algorithm" byreference="false" type="string" default="'md5'"/>
+  </method>
+  <method name="getPrivateKey" start="1798" end="1809" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Returns the private key">The private key is only returned if the currently loaded key contains the constituent prime numbers.</description>
+      <see value="self::getPublicKey()"/>
+      <access value="public"/>
+      <param type="string" variable="$key"/>
+      <param description="optional" type="int" variable="$type"/>
+      <return type="mixed"/>
+    </docblock>
+    <parameter name="type" byreference="false" type="{unknown}" default="" constant="self::PUBLIC_FORMAT_PKCS1"/>
+  </method>
+  <method name="_getPrivatePublicKey" start="1822" end="1833" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Returns a minimalistic private key">Returns the private key without the prime number constituants.  Structurally identical to a public key that
+hasn't been set as the public key</description>
+      <see value="self::getPrivateKey()"/>
+      <access value="private"/>
+      <param type="string" variable="$key"/>
+      <param description="optional" type="int" variable="$type"/>
+    </docblock>
+    <parameter name="mode" byreference="false" type="{unknown}" default="" constant="self::PUBLIC_FORMAT_PKCS8"/>
+  </method>
+  <method name="__toString" start="1841" end="1849" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="__toString() magic method"/>
+      <access value="public"/>
+      <return type="string"/>
+    </docblock>
+  </method>
+  <method name="__clone" start="1857" end="1862" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="__clone() magic method"/>
+      <access value="public"/>
+      <return type="object">
+        <type full="phpseclib\Crypt\Crypt_RSA" namespace="phpseclib\Crypt" name="Crypt_RSA"/>
+      </return>
+    </docblock>
+  </method>
+  <method name="_generateMinMax" start="1871" end="1888" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Generates the smallest and largest numbers requiring $bits bits"/>
+      <access value="private"/>
+      <param type="int" variable="$bits"/>
+      <return type="array"/>
+    </docblock>
+    <parameter name="bits" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="_decodeLength" start="1900" end="1909" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="DER-decode the length">DER supports lengths up to (2**8)**127, however, we'll only support lengths up to (2**8)**4.  See
+{@link http://itu.int/ITU-T/studygroups/com17/languages/X.690-0207.pdf#p=13 X.690 paragraph 8.1.3} for more information.</description>
+      <access value="private"/>
+      <param type="string" variable="$string"/>
+      <return type="int"/>
+    </docblock>
+    <parameter name="string" byreference="true" type="{unknown}"/>
+  </method>
+  <method name="_encodeLength" start="1921" end="1929" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="DER-encode the length">DER supports lengths up to (2**8)**127, however, we'll only support lengths up to (2**8)**4.  See
+{@link http://itu.int/ITU-T/studygroups/com17/languages/X.690-0207.pdf#p=13 X.690 paragraph 8.1.3} for more information.</description>
+      <access value="private"/>
+      <param type="int" variable="$length"/>
+      <return type="string"/>
+    </docblock>
+    <parameter name="length" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="_string_shift" start="1941" end="1946" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="String Shift">Inspired by array_shift</description>
+      <param type="string" variable="$string"/>
+      <param type="int" variable="$index"/>
+      <return type="string"/>
+      <access value="private"/>
+    </docblock>
+    <parameter name="string" byreference="true" type="{unknown}"/>
+    <parameter name="index" byreference="false" type="integer" default="1"/>
+  </method>
+  <method name="setPrivateKeyFormat" start="1955" end="1958" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Determines the private key format"/>
+      <see value="self::createKey()"/>
+      <access value="public"/>
+      <param type="int" variable="$format"/>
+    </docblock>
+    <parameter name="format" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="setPublicKeyFormat" start="1967" end="1970" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Determines the public key format"/>
+      <see value="self::createKey()"/>
+      <access value="public"/>
+      <param type="int" variable="$format"/>
+    </docblock>
+    <parameter name="format" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="setHash" start="1981" end="1999" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Determines which hashing function should be used">Used with signature production / verification and (if the encryption mode is self::ENCRYPTION_OAEP) encryption and
+decryption.  If $hash isn't supported, sha1 is used.</description>
+      <access value="public"/>
+      <param type="string" variable="$hash"/>
+    </docblock>
+    <parameter name="hash" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="\phpseclib\Crypt\Hash supports algorithms that PKCS#1 doesn't support.  md5-96 and sha1-96, for example." line="1983"/>
+    </inline>
+  </method>
+  <method name="setMGFHash" start="2010" end="2026" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Determines which hashing function should be used for the mask generation function">The mask generation function is used by self::ENCRYPTION_OAEP and self::SIGNATURE_PSS and although it's
+best if Hash and MGFHash are set to the same thing this is not a requirement.</description>
+      <access value="public"/>
+      <param type="string" variable="$hash"/>
+    </docblock>
+    <parameter name="hash" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="\phpseclib\Crypt\Hash supports algorithms that PKCS#1 doesn't support.  md5-96 and sha1-96, for example." line="2012"/>
+    </inline>
+  </method>
+  <method name="setSaltLength" start="2039" end="2042" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Determines the salt length">To quote from <link xmlns="http://xml.phpdox.net/src" value="http://tools.ietf.org/html/rfc3447#page-38 RFC3447#page-38"/>:
+   Typical salt lengths in octets are hLen (the length of the output
+   of the hash function Hash) and 0.
+</description>
+      <access value="public"/>
+      <param type="int" variable="$format"/>
+    </docblock>
+    <parameter name="sLen" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="_i2osp" start="2054" end="2062" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Integer-to-Octet-String primitive">See <link xmlns="http://xml.phpdox.net/src" value="http://tools.ietf.org/html/rfc3447#section-4.1 RFC3447#section-4.1"/>.
+</description>
+      <access value="private"/>
+      <param type="object" variable="$x">
+        <type full="\phpseclib\Math\BigInteger" namespace="\phpseclib\Math" name="BigInteger"/>
+      </param>
+      <param type="int" variable="$xLen"/>
+      <return type="string"/>
+    </docblock>
+    <parameter name="x" byreference="false" type="{unknown}"/>
+    <parameter name="xLen" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="_os2ip" start="2073" end="2076" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Octet-String-to-Integer primitive">See <link xmlns="http://xml.phpdox.net/src" value="http://tools.ietf.org/html/rfc3447#section-4.2 RFC3447#section-4.2"/>.
+</description>
+      <access value="private"/>
+      <param type="string" variable="$x"/>
+      <return type="object">
+        <type full="\phpseclib\Math\BigInteger" namespace="\phpseclib\Math" name="BigInteger"/>
+      </return>
+    </docblock>
+    <parameter name="x" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="_exponentiate" start="2087" end="2159" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Exponentiate with or without Chinese Remainder Theorem">See <link xmlns="http://xml.phpdox.net/src" value="http://tools.ietf.org/html/rfc3447#section-5.1.1 RFC3447#section-5.1.2"/>.
+</description>
+      <access value="private"/>
+      <param type="object" variable="$x">
+        <type full="\phpseclib\Math\BigInteger" namespace="\phpseclib\Math" name="BigInteger"/>
+      </param>
+      <return type="object">
+        <type full="\phpseclib\Math\BigInteger" namespace="\phpseclib\Math" name="BigInteger"/>
+      </return>
+    </docblock>
+    <parameter name="x" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="_blind" start="2173" end="2183" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Performs RSA Blinding">Protects against timing attacks by employing RSA Blinding.
+Returns $x-&gt;modPow($this-&gt;exponents[$i], $this-&gt;primes[$i])</description>
+      <access value="private"/>
+      <param type="object" variable="$x">
+        <type full="\phpseclib\Math\BigInteger" namespace="\phpseclib\Math" name="BigInteger"/>
+      </param>
+      <param type="object" variable="$r">
+        <type full="\phpseclib\Math\BigInteger" namespace="\phpseclib\Math" name="BigInteger"/>
+      </param>
+      <param type="int" variable="$i"/>
+      <return type="object">
+        <type full="\phpseclib\Math\BigInteger" namespace="\phpseclib\Math" name="BigInteger"/>
+      </return>
+    </docblock>
+    <parameter name="x" byreference="false" type="{unknown}"/>
+    <parameter name="r" byreference="false" type="{unknown}"/>
+    <parameter name="i" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="_equals" start="2199" end="2211" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Performs blinded RSA equality testing">Protects against a particular type of timing attack described.
+See <link xmlns="http://xml.phpdox.net/src" value="http://codahale.com/a-lesson-in-timing-attacks/ A Lesson In Timing Attacks (or, Don't use MessageDigest.isEquals)"/>Thanks for the heads up singpolyma!
+</description>
+      <access value="private"/>
+      <param type="string" variable="$x"/>
+      <param type="string" variable="$y"/>
+      <return type="object">
+        <type full="phpseclib\Crypt\bool" namespace="phpseclib\Crypt" name="bool"/>
+      </return>
+    </docblock>
+    <parameter name="x" byreference="false" type="{unknown}"/>
+    <parameter name="y" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="_rsaep" start="2222" end="2229" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="RSAEP">See <link xmlns="http://xml.phpdox.net/src" value="http://tools.ietf.org/html/rfc3447#section-5.1.1 RFC3447#section-5.1.1"/>.
+</description>
+      <access value="private"/>
+      <param type="object" variable="$m">
+        <type full="\phpseclib\Math\BigInteger" namespace="\phpseclib\Math" name="BigInteger"/>
+      </param>
+      <return type="object">
+        <type full="\phpseclib\Math\BigInteger" namespace="\phpseclib\Math" name="BigInteger"/>
+      </return>
+    </docblock>
+    <parameter name="m" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="_rsadp" start="2240" end="2247" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="RSADP">See <link xmlns="http://xml.phpdox.net/src" value="http://tools.ietf.org/html/rfc3447#section-5.1.2 RFC3447#section-5.1.2"/>.
+</description>
+      <access value="private"/>
+      <param type="object" variable="$c">
+        <type full="\phpseclib\Math\BigInteger" namespace="\phpseclib\Math" name="BigInteger"/>
+      </param>
+      <return type="object">
+        <type full="\phpseclib\Math\BigInteger" namespace="\phpseclib\Math" name="BigInteger"/>
+      </return>
+    </docblock>
+    <parameter name="c" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="_rsasp1" start="2258" end="2265" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="RSASP1">See <link xmlns="http://xml.phpdox.net/src" value="http://tools.ietf.org/html/rfc3447#section-5.2.1 RFC3447#section-5.2.1"/>.
+</description>
+      <access value="private"/>
+      <param type="object" variable="$m">
+        <type full="\phpseclib\Math\BigInteger" namespace="\phpseclib\Math" name="BigInteger"/>
+      </param>
+      <return type="object">
+        <type full="\phpseclib\Math\BigInteger" namespace="\phpseclib\Math" name="BigInteger"/>
+      </return>
+    </docblock>
+    <parameter name="m" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="_rsavp1" start="2276" end="2283" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="RSAVP1">See <link xmlns="http://xml.phpdox.net/src" value="http://tools.ietf.org/html/rfc3447#section-5.2.2 RFC3447#section-5.2.2"/>.
+</description>
+      <access value="private"/>
+      <param type="object" variable="$s">
+        <type full="\phpseclib\Math\BigInteger" namespace="\phpseclib\Math" name="BigInteger"/>
+      </param>
+      <return type="object">
+        <type full="\phpseclib\Math\BigInteger" namespace="\phpseclib\Math" name="BigInteger"/>
+      </return>
+    </docblock>
+    <parameter name="s" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="_mgf1" start="2295" end="2307" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="MGF1">See <link xmlns="http://xml.phpdox.net/src" value="http://tools.ietf.org/html/rfc3447#appendix-B.2.1 RFC3447#appendix-B.2.1"/>.
+</description>
+      <access value="private"/>
+      <param type="string" variable="$mgfSeed"/>
+      <param type="int" variable="$mgfLen"/>
+      <return type="string"/>
+    </docblock>
+    <parameter name="mgfSeed" byreference="false" type="{unknown}"/>
+    <parameter name="maskLen" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="if $maskLen would yield strings larger than 4GB, PKCS#1 suggests a &quot;Mask too long&quot; error be output." line="2297"/>
+    </inline>
+  </method>
+  <method name="_rsaes_oaep_encrypt" start="2320" end="2355" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="RSAES-OAEP-ENCRYPT">See <link xmlns="http://xml.phpdox.net/src" value="http://tools.ietf.org/html/rfc3447#section-7.1.1 RFC3447#section-7.1.1"/> and
+{http://en.wikipedia.org/wiki/Optimal_Asymmetric_Encryption_Padding OAES}.
+</description>
+      <access value="private"/>
+      <param type="string" variable="$m"/>
+      <param type="string" variable="$l"/>
+      <return type="string"/>
+    </docblock>
+    <parameter name="m" byreference="false" type="{unknown}"/>
+    <parameter name="l" byreference="false" type="string" default="''"/>
+    <inline>
+      <comment value="Length checking" line="2324"/>
+      <comment value="if $l is larger than two million terrabytes and you're using sha1, PKCS#1 suggests a &quot;Label too long&quot; error" line="2326"/>
+      <comment value="be output." line="2327"/>
+      <comment value="EME-OAEP encoding" line="2334"/>
+      <comment value="RSA encryption" line="2346"/>
+      <comment value="Output the ciphertext C" line="2352"/>
+    </inline>
+  </method>
+  <method name="_rsaes_oaep_decrypt" start="2383" end="2430" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="RSAES-OAEP-DECRYPT">See <link xmlns="http://xml.phpdox.net/src" value="http://tools.ietf.org/html/rfc3447#section-7.1.2 RFC3447#section-7.1.2"/>.  The fact that the error
+messages aren't distinguishable from one another hinders debugging, but, to quote from RFC3447#section-7.1.2:
+   Note.  Care must be taken to ensure that an opponent cannot
+   distinguish the different error conditions in Step 3.g, whether by
+   error message or timing, or, more generally, learn partial
+   information about the encoded message EM.  Otherwise an opponent may
+   be able to obtain useful information about the decryption of the
+   ciphertext C, leading to a chosen-ciphertext attack such as the one
+   observed by Manger [36].
+As for $l...  to quote from <link xmlns="http://xml.phpdox.net/src" value="http://tools.ietf.org/html/rfc3447#page-17 RFC3447#page-17"/>:
+   Both the encryption and the decryption operations of RSAES-OAEP take
+   the value of a label L as input.  In this version of PKCS #1, L is
+   the empty string; other uses of the label are outside the scope of
+   this document.
+</description>
+      <access value="private"/>
+      <param type="string" variable="$c"/>
+      <param type="string" variable="$l"/>
+      <return type="string"/>
+    </docblock>
+    <parameter name="c" byreference="false" type="{unknown}"/>
+    <parameter name="l" byreference="false" type="string" default="''"/>
+    <inline>
+      <comment value="Length checking" line="2385"/>
+      <comment value="if $l is larger than two million terrabytes and you're using sha1, PKCS#1 suggests a &quot;Label too long&quot; error" line="2387"/>
+      <comment value="be output." line="2388"/>
+      <comment value="RSA decryption" line="2395"/>
+      <comment value="EME-OAEP decoding" line="2405"/>
+      <comment value="Output the message M" line="2427"/>
+    </inline>
+  </method>
+  <method name="_raw_encrypt" start="2441" end="2446" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Raw Encryption / Decryption">Doesn't use padding and is not recommended.</description>
+      <access value="private"/>
+      <param type="string" variable="$m"/>
+      <return type="string"/>
+    </docblock>
+    <parameter name="m" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="_rsaes_pkcs1_v1_5_encrypt" start="2457" end="2494" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="RSAES-PKCS1-V1_5-ENCRYPT">See <link xmlns="http://xml.phpdox.net/src" value="http://tools.ietf.org/html/rfc3447#section-7.2.1 RFC3447#section-7.2.1"/>.
+</description>
+      <access value="private"/>
+      <param type="string" variable="$m"/>
+      <return type="string"/>
+    </docblock>
+    <parameter name="m" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="Length checking" line="2461"/>
+      <comment value="EME-PKCS1-v1_5 encoding" line="2468"/>
+      <comment value="see the comments of _rsaes_pkcs1_v1_5_decrypt() to understand why this is being done" line="2478"/>
+      <comment value="RSA encryption" line="2486"/>
+      <comment value="Output the ciphertext C" line="2491"/>
+    </inline>
+  </method>
+  <method name="_rsaes_pkcs1_v1_5_decrypt" start="2516" end="2554" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="RSAES-PKCS1-V1_5-DECRYPT">See <link xmlns="http://xml.phpdox.net/src" value="http://tools.ietf.org/html/rfc3447#section-7.2.2 RFC3447#section-7.2.2"/>.
+For compatibility purposes, this function departs slightly from the description given in RFC3447.
+The reason being that RFC2313#section-8.1 (PKCS#1 v1.5) states that ciphertext's encrypted by the
+private key should have the second byte set to either 0 or 1 and that ciphertext's encrypted by the
+public key should have the second byte set to 2.  In RFC3447 (PKCS#1 v2.1), the second byte is supposed
+to be 2 regardless of which key is used.  For compatibility purposes, we'll just check to make sure the
+second byte is 2 or less.  If it is, we'll accept the decrypted string as valid.
+As a consequence of this, a private key encrypted ciphertext produced with \phpseclib\Crypt\RSA may not decrypt
+with a strictly PKCS#1 v1.5 compliant RSA implementation.  Public key encrypted ciphertext's should but
+not private key encrypted ciphertext's.
+</description>
+      <access value="private"/>
+      <param type="string" variable="$c"/>
+      <return type="string"/>
+    </docblock>
+    <parameter name="c" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="Length checking" line="2518"/>
+      <comment value="RSA decryption" line="2525"/>
+      <comment value="EME-PKCS1-v1_5 decoding" line="2536"/>
+      <comment value="Output M" line="2551"/>
+    </inline>
+  </method>
+  <method name="_emsa_pss_encode" start="2565" end="2590" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="EMSA-PSS-ENCODE">See <link xmlns="http://xml.phpdox.net/src" value="http://tools.ietf.org/html/rfc3447#section-9.1.1 RFC3447#section-9.1.1"/>.
+</description>
+      <access value="private"/>
+      <param type="string" variable="$m"/>
+      <param type="int" variable="$emBits"/>
+    </docblock>
+    <parameter name="m" byreference="false" type="{unknown}"/>
+    <parameter name="emBits" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="if $m is larger than two million terrabytes and you're using sha1, PKCS#1 suggests a &quot;Label too long&quot; error" line="2567"/>
+      <comment value="be output." line="2568"/>
+      <comment value="ie. ceil($emBits / 8)" line="2570"/>
+    </inline>
+  </method>
+  <method name="_emsa_pss_verify" start="2603" end="2637" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="EMSA-PSS-VERIFY">See <link xmlns="http://xml.phpdox.net/src" value="http://tools.ietf.org/html/rfc3447#section-9.1.2 RFC3447#section-9.1.2"/>.
+</description>
+      <access value="private"/>
+      <param type="string" variable="$m"/>
+      <param type="string" variable="$em"/>
+      <param type="int" variable="$emBits"/>
+      <return type="string"/>
+    </docblock>
+    <parameter name="m" byreference="false" type="{unknown}"/>
+    <parameter name="em" byreference="false" type="{unknown}"/>
+    <parameter name="emBits" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="if $m is larger than two million terrabytes and you're using sha1, PKCS#1 suggests a &quot;Label too long&quot; error" line="2605"/>
+      <comment value="be output." line="2606"/>
+      <comment value="ie. ceil($emBits / 8);" line="2608"/>
+      <comment value="should be $sLen long" line="2633"/>
+    </inline>
+  </method>
+  <method name="_rsassa_pss_sign" start="2648" end="2663" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="RSASSA-PSS-SIGN">See <link xmlns="http://xml.phpdox.net/src" value="http://tools.ietf.org/html/rfc3447#section-8.1.1 RFC3447#section-8.1.1"/>.
+</description>
+      <access value="private"/>
+      <param type="string" variable="$m"/>
+      <return type="string"/>
+    </docblock>
+    <parameter name="m" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="EMSA-PSS encoding" line="2650"/>
+      <comment value="RSA signature" line="2654"/>
+      <comment value="Output the signature S" line="2660"/>
+    </inline>
+  </method>
+  <method name="_rsassa_pss_verify" start="2675" end="2703" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="RSASSA-PSS-VERIFY">See <link xmlns="http://xml.phpdox.net/src" value="http://tools.ietf.org/html/rfc3447#section-8.1.2 RFC3447#section-8.1.2"/>.
+</description>
+      <access value="private"/>
+      <param type="string" variable="$m"/>
+      <param type="string" variable="$s"/>
+      <return type="string"/>
+    </docblock>
+    <parameter name="m" byreference="false" type="{unknown}"/>
+    <parameter name="s" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="Length checking" line="2677"/>
+      <comment value="RSA verification" line="2684"/>
+      <comment value="EMSA-PSS verification" line="2700"/>
+    </inline>
+  </method>
+  <method name="_emsa_pkcs1_v1_5_encode" start="2715" end="2755" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="EMSA-PKCS1-V1_5-ENCODE">See <link xmlns="http://xml.phpdox.net/src" value="http://tools.ietf.org/html/rfc3447#section-9.2 RFC3447#section-9.2"/>.
+</description>
+      <access value="private"/>
+      <param type="string" variable="$m"/>
+      <param type="int" variable="$emLen"/>
+      <return type="string"/>
+    </docblock>
+    <parameter name="m" byreference="false" type="{unknown}"/>
+    <parameter name="emLen" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="see http://tools.ietf.org/html/rfc3447#page-43" line="2722"/>
+    </inline>
+  </method>
+  <method name="_rsassa_pkcs1_v1_5_sign" start="2766" end="2785" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="RSASSA-PKCS1-V1_5-SIGN">See <link xmlns="http://xml.phpdox.net/src" value="http://tools.ietf.org/html/rfc3447#section-8.2.1 RFC3447#section-8.2.1"/>.
+</description>
+      <access value="private"/>
+      <param type="string" variable="$m"/>
+      <return type="string"/>
+    </docblock>
+    <parameter name="m" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="EMSA-PKCS1-v1_5 encoding" line="2768"/>
+      <comment value="RSA signature" line="2776"/>
+      <comment value="Output the signature S" line="2782"/>
+    </inline>
+  </method>
+  <method name="_rsassa_pkcs1_v1_5_verify" start="2796" end="2829" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="RSASSA-PKCS1-V1_5-VERIFY">See <link xmlns="http://xml.phpdox.net/src" value="http://tools.ietf.org/html/rfc3447#section-8.2.2 RFC3447#section-8.2.2"/>.
+</description>
+      <access value="private"/>
+      <param type="string" variable="$m"/>
+      <return type="string"/>
+    </docblock>
+    <parameter name="m" byreference="false" type="{unknown}"/>
+    <parameter name="s" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="Length checking" line="2798"/>
+      <comment value="RSA verification" line="2805"/>
+      <comment value="EMSA-PKCS1-v1_5 encoding" line="2819"/>
+      <comment value="Compare" line="2827"/>
+    </inline>
+  </method>
+  <method name="setEncryptionMode" start="2839" end="2842" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Set Encryption Mode">Valid values include self::ENCRYPTION_OAEP and self::ENCRYPTION_PKCS1.</description>
+      <access value="public"/>
+      <param type="int" variable="$mode"/>
+    </docblock>
+    <parameter name="mode" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="setSignatureMode" start="2852" end="2855" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Set Signature Mode">Valid values include self::SIGNATURE_PSS and self::SIGNATURE_PKCS1</description>
+      <access value="public"/>
+      <param type="int" variable="$mode"/>
+    </docblock>
+    <parameter name="mode" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="setComment" start="2863" end="2866" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Set public key comment."/>
+      <access value="public"/>
+      <param type="string" variable="$comment"/>
+    </docblock>
+    <parameter name="comment" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="getComment" start="2874" end="2877" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Get public key comment."/>
+      <access value="public"/>
+      <return type="string"/>
+    </docblock>
+  </method>
+  <method name="encrypt" start="2891" end="2927" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Encryption">Both self::ENCRYPTION_OAEP and self::ENCRYPTION_PKCS1 both place limits on how long $plaintext can be.
+If $plaintext exceeds those limits it will be broken up so that it does and the resultant ciphertext's will
+be concatenated together.</description>
+      <see value="self::decrypt()"/>
+      <access value="public"/>
+      <param type="string" variable="$plaintext"/>
+      <return type="string"/>
+    </docblock>
+    <parameter name="plaintext" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="decrypt" start="2937" end="2969" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Decryption"/>
+      <see value="self::encrypt()"/>
+      <access value="public"/>
+      <param type="string" variable="$plaintext"/>
+      <return type="string"/>
+    </docblock>
+    <parameter name="ciphertext" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="sign" start="2979" end="2992" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Create a signature"/>
+      <see value="self::verify()"/>
+      <access value="public"/>
+      <param type="string" variable="$message"/>
+      <return type="string"/>
+    </docblock>
+    <parameter name="message" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="verify" start="3003" end="3016" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Verifies a signature"/>
+      <see value="self::sign()"/>
+      <access value="public"/>
+      <param type="string" variable="$message"/>
+      <param type="string" variable="$signature"/>
+      <return type="object">
+        <type full="phpseclib\Crypt\bool" namespace="phpseclib\Crypt" name="bool"/>
+      </return>
+    </docblock>
+    <parameter name="message" byreference="false" type="{unknown}"/>
+    <parameter name="signature" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="_extractBER" start="3025" end="3043" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Extract raw BER from Base64 encoding"/>
+      <access value="private"/>
+      <param type="string" variable="$str"/>
+      <return type="string"/>
+    </docblock>
+    <parameter name="str" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="X.509 certs are assumed to be base64 encoded but sometimes they'll have additional things in them" line="3027"/>
+      <comment xmlns="http://xml.phpdox.net/src" value="above and beyond the ceritificate." line="3028"/>
+      <comment xmlns="http://xml.phpdox.net/src" value="ie. some may have the following preceding the -----BEGIN CERTIFICATE----- line:" line="3029"/>
+      <comment xmlns="http://xml.phpdox.net/src" value="Bag Attributes" line="3030"/>
+      <comment xmlns="http://xml.phpdox.net/src" value="localKeyID: 01 00 00 00" line="3031"/>
+      <comment xmlns="http://xml.phpdox.net/src" value="subject=/O=organization/OU=org unit/CN=common name" line="3032"/>
+      <comment xmlns="http://xml.phpdox.net/src" value="issuer=/O=organization/CN=common name" line="3033"/>
+      <comment value="remove the -----BEGIN CERTIFICATE----- and -----END CERTIFICATE----- stuff" line="3037"/>
+      <comment value="remove new lines" line="3039"/>
+    </inline>
+  </method>
+</class>

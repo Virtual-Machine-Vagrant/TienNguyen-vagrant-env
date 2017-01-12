@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="Jenssegers\Mongodb\Auth\DatabaseTokenRepository" namespace="Jenssegers\Mongodb\Auth" name="DatabaseTokenRepository" abstract="false" final="false" start="8" end="43">
+  <file path="/home/web/example/src/freegame_developer/vendor/jenssegers/mongodb/src/Jenssegers/Mongodb/Auth" file="DatabaseTokenRepository.php" realpath="/home/web/example/src/freegame_developer/vendor/jenssegers/mongodb/src/Jenssegers/Mongodb/Auth/DatabaseTokenRepository.php" size="1531" time="2016-10-07T08:39:24+00:00" unixtime="1475829564" sha1="7c7b5ff5d1fce2f6d5ba3621835ed2175aef2f96" relative="freegame_developer/vendor/jenssegers/mongodb/src/Jenssegers/Mongodb/Auth/DatabaseTokenRepository.php"/>
+  <extends full="Illuminate\Auth\Passwords\DatabaseTokenRepository" namespace="Illuminate\Auth\Passwords" name="DatabaseTokenRepository"/>
+  <method name="getPayload" start="17" end="20" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Build the record payload for the table."/>
+      <param type="string" variable="$email"/>
+      <param type="string" variable="$token"/>
+      <return type="array"/>
+    </docblock>
+    <parameter name="email" byreference="false" type="{unknown}"/>
+    <parameter name="token" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="tokenExpired" start="28" end="42" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Determine if the token has expired."/>
+      <param type="array" variable="$token"/>
+      <return type="object">
+        <type full="Jenssegers\Mongodb\Auth\bool" namespace="Jenssegers\Mongodb\Auth" name="bool"/>
+      </return>
+    </docblock>
+    <parameter name="token" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="Convert UTCDateTime to a date string." line="30"/>
+    </inline>
+  </method>
+</class>

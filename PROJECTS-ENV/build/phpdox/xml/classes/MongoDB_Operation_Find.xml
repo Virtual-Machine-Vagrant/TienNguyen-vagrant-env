@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="MongoDB\Operation\Find" namespace="MongoDB\Operation" name="Find" abstract="false" final="false" start="20" end="234">
+  <file path="/home/web/example/src/freegame_developer/vendor/mongodb/mongodb/src/Operation" file="Find.php" realpath="/home/web/example/src/freegame_developer/vendor/mongodb/mongodb/src/Operation/Find.php" size="9260" time="2016-09-23T19:38:29+00:00" unixtime="1474659509" sha1="0760ef09a6140fb119880d74b4f6ac785a21bc9f" relative="freegame_developer/vendor/mongodb/mongodb/src/Operation/Find.php"/>
+  <docblock>
+    <description compact="Operation for the find command."/>
+    <api/>
+    <see value="MongoDB\Collection::find()"/>
+    <see value="http://docs.mongodb.org/manual/tutorial/query-documents/"/>
+    <see value="http://docs.mongodb.org/manual/reference/operator/query-modifier/"/>
+  </docblock>
+  <implements full="MongoDB\Operation\Executable" namespace="MongoDB\Operation" name="Executable"/>
+  <constant type="integer" name="NON_TAILABLE" value="1"/>
+  <constant type="integer" name="TAILABLE" value="2"/>
+  <constant type="integer" name="TAILABLE_AWAIT" value="3"/>
+  <member name="databaseName" visibility="private" static="false" line="26"/>
+  <member name="collectionName" visibility="private" static="false" line="27"/>
+  <member name="filter" visibility="private" static="false" line="28"/>
+  <member name="options" visibility="private" static="false" line="29"/>
+  <constructor name="__construct" start="89" end="167" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Constructs a find command.">Supported options:
+
+ * allowPartialResults (boolean): Get partial results from a mongos if
+   some shards are inaccessible (instead of throwing an error).
+
+ * batchSize (integer): The number of documents to return per batch.
+
+ * comment (string): Attaches a comment to the query. If "$comment" also
+   exists in the modifiers document, this option will take precedence.
+
+ * cursorType (enum): Indicates the type of cursor to use. Must be either
+   NON_TAILABLE, TAILABLE, or TAILABLE_AWAIT. The default is
+   NON_TAILABLE.
+
+ * limit (integer): The maximum number of documents to return.
+
+ * maxTimeMS (integer): The maximum amount of time to allow the query to
+   run. If "$maxTimeMS" also exists in the modifiers document, this
+   option will take precedence.
+
+ * modifiers (document): Meta-operators modifying the output or behavior
+   of a query.
+
+ * noCursorTimeout (boolean): The server normally times out idle cursors
+   after an inactivity period (10 minutes) to prevent excess memory use.
+   Set this option to prevent that.
+
+ * oplogReplay (boolean): Internal replication use only. The driver
+   should not set this.
+
+ * projection (document): Limits the fields to return for the matching
+   document.
+
+ * readConcern (MongoDB\Driver\ReadConcern): Read concern.
+
+   For servers &lt; 3.2, this option is ignored as read concern is not
+   available.
+
+ * readPreference (MongoDB\Driver\ReadPreference): Read preference.
+
+ * skip (integer): The number of documents to skip before returning.
+
+ * sort (document): The order in which to return matching documents. If
+   "$orderby" also exists in the modifiers document, this option will
+   take precedence.
+
+ * typeMap (array): Type map for BSON deserialization. This will be
+   applied to the returned Cursor (it is not sent to the server).</description>
+      <param description="Database name" type="string" variable="$databaseName"/>
+      <param description="Collection name" type="string" variable="$collectionName"/>
+      <param description="Query by which to filter documents" type="object" variable="$filter">
+        <type full="MongoDB\Operation\array|object" namespace="MongoDB\Operation" name="array|object"/>
+      </param>
+      <param description="Command options" type="array" variable="$options"/>
+      <throws type="object">
+        <type full="MongoDB\Exception\InvalidArgumentException" namespace="MongoDB\Exception" name="InvalidArgumentException"/>
+      </throws>
+    </docblock>
+    <parameter name="databaseName" byreference="false" type="{unknown}"/>
+    <parameter name="collectionName" byreference="false" type="{unknown}"/>
+    <parameter name="filter" byreference="false" type="{unknown}"/>
+    <parameter name="options" byreference="false" type="array" default=""/>
+  </constructor>
+  <method name="execute" start="176" end="187" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Execute the operation."/>
+      <see value="Executable::execute()"/>
+      <param type="object" variable="$server">
+        <type full="MongoDB\Driver\Server" namespace="MongoDB\Driver" name="Server"/>
+      </param>
+      <return type="object">
+        <type full="MongoDB\Driver\Cursor" namespace="MongoDB\Driver" name="Cursor"/>
+      </return>
+    </docblock>
+    <parameter name="server" byreference="false" type="object">
+      <type full="MongoDB\Driver\Server" namespace="MongoDB\Driver" name="Server"/>
+    </parameter>
+  </method>
+  <method name="createQuery" start="194" end="233" abstract="false" final="false" static="false" visibility="private">
+    <docblock>
+      <description compact="Create the find query."/>
+      <return type="object">
+        <type full="MongoDB\Driver\Query" namespace="MongoDB\Driver" name="Query"/>
+      </return>
+    </docblock>
+  </method>
+</class>

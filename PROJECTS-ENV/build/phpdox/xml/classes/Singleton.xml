@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="Singleton" namespace="" name="Singleton" abstract="false" final="false" start="2" end="22">
+  <file path="/home/web/example/src/freegame_developer/vendor/phpunit/phpunit/tests/_files" file="Singleton.php" realpath="/home/web/example/src/freegame_developer/vendor/phpunit/phpunit/tests/_files/Singleton.php" size="364" time="2016-02-11T14:56:33+00:00" unixtime="1455202593" sha1="8496300f830aa5cd3e083dffdb4a9c05b4e7b612" relative="freegame_developer/vendor/phpunit/phpunit/tests/_files/Singleton.php"/>
+  <member name="uniqueInstance" type="{unknown}" default="" constant="null" visibility="private" static="true" line="4"/>
+  <constructor name="__construct" start="6" end="8" abstract="false" final="false" static="false" visibility="protected"/>
+  <method name="__clone" start="10" end="12" abstract="false" final="true" static="false" visibility="private"/>
+  <method name="getInstance" start="14" end="21" abstract="false" final="false" static="true" visibility="public"/>
+</class>

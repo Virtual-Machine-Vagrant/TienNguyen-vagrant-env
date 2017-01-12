@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="PHP_CodeSniffer_DocGenerators_HTML" namespace="" name="PHP_CodeSniffer_DocGenerators_HTML" abstract="false" final="false" start="36" end="292">
+  <file path="/home/web/example/src/freegame_developer/vendor/squizlabs/php_codesniffer/CodeSniffer/DocGenerators" file="HTML.php" realpath="/home/web/example/src/freegame_developer/vendor/squizlabs/php_codesniffer/CodeSniffer/DocGenerators/HTML.php" size="9525" time="2016-01-19T23:39:10+00:00" unixtime="1453246750" sha1="2f02c6da970b742004d92cbc7537b0292ae215d9" relative="freegame_developer/vendor/squizlabs/php_codesniffer/CodeSniffer/DocGenerators/HTML.php"/>
+  <docblock>
+    <description compact="A doc generator that outputs documentation in one big HTML file.">Output is in one large HTML file and is designed for you to style with
+your own stylesheet. It contains a table of contents at the top with anchors
+to each sniff.</description>
+    <category value="PHP"/>
+    <package value="PHP_CodeSniffer"/>
+    <author value="Greg Sherwood &lt;gsherwood@squiz.net&gt;"/>
+    <author value="Marc McIntyre &lt;mmcintyre@squiz.net&gt;"/>
+    <copyright value="2006-2014 Squiz Pty Ltd (ABN 77 084 670 600)"/>
+    <license name="https://github.com/squizlabs/PHP_CodeSniffer/blob/master/licence.txt BSD Licence"/>
+    <version value="Release: @package_version@"/>
+    <link value="http://pear.php.net/package/PHP_CodeSniffer"/>
+  </docblock>
+  <extends full="PHP_CodeSniffer_DocGenerators_Generator" namespace="" name="PHP_CodeSniffer_DocGenerators_Generator"/>
+  <method name="generate" start="46" end="68" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Generates the documentation for a standard."/>
+      <return type="object">
+        <type full="void" namespace="" name="void"/>
+      </return>
+      <see value="processSniff()"/>
+    </docblock>
+  </method>
+  <method name="printHeader" start="76" end="152" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Print the header of the HTML page."/>
+      <return type="object">
+        <type full="void" namespace="" name="void"/>
+      </return>
+    </docblock>
+  </method>
+  <method name="printToc" start="164" end="179" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Print the table of contents for the standard.">The TOC is just an unordered list of bookmarks to sniffs on the page.</description>
+      <param description="An array of paths to the XML standard files." type="array" variable="$standardFiles"/>
+      <return type="object">
+        <type full="void" namespace="" name="void"/>
+      </return>
+    </docblock>
+    <parameter name="standardFiles" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="printFooter" start="187" end="201" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Print the footer of the HTML page."/>
+      <return type="object">
+        <type full="void" namespace="" name="void"/>
+      </return>
+    </docblock>
+    <inline>
+      <comment value="Turn off errors so we don't get timezone warnings if people" line="189"/>
+      <comment value="don't have their timezone set." line="190"/>
+    </inline>
+  </method>
+  <method name="processSniff" start="213" end="227" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Process the documentation for a single sniff."/>
+      <param description="The DOMNode object for the sniff." type="object" variable="$doc">It represents the "documentation" tag in the XML
+                    standard file.<type full="DOMNode" namespace="" name="DOMNode"/></param>
+      <return type="object">
+        <type full="void" namespace="" name="void"/>
+      </return>
+    </docblock>
+    <parameter name="doc" byreference="false" type="object">
+      <type full="DOMNode" namespace="" name="DOMNode"/>
+    </parameter>
+  </method>
+  <method name="printTextBlock" start="237" end="248" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Print a text block found in a standard."/>
+      <param description="The DOMNode object for the text block." type="object" variable="$node">
+        <type full="DOMNode" namespace="" name="DOMNode"/>
+      </param>
+      <return type="object">
+        <type full="void" namespace="" name="void"/>
+      </return>
+    </docblock>
+    <parameter name="node" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="Allow em tags only." line="242"/>
+    </inline>
+  </method>
+  <method name="printCodeComparisonBlock" start="258" end="289" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Print a code comparison block found in a standard."/>
+      <param description="The DOMNode object for the code comparison block." type="object" variable="$node">
+        <type full="DOMNode" namespace="" name="DOMNode"/>
+      </param>
+      <return type="object">
+        <type full="void" namespace="" name="void"/>
+      </return>
+    </docblock>
+    <parameter name="node" byreference="false" type="{unknown}"/>
+  </method>
+</class>

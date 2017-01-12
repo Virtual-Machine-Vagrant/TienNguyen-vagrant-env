@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="Barryvdh\Debugbar\DataCollector\LogsCollector" namespace="Barryvdh\Debugbar\DataCollector" name="LogsCollector" abstract="false" final="false" start="8" end="142">
+  <file path="/home/web/example/src/freegame_developer/vendor/barryvdh/laravel-debugbar/src/DataCollector" file="LogsCollector.php" realpath="/home/web/example/src/freegame_developer/vendor/barryvdh/laravel-debugbar/src/DataCollector/LogsCollector.php" size="3771" time="2016-09-15T14:05:56+00:00" unixtime="1473948356" sha1="ca81a4f29bff0f99a163b5578755d845572c6b77" relative="freegame_developer/vendor/barryvdh/laravel-debugbar/src/DataCollector/LogsCollector.php"/>
+  <extends full="DebugBar\DataCollector\MessagesCollector" namespace="DebugBar\DataCollector" name="MessagesCollector"/>
+  <member name="lines" type="integer" default="124" visibility="protected" static="false" line="10"/>
+  <constructor name="__construct" start="12" end="18" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="path" byreference="false" type="{unknown}" default="" constant="null"/>
+    <parameter name="name" byreference="false" type="string" default="'logs'"/>
+  </constructor>
+  <method name="getLogsFile" start="25" end="36" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Get the path to the logs file"/>
+      <return type="string"/>
+    </docblock>
+    <inline>
+      <comment value="default daily rotating logs (Laravel 5.0)" line="27"/>
+      <comment value="single file logs" line="30"/>
+    </inline>
+  </method>
+  <method name="getStorageLogs" start="46" end="58" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="get logs apache in app/storage/logs only 24 last of current day"/>
+      <param type="string" variable="$path"/>
+      <return type="array"/>
+    </docblock>
+    <parameter name="path" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="Load the latest lines, guessing about 15x the number of log entries (for stack traces etc)" line="52"/>
+    </inline>
+  </method>
+  <method name="tailFile" start="67" end="95" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="By Ain Tohvri (ain) http://tekkie.flashbit.net/php/tail-functionality-in-php"/>
+      <param type="string" variable="$file"/>
+      <param type="int" variable="$lines"/>
+      <return type="array"/>
+    </docblock>
+    <parameter name="file" byreference="false" type="{unknown}"/>
+    <parameter name="lines" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="getLogs" start="104" end="128" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Search a string for log entries Based on https://github.com/mikemand/logviewer/blob/master/src/Kmd/Logviewer/Logviewer.php by mikemand"/>
+      <param variable="$file"/>
+      <return type="array"/>
+    </docblock>
+    <parameter name="file" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="There has GOT to be a better way of doing this..." line="110"/>
+    </inline>
+  </method>
+  <method name="getLevels" start="137" end="141" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Get the log levels from psr/log.">Based on https://github.com/mikemand/logviewer/blob/master/src/Kmd/Logviewer/Logviewer.php by mikemand</description>
+      <access value="public"/>
+      <return type="array"/>
+    </docblock>
+  </method>
+</class>

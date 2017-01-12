@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="Symfony\Component\Console\Tests\ApplicationTest" namespace="Symfony\Component\Console\Tests" name="ApplicationTest" abstract="false" final="false" start="33" end="1105">
+  <file path="/home/web/example/src/freegame_developer/vendor/symfony/console/Tests" file="ApplicationTest.php" realpath="/home/web/example/src/freegame_developer/vendor/symfony/console/Tests/ApplicationTest.php" size="50938" time="2016-10-05T17:26:56+00:00" unixtime="1475688416" sha1="aaefe0ca1fbdab5c1c7e988c34a8a10fa1618ef6" relative="freegame_developer/vendor/symfony/console/Tests/ApplicationTest.php"/>
+  <extends full="PHPUnit_Framework_TestCase" namespace="" name="PHPUnit_Framework_TestCase"/>
+  <member name="fixturesPath" visibility="protected" static="true" line="35"/>
+  <method name="setUpBeforeClass" start="37" end="50" abstract="false" final="false" static="true" visibility="public"/>
+  <method name="normalizeLineBreaks" start="52" end="55" abstract="false" final="false" static="false" visibility="protected">
+    <parameter name="text" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="ensureStaticCommandHelp" start="62" end="67" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Replaces the dynamic placeholders of the command help text with a static version.">The placeholder %command.full_name% includes the script path that is not predictable
+and can not be tested against.</description>
+    </docblock>
+    <parameter name="application" byreference="false" type="object">
+      <type full="Symfony\Component\Console\Application" namespace="Symfony\Component\Console" name="Application"/>
+    </parameter>
+  </method>
+  <method name="testConstructor" start="69" end="75" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testSetGetName" start="77" end="82" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testSetGetVersion" start="84" end="89" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testGetLongVersion" start="91" end="95" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testHelp" start="97" end="101" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testAll" start="103" end="112" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testRegister" start="114" end="119" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testAdd" start="121" end="132" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testAddCommandWithEmptyConstructor" start="138" end="142" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <expectedexception value="\LogicException"/>
+      <expectedexceptionmessage value="Command class &quot;Foo5Command&quot; is not correctly initialized. You probably forgot to call the parent constructor."/>
+    </docblock>
+  </method>
+  <method name="testHasGet" start="144" end="164" abstract="false" final="false" static="false" visibility="public">
+    <inline>
+      <comment value="simulate --help" line="157"/>
+    </inline>
+  </method>
+  <method name="testSilentHelp" start="166" end="176" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testGetInvalidCommand" start="182" end="186" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <expectedexception value="\InvalidArgumentException"/>
+      <expectedexceptionmessage value="The command &quot;foofoo&quot; does not exist."/>
+    </docblock>
+  </method>
+  <method name="testGetNamespaces" start="188" end="194" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testFindNamespace" start="196" end="204" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testFindNamespaceWithSubnamespaces" start="206" end="212" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testFindAmbiguousNamespace" start="218" end="225" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <expectedexception value="\InvalidArgumentException"/>
+      <expectedexceptionmessage value="The namespace &quot;f&quot; is ambiguous (foo, foo1)."/>
+    </docblock>
+  </method>
+  <method name="testFindInvalidNamespace" start="231" end="235" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <expectedexception value="\InvalidArgumentException"/>
+      <expectedexceptionmessage value="There are no commands defined in the &quot;bar&quot; namespace."/>
+    </docblock>
+  </method>
+  <method name="testFindUniqueNameButNamespaceName" start="241" end="249" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <expectedexception value="\InvalidArgumentException"/>
+      <expectedexceptionmessage value="Command &quot;foo1&quot; is not defined"/>
+    </docblock>
+  </method>
+  <method name="testFind" start="251" end="261" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testFindWithAmbiguousAbbreviations" start="266" end="276" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <dataprovider value="provideAmbiguousAbbreviations"/>
+    </docblock>
+    <parameter name="abbreviation" byreference="false" type="{unknown}"/>
+    <parameter name="expectedExceptionMessage" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="provideAmbiguousAbbreviations" start="278" end="285" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testFindCommandEqualNamespace" start="287" end="295" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testFindCommandWithAmbiguousNamespacesButUniqueName" start="297" end="304" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testFindCommandWithMissingNamespace" start="306" end="312" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testFindAlternativeExceptionMessageSingle" start="319" end="324" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <dataprovider value="provideInvalidCommandNamesSingle"/>
+      <expectedexception value="\InvalidArgumentException"/>
+      <expectedexceptionmessage value="Did you mean this"/>
+    </docblock>
+    <parameter name="name" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="provideInvalidCommandNamesSingle" start="326" end="332" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testFindAlternativeExceptionMessageMultiple" start="334" end="374" abstract="false" final="false" static="false" visibility="public">
+    <inline>
+      <comment value="Command + plural" line="341"/>
+      <comment value="Namespace + plural" line="352"/>
+      <comment value="Subnamespace + plural" line="365"/>
+    </inline>
+  </method>
+  <method name="testFindAlternativeCommands" start="376" end="404" abstract="false" final="false" static="false" visibility="public">
+    <inline>
+      <comment value="Test if &quot;bar1&quot; command throw an &quot;\InvalidArgumentException&quot; and does not contain" line="392"/>
+      <comment value="&quot;foo:bar&quot; as alternative because &quot;bar1&quot; is too far from &quot;foo:bar&quot;" line="393"/>
+    </inline>
+  </method>
+  <method name="testFindAlternativeCommandsWithAnAlias" start="406" end="417" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testFindAlternativeNamespace" start="419" end="446" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testFindNamespaceDoesNotFailOnDeepSimilarNamespaces" start="448" end="456" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testFindWithDoubleColonInNameThrowsException" start="462" end="468" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <expectedexception value="\InvalidArgumentException"/>
+      <expectedexceptionmessage value="Command &quot;foo::bar&quot; is not defined."/>
+    </docblock>
+  </method>
+  <method name="testSetCatchExceptions" start="470" end="491" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testLegacyAsText" start="496" end="503" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <group value="legacy"/>
+    </docblock>
+  </method>
+  <method name="testLegacyAsXml" start="508" end="515" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <group value="legacy"/>
+    </docblock>
+  </method>
+  <method name="testRenderException" start="517" end="552" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testRenderExceptionWithDoubleWidthCharacters" start="557" end="586" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <requires value="extension mbstring"/>
+    </docblock>
+  </method>
+  <method name="testRun" start="588" end="680" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testVerboseValueNotBreakArguments" start="689" end="703" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Issue #9285.">If the "verbose" option is just before an argument in ArgvInput,
+an argument value should not be treated as verbosity value.
+This test will fail with "Not enough arguments." if broken</description>
+    </docblock>
+  </method>
+  <method name="testRunReturnsIntegerExitCode" start="705" end="718" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testRunReturnsExitCodeOneForExceptionCodeZero" start="720" end="733" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testAddingOptionWithDuplicateShortcut" start="739" end="760" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <expectedexception value="\LogicException"/>
+      <expectedexceptionmessage value="An option with shortcut &quot;e&quot; already exists."/>
+    </docblock>
+  </method>
+  <method name="testAddingAlreadySetDefinitionElementData" start="766" end="780" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <expectedexception value="\LogicException"/>
+      <dataprovider value="getAddingAlreadySetDefinitionElementData"/>
+    </docblock>
+    <parameter name="def" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="getAddingAlreadySetDefinitionElementData" start="782" end="789" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testGetDefaultHelperSetReturnsDefaultValues" start="791" end="802" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testAddingSingleHelperSetOverwritesDefaultValues" start="804" end="819" abstract="false" final="false" static="false" visibility="public">
+    <inline>
+      <comment value="no other default helper set should be returned" line="816"/>
+    </inline>
+  </method>
+  <method name="testOverwritingDefaultHelperSetOverwritesDefaultValues" start="821" end="836" abstract="false" final="false" static="false" visibility="public">
+    <inline>
+      <comment value="no other default helper set should be returned" line="833"/>
+    </inline>
+  </method>
+  <method name="testGetDefaultInputDefinitionReturnsDefaultValues" start="838" end="855" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testOverwritingDefaultInputDefinitionOverwritesDefaultValues" start="857" end="877" abstract="false" final="false" static="false" visibility="public">
+    <inline>
+      <comment value="check whether the default arguments and options are not returned any more" line="865"/>
+    </inline>
+  </method>
+  <method name="testSettingCustomInputDefinitionOverwritesDefaultValues" start="879" end="901" abstract="false" final="false" static="false" visibility="public">
+    <inline>
+      <comment value="check whether the default arguments and options are not returned any more" line="889"/>
+    </inline>
+  </method>
+  <method name="testRunWithDispatcher" start="903" end="916" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testRunWithExceptionAndDispatcher" start="922" end="935" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <expectedexception value="\LogicException"/>
+      <expectedexceptionmessage value="caught"/>
+    </docblock>
+  </method>
+  <method name="testRunDispatchesAllEventsWithException" start="937" end="952" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testRunWithErrorAndDispatcher" start="958" end="974" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <expectedexception value="\LogicException"/>
+      <expectedexceptionmessage value="caught"/>
+    </docblock>
+  </method>
+  <method name="testRunDispatchesAllEventsWithError" start="976" end="991" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testRunWithErrorFailingStatusCode" start="993" end="1008" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testRunWithDispatcherSkippingCommand" start="1010" end="1024" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testTerminalDimensions" start="1026" end="1039" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="getDispatcher" start="1041" end="1065" abstract="false" final="false" static="false" visibility="protected">
+    <parameter name="skipCommand" byreference="false" type="boolean" default="false"/>
+  </method>
+  <method name="testSetRunCustomDefaultCommand" start="1067" end="1087" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testCanCheckIfTerminalIsInteractive" start="1092" end="1104" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <requires value="function posix_isatty"/>
+    </docblock>
+  </method>
+</class>

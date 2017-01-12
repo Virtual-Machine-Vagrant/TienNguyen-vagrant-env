@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="App\Http\Controllers\ReleaseController" namespace="App\Http\Controllers" name="ReleaseController" abstract="false" final="false" start="8" end="83">
+  <file path="/home/web/example/src/freegame_developer/app/Http/Controllers" file="ReleaseController.php" realpath="/home/web/example/src/freegame_developer/app/Http/Controllers/ReleaseController.php" size="1892" time="2016-12-01T09:32:03+00:00" unixtime="1480584723" sha1="362234633b8595fd390405620dc241d665acdca5" relative="freegame_developer/app/Http/Controllers/ReleaseController.php"/>
+  <extends full="App\Http\Controllers\Controller" namespace="App\Http\Controllers" name="Controller"/>
+  <member name="releaseService" visibility="protected" static="false" line="10"/>
+  <constructor name="__construct" start="12" end="22" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="releaseService" byreference="false" type="object">
+      <type full="App\Services\ReleaseService" namespace="App\Services" name="ReleaseService"/>
+    </parameter>
+  </constructor>
+  <method name="index" start="29" end="34" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Index page"/>
+      <param type="object" variable="$request">
+        <type full="Illuminate\Http\Request" namespace="Illuminate\Http" name="Request"/>
+      </param>
+      <return type="object">
+        <type full="App\Http\Controllers\view" namespace="App\Http\Controllers" name="view"/>
+      </return>
+    </docblock>
+    <parameter name="request" byreference="false" type="object">
+      <type full="Illuminate\Http\Request" namespace="Illuminate\Http" name="Request"/>
+    </parameter>
+  </method>
+  <method name="edit" start="41" end="54" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Edit Page"/>
+      <param type="object" variable="$request">
+        <type full="Illuminate\Http\Request" namespace="Illuminate\Http" name="Request"/>
+      </param>
+      <return type="object">
+        <type full="App\Http\Controllers\Response" namespace="App\Http\Controllers" name="Response"/>
+      </return>
+    </docblock>
+    <parameter name="request" byreference="false" type="object">
+      <type full="Illuminate\Http\Request" namespace="Illuminate\Http" name="Request"/>
+    </parameter>
+  </method>
+  <method name="editConfirm" start="61" end="66" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Edit Page"/>
+      <param type="object" variable="$request">
+        <type full="Illuminate\Http\Request" namespace="Illuminate\Http" name="Request"/>
+      </param>
+      <return type="object">
+        <type full="App\Http\Controllers\Response" namespace="App\Http\Controllers" name="Response"/>
+      </return>
+    </docblock>
+    <parameter name="request" byreference="false" type="object">
+      <type full="App\Http\Requests\ReleaseRequest" namespace="App\Http\Requests" name="ReleaseRequest"/>
+    </parameter>
+  </method>
+  <method name="update" start="73" end="82" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Update Page"/>
+      <param type="object" variable="$request">
+        <type full="Illuminate\Http\Request" namespace="Illuminate\Http" name="Request"/>
+      </param>
+      <return type="object">
+        <type full="App\Http\Controllers\Response" namespace="App\Http\Controllers" name="Response"/>
+      </return>
+    </docblock>
+    <parameter name="request" byreference="false" type="object">
+      <type full="App\Http\Requests\ReleaseRequest" namespace="App\Http\Requests" name="ReleaseRequest"/>
+    </parameter>
+  </method>
+</class>

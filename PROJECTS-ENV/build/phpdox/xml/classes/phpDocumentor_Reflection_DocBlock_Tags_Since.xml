@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="phpDocumentor\Reflection\DocBlock\Tags\Since" namespace="phpDocumentor\Reflection\DocBlock\Tags" name="Since" abstract="false" final="true" start="23" end="94">
+  <file path="/home/web/example/src/freegame_developer/vendor/phpdocumentor/reflection-docblock/src/DocBlock/Tags" file="Since.php" realpath="/home/web/example/src/freegame_developer/vendor/phpdocumentor/reflection-docblock/src/DocBlock/Tags/Since.php" size="2559" time="2016-09-30T07:12:33+00:00" unixtime="1475219553" sha1="966c75df37369e1144a2630dc6b173fa6da0330f" relative="freegame_developer/vendor/phpdocumentor/reflection-docblock/src/DocBlock/Tags/Since.php"/>
+  <docblock>
+    <description compact="Reflection class for a {@}since tag in a Docblock."/>
+  </docblock>
+  <extends full="phpDocumentor\Reflection\DocBlock\Tags\BaseTag" namespace="phpDocumentor\Reflection\DocBlock\Tags" name="BaseTag"/>
+  <implements full="phpDocumentor\Reflection\DocBlock\Tags\Factory\StaticMethod" namespace="phpDocumentor\Reflection\DocBlock\Tags\Factory" name="StaticMethod"/>
+  <member name="name" type="string" default="'since'" visibility="protected" static="false" line="25"/>
+  <constant type="string" name="REGEX_VECTOR" value="'(?:&#10;        # Normal release vectors.&#10;        \d\S*&#10;        |&#10;        # VCS version vectors. Per PHPCS, they are expected to&#10;        # follow the form of the VCS name, followed by &quot;:&quot;, followed&#10;        # by the version vector itself.&#10;        # By convention, popular VCSes like CVS, SVN and GIT use &quot;$&quot;&#10;        # around the actual version vector.&#10;        [^\s\:]+\:\s*\$[^\$]+\$&#10;    )'">
+    <docblock>
+      <description compact="PCRE regular expression matching a version vector.">Assumes the "x" modifier.</description>
+    </docblock>
+  </constant>
+  <member name="version" type="string" default="''" visibility="private" static="false" line="44">
+    <docblock>
+      <var description="The version vector." type="string"/>
+    </docblock>
+  </member>
+  <constructor name="__construct" start="46" end="52" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="version" byreference="false" type="{unknown}" default="" constant="null"/>
+    <parameter name="description" byreference="false" type="{unknown}" default="" constant="null">
+      <type full="phpDocumentor\Reflection\DocBlock\Description" namespace="phpDocumentor\Reflection\DocBlock" name="Description"/>
+    </parameter>
+  </constructor>
+  <method name="create" start="57" end="73" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description/>
+      <return resolution="static" type="object">
+        <type full="phpDocumentor\Reflection\DocBlock\Tags\Since" namespace="phpDocumentor\Reflection\DocBlock\Tags" name="Since"/>
+      </return>
+    </docblock>
+    <parameter name="body" byreference="false" type="{unknown}"/>
+    <parameter name="descriptionFactory" byreference="false" type="{unknown}" default="" constant="null">
+      <type full="phpDocumentor\Reflection\DocBlock\DescriptionFactory" namespace="phpDocumentor\Reflection\DocBlock" name="DescriptionFactory"/>
+    </parameter>
+    <parameter name="context" byreference="false" type="{unknown}" default="" constant="null">
+      <type full="phpDocumentor\Reflection\Types\Context" namespace="phpDocumentor\Reflection\Types" name="Context"/>
+    </parameter>
+  </method>
+  <method name="getVersion" start="80" end="83" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Gets the version section of the tag."/>
+      <return type="string"/>
+    </docblock>
+  </method>
+  <method name="__toString" start="90" end="93" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Returns a string representation for this tag."/>
+      <return type="string"/>
+    </docblock>
+  </method>
+</class>

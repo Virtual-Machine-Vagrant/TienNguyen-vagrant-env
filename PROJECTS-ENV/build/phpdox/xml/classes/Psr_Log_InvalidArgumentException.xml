@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="Psr\Log\InvalidArgumentException" namespace="Psr\Log" name="InvalidArgumentException" abstract="false" final="false" start="5" end="7">
+  <file path="/home/web/example/src/freegame_developer/vendor/psr/log/Psr/Log" file="InvalidArgumentException.php" realpath="/home/web/example/src/freegame_developer/vendor/psr/log/Psr/Log/InvalidArgumentException.php" size="96" time="2016-10-10T12:19:37+00:00" unixtime="1476101977" sha1="0f3f25e790aca80fd623f4adfedf5fc8b541c437" relative="freegame_developer/vendor/psr/log/Psr/Log/InvalidArgumentException.php"/>
+  <extends full="InvalidArgumentException" namespace="" name="InvalidArgumentException"/>
+</class>

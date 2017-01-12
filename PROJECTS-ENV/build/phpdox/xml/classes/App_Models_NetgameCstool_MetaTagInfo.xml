@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="App\Models\NetgameCstool\MetaTagInfo" namespace="App\Models\NetgameCstool" name="MetaTagInfo" abstract="false" final="false" start="7" end="123">
+  <file path="/home/web/example/src/freegame_developer/app/Models/NetgameCstool" file="MetaTagInfo.php" realpath="/home/web/example/src/freegame_developer/app/Models/NetgameCstool/MetaTagInfo.php" size="3953" time="2016-12-22T03:19:40+00:00" unixtime="1482376780" sha1="33f2ea81c9e42f4e4dc5600a316430b108d6e5a8" relative="freegame_developer/app/Models/NetgameCstool/MetaTagInfo.php"/>
+  <extends full="App\Models\NetgameCstool\NetgameCstool" namespace="App\Models\NetgameCstool" name="NetgameCstool"/>
+  <member name="table" type="string" default="'meta_tag_info'" visibility="protected" static="false" line="9"/>
+  <member name="timestamps" type="boolean" default="false" visibility="public" static="false" line="11"/>
+  <member name="guarded" type="array" default="" visibility="protected" static="false" line="12"/>
+  <member name="dates" type="array" default="" visibility="protected" static="false" line="13"/>
+  <method name="getMetaTagById" start="23" end="61" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="get metatag list by game_id"/>
+      <param type="array" variable="$conditions"/>
+      <return type="object"/>
+    </docblock>
+    <parameter name="conditions" byreference="false" type="array" default=""/>
+  </method>
+  <method name="getMetaTagByIdUrl" start="68" end="74" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Get Metatag by condition"/>
+      <param type="array" variable="$condition"/>
+      <return type="object">
+        <type full="App\Models\NetgameCstool\Object" namespace="App\Models\NetgameCstool" name="Object"/>
+      </return>
+    </docblock>
+    <parameter name="condition" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="edit" start="82" end="89" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Update MetaTag"/>
+      <param type="array" variable="$updateData"/>
+      <param type="array" variable="$conditions"/>
+      <return type="boolean"/>
+    </docblock>
+    <parameter name="updateData" byreference="false" type="{unknown}"/>
+    <parameter name="conditions" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="add" start="96" end="112" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Insert MetaTag"/>
+      <param type="array" variable="$params"/>
+      <return type="boolean"/>
+    </docblock>
+    <parameter name="params" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="remove" start="119" end="122" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Delete metatag by game_id, url"/>
+      <param type="array" variable="$conditions"/>
+      <return type="boolean"/>
+    </docblock>
+    <parameter name="conditions" byreference="false" type="{unknown}"/>
+  </method>
+</class>

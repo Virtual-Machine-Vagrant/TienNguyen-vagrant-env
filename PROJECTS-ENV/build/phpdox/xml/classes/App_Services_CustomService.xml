@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="App\Services\CustomService" namespace="App\Services" name="CustomService" abstract="true" final="false" start="13" end="302">
+  <file path="/home/web/example/src/freegame_developer/app/Services" file="CustomService.php" realpath="/home/web/example/src/freegame_developer/app/Services/CustomService.php" size="8207" time="2016-11-16T01:52:54+00:00" unixtime="1479261174" sha1="84751fb4b40b80ef2c70d1f919541212c15c8c5c" relative="freegame_developer/app/Services/CustomService.php"/>
+  <uses full="App\Services\Accessory\IniFilesDataUtil" namespace="App\Services\Accessory" name="IniFilesDataUtil" start="15" end="15"/>
+  <uses full="App\Services\Accessory\ImageFileUpload" namespace="App\Services\Accessory" name="ImageFileUpload" start="15" end="15"/>
+  <uses full="App\Services\Accessory\CsvFileDownload" namespace="App\Services\Accessory" name="CsvFileDownload" start="15" end="15"/>
+  <method name="getTitleResult" start="25" end="36" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Render content for store screen"/>
+      <param type="string" variable="$screenName"/>
+      <param type="string" variable="$kind"/>
+      <param type="string" variable="$type"/>
+      <param type="string" variable="$feature"/>
+      <return type="array"/>
+    </docblock>
+    <parameter name="screenName" byreference="false" type="{unknown}"/>
+    <parameter name="kind" byreference="false" type="{unknown}"/>
+    <parameter name="type" byreference="false" type="{unknown}"/>
+    <parameter name="feature" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="getTitleResultPlain" start="46" end="55" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Render content for store screen"/>
+      <param type="string" variable="$screenName"/>
+      <param type="string" variable="$kind"/>
+      <param type="string" variable="$type"/>
+      <param type="string" variable="$feature"/>
+      <return type="array"/>
+    </docblock>
+    <parameter name="screenName" byreference="false" type="{unknown}"/>
+    <parameter name="feature" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="iniFilesEncode" start="62" end="65" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Encode for IniFiles"/>
+      <param type="string" variable="$data"/>
+      <return type="string"/>
+    </docblock>
+    <parameter name="data" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="iniFilesDecode" start="72" end="81" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Decode for IniFiles"/>
+      <param type="string" variable="$data"/>
+      <return type="array"/>
+    </docblock>
+    <parameter name="data" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="iniFilesCreateRecord" start="90" end="104" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="IniFiles create new record"/>
+      <param type="array" variable="$currentRecordList"/>
+      <param type="array" variable="$newRecord"/>
+      <param type="integer" variable="$no"/>
+      <return type="array"/>
+    </docblock>
+    <parameter name="currentRecordList" byreference="false" type="{unknown}"/>
+    <parameter name="newRecord" byreference="false" type="{unknown}"/>
+    <parameter name="no" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="iniFilesDeleteRecord" start="112" end="123" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="IniFiles delete one record"/>
+      <param type="array" variable="$currentRecordList"/>
+      <param type="integer" variable="$no"/>
+      <return type="array"/>
+    </docblock>
+    <parameter name="currentRecordList" byreference="false" type="{unknown}"/>
+    <parameter name="no" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="iniFilesSortList" start="131" end="156" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="IniFiles delete one record"/>
+      <param type="array" variable="$currentRecordList"/>
+      <param type="integer" variable="$no"/>
+      <return type="array"/>
+    </docblock>
+    <parameter name="currentRecordList" byreference="false" type="{unknown}"/>
+    <parameter name="sortList" byreference="false" type="{unknown}"/>
+    <parameter name="expired" byreference="false" type="boolean" default="true"/>
+  </method>
+  <method name="getPagerView" start="167" end="197" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Get parameter pagination"/>
+      <param type="array" variable="$paginator"/>
+      <param type="integer" variable="$pagerLinkNum"/>
+      <return description="(" type="array">integer $from,
+     integer $to,
+     )</return>
+    </docblock>
+    <parameter name="paginator" byreference="false" type="{unknown}"/>
+    <parameter name="pagerLinkNum" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="ページ番号の最大の設定が最大ページ数より大きい場合の補正" line="169"/>
+    </inline>
+  </method>
+  <method name="getDeveloperKeyData" start="205" end="208" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Get developer key data"/>
+      <param type="integer" variable="$accountId"/>
+      <return type="integer"/>
+    </docblock>
+    <parameter name="accountId" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="getDeveloperData" start="216" end="225" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Get developer data"/>
+      <param type="integer" variable="$accountId"/>
+      <return type="object"/>
+    </docblock>
+    <parameter name="accountId" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="setDeveloperData" start="234" end="239" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Set developer data"/>
+      <param type="integer" variable="$accountId"/>
+      <param type="array" variable="$data"/>
+      <return type="object">
+        <type full="App\Services\void" namespace="App\Services" name="void"/>
+      </return>
+    </docblock>
+    <parameter name="accountId" byreference="false" type="{unknown}"/>
+    <parameter name="data" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="deleteDeveloperData" start="247" end="256" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Delete developer data"/>
+      <param type="integer" variable="$accountId"/>
+      <return type="object">
+        <type full="App\Services\void" namespace="App\Services" name="void"/>
+      </return>
+    </docblock>
+    <parameter name="accountId" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="getDeveloperKeyGameId" start="264" end="267" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Get developer key game id"/>
+      <param type="integer" variable="$accountId"/>
+      <return type="integer"/>
+    </docblock>
+    <parameter name="accountId" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="getDeveloperGameId" start="275" end="284" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Get developer game id"/>
+      <param type="integer" variable="$accountId"/>
+      <return type="integer"/>
+    </docblock>
+    <parameter name="accountId" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="deleteDeveloperKeyGameId" start="292" end="301" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Delete game_id from session"/>
+      <param type="object" variable="$request">
+        <type full="App\Services\Request" namespace="App\Services" name="Request"/>
+      </param>
+      <return type="boolean"/>
+    </docblock>
+    <parameter name="accountId" byreference="false" type="{unknown}"/>
+  </method>
+</class>

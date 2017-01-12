@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="App\Http\Requests\MhfCouponGenerateRequest" namespace="App\Http\Requests" name="MhfCouponGenerateRequest" abstract="false" final="false" start="10" end="85">
+  <file path="/home/web/example/src/freegame_developer/app/Http/Requests" file="MhfCouponGenerateRequest.php" realpath="/home/web/example/src/freegame_developer/app/Http/Requests/MhfCouponGenerateRequest.php" size="1795" time="2017-01-03T08:12:08+00:00" unixtime="1483431128" sha1="26c79f14966cd6bb70afa465a89575c5060a8125" relative="freegame_developer/app/Http/Requests/MhfCouponGenerateRequest.php"/>
+  <extends full="App\Http\Requests\Request" namespace="App\Http\Requests" name="Request"/>
+  <method name="authorize" start="17" end="20" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Determine if the user is authorized to make this request."/>
+      <return type="object">
+        <type full="App\Http\Requests\bool" namespace="App\Http\Requests" name="bool"/>
+      </return>
+    </docblock>
+  </method>
+  <method name="rules" start="27" end="42" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Validation rules list"/>
+      <return type="array"/>
+    </docblock>
+  </method>
+  <method name="attributes" start="49" end="55" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Custom attributes list"/>
+      <return type="array"/>
+    </docblock>
+  </method>
+  <method name="customMessages" start="62" end="69" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Custom validation message"/>
+      <return type="array"/>
+    </docblock>
+  </method>
+  <method name="redirectRules" start="77" end="84" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Redirect rules."/>
+      <return type="array"/>
+    </docblock>
+  </method>
+</class>

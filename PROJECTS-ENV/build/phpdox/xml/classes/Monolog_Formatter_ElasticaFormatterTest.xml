@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="Monolog\Formatter\ElasticaFormatterTest" namespace="Monolog\Formatter" name="ElasticaFormatterTest" abstract="false" final="false" start="16" end="79">
+  <file path="/home/web/example/src/freegame_developer/vendor/monolog/monolog/tests/Monolog/Formatter" file="ElasticaFormatterTest.php" realpath="/home/web/example/src/freegame_developer/vendor/monolog/monolog/tests/Monolog/Formatter/ElasticaFormatterTest.php" size="2356" time="2016-07-29T03:23:52+00:00" unixtime="1469762632" sha1="db6f3b8783b1e1cda8829c2f253e232e12e359ea" relative="freegame_developer/vendor/monolog/monolog/tests/Monolog/Formatter/ElasticaFormatterTest.php"/>
+  <extends full="PHPUnit_Framework_TestCase" namespace="" name="PHPUnit_Framework_TestCase"/>
+  <method name="setUp" start="18" end="23" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testFormat" start="30" end="67" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <covers value="Monolog\Formatter\ElasticaFormatter::__construct"/>
+      <covers value="Monolog\Formatter\ElasticaFormatter::format"/>
+      <covers value="Monolog\Formatter\ElasticaFormatter::getDocument"/>
+    </docblock>
+    <inline>
+      <comment value="test log message" line="32"/>
+      <comment value="expected values" line="43"/>
+      <comment value="format log message" line="52"/>
+      <comment value="Document parameters" line="57"/>
+      <comment value="Document data values" line="62"/>
+    </inline>
+  </method>
+  <method name="testGetters" start="73" end="78" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <covers value="Monolog\Formatter\ElasticaFormatter::getIndex"/>
+      <covers value="Monolog\Formatter\ElasticaFormatter::getType"/>
+    </docblock>
+  </method>
+</class>

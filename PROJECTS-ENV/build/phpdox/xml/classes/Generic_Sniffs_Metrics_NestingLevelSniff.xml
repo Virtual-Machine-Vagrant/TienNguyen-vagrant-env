@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="Generic_Sniffs_Metrics_NestingLevelSniff" namespace="" name="Generic_Sniffs_Metrics_NestingLevelSniff" abstract="false" final="false" start="28" end="112">
+  <file path="/home/web/example/src/freegame_developer/vendor/squizlabs/php_codesniffer/CodeSniffer/Standards/Generic/Sniffs/Metrics" file="NestingLevelSniff.php" realpath="/home/web/example/src/freegame_developer/vendor/squizlabs/php_codesniffer/CodeSniffer/Standards/Generic/Sniffs/Metrics/NestingLevelSniff.php" size="3434" time="2016-01-19T23:39:10+00:00" unixtime="1453246750" sha1="a1873781eb972dff881457e16dbb3c6ce28009bb" relative="freegame_developer/vendor/squizlabs/php_codesniffer/CodeSniffer/Standards/Generic/Sniffs/Metrics/NestingLevelSniff.php"/>
+  <docblock>
+    <description compact="Checks the nesting level for methods."/>
+    <category value="PHP"/>
+    <package value="PHP_CodeSniffer"/>
+    <author value="Johann-Peter Hartmann &lt;hartmann@mayflower.de&gt;"/>
+    <author value="Greg Sherwood &lt;gsherwood@squiz.net&gt;"/>
+    <copyright value="2007-2014 Mayflower GmbH"/>
+    <license name="https://github.com/squizlabs/PHP_CodeSniffer/blob/master/licence.txt BSD Licence"/>
+    <version value="Release: @package_version@"/>
+    <link value="http://pear.php.net/package/PHP_CodeSniffer"/>
+  </docblock>
+  <implements full="PHP_CodeSniffer_Sniff" namespace="" name="PHP_CodeSniffer_Sniff"/>
+  <member name="nestingLevel" type="integer" default="5" visibility="public" static="false" line="36">
+    <docblock>
+      <description compact="A nesting level than this value will throw a warning."/>
+      <var type="int"/>
+    </docblock>
+  </member>
+  <member name="absoluteNestingLevel" type="integer" default="10" visibility="public" static="false" line="43">
+    <docblock>
+      <description compact="A nesting level than this value will throw an error."/>
+      <var type="int"/>
+    </docblock>
+  </member>
+  <method name="register" start="51" end="55" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Returns an array of tokens this test wants to listen for."/>
+      <return type="array"/>
+    </docblock>
+  </method>
+  <method name="process" start="67" end="109" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Processes this test, when one of its tokens is encountered."/>
+      <param description="The file being scanned." type="object" variable="$phpcsFile">
+        <type full="PHP_CodeSniffer_File" namespace="" name="PHP_CodeSniffer_File"/>
+      </param>
+      <param description="The position of the current token" type="int" variable="$stackPtr">in the stack passed in $tokens.</param>
+      <return type="object">
+        <type full="void" namespace="" name="void"/>
+      </return>
+    </docblock>
+    <parameter name="phpcsFile" byreference="false" type="object">
+      <type full="PHP_CodeSniffer_File" namespace="" name="PHP_CodeSniffer_File"/>
+    </parameter>
+    <parameter name="stackPtr" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="Ignore abstract methods." line="71"/>
+      <comment value="Detect start and end of this function definition." line="76"/>
+      <comment value="Find the maximum nesting level of any token in the function." line="82"/>
+      <comment value="We subtract the nesting level of the function itself." line="90"/>
+    </inline>
+  </method>
+</class>

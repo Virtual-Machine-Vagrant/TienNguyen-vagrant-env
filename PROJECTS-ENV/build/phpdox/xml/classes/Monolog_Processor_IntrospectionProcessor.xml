@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="Monolog\Processor\IntrospectionProcessor" namespace="Monolog\Processor" name="IntrospectionProcessor" abstract="false" final="false" start="27" end="107">
+  <file path="/home/web/example/src/freegame_developer/vendor/monolog/monolog/src/Monolog/Processor" file="IntrospectionProcessor.php" realpath="/home/web/example/src/freegame_developer/vendor/monolog/monolog/src/Monolog/Processor/IntrospectionProcessor.php" size="3250" time="2016-07-29T03:23:52+00:00" unixtime="1469762632" sha1="fcfebcd1017662e23d593752f8541091008fe836" relative="freegame_developer/vendor/monolog/monolog/src/Monolog/Processor/IntrospectionProcessor.php"/>
+  <docblock>
+    <description compact="Injects line/file:class/function where the log message came from">Warning: This only works if the handler processes the logs directly.
+If you put the processor on a handler that is behind a FingersCrossedHandler
+for example, the processor will only be called once the trigger level is reached,
+and all the log records will have the same file/line/.. data from the call that
+triggered the FingersCrossedHandler.</description>
+    <author value="Jordi Boggiano &lt;j.boggiano@seld.be&gt;"/>
+  </docblock>
+  <member name="level" visibility="private" static="false" line="29"/>
+  <member name="skipClassesPartials" visibility="private" static="false" line="31"/>
+  <member name="skipStackFramesCount" visibility="private" static="false" line="33"/>
+  <member name="skipFunctions" type="array" default="" visibility="private" static="false" line="35"/>
+  <constructor name="__construct" start="40" end="45" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="level" byreference="false" type="{unknown}" default="" constant="Logger::DEBUG"/>
+    <parameter name="skipClassesPartials" byreference="false" type="array" default=""/>
+    <parameter name="skipStackFramesCount" byreference="false" type="integer" default="0"/>
+  </constructor>
+  <method name="__invoke" start="51" end="97" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <param type="array" variable="$record"/>
+      <return type="array"/>
+    </docblock>
+    <parameter name="record" byreference="false" type="array"/>
+    <inline>
+      <comment value="return if the level is not high enough" line="53"/>
+      <comment value="skip first since it's always the current method" line="60"/>
+      <comment value="the call_user_func call is also skipped" line="62"/>
+      <comment value="we should have the call source now" line="85"/>
+    </inline>
+  </method>
+  <method name="isTraceClassOrSkippedFunction" start="99" end="106" abstract="false" final="false" static="false" visibility="private">
+    <parameter name="trace" byreference="false" type="array"/>
+    <parameter name="index" byreference="false" type="{unknown}"/>
+  </method>
+</class>

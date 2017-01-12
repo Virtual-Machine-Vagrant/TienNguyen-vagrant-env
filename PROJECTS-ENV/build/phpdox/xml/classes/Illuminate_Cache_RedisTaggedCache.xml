@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="Illuminate\Cache\RedisTaggedCache" namespace="Illuminate\Cache" name="RedisTaggedCache" abstract="false" final="false" start="5" end="164">
+  <file path="/home/web/example/src/freegame_developer/vendor/laravel/framework/src/Illuminate/Cache" file="RedisTaggedCache.php" realpath="/home/web/example/src/freegame_developer/vendor/laravel/framework/src/Illuminate/Cache/RedisTaggedCache.php" size="3901" time="2016-02-24T15:13:21+00:00" unixtime="1456326801" sha1="e88ffa2639080bc9f4c667b9e9cee50f9396ba3f" relative="freegame_developer/vendor/laravel/framework/src/Illuminate/Cache/RedisTaggedCache.php"/>
+  <extends full="Illuminate\Cache\TaggedCache" namespace="Illuminate\Cache" name="TaggedCache"/>
+  <constant type="string" name="REFERENCE_KEY_FOREVER" value="'forever'">
+    <docblock>
+      <description compact="Forever reference key."/>
+      <var type="string"/>
+    </docblock>
+  </constant>
+  <constant type="string" name="REFERENCE_KEY_STANDARD" value="'standard'">
+    <docblock>
+      <description compact="Standard reference key."/>
+      <var type="string"/>
+    </docblock>
+  </constant>
+  <method name="put" start="28" end="33" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Store an item in the cache."/>
+      <param type="string" variable="$key"/>
+      <param type="mixed" variable="$value"/>
+      <param type="object" variable="$minutes">
+        <type full="\DateTime|int" namespace="" name="DateTime|int"/>
+      </param>
+      <return type="object">
+        <type full="Illuminate\Cache\void" namespace="Illuminate\Cache" name="void"/>
+      </return>
+    </docblock>
+    <parameter name="key" byreference="false" type="{unknown}"/>
+    <parameter name="value" byreference="false" type="{unknown}"/>
+    <parameter name="minutes" byreference="false" type="{unknown}" default="" constant="null"/>
+  </method>
+  <method name="forever" start="42" end="47" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Store an item in the cache indefinitely."/>
+      <param type="string" variable="$key"/>
+      <param type="mixed" variable="$value"/>
+      <return type="object">
+        <type full="Illuminate\Cache\void" namespace="Illuminate\Cache" name="void"/>
+      </return>
+    </docblock>
+    <parameter name="key" byreference="false" type="{unknown}"/>
+    <parameter name="value" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="flush" start="54" end="60" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Remove all items from the cache."/>
+      <return type="object">
+        <type full="Illuminate\Cache\void" namespace="Illuminate\Cache" name="void"/>
+      </return>
+    </docblock>
+  </method>
+  <method name="pushStandardKeys" start="69" end="72" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Store standard key references into store."/>
+      <param type="string" variable="$namespace"/>
+      <param type="string" variable="$key"/>
+      <return type="object">
+        <type full="Illuminate\Cache\void" namespace="Illuminate\Cache" name="void"/>
+      </return>
+    </docblock>
+    <parameter name="namespace" byreference="false" type="{unknown}"/>
+    <parameter name="key" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="pushForeverKeys" start="81" end="84" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Store forever key references into store."/>
+      <param type="string" variable="$namespace"/>
+      <param type="string" variable="$key"/>
+      <return type="object">
+        <type full="Illuminate\Cache\void" namespace="Illuminate\Cache" name="void"/>
+      </return>
+    </docblock>
+    <parameter name="namespace" byreference="false" type="{unknown}"/>
+    <parameter name="key" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="pushKeys" start="94" end="101" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Store a reference to the cache key against the reference key."/>
+      <param type="string" variable="$namespace"/>
+      <param type="string" variable="$key"/>
+      <param type="string" variable="$reference"/>
+      <return type="object">
+        <type full="Illuminate\Cache\void" namespace="Illuminate\Cache" name="void"/>
+      </return>
+    </docblock>
+    <parameter name="namespace" byreference="false" type="{unknown}"/>
+    <parameter name="key" byreference="false" type="{unknown}"/>
+    <parameter name="reference" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="deleteForeverKeys" start="108" end="111" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Delete all of the items that were stored forever."/>
+      <return type="object">
+        <type full="Illuminate\Cache\void" namespace="Illuminate\Cache" name="void"/>
+      </return>
+    </docblock>
+  </method>
+  <method name="deleteStandardKeys" start="118" end="121" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Delete all standard items."/>
+      <return type="object">
+        <type full="Illuminate\Cache\void" namespace="Illuminate\Cache" name="void"/>
+      </return>
+    </docblock>
+  </method>
+  <method name="deleteKeysByReference" start="129" end="136" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Find and delete all of the items that were stored against a reference."/>
+      <param type="string" variable="$reference"/>
+      <return type="object">
+        <type full="Illuminate\Cache\void" namespace="Illuminate\Cache" name="void"/>
+      </return>
+    </docblock>
+    <parameter name="reference" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="deleteValues" start="144" end="151" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Delete item keys that have been stored against a reference."/>
+      <param type="string" variable="$referenceKey"/>
+      <return type="object">
+        <type full="Illuminate\Cache\void" namespace="Illuminate\Cache" name="void"/>
+      </return>
+    </docblock>
+    <parameter name="referenceKey" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="referenceKey" start="160" end="163" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Get the reference key for the segment."/>
+      <param type="string" variable="$segment"/>
+      <param type="string" variable="$suffix"/>
+      <return type="string"/>
+    </docblock>
+    <parameter name="segment" byreference="false" type="{unknown}"/>
+    <parameter name="suffix" byreference="false" type="{unknown}"/>
+  </method>
+</class>

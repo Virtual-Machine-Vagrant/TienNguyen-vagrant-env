@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="Symfony\Component\Finder\Tests\FinderTest" namespace="Symfony\Component\Finder\Tests" name="FinderTest" abstract="false" final="false" start="19" end="745">
+  <file path="/home/web/example/src/freegame_developer/vendor/symfony/finder/Tests" file="FinderTest.php" realpath="/home/web/example/src/freegame_developer/vendor/symfony/finder/Tests/FinderTest.php" size="28061" time="2016-09-16T16:53:37+00:00" unixtime="1474044817" sha1="6976948341abfaae224bcaabf96d3ba96d937b03" relative="freegame_developer/vendor/symfony/finder/Tests/FinderTest.php"/>
+  <extends full="Symfony\Component\Finder\Tests\Iterator\RealIteratorTestCase" namespace="Symfony\Component\Finder\Tests\Iterator" name="RealIteratorTestCase"/>
+  <method name="testCreate" start="21" end="24" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testDirectories" start="26" end="37" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testFiles" start="39" end="50" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testDepth" start="52" end="69" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testName" start="71" end="93" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testNotName" start="95" end="118" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testRegexName" start="123" end="128" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <dataprovider value="getRegexNameTestData"/>
+    </docblock>
+    <parameter name="regex" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="testSize" start="130" end="135" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testDate" start="137" end="142" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testExclude" start="144" end="149" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testIgnoreVCS" start="151" end="164" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testIgnoreDotFiles" start="166" end="179" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testSortByName" start="181" end="186" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testSortByType" start="188" end="193" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testSortByAccessedTime" start="195" end="200" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testSortByChangedTime" start="202" end="207" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testSortByModifiedTime" start="209" end="214" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testSort" start="216" end="221" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testFilter" start="223" end="228" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testFollowLinks" start="230" end="239" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testIn" start="241" end="255" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testInWithNonExistentDirectory" start="260" end="264" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <expectedexception value="\InvalidArgumentException"/>
+    </docblock>
+  </method>
+  <method name="testInWithGlob" start="266" end="272" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testInWithNonDirectoryGlob" start="277" end="281" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <expectedexception value="\InvalidArgumentException"/>
+    </docblock>
+  </method>
+  <method name="testInWithGlobBrace" start="283" end="289" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testGetIteratorWithoutIn" start="294" end="298" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <expectedexception value="\LogicException"/>
+    </docblock>
+  </method>
+  <method name="testGetIterator" start="300" end="323" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testRelativePath" start="325" end="341" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testRelativePathname" start="343" end="359" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testAppendWithAFinder" start="361" end="372" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testAppendWithAnArray" start="374" end="382" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testAppendReturnsAFinder" start="384" end="387" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testAppendDoesNotRequireIn" start="389" end="397" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testCountDirectories" start="399" end="409" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testCountFiles" start="411" end="421" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testCountWithoutIn" start="426" end="430" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <expectedexception value="\LogicException"/>
+    </docblock>
+  </method>
+  <method name="testContains" start="435" end="444" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <dataprovider value="getContainsTestData"/>
+    </docblock>
+    <parameter name="matchPatterns" byreference="false" type="{unknown}"/>
+    <parameter name="noMatchPatterns" byreference="false" type="{unknown}"/>
+    <parameter name="expected" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="testContainsOnDirectory" start="446" end="454" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testNotContainsOnDirectory" start="456" end="464" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testMultipleLocations" start="472" end="488" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Searching in multiple locations involves AppendIterator which does an unnecessary rewind which leaves FilterIterator with inner FilesystemIterator in an invalid state."/>
+      <see value="https://bugs.php.net/68557"/>
+    </docblock>
+    <inline>
+      <comment value="it is expected that there are test.py test.php in the tmpDir" line="479"/>
+    </inline>
+  </method>
+  <method name="testMultipleLocationsWithSubDirectories" start="497" end="514" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Searching in multiple locations with sub directories involves AppendIterator which does an unnecessary rewind which leaves FilterIterator with inner FilesystemIterator in an invalid state."/>
+      <see value="https://bugs.php.net/68557"/>
+    </docblock>
+  </method>
+  <method name="testIteratorKeys" start="519" end="525" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Iterator keys must be the file pathname."/>
+    </docblock>
+  </method>
+  <method name="testRegexSpecialCharsLocationWithPathRestrictionContainingStartFlag" start="527" end="535" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testAdaptersOrdering" start="537" end="553" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testAdaptersChaining" start="555" end="570" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="getContainsTestData" start="572" end="586" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="getRegexNameTestData" start="588" end="594" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testPath" start="599" end="607" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <dataprovider value="getTestPathData"/>
+    </docblock>
+    <parameter name="matchPatterns" byreference="false" type="{unknown}"/>
+    <parameter name="noMatchPatterns" byreference="false" type="{unknown}"/>
+    <parameter name="expected" byreference="false" type="array"/>
+  </method>
+  <method name="testAdapterSelection" start="609" end="622" abstract="false" final="false" static="false" visibility="public">
+    <inline>
+      <comment value="test that by default, PhpAdapter is selected" line="611"/>
+      <comment value="test another adapter selection" line="615"/>
+      <comment value="test that useBestAdapter method removes selection" line="619"/>
+    </inline>
+  </method>
+  <method name="getTestPathData" start="624" end="667" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testAccessDeniedException" start="669" end="703" abstract="false" final="false" static="false" visibility="public">
+    <inline>
+      <comment value="make 'foo' directory non-readable" line="678"/>
+      <comment value="restore original permissions" line="696"/>
+    </inline>
+  </method>
+  <method name="testIgnoredAccessDeniedException" start="705" end="729" abstract="false" final="false" static="false" visibility="public">
+    <inline>
+      <comment value="make 'foo' directory non-readable" line="714"/>
+      <comment value="restore original permissions" line="722"/>
+    </inline>
+  </method>
+  <method name="getAdapter" start="734" end="737" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description/>
+      <return type="object">
+        <type full="Symfony\Component\Finder\Adapter\AdapterInterface" namespace="Symfony\Component\Finder\Adapter" name="AdapterInterface"/>
+      </return>
+    </docblock>
+  </method>
+  <method name="buildFinder" start="739" end="744" abstract="false" final="false" static="false" visibility="private"/>
+</class>

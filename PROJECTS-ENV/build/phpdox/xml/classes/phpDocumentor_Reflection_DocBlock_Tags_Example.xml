@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="phpDocumentor\Reflection\DocBlock\Tags\Example" namespace="phpDocumentor\Reflection\DocBlock\Tags" name="Example" abstract="false" final="true" start="20" end="158">
+  <file path="/home/web/example/src/freegame_developer/vendor/phpdocumentor/reflection-docblock/src/DocBlock/Tags" file="Example.php" realpath="/home/web/example/src/freegame_developer/vendor/phpdocumentor/reflection-docblock/src/DocBlock/Tags/Example.php" size="4177" time="2016-09-30T07:12:33+00:00" unixtime="1475219553" sha1="9f15e66682ebb91f54b20573cdfef1a4e15dc6cf" relative="freegame_developer/vendor/phpdocumentor/reflection-docblock/src/DocBlock/Tags/Example.php"/>
+  <docblock>
+    <description compact="Reflection class for a {@}example tag in a Docblock."/>
+  </docblock>
+  <extends full="phpDocumentor\Reflection\DocBlock\Tags\BaseTag" namespace="phpDocumentor\Reflection\DocBlock\Tags" name="BaseTag"/>
+  <member name="filePath" type="string" default="''" visibility="private" static="false" line="25">
+    <docblock>
+      <description/>
+      <var description="Path to a file to use as an example. May also be an absolute URI." type="string"/>
+    </docblock>
+  </member>
+  <member name="isURI" type="boolean" default="false" visibility="private" static="false" line="31">
+    <docblock>
+      <description/>
+      <var description="Whether the file path component represents an URI. This determines how the file portion" type="object">appears at <link xmlns="http://xml.phpdox.net/src" value="getContent()"/>.
+<type full="phpDocumentor\Reflection\DocBlock\Tags\bool" namespace="phpDocumentor\Reflection\DocBlock\Tags" name="bool"/></var>
+    </docblock>
+  </member>
+  <method name="getContent" start="36" end="50" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="{@inheritdoc}"/>
+    </docblock>
+  </method>
+  <method name="create" start="55" end="84" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description compact="{@inheritdoc}"/>
+    </docblock>
+    <parameter name="body" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="File component: File path in quotes or File URI / Source information" line="57"/>
+      <comment value="Starting line / Number of lines / Description" line="74"/>
+    </inline>
+  </method>
+  <method name="getFilePath" start="92" end="95" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Returns the file path."/>
+      <return description="Path to a file to use as an example." type="string">May also be an absolute URI.</return>
+    </docblock>
+  </method>
+  <method name="setFilePath" start="104" end="111" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Sets the file path."/>
+      <param description="The new file path to use for the example." type="string" variable="$filePath"/>
+      <return type="object">
+        <type full="phpDocumentor\Reflection\DocBlock\Tags\$this" namespace="phpDocumentor\Reflection\DocBlock\Tags" name="$this"/>
+      </return>
+    </docblock>
+    <parameter name="filePath" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="setFileURI" start="125" end="135" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Sets the file path as an URI.">This function is equivalent to <link xmlns="http://xml.phpdox.net/src" value="setFilePath()"/>, except that it
+converts an URI to a file path before that.
+There is no getFileURI(), as <link xmlns="http://xml.phpdox.net/src" value="getFilePath()"/> is compatible.
+</description>
+      <param description="The new file URI to use as an example." type="string" variable="$uri"/>
+      <return type="object">
+        <type full="phpDocumentor\Reflection\DocBlock\Tags\$this" namespace="phpDocumentor\Reflection\DocBlock\Tags" name="$this"/>
+      </return>
+    </docblock>
+    <parameter name="uri" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="__toString" start="142" end="145" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Returns a string representation for this tag."/>
+      <return type="string"/>
+    </docblock>
+  </method>
+  <method name="isUriRelative" start="154" end="157" abstract="false" final="false" static="false" visibility="private">
+    <docblock>
+      <description compact="Returns true if the provided URI is relative or contains a complete scheme (and thus is absolute)."/>
+      <param type="string" variable="$uri"/>
+      <return type="object">
+        <type full="phpDocumentor\Reflection\DocBlock\Tags\bool" namespace="phpDocumentor\Reflection\DocBlock\Tags" name="bool"/>
+      </return>
+    </docblock>
+    <parameter name="uri" byreference="false" type="{unknown}"/>
+  </method>
+</class>

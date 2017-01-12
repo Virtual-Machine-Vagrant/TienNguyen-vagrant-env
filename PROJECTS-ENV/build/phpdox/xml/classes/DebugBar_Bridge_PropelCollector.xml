@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="DebugBar\Bridge\PropelCollector" namespace="DebugBar\Bridge" name="PropelCollector" abstract="false" final="false" start="37" end="253">
+  <file path="/home/web/example/src/freegame_developer/vendor/maximebf/debugbar/src/DebugBar/Bridge" file="PropelCollector.php" realpath="/home/web/example/src/freegame_developer/vendor/maximebf/debugbar/src/DebugBar/Bridge/PropelCollector.php" size="7330" time="2016-09-15T14:01:59+00:00" unixtime="1473948119" sha1="f625f5e9d9954d657f18cd229b06ee945a263e6c" relative="freegame_developer/vendor/maximebf/debugbar/src/DebugBar/Bridge/PropelCollector.php"/>
+  <docblock>
+    <description compact="A Propel logger which acts as a data collector">http://propelorm.org/
+
+Will log queries and display them using the SQLQueries widget.
+You can provide a LoggerInterface object to forward non-query related message to.
+
+Example:
+&lt;code&gt;
+$debugbar-&gt;addCollector(new PropelCollector($debugbar['messages']));
+PropelCollector::enablePropelProfiling();
+&lt;/code&gt;</description>
+  </docblock>
+  <extends full="DebugBar\DataCollector\DataCollector" namespace="DebugBar\DataCollector" name="DataCollector"/>
+  <implements full="BasicLogger" namespace="" name="BasicLogger"/>
+  <implements full="DebugBar\DataCollector\Renderable" namespace="DebugBar\DataCollector" name="Renderable"/>
+  <implements full="DebugBar\DataCollector\AssetProvider" namespace="DebugBar\DataCollector" name="AssetProvider"/>
+  <member name="logger" visibility="protected" static="false" line="39"/>
+  <member name="statements" type="array" default="" visibility="protected" static="false" line="41"/>
+  <member name="accumulatedTime" type="integer" default="0" visibility="protected" static="false" line="43"/>
+  <member name="peakMemory" type="integer" default="0" visibility="protected" static="false" line="45"/>
+  <method name="enablePropelProfiling" start="52" end="71" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description compact="Sets the needed configuration option in propel to enable query logging"/>
+      <param description="Apply profiling on a specific config" type="object" variable="$config">
+        <type full="PropelConfiguration" namespace="" name="PropelConfiguration"/>
+      </param>
+    </docblock>
+    <parameter name="config" byreference="false" type="{unknown}" default="" constant="null">
+      <type full="PropelConfiguration" namespace="" name="PropelConfiguration"/>
+    </parameter>
+  </method>
+  <constructor name="__construct" start="77" end="86" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <param description="A logger to forward non-query log lines to" type="object" variable="$logger">
+        <type full="Psr\Log\LoggerInterface" namespace="Psr\Log" name="LoggerInterface"/>
+      </param>
+      <param description="Bound this collector to a connection only" type="object" variable="$conn">
+        <type full="PropelPDO" namespace="" name="PropelPDO"/>
+      </param>
+    </docblock>
+    <parameter name="logger" byreference="false" type="{unknown}" default="" constant="null">
+      <type full="Psr\Log\LoggerInterface" namespace="Psr\Log" name="LoggerInterface"/>
+    </parameter>
+    <parameter name="conn" byreference="false" type="{unknown}" default="" constant="null">
+      <type full="PropelPDO" namespace="" name="PropelPDO"/>
+    </parameter>
+  </constructor>
+  <method name="setLogQueriesToLogger" start="88" end="92" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="enable" byreference="false" type="boolean" default="true"/>
+  </method>
+  <method name="isLogQueriesToLogger" start="94" end="97" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="emergency" start="99" end="102" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="m" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="alert" start="104" end="107" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="m" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="crit" start="109" end="112" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="m" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="err" start="114" end="117" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="m" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="warning" start="119" end="122" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="m" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="notice" start="124" end="127" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="m" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="info" start="129" end="132" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="m" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="debug" start="134" end="137" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="m" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="log" start="139" end="152" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="message" byreference="false" type="{unknown}"/>
+    <parameter name="severity" byreference="false" type="{unknown}" default="" constant="null"/>
+  </method>
+  <method name="convertLogLevel" start="160" end="172" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Converts Propel log levels to PSR log levels"/>
+      <param type="int" variable="$level"/>
+      <return type="string"/>
+    </docblock>
+    <parameter name="level" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="parseAndLogSqlQuery" start="179" end="210" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Parse a log line to extract query information"/>
+      <param type="string" variable="$message"/>
+    </docblock>
+    <parameter name="message" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="collect" start="212" end="223" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="getName" start="225" end="228" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="getWidgets" start="230" end="244" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="getAssets" start="246" end="252" abstract="false" final="false" static="false" visibility="public"/>
+</class>

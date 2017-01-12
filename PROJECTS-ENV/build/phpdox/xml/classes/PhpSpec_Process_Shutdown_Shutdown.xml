@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="PhpSpec\Process\Shutdown\Shutdown" namespace="PhpSpec\Process\Shutdown" name="Shutdown" abstract="false" final="true" start="16" end="51">
+  <file path="/home/web/example/src/freegame_developer/vendor/phpspec/phpspec/src/PhpSpec/Process/Shutdown" file="Shutdown.php" realpath="/home/web/example/src/freegame_developer/vendor/phpspec/phpspec/src/PhpSpec/Process/Shutdown/Shutdown.php" size="1178" time="2016-01-01T10:17:54+00:00" unixtime="1451643474" sha1="61601ca6d63a2cb73a8648df5fa7ea935d800ee0" relative="freegame_developer/vendor/phpspec/phpspec/src/PhpSpec/Process/Shutdown/Shutdown.php"/>
+  <member name="actions" visibility="protected" static="false" line="18"/>
+  <constructor name="__construct" start="20" end="23" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="registerShutdown" start="25" end="29" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="registerAction" start="31" end="34" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="action" byreference="false" type="object">
+      <type full="PhpSpec\Process\Shutdown\ShutdownActionInterface" namespace="PhpSpec\Process\Shutdown" name="ShutdownActionInterface"/>
+    </parameter>
+  </method>
+  <method name="runShutdown" start="36" end="43" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="getFatalError" start="45" end="50" abstract="false" final="false" static="false" visibility="private"/>
+</class>

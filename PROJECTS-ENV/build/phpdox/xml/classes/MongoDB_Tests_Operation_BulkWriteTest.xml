@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="MongoDB\Tests\Operation\BulkWriteTest" namespace="MongoDB\Tests\Operation" name="BulkWriteTest" abstract="false" final="false" start="7" end="367">
+  <file path="/home/web/example/src/freegame_developer/vendor/mongodb/mongodb/tests/Operation" file="BulkWriteTest.php" realpath="/home/web/example/src/freegame_developer/vendor/mongodb/mongodb/tests/Operation/BulkWriteTest.php" size="13603" time="2016-09-23T19:38:29+00:00" unixtime="1474659509" sha1="2cedae05cad8b0b5b07436d02ae43606a0aff158" relative="freegame_developer/vendor/mongodb/mongodb/tests/Operation/BulkWriteTest.php"/>
+  <extends full="MongoDB\Tests\Operation\TestCase" namespace="MongoDB\Tests\Operation" name="TestCase"/>
+  <method name="testOperationsMustNotBeEmpty" start="13" end="16" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <expectedexception value="MongoDB\Exception\InvalidArgumentException"/>
+      <expectedexceptionmessage value="$operations is empty"/>
+    </docblock>
+  </method>
+  <method name="testOperationsMustBeAList" start="22" end="27" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <expectedexception value="MongoDB\Exception\InvalidArgumentException"/>
+      <expectedexceptionmessage value="$operations is not a list (unexpected index: &quot;1&quot;)"/>
+    </docblock>
+  </method>
+  <method name="testMultipleOperationsInOneElement" start="33" end="41" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <expectedexception value="MongoDB\Exception\InvalidArgumentException"/>
+      <expectedexceptionmessage value="Expected one element in $operation[0], actually: 2"/>
+    </docblock>
+  </method>
+  <method name="testUnknownOperation" start="47" end="52" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <expectedexception value="MongoDB\Exception\InvalidArgumentException"/>
+      <expectedexceptionmessage value="Unknown operation type &quot;foo&quot; in $operations[0]"/>
+    </docblock>
+  </method>
+  <method name="testInsertOneDocumentArgumentMissing" start="58" end="63" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <expectedexception value="MongoDB\Exception\InvalidArgumentException"/>
+      <expectedexceptionmessage value="Missing first argument for $operations[0][&quot;insertOne&quot;]"/>
+    </docblock>
+  </method>
+  <method name="testInsertOneDocumentArgumentTypeCheck" start="70" end="75" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <expectedexception value="MongoDB\Exception\InvalidArgumentException"/>
+      <expectedexceptionmessageregexp value="/Expected \$operations\[0\]\[&quot;insertOne&quot;\]\[0\] to have type &quot;array or object&quot; but found &quot;[\w ]+&quot;/"/>
+      <dataprovider value="provideInvalidDocumentValues"/>
+    </docblock>
+    <parameter name="document" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="testDeleteManyFilterArgumentMissing" start="81" end="86" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <expectedexception value="MongoDB\Exception\InvalidArgumentException"/>
+      <expectedexceptionmessage value="Missing first argument for $operations[0][&quot;deleteMany&quot;]"/>
+    </docblock>
+  </method>
+  <method name="testDeleteManyFilterArgumentTypeCheck" start="93" end="98" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <expectedexception value="MongoDB\Exception\InvalidArgumentException"/>
+      <expectedexceptionmessageregexp value="/Expected \$operations\[0\]\[&quot;deleteMany&quot;\]\[0\] to have type &quot;array or object&quot; but found &quot;[\w ]+&quot;/"/>
+      <dataprovider value="provideInvalidDocumentValues"/>
+    </docblock>
+    <parameter name="document" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="testDeleteOneFilterArgumentMissing" start="104" end="109" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <expectedexception value="MongoDB\Exception\InvalidArgumentException"/>
+      <expectedexceptionmessage value="Missing first argument for $operations[0][&quot;deleteOne&quot;]"/>
+    </docblock>
+  </method>
+  <method name="testDeleteOneFilterArgumentTypeCheck" start="116" end="121" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <expectedexception value="MongoDB\Exception\InvalidArgumentException"/>
+      <expectedexceptionmessageregexp value="/Expected \$operations\[0\]\[&quot;deleteOne&quot;\]\[0\] to have type &quot;array or object&quot; but found &quot;[\w ]+&quot;/"/>
+      <dataprovider value="provideInvalidDocumentValues"/>
+    </docblock>
+    <parameter name="document" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="testReplaceOneFilterArgumentMissing" start="127" end="132" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <expectedexception value="MongoDB\Exception\InvalidArgumentException"/>
+      <expectedexceptionmessage value="Missing first argument for $operations[0][&quot;replaceOne&quot;]"/>
+    </docblock>
+  </method>
+  <method name="testReplaceOneFilterArgumentTypeCheck" start="139" end="144" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <expectedexception value="MongoDB\Exception\InvalidArgumentException"/>
+      <expectedexceptionmessageregexp value="/Expected \$operations\[0\]\[&quot;replaceOne&quot;\]\[0\] to have type &quot;array or object&quot; but found &quot;[\w ]+&quot;/"/>
+      <dataprovider value="provideInvalidDocumentValues"/>
+    </docblock>
+    <parameter name="filter" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="testReplaceOneReplacementArgumentMissing" start="150" end="155" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <expectedexception value="MongoDB\Exception\InvalidArgumentException"/>
+      <expectedexceptionmessage value="Missing second argument for $operations[0][&quot;replaceOne&quot;]"/>
+    </docblock>
+  </method>
+  <method name="testReplaceOneReplacementArgumentTypeCheck" start="162" end="167" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <expectedexception value="MongoDB\Exception\InvalidArgumentException"/>
+      <expectedexceptionmessageregexp value="/Expected \$operations\[0\]\[&quot;replaceOne&quot;\]\[1\] to have type &quot;array or object&quot; but found &quot;[\w ]+&quot;/"/>
+      <dataprovider value="provideInvalidDocumentValues"/>
+    </docblock>
+    <parameter name="replacement" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="testReplaceOneReplacementArgumentRequiresNoOperators" start="173" end="178" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <expectedexception value="MongoDB\Exception\InvalidArgumentException"/>
+      <expectedexceptionmessage value="First key in $operations[0][&quot;replaceOne&quot;][1] is an update operator"/>
+    </docblock>
+  </method>
+  <method name="testReplaceOneUpsertOptionTypeCheck" start="185" end="190" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <expectedexception value="MongoDB\Exception\InvalidArgumentException"/>
+      <expectedexceptionmessageregexp value="/Expected \$operations\[0\]\[&quot;replaceOne&quot;\]\[2\]\[&quot;upsert&quot;\] to have type &quot;boolean&quot; but found &quot;[\w ]+&quot;/"/>
+      <dataprovider value="provideInvalidBooleanValues"/>
+    </docblock>
+    <parameter name="upsert" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="testUpdateManyFilterArgumentMissing" start="196" end="201" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <expectedexception value="MongoDB\Exception\InvalidArgumentException"/>
+      <expectedexceptionmessage value="Missing first argument for $operations[0][&quot;updateMany&quot;]"/>
+    </docblock>
+  </method>
+  <method name="testUpdateManyFilterArgumentTypeCheck" start="208" end="213" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <expectedexception value="MongoDB\Exception\InvalidArgumentException"/>
+      <expectedexceptionmessageregexp value="/Expected \$operations\[0\]\[&quot;updateMany&quot;\]\[0\] to have type &quot;array or object&quot; but found &quot;[\w ]+&quot;/"/>
+      <dataprovider value="provideInvalidDocumentValues"/>
+    </docblock>
+    <parameter name="filter" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="testUpdateManyUpdateArgumentMissing" start="219" end="224" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <expectedexception value="MongoDB\Exception\InvalidArgumentException"/>
+      <expectedexceptionmessage value="Missing second argument for $operations[0][&quot;updateMany&quot;]"/>
+    </docblock>
+  </method>
+  <method name="testUpdateManyUpdateArgumentTypeCheck" start="231" end="236" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <expectedexception value="MongoDB\Exception\InvalidArgumentException"/>
+      <expectedexceptionmessageregexp value="/Expected \$operations\[0\]\[&quot;updateMany&quot;\]\[1\] to have type &quot;array or object&quot; but found &quot;[\w ]+&quot;/"/>
+      <dataprovider value="provideInvalidDocumentValues"/>
+    </docblock>
+    <parameter name="update" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="testUpdateManyUpdateArgumentRequiresOperators" start="242" end="247" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <expectedexception value="MongoDB\Exception\InvalidArgumentException"/>
+      <expectedexceptionmessage value="First key in $operations[0][&quot;updateMany&quot;][1] is not an update operator"/>
+    </docblock>
+  </method>
+  <method name="testUpdateManyUpsertOptionTypeCheck" start="254" end="259" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <expectedexception value="MongoDB\Exception\InvalidArgumentException"/>
+      <expectedexceptionmessageregexp value="/Expected \$operations\[0\]\[&quot;updateMany&quot;\]\[2\]\[&quot;upsert&quot;\] to have type &quot;boolean&quot; but found &quot;[\w ]+&quot;/"/>
+      <dataprovider value="provideInvalidBooleanValues"/>
+    </docblock>
+    <parameter name="upsert" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="testUpdateOneFilterArgumentMissing" start="265" end="270" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <expectedexception value="MongoDB\Exception\InvalidArgumentException"/>
+      <expectedexceptionmessage value="Missing first argument for $operations[0][&quot;updateOne&quot;]"/>
+    </docblock>
+  </method>
+  <method name="testUpdateOneFilterArgumentTypeCheck" start="277" end="282" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <expectedexception value="MongoDB\Exception\InvalidArgumentException"/>
+      <expectedexceptionmessageregexp value="/Expected \$operations\[0\]\[&quot;updateOne&quot;\]\[0\] to have type &quot;array or object&quot; but found &quot;[\w ]+&quot;/"/>
+      <dataprovider value="provideInvalidDocumentValues"/>
+    </docblock>
+    <parameter name="filter" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="testUpdateOneUpdateArgumentMissing" start="288" end="293" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <expectedexception value="MongoDB\Exception\InvalidArgumentException"/>
+      <expectedexceptionmessage value="Missing second argument for $operations[0][&quot;updateOne&quot;]"/>
+    </docblock>
+  </method>
+  <method name="testUpdateOneUpdateArgumentTypeCheck" start="300" end="305" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <expectedexception value="MongoDB\Exception\InvalidArgumentException"/>
+      <expectedexceptionmessageregexp value="/Expected \$operations\[0\]\[&quot;updateOne&quot;\]\[1\] to have type &quot;array or object&quot; but found &quot;[\w ]+&quot;/"/>
+      <dataprovider value="provideInvalidDocumentValues"/>
+    </docblock>
+    <parameter name="update" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="testUpdateOneUpdateArgumentRequiresOperators" start="311" end="316" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <expectedexception value="MongoDB\Exception\InvalidArgumentException"/>
+      <expectedexceptionmessage value="First key in $operations[0][&quot;updateOne&quot;][1] is not an update operator"/>
+    </docblock>
+  </method>
+  <method name="testUpdateOneUpsertOptionTypeCheck" start="323" end="328" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <expectedexception value="MongoDB\Exception\InvalidArgumentException"/>
+      <expectedexceptionmessageregexp value="/Expected \$operations\[0\]\[&quot;updateOne&quot;\]\[2\]\[&quot;upsert&quot;\] to have type &quot;boolean&quot; but found &quot;[\w ]+&quot;/"/>
+      <dataprovider value="provideInvalidBooleanValues"/>
+    </docblock>
+    <parameter name="upsert" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="testConstructorOptionTypeChecks" start="334" end="342" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <expectedexception value="MongoDB\Exception\InvalidArgumentException"/>
+      <dataprovider value="provideInvalidConstructorOptions"/>
+    </docblock>
+    <parameter name="options" byreference="false" type="array"/>
+  </method>
+  <method name="provideInvalidBooleanValues" start="344" end="347" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="provideInvalidConstructorOptions" start="349" end="366" abstract="false" final="false" static="false" visibility="public"/>
+</class>

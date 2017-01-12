@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="GrahamCampbell\Flysystem\Cache\ConnectionFactory" namespace="GrahamCampbell\Flysystem\Cache" name="ConnectionFactory" abstract="false" final="false" start="23" end="94">
+  <file path="/home/web/example/src/freegame_developer/vendor/graham-campbell/flysystem/src/Cache" file="ConnectionFactory.php" realpath="/home/web/example/src/freegame_developer/vendor/graham-campbell/flysystem/src/Cache/ConnectionFactory.php" size="2404" time="2016-04-26T14:23:32+00:00" unixtime="1461680612" sha1="eb3d0cd11efb0a78d453596a1507dbcd422e557a" relative="freegame_developer/vendor/graham-campbell/flysystem/src/Cache/ConnectionFactory.php"/>
+  <docblock>
+    <description compact="This is the cache connection factory class."/>
+    <author value="Graham Campbell &lt;graham@alt-three.com&gt;"/>
+  </docblock>
+  <member name="cache" visibility="protected" static="false" line="30">
+    <docblock>
+      <description compact="The cache factory instance."/>
+      <var type="object">
+        <type full="\Illuminate\Contracts\Cache\Factory" namespace="\Illuminate\Contracts\Cache" name="Factory"/>
+      </var>
+    </docblock>
+  </member>
+  <constructor name="__construct" start="39" end="42" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Create a new connection factory instance."/>
+      <param type="object" variable="$cache">
+        <type full="\Illuminate\Contracts\Cache\Factory" namespace="\Illuminate\Contracts\Cache" name="Factory"/>
+      </param>
+      <return type="object">
+        <type full="GrahamCampbell\Flysystem\Cache\void" namespace="GrahamCampbell\Flysystem\Cache" name="void"/>
+      </return>
+    </docblock>
+    <parameter name="cache" byreference="false" type="object">
+      <type full="Illuminate\Contracts\Cache\Factory" namespace="Illuminate\Contracts\Cache" name="Factory"/>
+    </parameter>
+  </constructor>
+  <method name="make" start="52" end="55" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Establish a cache connection."/>
+      <param type="array" variable="$config"/>
+      <param type="object" variable="$manager">
+        <type full="\GrahamCampbell\Flysystem\FlysystemManager" namespace="\GrahamCampbell\Flysystem" name="FlysystemManager"/>
+      </param>
+      <return type="object">
+        <type full="\League\Flysystem\Cached\CacheInterface" namespace="\League\Flysystem\Cached" name="CacheInterface"/>
+      </return>
+    </docblock>
+    <parameter name="config" byreference="false" type="array"/>
+    <parameter name="manager" byreference="false" type="object">
+      <type full="GrahamCampbell\Flysystem\FlysystemManager" namespace="GrahamCampbell\Flysystem" name="FlysystemManager"/>
+    </parameter>
+  </method>
+  <method name="createConnector" start="67" end="81" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Create a connector instance based on the configuration."/>
+      <param type="array" variable="$config"/>
+      <param type="object" variable="$manager">
+        <type full="\GrahamCampbell\Flysystem\FlysystemManager" namespace="\GrahamCampbell\Flysystem" name="FlysystemManager"/>
+      </param>
+      <throws type="object">
+        <type full="\InvalidArgumentException" namespace="" name="InvalidArgumentException"/>
+      </throws>
+      <return type="object">
+        <type full="\GrahamCampbell\Manager\ConnectorInterface" namespace="\GrahamCampbell\Manager" name="ConnectorInterface"/>
+      </return>
+    </docblock>
+    <parameter name="config" byreference="false" type="array"/>
+    <parameter name="manager" byreference="false" type="object">
+      <type full="GrahamCampbell\Flysystem\FlysystemManager" namespace="GrahamCampbell\Flysystem" name="FlysystemManager"/>
+    </parameter>
+  </method>
+  <method name="getCache" start="90" end="93" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Get the cache factory instance."/>
+      <codecoverageignore/>
+      <return type="object">
+        <type full="\Illuminate\Contracts\Cache\Factory" namespace="\Illuminate\Contracts\Cache" name="Factory"/>
+      </return>
+    </docblock>
+  </method>
+</class>

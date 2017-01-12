@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="SebastianBergmann\Diff\LCS\TimeEfficientImplementation" namespace="SebastianBergmann\Diff\LCS" name="TimeEfficientImplementation" abstract="false" final="false" start="16" end="73">
+  <file path="/home/web/example/src/freegame_developer/vendor/sebastian/diff/src/LCS" file="TimeEfficientLongestCommonSubsequenceImplementation.php" realpath="/home/web/example/src/freegame_developer/vendor/sebastian/diff/src/LCS/TimeEfficientLongestCommonSubsequenceImplementation.php" size="1948" time="2015-12-08T07:14:41+00:00" unixtime="1449558881" sha1="333d36c15406daa344d5e61ee413d6ed0124981e" relative="freegame_developer/vendor/sebastian/diff/src/LCS/TimeEfficientLongestCommonSubsequenceImplementation.php"/>
+  <docblock>
+    <description compact="Time-efficient implementation of longest common subsequence calculation."/>
+  </docblock>
+  <implements full="SebastianBergmann\Diff\LCS\LongestCommonSubsequence" namespace="SebastianBergmann\Diff\LCS" name="LongestCommonSubsequence"/>
+  <method name="calculate" start="26" end="72" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Calculates the longest common subsequence of two arrays."/>
+      <param type="array" variable="$from"/>
+      <param type="array" variable="$to"/>
+      <return type="array"/>
+    </docblock>
+    <parameter name="from" byreference="false" type="array"/>
+    <parameter name="to" byreference="false" type="array"/>
+  </method>
+</class>

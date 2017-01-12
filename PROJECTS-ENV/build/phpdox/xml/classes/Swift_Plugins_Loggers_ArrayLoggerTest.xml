@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="Swift_Plugins_Loggers_ArrayLoggerTest" namespace="" name="Swift_Plugins_Loggers_ArrayLoggerTest" abstract="false" final="false" start="3" end="65">
+  <file path="/home/web/example/src/freegame_developer/vendor/swiftmailer/swiftmailer/tests/unit/Swift/Plugins/Loggers" file="ArrayLoggerTest.php" realpath="/home/web/example/src/freegame_developer/vendor/swiftmailer/swiftmailer/tests/unit/Swift/Plugins/Loggers/ArrayLoggerTest.php" size="1919" time="2016-07-08T11:51:25+00:00" unixtime="1467978685" sha1="802282f4d925bbbcc1aa72dd49b799e10cbd6c74" relative="freegame_developer/vendor/swiftmailer/swiftmailer/tests/unit/Swift/Plugins/Loggers/ArrayLoggerTest.php"/>
+  <extends full="PHPUnit_Framework_TestCase" namespace="" name="PHPUnit_Framework_TestCase"/>
+  <method name="testAddingSingleEntryDumpsSingleLine" start="5" end="10" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testAddingMultipleEntriesDumpsMultipleLines" start="12" end="27" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testLogCanBeCleared" start="29" end="48" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testLengthCanBeTruncated" start="50" end="64" abstract="false" final="false" static="false" visibility="public"/>
+</class>

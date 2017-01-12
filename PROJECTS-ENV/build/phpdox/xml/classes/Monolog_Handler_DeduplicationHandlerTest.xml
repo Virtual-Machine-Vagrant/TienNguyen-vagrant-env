@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="Monolog\Handler\DeduplicationHandlerTest" namespace="Monolog\Handler" name="DeduplicationHandlerTest" abstract="false" final="false" start="17" end="165">
+  <file path="/home/web/example/src/freegame_developer/vendor/monolog/monolog/tests/Monolog/Handler" file="DeduplicationHandlerTest.php" realpath="/home/web/example/src/freegame_developer/vendor/monolog/monolog/tests/Monolog/Handler/DeduplicationHandlerTest.php" size="6134" time="2016-07-29T03:23:52+00:00" unixtime="1469762632" sha1="24d96afb0ede474ce6bb80888a911f2412438d98" relative="freegame_developer/vendor/monolog/monolog/tests/Monolog/Handler/DeduplicationHandlerTest.php"/>
+  <extends full="Monolog\TestCase" namespace="Monolog" name="TestCase"/>
+  <method name="testFlushPassthruIfAllRecordsUnderTrigger" start="22" end="36" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <covers value="Monolog\Handler\DeduplicationHandler::flush"/>
+    </docblock>
+  </method>
+  <method name="testFlushPassthruIfEmptyLog" start="42" end="56" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <covers value="Monolog\Handler\DeduplicationHandler::flush"/>
+      <covers value="Monolog\Handler\DeduplicationHandler::appendRecord"/>
+    </docblock>
+  </method>
+  <method name="testFlushSkipsIfLogExists" start="64" end="77" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <covers value="Monolog\Handler\DeduplicationHandler::flush"/>
+      <covers value="Monolog\Handler\DeduplicationHandler::appendRecord"/>
+      <covers value="Monolog\Handler\DeduplicationHandler::isDuplicate"/>
+      <depends value="testFlushPassthruIfEmptyLog"/>
+    </docblock>
+  </method>
+  <method name="testFlushPassthruIfLogTooOld" start="85" end="102" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <covers value="Monolog\Handler\DeduplicationHandler::flush"/>
+      <covers value="Monolog\Handler\DeduplicationHandler::appendRecord"/>
+      <covers value="Monolog\Handler\DeduplicationHandler::isDuplicate"/>
+      <depends value="testFlushPassthruIfEmptyLog"/>
+    </docblock>
+  </method>
+  <method name="testGcOldLogs" start="110" end="159" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <covers value="Monolog\Handler\DeduplicationHandler::flush"/>
+      <covers value="Monolog\Handler\DeduplicationHandler::appendRecord"/>
+      <covers value="Monolog\Handler\DeduplicationHandler::isDuplicate"/>
+      <covers value="Monolog\Handler\DeduplicationHandler::collectLogs"/>
+    </docblock>
+    <inline>
+      <comment value="handle two records from yesterday, and one recent" line="116"/>
+      <comment value="log is written as none of them are duplicate" line="127"/>
+      <comment value="clear test handler" line="139"/>
+      <comment value="log new records, duplicate log gets GC'd at the end of this flush call" line="144"/>
+      <comment value="log should now contain the new errors and the previous one that was recent enough" line="149"/>
+    </inline>
+  </method>
+  <method name="tearDownAfterClass" start="161" end="164" abstract="false" final="false" static="true" visibility="public"/>
+</class>

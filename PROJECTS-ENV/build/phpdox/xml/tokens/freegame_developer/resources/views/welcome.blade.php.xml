@@ -1,0 +1,137 @@
+<?xml version="1.0"?>
+<source xmlns="http://xml.phpdox.net/token">
+  <file xmlns="http://xml.phpdox.net/src" path="/home/web/example/src/freegame_developer/resources/views" file="welcome.blade.php" realpath="/home/web/example/src/freegame_developer/resources/views/welcome.blade.php" size="1165" time="2016-10-31T07:00:31+00:00" unixtime="1477897231" sha1="deaa5d4d18d54c3936348800617bba1c21c56a5d" relative="freegame_developer/resources/views/welcome.blade.php"/>
+  <line no="1">
+    <token name="T_INLINE_HTML">&lt;html&gt;</token>
+  </line>
+  <line no="2">
+    <token name="T_INLINE_HTML">    &lt;head&gt;</token>
+  </line>
+  <line no="3">
+    <token name="T_INLINE_HTML">        &lt;title&gt;Laravel&lt;/title&gt;</token>
+  </line>
+  <line no="4"/>
+  <line no="5">
+    <token name="T_INLINE_HTML">        &lt;link href='//fonts.googleapis.com/css?family=Lato:100' rel='stylesheet' type='text/css'&gt;</token>
+  </line>
+  <line no="6"/>
+  <line no="7">
+    <token name="T_INLINE_HTML">        &lt;style&gt;</token>
+  </line>
+  <line no="8">
+    <token name="T_INLINE_HTML">            body {</token>
+  </line>
+  <line no="9">
+    <token name="T_INLINE_HTML">                margin: 0;</token>
+  </line>
+  <line no="10">
+    <token name="T_INLINE_HTML">                padding: 0;</token>
+  </line>
+  <line no="11">
+    <token name="T_INLINE_HTML">                width: 100%;</token>
+  </line>
+  <line no="12">
+    <token name="T_INLINE_HTML">                height: 100%;</token>
+  </line>
+  <line no="13">
+    <token name="T_INLINE_HTML">                color: #B0BEC5;</token>
+  </line>
+  <line no="14">
+    <token name="T_INLINE_HTML">                display: table;</token>
+  </line>
+  <line no="15">
+    <token name="T_INLINE_HTML">                font-weight: 100;</token>
+  </line>
+  <line no="16">
+    <token name="T_INLINE_HTML">                font-family: 'Lato';</token>
+  </line>
+  <line no="17">
+    <token name="T_INLINE_HTML">            }</token>
+  </line>
+  <line no="18"/>
+  <line no="19">
+    <token name="T_INLINE_HTML">            .container {</token>
+  </line>
+  <line no="20">
+    <token name="T_INLINE_HTML">                text-align: center;</token>
+  </line>
+  <line no="21">
+    <token name="T_INLINE_HTML">                display: table-cell;</token>
+  </line>
+  <line no="22">
+    <token name="T_INLINE_HTML">                vertical-align: middle;</token>
+  </line>
+  <line no="23">
+    <token name="T_INLINE_HTML">            }</token>
+  </line>
+  <line no="24"/>
+  <line no="25">
+    <token name="T_INLINE_HTML">            .content {</token>
+  </line>
+  <line no="26">
+    <token name="T_INLINE_HTML">                text-align: center;</token>
+  </line>
+  <line no="27">
+    <token name="T_INLINE_HTML">                display: inline-block;</token>
+  </line>
+  <line no="28">
+    <token name="T_INLINE_HTML">            }</token>
+  </line>
+  <line no="29"/>
+  <line no="30">
+    <token name="T_INLINE_HTML">            .title {</token>
+  </line>
+  <line no="31">
+    <token name="T_INLINE_HTML">                font-size: 96px;</token>
+  </line>
+  <line no="32">
+    <token name="T_INLINE_HTML">                margin-bottom: 40px;</token>
+  </line>
+  <line no="33">
+    <token name="T_INLINE_HTML">            }</token>
+  </line>
+  <line no="34"/>
+  <line no="35">
+    <token name="T_INLINE_HTML">            .quote {</token>
+  </line>
+  <line no="36">
+    <token name="T_INLINE_HTML">                font-size: 24px;</token>
+  </line>
+  <line no="37">
+    <token name="T_INLINE_HTML">            }</token>
+  </line>
+  <line no="38">
+    <token name="T_INLINE_HTML">        &lt;/style&gt;</token>
+  </line>
+  <line no="39">
+    <token name="T_INLINE_HTML">    &lt;/head&gt;</token>
+  </line>
+  <line no="40">
+    <token name="T_INLINE_HTML">    &lt;body&gt;</token>
+  </line>
+  <line no="41">
+    <token name="T_INLINE_HTML">        &lt;div class="container"&gt;</token>
+  </line>
+  <line no="42">
+    <token name="T_INLINE_HTML">            &lt;div class="content"&gt;</token>
+  </line>
+  <line no="43">
+    <token name="T_INLINE_HTML">                &lt;div class="title"&gt;Laravel 5&lt;/div&gt;</token>
+  </line>
+  <line no="44">
+    <token name="T_INLINE_HTML">                &lt;div class="quote"&gt;{{ Inspiring::quote() }}&lt;/div&gt;</token>
+  </line>
+  <line no="45">
+    <token name="T_INLINE_HTML">            &lt;/div&gt;</token>
+  </line>
+  <line no="46">
+    <token name="T_INLINE_HTML">        &lt;/div&gt;</token>
+  </line>
+  <line no="47">
+    <token name="T_INLINE_HTML">    &lt;/body&gt;</token>
+  </line>
+  <line no="48">
+    <token name="T_INLINE_HTML">&lt;/html&gt;</token>
+  </line>
+  <line no="49"/>
+</source>

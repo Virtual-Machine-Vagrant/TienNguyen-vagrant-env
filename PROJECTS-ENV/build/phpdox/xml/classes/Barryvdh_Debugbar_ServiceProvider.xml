@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="Barryvdh\Debugbar\ServiceProvider" namespace="Barryvdh\Debugbar" name="ServiceProvider" abstract="false" final="false" start="6" end="174">
+  <file path="/home/web/example/src/freegame_developer/vendor/barryvdh/laravel-debugbar/src" file="ServiceProvider.php" realpath="/home/web/example/src/freegame_developer/vendor/barryvdh/laravel-debugbar/src/ServiceProvider.php" size="4454" time="2016-09-15T14:05:56+00:00" unixtime="1473948356" sha1="674bb96cbb3f0ac7dbe135114a7f0ed96c60811c" relative="freegame_developer/vendor/barryvdh/laravel-debugbar/src/ServiceProvider.php"/>
+  <extends full="Illuminate\Support\ServiceProvider" namespace="Illuminate\Support" name="ServiceProvider"/>
+  <member name="defer" type="boolean" default="false" visibility="protected" static="false" line="13">
+    <docblock>
+      <description compact="Indicates if loading of the provider is deferred."/>
+      <var type="object">
+        <type full="Barryvdh\Debugbar\bool" namespace="Barryvdh\Debugbar" name="bool"/>
+      </var>
+    </docblock>
+  </member>
+  <method name="register" start="20" end="52" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Register the service provider."/>
+      <return type="object">
+        <type full="Barryvdh\Debugbar\void" namespace="Barryvdh\Debugbar" name="void"/>
+      </return>
+    </docblock>
+  </method>
+  <method name="boot" start="59" end="114" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Bootstrap the application events."/>
+      <return type="object">
+        <type full="Barryvdh\Debugbar\void" namespace="Barryvdh\Debugbar" name="void"/>
+      </return>
+    </docblock>
+    <inline>
+      <comment value="If enabled is null, set from the app.debug value" line="66"/>
+    </inline>
+  </method>
+  <method name="getRouter" start="121" end="124" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Get the active router."/>
+      <return type="object">
+        <type full="Illuminate\Routing\Router" namespace="Illuminate\Routing" name="Router"/>
+      </return>
+    </docblock>
+  </method>
+  <method name="getConfigPath" start="131" end="134" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Get the config path"/>
+      <return type="string"/>
+    </docblock>
+  </method>
+  <method name="publishConfig" start="141" end="144" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Publish the config file"/>
+      <param type="string" variable="$configPath"/>
+    </docblock>
+    <parameter name="configPath" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="registerMiddleware" start="151" end="155" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Register the Debugbar Middleware"/>
+      <param type="string" variable="$middleware"/>
+    </docblock>
+    <parameter name="middleware" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="checkAppDebug" start="160" end="163" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Check the App Debug status"/>
+    </docblock>
+  </method>
+  <method name="provides" start="170" end="173" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Get the services provided by the provider."/>
+      <return type="array"/>
+    </docblock>
+  </method>
+</class>

@@ -1,0 +1,178 @@
+<?xml version="1.0"?>
+<source xmlns="http://xml.phpdox.net/token">
+  <file xmlns="http://xml.phpdox.net/src" path="/home/web/example/src/freegame_developer/resources/views/Cbt" file="edit.blade.php" realpath="/home/web/example/src/freegame_developer/resources/views/Cbt/edit.blade.php" size="2437" time="2016-12-02T07:23:20+00:00" unixtime="1480663400" sha1="10919830a546be1daf22e0790ceebe31c53c07ba" relative="freegame_developer/resources/views/Cbt/edit.blade.php"/>
+  <line no="1">
+    <token name="T_INLINE_HTML">@extends('layout')</token>
+  </line>
+  <line no="2"/>
+  <line no="3">
+    <token name="T_INLINE_HTML">@section('content')</token>
+  </line>
+  <line no="4"/>
+  <line no="5">
+    <token name="T_INLINE_HTML">&lt;header id="gnavi"&gt;</token>
+  </line>
+  <line no="6">
+    <token name="T_INLINE_HTML">    @include('partials.breadcrumbs', [</token>
+  </line>
+  <line no="7">
+    <token name="T_INLINE_HTML">        'breadcrumbs' =&gt; array_merge(</token>
+  </line>
+  <line no="8">
+    <token name="T_INLINE_HTML">            $formData['menuName'],</token>
+  </line>
+  <line no="9">
+    <token name="T_INLINE_HTML">            [</token>
+  </line>
+  <line no="10">
+    <token name="T_INLINE_HTML">                [$formData['screenName'], 'Cbt.index'],</token>
+  </line>
+  <line no="11">
+    <token name="T_INLINE_HTML">                '&#x7DE8;&#x96C6;'</token>
+  </line>
+  <line no="12">
+    <token name="T_INLINE_HTML">            ]</token>
+  </line>
+  <line no="13">
+    <token name="T_INLINE_HTML">        )</token>
+  </line>
+  <line no="14">
+    <token name="T_INLINE_HTML">    ])</token>
+  </line>
+  <line no="15">
+    <token name="T_INLINE_HTML">    &lt;!-- [#gnavi] --&gt;</token>
+  </line>
+  <line no="16">
+    <token name="T_INLINE_HTML">&lt;/header&gt;</token>
+  </line>
+  <line no="17"/>
+  <line no="18"/>
+  <line no="19">
+    <token name="T_INLINE_HTML">&lt;section&gt;</token>
+  </line>
+  <line no="20">
+    <token name="T_INLINE_HTML">    @include('partials.errormessage', ['errors' =&gt; $errors])</token>
+  </line>
+  <line no="21"/>
+  <line no="22">
+    <token name="T_INLINE_HTML">    &lt;div class="c-area"&gt;</token>
+  </line>
+  <line no="23">
+    <token name="T_INLINE_HTML">        &lt;h2 class="c-headline"&gt;&lt;i class="fa fa-paper-plane"&gt;&lt;/i&gt;CBT&#x30A2;&#x30AB;&#x30A6;&#x30F3;&#x30C8;&#x7DE8;&#x96C6;&lt;/h2&gt;</token>
+  </line>
+  <line no="24">
+    <token name="T_INLINE_HTML">        {!! Form::open(['route' =&gt; ['Cbt.editconfirm'] + $url, 'id' =&gt; 'edit-form']) !!}</token>
+  </line>
+  <line no="25">
+    <token name="T_INLINE_HTML">        {!! Form::hidden('user_id', $id) !!}</token>
+  </line>
+  <line no="26">
+    <token name="T_INLINE_HTML">        &lt;table class="c-table"&gt;</token>
+  </line>
+  <line no="27">
+    <token name="T_INLINE_HTML">            &lt;colgroup&gt;</token>
+  </line>
+  <line no="28">
+    <token name="T_INLINE_HTML">                &lt;col class="col-s"&gt;</token>
+  </line>
+  <line no="29">
+    <token name="T_INLINE_HTML">                &lt;col class="null"&gt;</token>
+  </line>
+  <line no="30">
+    <token name="T_INLINE_HTML">            &lt;/colgroup&gt;</token>
+  </line>
+  <line no="31">
+    <token name="T_INLINE_HTML">            &lt;tbody&gt;</token>
+  </line>
+  <line no="32">
+    <token name="T_INLINE_HTML">                &lt;tr {{ error_class('user_id') }}&gt;</token>
+  </line>
+  <line no="33">
+    <token name="T_INLINE_HTML">                    &lt;th&gt;viewer_id&lt;/th&gt;</token>
+  </line>
+  <line no="34">
+    <token name="T_INLINE_HTML">                    &lt;td&gt;{{ $id }}&lt;/td&gt;</token>
+  </line>
+  <line no="35">
+    <token name="T_INLINE_HTML">                &lt;/tr&gt;</token>
+  </line>
+  <line no="36">
+    <token name="T_INLINE_HTML">                &lt;tr {{ error_class('elected_flg') }}&gt;</token>
+  </line>
+  <line no="37">
+    <token name="T_INLINE_HTML">                    &lt;th&gt;&#x30B9;&#x30C6;&#x30FC;&#x30BF;&#x30B9;&lt;/th&gt;</token>
+  </line>
+  <line no="38">
+    <token name="T_INLINE_HTML">                    &lt;td&gt;</token>
+  </line>
+  <line no="39">
+    <token name="T_INLINE_HTML">                        @foreach ($formData['status'] as $index =&gt; $status)</token>
+  </line>
+  <line no="40">
+    <token name="T_INLINE_HTML">                        &lt;!-- {!! Form::radio('elected_flg', $index, (isset($dataUser['elected_flg']) &amp;&amp; $dataUser['elected_flg']!= '' &amp;&amp; $dataUser['elected_flg'] == $index), ['id' =&gt; "status-$index"]) !!} --&gt;</token>
+  </line>
+  <line no="41">
+    <token name="T_INLINE_HTML">                        &lt;input @if(isset($dataUser['elected_flg']) &amp;&amp; $dataUser['elected_flg'] == $index) checked="checked" @else check="" @endif id="status-{{ $index }}" name="elected_flg" value="{{ $index }}" type="radio"&gt;</token>
+  </line>
+  <line no="42">
+    <token name="T_INLINE_HTML">                        &lt;label for="status-{{ $index }}"&gt;{{ $index }}&#xFF1A;{{ $status }}&lt;/label&gt;</token>
+  </line>
+  <line no="43">
+    <token name="T_INLINE_HTML">                        @endforeach</token>
+  </line>
+  <line no="44">
+    <token name="T_INLINE_HTML">                    &lt;/td&gt;</token>
+  </line>
+  <line no="45">
+    <token name="T_INLINE_HTML">                &lt;/tr&gt;</token>
+  </line>
+  <line no="46">
+    <token name="T_INLINE_HTML">                &lt;tr&gt;</token>
+  </line>
+  <line no="47">
+    <token name="T_INLINE_HTML">                    &lt;th&gt;&#x5FDC;&#x52DF;&#x65E5;&#x6642;&lt;/th&gt;</token>
+  </line>
+  <line no="48">
+    <token name="T_INLINE_HTML">                    &lt;td&gt;{{ date('Y/m/d', strtotime($dataUser['regist_date'])) }}&lt;/td&gt;</token>
+  </line>
+  <line no="49">
+    <token name="T_INLINE_HTML">                &lt;/tr&gt;</token>
+  </line>
+  <line no="50">
+    <token name="T_INLINE_HTML">            &lt;/tbody&gt;</token>
+  </line>
+  <line no="51">
+    <token name="T_INLINE_HTML">            &lt;!-- /.c-table --&gt;</token>
+  </line>
+  <line no="52">
+    <token name="T_INLINE_HTML">        &lt;/table&gt;</token>
+  </line>
+  <line no="53">
+    <token name="T_INLINE_HTML">        &lt;div class="center"&gt;</token>
+  </line>
+  <line no="54">
+    <token name="T_INLINE_HTML">            &lt;a href="{{ URL::route('Cbt.index', $url) }}" class="button is-medium"&gt;&lt;i class="fa fa-reply"&gt;&lt;/i&gt;&#x623B;&#x308B;&lt;/a&gt;</token>
+  </line>
+  <line no="55">
+    <token name="T_INLINE_HTML">            &lt;a href="javascript:void(0);" data-form="edit-form" class="button is-warning is-medium submit-button"&gt;&lt;i class="fa fa-check"&gt;&lt;/i&gt;&#x78BA;&#x8A8D;&lt;/a&gt;</token>
+  </line>
+  <line no="56">
+    <token name="T_INLINE_HTML">        &lt;/div&gt;</token>
+  </line>
+  <line no="57">
+    <token name="T_INLINE_HTML">        {!! Form::close() !!}</token>
+  </line>
+  <line no="58">
+    <token name="T_INLINE_HTML">        &lt;!-- /.c-area --&gt;</token>
+  </line>
+  <line no="59">
+    <token name="T_INLINE_HTML">    &lt;/div&gt;</token>
+  </line>
+  <line no="60">
+    <token name="T_INLINE_HTML">&lt;/section&gt;</token>
+  </line>
+  <line no="61">
+    <token name="T_INLINE_HTML">@endsection</token>
+  </line>
+  <line no="62"/>
+</source>

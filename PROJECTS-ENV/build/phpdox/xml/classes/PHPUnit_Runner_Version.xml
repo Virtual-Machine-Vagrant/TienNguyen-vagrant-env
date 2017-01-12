@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="PHPUnit_Runner_Version" namespace="" name="PHPUnit_Runner_Version" abstract="false" final="false" start="16" end="81">
+  <file path="/home/web/example/src/freegame_developer/vendor/phpunit/phpunit/src/Runner" file="Version.php" realpath="/home/web/example/src/freegame_developer/vendor/phpunit/phpunit/src/Runner/Version.php" size="1798" time="2016-02-11T14:56:33+00:00" unixtime="1455202593" sha1="b872c42c163c7895b7e0c772621475b6ea30c8b5" relative="freegame_developer/vendor/phpunit/phpunit/src/Runner/Version.php"/>
+  <docblock>
+    <description compact="This class defines the current version of PHPUnit."/>
+    <since value="Class available since Release 2.0.0"/>
+  </docblock>
+  <member name="pharVersion" visibility="private" static="true" line="18"/>
+  <member name="version" visibility="private" static="true" line="19"/>
+  <method name="id" start="26" end="38" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description compact="Returns the current version of PHPUnit."/>
+      <return type="string"/>
+    </docblock>
+  </method>
+  <method name="series" start="45" end="54" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description/>
+      <return type="string"/>
+      <since value="Method available since Release 4.8.13"/>
+    </docblock>
+  </method>
+  <method name="getVersionString" start="59" end="62" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description/>
+      <return type="string"/>
+    </docblock>
+  </method>
+  <method name="getReleaseChannel" start="69" end="80" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description/>
+      <return type="string"/>
+      <since value="Method available since Release 4.0.0"/>
+    </docblock>
+  </method>
+</class>

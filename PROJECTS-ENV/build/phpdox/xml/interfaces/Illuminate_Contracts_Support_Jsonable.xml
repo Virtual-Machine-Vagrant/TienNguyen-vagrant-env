@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface xmlns="http://xml.phpdox.net/src" full="Illuminate\Contracts\Support\Jsonable" namespace="Illuminate\Contracts\Support" name="Jsonable" abstract="false" final="false" start="5" end="14">
+  <file path="/home/web/example/src/freegame_developer/vendor/laravel/framework/src/Illuminate/Contracts/Support" file="Jsonable.php" realpath="/home/web/example/src/freegame_developer/vendor/laravel/framework/src/Illuminate/Contracts/Support/Jsonable.php" size="241" time="2016-02-24T15:13:21+00:00" unixtime="1456326801" sha1="890fb5e371ac754a9fccea6dd640cd53524ea01c" relative="freegame_developer/vendor/laravel/framework/src/Illuminate/Contracts/Support/Jsonable.php"/>
+  <method name="toJson" start="13" end="13" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Convert the object to its JSON representation."/>
+      <param type="int" variable="$options"/>
+      <return type="string"/>
+    </docblock>
+    <parameter name="options" byreference="false" type="integer" default="0"/>
+  </method>
+</interface>

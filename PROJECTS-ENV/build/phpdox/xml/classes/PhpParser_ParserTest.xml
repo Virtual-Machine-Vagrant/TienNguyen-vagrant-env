@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="PhpParser\ParserTest" namespace="PhpParser" name="ParserTest" abstract="true" final="false" start="10" end="163">
+  <file path="/home/web/example/src/freegame_developer/vendor/nikic/php-parser/test/PhpParser" file="ParserTest.php" realpath="/home/web/example/src/freegame_developer/vendor/nikic/php-parser/test/PhpParser/ParserTest.php" size="6667" time="2016-09-16T12:04:44+00:00" unixtime="1474027484" sha1="aa9ee26fc3e4d468881ed6dfc6a9c1f8b53408d4" relative="freegame_developer/vendor/nikic/php-parser/test/PhpParser/ParserTest.php"/>
+  <extends full="PHPUnit_Framework_TestCase" namespace="" name="PHPUnit_Framework_TestCase"/>
+  <method name="getParser" start="13" end="13" abstract="true" final="false" static="false" visibility="protected">
+    <docblock>
+      <returns value="Parser"/>
+    </docblock>
+    <parameter name="lexer" byreference="false" type="object">
+      <type full="PhpParser\Lexer" namespace="PhpParser" name="Lexer"/>
+    </parameter>
+  </method>
+  <method name="testParserThrowsSyntaxError" start="19" end="22" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <expectedexception value="\PhpParser\Error"/>
+      <expectedexceptionmessage value="Syntax error, unexpected EOF on line 1"/>
+    </docblock>
+  </method>
+  <method name="testParserThrowsSpecialError" start="28" end="31" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <expectedexception value="\PhpParser\Error"/>
+      <expectedexceptionmessage value="Cannot use foo as self because 'self' is a special class name on line 1"/>
+    </docblock>
+  </method>
+  <method name="testAttributeAssignment" start="33" end="100" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testInvalidToken" start="106" end="110" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <expectedexception value="\RangeException"/>
+      <expectedexceptionmessage value="The lexer returned an invalid token (id=999, value=foobar)"/>
+    </docblock>
+  </method>
+  <method name="testKindAttributes" start="115" end="122" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <dataprovider value="provideTestKindAttributes"/>
+    </docblock>
+    <parameter name="code" byreference="false" type="{unknown}"/>
+    <parameter name="expectedAttributes" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="provideTestKindAttributes" start="124" end="162" abstract="false" final="false" static="false" visibility="public"/>
+</class>

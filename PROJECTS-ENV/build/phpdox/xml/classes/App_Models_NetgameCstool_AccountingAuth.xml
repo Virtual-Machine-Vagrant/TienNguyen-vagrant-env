@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="App\Models\NetgameCstool\AccountingAuth" namespace="App\Models\NetgameCstool" name="AccountingAuth" abstract="false" final="false" start="5" end="47">
+  <file path="/home/web/example/src/freegame_developer/app/Models/NetgameCstool" file="AccountingAuth.php" realpath="/home/web/example/src/freegame_developer/app/Models/NetgameCstool/AccountingAuth.php" size="890" time="2016-11-16T01:52:54+00:00" unixtime="1479261174" sha1="fce3511d9c5f5652c49cdbbc16ffd463c5e7693c" relative="freegame_developer/app/Models/NetgameCstool/AccountingAuth.php"/>
+  <extends full="App\Models\NetgameCstool\NetgameCstool" namespace="App\Models\NetgameCstool" name="NetgameCstool"/>
+  <member name="table" type="string" default="'accounting_auth'" visibility="protected" static="false" line="7"/>
+  <member name="timestamps" type="boolean" default="false" visibility="public" static="false" line="8"/>
+  <method name="getByAccountId" start="14" end="19" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Get by account_id"/>
+      <return type="object"/>
+    </docblock>
+    <parameter name="accountId" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="add" start="27" end="33" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Insert"/>
+      <param type="array" variable="$params"/>
+      <return type="boolean"/>
+    </docblock>
+    <parameter name="params" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="edit" start="42" end="46" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Edit"/>
+      <param type="array" variable="$conditions"/>
+      <param type="array" variable="$params"/>
+      <return type="boolean"/>
+    </docblock>
+    <parameter name="conditions" byreference="false" type="{unknown}"/>
+    <parameter name="params" byreference="false" type="{unknown}"/>
+  </method>
+</class>

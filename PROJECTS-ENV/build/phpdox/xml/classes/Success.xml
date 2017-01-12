@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="Success" namespace="" name="Success" abstract="false" final="false" start="2" end="7">
+  <file path="/home/web/example/src/freegame_developer/vendor/phpunit/phpunit/tests/_files" file="Success.php" realpath="/home/web/example/src/freegame_developer/vendor/phpunit/phpunit/tests/_files/Success.php" size="104" time="2016-02-11T14:56:33+00:00" unixtime="1455202593" sha1="4af83770520a6a67e95d225acf2ae211306c928a" relative="freegame_developer/vendor/phpunit/phpunit/tests/_files/Success.php"/>
+  <extends full="PHPUnit_Framework_TestCase" namespace="" name="PHPUnit_Framework_TestCase"/>
+  <method name="runTest" start="4" end="6" abstract="false" final="false" static="false" visibility="protected"/>
+</class>

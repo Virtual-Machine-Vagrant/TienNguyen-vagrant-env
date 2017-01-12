@@ -1,0 +1,360 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="League\Flysystem\Sftp\SftpAdapter" namespace="League\Flysystem\Sftp" name="SftpAdapter" abstract="false" final="false" start="17" end="575">
+  <file path="/home/web/example/src/freegame_developer/vendor/league/flysystem-sftp/src" file="SftpAdapter.php" realpath="/home/web/example/src/freegame_developer/vendor/league/flysystem-sftp/src/SftpAdapter.php" size="12846" time="2016-10-17T23:19:19+00:00" unixtime="1476746359" sha1="203ffa5fdd377d01f9dcae0f82abb130514ef95b" relative="freegame_developer/vendor/league/flysystem-sftp/src/SftpAdapter.php"/>
+  <extends full="League\Flysystem\Adapter\AbstractFtpAdapter" namespace="League\Flysystem\Adapter" name="AbstractFtpAdapter"/>
+  <uses full="League\Flysystem\Adapter\Polyfill\StreamedCopyTrait" namespace="League\Flysystem\Adapter\Polyfill" name="StreamedCopyTrait" start="19" end="19"/>
+  <member name="port" type="integer" default="22" visibility="protected" static="false" line="24">
+    <docblock>
+      <description/>
+      <var type="int"/>
+    </docblock>
+  </member>
+  <member name="hostFingerprint" visibility="protected" static="false" line="29">
+    <docblock>
+      <description/>
+      <var type="string"/>
+    </docblock>
+  </member>
+  <member name="privatekey" visibility="protected" static="false" line="34">
+    <docblock>
+      <description/>
+      <var type="string"/>
+    </docblock>
+  </member>
+  <member name="useAgent" type="boolean" default="false" visibility="protected" static="false" line="39">
+    <docblock>
+      <description/>
+      <var type="object">
+        <type full="League\Flysystem\Sftp\bool" namespace="League\Flysystem\Sftp" name="bool"/>
+      </var>
+    </docblock>
+  </member>
+  <member name="agent" visibility="private" static="false" line="44">
+    <docblock>
+      <description/>
+      <var type="object">
+        <type full="phpseclib\System\SSH\Agent" namespace="phpseclib\System\SSH" name="Agent"/>
+      </var>
+    </docblock>
+  </member>
+  <member name="configurable" type="array" default="" visibility="protected" static="false" line="49">
+    <docblock>
+      <description/>
+      <var type="array"/>
+    </docblock>
+  </member>
+  <member name="statMap" type="array" default="" visibility="protected" static="false" line="54">
+    <docblock>
+      <description/>
+      <var type="array"/>
+    </docblock>
+  </member>
+  <member name="directoryPerm" type="integer" default="0744" visibility="protected" static="false" line="59">
+    <docblock>
+      <description/>
+      <var type="int"/>
+    </docblock>
+  </member>
+  <method name="prefix" start="68" end="71" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Prefix a path."/>
+      <param type="string" variable="$path"/>
+      <return type="string"/>
+    </docblock>
+    <parameter name="path" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="setHostFingerprint" start="83" end="88" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Set the finger print of the public key of the host you are connecting to.">If the key does not match the server identification, the connection will
+be aborted.</description>
+      <param description="Example: '88:76:75:96:c1:26:7c:dd:9f:87:50:db:ac:c4:a8:7c'." type="string" variable="$fingerprint"/>
+      <return type="object">
+        <type full="League\Flysystem\Sftp\$this" namespace="League\Flysystem\Sftp" name="$this"/>
+      </return>
+    </docblock>
+    <parameter name="fingerprint" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="setPrivateKey" start="97" end="102" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Set the private key (string or path to local file)."/>
+      <param type="string" variable="$key"/>
+      <return type="object">
+        <type full="League\Flysystem\Sftp\$this" namespace="League\Flysystem\Sftp" name="$this"/>
+      </return>
+    </docblock>
+    <parameter name="key" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="setUseAgent" start="109" end="114" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <param type="boolean" variable="$useAgent"/>
+      <return type="object">
+        <type full="League\Flysystem\Sftp\$this" namespace="League\Flysystem\Sftp" name="$this"/>
+      </return>
+    </docblock>
+    <parameter name="useAgent" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="setAgent" start="121" end="126" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <param type="object" variable="$agent">
+        <type full="phpseclib\System\SSH\Agent" namespace="phpseclib\System\SSH" name="Agent"/>
+      </param>
+      <return type="object">
+        <type full="League\Flysystem\Sftp\$this" namespace="League\Flysystem\Sftp" name="$this"/>
+      </return>
+    </docblock>
+    <parameter name="agent" byreference="false" type="object">
+      <type full="phpseclib\System\SSH\Agent" namespace="phpseclib\System\SSH" name="Agent"/>
+    </parameter>
+  </method>
+  <method name="setDirectoryPerm" start="135" end="140" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Set permissions for new directory"/>
+      <param type="int" variable="$directoryPerm"/>
+      <return type="object">
+        <type full="League\Flysystem\Sftp\$this" namespace="League\Flysystem\Sftp" name="$this"/>
+      </return>
+    </docblock>
+    <parameter name="directoryPerm" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="getDirectoryPerm" start="147" end="150" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Get permissions for new directory"/>
+      <return type="int"/>
+    </docblock>
+  </method>
+  <method name="setNetSftpConnection" start="159" end="164" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Inject the SFTP instance."/>
+      <param type="object" variable="$connection">
+        <type full="phpseclib\Net\SFTP" namespace="phpseclib\Net" name="SFTP"/>
+      </param>
+      <return type="object">
+        <type full="League\Flysystem\Sftp\$this" namespace="League\Flysystem\Sftp" name="$this"/>
+      </return>
+    </docblock>
+    <parameter name="connection" byreference="false" type="object">
+      <type full="phpseclib\Net\SFTP" namespace="phpseclib\Net" name="SFTP"/>
+    </parameter>
+  </method>
+  <method name="connect" start="169" end="174" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Connect."/>
+    </docblock>
+  </method>
+  <method name="login" start="181" end="200" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Login."/>
+      <throws type="object">
+        <type full="LogicException" namespace="" name="LogicException"/>
+      </throws>
+    </docblock>
+  </method>
+  <method name="getHexFingerprintFromSshPublicKey" start="208" end="212" abstract="false" final="false" static="false" visibility="private">
+    <docblock>
+      <description compact="Convert the SSH RSA public key into a hex formatted fingerprint."/>
+      <param type="string" variable="$publickey"/>
+      <return description="Hex formatted fingerprint, e.g. '88:76:75:96:c1:26:7c:dd:9f:87:50:db:ac:c4:a8:7c'." type="string"/>
+    </docblock>
+    <parameter name="publickey" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="setConnectionRoot" start="217" end="229" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Set the connection root."/>
+    </docblock>
+  </method>
+  <method name="getAuthentication" start="236" end="247" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Get the password, either the private key or a plain text password."/>
+      <return type="object">
+        <type full="League\Flysystem\Sftp\Agent|RSA|string" namespace="League\Flysystem\Sftp" name="Agent|RSA|string"/>
+      </return>
+    </docblock>
+  </method>
+  <method name="getPrivateKey" start="254" end="269" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Get the private get with the password or private key contents."/>
+      <return type="object">
+        <type full="phpseclib\Crypt\RSA" namespace="phpseclib\Crypt" name="RSA"/>
+      </return>
+    </docblock>
+  </method>
+  <method name="getAgent" start="274" end="281" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <return type="object">
+        <type full="League\Flysystem\Sftp\Agent|bool" namespace="League\Flysystem\Sftp" name="Agent|bool"/>
+      </return>
+    </docblock>
+  </method>
+  <method name="listDirectoryContents" start="291" end="316" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="List the contents of a directory."/>
+      <param type="string" variable="$directory"/>
+      <param type="object" variable="$recursive">
+        <type full="League\Flysystem\Sftp\bool" namespace="League\Flysystem\Sftp" name="bool"/>
+      </param>
+      <return type="array"/>
+    </docblock>
+    <parameter name="directory" byreference="false" type="{unknown}"/>
+    <parameter name="recursive" byreference="false" type="boolean" default="true"/>
+  </method>
+  <method name="normalizeListingObject" start="326" end="340" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Normalize a listing response."/>
+      <param type="string" variable="$path"/>
+      <param type="array" variable="$object"/>
+      <return type="array"/>
+    </docblock>
+    <parameter name="path" byreference="false" type="{unknown}"/>
+    <parameter name="object" byreference="false" type="array"/>
+  </method>
+  <method name="disconnect" start="345" end="348" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Disconnect."/>
+    </docblock>
+  </method>
+  <method name="write" start="353" end="360" abstract="false" final="false" static="false" visibility="public">
+    <docblock inherit="true">
+      <description/>
+    </docblock>
+    <parameter name="path" byreference="false" type="{unknown}"/>
+    <parameter name="contents" byreference="false" type="{unknown}"/>
+    <parameter name="config" byreference="false" type="object">
+      <type full="League\Flysystem\Config" namespace="League\Flysystem" name="Config"/>
+    </parameter>
+  </method>
+  <method name="writeStream" start="365" end="372" abstract="false" final="false" static="false" visibility="public">
+    <docblock inherit="true">
+      <description/>
+    </docblock>
+    <parameter name="path" byreference="false" type="{unknown}"/>
+    <parameter name="resource" byreference="false" type="{unknown}"/>
+    <parameter name="config" byreference="false" type="object">
+      <type full="League\Flysystem\Config" namespace="League\Flysystem" name="Config"/>
+    </parameter>
+  </method>
+  <method name="upload" start="382" end="397" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Upload a file."/>
+      <param type="string" variable="$path"/>
+      <param type="object" variable="$contents">
+        <type full="League\Flysystem\Sftp\string|resource" namespace="League\Flysystem\Sftp" name="string|resource"/>
+      </param>
+      <param type="object" variable="$config">
+        <type full="League\Flysystem\Config" namespace="League\Flysystem" name="Config"/>
+      </param>
+      <return type="object">
+        <type full="League\Flysystem\Sftp\bool" namespace="League\Flysystem\Sftp" name="bool"/>
+      </return>
+    </docblock>
+    <parameter name="path" byreference="false" type="{unknown}"/>
+    <parameter name="contents" byreference="false" type="{unknown}"/>
+    <parameter name="config" byreference="false" type="object">
+      <type full="League\Flysystem\Config" namespace="League\Flysystem" name="Config"/>
+    </parameter>
+  </method>
+  <method name="read" start="402" end="411" abstract="false" final="false" static="false" visibility="public">
+    <docblock inherit="true">
+      <description/>
+    </docblock>
+    <parameter name="path" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="readStream" start="416" end="429" abstract="false" final="false" static="false" visibility="public">
+    <docblock inherit="true">
+      <description/>
+    </docblock>
+    <parameter name="path" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="update" start="434" end="437" abstract="false" final="false" static="false" visibility="public">
+    <docblock inherit="true">
+      <description/>
+    </docblock>
+    <parameter name="path" byreference="false" type="{unknown}"/>
+    <parameter name="contents" byreference="false" type="{unknown}"/>
+    <parameter name="config" byreference="false" type="object">
+      <type full="League\Flysystem\Config" namespace="League\Flysystem" name="Config"/>
+    </parameter>
+  </method>
+  <method name="updateStream" start="442" end="445" abstract="false" final="false" static="false" visibility="public">
+    <docblock inherit="true">
+      <description/>
+    </docblock>
+    <parameter name="path" byreference="false" type="{unknown}"/>
+    <parameter name="contents" byreference="false" type="{unknown}"/>
+    <parameter name="config" byreference="false" type="object">
+      <type full="League\Flysystem\Config" namespace="League\Flysystem" name="Config"/>
+    </parameter>
+  </method>
+  <method name="delete" start="450" end="455" abstract="false" final="false" static="false" visibility="public">
+    <docblock inherit="true">
+      <description/>
+    </docblock>
+    <parameter name="path" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="rename" start="460" end="465" abstract="false" final="false" static="false" visibility="public">
+    <docblock inherit="true">
+      <description/>
+    </docblock>
+    <parameter name="path" byreference="false" type="{unknown}"/>
+    <parameter name="newpath" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="deleteDir" start="470" end="475" abstract="false" final="false" static="false" visibility="public">
+    <docblock inherit="true">
+      <description/>
+    </docblock>
+    <parameter name="dirname" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="has" start="480" end="483" abstract="false" final="false" static="false" visibility="public">
+    <docblock inherit="true">
+      <description/>
+    </docblock>
+    <parameter name="path" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="getMetadata" start="488" end="502" abstract="false" final="false" static="false" visibility="public">
+    <docblock inherit="true">
+      <description/>
+    </docblock>
+    <parameter name="path" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="getTimestamp" start="507" end="510" abstract="false" final="false" static="false" visibility="public">
+    <docblock inherit="true">
+      <description/>
+    </docblock>
+    <parameter name="path" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="getMimetype" start="515" end="524" abstract="false" final="false" static="false" visibility="public">
+    <docblock inherit="true">
+      <description/>
+    </docblock>
+    <parameter name="path" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="createDir" start="529" end="538" abstract="false" final="false" static="false" visibility="public">
+    <docblock inherit="true">
+      <description/>
+    </docblock>
+    <parameter name="dirname" byreference="false" type="{unknown}"/>
+    <parameter name="config" byreference="false" type="object">
+      <type full="League\Flysystem\Config" namespace="League\Flysystem" name="Config"/>
+    </parameter>
+  </method>
+  <method name="getVisibility" start="543" end="546" abstract="false" final="false" static="false" visibility="public">
+    <docblock inherit="true">
+      <description/>
+    </docblock>
+    <parameter name="path" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="setVisibility" start="551" end="562" abstract="false" final="false" static="false" visibility="public">
+    <docblock inherit="true">
+      <description/>
+    </docblock>
+    <parameter name="path" byreference="false" type="{unknown}"/>
+    <parameter name="visibility" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="isConnected" start="567" end="574" abstract="false" final="false" static="false" visibility="public">
+    <docblock inherit="true">
+      <description/>
+    </docblock>
+  </method>
+</class>

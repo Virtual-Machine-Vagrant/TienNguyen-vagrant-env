@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="DoctrineTest\InstantiatorTestAsset\UnserializeExceptionArrayObjectAsset" namespace="DoctrineTest\InstantiatorTestAsset" name="UnserializeExceptionArrayObjectAsset" abstract="false" final="false" start="30" end="39">
+  <file path="/home/web/example/src/freegame_developer/vendor/doctrine/instantiator/tests/DoctrineTest/InstantiatorTestAsset" file="UnserializeExceptionArrayObjectAsset.php" realpath="/home/web/example/src/freegame_developer/vendor/doctrine/instantiator/tests/DoctrineTest/InstantiatorTestAsset/UnserializeExceptionArrayObjectAsset.php" size="1370" time="2015-06-14T21:17:01+00:00" unixtime="1434316621" sha1="f6bbbd3a3dce61f257fbee6e914a87c39b8e5802" relative="freegame_developer/vendor/doctrine/instantiator/tests/DoctrineTest/InstantiatorTestAsset/UnserializeExceptionArrayObjectAsset.php"/>
+  <docblock>
+    <description compact="A simple asset for an abstract class"/>
+    <author value="Marco Pivetta &lt;ocramius@gmail.com&gt;"/>
+  </docblock>
+  <extends full="ArrayObject" namespace="" name="ArrayObject"/>
+  <method name="__wakeup" start="35" end="38" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="{@inheritDoc}"/>
+    </docblock>
+  </method>
+</class>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="Symfony\Component\HttpFoundation\ServerBag" namespace="Symfony\Component\HttpFoundation" name="ServerBag" abstract="false" final="false" start="21" end="102">
+  <file path="/home/web/example/src/freegame_developer/vendor/symfony/http-foundation" file="ServerBag.php" realpath="/home/web/example/src/freegame_developer/vendor/symfony/http-foundation/ServerBag.php" size="4238" time="2016-10-24T14:36:35+00:00" unixtime="1477319795" sha1="db386e9ae4166813cd4a7b6868c2dc33089cacad" relative="freegame_developer/vendor/symfony/http-foundation/ServerBag.php"/>
+  <docblock>
+    <description compact="ServerBag is a container for HTTP headers from the $_SERVER variable."/>
+    <author value="Fabien Potencier &lt;fabien@symfony.com&gt;"/>
+    <author value="Bulat Shakirzyanov &lt;mallluhuct@gmail.com&gt;"/>
+    <author value="Robert Kiss &lt;kepten@gmail.com&gt;"/>
+  </docblock>
+  <extends full="Symfony\Component\HttpFoundation\ParameterBag" namespace="Symfony\Component\HttpFoundation" name="ParameterBag"/>
+  <method name="getHeaders" start="28" end="101" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Gets the HTTP headers."/>
+      <return type="array"/>
+    </docblock>
+    <inline>
+      <comment value="PHP_AUTH_USER/PHP_AUTH_PW" line="93"/>
+    </inline>
+  </method>
+</class>

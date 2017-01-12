@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="App\Models\ClientgameSearch\Faq" namespace="App\Models\ClientgameSearch" name="Faq" abstract="false" final="false" start="7" end="55">
+  <file path="/home/web/example/src/freegame_developer/app/Models/ClientgameSearch" file="Faq.php" realpath="/home/web/example/src/freegame_developer/app/Models/ClientgameSearch/Faq.php" size="1007" time="2016-12-06T02:39:57+00:00" unixtime="1480991997" sha1="e1e1e8042c577d9ee7996c29319bf34eb2ec1692" relative="freegame_developer/app/Models/ClientgameSearch/Faq.php"/>
+  <extends full="App\Models\ClientgameSearch\ClientgameSearch" namespace="App\Models\ClientgameSearch" name="ClientgameSearch"/>
+  <member name="table" type="string" default="'faq'" visibility="protected" static="false" line="9"/>
+  <member name="timestamps" type="boolean" default="false" visibility="public" static="false" line="11"/>
+  <member name="guarded" type="array" default="" visibility="protected" static="false" line="13"/>
+  <method name="add" start="19" end="29" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="insert faq"/>
+      <param type="boolean"/>
+    </docblock>
+    <parameter name="params" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="edit" start="35" end="44" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="update faq"/>
+      <param type="boolean"/>
+    </docblock>
+    <parameter name="params" byreference="false" type="{unknown}"/>
+    <parameter name="conditions" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="remove" start="51" end="54" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Delete faq"/>
+      <param type="array" variable="$conditions"/>
+      <return type="boolean"/>
+    </docblock>
+    <parameter name="conditions" byreference="false" type="{unknown}"/>
+  </method>
+</class>

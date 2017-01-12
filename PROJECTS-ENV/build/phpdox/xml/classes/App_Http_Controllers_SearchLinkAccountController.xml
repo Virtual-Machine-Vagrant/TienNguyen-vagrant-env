@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="App\Http\Controllers\SearchLinkAccountController" namespace="App\Http\Controllers" name="SearchLinkAccountController" abstract="false" final="false" start="8" end="75">
+  <file path="/home/web/example/src/freegame_developer/app/Http/Controllers" file="SearchLinkAccountController.php" realpath="/home/web/example/src/freegame_developer/app/Http/Controllers/SearchLinkAccountController.php" size="2524" time="2016-12-02T07:23:20+00:00" unixtime="1480663400" sha1="1324684297907b33ae94e732062bbd1fa50b37a6" relative="freegame_developer/app/Http/Controllers/SearchLinkAccountController.php"/>
+  <extends full="App\Http\Controllers\Controller" namespace="App\Http\Controllers" name="Controller"/>
+  <member name="searchLinkAccountService" visibility="protected" static="false" line="10"/>
+  <constructor name="__construct" start="12" end="22" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="searchLinkAccountService" byreference="false" type="object">
+      <type full="App\Services\SearchLinkAccountService" namespace="App\Services" name="SearchLinkAccountService"/>
+    </parameter>
+  </constructor>
+  <method name="index" start="29" end="63" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Display a listing of the resource."/>
+      <param type="object" variable="$request">
+        <type full="App\Http\Requests\SearchLinkAccountRequest" namespace="App\Http\Requests" name="SearchLinkAccountRequest"/>
+      </param>
+      <return type="object">
+        <type full="App\Http\Controllers\Response" namespace="App\Http\Controllers" name="Response"/>
+      </return>
+    </docblock>
+    <parameter name="request" byreference="false" type="object">
+      <type full="App\Http\Requests\SearchLinkAccountRequest" namespace="App\Http\Requests" name="SearchLinkAccountRequest"/>
+    </parameter>
+  </method>
+  <method name="reset" start="69" end="74" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Reset search form"/>
+      <return type="object">
+        <type full="App\Http\Controllers\view" namespace="App\Http\Controllers" name="view"/>
+      </return>
+    </docblock>
+  </method>
+</class>

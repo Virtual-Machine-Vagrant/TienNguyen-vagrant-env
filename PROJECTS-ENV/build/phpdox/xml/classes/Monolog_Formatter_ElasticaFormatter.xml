@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="Monolog\Formatter\ElasticaFormatter" namespace="Monolog\Formatter" name="ElasticaFormatter" abstract="false" final="false" start="21" end="89">
+  <file path="/home/web/example/src/freegame_developer/vendor/monolog/monolog/src/Monolog/Formatter" file="ElasticaFormatter.php" realpath="/home/web/example/src/freegame_developer/vendor/monolog/monolog/src/Monolog/Formatter/ElasticaFormatter.php" size="1837" time="2016-07-29T03:23:52+00:00" unixtime="1469762632" sha1="6221927f4d4a8a14d52f2fbb174de8718f368136" relative="freegame_developer/vendor/monolog/monolog/src/Monolog/Formatter/ElasticaFormatter.php"/>
+  <docblock>
+    <description compact="Format a log message into an Elastica Document"/>
+    <author value="Jelle Vink &lt;jelle.vink@gmail.com&gt;"/>
+  </docblock>
+  <extends full="Monolog\Formatter\NormalizerFormatter" namespace="Monolog\Formatter" name="NormalizerFormatter"/>
+  <member name="index" visibility="protected" static="false" line="26">
+    <docblock>
+      <description/>
+      <var description="Elastic search index name" type="string"/>
+    </docblock>
+  </member>
+  <member name="type" visibility="protected" static="false" line="31">
+    <docblock>
+      <description/>
+      <var description="Elastic search document type" type="string"/>
+    </docblock>
+  </member>
+  <constructor name="__construct" start="37" end="44" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <param description="Elastic Search index name" type="string" variable="$index"/>
+      <param description="Elastic Search document type" type="string" variable="$type"/>
+    </docblock>
+    <parameter name="index" byreference="false" type="{unknown}"/>
+    <parameter name="type" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="elasticsearch requires a ISO 8601 format date with optional millisecond precision." line="39"/>
+    </inline>
+  </constructor>
+  <method name="format" start="49" end="54" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="{@inheritdoc}"/>
+    </docblock>
+    <parameter name="record" byreference="false" type="array"/>
+  </method>
+  <method name="getIndex" start="60" end="63" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Getter index"/>
+      <return type="string"/>
+    </docblock>
+  </method>
+  <method name="getType" start="69" end="72" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Getter type"/>
+      <return type="string"/>
+    </docblock>
+  </method>
+  <method name="getDocument" start="80" end="88" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Convert a log message into an Elastica Document"/>
+      <param description="Log message" type="array" variable="$record"/>
+      <return type="object">
+        <type full="Elastica\Document" namespace="Elastica" name="Document"/>
+      </return>
+    </docblock>
+    <parameter name="record" byreference="false" type="{unknown}"/>
+  </method>
+</class>

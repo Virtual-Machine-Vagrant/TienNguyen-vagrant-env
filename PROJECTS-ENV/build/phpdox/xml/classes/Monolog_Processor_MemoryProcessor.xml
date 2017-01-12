@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="Monolog\Processor\MemoryProcessor" namespace="Monolog\Processor" name="MemoryProcessor" abstract="true" final="false" start="19" end="63">
+  <file path="/home/web/example/src/freegame_developer/vendor/monolog/monolog/src/Monolog/Processor" file="MemoryProcessor.php" realpath="/home/web/example/src/freegame_developer/vendor/monolog/monolog/src/Monolog/Processor/MemoryProcessor.php" size="1809" time="2016-07-29T03:23:52+00:00" unixtime="1469762632" sha1="63c0fcfa446a044cc0014647714ba6b12bc271df" relative="freegame_developer/vendor/monolog/monolog/src/Monolog/Processor/MemoryProcessor.php"/>
+  <docblock>
+    <description compact="Some methods that are common for all memory processors"/>
+    <author value="Rob Jensen"/>
+  </docblock>
+  <member name="realUsage" visibility="protected" static="false" line="24">
+    <docblock>
+      <description/>
+      <var description="If true, get the real size of memory allocated from system. Else, only the memory used by emalloc() is reported." type="object">
+        <type full="Monolog\Processor\bool" namespace="Monolog\Processor" name="bool"/>
+      </var>
+    </docblock>
+  </member>
+  <member name="useFormatting" visibility="protected" static="false" line="29">
+    <docblock>
+      <description/>
+      <var description="If true, then format memory size to human readable string (MB, KB, B depending on size)" type="object">
+        <type full="Monolog\Processor\bool" namespace="Monolog\Processor" name="bool"/>
+      </var>
+    </docblock>
+  </member>
+  <constructor name="__construct" start="35" end="39" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <param description="Set this to true to get the real size of memory allocated from system." type="object" variable="$realUsage">
+        <type full="Monolog\Processor\bool" namespace="Monolog\Processor" name="bool"/>
+      </param>
+      <param description="If true, then format memory size to human readable string (MB, KB, B depending on size)" type="object" variable="$useFormatting">
+        <type full="Monolog\Processor\bool" namespace="Monolog\Processor" name="bool"/>
+      </param>
+    </docblock>
+    <parameter name="realUsage" byreference="false" type="boolean" default="true"/>
+    <parameter name="useFormatting" byreference="false" type="boolean" default="true"/>
+  </constructor>
+  <method name="formatBytes" start="47" end="62" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Formats bytes into a human readable string if $this-&gt;useFormatting is true, otherwise return $bytes as is"/>
+      <param type="int" variable="$bytes"/>
+      <return description="Formatted string if $this-&gt;useFormatting is true, otherwise return $bytes as is" type="object">
+        <type full="Monolog\Processor\string|int" namespace="Monolog\Processor" name="string|int"/>
+      </return>
+    </docblock>
+    <parameter name="bytes" byreference="false" type="{unknown}"/>
+  </method>
+</class>

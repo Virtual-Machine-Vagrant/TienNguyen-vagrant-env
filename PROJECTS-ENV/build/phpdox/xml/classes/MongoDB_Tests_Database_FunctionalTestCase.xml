@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="MongoDB\Tests\Database\FunctionalTestCase" namespace="MongoDB\Tests\Database" name="FunctionalTestCase" abstract="true" final="false" start="11" end="22">
+  <file path="/home/web/example/src/freegame_developer/vendor/mongodb/mongodb/tests/Database" file="FunctionalTestCase.php" realpath="/home/web/example/src/freegame_developer/vendor/mongodb/mongodb/tests/Database/FunctionalTestCase.php" size="458" time="2016-09-23T19:38:29+00:00" unixtime="1474659509" sha1="3979539af85699ea614c754017222d889d9afc3a" relative="freegame_developer/vendor/mongodb/mongodb/tests/Database/FunctionalTestCase.php"/>
+  <docblock>
+    <description compact="Base class for Database functional tests."/>
+  </docblock>
+  <extends full="MongoDB\Tests\FunctionalTestCase" namespace="MongoDB\Tests" name="FunctionalTestCase"/>
+  <member name="database" visibility="protected" static="false" line="13"/>
+  <method name="setUp" start="15" end="21" abstract="false" final="false" static="false" visibility="public"/>
+</class>

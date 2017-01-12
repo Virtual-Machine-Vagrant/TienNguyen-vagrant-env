@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="Faker\Provider\tr_TR\Color" namespace="Faker\Provider\tr_TR" name="Color" abstract="false" final="false" start="5" end="58">
+  <file path="/home/web/example/src/freegame_developer/vendor/fzaninotto/faker/src/Faker/Provider/tr_TR" file="Color.php" realpath="/home/web/example/src/freegame_developer/vendor/fzaninotto/faker/src/Faker/Provider/tr_TR/Color.php" size="3799" time="2015-05-29T06:29:14+00:00" unixtime="1432880954" sha1="32f4139468b664757128efaa9d6e1372d8cb8ed2" relative="freegame_developer/vendor/fzaninotto/faker/src/Faker/Provider/tr_TR/Color.php"/>
+  <extends full="Faker\Provider\Color" namespace="Faker\Provider" name="Color"/>
+  <member name="safeColorNames" type="array" default="" visibility="protected" static="true" line="10">
+    <docblock>
+      <description/>
+      <link value="http://tr.wikipedia.org/wiki/Renkler_listesi"/>
+    </docblock>
+  </member>
+  <member name="allColorNames" type="array" default="" visibility="protected" static="true" line="15"/>
+</class>

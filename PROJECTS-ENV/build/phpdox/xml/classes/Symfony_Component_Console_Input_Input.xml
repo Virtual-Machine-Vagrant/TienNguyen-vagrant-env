@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="Symfony\Component\Console\Input\Input" namespace="Symfony\Component\Console\Input" name="Input" abstract="true" final="false" start="25" end="191">
+  <file path="/home/web/example/src/freegame_developer/vendor/symfony/console/Input" file="Input.php" realpath="/home/web/example/src/freegame_developer/vendor/symfony/console/Input/Input.php" size="4742" time="2016-10-05T17:26:56+00:00" unixtime="1475688416" sha1="b07fe2f89b3206233a09203c808f1d9e21d5d8b5" relative="freegame_developer/vendor/symfony/console/Input/Input.php"/>
+  <docblock>
+    <description compact="Input is the base class for all concrete Input classes.">Three concrete classes are provided by default:
+
+ * `ArgvInput`: The input comes from the CLI arguments (argv)
+ * `StringInput`: The input is provided as a string
+ * `ArrayInput`: The input is provided as an array</description>
+    <author value="Fabien Potencier &lt;fabien@symfony.com&gt;"/>
+  </docblock>
+  <implements full="Symfony\Component\Console\Input\InputInterface" namespace="Symfony\Component\Console\Input" name="InputInterface"/>
+  <member name="definition" visibility="protected" static="false" line="30">
+    <docblock>
+      <description/>
+      <var type="object">
+        <type full="Symfony\Component\Console\Input\InputDefinition" namespace="Symfony\Component\Console\Input" name="InputDefinition"/>
+      </var>
+    </docblock>
+  </member>
+  <member name="options" type="array" default="" visibility="protected" static="false" line="31"/>
+  <member name="arguments" type="array" default="" visibility="protected" static="false" line="32"/>
+  <member name="interactive" type="boolean" default="true" visibility="protected" static="false" line="33"/>
+  <constructor name="__construct" start="40" end="48" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Constructor."/>
+      <param description="A InputDefinition instance" type="object" variable="$definition">
+        <type full="Symfony\Component\Console\Input\InputDefinition|null" namespace="Symfony\Component\Console\Input" name="InputDefinition|null"/>
+      </param>
+    </docblock>
+    <parameter name="definition" byreference="false" type="{unknown}" default="" constant="null">
+      <type full="Symfony\Component\Console\Input\InputDefinition" namespace="Symfony\Component\Console\Input" name="InputDefinition"/>
+    </parameter>
+  </constructor>
+  <method name="bind" start="53" end="60" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="{@inheritdoc}"/>
+    </docblock>
+    <parameter name="definition" byreference="false" type="object">
+      <type full="Symfony\Component\Console\Input\InputDefinition" namespace="Symfony\Component\Console\Input" name="InputDefinition"/>
+    </parameter>
+  </method>
+  <method name="parse" start="65" end="65" abstract="true" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Processes command line arguments."/>
+    </docblock>
+  </method>
+  <method name="validate" start="70" end="82" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="{@inheritdoc}"/>
+    </docblock>
+  </method>
+  <method name="isInteractive" start="87" end="90" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="{@inheritdoc}"/>
+    </docblock>
+  </method>
+  <method name="setInteractive" start="95" end="98" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="{@inheritdoc}"/>
+    </docblock>
+    <parameter name="interactive" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="getArguments" start="103" end="106" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="{@inheritdoc}"/>
+    </docblock>
+  </method>
+  <method name="getArgument" start="111" end="118" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="{@inheritdoc}"/>
+    </docblock>
+    <parameter name="name" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="setArgument" start="123" end="130" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="{@inheritdoc}"/>
+    </docblock>
+    <parameter name="name" byreference="false" type="{unknown}"/>
+    <parameter name="value" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="hasArgument" start="135" end="138" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="{@inheritdoc}"/>
+    </docblock>
+    <parameter name="name" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="getOptions" start="143" end="146" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="{@inheritdoc}"/>
+    </docblock>
+  </method>
+  <method name="getOption" start="151" end="158" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="{@inheritdoc}"/>
+    </docblock>
+    <parameter name="name" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="setOption" start="163" end="170" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="{@inheritdoc}"/>
+    </docblock>
+    <parameter name="name" byreference="false" type="{unknown}"/>
+    <parameter name="value" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="hasOption" start="175" end="178" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="{@inheritdoc}"/>
+    </docblock>
+    <parameter name="name" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="escapeToken" start="187" end="190" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Escapes a token through escapeshellarg if it contains unsafe chars."/>
+      <param type="string" variable="$token"/>
+      <return type="string"/>
+    </docblock>
+    <parameter name="token" byreference="false" type="{unknown}"/>
+  </method>
+</class>

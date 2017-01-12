@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="integration\PhpSpec\Loader\StreamWrapperTest" namespace="integration\PhpSpec\Loader" name="StreamWrapperTest" abstract="false" final="false" start="11" end="35">
+  <file path="/home/web/example/src/freegame_developer/vendor/phpspec/phpspec/integration/PhpSpec/Loader" file="StreamWrapperTest.php" realpath="/home/web/example/src/freegame_developer/vendor/phpspec/phpspec/integration/PhpSpec/Loader/StreamWrapperTest.php" size="1074" time="2016-01-01T10:17:54+00:00" unixtime="1451643474" sha1="6e210a23a4888abae462b28ea92b4679b725562b" relative="freegame_developer/vendor/phpspec/phpspec/integration/PhpSpec/Loader/StreamWrapperTest.php"/>
+  <extends full="PHPUnit_Framework_Testcase" namespace="" name="PHPUnit_Framework_Testcase"/>
+  <method name="setUp" start="13" end="19" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="it_loads_a_spec_with_no_typehints" start="25" end="34" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <test/>
+      <requires value="PHP 7.0"/>
+    </docblock>
+  </method>
+</class>

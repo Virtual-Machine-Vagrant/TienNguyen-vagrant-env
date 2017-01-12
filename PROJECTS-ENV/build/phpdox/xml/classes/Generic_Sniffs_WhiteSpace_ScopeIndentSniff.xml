@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="Generic_Sniffs_WhiteSpace_ScopeIndentSniff" namespace="" name="Generic_Sniffs_WhiteSpace_ScopeIndentSniff" abstract="false" final="false" start="32" end="1133">
+  <file path="/home/web/example/src/freegame_developer/vendor/squizlabs/php_codesniffer/CodeSniffer/Standards/Generic/Sniffs/WhiteSpace" file="ScopeIndentSniff.php" realpath="/home/web/example/src/freegame_developer/vendor/squizlabs/php_codesniffer/CodeSniffer/Standards/Generic/Sniffs/WhiteSpace/ScopeIndentSniff.php" size="48555" time="2016-01-19T23:39:10+00:00" unixtime="1453246750" sha1="937c1f35cb7d4ff3ccc178d847c862affcbcef3c" relative="freegame_developer/vendor/squizlabs/php_codesniffer/CodeSniffer/Standards/Generic/Sniffs/WhiteSpace/ScopeIndentSniff.php"/>
+  <docblock>
+    <description compact="Generic_Sniffs_Whitespace_ScopeIndentSniff.">Checks that control structures are structured correctly, and their content
+is indented correctly. This sniff will throw errors if tabs are used
+for indentation rather than spaces.</description>
+    <category value="PHP"/>
+    <package value="PHP_CodeSniffer"/>
+    <author value="Greg Sherwood &lt;gsherwood@squiz.net&gt;"/>
+    <author value="Marc McIntyre &lt;mmcintyre@squiz.net&gt;"/>
+    <copyright value="2006-2014 Squiz Pty Ltd (ABN 77 084 670 600)"/>
+    <license name="https://github.com/squizlabs/PHP_CodeSniffer/blob/master/licence.txt BSD Licence"/>
+    <version value="Release: @package_version@"/>
+    <link value="http://pear.php.net/package/PHP_CodeSniffer"/>
+  </docblock>
+  <implements full="PHP_CodeSniffer_Sniff" namespace="" name="PHP_CodeSniffer_Sniff"/>
+  <member name="supportedTokenizers" type="array" default="" visibility="public" static="false" line="40">
+    <docblock>
+      <description compact="A list of tokenizers this sniff supports."/>
+      <var type="array"/>
+    </docblock>
+  </member>
+  <member name="indent" type="integer" default="4" visibility="public" static="false" line="50">
+    <docblock>
+      <description compact="The number of spaces code should be indented."/>
+      <var type="int"/>
+    </docblock>
+  </member>
+  <member name="exact" type="boolean" default="false" visibility="public" static="false" line="60">
+    <docblock>
+      <description compact="Does the indent need to be exactly right?">If TRUE, indent needs to be exactly $indent spaces. If FALSE,
+indent needs to be at least $indent spaces (but can be more).</description>
+      <var type="object">
+        <type full="bool" namespace="" name="bool"/>
+      </var>
+    </docblock>
+  </member>
+  <member name="tabIndent" type="boolean" default="false" visibility="public" static="false" line="71">
+    <docblock>
+      <description compact="Should tabs be used for indenting?">If TRUE, fixes will be made using tabs instead of spaces.
+The size of each tab is important, so it should be specified
+using the --tab-width CLI argument.</description>
+      <var type="object">
+        <type full="bool" namespace="" name="bool"/>
+      </var>
+    </docblock>
+  </member>
+  <member name="_tabWidth" type="{unknown}" default="" constant="null" visibility="private" static="false" line="78">
+    <docblock>
+      <description compact="The --tab-width CLI value that is being used."/>
+      <var type="int"/>
+    </docblock>
+  </member>
+  <member name="ignoreIndentationTokens" type="array" default="" visibility="public" static="false" line="90">
+    <docblock>
+      <description compact="List of tokens not needing to be checked for indentation.">Useful to allow Sniffs based on this to easily ignore/skip some
+tokens from verification. For example, inline HTML sections
+or PHP open/close tags can escape from here and have their own
+rules elsewhere.</description>
+      <var type="array" of="int"/>
+    </docblock>
+  </member>
+  <member name="_ignoreIndentationTokens" type="array" default="" visibility="private" static="false" line="100">
+    <docblock>
+      <description compact="List of tokens not needing to be checked for indentation.">This is a cached copy of the public version of this var, which
+can be set in a ruleset file, and some core ignored tokens.</description>
+      <var type="array" of="int"/>
+    </docblock>
+  </member>
+  <member name="nonIndentingScopes" type="array" default="" visibility="protected" static="false" line="107">
+    <docblock>
+      <description compact="Any scope openers that should not cause an indent."/>
+      <var type="array" of="int"/>
+    </docblock>
+  </member>
+  <member name="_debug" type="boolean" default="false" visibility="private" static="false" line="114">
+    <docblock>
+      <description compact="Show debug output for this sniff."/>
+      <var type="object">
+        <type full="bool" namespace="" name="bool"/>
+      </var>
+    </docblock>
+  </member>
+  <method name="register" start="122" end="130" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Returns an array of tokens this test wants to listen for."/>
+      <return type="array"/>
+    </docblock>
+  </method>
+  <method name="process" start="142" end="1130" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Processes this test, when one of its tokens is encountered."/>
+      <param description="All the tokens found in the document." type="object" variable="$phpcsFile">
+        <type full="PHP_CodeSniffer_File" namespace="" name="PHP_CodeSniffer_File"/>
+      </param>
+      <param description="The position of the current token" type="int" variable="$stackPtr">in the stack passed in $tokens.</param>
+      <return type="object">
+        <type full="void" namespace="" name="void"/>
+      </return>
+    </docblock>
+    <parameter name="phpcsFile" byreference="false" type="object">
+      <type full="PHP_CodeSniffer_File" namespace="" name="PHP_CodeSniffer_File"/>
+    </parameter>
+    <parameter name="stackPtr" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="end if" line="194"/>
+      <comment value="end for" line="1125"/>
+      <comment value="Don't process the rest of the file." line="1127"/>
+    </inline>
+  </method>
+</class>

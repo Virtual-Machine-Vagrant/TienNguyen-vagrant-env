@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="PhpParser\Node\Scalar\MagicConst" namespace="PhpParser\Node\Scalar" name="MagicConst" abstract="true" final="false" start="7" end="28">
+  <file path="/home/web/example/src/freegame_developer/vendor/nikic/php-parser/lib/PhpParser/Node/Scalar" file="MagicConst.php" realpath="/home/web/example/src/freegame_developer/vendor/nikic/php-parser/lib/PhpParser/Node/Scalar/MagicConst.php" size="558" time="2016-09-16T12:04:44+00:00" unixtime="1474027484" sha1="42680663c54727d2d6858701e3cc4c2509c9b421" relative="freegame_developer/vendor/nikic/php-parser/lib/PhpParser/Node/Scalar/MagicConst.php"/>
+  <extends full="PhpParser\Node\Scalar" namespace="PhpParser\Node" name="Scalar"/>
+  <constructor name="__construct" start="14" end="16" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Constructs a magic constant node."/>
+      <param description="Additional attributes" type="array" variable="$attributes"/>
+    </docblock>
+    <parameter name="attributes" byreference="false" type="array" default=""/>
+  </constructor>
+  <method name="getSubNodeNames" start="18" end="20" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="getName" start="27" end="27" abstract="true" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Get name of magic constant."/>
+      <return description="Name of magic constant" type="string"/>
+    </docblock>
+  </method>
+</class>

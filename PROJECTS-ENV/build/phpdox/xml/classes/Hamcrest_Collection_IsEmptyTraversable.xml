@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="Hamcrest\Collection\IsEmptyTraversable" namespace="Hamcrest\Collection" name="IsEmptyTraversable" abstract="false" final="false" start="13" end="71">
+  <file path="/home/web/example/src/freegame_developer/vendor/hamcrest/hamcrest-php/hamcrest/Hamcrest/Collection" file="IsEmptyTraversable.php" realpath="/home/web/example/src/freegame_developer/vendor/hamcrest/hamcrest-php/hamcrest/Hamcrest/Collection/IsEmptyTraversable.php" size="1381" time="2015-05-11T14:41:42+00:00" unixtime="1431355302" sha1="7a218d39f7fd194fee8ed4fc3f62f2e82924e1a7" relative="freegame_developer/vendor/hamcrest/hamcrest-php/hamcrest/Hamcrest/Collection/IsEmptyTraversable.php"/>
+  <docblock>
+    <description compact="Matches if traversable is empty or non-empty."/>
+  </docblock>
+  <extends full="Hamcrest\BaseMatcher" namespace="Hamcrest" name="BaseMatcher"/>
+  <member name="_INSTANCE" visibility="private" static="true" line="16"/>
+  <member name="_NOT_INSTANCE" visibility="private" static="true" line="17"/>
+  <member name="_empty" visibility="private" static="false" line="19"/>
+  <constructor name="__construct" start="21" end="24" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="empty" byreference="false" type="boolean" default="true"/>
+  </constructor>
+  <method name="matches" start="26" end="37" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="item" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="describeTo" start="39" end="42" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="description" byreference="false" type="object">
+      <type full="Hamcrest\Description" namespace="Hamcrest" name="Description"/>
+    </parameter>
+  </method>
+  <method name="emptyTraversable" start="49" end="56" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description compact="Returns true if traversable is empty."/>
+      <factory/>
+    </docblock>
+  </method>
+  <method name="nonEmptyTraversable" start="63" end="70" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description compact="Returns true if traversable is not empty."/>
+      <factory/>
+    </docblock>
+  </method>
+</class>

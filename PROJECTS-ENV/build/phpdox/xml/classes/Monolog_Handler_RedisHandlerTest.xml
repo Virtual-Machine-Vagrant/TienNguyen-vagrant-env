@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="Monolog\Handler\RedisHandlerTest" namespace="Monolog\Handler" name="RedisHandlerTest" abstract="false" final="false" start="18" end="127">
+  <file path="/home/web/example/src/freegame_developer/vendor/monolog/monolog/tests/Monolog/Handler" file="RedisHandlerTest.php" realpath="/home/web/example/src/freegame_developer/vendor/monolog/monolog/tests/Monolog/Handler/RedisHandlerTest.php" size="3922" time="2016-07-29T03:23:52+00:00" unixtime="1469762632" sha1="39a5f44ce08602d992c12fbc822bd2765d559256" relative="freegame_developer/vendor/monolog/monolog/tests/Monolog/Handler/RedisHandlerTest.php"/>
+  <extends full="Monolog\TestCase" namespace="Monolog" name="TestCase"/>
+  <method name="testConstructorShouldThrowExceptionForInvalidRedis" start="23" end="26" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <expectedexception value="InvalidArgumentException"/>
+    </docblock>
+  </method>
+  <method name="testConstructorShouldWorkWithPredis" start="28" end="32" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testConstructorShouldWorkWithRedis" start="34" end="38" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testPredisHandle" start="40" end="54" abstract="false" final="false" static="false" visibility="public">
+    <inline>
+      <comment value="Predis\Client uses rpush" line="44"/>
+    </inline>
+  </method>
+  <method name="testRedisHandle" start="56" end="70" abstract="false" final="false" static="false" visibility="public">
+    <inline>
+      <comment value="Redis uses rPush" line="60"/>
+    </inline>
+  </method>
+  <method name="testRedisHandleCapped" start="72" end="98" abstract="false" final="false" static="false" visibility="public">
+    <inline>
+      <comment value="Redis uses multi" line="76"/>
+    </inline>
+  </method>
+  <method name="testPredisHandleCapped" start="100" end="126" abstract="false" final="false" static="false" visibility="public">
+    <inline>
+      <comment value="Redis uses multi" line="114"/>
+    </inline>
+  </method>
+</class>

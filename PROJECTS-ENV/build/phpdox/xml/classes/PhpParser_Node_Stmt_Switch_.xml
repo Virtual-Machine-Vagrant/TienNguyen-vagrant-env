@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="PhpParser\Node\Stmt\Switch_" namespace="PhpParser\Node\Stmt" name="Switch_" abstract="false" final="false" start="7" end="30">
+  <file path="/home/web/example/src/freegame_developer/vendor/nikic/php-parser/lib/PhpParser/Node/Stmt" file="Switch_.php" realpath="/home/web/example/src/freegame_developer/vendor/nikic/php-parser/lib/PhpParser/Node/Stmt/Switch_.php" size="696" time="2016-09-16T12:04:44+00:00" unixtime="1474027484" sha1="e93200ab3854e63ebc4145dcbba65c6b01e18b60" relative="freegame_developer/vendor/nikic/php-parser/lib/PhpParser/Node/Stmt/Switch_.php"/>
+  <extends full="PhpParser\Node\Stmt" namespace="PhpParser\Node" name="Stmt"/>
+  <member name="cond" visibility="public" static="false" line="10">
+    <docblock>
+      <var description="Condition" type="object">
+        <type full="PhpParser\Node\Stmt\Node\Expr" namespace="PhpParser\Node\Stmt\Node" name="Expr"/>
+      </var>
+    </docblock>
+  </member>
+  <member name="cases" visibility="public" static="false" line="12">
+    <docblock>
+      <var description="Case list" type="array" of="object">
+        <type full="PhpParser\Node\Stmt\Case_" namespace="PhpParser\Node\Stmt" name="Case_"/>
+      </var>
+    </docblock>
+  </member>
+  <constructor name="__construct" start="21" end="25" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Constructs a case node."/>
+      <param description="Condition" type="object" variable="$cond">
+        <type full="PhpParser\Node\Stmt\Node\Expr" namespace="PhpParser\Node\Stmt\Node" name="Expr"/>
+      </param>
+      <param description="Case list" type="array" variable="$cases" of="object">
+        <type full="PhpParser\Node\Stmt\Case_" namespace="PhpParser\Node\Stmt" name="Case_"/>
+      </param>
+      <param description="Additional attributes" type="array" variable="$attributes"/>
+    </docblock>
+    <parameter name="cond" byreference="false" type="object">
+      <type full="PhpParser\Node\Expr" namespace="PhpParser\Node" name="Expr"/>
+    </parameter>
+    <parameter name="cases" byreference="false" type="array"/>
+    <parameter name="attributes" byreference="false" type="array" default=""/>
+  </constructor>
+  <method name="getSubNodeNames" start="27" end="29" abstract="false" final="false" static="false" visibility="public"/>
+</class>

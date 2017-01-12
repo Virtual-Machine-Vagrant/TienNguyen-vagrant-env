@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="phpseclib\Crypt\Rijndael" namespace="phpseclib\Crypt" name="Rijndael" abstract="false" final="false" start="64" end="936">
+  <file path="/home/web/example/src/freegame_developer/vendor/phpseclib/phpseclib/phpseclib/Crypt" file="Rijndael.php" realpath="/home/web/example/src/freegame_developer/vendor/phpseclib/phpseclib/phpseclib/Crypt/Rijndael.php" size="41781" time="2016-10-04T00:57:04+00:00" unixtime="1475542624" sha1="410c7e0c4bcfbcdb1d1aa6c3dffa6e72379bffea" relative="freegame_developer/vendor/phpseclib/phpseclib/phpseclib/Crypt/Rijndael.php"/>
+  <docblock>
+    <description compact="Pure-PHP implementation of Rijndael."/>
+    <package value="Rijndael"/>
+    <author value="Jim Wigginton &lt;terrafrost@php.net&gt;"/>
+    <access value="public"/>
+  </docblock>
+  <extends full="phpseclib\Crypt\Base" namespace="phpseclib\Crypt" name="Base"/>
+  <member name="cipher_name_mcrypt" type="string" default="'rijndael-128'" visibility="public" static="false" line="80">
+    <docblock>
+      <description compact="The mcrypt specific name of the cipher">Mcrypt is useable for 128/192/256-bit $block_size/$key_length. For 160/224 not.
+\phpseclib\Crypt\Rijndael determines automatically whether mcrypt is useable
+or not for the current $block_size/$key_length.
+In case of, $cipher_name_mcrypt will be set dynamically at run time accordingly.</description>
+      <see value="\phpseclib\Crypt\Base::cipher_name_mcrypt"/>
+      <see value="\phpseclib\Crypt\Base::engine"/>
+      <see value="self::isValidEngine()"/>
+      <var type="string"/>
+      <access value="private"/>
+    </docblock>
+  </member>
+  <member name="password_default_salt" type="string" default="'phpseclib'" visibility="public" static="false" line="90">
+    <docblock>
+      <description compact="The default salt used by setPassword()"/>
+      <see value="\phpseclib\Crypt\Base::password_default_salt"/>
+      <see value="\phpseclib\Crypt\Base::setPassword()"/>
+      <var type="string"/>
+      <access value="private"/>
+    </docblock>
+  </member>
+  <member name="w" visibility="public" static="false" line="99">
+    <docblock>
+      <description compact="The Key Schedule"/>
+      <see value="self::_setup()"/>
+      <var type="array"/>
+      <access value="private"/>
+    </docblock>
+  </member>
+  <member name="dw" visibility="public" static="false" line="108">
+    <docblock>
+      <description compact="The Inverse Key Schedule"/>
+      <see value="self::_setup()"/>
+      <var type="array"/>
+      <access value="private"/>
+    </docblock>
+  </member>
+  <member name="Nb" type="integer" default="4" visibility="public" static="false" line="121">
+    <docblock>
+      <description compact="The Block Length divided by 32"/>
+      <see value="self::setBlockLength()"/>
+      <var type="int"/>
+      <access value="private"/>
+      <internal>The max value is 256 / 32 = 8, the min value is 128 / 32 = 4.  Exists in conjunction with $block_size</internal>
+    </docblock>
+  </member>
+  <member name="key_length" type="integer" default="16" visibility="public" static="false" line="134">
+    <docblock>
+      <description compact="The Key Length (in bytes)"/>
+      <see value="self::setKeyLength()"/>
+      <var type="int"/>
+      <access value="private"/>
+      <internal>The max value is 256 / 8 = 32, the min value is 128 / 8 = 16.  Exists in conjunction with $Nk</internal>
+    </docblock>
+  </member>
+  <member name="Nk" type="integer" default="4" visibility="public" static="false" line="144">
+    <docblock>
+      <description compact="The Key Length divided by 32"/>
+      <see value="self::setKeyLength()"/>
+      <var type="int"/>
+      <access value="private"/>
+      <internal>The max value is 256 / 32 = 8, the min value is 128 / 32 = 4</internal>
+    </docblock>
+  </member>
+  <member name="Nr" visibility="public" static="false" line="153">
+    <docblock>
+      <description compact="The Number of Rounds"/>
+      <var type="int"/>
+      <access value="private"/>
+      <internal>The max value is 14, the min value is 10.</internal>
+    </docblock>
+  </member>
+  <member name="c" visibility="public" static="false" line="161">
+    <docblock>
+      <description compact="Shift offsets"/>
+      <var type="array"/>
+      <access value="private"/>
+    </docblock>
+  </member>
+  <member name="kl" visibility="public" static="false" line="169">
+    <docblock>
+      <description compact="Holds the last used key- and block_size information"/>
+      <var type="array"/>
+      <access value="private"/>
+    </docblock>
+  </member>
+  <method name="setKeyLength" start="191" end="211" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Sets the key length.">Valid key lengths are 128, 160, 192, 224, and 256.  If the length is less than 128, it will be rounded up to
+128.  If the length is greater than 128 and invalid, it will be rounded down to the closest valid amount.
+
+Note: phpseclib extends Rijndael (and AES) for using 160- and 224-bit keys but they are officially not defined
+      and the most (if not all) implementations are not able using 160/224-bit keys but round/pad them up to
+      192/256 bits as, for example, mcrypt will do.
+
+      That said, if you want be compatible with other Rijndael and AES implementations,
+      you should not setKeyLength(160) or setKeyLength(224).
+
+Additional: In case of 160- and 224-bit keys, phpseclib will/can, for that reason, not use
+            the mcrypt php extension, even if available.
+            This results then in slower encryption.</description>
+      <access value="public"/>
+      <param type="int" variable="$length"/>
+    </docblock>
+    <parameter name="length" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="setBlockLength" start="222" end="234" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Sets the block length">Valid block lengths are 128, 160, 192, 224, and 256.  If the length is less than 128, it will be rounded up to
+128.  If the length is greater than 128 and invalid, it will be rounded down to the closest valid amount.</description>
+      <access value="public"/>
+      <param type="int" variable="$length"/>
+    </docblock>
+    <parameter name="length" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="isValidEngine" start="246" end="265" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Test for engine validity">This is mainly just a wrapper to set things up for \phpseclib\Crypt\Base::isValidEngine()</description>
+      <see value="\phpseclib\Crypt\Base::__construct()"/>
+      <param type="int" variable="$engine"/>
+      <access value="public"/>
+      <return type="object">
+        <type full="phpseclib\Crypt\bool" namespace="phpseclib\Crypt" name="bool"/>
+      </return>
+    </docblock>
+    <parameter name="engine" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="_encryptBlock" start="274" end="366" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Encrypts a block"/>
+      <access value="private"/>
+      <param type="string" variable="$in"/>
+      <return type="string"/>
+    </docblock>
+    <parameter name="in" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="addRoundKey" line="294"/>
+      <comment value="fips-197.pdf#page=19, &quot;Figure 5. Pseudo Code for the Cipher&quot;, states that this loop has four components -" line="300"/>
+      <comment value="subBytes, shiftRows, mixColumns, and addRoundKey. fips-197.pdf#page=30, &quot;Implementation Suggestions Regarding" line="301"/>
+      <comment value="Rijndael-ammended.pdf#page=20, &quot;Implementation aspects / 32-bit processor&quot;, discusses such an optimization." line="303"/>
+      <comment value="Unfortunately, the description given there is not quite correct.  Per aes.spec.v316.pdf#page=19 [1]," line="304"/>
+      <comment value="equation (7.4.7) is supposed to use addition instead of subtraction, so we'll do that here, as well." line="305"/>
+      <comment value="[1] http://fp.gladman.plus.com/cryptography_technology/rijndael/aes.spec.v316.pdf" line="307"/>
+      <comment value="subWord" line="329"/>
+      <comment value="shiftRows + addRoundKey" line="337"/>
+      <comment value="$c[0] == 0" line="338"/>
+    </inline>
+  </method>
+  <method name="_decryptBlock" start="375" end="456" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Decrypts a block"/>
+      <access value="private"/>
+      <param type="string" variable="$in"/>
+      <return type="string"/>
+    </docblock>
+    <parameter name="in" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="addRoundKey" line="395"/>
+      <comment value="invShiftRows + invSubWord + addRoundKey" line="422"/>
+      <comment value="$c[0] == 0" line="423"/>
+    </inline>
+  </method>
+  <method name="_setupKey" start="464" end="569" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Setup the key (expansion)"/>
+      <see value="\phpseclib\Crypt\Base::_setupKey()"/>
+      <access value="private"/>
+    </docblock>
+    <inline>
+      <comment value="Each number in $rcon is equal to the previous number multiplied by two in Rijndael's finite field." line="466"/>
+      <comment value="See http://en.wikipedia.org/wiki/Finite_field_arithmetic#Multiplicative_inverse" line="467"/>
+      <comment value="see Rijndael-ammended.pdf#page=44" line="484"/>
+      <comment value="shift offsets for Nb = 5, 7 are defined in Rijndael-ammended.pdf#page=44," line="487"/>
+      <comment value="&quot;Table 8: Shift offsets in Shiftrow for the alternative block lengths&quot;" line="488"/>
+      <comment value="shift offsets for Nb = 4, 6, 8 are defined in Rijndael-ammended.pdf#page=14," line="489"/>
+      <comment value="&quot;Table 2: Shift offsets for different block lengths&quot;" line="490"/>
+      <comment value="convert the key schedule from a vector of $Nb * ($Nr + 1) length to a matrix with $Nr + 1 rows and $Nb columns" line="522"/>
+      <comment value="and generate the inverse key schedule.  more specifically," line="523"/>
+      <comment value="according to &lt;http://csrc.nist.gov/archive/aes/rijndael/Rijndael-ammended.pdf#page=23&gt; (section 5.3.3)," line="524"/>
+      <comment value="&quot;The key expansion for the Inverse Cipher is defined as follows:" line="525"/>
+      <comment value="1. Apply the Key Expansion." line="526"/>
+      <comment value="2. Apply InvMixColumn to all Round Keys except the first and the last one.&quot;" line="527"/>
+      <comment value="also, see fips-197.pdf#page=27, &quot;5.3.5 Equivalent Inverse Cipher&quot;" line="528"/>
+      <comment value="Converting to 1-dim key arrays (both ascending)" line="557"/>
+    </inline>
+  </method>
+  <method name="_subWord" start="577" end="588" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Performs S-Box substitutions"/>
+      <access value="private"/>
+      <param type="int" variable="$word"/>
+    </docblock>
+    <parameter name="word" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="_getTables" start="599" end="677" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Provides the mixColumns and sboxes tables"/>
+      <see value="self::_encryptBlock()"/>
+      <see value="self::_setupInlineCrypt()"/>
+      <see value="self::_subWord()"/>
+      <access value="private"/>
+      <return description="&amp;$tables" type="array"/>
+    </docblock>
+  </method>
+  <method name="_getInvTables" start="688" end="761" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Provides the inverse mixColumns and inverse sboxes tables"/>
+      <see value="self::_decryptBlock()"/>
+      <see value="self::_setupInlineCrypt()"/>
+      <see value="self::_setupKey()"/>
+      <access value="private"/>
+      <return description="&amp;$tables" type="array"/>
+    </docblock>
+  </method>
+  <method name="_setupInlineCrypt" start="769" end="935" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Setup the performance-optimized function for de/encrypt()"/>
+      <see value="\phpseclib\Crypt\Base::_setupInlineCrypt()"/>
+      <access value="private"/>
+    </docblock>
+    <inline>
+      <comment value="Note: _setupInlineCrypt() will be called only if $this-&gt;changed === true" line="771"/>
+      <comment value="So here we are'nt under the same heavy timing-stress as we are in _de/encryptBlock() or de/encrypt()." line="772"/>
+      <comment value="However...the here generated function- $code, stored as php callback in $this-&gt;inline_crypt, must work as fast as even possible." line="773"/>
+      <comment value="We create max. 10 hi-optimized code for memory reason. Means: For each $key one ultra fast inline-crypt function." line="777"/>
+      <comment value="(Currently, for Crypt_Rijndael/AES, one generated $lambda_function cost on php5.5@32bit ~80kb unfreeable mem and ~130kb on php5.5@64bit)" line="778"/>
+      <comment value="After that, we'll still create very fast optimized code but not the hi-ultimative code, for each $mode one." line="779"/>
+      <comment value="Generation of a uniqe hash for our generated code" line="782"/>
+    </inline>
+  </method>
+</class>

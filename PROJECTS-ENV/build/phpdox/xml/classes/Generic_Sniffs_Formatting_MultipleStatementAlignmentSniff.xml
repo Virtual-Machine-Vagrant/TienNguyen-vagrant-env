@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="Generic_Sniffs_Formatting_MultipleStatementAlignmentSniff" namespace="" name="Generic_Sniffs_Formatting_MultipleStatementAlignmentSniff" abstract="false" final="false" start="30" end="326">
+  <file path="/home/web/example/src/freegame_developer/vendor/squizlabs/php_codesniffer/CodeSniffer/Standards/Generic/Sniffs/Formatting" file="MultipleStatementAlignmentSniff.php" realpath="/home/web/example/src/freegame_developer/vendor/squizlabs/php_codesniffer/CodeSniffer/Standards/Generic/Sniffs/Formatting/MultipleStatementAlignmentSniff.php" size="12093" time="2016-01-19T23:39:10+00:00" unixtime="1453246750" sha1="7fecaada4bed9f9e0f95823a790cb808c0334227" relative="freegame_developer/vendor/squizlabs/php_codesniffer/CodeSniffer/Standards/Generic/Sniffs/Formatting/MultipleStatementAlignmentSniff.php"/>
+  <docblock>
+    <description compact="Generic_Sniffs_Formatting_MultipleStatementAlignmentSniff.">Checks alignment of assignments. If there are multiple adjacent assignments,
+it will check that the equals signs of each assignment are aligned. It will
+display a warning to advise that the signs should be aligned.</description>
+    <category value="PHP"/>
+    <package value="PHP_CodeSniffer"/>
+    <author value="Greg Sherwood &lt;gsherwood@squiz.net&gt;"/>
+    <copyright value="2006-2014 Squiz Pty Ltd (ABN 77 084 670 600)"/>
+    <license name="https://github.com/squizlabs/PHP_CodeSniffer/blob/master/licence.txt BSD Licence"/>
+    <version value="Release: @package_version@"/>
+    <link value="http://pear.php.net/package/PHP_CodeSniffer"/>
+  </docblock>
+  <implements full="PHP_CodeSniffer_Sniff" namespace="" name="PHP_CodeSniffer_Sniff"/>
+  <member name="supportedTokenizers" type="array" default="" visibility="public" static="false" line="38">
+    <docblock>
+      <description compact="A list of tokenizers this sniff supports."/>
+      <var type="array"/>
+    </docblock>
+  </member>
+  <member name="error" type="boolean" default="false" visibility="public" static="false" line="48">
+    <docblock>
+      <description compact="If true, an error will be thrown; otherwise a warning."/>
+      <var type="object">
+        <type full="bool" namespace="" name="bool"/>
+      </var>
+    </docblock>
+  </member>
+  <member name="maxPadding" type="integer" default="1000" visibility="public" static="false" line="59">
+    <docblock>
+      <description compact="The maximum amount of padding before the alignment is ignored.">If the amount of padding required to align this assignment with the
+surrounding assignments exceeds this number, the assignment will be
+ignored and no errors or warnings will be thrown.</description>
+      <var type="int"/>
+    </docblock>
+  </member>
+  <method name="register" start="67" end="73" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Returns an array of tokens this test wants to listen for."/>
+      <return type="array"/>
+    </docblock>
+  </method>
+  <method name="process" start="85" end="101" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Processes this test, when one of its tokens is encountered."/>
+      <param description="The file being scanned." type="object" variable="$phpcsFile">
+        <type full="PHP_CodeSniffer_File" namespace="" name="PHP_CodeSniffer_File"/>
+      </param>
+      <param description="The position of the current token" type="int" variable="$stackPtr">in the stack passed in $tokens.</param>
+      <return type="int"/>
+    </docblock>
+    <parameter name="phpcsFile" byreference="false" type="object">
+      <type full="PHP_CodeSniffer_File" namespace="" name="PHP_CodeSniffer_File"/>
+    </parameter>
+    <parameter name="stackPtr" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="Ignore assignments used in a condition, like an IF or FOR." line="89"/>
+    </inline>
+  </method>
+  <method name="checkAlignment" start="113" end="323" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Processes this test, when one of its tokens is encountered."/>
+      <param description="The file being scanned." type="object" variable="$phpcsFile">
+        <type full="PHP_CodeSniffer_File" namespace="" name="PHP_CodeSniffer_File"/>
+      </param>
+      <param description="The position of the current token" type="int" variable="$stackPtr">in the stack passed in $tokens.</param>
+      <return type="int"/>
+    </docblock>
+    <parameter name="phpcsFile" byreference="false" type="object">
+      <type full="PHP_CodeSniffer_File" namespace="" name="PHP_CodeSniffer_File"/>
+    </parameter>
+    <parameter name="stackPtr" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="end for" line="254"/>
+      <comment value="end foreach" line="309"/>
+    </inline>
+  </method>
+</class>

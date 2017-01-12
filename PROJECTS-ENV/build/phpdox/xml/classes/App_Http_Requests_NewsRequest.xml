@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="App\Http\Requests\NewsRequest" namespace="App\Http\Requests" name="NewsRequest" abstract="false" final="false" start="14" end="275">
+  <file path="/home/web/example/src/freegame_developer/app/Http/Requests" file="NewsRequest.php" realpath="/home/web/example/src/freegame_developer/app/Http/Requests/NewsRequest.php" size="9265" time="2016-12-22T03:19:40+00:00" unixtime="1482376780" sha1="2b656f2d539cc31e171cf19c1533824e97e8e38f" relative="freegame_developer/app/Http/Requests/NewsRequest.php"/>
+  <extends full="App\Http\Requests\Request" namespace="App\Http\Requests" name="Request"/>
+  <member name="search" type="boolean" default="false" visibility="protected" static="false" line="16"/>
+  <member name="createOrUpdate" type="boolean" default="false" visibility="protected" static="false" line="17"/>
+  <method name="authorize" start="23" end="26" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Determine if the user is authorized to make this request."/>
+      <return type="object">
+        <type full="App\Http\Requests\bool" namespace="App\Http\Requests" name="bool"/>
+      </return>
+    </docblock>
+  </method>
+  <method name="serviceConstruct" start="32" end="41" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="service construct"/>
+      <return/>
+    </docblock>
+  </method>
+  <method name="rules" start="47" end="132" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Get the validation rules that apply to the request."/>
+      <return type="array"/>
+    </docblock>
+  </method>
+  <method name="searchRules" start="138" end="154" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Get the validation search rules that apply to the request."/>
+      <return type="array"/>
+    </docblock>
+  </method>
+  <method name="attributes" start="160" end="176" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Custom attributes list"/>
+      <return type="array"/>
+    </docblock>
+  </method>
+  <method name="searchAttributes" start="183" end="196" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Custom search attributes list"/>
+      <return type="array"/>
+    </docblock>
+  </method>
+  <method name="customMessages" start="202" end="216" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Custom validation message"/>
+      <return type="array"/>
+    </docblock>
+  </method>
+  <method name="searchCustomMessages" start="222" end="234" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Custom search validation message"/>
+      <return type="array"/>
+    </docblock>
+  </method>
+  <method name="getValidatorInstance" start="241" end="253" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Get validator instance"/>
+      <return type="array"/>
+    </docblock>
+  </method>
+  <method name="redirectRules" start="261" end="274" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Redirect rules."/>
+      <param type="object">
+        <type full="App\Http\Requests\none" namespace="App\Http\Requests" name="none"/>
+      </param>
+      <return type="array"/>
+    </docblock>
+  </method>
+</class>

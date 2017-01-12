@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="App\Services\NewsService" namespace="App\Services" name="NewsService" abstract="false" final="false" start="14" end="498">
+  <file path="/home/web/example/src/freegame_developer/app/Services" file="NewsService.php" realpath="/home/web/example/src/freegame_developer/app/Services/NewsService.php" size="16020" time="2016-12-13T02:05:42+00:00" unixtime="1481594742" sha1="63998cb3b0bf895dd546e46651efcf6c26245136" relative="freegame_developer/app/Services/NewsService.php"/>
+  <extends full="App\Services\CustomService" namespace="App\Services" name="CustomService"/>
+  <member name="info" visibility="protected" static="false" line="16"/>
+  <member name="infoCategory" visibility="protected" static="false" line="17"/>
+  <member name="tagMaster" visibility="protected" static="false" line="18"/>
+  <member name="tagRef" visibility="protected" static="false" line="19"/>
+  <member name="infoImage" visibility="protected" static="false" line="20"/>
+  <constructor name="__construct" start="22" end="34" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="info" byreference="false" type="object">
+      <type full="App\Models\NetgameCstool\Info" namespace="App\Models\NetgameCstool" name="Info"/>
+    </parameter>
+    <parameter name="infoCategory" byreference="false" type="object">
+      <type full="App\Models\NetgameCstool\InfoCategory" namespace="App\Models\NetgameCstool" name="InfoCategory"/>
+    </parameter>
+    <parameter name="tagMaster" byreference="false" type="object">
+      <type full="App\Models\NetgameCstool\TagMaster" namespace="App\Models\NetgameCstool" name="TagMaster"/>
+    </parameter>
+    <parameter name="tagRef" byreference="false" type="object">
+      <type full="App\Models\NetgameCstool\TagRef" namespace="App\Models\NetgameCstool" name="TagRef"/>
+    </parameter>
+    <parameter name="infoImage" byreference="false" type="object">
+      <type full="App\Models\NetgameCstool\InfoImage" namespace="App\Models\NetgameCstool" name="InfoImage"/>
+    </parameter>
+  </constructor>
+  <method name="getNewslist" start="42" end="50" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Get news list"/>
+      <param type="array" variable="$condition"/>
+      <param type="array" variable="$game"/>
+      <return type="array"/>
+    </docblock>
+    <parameter name="condition" byreference="false" type="{unknown}"/>
+    <parameter name="game" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="getSearchConditions" start="58" end="69" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Get search conditions"/>
+      <param type="array" variable="$condition"/>
+      <return type="array"/>
+    </docblock>
+    <parameter name="condition" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="formatList" start="78" end="94" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Format result list"/>
+      <param type="array" variable="$results"/>
+      <param type="array" variable="$game"/>
+      <param type="boolean" variable="$getFirst"/>
+      <return type="array"/>
+    </docblock>
+    <parameter name="results" byreference="false" type="{unknown}"/>
+    <parameter name="game" byreference="false" type="{unknown}"/>
+    <parameter name="getFirst" byreference="false" type="boolean" default="false"/>
+  </method>
+  <method name="getInfoCategoryName" start="102" end="106" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Get Category name"/>
+      <param type="integer" variable="$condition"/>
+      <param type="array" variable="$game"/>
+      <return type="string"/>
+    </docblock>
+    <parameter name="condition" byreference="false" type="{unknown}"/>
+    <parameter name="game" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="setInfoCategoryName" start="114" end="124" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Set Category name"/>
+      <param type="array" variable="$condition"/>
+      <param type="array" variable="$game"/>
+      <return type="array"/>
+    </docblock>
+    <parameter name="condition" byreference="false" type="{unknown}"/>
+    <parameter name="game" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="getFormData" start="131" end="148" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Get values init for multi page"/>
+      <return type="array"/>
+    </docblock>
+  </method>
+  <method name="requestUrl" start="155" end="167" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Get search param from url"/>
+      <param type="object" variable="$request">
+        <type full="App\Services\request" namespace="App\Services" name="request"/>
+      </param>
+      <return type="array"/>
+    </docblock>
+    <parameter name="request" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="getInfoCategory" start="174" end="177" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="get title news"/>
+      <param type="array" variable="$game"/>
+      <return type="array"/>
+    </docblock>
+    <parameter name="game" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="getInfoTagname" start="183" end="191" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="get info tag name"/>
+      <param type="array" variable="$params"/>
+      <return type="array"/>
+    </docblock>
+    <parameter name="params" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="getTag" start="197" end="200" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="get Tag"/>
+      <param type="array" variable="$game"/>
+      <return type="array"/>
+    </docblock>
+    <parameter name="game" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="getTagInfo" start="206" end="209" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="get Tag info"/>
+      <param type="array" variable="$game"/>
+      <return type="array"/>
+    </docblock>
+    <parameter name="game" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="changeNewsStatus" start="215" end="226" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="ajax change news status"/>
+      <param type="array" variable="$params"/>
+      <return type="array"/>
+    </docblock>
+    <parameter name="params" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="newsImageUploads" start="233" end="265" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Upload news images"/>
+      <param type="object" variable="$request">
+        <type full="App\Services\request" namespace="App\Services" name="request"/>
+      </param>
+      <param type="array" variable="$game"/>
+      <return type="object">
+        <type full="App\Services\response" namespace="App\Services" name="response"/>
+      </return>
+    </docblock>
+    <parameter name="request" byreference="false" type="{unknown}"/>
+    <parameter name="game" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="getTagInfoByTagId" start="272" end="280" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="get tag name string  info by tag id"/>
+      <param type="array" variable="$params"/>
+      <return type="string"/>
+    </docblock>
+    <parameter name="params" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="getCategoryByIdAndGameId" start="286" end="289" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="get category name string by id"/>
+      <param type="array" variable="$params"/>
+      <return type="string"/>
+    </docblock>
+    <parameter name="params" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="formatTitleImage" start="296" end="306" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Format title image"/>
+      <param type="object" variable="$request">
+        <type full="App\Services\request" namespace="App\Services" name="request"/>
+      </param>
+      <return type="array"/>
+    </docblock>
+    <parameter name="request" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="storeNews" start="312" end="337" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="store news"/>
+      <param type="array" variable="$params"/>
+      <return type="object">
+        <type full="App\Services\bolean" namespace="App\Services" name="bolean"/>
+      </return>
+    </docblock>
+    <parameter name="params" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="updateNews" start="343" end="371" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="update news"/>
+      <param type="array" variable="$params"/>
+      <return type="object">
+        <type full="App\Services\bolean" namespace="App\Services" name="bolean"/>
+      </return>
+    </docblock>
+    <parameter name="params" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="deleteNews" start="378" end="406" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="delete news"/>
+      <param type="array" variable="$params"/>
+      <return type="object">
+        <type full="App\Services\bolean" namespace="App\Services" name="bolean"/>
+      </return>
+    </docblock>
+    <parameter name="params" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="getImageById" start="413" end="416" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="get Title Image"/>
+      <param type="object" variable="$imageId">
+        <type full="App\Services\Integer" namespace="App\Services" name="Integer"/>
+      </param>
+      <return type="array"/>
+    </docblock>
+    <parameter name="imageId" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="getEditInfo" start="424" end="428" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="get info edit by id"/>
+      <param type="integer" variable="$game"/>
+      <param type="integer" variable="$id"/>
+      <return type="array"/>
+    </docblock>
+    <parameter name="game" byreference="false" type="{unknown}"/>
+    <parameter name="id" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="getTagInfoEdit" start="435" end="446" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="get tag info edit"/>
+      <param type="integer" variable="$game"/>
+      <param type="integer" variable="$infoId"/>
+      <return type="array"/>
+    </docblock>
+    <parameter name="game" byreference="false" type="{unknown}"/>
+    <parameter name="infoId" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="getInfoImageList" start="453" end="471" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="get image info list"/>
+      <param type="integer" variable="$game"/>
+      <param type="integer" variable="$infoId"/>
+      <return type="array"/>
+    </docblock>
+    <parameter name="game" byreference="false" type="{unknown}"/>
+    <parameter name="infoId" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="getImageFlag" start="477" end="481" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="get info image flag"/>
+      <param type="array" variable="$params"/>
+      <return type="string"/>
+    </docblock>
+    <parameter name="params" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="deleteInfoImageFile" start="487" end="497" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="delete info image file"/>
+      <param type="array" variable="$params"/>
+      <return/>
+    </docblock>
+    <parameter name="params" byreference="false" type="{unknown}"/>
+  </method>
+</class>

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="Symfony\Component\HttpFoundation\IpUtils" namespace="Symfony\Component\HttpFoundation" name="IpUtils" abstract="false" final="false" start="19" end="136">
+  <file path="/home/web/example/src/freegame_developer/vendor/symfony/http-foundation" file="IpUtils.php" realpath="/home/web/example/src/freegame_developer/vendor/symfony/http-foundation/IpUtils.php" size="3918" time="2016-10-24T14:36:35+00:00" unixtime="1477319795" sha1="e1bc73e4868fb602233dc014c70790fc8c72584a" relative="freegame_developer/vendor/symfony/http-foundation/IpUtils.php"/>
+  <docblock>
+    <description compact="Http utility functions."/>
+    <author value="Fabien Potencier &lt;fabien@symfony.com&gt;"/>
+  </docblock>
+  <constructor name="__construct" start="24" end="26" abstract="false" final="false" static="false" visibility="private">
+    <docblock>
+      <description compact="This class should not be instantiated."/>
+    </docblock>
+  </constructor>
+  <method name="checkIp" start="36" end="51" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description compact="Checks if an IPv4 or IPv6 address is contained in the list of given IPs or subnets."/>
+      <param description="IP to check" type="string" variable="$requestIp"/>
+      <param description="List of IPs or subnets (can be a string if only a single one)" type="object" variable="$ips">
+        <type full="Symfony\Component\HttpFoundation\string|array" namespace="Symfony\Component\HttpFoundation" name="string|array"/>
+      </param>
+      <return description="Whether the IP is valid" type="object">
+        <type full="Symfony\Component\HttpFoundation\bool" namespace="Symfony\Component\HttpFoundation" name="bool"/>
+      </return>
+    </docblock>
+    <parameter name="requestIp" byreference="false" type="{unknown}"/>
+    <parameter name="ips" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="checkIp4" start="62" end="84" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description compact="Compares two IPv4 addresses.">In case a subnet is given, it checks if it contains the request IP.</description>
+      <param description="IPv4 address to check" type="string" variable="$requestIp"/>
+      <param description="IPv4 address or subnet in CIDR notation" type="string" variable="$ip"/>
+      <return description="Whether the request IP matches the IP, or whether the request IP is within the CIDR subnet" type="object">
+        <type full="Symfony\Component\HttpFoundation\bool" namespace="Symfony\Component\HttpFoundation" name="bool"/>
+      </return>
+    </docblock>
+    <parameter name="requestIp" byreference="false" type="{unknown}"/>
+    <parameter name="ip" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="checkIp6" start="101" end="135" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description compact="Compares two IPv6 addresses.">In case a subnet is given, it checks if it contains the request IP.</description>
+      <author value="David Soria Parra &lt;dsp at php dot net&gt;"/>
+      <see value="https://github.com/dsp/v6tools"/>
+      <param description="IPv6 address to check" type="string" variable="$requestIp"/>
+      <param description="IPv6 address or subnet in CIDR notation" type="string" variable="$ip"/>
+      <return description="Whether the IP is valid" type="object">
+        <type full="Symfony\Component\HttpFoundation\bool" namespace="Symfony\Component\HttpFoundation" name="bool"/>
+      </return>
+      <throws description="When IPV6 support is not enabled" type="object">
+        <type full="\RuntimeException" namespace="" name="RuntimeException"/>
+      </throws>
+    </docblock>
+    <parameter name="requestIp" byreference="false" type="{unknown}"/>
+    <parameter name="ip" byreference="false" type="{unknown}"/>
+  </method>
+</class>

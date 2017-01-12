@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="ClassWithNonPublicAttributes" namespace="" name="ClassWithNonPublicAttributes" abstract="false" final="false" start="14" end="29">
+  <file path="/home/web/example/src/freegame_developer/vendor/phpunit/phpunit/tests/_files" file="ClassWithNonPublicAttributes.php" realpath="/home/web/example/src/freegame_developer/vendor/phpunit/phpunit/tests/_files/ClassWithNonPublicAttributes.php" size="974" time="2016-02-11T14:56:33+00:00" unixtime="1455202593" sha1="b85ac98a5732a8152382f0a80548adc741f550f6" relative="freegame_developer/vendor/phpunit/phpunit/tests/_files/ClassWithNonPublicAttributes.php"/>
+  <extends full="ParentClassWithProtectedAttributes" namespace="" name="ParentClassWithProtectedAttributes"/>
+  <member name="publicStaticAttribute" type="string" default="'foo'" visibility="public" static="true" line="16"/>
+  <member name="protectedStaticAttribute" type="string" default="'bar'" visibility="protected" static="true" line="17"/>
+  <member name="privateStaticAttribute" type="string" default="'baz'" visibility="protected" static="true" line="18"/>
+  <member name="publicAttribute" type="string" default="'foo'" visibility="public" static="false" line="20"/>
+  <member name="foo" type="integer" default="1" visibility="public" static="false" line="21"/>
+  <member name="bar" type="integer" default="2" visibility="public" static="false" line="22"/>
+  <member name="protectedAttribute" type="string" default="'bar'" visibility="protected" static="false" line="23"/>
+  <member name="privateAttribute" type="string" default="'baz'" visibility="protected" static="false" line="24"/>
+  <member name="publicArray" type="array" default="" visibility="public" static="false" line="26"/>
+  <member name="protectedArray" type="array" default="" visibility="protected" static="false" line="27"/>
+  <member name="privateArray" type="array" default="" visibility="protected" static="false" line="28"/>
+</class>

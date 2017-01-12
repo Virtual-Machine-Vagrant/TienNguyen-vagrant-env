@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="PhpSpec\Console\Assembler\PresenterAssembler" namespace="PhpSpec\Console\Assembler" name="PresenterAssembler" abstract="false" final="false" start="41" end="199">
+  <file path="/home/web/example/src/freegame_developer/vendor/phpspec/phpspec/src/PhpSpec/Console/Assembler" file="PresenterAssembler.php" realpath="/home/web/example/src/freegame_developer/vendor/phpspec/phpspec/src/PhpSpec/Console/Assembler/PresenterAssembler.php" size="7713" time="2016-01-01T10:17:54+00:00" unixtime="1451643474" sha1="04ceacc8e0ca9e8a7962de7603f376f2223af520" relative="freegame_developer/vendor/phpspec/phpspec/src/PhpSpec/Console/Assembler/PresenterAssembler.php"/>
+  <method name="assemble" start="46" end="53" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <param type="object" variable="$container">
+        <type full="PhpSpec\ServiceContainer" namespace="PhpSpec" name="ServiceContainer"/>
+      </param>
+    </docblock>
+    <parameter name="container" byreference="false" type="object">
+      <type full="PhpSpec\ServiceContainer" namespace="PhpSpec" name="ServiceContainer"/>
+    </parameter>
+  </method>
+  <method name="assembleDiffer" start="58" end="70" abstract="false" final="false" static="false" visibility="private">
+    <docblock>
+      <description/>
+      <param type="object" variable="$container">
+        <type full="PhpSpec\ServiceContainer" namespace="PhpSpec" name="ServiceContainer"/>
+      </param>
+    </docblock>
+    <parameter name="container" byreference="false" type="object">
+      <type full="PhpSpec\ServiceContainer" namespace="PhpSpec" name="ServiceContainer"/>
+    </parameter>
+  </method>
+  <method name="assembleDifferEngines" start="75" end="91" abstract="false" final="false" static="false" visibility="private">
+    <docblock>
+      <description/>
+      <param type="object" variable="$container">
+        <type full="PhpSpec\ServiceContainer" namespace="PhpSpec" name="ServiceContainer"/>
+      </param>
+    </docblock>
+    <parameter name="container" byreference="false" type="object">
+      <type full="PhpSpec\ServiceContainer" namespace="PhpSpec" name="ServiceContainer"/>
+    </parameter>
+  </method>
+  <method name="assembleTypePresenters" start="96" end="132" abstract="false" final="false" static="false" visibility="private">
+    <docblock>
+      <description/>
+      <param type="object" variable="$container">
+        <type full="PhpSpec\ServiceContainer" namespace="PhpSpec" name="ServiceContainer"/>
+      </param>
+    </docblock>
+    <parameter name="container" byreference="false" type="object">
+      <type full="PhpSpec\ServiceContainer" namespace="PhpSpec" name="ServiceContainer"/>
+    </parameter>
+  </method>
+  <method name="assemblePresenter" start="137" end="169" abstract="false" final="false" static="false" visibility="private">
+    <docblock>
+      <description/>
+      <param type="object" variable="$container">
+        <type full="PhpSpec\ServiceContainer" namespace="PhpSpec" name="ServiceContainer"/>
+      </param>
+    </docblock>
+    <parameter name="container" byreference="false" type="object">
+      <type full="PhpSpec\ServiceContainer" namespace="PhpSpec" name="ServiceContainer"/>
+    </parameter>
+  </method>
+  <method name="assembleHtmlPresenter" start="174" end="198" abstract="false" final="false" static="false" visibility="private">
+    <docblock>
+      <description/>
+      <param type="object" variable="$container">
+        <type full="PhpSpec\ServiceContainer" namespace="PhpSpec" name="ServiceContainer"/>
+      </param>
+    </docblock>
+    <parameter name="container" byreference="false" type="object">
+      <type full="PhpSpec\ServiceContainer" namespace="PhpSpec" name="ServiceContainer"/>
+    </parameter>
+  </method>
+</class>

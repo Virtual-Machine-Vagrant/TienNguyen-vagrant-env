@@ -1,0 +1,1043 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="PHP_CodeSniffer_File" namespace="" name="PHP_CodeSniffer_File" abstract="false" final="false" start="117" end="3660">
+  <file path="/home/web/example/src/freegame_developer/vendor/squizlabs/php_codesniffer/CodeSniffer" file="File.php" realpath="/home/web/example/src/freegame_developer/vendor/squizlabs/php_codesniffer/CodeSniffer/File.php" size="138463" time="2016-01-19T23:39:10+00:00" unixtime="1453246750" sha1="0ecc2e3d81c06a66b4f06258413af6c951bc2a35" relative="freegame_developer/vendor/squizlabs/php_codesniffer/CodeSniffer/File.php"/>
+  <docblock>
+    <description compact="A PHP_CodeSniffer_File object represents a PHP source file and the tokens associated with it.">It provides a means for traversing the token stack, along with
+other token related operations. If a PHP_CodeSniffer_Sniff finds and error or
+ warning within a PHP_CodeSniffer_File, you can raise an error using the
+ addError() or addWarning() methods.
+
+&lt;b&gt;Token Information&lt;/b&gt;
+
+Each token within the stack contains information about itself:
+
+&lt;code&gt;
+  array(
+   'code'       =&gt; 301,       // the token type code (see token_get_all())
+   'content'    =&gt; 'if',      // the token content
+   'type'       =&gt; 'T_IF',    // the token name
+   'line'       =&gt; 56,        // the line number when the token is located
+   'column'     =&gt; 12,        // the column in the line where this token
+                              // starts (starts from 1)
+   'level'      =&gt; 2          // the depth a token is within the scopes open
+   'conditions' =&gt; array(     // a list of scope condition token
+                              // positions =&gt; codes that
+                    2 =&gt; 50,  // opened the scopes that this token exists
+                    9 =&gt; 353, // in (see conditional tokens section below)
+                   ),
+  );
+&lt;/code&gt;
+
+&lt;b&gt;Conditional Tokens&lt;/b&gt;
+
+In addition to the standard token fields, conditions contain information to
+determine where their scope begins and ends:
+
+&lt;code&gt;
+  array(
+   'scope_condition' =&gt; 38, // the token position of the condition
+   'scope_opener'    =&gt; 41, // the token position that started the scope
+   'scope_closer'    =&gt; 70, // the token position that ended the scope
+  );
+&lt;/code&gt;
+
+The condition, the scope opener and the scope closer each contain this
+information.
+
+&lt;b&gt;Parenthesis Tokens&lt;/b&gt;
+
+Each parenthesis token (T_OPEN_PARENTHESIS and T_CLOSE_PARENTHESIS) has a
+reference to their opening and closing parenthesis, one being itself, the
+other being its opposite.
+
+&lt;code&gt;
+  array(
+   'parenthesis_opener' =&gt; 34,
+   'parenthesis_closer' =&gt; 40,
+  );
+&lt;/code&gt;
+
+Some tokens can "own" a set of parenthesis. For example a T_FUNCTION token
+has parenthesis around its argument list. These tokens also have the
+parenthesis_opener and and parenthesis_closer indices. Not all parenthesis
+have owners, for example parenthesis used for arithmetic operations and
+function calls. The parenthesis tokens that have an owner have the following
+auxiliary array indices.
+
+&lt;code&gt;
+  array(
+   'parenthesis_opener' =&gt; 34,
+   'parenthesis_closer' =&gt; 40,
+   'parenthesis_owner'  =&gt; 33,
+  );
+&lt;/code&gt;
+
+Each token within a set of parenthesis also has an array index
+'nested_parenthesis' which is an array of the
+left parenthesis =&gt; right parenthesis token positions.
+
+&lt;code&gt;
+  'nested_parenthesis' =&gt; array(
+                            12 =&gt; 15
+                            11 =&gt; 14
+                           );
+&lt;/code&gt;
+
+&lt;b&gt;Extended Tokens&lt;/b&gt;
+
+PHP_CodeSniffer extends and augments some of the tokens created by
+&lt;i&gt;token_get_all()&lt;/i&gt;. A full list of these tokens can be seen in the
+&lt;i&gt;Tokens.php&lt;/i&gt; file.</description>
+    <category value="PHP"/>
+    <package value="PHP_CodeSniffer"/>
+    <author value="Greg Sherwood &lt;gsherwood@squiz.net&gt;"/>
+    <author value="Marc McIntyre &lt;mmcintyre@squiz.net&gt;"/>
+    <copyright value="2006-2014 Squiz Pty Ltd (ABN 77 084 670 600)"/>
+    <license name="https://github.com/squizlabs/PHP_CodeSniffer/blob/master/licence.txt BSD Licence"/>
+    <version value="Release: @package_version@"/>
+    <link value="http://pear.php.net/package/PHP_CodeSniffer"/>
+  </docblock>
+  <member name="_file" type="string" default="''" visibility="private" static="false" line="125">
+    <docblock>
+      <description compact="The absolute path to the file associated with this object."/>
+      <var type="string"/>
+    </docblock>
+  </member>
+  <member name="eolChar" type="string" default="''" visibility="public" static="false" line="132">
+    <docblock>
+      <description compact="The EOL character this file uses."/>
+      <var type="string"/>
+    </docblock>
+  </member>
+  <member name="phpcs" type="{unknown}" default="" constant="null" visibility="public" static="false" line="139">
+    <docblock>
+      <description compact="The PHP_CodeSniffer object controlling this run."/>
+      <var type="object">
+        <type full="PHP_CodeSniffer" namespace="" name="PHP_CodeSniffer"/>
+      </var>
+    </docblock>
+  </member>
+  <member name="fixer" type="{unknown}" default="" constant="null" visibility="public" static="false" line="146">
+    <docblock>
+      <description compact="The Fixer object to control fixing errors."/>
+      <var type="object">
+        <type full="PHP_CodeSniffer_Fixer" namespace="" name="PHP_CodeSniffer_Fixer"/>
+      </var>
+    </docblock>
+  </member>
+  <member name="tokenizer" type="{unknown}" default="" constant="null" visibility="public" static="false" line="153">
+    <docblock>
+      <description compact="The tokenizer being used for this file."/>
+      <var type="object"/>
+    </docblock>
+  </member>
+  <member name="tokenizerType" type="string" default="'PHP'" visibility="public" static="false" line="160">
+    <docblock>
+      <description compact="The tokenizer being used for this file."/>
+      <var type="string"/>
+    </docblock>
+  </member>
+  <member name="numTokens" type="integer" default="0" visibility="public" static="false" line="169">
+    <docblock>
+      <description compact="The number of tokens in this file.">Stored here to save calling count() everywhere.</description>
+      <var type="int"/>
+    </docblock>
+  </member>
+  <member name="_tokens" type="array" default="" visibility="private" static="false" line="181">
+    <docblock>
+      <description compact="The tokens stack map.">Note that the tokens in this array differ in format to the tokens
+produced by token_get_all(). Tokens are initially produced with
+token_get_all(), then augmented so that it's easier to process them.</description>
+      <var type="object">
+        <type full="array()" namespace="" name="array()"/>
+      </var>
+      <see value="Tokens.php"/>
+    </docblock>
+  </member>
+  <member name="_errors" type="array" default="" visibility="private" static="false" line="189">
+    <docblock>
+      <description compact="The errors raised from PHP_CodeSniffer_Sniffs."/>
+      <var type="object">
+        <type full="array()" namespace="" name="array()"/>
+      </var>
+      <see value="getErrors()"/>
+    </docblock>
+  </member>
+  <member name="_warnings" type="array" default="" visibility="private" static="false" line="197">
+    <docblock>
+      <description compact="The warnings raised from PHP_CodeSniffer_Sniffs."/>
+      <var type="object">
+        <type full="array()" namespace="" name="array()"/>
+      </var>
+      <see value="getWarnings()"/>
+    </docblock>
+  </member>
+  <member name="_metrics" type="array" default="" visibility="private" static="false" line="205">
+    <docblock>
+      <description compact="The metrics recorded from PHP_CodeSniffer_Sniffs."/>
+      <var type="object">
+        <type full="array()" namespace="" name="array()"/>
+      </var>
+      <see value="getMetrics()"/>
+    </docblock>
+  </member>
+  <member name="_recordErrors" type="boolean" default="true" visibility="private" static="false" line="212">
+    <docblock>
+      <description compact="Record the errors and warnings raised."/>
+      <var type="object">
+        <type full="bool" namespace="" name="bool"/>
+      </var>
+    </docblock>
+  </member>
+  <member name="_ignoredLines" type="array" default="" visibility="private" static="true" line="219">
+    <docblock>
+      <description compact="An array of lines that are being ignored."/>
+      <var type="object">
+        <type full="array()" namespace="" name="array()"/>
+      </var>
+    </docblock>
+  </member>
+  <member name="_ignoredListeners" type="array" default="" visibility="private" static="false" line="226">
+    <docblock>
+      <description compact="An array of sniffs that are being ignored."/>
+      <var type="object">
+        <type full="array()" namespace="" name="array()"/>
+      </var>
+    </docblock>
+  </member>
+  <member name="_ignoredCodes" type="array" default="" visibility="private" static="false" line="233">
+    <docblock>
+      <description compact="An array of message codes that are being ignored."/>
+      <var type="object">
+        <type full="array()" namespace="" name="array()"/>
+      </var>
+    </docblock>
+  </member>
+  <member name="_errorCount" type="integer" default="0" visibility="private" static="false" line="240">
+    <docblock>
+      <description compact="The total number of errors raised."/>
+      <var type="int"/>
+    </docblock>
+  </member>
+  <member name="_warningCount" type="integer" default="0" visibility="private" static="false" line="247">
+    <docblock>
+      <description compact="The total number of warnings raised."/>
+      <var type="int"/>
+    </docblock>
+  </member>
+  <member name="_fixableCount" type="integer" default="0" visibility="private" static="false" line="254">
+    <docblock>
+      <description compact="The total number of errors/warnings that can be fixed."/>
+      <var type="int"/>
+    </docblock>
+  </member>
+  <member name="_listeners" type="array" default="" visibility="private" static="false" line="261">
+    <docblock>
+      <description compact="An array of sniffs listening to this file's processing."/>
+      <var type="object">
+        <type full="array(PHP_CodeSniffer_Sniff)" namespace="" name="array(PHP_CodeSniffer_Sniff)"/>
+      </var>
+    </docblock>
+  </member>
+  <member name="_activeListener" type="string" default="''" visibility="private" static="false" line="268">
+    <docblock>
+      <description compact="The class name of the sniff currently processing the file."/>
+      <var type="string"/>
+    </docblock>
+  </member>
+  <member name="_listenerTimes" type="array" default="" visibility="private" static="false" line="275">
+    <docblock>
+      <description compact="An array of sniffs being processed and how long they took."/>
+      <var type="object">
+        <type full="array()" namespace="" name="array()"/>
+      </var>
+    </docblock>
+  </member>
+  <member name="ruleset" type="array" default="" visibility="protected" static="false" line="286">
+    <docblock>
+      <description compact="An array of rules from the ruleset.xml file.">This value gets set by PHP_CodeSniffer when the object is created.
+It may be empty, indicating that the ruleset does not override
+any of the default sniff settings.</description>
+      <var type="array"/>
+    </docblock>
+  </member>
+  <constructor name="__construct" start="303" end="335" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Constructs a PHP_CodeSniffer_File."/>
+      <param description="The absolute path to the file to process." type="string" variable="$file"/>
+      <param description="The initial listeners listening to processing of this file." type="object" variable="$listeners">to processing of this file.<type full="array(string)" namespace="" name="array(string)"/></param>
+      <param description="An array of rules from the ruleset.xml file." type="array" variable="$ruleset">ruleset.xml file.</param>
+      <param description="The PHP_CodeSniffer object controlling this run." type="object" variable="$phpcs">this run.<type full="PHP_CodeSniffer" namespace="" name="PHP_CodeSniffer"/></param>
+      <throws description="If the register() method does" type="object">not return an array.<type full="PHP_CodeSniffer_Exception" namespace="" name="PHP_CodeSniffer_Exception"/></throws>
+    </docblock>
+    <parameter name="file" byreference="false" type="{unknown}"/>
+    <parameter name="listeners" byreference="false" type="array"/>
+    <parameter name="ruleset" byreference="false" type="array"/>
+    <parameter name="phpcs" byreference="false" type="object">
+      <type full="PHP_CodeSniffer" namespace="" name="PHP_CodeSniffer"/>
+    </parameter>
+  </constructor>
+  <method name="setActiveListener" start="345" end="349" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Sets the name of the currently active sniff."/>
+      <param description="The class name of the current sniff." type="string" variable="$activeListener"/>
+      <return type="object">
+        <type full="void" namespace="" name="void"/>
+      </return>
+    </docblock>
+    <parameter name="activeListener" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="addTokenListener" start="365" end="378" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Adds a listener to the token stack that listens to the specific tokens.">When PHP_CodeSniffer encounters on the the tokens specified in $tokens,
+it invokes the process method of the sniff.</description>
+      <param description="The listener to add to the" type="object" variable="$listener">listener stack.<type full="PHP_CodeSniffer_Sniff" namespace="" name="PHP_CodeSniffer_Sniff"/></param>
+      <param description="The token types the listener wishes to" type="object" variable="$tokens">listen to.<type full="array(int)" namespace="" name="array(int)"/></param>
+      <return type="object">
+        <type full="void" namespace="" name="void"/>
+      </return>
+    </docblock>
+    <parameter name="listener" byreference="false" type="object">
+      <type full="PHP_CodeSniffer_Sniff" namespace="" name="PHP_CodeSniffer_Sniff"/>
+    </parameter>
+    <parameter name="tokens" byreference="false" type="array"/>
+  </method>
+  <method name="removeTokenListener" start="391" end="404" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Removes a listener from listening from the specified tokens."/>
+      <param description="The listener to remove from the" type="object" variable="$listener">listener stack.<type full="PHP_CodeSniffer_Sniff" namespace="" name="PHP_CodeSniffer_Sniff"/></param>
+      <param description="The token types the listener wishes to" type="object" variable="$tokens">stop listen to.<type full="array(int)" namespace="" name="array(int)"/></param>
+      <return type="object">
+        <type full="void" namespace="" name="void"/>
+      </return>
+    </docblock>
+    <parameter name="listener" byreference="false" type="object">
+      <type full="PHP_CodeSniffer_Sniff" namespace="" name="PHP_CodeSniffer_Sniff"/>
+    </parameter>
+    <parameter name="tokens" byreference="false" type="array"/>
+  </method>
+  <method name="refreshTokenListeners" start="412" end="417" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Rebuilds the list of listeners to ensure their state is cleared."/>
+      <return type="object">
+        <type full="void" namespace="" name="void"/>
+      </return>
+    </docblock>
+  </method>
+  <method name="getTokens" start="425" end="429" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Returns the token stack for this file."/>
+      <return type="array"/>
+    </docblock>
+  </method>
+  <method name="start" start="440" end="617" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Starts the stack traversal and tells listeners when tokens are found."/>
+      <param description="The contents to parse. If NULL, the content" type="string" variable="$contents">is taken from the file system.</param>
+      <return type="object">
+        <type full="void" namespace="" name="void"/>
+      </return>
+    </docblock>
+    <parameter name="contents" byreference="false" type="{unknown}" default="" constant="null"/>
+    <inline>
+      <comment value="Reset the ignored lines because lines numbers may have changed" line="448"/>
+      <comment value="if we are fixing this file." line="449"/>
+      <comment value="If this is standard input, see if a filename was passed in as well." line="459"/>
+      <comment value="This is done by including: phpcs_input_file: [file path]" line="460"/>
+      <comment value="as the first line of content." line="461"/>
+      <comment value="Foreach of the listeners that have registered to listen for this" line="483"/>
+      <comment value="token, get them to process it." line="484"/>
+      <comment value="end foreach" line="586"/>
+      <comment value="If short open tags are off but the file being checked uses" line="593"/>
+      <comment value="short open tags, the whole content will be inline HTML" line="594"/>
+      <comment value="and nothing will be checked. So try and handle this case." line="595"/>
+    </inline>
+  </method>
+  <method name="cleanUp" start="625" end="630" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Remove vars stored in this file that are no longer required."/>
+      <return type="object">
+        <type full="void" namespace="" name="void"/>
+      </return>
+    </docblock>
+  </method>
+  <method name="_parse" start="641" end="731" abstract="false" final="false" static="false" visibility="private">
+    <docblock>
+      <description compact="Tokenizes the file and prepares it for the test run."/>
+      <param description="The contents to parse. If NULL, the content" type="string" variable="$contents">is taken from the file system.</param>
+      <return type="object">
+        <type full="void" namespace="" name="void"/>
+      </return>
+    </docblock>
+    <parameter name="contents" byreference="false" type="{unknown}" default="" constant="null"/>
+    <inline>
+      <comment value="Determine the tokenizer from the file extension." line="654"/>
+      <comment value="end try" line="700"/>
+      <comment value="Check for mixed line endings as these can cause tokenizer errors and we" line="704"/>
+      <comment value="should let the user know that the results they get may be incorrect." line="705"/>
+      <comment value="This is done by removing all backslashes, removing the newline char we" line="706"/>
+      <comment value="detected, then converting newlines chars into text. If any backslashes" line="707"/>
+      <comment value="are left at the end, we have additional newline chars in use." line="708"/>
+    </inline>
+  </method>
+  <method name="detectLineEndings" start="744" end="786" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description compact="Opens a file and detects the EOL character being used."/>
+      <param description="The full path to the file." type="string" variable="$file"/>
+      <param description="The contents to parse. If NULL, the content" type="string" variable="$contents">is taken from the file system.</param>
+      <return type="string"/>
+      <throws description="If $file could not be opened." type="object">
+        <type full="PHP_CodeSniffer_Exception" namespace="" name="PHP_CodeSniffer_Exception"/>
+      </throws>
+    </docblock>
+    <parameter name="file" byreference="false" type="{unknown}"/>
+    <parameter name="contents" byreference="false" type="{unknown}" default="" constant="null"/>
+    <inline>
+      <comment value="end if" line="782"/>
+    </inline>
+  </method>
+  <method name="addError" start="802" end="820" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Records an error against a specific token in the file."/>
+      <param description="The error message." type="string" variable="$error"/>
+      <param description="The stack position where the error occurred." type="int" variable="$stackPtr"/>
+      <param description="A violation code unique to the sniff message." type="string" variable="$code"/>
+      <param description="Replacements for the error message." type="array" variable="$data"/>
+      <param description="The severity level for this error. A value of 0" type="int" variable="$severity">will be converted into the default severity level.</param>
+      <param description="Can the error be fixed by the sniff?" type="boolean" variable="$fixable"/>
+      <return type="boolean"/>
+    </docblock>
+    <parameter name="error" byreference="false" type="{unknown}"/>
+    <parameter name="stackPtr" byreference="false" type="{unknown}"/>
+    <parameter name="code" byreference="false" type="string" default="''"/>
+    <parameter name="data" byreference="false" type="array" default=""/>
+    <parameter name="severity" byreference="false" type="integer" default="0"/>
+    <parameter name="fixable" byreference="false" type="boolean" default="false"/>
+  </method>
+  <method name="addWarning" start="836" end="854" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Records a warning against a specific token in the file."/>
+      <param description="The error message." type="string" variable="$warning"/>
+      <param description="The stack position where the error occurred." type="int" variable="$stackPtr"/>
+      <param description="A violation code unique to the sniff message." type="string" variable="$code"/>
+      <param description="Replacements for the warning message." type="array" variable="$data"/>
+      <param description="The severity level for this warning. A value of 0" type="int" variable="$severity">will be converted into the default severity level.</param>
+      <param description="Can the warning be fixed by the sniff?" type="boolean" variable="$fixable"/>
+      <return type="boolean"/>
+    </docblock>
+    <parameter name="warning" byreference="false" type="{unknown}"/>
+    <parameter name="stackPtr" byreference="false" type="{unknown}"/>
+    <parameter name="code" byreference="false" type="string" default="''"/>
+    <parameter name="data" byreference="false" type="array" default=""/>
+    <parameter name="severity" byreference="false" type="integer" default="0"/>
+    <parameter name="fixable" byreference="false" type="boolean" default="false"/>
+  </method>
+  <method name="addErrorOnLine" start="869" end="878" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Records an error against a specific line in the file."/>
+      <param description="The error message." type="string" variable="$error"/>
+      <param description="The line on which the error occurred." type="int" variable="$line"/>
+      <param description="A violation code unique to the sniff message." type="string" variable="$code"/>
+      <param description="Replacements for the error message." type="array" variable="$data"/>
+      <param description="The severity level for this error. A value of 0 will be converted into the default severity level." type="int" variable="$severity">will be converted into the default severity level.</param>
+      <return type="boolean"/>
+    </docblock>
+    <parameter name="error" byreference="false" type="{unknown}"/>
+    <parameter name="line" byreference="false" type="{unknown}"/>
+    <parameter name="code" byreference="false" type="string" default="''"/>
+    <parameter name="data" byreference="false" type="array" default=""/>
+    <parameter name="severity" byreference="false" type="integer" default="0"/>
+  </method>
+  <method name="addWarningOnLine" start="893" end="902" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Records a warning against a specific token in the file."/>
+      <param description="The error message." type="string" variable="$warning"/>
+      <param description="The line on which the warning occurred." type="int" variable="$line"/>
+      <param description="A violation code unique to the sniff message." type="string" variable="$code"/>
+      <param description="Replacements for the warning message." type="array" variable="$data"/>
+      <param description="The severity level for this warning. A value of 0 will be converted into the default severity level." type="int" variable="$severity">will be converted into the default severity level.</param>
+      <return type="boolean"/>
+    </docblock>
+    <parameter name="warning" byreference="false" type="{unknown}"/>
+    <parameter name="line" byreference="false" type="{unknown}"/>
+    <parameter name="code" byreference="false" type="string" default="''"/>
+    <parameter name="data" byreference="false" type="array" default=""/>
+    <parameter name="severity" byreference="false" type="integer" default="0"/>
+  </method>
+  <method name="addFixableError" start="919" end="933" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Records a fixable error against a specific token in the file.">Returns true if the error was recorded and should be fixed.</description>
+      <param description="The error message." type="string" variable="$error"/>
+      <param description="The stack position where the error occurred." type="int" variable="$stackPtr"/>
+      <param description="A violation code unique to the sniff message." type="string" variable="$code"/>
+      <param description="Replacements for the error message." type="array" variable="$data"/>
+      <param description="The severity level for this error. A value of 0" type="int" variable="$severity">will be converted into the default severity level.</param>
+      <return type="boolean"/>
+    </docblock>
+    <parameter name="error" byreference="false" type="{unknown}"/>
+    <parameter name="stackPtr" byreference="false" type="{unknown}"/>
+    <parameter name="code" byreference="false" type="string" default="''"/>
+    <parameter name="data" byreference="false" type="array" default=""/>
+    <parameter name="severity" byreference="false" type="integer" default="0"/>
+  </method>
+  <method name="addFixableWarning" start="950" end="964" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Records a fixable warning against a specific token in the file.">Returns true if the warning was recorded and should be fixed.</description>
+      <param description="The error message." type="string" variable="$warning"/>
+      <param description="The stack position where the error occurred." type="int" variable="$stackPtr"/>
+      <param description="A violation code unique to the sniff message." type="string" variable="$code"/>
+      <param description="Replacements for the warning message." type="array" variable="$data"/>
+      <param description="The severity level for this warning. A value of 0" type="int" variable="$severity">will be converted into the default severity level.</param>
+      <return type="boolean"/>
+    </docblock>
+    <parameter name="warning" byreference="false" type="{unknown}"/>
+    <parameter name="stackPtr" byreference="false" type="{unknown}"/>
+    <parameter name="code" byreference="false" type="string" default="''"/>
+    <parameter name="data" byreference="false" type="array" default=""/>
+    <parameter name="severity" byreference="false" type="integer" default="0"/>
+  </method>
+  <method name="_addError" start="981" end="1112" abstract="false" final="false" static="false" visibility="private">
+    <docblock>
+      <description compact="Adds an error to the error stack."/>
+      <param description="The error message." type="string" variable="$error"/>
+      <param description="The line on which the error occurred." type="int" variable="$line"/>
+      <param description="The column at which the error occurred." type="int" variable="$column"/>
+      <param description="A violation code unique to the sniff message." type="string" variable="$code"/>
+      <param description="Replacements for the error message." type="array" variable="$data"/>
+      <param description="The severity level for this error. A value of 0" type="int" variable="$severity">will be converted into the default severity level.</param>
+      <param description="Can the error be fixed by the sniff?" type="boolean" variable="$fixable"/>
+      <return type="boolean"/>
+    </docblock>
+    <parameter name="error" byreference="false" type="{unknown}"/>
+    <parameter name="line" byreference="false" type="{unknown}"/>
+    <parameter name="column" byreference="false" type="{unknown}"/>
+    <parameter name="code" byreference="false" type="{unknown}"/>
+    <parameter name="data" byreference="false" type="{unknown}"/>
+    <parameter name="severity" byreference="false" type="{unknown}"/>
+    <parameter name="fixable" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="Work out which sniff generated the error." line="987"/>
+      <comment value="end if" line="1007"/>
+      <comment value="If we know this sniff code is being ignored for this file, return early." line="1009"/>
+      <comment value="Make sure this message type has not been set to &quot;warning&quot;." line="1014"/>
+      <comment value="Make sure we are interested in this severity level." line="1026"/>
+      <comment value="Make sure we are not ignoring this file." line="1037"/>
+      <comment value="end foreach" line="1059"/>
+      <comment value="Work out the error message." line="1075"/>
+    </inline>
+  </method>
+  <method name="_addWarning" start="1129" end="1260" abstract="false" final="false" static="false" visibility="private">
+    <docblock>
+      <description compact="Adds an warning to the warning stack."/>
+      <param description="The error message." type="string" variable="$warning"/>
+      <param description="The line on which the warning occurred." type="int" variable="$line"/>
+      <param description="The column at which the warning occurred." type="int" variable="$column"/>
+      <param description="A violation code unique to the sniff message." type="string" variable="$code"/>
+      <param description="Replacements for the warning message." type="array" variable="$data"/>
+      <param description="The severity level for this warning. A value of 0" type="int" variable="$severity">will be converted into the default severity level.</param>
+      <param description="Can the warning be fixed by the sniff?" type="boolean" variable="$fixable"/>
+      <return type="boolean"/>
+    </docblock>
+    <parameter name="warning" byreference="false" type="{unknown}"/>
+    <parameter name="line" byreference="false" type="{unknown}"/>
+    <parameter name="column" byreference="false" type="{unknown}"/>
+    <parameter name="code" byreference="false" type="{unknown}"/>
+    <parameter name="data" byreference="false" type="{unknown}"/>
+    <parameter name="severity" byreference="false" type="{unknown}"/>
+    <parameter name="fixable" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="Work out which sniff generated the warning." line="1135"/>
+      <comment value="end if" line="1155"/>
+      <comment value="If we know this sniff code is being ignored for this file, return early." line="1157"/>
+      <comment value="Make sure this message type has not been set to &quot;error&quot;." line="1162"/>
+      <comment value="Make sure we are interested in this severity level." line="1174"/>
+      <comment value="Make sure we are not ignoring this file." line="1185"/>
+      <comment value="end foreach" line="1207"/>
+      <comment value="Work out the warning message." line="1223"/>
+    </inline>
+  </method>
+  <method name="recordMetric" start="1272" end="1290" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Adds an warning to the warning stack."/>
+      <param description="The stack position where the metric was recorded." type="int" variable="$stackPtr"/>
+      <param description="The name of the metric being recorded." type="string" variable="$metric"/>
+      <param description="The value of the metric being recorded." type="string" variable="$value"/>
+      <return type="boolean"/>
+    </docblock>
+    <parameter name="stackPtr" byreference="false" type="{unknown}"/>
+    <parameter name="metric" byreference="false" type="{unknown}"/>
+    <parameter name="value" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="getErrorCount" start="1298" end="1302" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Returns the number of errors raised."/>
+      <return type="int"/>
+    </docblock>
+  </method>
+  <method name="getWarningCount" start="1310" end="1314" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Returns the number of warnings raised."/>
+      <return type="int"/>
+    </docblock>
+  </method>
+  <method name="getSuccessCount" start="1322" end="1326" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Returns the number of successes recorded."/>
+      <return type="int"/>
+    </docblock>
+  </method>
+  <method name="getFixableCount" start="1334" end="1338" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Returns the number of fixable errors/warnings raised."/>
+      <return type="int"/>
+    </docblock>
+  </method>
+  <method name="getIgnoredLines" start="1346" end="1350" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Returns the list of ignored lines."/>
+      <return type="array"/>
+    </docblock>
+  </method>
+  <method name="getErrors" start="1358" end="1362" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Returns the errors raised from processing this file."/>
+      <return type="array"/>
+    </docblock>
+  </method>
+  <method name="getWarnings" start="1370" end="1374" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Returns the warnings raised from processing this file."/>
+      <return type="array"/>
+    </docblock>
+  </method>
+  <method name="getMetrics" start="1382" end="1386" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Returns the metrics found while processing this file."/>
+      <return type="array"/>
+    </docblock>
+  </method>
+  <method name="getFilename" start="1394" end="1398" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Returns the absolute filename of this file."/>
+      <return type="string"/>
+    </docblock>
+  </method>
+  <method name="tokenizeString" start="1416" end="1451" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description compact="Creates an array of tokens when given some PHP code.">Starts by using token_get_all() but does a lot of extra processing
+to insert information about the context of the token.</description>
+      <param description="The string to tokenize." type="string" variable="$string"/>
+      <param description="A tokenizer class to use to tokenize the string." type="object" variable="$tokenizer"/>
+      <param description="The EOL character to use for splitting strings." type="string" variable="$eolChar"/>
+      <param description="The number of spaces each tab respresents." type="int" variable="$tabWidth"/>
+      <param description="The charset of the sniffed file." type="string" variable="$encoding"/>
+      <throws description="If the file cannot be processed." type="object">
+        <type full="PHP_CodeSniffer_Exception" namespace="" name="PHP_CodeSniffer_Exception"/>
+      </throws>
+      <return type="array"/>
+    </docblock>
+    <parameter name="string" byreference="false" type="{unknown}"/>
+    <parameter name="tokenizer" byreference="false" type="{unknown}"/>
+    <parameter name="eolChar" byreference="false" type="string" default="'\n'"/>
+    <parameter name="tabWidth" byreference="false" type="{unknown}" default="" constant="null"/>
+    <parameter name="encoding" byreference="false" type="{unknown}" default="" constant="null"/>
+    <inline>
+      <comment value="Minified files often have a very large number of characters per line" line="1418"/>
+      <comment value="and cause issues when tokenizing." line="1419"/>
+      <comment value="Allow the tokenizer to do additional processing if required." line="1446"/>
+    </inline>
+  </method>
+  <method name="_createPositionMap" start="1469" end="1635" abstract="false" final="false" static="true" visibility="private">
+    <docblock>
+      <description compact="Sets token position information.">Can also convert tabs into spaces. Each tab can represent between
+1 and $width spaces, so this cannot be a straight string replace.</description>
+      <param description="The array of tokens to process." type="array" variable="$tokens"/>
+      <param description="The tokenizer being used to process this file." type="object" variable="$tokenizer"/>
+      <param description="The EOL character to use for splitting strings." type="string" variable="$eolChar"/>
+      <param description="The charset of the sniffed file." type="string" variable="$encoding"/>
+      <param description="The number of spaces that each tab represents." type="int" variable="$tabWidth">Set to 0 to disable tab replacement.</param>
+      <return type="object">
+        <type full="void" namespace="" name="void"/>
+      </return>
+    </docblock>
+    <parameter name="tokens" byreference="true" type="{unknown}"/>
+    <parameter name="tokenizer" byreference="false" type="{unknown}"/>
+    <parameter name="eolChar" byreference="false" type="{unknown}"/>
+    <parameter name="encoding" byreference="false" type="{unknown}"/>
+    <parameter name="tabWidth" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="end for" line="1633"/>
+    </inline>
+  </method>
+  <method name="_createTokenMap" start="1647" end="1762" abstract="false" final="false" static="true" visibility="private">
+    <docblock>
+      <description compact="Creates a map of brackets positions."/>
+      <param description="The array of tokens to process." type="array" variable="$tokens"/>
+      <param description="The tokenizer being used to process this file." type="object" variable="$tokenizer"/>
+      <param description="The EOL character to use for splitting strings." type="string" variable="$eolChar"/>
+      <return type="object">
+        <type full="void" namespace="" name="void"/>
+      </return>
+    </docblock>
+    <parameter name="tokens" byreference="true" type="{unknown}"/>
+    <parameter name="tokenizer" byreference="false" type="{unknown}"/>
+    <parameter name="eolChar" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="end for" line="1756"/>
+    </inline>
+  </method>
+  <method name="_createParenthesisNestingMap" start="1774" end="1807" abstract="false" final="false" static="true" visibility="private">
+    <docblock>
+      <description compact="Creates a map for the parenthesis tokens that surround other tokens."/>
+      <param description="The array of tokens to process." type="array" variable="$tokens"/>
+      <param description="The tokenizer being used to process this file." type="object" variable="$tokenizer"/>
+      <param description="The EOL character to use for splitting strings." type="string" variable="$eolChar"/>
+      <return type="object">
+        <type full="void" namespace="" name="void"/>
+      </return>
+    </docblock>
+    <parameter name="tokens" byreference="true" type="{unknown}"/>
+    <parameter name="tokenizer" byreference="false" type="{unknown}"/>
+    <parameter name="eolChar" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="end for" line="1805"/>
+    </inline>
+  </method>
+  <method name="_createScopeMap" start="1820" end="1862" abstract="false" final="false" static="true" visibility="private">
+    <docblock>
+      <description compact="Creates a scope map of tokens that open scopes."/>
+      <param description="The array of tokens to process." type="array" variable="$tokens"/>
+      <param description="The tokenizer being used to process this file." type="object" variable="$tokenizer"/>
+      <param description="The EOL character to use for splitting strings." type="string" variable="$eolChar"/>
+      <return type="object">
+        <type full="void" namespace="" name="void"/>
+      </return>
+      <see value="_recurseScopeMap()"/>
+    </docblock>
+    <parameter name="tokens" byreference="true" type="{unknown}"/>
+    <parameter name="tokenizer" byreference="false" type="{unknown}"/>
+    <parameter name="eolChar" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="end for" line="1856"/>
+    </inline>
+  </method>
+  <method name="_recurseScopeMap" start="1879" end="2358" abstract="false" final="false" static="true" visibility="private">
+    <docblock>
+      <description compact="Recurses though the scope openers to build a scope map."/>
+      <param description="The array of tokens to process." type="array" variable="$tokens"/>
+      <param description="The size of the tokens array." type="int" variable="$numTokens"/>
+      <param description="The tokenizer being used to process this file." type="object" variable="$tokenizer"/>
+      <param description="The EOL character to use for splitting strings." type="string" variable="$eolChar"/>
+      <param description="The position in the stack of the token that" type="int" variable="$stackPtr">opened the scope (eg. an IF token or FOR token).</param>
+      <param description="How many scope levels down we are." type="int" variable="$depth"/>
+      <param description="How many curly braces we are ignoring." type="int" variable="$ignore"/>
+      <return description="The position in the stack that closed the scope." type="int"/>
+    </docblock>
+    <parameter name="tokens" byreference="true" type="{unknown}"/>
+    <parameter name="numTokens" byreference="false" type="{unknown}"/>
+    <parameter name="tokenizer" byreference="false" type="{unknown}"/>
+    <parameter name="eolChar" byreference="false" type="{unknown}"/>
+    <parameter name="stackPtr" byreference="false" type="{unknown}"/>
+    <parameter name="depth" byreference="false" type="integer" default="1"/>
+    <parameter name="ignore" byreference="true" type="integer" default="0"/>
+    <inline>
+      <comment value="We will need this to restore the value if we end up" line="1902"/>
+      <comment value="returning a token ID that causes our calling function to go back" line="1903"/>
+      <comment value="over already ignored braces." line="1904"/>
+      <comment value="If the start token for this scope opener is the same as" line="1907"/>
+      <comment value="the scope token, we have already found our opener." line="1908"/>
+      <comment value="end for" line="2354"/>
+    </inline>
+  </method>
+  <method name="_createLevelMap" start="2375" end="2606" abstract="false" final="false" static="true" visibility="private">
+    <docblock>
+      <description compact="Constructs the level map.">The level map adds a 'level' index to each token which indicates the
+depth that a token within a set of scope blocks. It also adds a
+'condition' index which is an array of the scope conditions that opened
+each of the scopes - position 0 being the first scope opener.</description>
+      <param description="The array of tokens to process." type="array" variable="$tokens"/>
+      <param description="The tokenizer being used to process this file." type="object" variable="$tokenizer"/>
+      <param description="The EOL character to use for splitting strings." type="string" variable="$eolChar"/>
+      <return type="object">
+        <type full="void" namespace="" name="void"/>
+      </return>
+    </docblock>
+    <parameter name="tokens" byreference="true" type="{unknown}"/>
+    <parameter name="tokenizer" byreference="false" type="{unknown}"/>
+    <parameter name="eolChar" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="end for" line="2600"/>
+    </inline>
+  </method>
+  <method name="getDeclarationName" start="2620" end="2647" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Returns the declaration names for T_CLASS, T_INTERFACE and T_FUNCTION tokens."/>
+      <param description="The position of the declaration token which" type="int" variable="$stackPtr">declared the class, interface or function.</param>
+      <return description="The name of the class, interface or function." type="object">or NULL if the function is a closure.<type full="string|null" namespace="" name="string|null"/></return>
+      <throws description="If the specified token is not of type" type="object">T_FUNCTION, T_CLASS or T_INTERFACE.<type full="PHP_CodeSniffer_Exception" namespace="" name="PHP_CodeSniffer_Exception"/></throws>
+    </docblock>
+    <parameter name="stackPtr" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="isAnonymousFunction" start="2660" end="2692" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Check if the token at the specified position is a anonymous function."/>
+      <param description="The position of the declaration token which" type="int" variable="$stackPtr">declared the class, interface or function.</param>
+      <return type="boolean"/>
+      <throws description="If the specified token is not of type" type="object">T_FUNCTION<type full="PHP_CodeSniffer_Exception" namespace="" name="PHP_CodeSniffer_Exception"/></throws>
+    </docblock>
+    <parameter name="stackPtr" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="getMethodParameters" start="2718" end="2842" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Returns the method parameters for the specified T_FUNCTION token.">Each parameter is in the following format:
+
+&lt;code&gt;
+  0 =&gt; array(
+        'name'              =&gt; '$var',  // The variable name.
+        'pass_by_reference' =&gt; false,   // Passed by reference.
+        'type_hint'         =&gt; string,  // Type hint for array or custom type
+       )
+&lt;/code&gt;
+
+Parameters with default values have an additional array index of
+'default' with the value of the default as a string.</description>
+      <param description="The position in the stack of the T_FUNCTION token" type="int" variable="$stackPtr">to acquire the parameters for.</param>
+      <return type="array"/>
+      <throws description="If the specified $stackPtr is not of" type="object">type T_FUNCTION.<type full="PHP_CodeSniffer_Exception" namespace="" name="PHP_CodeSniffer_Exception"/></throws>
+    </docblock>
+    <parameter name="stackPtr" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="end for" line="2838"/>
+    </inline>
+  </method>
+  <method name="getMethodProperties" start="2867" end="2931" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Returns the visibility and implementation properties of a method.">The format of the array is:
+&lt;code&gt;
+  array(
+   'scope'           =&gt; 'public', // public private or protected
+   'scope_specified' =&gt; true,     // true is scope keyword was found.
+   'is_abstract'     =&gt; false,    // true if the abstract keyword was found.
+   'is_final'        =&gt; false,    // true if the final keyword was found.
+   'is_static'       =&gt; false,    // true if the static keyword was found.
+   'is_closure'      =&gt; false,    // true if no name is found.
+  );
+&lt;/code&gt;</description>
+      <param description="The position in the stack of the T_FUNCTION token to" type="int" variable="$stackPtr">acquire the properties for.</param>
+      <return type="array"/>
+      <throws description="If the specified position is not a" type="object">T_FUNCTION token.<type full="PHP_CodeSniffer_Exception" namespace="" name="PHP_CodeSniffer_Exception"/></throws>
+    </docblock>
+    <parameter name="stackPtr" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="end for" line="2920"/>
+    </inline>
+  </method>
+  <method name="getMemberProperties" start="2955" end="3032" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Returns the visibility and implementation properties of the class member variable found at the specified position in the stack.">The format of the array is:
+
+&lt;code&gt;
+  array(
+   'scope'       =&gt; 'public', // public private or protected
+   'is_static'   =&gt; false,    // true if the static keyword was found.
+  );
+&lt;/code&gt;</description>
+      <param description="The position in the stack of the T_VARIABLE token to" type="int" variable="$stackPtr">acquire the properties for.</param>
+      <return type="array"/>
+      <throws description="If the specified position is not a" type="object">T_VARIABLE token, or if the position is not
+                                  a class member variable.<type full="PHP_CodeSniffer_Exception" namespace="" name="PHP_CodeSniffer_Exception"/></throws>
+    </docblock>
+    <parameter name="stackPtr" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="end for" line="3024"/>
+    </inline>
+  </method>
+  <method name="getClassProperties" start="3053" end="3091" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Returns the visibility and implementation properties of a class.">The format of the array is:
+&lt;code&gt;
+  array(
+   'is_abstract' =&gt; false, // true if the abstract keyword was found.
+   'is_final'    =&gt; false, // true if the final keyword was found.
+  );
+&lt;/code&gt;</description>
+      <param description="The position in the stack of the T_CLASS token to" type="int" variable="$stackPtr">acquire the properties for.</param>
+      <return type="array"/>
+      <throws description="If the specified position is not a" type="object">T_CLASS token.<type full="PHP_CodeSniffer_Exception" namespace="" name="PHP_CodeSniffer_Exception"/></throws>
+    </docblock>
+    <parameter name="stackPtr" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="end for" line="3084"/>
+    </inline>
+  </method>
+  <method name="isReference" start="3104" end="3186" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Determine if the passed token is a reference operator.">Returns true if the specified token position represents a reference.
+Returns false if the token represents a bitwise operator.</description>
+      <param description="The position of the T_BITWISE_AND token." type="int" variable="$stackPtr"/>
+      <return type="boolean"/>
+    </docblock>
+    <parameter name="stackPtr" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="end if" line="3168"/>
+    </inline>
+  </method>
+  <method name="getTokensAsString" start="3198" end="3212" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Returns the content of the tokens from the specified start position in the token stack for the specified length."/>
+      <param description="The position to start from in the token stack." type="int" variable="$start"/>
+      <param description="The length of tokens to traverse from the start pos." type="int" variable="$length"/>
+      <return description="The token contents." type="string"/>
+    </docblock>
+    <parameter name="start" byreference="false" type="{unknown}"/>
+    <parameter name="length" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="findPrevious" start="3241" end="3293" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Returns the position of the next specified token(s).">If a value is specified, the next token of the specified type(s)
+containing the specified value will be returned.
+
+Returns false if no token can be found.</description>
+      <param description="The type(s) of tokens to search for." type="object" variable="$types">
+        <type full="int|array" namespace="" name="int|array"/>
+      </param>
+      <param description="The position to start searching from in the" type="int" variable="$start">token stack.</param>
+      <param description="The end position to fail if no token is found." type="int" variable="$end">if not specified or null, end will default to
+                          the start of the token stack.</param>
+      <param description="If true, find the next token that are NOT of" type="object" variable="$exclude">the types specified in $types.<type full="bool" namespace="" name="bool"/></param>
+      <param description="The value that the token(s) must be equal to." type="string" variable="$value">If value is omitted, tokens with any value will
+                          be returned.</param>
+      <param description="If true, tokens outside the current statement" type="object" variable="$local">will not be checked. IE. checking will stop
+                          at the next semi-colon found.<type full="bool" namespace="" name="bool"/></param>
+      <return type="object">
+        <type full="int|bool" namespace="" name="int|bool"/>
+      </return>
+      <see value="findNext()"/>
+    </docblock>
+    <parameter name="types" byreference="false" type="{unknown}"/>
+    <parameter name="start" byreference="false" type="{unknown}"/>
+    <parameter name="end" byreference="false" type="{unknown}" default="" constant="null"/>
+    <parameter name="exclude" byreference="false" type="boolean" default="false"/>
+    <parameter name="value" byreference="false" type="{unknown}" default="" constant="null"/>
+    <parameter name="local" byreference="false" type="boolean" default="false"/>
+    <inline>
+      <comment value="end for" line="3289"/>
+    </inline>
+  </method>
+  <method name="findNext" start="3322" end="3360" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Returns the position of the next specified token(s).">If a value is specified, the next token of the specified type(s)
+containing the specified value will be returned.
+
+Returns false if no token can be found.</description>
+      <param description="The type(s) of tokens to search for." type="object" variable="$types">
+        <type full="int|array" namespace="" name="int|array"/>
+      </param>
+      <param description="The position to start searching from in the" type="int" variable="$start">token stack.</param>
+      <param description="The end position to fail if no token is found." type="int" variable="$end">if not specified or null, end will default to
+                          the end of the token stack.</param>
+      <param description="If true, find the next token that is NOT of" type="object" variable="$exclude">a type specified in $types.<type full="bool" namespace="" name="bool"/></param>
+      <param description="The value that the token(s) must be equal to." type="string" variable="$value">If value is omitted, tokens with any value will
+                          be returned.</param>
+      <param description="If true, tokens outside the current statement" type="object" variable="$local">will not be checked. i.e., checking will stop
+                          at the next semi-colon found.<type full="bool" namespace="" name="bool"/></param>
+      <return type="object">
+        <type full="int|bool" namespace="" name="int|bool"/>
+      </return>
+      <see value="findPrevious()"/>
+    </docblock>
+    <parameter name="types" byreference="false" type="{unknown}"/>
+    <parameter name="start" byreference="false" type="{unknown}"/>
+    <parameter name="end" byreference="false" type="{unknown}" default="" constant="null"/>
+    <parameter name="exclude" byreference="false" type="boolean" default="false"/>
+    <parameter name="value" byreference="false" type="{unknown}" default="" constant="null"/>
+    <parameter name="local" byreference="false" type="boolean" default="false"/>
+    <inline>
+      <comment value="end for" line="3356"/>
+    </inline>
+  </method>
+  <method name="findStartOfStatement" start="3370" end="3415" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Returns the position of the first non-whitespace token in a statement."/>
+      <param description="The position to start searching from in the token stack." type="int" variable="$start"/>
+      <return type="int"/>
+    </docblock>
+    <parameter name="start" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="end for" line="3411"/>
+    </inline>
+  </method>
+  <method name="findEndOfStatement" start="3425" end="3480" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Returns the position of the last non-whitespace token in a statement."/>
+      <param description="The position to start searching from in the token stack." type="int" variable="$start"/>
+      <return type="int"/>
+    </docblock>
+    <parameter name="start" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="end for" line="3476"/>
+    </inline>
+  </method>
+  <method name="findFirstOnLine" start="3500" end="3539" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Returns the position of the first token on a line, matching given type.">Returns false if no token can be found.</description>
+      <param description="The type(s) of tokens to search for." type="object" variable="$types">
+        <type full="int|array" namespace="" name="int|array"/>
+      </param>
+      <param description="The position to start searching from in the" type="int" variable="$start">token stack. The first token matching on
+                          this line before this token will be returned.</param>
+      <param description="If true, find the token that is NOT of" type="object" variable="$exclude">the types specified in $types.<type full="bool" namespace="" name="bool"/></param>
+      <param description="The value that the token must be equal to." type="string" variable="$value">If value is omitted, tokens with any value will
+                          be returned.</param>
+      <return description="| bool" type="int"/>
+    </docblock>
+    <parameter name="types" byreference="false" type="{unknown}"/>
+    <parameter name="start" byreference="false" type="{unknown}"/>
+    <parameter name="exclude" byreference="false" type="boolean" default="false"/>
+    <parameter name="value" byreference="false" type="{unknown}" default="" constant="null"/>
+    <inline>
+      <comment value="end for" line="3535"/>
+    </inline>
+  </method>
+  <method name="hasCondition" start="3550" end="3574" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Determine if the passed token has a condition of one of the passed types."/>
+      <param description="The position of the token we are checking." type="int" variable="$stackPtr"/>
+      <param description="The type(s) of tokens to search for." type="object" variable="$types">
+        <type full="int|array" namespace="" name="int|array"/>
+      </param>
+      <return type="boolean"/>
+    </docblock>
+    <parameter name="stackPtr" byreference="false" type="{unknown}"/>
+    <parameter name="types" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="Check for the existence of the token." line="3552"/>
+      <comment value="Make sure the token has conditions." line="3557"/>
+    </inline>
+  </method>
+  <method name="getCondition" start="3587" end="3608" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Return the position of the condition for the passed token.">Returns FALSE if the token does not have the condition.</description>
+      <param description="The position of the token we are checking." type="int" variable="$stackPtr"/>
+      <param description="The type of token to search for." type="int" variable="$type"/>
+      <return type="int"/>
+    </docblock>
+    <parameter name="stackPtr" byreference="false" type="{unknown}"/>
+    <parameter name="type" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="Check for the existence of the token." line="3589"/>
+      <comment value="Make sure the token has conditions." line="3594"/>
+    </inline>
+  </method>
+  <method name="findExtendedClassName" start="3620" end="3657" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Returns the name of the class that the specified class extends.">Returns FALSE on error or if there is no extended class name.</description>
+      <param description="The stack position of the class." type="int" variable="$stackPtr"/>
+      <return type="string"/>
+    </docblock>
+    <parameter name="stackPtr" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="Check for the existence of the token." line="3622"/>
+    </inline>
+  </method>
+</class>

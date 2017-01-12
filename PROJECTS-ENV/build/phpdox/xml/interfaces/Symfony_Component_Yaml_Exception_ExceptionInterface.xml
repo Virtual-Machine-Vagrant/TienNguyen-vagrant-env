@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface xmlns="http://xml.phpdox.net/src" full="Symfony\Component\Yaml\Exception\ExceptionInterface" namespace="Symfony\Component\Yaml\Exception" name="ExceptionInterface" abstract="false" final="false" start="19" end="21">
+  <file path="/home/web/example/src/freegame_developer/vendor/symfony/yaml/Exception" file="ExceptionInterface.php" realpath="/home/web/example/src/freegame_developer/vendor/symfony/yaml/Exception/ExceptionInterface.php" size="443" time="2016-10-24T18:41:13+00:00" unixtime="1477334473" sha1="5c201b9a693fecc2114c80d74737b3450e39eada" relative="freegame_developer/vendor/symfony/yaml/Exception/ExceptionInterface.php"/>
+  <docblock>
+    <description compact="Exception interface for all exceptions thrown by the component."/>
+    <author value="Fabien Potencier &lt;fabien@symfony.com&gt;"/>
+  </docblock>
+</interface>

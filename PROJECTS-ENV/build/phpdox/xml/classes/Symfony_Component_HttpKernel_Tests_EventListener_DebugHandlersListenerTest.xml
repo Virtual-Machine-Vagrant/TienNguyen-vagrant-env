@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="Symfony\Component\HttpKernel\Tests\EventListener\DebugHandlersListenerTest" namespace="Symfony\Component\HttpKernel\Tests\EventListener" name="DebugHandlersListenerTest" abstract="false" final="false" start="35" end="134">
+  <file path="/home/web/example/src/freegame_developer/vendor/symfony/http-kernel/Tests/EventListener" file="DebugHandlersListenerTest.php" realpath="/home/web/example/src/freegame_developer/vendor/symfony/http-kernel/Tests/EventListener/DebugHandlersListenerTest.php" size="4484" time="2016-10-27T01:37:19+00:00" unixtime="1477532239" sha1="cd7c0459a2af4bd3b7f0ae7cfd6de9c785a16e8f" relative="freegame_developer/vendor/symfony/http-kernel/Tests/EventListener/DebugHandlersListenerTest.php"/>
+  <docblock>
+    <description compact="DebugHandlersListenerTest."/>
+    <author value="Nicolas Grekas &lt;p@tchwork.com&gt;"/>
+  </docblock>
+  <extends full="PHPUnit_Framework_TestCase" namespace="" name="PHPUnit_Framework_TestCase"/>
+  <method name="testConfigure" start="37" end="66" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testConfigureForHttpKernelWithNoTerminateWithException" start="68" end="91" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testConsoleEvent" start="93" end="133" abstract="false" final="false" static="false" visibility="public"/>
+</class>

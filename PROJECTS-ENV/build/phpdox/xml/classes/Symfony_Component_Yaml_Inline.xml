@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="Symfony\Component\Yaml\Inline" namespace="Symfony\Component\Yaml" name="Inline" abstract="false" final="false" start="24" end="688">
+  <file path="/home/web/example/src/freegame_developer/vendor/symfony/yaml" file="Inline.php" realpath="/home/web/example/src/freegame_developer/vendor/symfony/yaml/Inline.php" size="25057" time="2016-10-24T18:41:13+00:00" unixtime="1477334473" sha1="9cce982288fa2a9da778942d6e38006a54095b88" relative="freegame_developer/vendor/symfony/yaml/Inline.php"/>
+  <docblock>
+    <description compact="Inline implements a YAML parser/dumper for the YAML inline syntax."/>
+    <author value="Fabien Potencier &lt;fabien@symfony.com&gt;"/>
+    <internal/>
+  </docblock>
+  <constant type="string" name="REGEX_QUOTED_STRING" value="'(?:&quot;([^&quot;\\\\]*(?:\\\\.[^&quot;\\\\]*)*)&quot;|\'([^\']*(?:\'\'[^\']*)*)\')'"/>
+  <member name="exceptionOnInvalidType" type="boolean" default="false" visibility="private" static="true" line="28"/>
+  <member name="objectSupport" type="boolean" default="false" visibility="private" static="true" line="29"/>
+  <member name="objectForMap" type="boolean" default="false" visibility="private" static="true" line="30"/>
+  <method name="parse" start="43" end="116" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description compact="Converts a YAML string to a PHP array."/>
+      <param description="A YAML string" type="string" variable="$value"/>
+      <param description="A bit field of PARSE_* constants to customize the YAML parser behavior" type="int" variable="$flags"/>
+      <param description="Mapping of variable names to values" type="array" variable="$references"/>
+      <return description="A PHP array representing the YAML string" type="array"/>
+      <throws type="object">
+        <type full="Symfony\Component\Yaml\Exception\ParseException" namespace="Symfony\Component\Yaml\Exception" name="ParseException"/>
+      </throws>
+    </docblock>
+    <parameter name="value" byreference="false" type="{unknown}"/>
+    <parameter name="flags" byreference="false" type="integer" default="0"/>
+    <parameter name="references" byreference="false" type="array" default=""/>
+    <inline>
+      <comment value="some comments are allowed at the end" line="106"/>
+    </inline>
+  </method>
+  <method name="dump" start="128" end="215" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description compact="Dumps a given PHP variable to a YAML string."/>
+      <param description="The PHP variable to convert" type="mixed" variable="$value"/>
+      <param description="A bit field of Yaml::DUMP_* constants to customize the dumped YAML string" type="int" variable="$flags"/>
+      <return description="The YAML string representing the PHP array" type="string"/>
+      <throws description="When trying to dump PHP resource" type="object">
+        <type full="Symfony\Component\Yaml\Exception\DumpException" namespace="Symfony\Component\Yaml\Exception" name="DumpException"/>
+      </throws>
+    </docblock>
+    <parameter name="value" byreference="false" type="{unknown}"/>
+    <parameter name="flags" byreference="false" type="integer" default="0"/>
+  </method>
+  <method name="isHash" start="226" end="237" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description compact="Check if given array is hash or just normal indexed array."/>
+      <internal/>
+      <param description="The PHP array to check" type="array" variable="$value"/>
+      <return description="true if value is hash array, false otherwise" type="object">
+        <type full="Symfony\Component\Yaml\bool" namespace="Symfony\Component\Yaml" name="bool"/>
+      </return>
+    </docblock>
+    <parameter name="value" byreference="false" type="array"/>
+  </method>
+  <method name="dumpArray" start="247" end="266" abstract="false" final="false" static="true" visibility="private">
+    <docblock>
+      <description compact="Dumps a PHP array to a YAML string."/>
+      <param description="The PHP array to dump" type="array" variable="$value"/>
+      <param description="A bit field of Yaml::DUMP_* constants to customize the dumped YAML string" type="int" variable="$flags"/>
+      <return description="The YAML string representing the PHP array" type="string"/>
+    </docblock>
+    <parameter name="value" byreference="false" type="{unknown}"/>
+    <parameter name="flags" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="array" line="249"/>
+      <comment value="hash" line="259"/>
+    </inline>
+  </method>
+  <method name="parseScalar" start="285" end="329" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description compact="Parses a scalar to a YAML string."/>
+      <param type="string" variable="$scalar"/>
+      <param type="int" variable="$flags"/>
+      <param type="string" variable="$delimiters"/>
+      <param type="array" variable="$stringDelimiters"/>
+      <param type="int" variable="&amp;$i"/>
+      <param type="object" variable="$evaluate">
+        <type full="Symfony\Component\Yaml\bool" namespace="Symfony\Component\Yaml" name="bool"/>
+      </param>
+      <param type="array" variable="$references"/>
+      <return description="A YAML string" type="string"/>
+      <throws description="When malformed inline YAML string is parsed" type="object">
+        <type full="Symfony\Component\Yaml\Exception\ParseException" namespace="Symfony\Component\Yaml\Exception" name="ParseException"/>
+      </throws>
+      <internal/>
+    </docblock>
+    <parameter name="scalar" byreference="false" type="{unknown}"/>
+    <parameter name="flags" byreference="false" type="integer" default="0"/>
+    <parameter name="delimiters" byreference="false" type="{unknown}" default="" constant="null"/>
+    <parameter name="stringDelimiters" byreference="false" type="array" default=""/>
+    <parameter name="i" byreference="true" type="integer" default="0"/>
+    <parameter name="evaluate" byreference="false" type="boolean" default="true"/>
+    <parameter name="references" byreference="false" type="array" default=""/>
+  </method>
+  <method name="parseQuotedScalar" start="341" end="359" abstract="false" final="false" static="true" visibility="private">
+    <docblock>
+      <description compact="Parses a quoted scalar to YAML."/>
+      <param type="string" variable="$scalar"/>
+      <param type="int" variable="&amp;$i"/>
+      <return description="A YAML string" type="string"/>
+      <throws description="When malformed inline YAML string is parsed" type="object">
+        <type full="Symfony\Component\Yaml\Exception\ParseException" namespace="Symfony\Component\Yaml\Exception" name="ParseException"/>
+      </throws>
+    </docblock>
+    <parameter name="scalar" byreference="false" type="{unknown}"/>
+    <parameter name="i" byreference="true" type="{unknown}"/>
+  </method>
+  <method name="parseSequence" start="373" end="419" abstract="false" final="false" static="true" visibility="private">
+    <docblock>
+      <description compact="Parses a sequence to a YAML string."/>
+      <param type="string" variable="$sequence"/>
+      <param type="int" variable="$flags"/>
+      <param type="int" variable="&amp;$i"/>
+      <param type="array" variable="$references"/>
+      <return description="A YAML string" type="string"/>
+      <throws description="When malformed inline YAML string is parsed" type="object">
+        <type full="Symfony\Component\Yaml\Exception\ParseException" namespace="Symfony\Component\Yaml\Exception" name="ParseException"/>
+      </throws>
+    </docblock>
+    <parameter name="sequence" byreference="false" type="{unknown}"/>
+    <parameter name="flags" byreference="false" type="{unknown}"/>
+    <parameter name="i" byreference="true" type="integer" default="0"/>
+    <parameter name="references" byreference="false" type="array" default=""/>
+    <inline>
+      <comment value="[foo, bar, ...]" line="379"/>
+    </inline>
+  </method>
+  <method name="parseMapping" start="433" end="508" abstract="false" final="false" static="true" visibility="private">
+    <docblock>
+      <description compact="Parses a mapping to a YAML string."/>
+      <param type="string" variable="$mapping"/>
+      <param type="int" variable="$flags"/>
+      <param type="int" variable="&amp;$i"/>
+      <param type="array" variable="$references"/>
+      <return description="A YAML string" type="string"/>
+      <throws description="When malformed inline YAML string is parsed" type="object">
+        <type full="Symfony\Component\Yaml\Exception\ParseException" namespace="Symfony\Component\Yaml\Exception" name="ParseException"/>
+      </throws>
+    </docblock>
+    <parameter name="mapping" byreference="false" type="{unknown}"/>
+    <parameter name="flags" byreference="false" type="{unknown}"/>
+    <parameter name="i" byreference="true" type="integer" default="0"/>
+    <parameter name="references" byreference="false" type="array" default=""/>
+    <inline>
+      <comment value="{foo: bar, bar:foo, ...}" line="439"/>
+    </inline>
+  </method>
+  <method name="evaluateScalar" start="521" end="625" abstract="false" final="false" static="true" visibility="private">
+    <docblock>
+      <description compact="Evaluates scalars and replaces magic values."/>
+      <param type="string" variable="$scalar"/>
+      <param type="int" variable="$flags"/>
+      <param type="array" variable="$references"/>
+      <return description="A YAML string" type="string"/>
+      <throws description="when object parsing support was disabled and the parser detected a PHP object or when a reference could not be resolved" type="object">
+        <type full="Symfony\Component\Yaml\Exception\ParseException" namespace="Symfony\Component\Yaml\Exception" name="ParseException"/>
+      </throws>
+    </docblock>
+    <parameter name="scalar" byreference="false" type="{unknown}"/>
+    <parameter name="flags" byreference="false" type="{unknown}"/>
+    <parameter name="references" byreference="false" type="array" default=""/>
+  </method>
+  <method name="evaluateBinaryScalar" start="634" end="647" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description/>
+      <param type="string" variable="$scalar"/>
+      <return type="string"/>
+      <internal/>
+    </docblock>
+    <parameter name="scalar" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="isBinaryString" start="649" end="652" abstract="false" final="false" static="true" visibility="private">
+    <parameter name="value" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="getTimestampRegex" start="661" end="677" abstract="false" final="false" static="true" visibility="private">
+    <docblock>
+      <description compact="Gets a regex that matches a YAML date."/>
+      <return description="The regular expression" type="string"/>
+      <see value="http://www.yaml.org/spec/1.2/spec.html#id2761573"/>
+    </docblock>
+  </method>
+  <method name="getHexRegex" start="684" end="687" abstract="false" final="false" static="true" visibility="private">
+    <docblock>
+      <description compact="Gets a regex that matches a YAML number in hexadecimal notation."/>
+      <return type="string"/>
+    </docblock>
+  </method>
+</class>

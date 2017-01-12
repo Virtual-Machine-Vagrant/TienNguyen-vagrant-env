@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="Faker\Test\Provider\pt_PT\PersonTest" namespace="Faker\Test\Provider\pt_PT" name="PersonTest" abstract="false" final="false" start="8" end="52">
+  <file path="/home/web/example/src/freegame_developer/vendor/fzaninotto/faker/test/Faker/Provider/pt_PT" file="PersonTest.php" realpath="/home/web/example/src/freegame_developer/vendor/fzaninotto/faker/test/Faker/Provider/pt_PT/PersonTest.php" size="1370" time="2015-05-29T06:29:14+00:00" unixtime="1432880954" sha1="514dccadd4701b33ee922b9d40b55d8c769fefa9" relative="freegame_developer/vendor/fzaninotto/faker/test/Faker/Provider/pt_PT/PersonTest.php"/>
+  <extends full="PHPUnit_Framework_TestCase" namespace="" name="PHPUnit_Framework_TestCase"/>
+  <method name="setUp" start="11" end="16" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testTaxpayerIdentificationNumberIsValid" start="18" end="22" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="isValidTin" start="32" end="51" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description/>
+      <link value="http://pt.wikipedia.org/wiki/N%C3%BAmero_de_identifica%C3%A7%C3%A3o_fiscal"/>
+      <param type="object" variable="$tin">
+        <type full="Faker\Test\Provider\pt_PT\type" namespace="Faker\Test\Provider\pt_PT" name="type"/>
+      </param>
+      <return type="boolean"/>
+    </docblock>
+    <parameter name="tin" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="cd - Control Digit" line="39"/>
+    </inline>
+  </method>
+</class>

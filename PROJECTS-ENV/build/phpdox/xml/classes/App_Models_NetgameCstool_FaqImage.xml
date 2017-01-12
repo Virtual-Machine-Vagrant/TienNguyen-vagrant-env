@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="App\Models\NetgameCstool\FaqImage" namespace="App\Models\NetgameCstool" name="FaqImage" abstract="false" final="false" start="7" end="64">
+  <file path="/home/web/example/src/freegame_developer/app/Models/NetgameCstool" file="FaqImage.php" realpath="/home/web/example/src/freegame_developer/app/Models/NetgameCstool/FaqImage.php" size="1184" time="2016-12-06T02:39:57+00:00" unixtime="1480991997" sha1="9443071e2aeebe518bd4cf60ce98623335ede619" relative="freegame_developer/app/Models/NetgameCstool/FaqImage.php"/>
+  <extends full="App\Models\NetgameCstool\NetgameCstool" namespace="App\Models\NetgameCstool" name="NetgameCstool"/>
+  <member name="table" type="string" default="'faq_image'" visibility="protected" static="false" line="9"/>
+  <member name="timestamps" type="boolean" default="false" visibility="public" static="false" line="11"/>
+  <member name="guarded" type="array" default="" visibility="protected" static="false" line="13"/>
+  <member name="primaryKey" type="string" default="'faq_image_id'" visibility="protected" static="false" line="15"/>
+  <method name="add" start="21" end="29" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="insert faq"/>
+      <param type="boolean"/>
+    </docblock>
+    <parameter name="params" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="edit" start="35" end="42" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="update faq image"/>
+      <param type="boolean"/>
+    </docblock>
+    <parameter name="params" byreference="false" type="{unknown}"/>
+    <parameter name="conditions" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="remove" start="49" end="52" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Delete faq image"/>
+      <param type="array" variable="$conditions"/>
+      <return type="boolean"/>
+    </docblock>
+    <parameter name="conditions" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="getFaqImages" start="60" end="63" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Get faq images"/>
+      <param type="array" variable="$params"/>
+      <return type="object"/>
+    </docblock>
+    <parameter name="params" byreference="false" type="{unknown}"/>
+  </method>
+</class>

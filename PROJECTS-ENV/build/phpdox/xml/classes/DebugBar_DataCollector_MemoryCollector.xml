@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="DebugBar\DataCollector\MemoryCollector" namespace="DebugBar\DataCollector" name="MemoryCollector" abstract="false" final="false" start="16" end="72">
+  <file path="/home/web/example/src/freegame_developer/vendor/maximebf/debugbar/src/DebugBar/DataCollector" file="MemoryCollector.php" realpath="/home/web/example/src/freegame_developer/vendor/maximebf/debugbar/src/DebugBar/DataCollector/MemoryCollector.php" size="1453" time="2016-09-15T14:01:59+00:00" unixtime="1473948119" sha1="856eb4ac2d39f48db67768eaf960641910397cf7" relative="freegame_developer/vendor/maximebf/debugbar/src/DebugBar/DataCollector/MemoryCollector.php"/>
+  <docblock>
+    <description compact="Collects info about memory usage"/>
+  </docblock>
+  <extends full="DebugBar\DataCollector\DataCollector" namespace="DebugBar\DataCollector" name="DataCollector"/>
+  <implements full="DebugBar\DataCollector\Renderable" namespace="DebugBar\DataCollector" name="Renderable"/>
+  <member name="peakUsage" type="integer" default="0" visibility="protected" static="false" line="18"/>
+  <method name="getPeakUsage" start="25" end="28" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Returns the peak memory usage"/>
+      <return type="integer"/>
+    </docblock>
+  </method>
+  <method name="updatePeakUsage" start="33" end="36" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Updates the peak memory usage value"/>
+    </docblock>
+  </method>
+  <method name="collect" start="41" end="48" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <return type="array"/>
+    </docblock>
+  </method>
+  <method name="getName" start="53" end="56" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <return type="string"/>
+    </docblock>
+  </method>
+  <method name="getWidgets" start="61" end="71" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <return type="array"/>
+    </docblock>
+  </method>
+</class>

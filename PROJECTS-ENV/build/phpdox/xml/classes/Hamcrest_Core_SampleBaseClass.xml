@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="Hamcrest\Core\SampleBaseClass" namespace="Hamcrest\Core" name="SampleBaseClass" abstract="false" final="false" start="4" end="18">
+  <file path="/home/web/example/src/freegame_developer/vendor/hamcrest/hamcrest-php/tests/Hamcrest/Core" file="SampleBaseClass.php" realpath="/home/web/example/src/freegame_developer/vendor/hamcrest/hamcrest-php/tests/Hamcrest/Core/SampleBaseClass.php" size="231" time="2015-05-11T14:41:42+00:00" unixtime="1431355302" sha1="4dd690abfa90d8f2bd7b3ce0bf6ae4aea1b8ed5f" relative="freegame_developer/vendor/hamcrest/hamcrest-php/tests/Hamcrest/Core/SampleBaseClass.php"/>
+  <member name="_arg" visibility="private" static="false" line="7"/>
+  <constructor name="__construct" start="9" end="12" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="arg" byreference="false" type="{unknown}"/>
+  </constructor>
+  <method name="__toString" start="14" end="17" abstract="false" final="false" static="false" visibility="public"/>
+</class>

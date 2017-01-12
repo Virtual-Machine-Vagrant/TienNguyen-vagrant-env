@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="DebugBar\Storage\MemcachedStorage" namespace="DebugBar\Storage" name="MemcachedStorage" abstract="false" final="false" start="18" end="111">
+  <file path="/home/web/example/src/freegame_developer/vendor/maximebf/debugbar/src/DebugBar/Storage" file="MemcachedStorage.php" realpath="/home/web/example/src/freegame_developer/vendor/maximebf/debugbar/src/DebugBar/Storage/MemcachedStorage.php" size="2603" time="2016-09-15T14:01:59+00:00" unixtime="1473948119" sha1="5f87ee6693f787ecf3f7783d4c3233a42c0e2a82" relative="freegame_developer/vendor/maximebf/debugbar/src/DebugBar/Storage/MemcachedStorage.php"/>
+  <docblock>
+    <description compact="Stores collected data into Memcache using the Memcached extension"/>
+  </docblock>
+  <implements full="DebugBar\Storage\StorageInterface" namespace="DebugBar\Storage" name="StorageInterface"/>
+  <member name="memcached" visibility="protected" static="false" line="20"/>
+  <member name="keyNamespace" visibility="protected" static="false" line="22"/>
+  <constructor name="__construct" start="27" end="31" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <param type="object" variable="$memcached">
+        <type full="Memcached" namespace="" name="Memcached"/>
+      </param>
+    </docblock>
+    <parameter name="memcached" byreference="false" type="object">
+      <type full="Memcached" namespace="" name="Memcached"/>
+    </parameter>
+    <parameter name="keyNamespace" byreference="false" type="string" default="'phpdebugbar'"/>
+  </constructor>
+  <method name="save" start="36" end="43" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="{@inheritdoc}"/>
+    </docblock>
+    <parameter name="id" byreference="false" type="{unknown}"/>
+    <parameter name="data" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="get" start="48" end="51" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="{@inheritdoc}"/>
+    </docblock>
+    <parameter name="id" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="find" start="56" end="72" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="{@inheritdoc}"/>
+    </docblock>
+    <parameter name="filters" byreference="false" type="array" default=""/>
+    <parameter name="max" byreference="false" type="integer" default="20"/>
+    <parameter name="offset" byreference="false" type="integer" default="0"/>
+  </method>
+  <method name="filter" start="81" end="89" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Filter the metadata for matches."/>
+      <param type="array" variable="$meta"/>
+      <param type="array" variable="$filters"/>
+      <return type="object">
+        <type full="DebugBar\Storage\bool" namespace="DebugBar\Storage" name="bool"/>
+      </return>
+    </docblock>
+    <parameter name="meta" byreference="false" type="{unknown}"/>
+    <parameter name="filters" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="clear" start="94" end="101" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="{@inheritdoc}"/>
+    </docblock>
+  </method>
+  <method name="createKey" start="107" end="110" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description/>
+      <param type="string" variable="$id"/>
+      <return type="string"/>
+    </docblock>
+    <parameter name="id" byreference="false" type="{unknown}"/>
+  </method>
+</class>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="Symfony\Component\Translation\Loader\IcuDatFileLoader" namespace="Symfony\Component\Translation\Loader" name="IcuDatFileLoader" abstract="false" final="false" start="24" end="62">
+  <file path="/home/web/example/src/freegame_developer/vendor/symfony/translation/Loader" file="IcuDatFileLoader.php" realpath="/home/web/example/src/freegame_developer/vendor/symfony/translation/Loader/IcuDatFileLoader.php" size="1932" time="2016-10-16T20:09:53+00:00" unixtime="1476648593" sha1="807a873a5dfbfa4925ad464bc06e1ebab864c1b2" relative="freegame_developer/vendor/symfony/translation/Loader/IcuDatFileLoader.php"/>
+  <docblock>
+    <description compact="IcuResFileLoader loads translations from a resource bundle."/>
+    <author value="stealth35"/>
+  </docblock>
+  <extends full="Symfony\Component\Translation\Loader\IcuResFileLoader" namespace="Symfony\Component\Translation\Loader" name="IcuResFileLoader"/>
+  <method name="load" start="29" end="61" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="{@inheritdoc}"/>
+    </docblock>
+    <parameter name="resource" byreference="false" type="{unknown}"/>
+    <parameter name="locale" byreference="false" type="{unknown}"/>
+    <parameter name="domain" byreference="false" type="string" default="'messages'"/>
+  </method>
+</class>

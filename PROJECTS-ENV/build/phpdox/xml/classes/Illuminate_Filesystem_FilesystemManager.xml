@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="Illuminate\Filesystem\FilesystemManager" namespace="Illuminate\Filesystem" name="FilesystemManager" abstract="false" final="false" start="19" end="304">
+  <file path="/home/web/example/src/freegame_developer/vendor/laravel/framework/src/Illuminate/Filesystem" file="FilesystemManager.php" realpath="/home/web/example/src/freegame_developer/vendor/laravel/framework/src/Illuminate/Filesystem/FilesystemManager.php" size="8016" time="2016-02-24T15:13:21+00:00" unixtime="1456326801" sha1="c932731d187c786601f139012c890c541bf55e3e" relative="freegame_developer/vendor/laravel/framework/src/Illuminate/Filesystem/FilesystemManager.php"/>
+  <implements full="Illuminate\Contracts\Filesystem\Factory" namespace="Illuminate\Contracts\Filesystem" name="Factory"/>
+  <member name="app" visibility="protected" static="false" line="26">
+    <docblock>
+      <description compact="The application instance."/>
+      <var type="object">
+        <type full="\Illuminate\Contracts\Foundation\Application" namespace="\Illuminate\Contracts\Foundation" name="Application"/>
+      </var>
+    </docblock>
+  </member>
+  <member name="disks" type="array" default="" visibility="protected" static="false" line="33">
+    <docblock>
+      <description compact="The array of resolved filesystem drivers."/>
+      <var type="array"/>
+    </docblock>
+  </member>
+  <member name="customCreators" type="array" default="" visibility="protected" static="false" line="40">
+    <docblock>
+      <description compact="The registered custom driver creators."/>
+      <var type="array"/>
+    </docblock>
+  </member>
+  <constructor name="__construct" start="48" end="51" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Create a new filesystem manager instance."/>
+      <param type="object" variable="$app">
+        <type full="\Illuminate\Contracts\Foundation\Application" namespace="\Illuminate\Contracts\Foundation" name="Application"/>
+      </param>
+      <return type="object">
+        <type full="Illuminate\Filesystem\void" namespace="Illuminate\Filesystem" name="void"/>
+      </return>
+    </docblock>
+    <parameter name="app" byreference="false" type="{unknown}"/>
+  </constructor>
+  <method name="drive" start="59" end="62" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Get a filesystem instance."/>
+      <param type="string" variable="$name"/>
+      <return type="object">
+        <type full="\Illuminate\Contracts\Filesystem\Filesystem" namespace="\Illuminate\Contracts\Filesystem" name="Filesystem"/>
+      </return>
+    </docblock>
+    <parameter name="name" byreference="false" type="{unknown}" default="" constant="null"/>
+  </method>
+  <method name="disk" start="70" end="75" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Get a filesystem instance."/>
+      <param type="string" variable="$name"/>
+      <return type="object">
+        <type full="\Illuminate\Contracts\Filesystem\Filesystem" namespace="\Illuminate\Contracts\Filesystem" name="Filesystem"/>
+      </return>
+    </docblock>
+    <parameter name="name" byreference="false" type="{unknown}" default="" constant="null"/>
+  </method>
+  <method name="get" start="83" end="86" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Attempt to get the disk from the local cache."/>
+      <param type="string" variable="$name"/>
+      <return type="object">
+        <type full="\Illuminate\Contracts\Filesystem\Filesystem" namespace="\Illuminate\Contracts\Filesystem" name="Filesystem"/>
+      </return>
+    </docblock>
+    <parameter name="name" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="resolve" start="96" end="111" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Resolve the given disk."/>
+      <param type="string" variable="$name"/>
+      <return type="object">
+        <type full="\Illuminate\Contracts\Filesystem\Filesystem" namespace="\Illuminate\Contracts\Filesystem" name="Filesystem"/>
+      </return>
+      <throws type="object">
+        <type full="\InvalidArgumentException" namespace="" name="InvalidArgumentException"/>
+      </throws>
+    </docblock>
+    <parameter name="name" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="callCustomCreator" start="119" end="128" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Call a custom driver creator."/>
+      <param type="array" variable="$config"/>
+      <return type="object">
+        <type full="\Illuminate\Contracts\Filesystem\Filesystem" namespace="\Illuminate\Contracts\Filesystem" name="Filesystem"/>
+      </return>
+    </docblock>
+    <parameter name="config" byreference="false" type="array"/>
+  </method>
+  <method name="createLocalDriver" start="136" end="147" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Create an instance of the local driver."/>
+      <param type="array" variable="$config"/>
+      <return type="object">
+        <type full="\Illuminate\Contracts\Filesystem\Filesystem" namespace="\Illuminate\Contracts\Filesystem" name="Filesystem"/>
+      </return>
+    </docblock>
+    <parameter name="config" byreference="false" type="array"/>
+  </method>
+  <method name="createFtpDriver" start="155" end="164" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Create an instance of the ftp driver."/>
+      <param type="array" variable="$config"/>
+      <return type="object">
+        <type full="\Illuminate\Contracts\Filesystem\Filesystem" namespace="\Illuminate\Contracts\Filesystem" name="Filesystem"/>
+      </return>
+    </docblock>
+    <parameter name="config" byreference="false" type="array"/>
+  </method>
+  <method name="createS3Driver" start="172" end="181" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Create an instance of the Amazon S3 driver."/>
+      <param type="array" variable="$config"/>
+      <return type="object">
+        <type full="\Illuminate\Contracts\Filesystem\Cloud" namespace="\Illuminate\Contracts\Filesystem" name="Cloud"/>
+      </return>
+    </docblock>
+    <parameter name="config" byreference="false" type="array"/>
+  </method>
+  <method name="formatS3Config" start="189" end="198" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Format the given S3 configuration with the default options."/>
+      <param type="array" variable="$config"/>
+      <return type="array"/>
+    </docblock>
+    <parameter name="config" byreference="false" type="array"/>
+  </method>
+  <method name="createRackspaceDriver" start="206" end="215" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Create an instance of the Rackspace driver."/>
+      <param type="array" variable="$config"/>
+      <return type="object">
+        <type full="\Illuminate\Contracts\Filesystem\Cloud" namespace="\Illuminate\Contracts\Filesystem" name="Cloud"/>
+      </return>
+    </docblock>
+    <parameter name="config" byreference="false" type="array"/>
+  </method>
+  <method name="getRackspaceContainer" start="224" end="231" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Get the Rackspace Cloud Files container."/>
+      <param type="object" variable="$client">
+        <type full="\OpenCloud\Rackspace" namespace="\OpenCloud" name="Rackspace"/>
+      </param>
+      <param type="array" variable="$config"/>
+      <return type="object">
+        <type full="\OpenCloud\ObjectStore\Resource\Container" namespace="\OpenCloud\ObjectStore\Resource" name="Container"/>
+      </return>
+    </docblock>
+    <parameter name="client" byreference="false" type="object">
+      <type full="OpenCloud\Rackspace" namespace="OpenCloud" name="Rackspace"/>
+    </parameter>
+    <parameter name="config" byreference="false" type="array"/>
+  </method>
+  <method name="createFlysystem" start="240" end="245" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Create a Flysystem instance with the given adapter."/>
+      <param type="object" variable="$adapter">
+        <type full="\League\Flysystem\AdapterInterface" namespace="\League\Flysystem" name="AdapterInterface"/>
+      </param>
+      <param type="array" variable="$config"/>
+      <return type="object">
+        <type full="\League\Flysystem\FlysystemInterface" namespace="\League\Flysystem" name="FlysystemInterface"/>
+      </return>
+    </docblock>
+    <parameter name="adapter" byreference="false" type="object">
+      <type full="League\Flysystem\AdapterInterface" namespace="League\Flysystem" name="AdapterInterface"/>
+    </parameter>
+    <parameter name="config" byreference="false" type="array"/>
+  </method>
+  <method name="adapt" start="253" end="256" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Adapt the filesystem implementation."/>
+      <param type="object" variable="$filesystem">
+        <type full="\League\Flysystem\FilesystemInterface" namespace="\League\Flysystem" name="FilesystemInterface"/>
+      </param>
+      <return type="object">
+        <type full="\Illuminate\Contracts\Filesystem\Filesystem" namespace="\Illuminate\Contracts\Filesystem" name="Filesystem"/>
+      </return>
+    </docblock>
+    <parameter name="filesystem" byreference="false" type="object">
+      <type full="League\Flysystem\FilesystemInterface" namespace="League\Flysystem" name="FilesystemInterface"/>
+    </parameter>
+  </method>
+  <method name="getConfig" start="264" end="267" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Get the filesystem connection configuration."/>
+      <param type="string" variable="$name"/>
+      <return type="array"/>
+    </docblock>
+    <parameter name="name" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="getDefaultDriver" start="274" end="277" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Get the default driver name."/>
+      <return type="string"/>
+    </docblock>
+  </method>
+  <method name="extend" start="286" end="291" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Register a custom driver creator Closure."/>
+      <param type="string" variable="$driver"/>
+      <param type="object" variable="$callback">
+        <type full="\Closure" namespace="" name="Closure"/>
+      </param>
+      <return type="object">
+        <type full="Illuminate\Filesystem\$this" namespace="Illuminate\Filesystem" name="$this"/>
+      </return>
+    </docblock>
+    <parameter name="driver" byreference="false" type="{unknown}"/>
+    <parameter name="callback" byreference="false" type="object">
+      <type full="Closure" namespace="" name="Closure"/>
+    </parameter>
+  </method>
+  <method name="__call" start="300" end="303" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Dynamically call the default driver instance."/>
+      <param type="string" variable="$method"/>
+      <param type="array" variable="$parameters"/>
+      <return type="mixed"/>
+    </docblock>
+    <parameter name="method" byreference="false" type="{unknown}"/>
+    <parameter name="parameters" byreference="false" type="{unknown}"/>
+  </method>
+</class>

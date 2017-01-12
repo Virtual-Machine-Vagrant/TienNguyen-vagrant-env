@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="Barryvdh\Debugbar\DataCollector\EventCollector" namespace="Barryvdh\Debugbar\DataCollector" name="EventCollector" abstract="false" final="false" start="9" end="116">
+  <file path="/home/web/example/src/freegame_developer/vendor/barryvdh/laravel-debugbar/src/DataCollector" file="EventCollector.php" realpath="/home/web/example/src/freegame_developer/vendor/barryvdh/laravel-debugbar/src/DataCollector/EventCollector.php" size="3473" time="2016-09-15T14:05:56+00:00" unixtime="1473948356" sha1="41e130e0458a76611276e9cbebdc8dab9a40af1f" relative="freegame_developer/vendor/barryvdh/laravel-debugbar/src/DataCollector/EventCollector.php"/>
+  <extends full="DebugBar\DataCollector\TimeDataCollector" namespace="DebugBar\DataCollector" name="TimeDataCollector"/>
+  <member name="events" visibility="protected" static="false" line="12">
+    <docblock>
+      <var type="object">
+        <type full="Illuminate\Events\Dispatcher" namespace="Illuminate\Events" name="Dispatcher"/>
+      </var>
+    </docblock>
+  </member>
+  <member name="exporter" visibility="protected" static="false" line="15">
+    <docblock>
+      <var type="object">
+        <type full="Symfony\Component\HttpKernel\DataCollector\Util\ValueExporter" namespace="Symfony\Component\HttpKernel\DataCollector\Util" name="ValueExporter"/>
+      </var>
+    </docblock>
+  </member>
+  <constructor name="__construct" start="17" end="22" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="requestStartTime" byreference="false" type="{unknown}" default="" constant="null"/>
+  </constructor>
+  <method name="onWildcardEvent" start="24" end="67" abstract="false" final="false" static="false" visibility="public">
+    <inline>
+      <comment value="Get the arguments passed to the event" line="29"/>
+      <comment value="Find all listeners for the current event" line="32"/>
+    </inline>
+  </method>
+  <method name="subscribe" start="69" end="73" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="events" byreference="false" type="object">
+      <type full="Illuminate\Events\Dispatcher" namespace="Illuminate\Events" name="Dispatcher"/>
+    </parameter>
+  </method>
+  <method name="prepareParams" start="75" end="86" abstract="false" final="false" static="false" visibility="protected">
+    <parameter name="params" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="collect" start="88" end="94" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="getName" start="96" end="99" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="getWidgets" start="101" end="115" abstract="false" final="false" static="false" visibility="public"/>
+</class>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="MongoDB\Tests\Collection\CrudSpec\CountFunctionalTest" namespace="MongoDB\Tests\Collection\CrudSpec" name="CountFunctionalTest" abstract="false" final="false" start="10" end="38">
+  <file path="/home/web/example/src/freegame_developer/vendor/mongodb/mongodb/tests/Collection/CrudSpec" file="CountFunctionalTest.php" realpath="/home/web/example/src/freegame_developer/vendor/mongodb/mongodb/tests/Collection/CrudSpec/CountFunctionalTest.php" size="831" time="2016-09-23T19:38:29+00:00" unixtime="1474659509" sha1="cc96eb39a04da82aa3c9df34b0279d7e228ce971" relative="freegame_developer/vendor/mongodb/mongodb/tests/Collection/CrudSpec/CountFunctionalTest.php"/>
+  <docblock>
+    <description compact="CRUD spec functional tests for count()."/>
+    <see value="https://github.com/mongodb/specifications/tree/master/source/crud/tests"/>
+  </docblock>
+  <extends full="MongoDB\Tests\Collection\CrudSpec\FunctionalTestCase" namespace="MongoDB\Tests\Collection\CrudSpec" name="FunctionalTestCase"/>
+  <method name="setUp" start="12" end="17" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testCountWithoutFilter" start="19" end="22" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testCountWithFilter" start="24" end="29" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testCountWithSkipAndLimit" start="31" end="37" abstract="false" final="false" static="false" visibility="public"/>
+</class>

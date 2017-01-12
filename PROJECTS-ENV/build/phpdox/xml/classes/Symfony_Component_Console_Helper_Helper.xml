@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="Symfony\Component\Console\Helper\Helper" namespace="Symfony\Component\Console\Helper" name="Helper" abstract="true" final="false" start="21" end="123">
+  <file path="/home/web/example/src/freegame_developer/vendor/symfony/console/Helper" file="Helper.php" realpath="/home/web/example/src/freegame_developer/vendor/symfony/console/Helper/Helper.php" size="3360" time="2016-10-05T17:26:56+00:00" unixtime="1475688416" sha1="cdb1b4c44d05c372200b07b74841bd9ec567cfd6" relative="freegame_developer/vendor/symfony/console/Helper/Helper.php"/>
+  <docblock>
+    <description compact="Helper is the base class for all helper classes."/>
+    <author value="Fabien Potencier &lt;fabien@symfony.com&gt;"/>
+  </docblock>
+  <implements full="Symfony\Component\Console\Helper\HelperInterface" namespace="Symfony\Component\Console\Helper" name="HelperInterface"/>
+  <member name="helperSet" type="{unknown}" default="" constant="null" visibility="protected" static="false" line="23"/>
+  <method name="setHelperSet" start="30" end="33" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Sets the helper set associated with this helper."/>
+      <param description="A HelperSet instance" type="object" variable="$helperSet">
+        <type full="Symfony\Component\Console\Helper\HelperSet" namespace="Symfony\Component\Console\Helper" name="HelperSet"/>
+      </param>
+    </docblock>
+    <parameter name="helperSet" byreference="false" type="{unknown}" default="" constant="null">
+      <type full="Symfony\Component\Console\Helper\HelperSet" namespace="Symfony\Component\Console\Helper" name="HelperSet"/>
+    </parameter>
+  </method>
+  <method name="getHelperSet" start="40" end="43" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Gets the helper set associated with this helper."/>
+      <return description="A HelperSet instance" type="object">
+        <type full="Symfony\Component\Console\Helper\HelperSet" namespace="Symfony\Component\Console\Helper" name="HelperSet"/>
+      </return>
+    </docblock>
+  </method>
+  <method name="strlen" start="52" end="63" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description compact="Returns the length of a string, using mb_strwidth if it is available."/>
+      <param description="The string to check its length" type="string" variable="$string"/>
+      <return description="The length of the string" type="int"/>
+    </docblock>
+    <parameter name="string" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="formatTime" start="65" end="92" abstract="false" final="false" static="true" visibility="public">
+    <parameter name="secs" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="formatMemory" start="94" end="109" abstract="false" final="false" static="true" visibility="public">
+    <parameter name="memory" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="strlenWithoutDecoration" start="111" end="122" abstract="false" final="false" static="true" visibility="public">
+    <parameter name="formatter" byreference="false" type="object">
+      <type full="Symfony\Component\Console\Formatter\OutputFormatterInterface" namespace="Symfony\Component\Console\Formatter" name="OutputFormatterInterface"/>
+    </parameter>
+    <parameter name="string" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="remove &lt;...&gt; formatting" line="115"/>
+      <comment value="remove already formatted characters" line="117"/>
+    </inline>
+  </method>
+</class>

@@ -1,0 +1,101 @@
+<?xml version="1.0"?>
+<source xmlns="http://xml.phpdox.net/token">
+  <file xmlns="http://xml.phpdox.net/src" path="/home/web/example/src/freegame_developer/resources/views/Cbt" file="update.blade.php" realpath="/home/web/example/src/freegame_developer/resources/views/Cbt/update.blade.php" size="1028" time="2016-12-02T07:23:20+00:00" unixtime="1480663400" sha1="be3d8c2502f794f91e49923f246a093f296672ab" relative="freegame_developer/resources/views/Cbt/update.blade.php"/>
+  <line no="1">
+    <token name="T_INLINE_HTML">@extends('layout')</token>
+  </line>
+  <line no="2"/>
+  <line no="3">
+    <token name="T_INLINE_HTML">@section('content')</token>
+  </line>
+  <line no="4"/>
+  <line no="5">
+    <token name="T_INLINE_HTML">&lt;header id="gnavi"&gt;</token>
+  </line>
+  <line no="6">
+    <token name="T_INLINE_HTML">    @include('partials.breadcrumbs', [</token>
+  </line>
+  <line no="7">
+    <token name="T_INLINE_HTML">        'breadcrumbs' =&gt; array_merge(</token>
+  </line>
+  <line no="8">
+    <token name="T_INLINE_HTML">            $formData['menuName'],</token>
+  </line>
+  <line no="9">
+    <token name="T_INLINE_HTML">            [</token>
+  </line>
+  <line no="10">
+    <token name="T_INLINE_HTML">                [$formData['screenName'], 'Cbt.index'],</token>
+  </line>
+  <line no="11">
+    <token name="T_INLINE_HTML">                $title['breadcrumbs']</token>
+  </line>
+  <line no="12">
+    <token name="T_INLINE_HTML">            ]</token>
+  </line>
+  <line no="13">
+    <token name="T_INLINE_HTML">        )</token>
+  </line>
+  <line no="14">
+    <token name="T_INLINE_HTML">     ])</token>
+  </line>
+  <line no="15">
+    <token name="T_INLINE_HTML">    &lt;!-- [#gnavi] --&gt;</token>
+  </line>
+  <line no="16">
+    <token name="T_INLINE_HTML">&lt;/header&gt;</token>
+  </line>
+  <line no="17"/>
+  <line no="18">
+    <token name="T_INLINE_HTML">&lt;section&gt;</token>
+  </line>
+  <line no="19">
+    <token name="T_INLINE_HTML">    &lt;div class="c-area"&gt;</token>
+  </line>
+  <line no="20">
+    <token name="T_INLINE_HTML">        &lt;h2 class="c-headline"&gt;&lt;i class="fa fa-paper-plane"&gt;&lt;/i&gt;CBT&#x30A2;&#x30AB;&#x30A6;&#x30F3;&#x30C8;&#x7DE8;&#x96C6; &#x5B8C;&#x4E86;&lt;/h2&gt;</token>
+  </line>
+  <line no="21">
+    <token name="T_INLINE_HTML">        &lt;div class="center mg-b20"&gt;</token>
+  </line>
+  <line no="22">
+    <token name="T_INLINE_HTML">            &lt;p class="bold tx-20 mg-b6"&gt;&#x7DE8;&#x96C6;&#x304C;&#x5B8C;&#x4E86;&#x3057;&#x307E;&#x3057;&#x305F;&#x3002;&lt;/p&gt;</token>
+  </line>
+  <line no="23">
+    <token name="T_INLINE_HTML">            &#x203B;&#x53CD;&#x6620;&#x306B;&#x6642;&#x9593;&#x304C;&#x304B;&#x304B;&#x308B;&#x3053;&#x3068;&#x304C;&#x3042;&#x308A;&#x307E;&#x3059;&#x306E;&#x3067;&#x3001;&#x53CD;&#x6620;&#x3055;&#x308C;&#x3066;&#x3044;&#x306A;&#x3044;&#x5834;&#x5408;&#x306F;&#x5C11;&#x3005;&#x304A;&#x5F85;&#x3061;&#x304F;&#x3060;&#x3055;&#x3044;&#x3002;</token>
+  </line>
+  <line no="24">
+    <token name="T_INLINE_HTML">        &lt;/div&gt;</token>
+  </line>
+  <line no="25">
+    <token name="T_INLINE_HTML">        &lt;div class="center"&gt;</token>
+  </line>
+  <line no="26">
+    <token name="T_INLINE_HTML">            &lt;a href="{{ URL::route('Cbt.index', $url) }}" class="button"&gt;</token>
+  </line>
+  <line no="27">
+    <token name="T_INLINE_HTML">                &lt;i class="fa fa-reply"&gt;&lt;/i&gt;CBT&#x5FDC;&#x52DF;&#x7BA1;&#x7406;&#x3078;&#x623B;&#x308B;</token>
+  </line>
+  <line no="28">
+    <token name="T_INLINE_HTML">            &lt;/a&gt;</token>
+  </line>
+  <line no="29">
+    <token name="T_INLINE_HTML">        &lt;/div&gt;</token>
+  </line>
+  <line no="30">
+    <token name="T_INLINE_HTML">        &lt;!-- /.c-area --&gt;</token>
+  </line>
+  <line no="31">
+    <token name="T_INLINE_HTML">    &lt;/div&gt;</token>
+  </line>
+  <line no="32">
+    <token name="T_INLINE_HTML">&lt;/section&gt;</token>
+  </line>
+  <line no="33">
+    <token name="T_INLINE_HTML">&lt;!-- [#contents] --&gt;</token>
+  </line>
+  <line no="34">
+    <token name="T_INLINE_HTML">@endsection</token>
+  </line>
+  <line no="35"/>
+</source>

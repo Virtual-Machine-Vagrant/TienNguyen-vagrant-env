@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="App\Models\Gameplayer\Agreement" namespace="App\Models\Gameplayer" name="Agreement" abstract="false" final="false" start="8" end="89">
+  <file path="/home/web/example/src/freegame_developer/app/Models/Gameplayer" file="Agreement.php" realpath="/home/web/example/src/freegame_developer/app/Models/Gameplayer/Agreement.php" size="2095" time="2016-12-06T02:39:57+00:00" unixtime="1480991997" sha1="0b10cf9777a51ae8be0bb3e9ed9df2feaddf0f83" relative="freegame_developer/app/Models/Gameplayer/Agreement.php"/>
+  <extends full="App\Models\Gameplayer\Gameplayer" namespace="App\Models\Gameplayer" name="Gameplayer"/>
+  <member name="table" type="string" default="'agreement'" visibility="protected" static="false" line="10"/>
+  <member name="fillable" type="array" default="" visibility="protected" static="false" line="11"/>
+  <member name="timestamps" type="boolean" default="false" visibility="public" static="false" line="12"/>
+  <method name="getList" start="18" end="34" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Get list agreement"/>
+      <param type="object" variable="$params">
+        <type full="App\Models\Gameplayer\Array" namespace="App\Models\Gameplayer" name="Array"/>
+      </param>
+      <return type="object">
+        <type full="App\Models\Gameplayer\Array" namespace="App\Models\Gameplayer" name="Array"/>
+      </return>
+    </docblock>
+    <parameter name="params" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="getOne" start="41" end="46" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="get Agreement edit"/>
+      <param type="object" variable="$params">
+        <type full="App\Models\Gameplayer\Array" namespace="App\Models\Gameplayer" name="Array"/>
+      </param>
+      <return type="object">
+        <type full="App\Models\Gameplayer\Array" namespace="App\Models\Gameplayer" name="Array"/>
+      </return>
+    </docblock>
+    <parameter name="params" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="del" start="53" end="58" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="delete Agreement"/>
+      <param type="object" variable="$params">
+        <type full="App\Models\Gameplayer\Array" namespace="App\Models\Gameplayer" name="Array"/>
+      </param>
+      <return type="object">
+        <type full="App\Models\Gameplayer\Array" namespace="App\Models\Gameplayer" name="Array"/>
+      </return>
+    </docblock>
+    <parameter name="params" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="add" start="65" end="71" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Add"/>
+      <param type="array" variable="$params"/>
+      <return type="boolean"/>
+    </docblock>
+    <parameter name="params" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="edit" start="79" end="88" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Update"/>
+      <param type="array" variable="$params"/>
+      <param type="array" variable="$conditions"/>
+      <return type="boolean"/>
+    </docblock>
+    <parameter name="params" byreference="false" type="{unknown}"/>
+    <parameter name="conditions" byreference="false" type="{unknown}"/>
+  </method>
+</class>

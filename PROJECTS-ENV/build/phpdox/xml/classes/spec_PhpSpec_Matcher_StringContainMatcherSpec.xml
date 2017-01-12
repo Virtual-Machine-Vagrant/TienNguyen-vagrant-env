@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="spec\PhpSpec\Matcher\StringContainMatcherSpec" namespace="spec\PhpSpec\Matcher" name="StringContainMatcherSpec" abstract="false" final="false" start="20" end="73">
+  <file path="/home/web/example/src/freegame_developer/vendor/phpspec/phpspec/spec/PhpSpec/Matcher" file="StringContainMatcherSpec.php" realpath="/home/web/example/src/freegame_developer/vendor/phpspec/phpspec/spec/PhpSpec/Matcher/StringContainMatcherSpec.php" size="2184" time="2016-01-01T10:17:54+00:00" unixtime="1451643474" sha1="e5d8178f8e468d88ffb11e1ddbcb3acdcff252e4" relative="freegame_developer/vendor/phpspec/phpspec/spec/PhpSpec/Matcher/StringContainMatcherSpec.php"/>
+  <extends full="PhpSpec\ObjectBehavior" namespace="PhpSpec" name="ObjectBehavior"/>
+  <method name="let" start="22" end="27" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="presenter" byreference="false" type="object">
+      <type full="PhpSpec\Formatter\Presenter\PresenterInterface" namespace="PhpSpec\Formatter\Presenter" name="PresenterInterface"/>
+    </parameter>
+  </method>
+  <method name="it_is_a_matcher" start="29" end="32" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="it_supports_contain_keyword_string_subject_and_argument" start="34" end="37" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="it_does_not_support_non_string_keyword" start="39" end="42" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="it_does_not_support_missing_argument" start="44" end="47" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="it_does_not_support_non_string_argument" start="49" end="52" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="it_matches_strings_that_contain_specified_substring" start="54" end="57" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="it_does_not_match_strings_that_do_not_contain_specified_substring" start="59" end="62" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="it_matches_strings_that_do_not_contain_specified_substring" start="64" end="67" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="it_does_not_match_strings_that_do_contain_specified_substring" start="69" end="72" abstract="false" final="false" static="false" visibility="public"/>
+</class>

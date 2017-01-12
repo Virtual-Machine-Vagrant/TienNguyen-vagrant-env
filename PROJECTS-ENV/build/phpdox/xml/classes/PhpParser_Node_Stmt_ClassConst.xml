@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="PhpParser\Node\Stmt\ClassConst" namespace="PhpParser\Node\Stmt" name="ClassConst" abstract="false" final="false" start="7" end="26">
+  <file path="/home/web/example/src/freegame_developer/vendor/nikic/php-parser/lib/PhpParser/Node/Stmt" file="ClassConst.php" realpath="/home/web/example/src/freegame_developer/vendor/nikic/php-parser/lib/PhpParser/Node/Stmt/ClassConst.php" size="600" time="2016-09-16T12:04:44+00:00" unixtime="1474027484" sha1="a200c23c1dcc149fc1a1f8df6aa8d1f7dea4cbc4" relative="freegame_developer/vendor/nikic/php-parser/lib/PhpParser/Node/Stmt/ClassConst.php"/>
+  <extends full="PhpParser\Node\Stmt" namespace="PhpParser\Node" name="Stmt"/>
+  <member name="consts" visibility="public" static="false" line="10">
+    <docblock>
+      <var description="Constant declarations" type="array" of="object">
+        <type full="PhpParser\Node\Stmt\Node\Const_" namespace="PhpParser\Node\Stmt\Node" name="Const_"/>
+      </var>
+    </docblock>
+  </member>
+  <constructor name="__construct" start="18" end="21" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Constructs a class const list node."/>
+      <param description="Constant declarations" type="array" variable="$consts" of="object">
+        <type full="PhpParser\Node\Stmt\Node\Const_" namespace="PhpParser\Node\Stmt\Node" name="Const_"/>
+      </param>
+      <param description="Additional attributes" type="array" variable="$attributes"/>
+    </docblock>
+    <parameter name="consts" byreference="false" type="array"/>
+    <parameter name="attributes" byreference="false" type="array" default=""/>
+  </constructor>
+  <method name="getSubNodeNames" start="23" end="25" abstract="false" final="false" static="false" visibility="public"/>
+</class>

@@ -1,0 +1,658 @@
+<?xml version="1.0"?>
+<source xmlns="http://xml.phpdox.net/token">
+  <file xmlns="http://xml.phpdox.net/src" path="/home/web/example/src/freegame_developer/vendor/phpdocumentor/reflection-docblock/examples" file="04-adding-your-own-tag.php" realpath="/home/web/example/src/freegame_developer/vendor/phpdocumentor/reflection-docblock/examples/04-adding-your-own-tag.php" size="5968" time="2016-09-30T07:12:33+00:00" unixtime="1475219553" sha1="5b5d48d400857a3cbc2319f344f6738cb4334aa0" relative="freegame_developer/vendor/phpdocumentor/reflection-docblock/examples/04-adding-your-own-tag.php"/>
+  <line no="1">
+    <token name="T_OPEN_TAG">&lt;?php</token>
+  </line>
+  <line no="2">
+    <token name="T_DOC_COMMENT">/**</token>
+  </line>
+  <line no="3">
+    <token name="T_DOC_COMMENT"> * In this example we demonstrate how you can add your own Tag using a Static Factory method in your Tag class.</token>
+  </line>
+  <line no="4">
+    <token name="T_DOC_COMMENT"> */</token>
+  </line>
+  <line no="5"/>
+  <line no="6">
+    <token name="T_REQUIRE_ONCE">require_once</token>
+    <token name="T_PHPDOX_OPEN_BRACKET">(</token>
+    <token name="T_DIR">__DIR__</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_PHPDOX_DOT">.</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_CONSTANT_ENCAPSED_STRING">'/../vendor/autoload.php'</token>
+    <token name="T_PHPDOX_CLOSE_BRACKET">)</token>
+    <token name="T_PHPDOX_SEMICOLON">;</token>
+  </line>
+  <line no="7"/>
+  <line no="8">
+    <token name="T_USE">use</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_STRING">phpDocumentor</token>
+    <token name="T_NS_SEPARATOR">\</token>
+    <token name="T_STRING">Reflection</token>
+    <token name="T_NS_SEPARATOR">\</token>
+    <token name="T_STRING">DocBlock</token>
+    <token name="T_NS_SEPARATOR">\</token>
+    <token name="T_STRING">Serializer</token>
+    <token name="T_PHPDOX_SEMICOLON">;</token>
+  </line>
+  <line no="9">
+    <token name="T_USE">use</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_STRING">phpDocumentor</token>
+    <token name="T_NS_SEPARATOR">\</token>
+    <token name="T_STRING">Reflection</token>
+    <token name="T_NS_SEPARATOR">\</token>
+    <token name="T_STRING">DocBlock</token>
+    <token name="T_NS_SEPARATOR">\</token>
+    <token name="T_STRING">Tags</token>
+    <token name="T_NS_SEPARATOR">\</token>
+    <token name="T_STRING">Factory</token>
+    <token name="T_NS_SEPARATOR">\</token>
+    <token name="T_STRING">StaticMethod</token>
+    <token name="T_PHPDOX_SEMICOLON">;</token>
+  </line>
+  <line no="10">
+    <token name="T_USE">use</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_STRING">phpDocumentor</token>
+    <token name="T_NS_SEPARATOR">\</token>
+    <token name="T_STRING">Reflection</token>
+    <token name="T_NS_SEPARATOR">\</token>
+    <token name="T_STRING">DocBlockFactory</token>
+    <token name="T_PHPDOX_SEMICOLON">;</token>
+  </line>
+  <line no="11">
+    <token name="T_USE">use</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_STRING">phpDocumentor</token>
+    <token name="T_NS_SEPARATOR">\</token>
+    <token name="T_STRING">Reflection</token>
+    <token name="T_NS_SEPARATOR">\</token>
+    <token name="T_STRING">DocBlock</token>
+    <token name="T_NS_SEPARATOR">\</token>
+    <token name="T_STRING">Description</token>
+    <token name="T_PHPDOX_SEMICOLON">;</token>
+  </line>
+  <line no="12">
+    <token name="T_USE">use</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_STRING">phpDocumentor</token>
+    <token name="T_NS_SEPARATOR">\</token>
+    <token name="T_STRING">Reflection</token>
+    <token name="T_NS_SEPARATOR">\</token>
+    <token name="T_STRING">DocBlock</token>
+    <token name="T_NS_SEPARATOR">\</token>
+    <token name="T_STRING">DescriptionFactory</token>
+    <token name="T_PHPDOX_SEMICOLON">;</token>
+  </line>
+  <line no="13">
+    <token name="T_USE">use</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_STRING">phpDocumentor</token>
+    <token name="T_NS_SEPARATOR">\</token>
+    <token name="T_STRING">Reflection</token>
+    <token name="T_NS_SEPARATOR">\</token>
+    <token name="T_STRING">DocBlock</token>
+    <token name="T_NS_SEPARATOR">\</token>
+    <token name="T_STRING">Tags</token>
+    <token name="T_NS_SEPARATOR">\</token>
+    <token name="T_STRING">BaseTag</token>
+    <token name="T_PHPDOX_SEMICOLON">;</token>
+  </line>
+  <line no="14">
+    <token name="T_USE">use</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_STRING">phpDocumentor</token>
+    <token name="T_NS_SEPARATOR">\</token>
+    <token name="T_STRING">Reflection</token>
+    <token name="T_NS_SEPARATOR">\</token>
+    <token name="T_STRING">Types</token>
+    <token name="T_NS_SEPARATOR">\</token>
+    <token name="T_STRING">Context</token>
+    <token name="T_PHPDOX_SEMICOLON">;</token>
+  </line>
+  <line no="15">
+    <token name="T_USE">use</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_STRING">Webmozart</token>
+    <token name="T_NS_SEPARATOR">\</token>
+    <token name="T_STRING">Assert</token>
+    <token name="T_NS_SEPARATOR">\</token>
+    <token name="T_STRING">Assert</token>
+    <token name="T_PHPDOX_SEMICOLON">;</token>
+  </line>
+  <line no="16"/>
+  <line no="17">
+    <token name="T_DOC_COMMENT">/**</token>
+  </line>
+  <line no="18">
+    <token name="T_DOC_COMMENT"> * An example of a custom tag called `my-tag` with an optional description.</token>
+  </line>
+  <line no="19">
+    <token name="T_DOC_COMMENT"> *</token>
+  </line>
+  <line no="20">
+    <token name="T_DOC_COMMENT"> * A Custom Tag is a class that can consist of two parts:</token>
+  </line>
+  <line no="21">
+    <token name="T_DOC_COMMENT"> *</token>
+  </line>
+  <line no="22">
+    <token name="T_DOC_COMMENT"> * 1. a method `create` that is a static factory for this class.</token>
+  </line>
+  <line no="23">
+    <token name="T_DOC_COMMENT"> * 2. methods and properties that have this object act as an immutable Value Object representing a Tag instance.</token>
+  </line>
+  <line no="24">
+    <token name="T_DOC_COMMENT"> *</token>
+  </line>
+  <line no="25">
+    <token name="T_DOC_COMMENT"> * The static factory `create` is used to convert a tag line (without the tag name) into an instance of the</token>
+  </line>
+  <line no="26">
+    <token name="T_DOC_COMMENT"> * same tag object with the right constructor parameters set. This method has a dynamic list of parameters so that you</token>
+  </line>
+  <line no="27">
+    <token name="T_DOC_COMMENT"> * can inject various dependencies, see the method's DocBlock for more information.</token>
+  </line>
+  <line no="28">
+    <token name="T_DOC_COMMENT"> *</token>
+  </line>
+  <line no="29">
+    <token name="T_DOC_COMMENT"> * An object of this class, and its methods and properties, represent a single instance of that tag in your</token>
+  </line>
+  <line no="30">
+    <token name="T_DOC_COMMENT"> * documentation in the form of a Value Object whose properties should not be changed after instantiation (it should be</token>
+  </line>
+  <line no="31">
+    <token name="T_DOC_COMMENT"> * immutable).</token>
+  </line>
+  <line no="32">
+    <token name="T_DOC_COMMENT"> *</token>
+  </line>
+  <line no="33">
+    <token name="T_DOC_COMMENT"> * &gt; Important: Tag classes that act as Factories using the `create` method should implement the TagFactory interface.</token>
+  </line>
+  <line no="34">
+    <token name="T_DOC_COMMENT"> */</token>
+  </line>
+  <line no="35">
+    <token name="T_FINAL">final</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_CLASS">class</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_STRING">MyTag</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_EXTENDS">extends</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_STRING">BaseTag</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_IMPLEMENTS">implements</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_STRING">StaticMethod</token>
+  </line>
+  <line no="36">
+    <token name="T_PHPDOX_OPEN_CURLY">{</token>
+  </line>
+  <line no="37">
+    <token name="T_WHITESPACE">    </token>
+    <token name="T_DOC_COMMENT">/**</token>
+  </line>
+  <line no="38">
+    <token name="T_DOC_COMMENT">     * A required property that is used by Formatters to reconstitute the complete tag line.</token>
+  </line>
+  <line no="39">
+    <token name="T_DOC_COMMENT">     *</token>
+  </line>
+  <line no="40">
+    <token name="T_DOC_COMMENT">     * @see Formatter</token>
+  </line>
+  <line no="41">
+    <token name="T_DOC_COMMENT">     *</token>
+  </line>
+  <line no="42">
+    <token name="T_DOC_COMMENT">     * @var string</token>
+  </line>
+  <line no="43">
+    <token name="T_DOC_COMMENT">     */</token>
+  </line>
+  <line no="44">
+    <token name="T_WHITESPACE">    </token>
+    <token name="T_PROTECTED">protected</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_VARIABLE">$name</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_PHPDOX_EQUAL">=</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_CONSTANT_ENCAPSED_STRING">'my-tag'</token>
+    <token name="T_PHPDOX_SEMICOLON">;</token>
+  </line>
+  <line no="45"/>
+  <line no="46">
+    <token name="T_WHITESPACE">    </token>
+    <token name="T_DOC_COMMENT">/**</token>
+  </line>
+  <line no="47">
+    <token name="T_DOC_COMMENT">     * The constructor for this Tag; this should contain all properties for this object.</token>
+  </line>
+  <line no="48">
+    <token name="T_DOC_COMMENT">     *</token>
+  </line>
+  <line no="49">
+    <token name="T_DOC_COMMENT">     * @param Description $description An example of how to add a Description to the tag; the Description is often</token>
+  </line>
+  <line no="50">
+    <token name="T_DOC_COMMENT">     *                                 an optional variable so passing null is allowed in this instance (though you can</token>
+  </line>
+  <line no="51">
+    <token name="T_DOC_COMMENT">     *                                 also construct an empty description object).</token>
+  </line>
+  <line no="52">
+    <token name="T_DOC_COMMENT">     *</token>
+  </line>
+  <line no="53">
+    <token name="T_DOC_COMMENT">     * @see BaseTag for the declaration of the description property and getDescription method.</token>
+  </line>
+  <line no="54">
+    <token name="T_DOC_COMMENT">     */</token>
+  </line>
+  <line no="55">
+    <token name="T_WHITESPACE">    </token>
+    <token name="T_PUBLIC">public</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_FUNCTION">function</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_STRING">__construct</token>
+    <token name="T_PHPDOX_OPEN_BRACKET">(</token>
+    <token name="T_STRING">Description</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_VARIABLE">$description</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_PHPDOX_EQUAL">=</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_STRING">null</token>
+    <token name="T_PHPDOX_CLOSE_BRACKET">)</token>
+  </line>
+  <line no="56">
+    <token name="T_WHITESPACE">    </token>
+    <token name="T_PHPDOX_OPEN_CURLY">{</token>
+  </line>
+  <line no="57">
+    <token name="T_WHITESPACE">        </token>
+    <token name="T_VARIABLE">$this</token>
+    <token name="T_OBJECT_OPERATOR">-&gt;</token>
+    <token name="T_STRING">description</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_PHPDOX_EQUAL">=</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_VARIABLE">$description</token>
+    <token name="T_PHPDOX_SEMICOLON">;</token>
+  </line>
+  <line no="58">
+    <token name="T_WHITESPACE">    </token>
+    <token name="T_PHPDOX_CLOSE_CURLY">}</token>
+  </line>
+  <line no="59"/>
+  <line no="60">
+    <token name="T_WHITESPACE">    </token>
+    <token name="T_DOC_COMMENT">/**</token>
+  </line>
+  <line no="61">
+    <token name="T_DOC_COMMENT">     * A static Factory that creates a new instance of the current Tag.</token>
+  </line>
+  <line no="62">
+    <token name="T_DOC_COMMENT">     *</token>
+  </line>
+  <line no="63">
+    <token name="T_DOC_COMMENT">     * In this example the MyTag tag can be created by passing a description text as $body. Because we have added</token>
+  </line>
+  <line no="64">
+    <token name="T_DOC_COMMENT">     * a $descriptionFactory that is type-hinted as DescriptionFactory we can now construct a new Description object</token>
+  </line>
+  <line no="65">
+    <token name="T_DOC_COMMENT">     * and pass that to the constructor.</token>
+  </line>
+  <line no="66">
+    <token name="T_DOC_COMMENT">     *</token>
+  </line>
+  <line no="67">
+    <token name="T_DOC_COMMENT">     * &gt; You could directly instantiate a Description object here but that won't be parsed for inline tags and Types</token>
+  </line>
+  <line no="68">
+    <token name="T_DOC_COMMENT">     * &gt; won't be resolved. The DescriptionFactory will take care of those actions.</token>
+  </line>
+  <line no="69">
+    <token name="T_DOC_COMMENT">     *</token>
+  </line>
+  <line no="70">
+    <token name="T_DOC_COMMENT">     * The `create` method's interface states that this method only features a single parameter (`$body`) but the</token>
+  </line>
+  <line no="71">
+    <token name="T_DOC_COMMENT">     * {@see TagFactory} will read the signature of this method and if it has more parameters then it will try</token>
+  </line>
+  <line no="72">
+    <token name="T_DOC_COMMENT">     * to find declarations for it in the ServiceLocator of the TagFactory (see {@see TagFactory::$serviceLocator}).</token>
+  </line>
+  <line no="73">
+    <token name="T_DOC_COMMENT">     *</token>
+  </line>
+  <line no="74">
+    <token name="T_DOC_COMMENT">     * &gt; Important: all properties following the `$body` should default to `null`, otherwise PHP will error because</token>
+  </line>
+  <line no="75">
+    <token name="T_DOC_COMMENT">     * &gt; it no longer matches the interface. This is why you often see the default tags check that an optional argument</token>
+  </line>
+  <line no="76">
+    <token name="T_DOC_COMMENT">     * &gt; is not null nonetheless.</token>
+  </line>
+  <line no="77">
+    <token name="T_DOC_COMMENT">     *</token>
+  </line>
+  <line no="78">
+    <token name="T_DOC_COMMENT">     * @param string             $body</token>
+  </line>
+  <line no="79">
+    <token name="T_DOC_COMMENT">     * @param DescriptionFactory $descriptionFactory</token>
+  </line>
+  <line no="80">
+    <token name="T_DOC_COMMENT">     * @param Context|null       $context The Context is used to resolve Types and FQSENs, although optional</token>
+  </line>
+  <line no="81">
+    <token name="T_DOC_COMMENT">     *                                    it is highly recommended to pass it. If you omit it then it is assumed that</token>
+  </line>
+  <line no="82">
+    <token name="T_DOC_COMMENT">     *                                    the DocBlock is in the global namespace and has no `use` statements.</token>
+  </line>
+  <line no="83">
+    <token name="T_DOC_COMMENT">     *</token>
+  </line>
+  <line no="84">
+    <token name="T_DOC_COMMENT">     * @see Tag for the interface declaration of the `create` method.</token>
+  </line>
+  <line no="85">
+    <token name="T_DOC_COMMENT">     * @see Tag::create() for more information on this method's workings.</token>
+  </line>
+  <line no="86">
+    <token name="T_DOC_COMMENT">     *</token>
+  </line>
+  <line no="87">
+    <token name="T_DOC_COMMENT">     * @return MyTag</token>
+  </line>
+  <line no="88">
+    <token name="T_DOC_COMMENT">     */</token>
+  </line>
+  <line no="89">
+    <token name="T_WHITESPACE">    </token>
+    <token name="T_PUBLIC">public</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_STATIC">static</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_FUNCTION">function</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_STRING">create</token>
+    <token name="T_PHPDOX_OPEN_BRACKET">(</token>
+    <token name="T_VARIABLE">$body</token>
+    <token name="T_PHPDOX_COMMA">,</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_STRING">DescriptionFactory</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_VARIABLE">$descriptionFactory</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_PHPDOX_EQUAL">=</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_STRING">null</token>
+    <token name="T_PHPDOX_COMMA">,</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_STRING">Context</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_VARIABLE">$context</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_PHPDOX_EQUAL">=</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_STRING">null</token>
+    <token name="T_PHPDOX_CLOSE_BRACKET">)</token>
+  </line>
+  <line no="90">
+    <token name="T_WHITESPACE">    </token>
+    <token name="T_PHPDOX_OPEN_CURLY">{</token>
+  </line>
+  <line no="91">
+    <token name="T_WHITESPACE">        </token>
+    <token name="T_STRING">Assert</token>
+    <token name="T_DOUBLE_COLON">::</token>
+    <token name="T_STRING">string</token>
+    <token name="T_PHPDOX_OPEN_BRACKET">(</token>
+    <token name="T_VARIABLE">$body</token>
+    <token name="T_PHPDOX_CLOSE_BRACKET">)</token>
+    <token name="T_PHPDOX_SEMICOLON">;</token>
+  </line>
+  <line no="92">
+    <token name="T_WHITESPACE">        </token>
+    <token name="T_STRING">Assert</token>
+    <token name="T_DOUBLE_COLON">::</token>
+    <token name="T_STRING">notNull</token>
+    <token name="T_PHPDOX_OPEN_BRACKET">(</token>
+    <token name="T_VARIABLE">$descriptionFactory</token>
+    <token name="T_PHPDOX_CLOSE_BRACKET">)</token>
+    <token name="T_PHPDOX_SEMICOLON">;</token>
+  </line>
+  <line no="93"/>
+  <line no="94">
+    <token name="T_WHITESPACE">        </token>
+    <token name="T_RETURN">return</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_NEW">new</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_STATIC">static</token>
+    <token name="T_PHPDOX_OPEN_BRACKET">(</token>
+    <token name="T_VARIABLE">$descriptionFactory</token>
+    <token name="T_OBJECT_OPERATOR">-&gt;</token>
+    <token name="T_STRING">create</token>
+    <token name="T_PHPDOX_OPEN_BRACKET">(</token>
+    <token name="T_VARIABLE">$body</token>
+    <token name="T_PHPDOX_COMMA">,</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_VARIABLE">$context</token>
+    <token name="T_PHPDOX_CLOSE_BRACKET">)</token>
+    <token name="T_PHPDOX_CLOSE_BRACKET">)</token>
+    <token name="T_PHPDOX_SEMICOLON">;</token>
+  </line>
+  <line no="95">
+    <token name="T_WHITESPACE">    </token>
+    <token name="T_PHPDOX_CLOSE_CURLY">}</token>
+  </line>
+  <line no="96"/>
+  <line no="97">
+    <token name="T_WHITESPACE">    </token>
+    <token name="T_DOC_COMMENT">/**</token>
+  </line>
+  <line no="98">
+    <token name="T_DOC_COMMENT">     * Returns a rendition of the original tag line.</token>
+  </line>
+  <line no="99">
+    <token name="T_DOC_COMMENT">     *</token>
+  </line>
+  <line no="100">
+    <token name="T_DOC_COMMENT">     * This method is used to reconstitute a DocBlock into its original form by the {@see Serializer}. It should</token>
+  </line>
+  <line no="101">
+    <token name="T_DOC_COMMENT">     * feature all parts of the tag so that the serializer can put it back together.</token>
+  </line>
+  <line no="102">
+    <token name="T_DOC_COMMENT">     *</token>
+  </line>
+  <line no="103">
+    <token name="T_DOC_COMMENT">     * @return string</token>
+  </line>
+  <line no="104">
+    <token name="T_DOC_COMMENT">     */</token>
+  </line>
+  <line no="105">
+    <token name="T_WHITESPACE">    </token>
+    <token name="T_PUBLIC">public</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_FUNCTION">function</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_STRING">__toString</token>
+    <token name="T_PHPDOX_OPEN_BRACKET">(</token>
+    <token name="T_PHPDOX_CLOSE_BRACKET">)</token>
+  </line>
+  <line no="106">
+    <token name="T_WHITESPACE">    </token>
+    <token name="T_PHPDOX_OPEN_CURLY">{</token>
+  </line>
+  <line no="107">
+    <token name="T_WHITESPACE">        </token>
+    <token name="T_RETURN">return</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_STRING_CAST">(string)</token>
+    <token name="T_VARIABLE">$this</token>
+    <token name="T_OBJECT_OPERATOR">-&gt;</token>
+    <token name="T_STRING">description</token>
+    <token name="T_PHPDOX_SEMICOLON">;</token>
+  </line>
+  <line no="108">
+    <token name="T_WHITESPACE">    </token>
+    <token name="T_PHPDOX_CLOSE_CURLY">}</token>
+  </line>
+  <line no="109">
+    <token name="T_PHPDOX_CLOSE_CURLY">}</token>
+  </line>
+  <line no="110"/>
+  <line no="111">
+    <token name="T_VARIABLE">$docComment</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_PHPDOX_EQUAL">=</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_START_HEREDOC">&lt;&lt;&lt;DOCCOMMENT</token>
+  </line>
+  <line no="112">
+    <token name="T_ENCAPSED_AND_WHITESPACE">/**</token>
+  </line>
+  <line no="113">
+    <token name="T_ENCAPSED_AND_WHITESPACE"> * This is an example of a summary.</token>
+  </line>
+  <line no="114">
+    <token name="T_ENCAPSED_AND_WHITESPACE"> *</token>
+  </line>
+  <line no="115">
+    <token name="T_ENCAPSED_AND_WHITESPACE"> * @my-tag I have a description</token>
+  </line>
+  <line no="116">
+    <token name="T_ENCAPSED_AND_WHITESPACE"> */</token>
+  </line>
+  <line no="117">
+    <token name="T_END_HEREDOC">DOCCOMMENT</token>
+    <token name="T_PHPDOX_SEMICOLON">;</token>
+  </line>
+  <line no="118"/>
+  <line no="119">
+    <token name="T_COMMENT">// Make a mapping between the tag name `my-tag` and the Tag class containing the Factory Method `create`.</token>
+  </line>
+  <line no="120">
+    <token name="T_VARIABLE">$customTags</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_PHPDOX_EQUAL">=</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_PHPDOX_OPEN_SQUARE">[</token>
+    <token name="T_CONSTANT_ENCAPSED_STRING">'my-tag'</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_DOUBLE_ARROW">=&gt;</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_STRING">MyTag</token>
+    <token name="T_DOUBLE_COLON">::</token>
+    <token name="T_CLASS">class</token>
+    <token name="T_PHPDOX_CLOSE_SQUARE">]</token>
+    <token name="T_PHPDOX_SEMICOLON">;</token>
+  </line>
+  <line no="121"/>
+  <line no="122">
+    <token name="T_COMMENT">// Do pass the list of custom tags to the Factory for the DocBlockFactory.</token>
+  </line>
+  <line no="123">
+    <token name="T_VARIABLE">$factory</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_PHPDOX_EQUAL">=</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_STRING">DocBlockFactory</token>
+    <token name="T_DOUBLE_COLON">::</token>
+    <token name="T_STRING">createInstance</token>
+    <token name="T_PHPDOX_OPEN_BRACKET">(</token>
+    <token name="T_VARIABLE">$customTags</token>
+    <token name="T_PHPDOX_CLOSE_BRACKET">)</token>
+    <token name="T_PHPDOX_SEMICOLON">;</token>
+  </line>
+  <line no="124">
+    <token name="T_COMMENT">// You can also add Tags later using `$factory-&gt;registerTagHandler()` with a tag name and Tag class name.</token>
+  </line>
+  <line no="125"/>
+  <line no="126">
+    <token name="T_COMMENT">// Create the DocBlock</token>
+  </line>
+  <line no="127">
+    <token name="T_VARIABLE">$docblock</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_PHPDOX_EQUAL">=</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_VARIABLE">$factory</token>
+    <token name="T_OBJECT_OPERATOR">-&gt;</token>
+    <token name="T_STRING">create</token>
+    <token name="T_PHPDOX_OPEN_BRACKET">(</token>
+    <token name="T_VARIABLE">$docComment</token>
+    <token name="T_PHPDOX_CLOSE_BRACKET">)</token>
+    <token name="T_PHPDOX_SEMICOLON">;</token>
+  </line>
+  <line no="128"/>
+  <line no="129">
+    <token name="T_COMMENT">// Take a look: the $customTagObjects now contain an array with your newly added tag</token>
+  </line>
+  <line no="130">
+    <token name="T_VARIABLE">$customTagObjects</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_PHPDOX_EQUAL">=</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_VARIABLE">$docblock</token>
+    <token name="T_OBJECT_OPERATOR">-&gt;</token>
+    <token name="T_STRING">getTagsByName</token>
+    <token name="T_PHPDOX_OPEN_BRACKET">(</token>
+    <token name="T_CONSTANT_ENCAPSED_STRING">'my-tag'</token>
+    <token name="T_PHPDOX_CLOSE_BRACKET">)</token>
+    <token name="T_PHPDOX_SEMICOLON">;</token>
+  </line>
+  <line no="131"/>
+  <line no="132">
+    <token name="T_COMMENT">// As an experiment: let's reconstitute the DocBlock and observe that because we added a __toString() method</token>
+  </line>
+  <line no="133">
+    <token name="T_COMMENT">// to the tag class that we can now also see it.</token>
+  </line>
+  <line no="134">
+    <token name="T_VARIABLE">$serializer</token>
+    <token name="T_WHITESPACE">              </token>
+    <token name="T_PHPDOX_EQUAL">=</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_NEW">new</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_STRING">Serializer</token>
+    <token name="T_PHPDOX_OPEN_BRACKET">(</token>
+    <token name="T_PHPDOX_CLOSE_BRACKET">)</token>
+    <token name="T_PHPDOX_SEMICOLON">;</token>
+  </line>
+  <line no="135">
+    <token name="T_VARIABLE">$reconstitutedDocComment</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_PHPDOX_EQUAL">=</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_VARIABLE">$serializer</token>
+    <token name="T_OBJECT_OPERATOR">-&gt;</token>
+    <token name="T_STRING">getDocComment</token>
+    <token name="T_PHPDOX_OPEN_BRACKET">(</token>
+    <token name="T_VARIABLE">$docblock</token>
+    <token name="T_PHPDOX_CLOSE_BRACKET">)</token>
+    <token name="T_PHPDOX_SEMICOLON">;</token>
+  </line>
+  <line no="136"/>
+</source>

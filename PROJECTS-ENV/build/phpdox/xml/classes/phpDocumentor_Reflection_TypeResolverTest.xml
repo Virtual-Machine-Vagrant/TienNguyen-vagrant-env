@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="phpDocumentor\Reflection\TypeResolverTest" namespace="phpDocumentor\Reflection" name="TypeResolverTest" abstract="false" final="false" start="24" end="395">
+  <file path="/home/web/example/src/freegame_developer/vendor/phpdocumentor/type-resolver/tests/unit" file="TypeResolverTest.php" realpath="/home/web/example/src/freegame_developer/vendor/phpdocumentor/type-resolver/tests/unit/TypeResolverTest.php" size="14256" time="2016-06-10T07:14:17+00:00" unixtime="1465542857" sha1="de9a5ed3c01b8af1d0f61a8a2a5b5e0cad57825f" relative="freegame_developer/vendor/phpdocumentor/type-resolver/tests/unit/TypeResolverTest.php"/>
+  <docblock>
+    <description/>
+    <coversdefaultclass value="phpDocumentor\Reflection\TypeResolver"/>
+  </docblock>
+  <extends full="PHPUnit_Framework_TestCase" namespace="" name="PHPUnit_Framework_TestCase"/>
+  <method name="testResolvingKeywords" start="40" end="47" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <param type="string" variable="$keyword"/>
+      <param type="string" variable="$expectedClass"/>
+      <covers value="::__construct"/>
+      <covers value="::resolve"/>
+      <covers value="::&lt;private&gt;"/>
+      <uses value="phpDocumentor\Reflection\Types\Context"/>
+      <uses value="phpDocumentor\Reflection\Types\Array_"/>
+      <uses value="phpDocumentor\Reflection\Types\Object_"/>
+      <dataprovider value="provideKeywords"/>
+    </docblock>
+    <parameter name="keyword" byreference="false" type="{unknown}"/>
+    <parameter name="expectedClass" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="testResolvingFQSENs" start="63" end="73" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <param type="string" variable="$fqsen"/>
+      <covers value="::__construct"/>
+      <covers value="::resolve"/>
+      <covers value="::&lt;private&gt;"/>
+      <uses value="phpDocumentor\Reflection\Types\Context"/>
+      <uses value="phpDocumentor\Reflection\Types\Object_"/>
+      <uses value="phpDocumentor\Reflection\Fqsen"/>
+      <uses value="phpDocumentor\Reflection\FqsenResolver"/>
+      <dataprovider value="provideFqcn"/>
+    </docblock>
+    <parameter name="fqsen" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="testResolvingRelativeQSENsBasedOnNamespace" start="85" end="95" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <covers value="::__construct"/>
+      <covers value="::resolve"/>
+      <covers value="::&lt;private&gt;"/>
+      <uses value="phpDocumentor\Reflection\Types\Context"/>
+      <uses value="phpDocumentor\Reflection\Types\Object_"/>
+      <uses value="phpDocumentor\Reflection\Fqsen"/>
+      <uses value="phpDocumentor\Reflection\FqsenResolver"/>
+    </docblock>
+  </method>
+  <method name="testResolvingRelativeQSENsBasedOnNamespaceAlias" start="107" end="120" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <covers value="::__construct"/>
+      <covers value="::resolve"/>
+      <covers value="::&lt;private&gt;"/>
+      <uses value="phpDocumentor\Reflection\Types\Context"/>
+      <uses value="phpDocumentor\Reflection\Types\Object_"/>
+      <uses value="phpDocumentor\Reflection\Fqsen"/>
+      <uses value="phpDocumentor\Reflection\FqsenResolver"/>
+    </docblock>
+  </method>
+  <method name="testResolvingTypedArrays" start="131" end="142" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <covers value="::__construct"/>
+      <covers value="::resolve"/>
+      <covers value="::&lt;private&gt;"/>
+      <uses value="phpDocumentor\Reflection\Types\Context"/>
+      <uses value="phpDocumentor\Reflection\Types\Array_"/>
+      <uses value="phpDocumentor\Reflection\Types\String_"/>
+    </docblock>
+  </method>
+  <method name="testResolvingNestedTypedArrays" start="153" end="172" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <covers value="::__construct"/>
+      <covers value="::resolve"/>
+      <covers value="::&lt;private&gt;"/>
+      <uses value="phpDocumentor\Reflection\Types\Context"/>
+      <uses value="phpDocumentor\Reflection\Types\Array_"/>
+      <uses value="phpDocumentor\Reflection\Types\String_"/>
+    </docblock>
+  </method>
+  <method name="testResolvingCompoundTypes" start="186" end="205" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <covers value="::__construct"/>
+      <covers value="::resolve"/>
+      <covers value="::&lt;private&gt;"/>
+      <uses value="phpDocumentor\Reflection\Types\Context"/>
+      <uses value="phpDocumentor\Reflection\Types\Compound"/>
+      <uses value="phpDocumentor\Reflection\Types\String_"/>
+      <uses value="phpDocumentor\Reflection\Types\Object_"/>
+      <uses value="phpDocumentor\Reflection\Fqsen"/>
+      <uses value="phpDocumentor\Reflection\FqsenResolver"/>
+    </docblock>
+  </method>
+  <method name="testResolvingCompoundTypedArrayTypes" start="219" end="239" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <covers value="::__construct"/>
+      <covers value="::resolve"/>
+      <covers value="::&lt;private&gt;"/>
+      <uses value="phpDocumentor\Reflection\Types\Context"/>
+      <uses value="phpDocumentor\Reflection\Types\Compound"/>
+      <uses value="phpDocumentor\Reflection\Types\Array_"/>
+      <uses value="phpDocumentor\Reflection\Types\Object_"/>
+      <uses value="phpDocumentor\Reflection\Fqsen"/>
+      <uses value="phpDocumentor\Reflection\FqsenResolver"/>
+    </docblock>
+  </method>
+  <method name="testResolvingCompoundTypesWithTwoArrays" start="259" end="279" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="This test asserts that the parameter order is correct.">When you pass two arrays separated by the compound operator (i.e. 'integer[]|string[]') then we always split the
+expression in its compound parts and then we parse the types with the array operators. If we were to switch the
+order around then 'integer[]|string[]' would read as an array of string or integer array; which is something
+other than what we intend.</description>
+      <covers value="::__construct"/>
+      <covers value="::resolve"/>
+      <covers value="::&lt;private&gt;"/>
+      <uses value="phpDocumentor\Reflection\Types\Context"/>
+      <uses value="phpDocumentor\Reflection\Types\Compound"/>
+      <uses value="phpDocumentor\Reflection\Types\Array_"/>
+      <uses value="phpDocumentor\Reflection\Types\Integer"/>
+      <uses value="phpDocumentor\Reflection\Types\String_"/>
+    </docblock>
+  </method>
+  <method name="testAddingAKeyword" start="288" end="301" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <covers value="::__construct"/>
+      <covers value="::addKeyword"/>
+      <uses value="phpDocumentor\Reflection\TypeResolver::resolve"/>
+      <uses value="phpDocumentor\Reflection\TypeResolver::&lt;private&gt;"/>
+      <uses value="phpDocumentor\Reflection\Types\Context"/>
+    </docblock>
+    <inline>
+      <comment value="Assign" line="290"/>
+      <comment value="Act" line="293"/>
+      <comment value="Assert" line="297"/>
+    </inline>
+  </method>
+  <method name="testAddingAKeywordFailsIfTypeClassDoesNotExist" start="309" end="313" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <covers value="::__construct"/>
+      <covers value="::addKeyword"/>
+      <uses value="phpDocumentor\Reflection\Types\Context"/>
+      <expectedexception value="\InvalidArgumentException"/>
+    </docblock>
+  </method>
+  <method name="testAddingAKeywordFailsIfTypeClassDoesNotImplementTypeInterface" start="321" end="325" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <covers value="::__construct"/>
+      <covers value="::addKeyword"/>
+      <uses value="phpDocumentor\Reflection\Types\Context"/>
+      <expectedexception value="\InvalidArgumentException"/>
+    </docblock>
+  </method>
+  <method name="testExceptionIsThrownIfTypeIsEmpty" start="334" end="338" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <covers value="::__construct"/>
+      <covers value="::resolve"/>
+      <uses value="phpDocumentor\Reflection\Types\Context"/>
+      <expectedexception value="\InvalidArgumentException"/>
+    </docblock>
+  </method>
+  <method name="testExceptionIsThrownIfTypeIsNotAString" start="347" end="351" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <covers value="::__construct"/>
+      <covers value="::resolve"/>
+      <uses value="phpDocumentor\Reflection\Types\Context"/>
+      <expectedexception value="\InvalidArgumentException"/>
+    </docblock>
+  </method>
+  <method name="provideKeywords" start="358" end="381" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Returns a list of keywords and expected classes that are created from them."/>
+      <return type="array" of="object">
+        <type full="phpDocumentor\Reflection\string[]" namespace="phpDocumentor\Reflection" name="string[]"/>
+      </return>
+    </docblock>
+  </method>
+  <method name="provideFqcn" start="388" end="394" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Provides a list of FQSENs to test the resolution patterns with."/>
+      <return type="array" of="object">
+        <type full="phpDocumentor\Reflection\string[]" namespace="phpDocumentor\Reflection" name="string[]"/>
+      </return>
+    </docblock>
+  </method>
+</class>

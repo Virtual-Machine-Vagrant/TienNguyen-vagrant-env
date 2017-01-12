@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="PhpParser\Lexer" namespace="PhpParser" name="Lexer" abstract="false" final="false" start="8" end="286">
+  <file path="/home/web/example/src/freegame_developer/vendor/nikic/php-parser/lib/PhpParser" file="Lexer.php" realpath="/home/web/example/src/freegame_developer/vendor/nikic/php-parser/lib/PhpParser/Lexer.php" size="10680" time="2016-09-16T12:04:44+00:00" unixtime="1474027484" sha1="0dc1a6bb60eebb3c2c3e8d97965bf909a817c38c" relative="freegame_developer/vendor/nikic/php-parser/lib/PhpParser/Lexer.php"/>
+  <member name="code" visibility="protected" static="false" line="10"/>
+  <member name="tokens" visibility="protected" static="false" line="11"/>
+  <member name="pos" visibility="protected" static="false" line="12"/>
+  <member name="line" visibility="protected" static="false" line="13"/>
+  <member name="filePos" visibility="protected" static="false" line="14"/>
+  <member name="tokenMap" visibility="protected" static="false" line="16"/>
+  <member name="dropTokens" visibility="protected" static="false" line="17"/>
+  <member name="usedAttributes" visibility="protected" static="false" line="19"/>
+  <constructor name="__construct" start="30" end="46" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Creates a Lexer."/>
+      <param description="Options array. Currently only the 'usedAttributes' option is supported," type="array" variable="$options">which is an array of attributes to add to the AST nodes. Possible
+                      attributes are: 'comments', 'startLine', 'endLine', 'startTokenPos',
+                      'endTokenPos', 'startFilePos', 'endFilePos'. The option defaults to the
+                      first three. For more info see getNextToken() docs.</param>
+    </docblock>
+    <parameter name="options" byreference="false" type="array" default=""/>
+    <inline>
+      <comment value="map from internal tokens to PhpParser tokens" line="31"/>
+      <comment value="map of tokens to drop while lexing (the map is only used for isset lookup," line="34"/>
+      <comment value="that's why the value is simply set to 1; the value is never actually used.)" line="35"/>
+      <comment value="the usedAttributes member is a map of the used attribute names to a dummy" line="40"/>
+      <comment value="value (here &quot;true&quot;)" line="41"/>
+    </inline>
+  </constructor>
+  <method name="startLexing" start="55" end="70" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Initializes the lexer for lexing the provided source code."/>
+      <param description="The source code to lex" type="string" variable="$code"/>
+      <throws description="on lexing errors (unterminated comment or unexpected character)" type="object">
+        <type full="PhpParser\Error" namespace="PhpParser" name="Error"/>
+      </throws>
+    </docblock>
+    <parameter name="code" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="keep the code around for __halt_compiler() handling" line="66"/>
+    </inline>
+  </method>
+  <method name="resetErrors" start="72" end="81" abstract="false" final="false" static="false" visibility="protected"/>
+  <method name="handleErrors" start="83" end="110" abstract="false" final="false" static="false" visibility="protected">
+    <inline>
+      <comment value="PHP cuts error message after null byte, so need special case" line="106"/>
+    </inline>
+  </method>
+  <method name="getNextToken" start="134" end="201" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Fetches the next token.">The available attributes are determined by the 'usedAttributes' option, which can
+be specified in the constructor. The following attributes are supported:
+
+ * 'comments'      =&gt; Array of PhpParser\Comment or PhpParser\Comment\Doc instances,
+                      representing all comments that occurred between the previous
+                      non-discarded token and the current one.
+ * 'startLine'     =&gt; Line in which the node starts.
+ * 'endLine'       =&gt; Line in which the node ends.
+ * 'startTokenPos' =&gt; Offset into the token array of the first token in the node.
+ * 'endTokenPos'   =&gt; Offset into the token array of the last token in the node.
+ * 'startFilePos'  =&gt; Offset into the code string of the first character that is part of the node.
+ * 'endFilePos'    =&gt; Offset into the code string of the last character that is part of the node.</description>
+      <param description="Variable to store token content in" type="mixed" variable="$value"/>
+      <param description="Variable to store start attributes in" type="mixed" variable="$startAttributes"/>
+      <param description="Variable to store end attributes in" type="mixed" variable="$endAttributes"/>
+      <return description="Token id" type="int"/>
+    </docblock>
+    <parameter name="value" byreference="true" type="{unknown}" default="" constant="null"/>
+    <parameter name="startAttributes" byreference="true" type="{unknown}" default="" constant="null"/>
+    <parameter name="endAttributes" byreference="true" type="{unknown}" default="" constant="null"/>
+  </method>
+  <method name="getTokens" start="213" end="215" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Returns the token array for current code.">The token array is in the same format as provided by the
+token_get_all() function and does not discard tokens (i.e.
+whitespace and comments are included). The token position
+attributes are against this token array.</description>
+      <return description="Array of tokens in token_get_all() format" type="array"/>
+    </docblock>
+  </method>
+  <method name="handleHaltCompiler" start="222" end="238" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Handles __halt_compiler() by returning the text after it."/>
+      <return description="Remaining text" type="string"/>
+    </docblock>
+    <inline>
+      <comment value="text after T_HALT_COMPILER, still including ();" line="223"/>
+      <comment value="ensure that it is followed by ();" line="226"/>
+      <comment value="this simplifies the situation, by not allowing any comments" line="227"/>
+      <comment value="in between of the tokens." line="228"/>
+      <comment value="prevent the lexer from returning any further tokens" line="233"/>
+      <comment value="return with (); removed" line="236"/>
+      <comment value="(string) converts false to ''" line="237"/>
+    </inline>
+  </method>
+  <method name="createTokenMap" start="249" end="285" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Creates the token map.">The token map maps the PHP internal token identifiers
+to the identifiers used by the Parser. Additionally it
+maps T_OPEN_TAG_WITH_ECHO to T_ECHO and T_CLOSE_TAG to ';'.</description>
+      <return description="The token map" type="array"/>
+    </docblock>
+    <inline>
+      <comment value="256 is the minimum possible token number, as everything below" line="252"/>
+      <comment value="it is an ASCII value" line="253"/>
+      <comment value="HHVM uses a special token for numbers that overflow to double" line="275"/>
+      <comment value="HHVM also has a separate token for the __COMPILER_HALT_OFFSET__ constant" line="279"/>
+    </inline>
+  </method>
+</class>

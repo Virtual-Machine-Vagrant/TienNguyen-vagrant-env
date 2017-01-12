@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="phpseclib\Crypt\RC4" namespace="phpseclib\Crypt" name="RC4" abstract="false" final="false" start="54" end="339">
+  <file path="/home/web/example/src/freegame_developer/vendor/phpseclib/phpseclib/phpseclib/Crypt" file="RC4.php" realpath="/home/web/example/src/freegame_developer/vendor/phpseclib/phpseclib/phpseclib/Crypt/RC4.php" size="8628" time="2016-10-04T00:57:04+00:00" unixtime="1475542624" sha1="9e43dde66de0b3c4f4521781e41da2ce61fa94f9" relative="freegame_developer/vendor/phpseclib/phpseclib/phpseclib/Crypt/RC4.php"/>
+  <docblock>
+    <description compact="Pure-PHP implementation of RC4."/>
+    <package value="RC4"/>
+    <author value="Jim Wigginton &lt;terrafrost@php.net&gt;"/>
+    <access value="public"/>
+  </docblock>
+  <extends full="phpseclib\Crypt\Base" namespace="phpseclib\Crypt" name="Base"/>
+  <constant type="integer" name="ENCRYPT" value="0"/>
+  <constant type="integer" name="DECRYPT" value="1"/>
+  <member name="block_size" type="integer" default="0" visibility="public" static="false" line="74">
+    <docblock>
+      <description compact="Block Length of the cipher">RC4 is a stream cipher
+so we the block_size to 0</description>
+      <see value="\phpseclib\Crypt\Base::block_size"/>
+      <var type="int"/>
+      <access value="private"/>
+    </docblock>
+  </member>
+  <member name="key_length" type="integer" default="128" visibility="public" static="false" line="83">
+    <docblock>
+      <description compact="Key Length (in bytes)"/>
+      <see value="\phpseclib\Crypt\RC4::setKeyLength()"/>
+      <var type="int"/>
+      <access value="private"/>
+    </docblock>
+  </member>
+  <member name="cipher_name_mcrypt" type="string" default="'arcfour'" visibility="public" static="false" line="92">
+    <docblock>
+      <description compact="The mcrypt specific name of the cipher"/>
+      <see value="\phpseclib\Crypt\Base::cipher_name_mcrypt"/>
+      <var type="string"/>
+      <access value="private"/>
+    </docblock>
+  </member>
+  <member name="use_inline_crypt" type="boolean" default="false" visibility="public" static="false" line="101">
+    <docblock>
+      <description compact="Holds whether performance-optimized $inline_crypt() can/should be used."/>
+      <see value="\phpseclib\Crypt\Base::inline_crypt"/>
+      <var type="mixed"/>
+      <access value="private"/>
+    </docblock>
+  </member>
+  <member name="key" type="string" default="&quot;\0&quot;" visibility="public" static="false" line="110">
+    <docblock>
+      <description compact="The Key"/>
+      <see value="self::setKey()"/>
+      <var type="string"/>
+      <access value="private"/>
+    </docblock>
+  </member>
+  <member name="stream" visibility="public" static="false" line="119">
+    <docblock>
+      <description compact="The Key Stream for decryption and encryption"/>
+      <see value="self::setKey()"/>
+      <var type="array"/>
+      <access value="private"/>
+    </docblock>
+  </member>
+  <constructor name="__construct" start="130" end="133" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Default Constructor.">Determines whether or not the mcrypt extension should be used.</description>
+      <see value="\phpseclib\Crypt\Base::__construct()"/>
+      <return type="object">
+        <type full="\phpseclib\Crypt\RC4" namespace="\phpseclib\Crypt" name="RC4"/>
+      </return>
+      <access value="public"/>
+    </docblock>
+  </constructor>
+  <method name="isValidEngine" start="145" end="165" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Test for engine validity">This is mainly just a wrapper to set things up for \phpseclib\Crypt\Base::isValidEngine()</description>
+      <see value="\phpseclib\Crypt\Base::__construct()"/>
+      <param type="int" variable="$engine"/>
+      <access value="public"/>
+      <return type="object">
+        <type full="phpseclib\Crypt\bool" namespace="phpseclib\Crypt" name="bool"/>
+      </return>
+    </docblock>
+    <parameter name="engine" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="setIV" start="186" end="188" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Dummy function.">Some protocols, such as WEP, prepend an "initialization vector" to the key, effectively creating a new key [1].
+If you need to use an initialization vector in this manner, feel free to prepend it to the key, yourself, before
+calling setKey().
+
+[1] WEP's initialization vectors (IV's) are used in a somewhat insecure way.  Since, in that protocol,
+the IV's are relatively easy to predict, an attack described by
+{@link http://www.drizzle.com/~aboba/IEEE/rc4_ksaproc.pdf Scott Fluhrer, Itsik Mantin, and Adi Shamir}
+can be used to quickly guess at the rest of the key.  The following links elaborate:
+
+{@link http://www.rsa.com/rsalabs/node.asp?id=2009 http://www.rsa.com/rsalabs/node.asp?id=2009}
+{@link http://en.wikipedia.org/wiki/Related_key_attack http://en.wikipedia.org/wiki/Related_key_attack}</description>
+      <param type="string" variable="$iv"/>
+      <see value="self::setKey()"/>
+      <access value="public"/>
+    </docblock>
+    <parameter name="iv" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="setKeyLength" start="198" end="209" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Sets the key length">Keys can be between 1 and 256 bytes long.</description>
+      <access value="public"/>
+      <param type="int" variable="$length"/>
+    </docblock>
+    <parameter name="length" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="encrypt" start="220" end="226" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Encrypts a message."/>
+      <see value="\phpseclib\Crypt\Base::decrypt()"/>
+      <see value="self::_crypt()"/>
+      <access value="public"/>
+      <param type="string" variable="$plaintext"/>
+      <return description="$ciphertext" type="string"/>
+    </docblock>
+    <parameter name="plaintext" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="decrypt" start="240" end="246" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Decrypts a message.">$this-&gt;decrypt($this-&gt;encrypt($plaintext)) == $this-&gt;encrypt($this-&gt;encrypt($plaintext)).
+At least if the continuous buffer is disabled.</description>
+      <see value="\phpseclib\Crypt\Base::encrypt()"/>
+      <see value="self::_crypt()"/>
+      <access value="public"/>
+      <param type="string" variable="$ciphertext"/>
+      <return description="$plaintext" type="string"/>
+    </docblock>
+    <parameter name="ciphertext" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="_encryptBlock" start="254" end="257" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Encrypts a block"/>
+      <access value="private"/>
+      <param type="string" variable="$in"/>
+    </docblock>
+    <parameter name="in" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="RC4 does not utilize this method" line="256"/>
+    </inline>
+  </method>
+  <method name="_decryptBlock" start="265" end="268" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Decrypts a block"/>
+      <access value="private"/>
+      <param type="string" variable="$in"/>
+    </docblock>
+    <parameter name="in" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="RC4 does not utilize this method" line="267"/>
+    </inline>
+  </method>
+  <method name="_setupKey" start="276" end="295" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Setup the key (expansion)"/>
+      <see value="\phpseclib\Crypt\Base::_setupKey()"/>
+      <access value="private"/>
+    </docblock>
+  </method>
+  <method name="_crypt" start="307" end="338" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Encrypts or decrypts a message."/>
+      <see value="self::encrypt()"/>
+      <see value="self::decrypt()"/>
+      <access value="private"/>
+      <param type="string" variable="$text"/>
+      <param type="int" variable="$mode"/>
+      <return description="$text" type="string"/>
+    </docblock>
+    <parameter name="text" byreference="false" type="{unknown}"/>
+    <parameter name="mode" byreference="false" type="{unknown}"/>
+  </method>
+</class>

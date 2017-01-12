@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="Cron\DayOfWeekField" namespace="Cron" name="DayOfWeekField" abstract="false" final="false" start="18" end="137">
+  <file path="/home/web/example/src/freegame_developer/vendor/mtdowling/cron-expression/src/Cron" file="DayOfWeekField.php" realpath="/home/web/example/src/freegame_developer/vendor/mtdowling/cron-expression/src/Cron/DayOfWeekField.php" size="4357" time="2016-01-26T21:23:30+00:00" unixtime="1453843410" sha1="ca2a27543ebec5832fca73a72480127722f00f67" relative="freegame_developer/vendor/mtdowling/cron-expression/src/Cron/DayOfWeekField.php"/>
+  <docblock>
+    <description compact="Day of week field.  Allows: * / , - ? L #">Days of the week can be represented as a number 0-7 (0|7 = Sunday)
+or as a three letter string: SUN, MON, TUE, WED, THU, FRI, SAT.
+
+'L' stands for "last". It allows you to specify constructs such as
+"the last Friday" of a given month.
+
+'#' is allowed for the day-of-week field, and must be followed by a
+number between one and five. It allows you to specify constructs such as
+"the second Friday" of a given month.</description>
+  </docblock>
+  <extends full="Cron\AbstractField" namespace="Cron" name="AbstractField"/>
+  <method name="isSatisfiedBy" start="20" end="101" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="date" byreference="false" type="object">
+      <type full="DateTime" namespace="" name="DateTime"/>
+    </parameter>
+    <parameter name="value" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="Convert text day of the week values to integers" line="26"/>
+      <comment value="Find out if this is the last specific weekday of the month" line="33"/>
+      <comment value="Handle # hash tokens" line="48"/>
+      <comment value="Handle day of the week values" line="85"/>
+      <comment value="Test to see which Sunday to use -- 0 == 7 == Sunday" line="96"/>
+    </inline>
+  </method>
+  <method name="increment" start="103" end="114" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="date" byreference="false" type="object">
+      <type full="DateTime" namespace="" name="DateTime"/>
+    </parameter>
+    <parameter name="invert" byreference="false" type="boolean" default="false"/>
+  </method>
+  <method name="validate" start="116" end="127" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="value" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="convertLiterals" start="129" end="136" abstract="false" final="false" static="false" visibility="private">
+    <parameter name="string" byreference="false" type="{unknown}"/>
+  </method>
+</class>

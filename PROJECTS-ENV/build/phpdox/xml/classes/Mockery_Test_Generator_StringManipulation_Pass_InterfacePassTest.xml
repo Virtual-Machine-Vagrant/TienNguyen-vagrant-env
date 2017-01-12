@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="Mockery\Test\Generator\StringManipulation\Pass\InterfacePassTest" namespace="Mockery\Test\Generator\StringManipulation\Pass" name="InterfacePassTest" abstract="false" final="false" start="9" end="46">
+  <file path="/home/web/example/src/freegame_developer/vendor/mockery/mockery/tests/Mockery/Generator/StringManipulation/Pass" file="InterfacePassTest.php" realpath="/home/web/example/src/freegame_developer/vendor/mockery/mockery/tests/Mockery/Generator/StringManipulation/Pass/InterfacePassTest.php" size="1237" time="2015-04-02T19:54:00+00:00" unixtime="1428004440" sha1="6b9c85630dc09c425aefb25cb8697cfbe27fc401" relative="freegame_developer/vendor/mockery/mockery/tests/Mockery/Generator/StringManipulation/Pass/InterfacePassTest.php"/>
+  <extends full="PHPUnit_Framework_TestCase" namespace="" name="PHPUnit_Framework_TestCase"/>
+  <constant type="string" name="CODE" value="&quot;class Mock implements MockInterface&quot;"/>
+  <method name="shouldNotAlterCodeIfNoTargetInterfaces" start="16" end="26" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <test/>
+    </docblock>
+  </method>
+  <method name="shouldAddAnyInterfaceNamesToImplementsDefinition" start="31" end="45" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <test/>
+    </docblock>
+  </method>
+</class>

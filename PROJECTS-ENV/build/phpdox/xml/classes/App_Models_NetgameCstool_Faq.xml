@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="App\Models\NetgameCstool\Faq" namespace="App\Models\NetgameCstool" name="Faq" abstract="false" final="false" start="7" end="158">
+  <file path="/home/web/example/src/freegame_developer/app/Models/NetgameCstool" file="Faq.php" realpath="/home/web/example/src/freegame_developer/app/Models/NetgameCstool/Faq.php" size="4567" time="2016-12-06T02:39:57+00:00" unixtime="1480991997" sha1="efde1a9c168064e947b20de6d2e895e354765fbe" relative="freegame_developer/app/Models/NetgameCstool/Faq.php"/>
+  <extends full="App\Models\NetgameCstool\NetgameCstool" namespace="App\Models\NetgameCstool" name="NetgameCstool"/>
+  <member name="table" type="string" default="'faq'" visibility="protected" static="false" line="9"/>
+  <member name="timestamps" type="boolean" default="false" visibility="public" static="false" line="11"/>
+  <member name="guarded" type="array" default="" visibility="protected" static="false" line="13"/>
+  <method name="add" start="19" end="29" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="insert faq"/>
+      <param type="boolean"/>
+    </docblock>
+    <parameter name="params" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="edit" start="35" end="44" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="update faq"/>
+      <param type="boolean"/>
+    </docblock>
+    <parameter name="params" byreference="false" type="{unknown}"/>
+    <parameter name="conditions" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="remove" start="51" end="54" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Delete faq"/>
+      <param type="array" variable="$conditions"/>
+      <return type="boolean"/>
+    </docblock>
+    <parameter name="conditions" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="getListFaqByGameId" start="61" end="124" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Get list faq"/>
+      <param type="array" variable="$conditions"/>
+      <return type="object"/>
+    </docblock>
+    <parameter name="conditions" byreference="false" type="{unknown}"/>
+    <parameter name="pagination" byreference="false" type="boolean" default="true"/>
+  </method>
+  <method name="getFaqByFaqIdAndGameId" start="131" end="136" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Get faq by faq_id &amp; game_id"/>
+      <param type="array" variable="$params"/>
+      <return type="object"/>
+    </docblock>
+    <parameter name="params" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="getByIdAndTitle" start="145" end="157" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Get faq by faq_id &amp; game_id &amp; faq_id"/>
+      <param type="integer" variable="$gameId"/>
+      <param type="string" variable="$title"/>
+      <param type="integer" variable="$faqId"/>
+      <return description="object" type="array"/>
+    </docblock>
+    <parameter name="gameId" byreference="false" type="{unknown}"/>
+    <parameter name="title" byreference="false" type="{unknown}"/>
+    <parameter name="faqId" byreference="false" type="boolean" default="false"/>
+  </method>
+</class>

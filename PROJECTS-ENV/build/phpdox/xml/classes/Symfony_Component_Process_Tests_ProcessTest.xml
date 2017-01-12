@@ -1,0 +1,366 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="Symfony\Component\Process\Tests\ProcessTest" namespace="Symfony\Component\Process\Tests" name="ProcessTest" abstract="false" final="false" start="24" end="1256">
+  <file path="/home/web/example/src/freegame_developer/vendor/symfony/process/Tests" file="ProcessTest.php" realpath="/home/web/example/src/freegame_developer/vendor/symfony/process/Tests/ProcessTest.php" size="40082" time="2016-09-29T02:20:21+00:00" unixtime="1475115621" sha1="5a5e92719f95d9d6fadfe5f2c3826a3a3a5dea4b" relative="freegame_developer/vendor/symfony/process/Tests/ProcessTest.php"/>
+  <docblock>
+    <description/>
+    <author value="Robert Schönthal &lt;seroscho@googlemail.com&gt;"/>
+  </docblock>
+  <extends full="PHPUnit_Framework_TestCase" namespace="" name="PHPUnit_Framework_TestCase"/>
+  <member name="phpBin" visibility="private" static="true" line="26"/>
+  <member name="process" visibility="private" static="true" line="27"/>
+  <member name="sigchild" visibility="private" static="true" line="28"/>
+  <member name="notEnhancedSigchild" type="boolean" default="false" visibility="private" static="true" line="29"/>
+  <method name="setUpBeforeClass" start="31" end="45" abstract="false" final="false" static="true" visibility="public"/>
+  <method name="tearDown" start="47" end="53" abstract="false" final="false" static="false" visibility="protected"/>
+  <method name="testThatProcessDoesNotThrowWarningDuringRun" start="55" end="66" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testNegativeTimeoutFromConstructor" start="71" end="74" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <expectedexception value="\Symfony\Component\Process\Exception\InvalidArgumentException"/>
+    </docblock>
+  </method>
+  <method name="testNegativeTimeoutFromSetter" start="79" end="83" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <expectedexception value="\Symfony\Component\Process\Exception\InvalidArgumentException"/>
+    </docblock>
+  </method>
+  <method name="testFloatAndNullTimeout" start="85" end="97" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testStopWithTimeoutIsActuallyWorking" start="102" end="116" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <requires value="extension pcntl"/>
+    </docblock>
+  </method>
+  <method name="testAllOutputIsActuallyReadOnTermination" start="118" end="148" abstract="false" final="false" static="false" visibility="public">
+    <inline>
+      <comment value="this code will result in a maximum of 2 reads of 8192 bytes by calling" line="120"/>
+      <comment value="start() and isRunning().  by the time getOutput() is called the process" line="121"/>
+      <comment value="has terminated so the internal pipes array is already empty. normally" line="122"/>
+      <comment value="the call to start() will not read any data as the process will not have" line="123"/>
+      <comment value="generated output, but this is non-deterministic so we must count it as" line="124"/>
+      <comment value="a possibility.  therefore we need 2 * PipesInterface::CHUNK_SIZE plus" line="125"/>
+      <comment value="another byte which will never be read." line="126"/>
+      <comment value="Don't call Process::run nor Process::wait to avoid any read of pipes" line="134"/>
+    </inline>
+  </method>
+  <method name="testCallbacksAreExecutedWithStart" start="150" end="160" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testProcessResponses" start="167" end="173" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="tests results from sub processes."/>
+      <dataprovider value="responsesCodeProvider"/>
+    </docblock>
+    <parameter name="expected" byreference="false" type="{unknown}"/>
+    <parameter name="getter" byreference="false" type="{unknown}"/>
+    <parameter name="code" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="testProcessPipes" start="180" end="191" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="tests results from sub processes."/>
+      <dataprovider value="pipesCodeProvider"/>
+    </docblock>
+    <parameter name="code" byreference="false" type="{unknown}"/>
+    <parameter name="size" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="testSetStreamAsInput" start="196" end="213" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <dataprovider value="pipesCodeProvider"/>
+    </docblock>
+    <parameter name="code" byreference="false" type="{unknown}"/>
+    <parameter name="size" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="testLiveStreamAsInput" start="215" end="231" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testSetInputWhileRunningThrowsAnException" start="237" end="250" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <expectedexception value="\Symfony\Component\Process\Exception\LogicException"/>
+      <expectedexceptionmessage value="Input can not be set while the process is running."/>
+    </docblock>
+  </method>
+  <method name="testInvalidInput" start="257" end="261" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <dataprovider value="provideInvalidInputValues"/>
+      <expectedexception value="\Symfony\Component\Process\Exception\InvalidArgumentException"/>
+      <expectedexceptionmessage value="Symfony\Component\Process\Process::setInput only accepts strings or stream resources."/>
+    </docblock>
+    <parameter name="value" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="provideInvalidInputValues" start="263" end="269" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testValidInput" start="274" end="279" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <dataprovider value="provideInputValues"/>
+    </docblock>
+    <parameter name="expected" byreference="false" type="{unknown}"/>
+    <parameter name="value" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="provideInputValues" start="281" end="288" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testLegacyValidInput" start="294" end="299" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <dataprovider value="provideLegacyInputValues"/>
+      <group value="legacy"/>
+    </docblock>
+    <parameter name="expected" byreference="false" type="{unknown}"/>
+    <parameter name="value" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="provideLegacyInputValues" start="301" end="306" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="chainedCommandsOutputProvider" start="308" end="320" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testChainedCommandsOutput" start="325" end="330" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <dataprovider value="chainedCommandsOutputProvider"/>
+    </docblock>
+    <parameter name="expected" byreference="false" type="{unknown}"/>
+    <parameter name="operator" byreference="false" type="{unknown}"/>
+    <parameter name="input" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="testCallbackIsExecutedForOutput" start="332" end="342" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testGetErrorOutput" start="344" end="350" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testFlushErrorOutput" start="352" end="359" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testIncrementalOutput" start="364" end="387" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <dataprovider value="provideIncrementalOutput"/>
+    </docblock>
+    <parameter name="getOutput" byreference="false" type="{unknown}"/>
+    <parameter name="getIncrementalOutput" byreference="false" type="{unknown}"/>
+    <parameter name="uri" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="provideIncrementalOutput" start="389" end="395" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testGetOutput" start="397" end="403" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testFlushOutput" start="405" end="412" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testZeroAsOutput" start="414" end="425" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testExitCodeCommandFailed" start="427" end="439" abstract="false" final="false" static="false" visibility="public">
+    <inline>
+      <comment value="such command run in bash return an exitcode 127" line="434"/>
+    </inline>
+  </method>
+  <method name="testTTYCommand" start="441" end="454" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testTTYCommandExitCode" start="456" end="468" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testTTYInWindowsEnvironment" start="474" end="483" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <expectedexception value="\Symfony\Component\Process\Exception\RuntimeException"/>
+      <expectedexceptionmessage value="TTY mode is not supported on Windows platform."/>
+    </docblock>
+  </method>
+  <method name="testExitCodeTextIsNullWhenExitCodeIsNull" start="485" end="491" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testPTYCommand" start="493" end="505" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testMustRun" start="507" end="515" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testSuccessfulMustRunHasCorrectExitCode" start="517" end="523" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testMustRunThrowsException" start="528" end="534" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <expectedexception value="\Symfony\Component\Process\Exception\ProcessFailedException"/>
+    </docblock>
+  </method>
+  <method name="testExitCodeText" start="536" end="547" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testStartIsNonBlocking" start="549" end="557" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testUpdateStatus" start="559" end="564" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testGetExitCodeIsNullOnStart" start="566" end="576" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testGetExitCodeIsNullOnWhenStartingAgain" start="578" end="589" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testGetExitCode" start="591" end="598" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testStatus" start="600" end="617" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testStop" start="619" end="626" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testIsSuccessful" start="628" end="635" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testIsSuccessfulOnlyAfterTerminated" start="637" end="649" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testIsNotSuccessful" start="651" end="658" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testProcessIsNotSignaled" start="660" end="670" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testProcessWithoutTermSignal" start="672" end="682" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testProcessIsSignaledIfStopped" start="684" end="696" abstract="false" final="false" static="false" visibility="public">
+    <inline>
+      <comment value="SIGTERM" line="695"/>
+    </inline>
+  </method>
+  <method name="testProcessThrowsExceptionWhenExternallySignaled" start="702" end="714" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <expectedexception value="\Symfony\Component\Process\Exception\RuntimeException"/>
+      <expectedexceptionmessage value="The process has been signaled"/>
+    </docblock>
+    <inline>
+      <comment value="SIGKILL" line="711"/>
+    </inline>
+  </method>
+  <method name="testRestart" start="716" end="732" abstract="false" final="false" static="false" visibility="public">
+    <inline>
+      <comment value="wait for output" line="722"/>
+      <comment value="Ensure that both processed finished and the output is numeric" line="724"/>
+      <comment value="Ensure that restart returned a new process by check that the output is different" line="730"/>
+    </inline>
+  </method>
+  <method name="testRunProcessWithTimeout" start="738" end="752" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <expectedexception value="\Symfony\Component\Process\Exception\ProcessTimedOutException"/>
+      <expectedexceptionmessage value="exceeded the timeout of 0.1 seconds."/>
+    </docblock>
+  </method>
+  <method name="testCheckTimeoutOnNonStartedProcess" start="754" end="758" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testCheckTimeoutOnTerminatedProcess" start="760" end="765" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testCheckTimeoutOnStartedProcess" start="771" end="791" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <expectedexception value="\Symfony\Component\Process\Exception\ProcessTimedOutException"/>
+      <expectedexceptionmessage value="exceeded the timeout of 0.1 seconds."/>
+    </docblock>
+  </method>
+  <method name="testIdleTimeout" start="793" end="808" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testIdleTimeoutNotExceededWhenOutputIsSent" start="810" end="830" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testStartAfterATimeout" start="836" end="852" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <expectedexception value="\Symfony\Component\Process\Exception\ProcessTimedOutException"/>
+      <expectedexceptionmessage value="exceeded the timeout of 0.1 seconds."/>
+    </docblock>
+  </method>
+  <method name="testGetPid" start="854" end="860" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testGetPidIsNullBeforeStart" start="862" end="866" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testGetPidIsNullAfterRun" start="868" end="873" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testSignal" start="878" end="890" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <requires value="extension pcntl"/>
+    </docblock>
+  </method>
+  <method name="testExitCodeIsAvailableAfterSignal" start="895" end="911" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <requires value="extension pcntl"/>
+    </docblock>
+  </method>
+  <method name="testSignalProcessNotRunning" start="917" end="921" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <expectedexception value="\Symfony\Component\Process\Exception\LogicException"/>
+      <expectedexceptionmessage value="Can not send signal on a non running process."/>
+    </docblock>
+    <inline>
+      <comment value="SIGHUP" line="920"/>
+    </inline>
+  </method>
+  <method name="testMethodsThatNeedARunningProcess" start="926" end="931" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <dataprovider value="provideMethodsThatNeedARunningProcess"/>
+    </docblock>
+    <parameter name="method" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="provideMethodsThatNeedARunningProcess" start="933" end="942" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testMethodsThatNeedATerminatedProcess" start="949" end="962" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <dataprovider value="provideMethodsThatNeedATerminatedProcess"/>
+      <expectedexception value="\Symfony\Component\Process\Exception\LogicException"/>
+      <expectedexceptionmessage value="Process must be terminated before calling"/>
+    </docblock>
+    <parameter name="method" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="provideMethodsThatNeedATerminatedProcess" start="964" end="972" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testWrongSignal" start="978" end="994" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <dataprovider value="provideWrongSignal"/>
+      <expectedexception value="\Symfony\Component\Process\Exception\RuntimeException"/>
+    </docblock>
+    <parameter name="signal" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="provideWrongSignal" start="996" end="1002" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testDisableOutputDisablesTheOutput" start="1004" end="1012" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testDisableOutputWhileRunningThrowsException" start="1018" end="1023" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <expectedexception value="\Symfony\Component\Process\Exception\RuntimeException"/>
+      <expectedexceptionmessage value="Disabling output while the process is running is not possible."/>
+    </docblock>
+  </method>
+  <method name="testEnableOutputWhileRunningThrowsException" start="1029" end="1035" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <expectedexception value="\Symfony\Component\Process\Exception\RuntimeException"/>
+      <expectedexceptionmessage value="Enabling output while the process is running is not possible."/>
+    </docblock>
+  </method>
+  <method name="testEnableOrDisableOutputAfterRunDoesNotThrowException" start="1037" end="1045" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testDisableOutputWhileIdleTimeoutIsSet" start="1051" end="1056" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <expectedexception value="\Symfony\Component\Process\Exception\LogicException"/>
+      <expectedexceptionmessage value="Output can not be disabled while an idle timeout is set."/>
+    </docblock>
+  </method>
+  <method name="testSetIdleTimeoutWhileOutputIsDisabled" start="1062" end="1067" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <expectedexception value="\Symfony\Component\Process\Exception\LogicException"/>
+      <expectedexceptionmessage value="timeout can not be set while the output is disabled."/>
+    </docblock>
+  </method>
+  <method name="testSetNullIdleTimeoutWhileOutputIsDisabled" start="1069" end="1074" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testStartWithACallbackAndDisabledOutput" start="1079" end="1088" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <dataprovider value="provideStartMethods"/>
+    </docblock>
+    <parameter name="startMethod" byreference="false" type="{unknown}"/>
+    <parameter name="exception" byreference="false" type="{unknown}"/>
+    <parameter name="exceptionMessage" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="provideStartMethods" start="1090" end="1097" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testGetOutputWhileDisabled" start="1104" end="1110" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <dataprovider value="provideOutputFetchingMethods"/>
+      <expectedexception value="\Symfony\Component\Process\Exception\LogicException"/>
+      <expectedexceptionmessage value="Output has been disabled."/>
+    </docblock>
+    <parameter name="fetchMethod" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="provideOutputFetchingMethods" start="1112" end="1120" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testStopTerminatesProcessCleanly" start="1122" end="1129" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testKillSignalTerminatesProcessCleanly" start="1131" end="1138" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testTermSignalTerminatesProcessCleanly" start="1140" end="1147" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="responsesCodeProvider" start="1149" end="1157" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="pipesCodeProvider" start="1159" end="1181" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testIncrementalOutputDoesNotRequireAnotherCall" start="1186" end="1200" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <dataprovider value="provideVariousIncrementals"/>
+    </docblock>
+    <parameter name="stream" byreference="false" type="{unknown}"/>
+    <parameter name="method" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="provideVariousIncrementals" start="1202" end="1208" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="getProcess" start="1220" end="1244" abstract="false" final="false" static="false" visibility="private">
+    <docblock>
+      <description/>
+      <param type="string" variable="$commandline"/>
+      <param type="object" variable="$cwd">
+        <type full="Symfony\Component\Process\Tests\null|string" namespace="Symfony\Component\Process\Tests" name="null|string"/>
+      </param>
+      <param type="object" variable="$env">
+        <type full="Symfony\Component\Process\Tests\null|array" namespace="Symfony\Component\Process\Tests" name="null|array"/>
+      </param>
+      <param type="object" variable="$input">
+        <type full="Symfony\Component\Process\Tests\null|string" namespace="Symfony\Component\Process\Tests" name="null|string"/>
+      </param>
+      <param type="int" variable="$timeout"/>
+      <param type="array" variable="$options"/>
+      <return type="object">
+        <type full="Symfony\Component\Process\Process" namespace="Symfony\Component\Process" name="Process"/>
+      </return>
+    </docblock>
+    <parameter name="commandline" byreference="false" type="{unknown}"/>
+    <parameter name="cwd" byreference="false" type="{unknown}" default="" constant="null"/>
+    <parameter name="env" byreference="false" type="{unknown}" default="" constant="null"/>
+    <parameter name="input" byreference="false" type="{unknown}" default="" constant="null"/>
+    <parameter name="timeout" byreference="false" type="integer" default="60"/>
+    <parameter name="options" byreference="false" type="array" default=""/>
+  </method>
+  <method name="skipIfNotEnhancedSigchild" start="1246" end="1255" abstract="false" final="false" static="false" visibility="private">
+    <parameter name="expectException" byreference="false" type="boolean" default="true"/>
+  </method>
+</class>

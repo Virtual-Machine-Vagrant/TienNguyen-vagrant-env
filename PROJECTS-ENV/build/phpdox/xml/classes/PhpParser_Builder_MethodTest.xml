@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="PhpParser\Builder\MethodTest" namespace="PhpParser\Builder" name="MethodTest" abstract="false" final="false" start="11" end="163">
+  <file path="/home/web/example/src/freegame_developer/vendor/nikic/php-parser/test/PhpParser/Builder" file="MethodTest.php" realpath="/home/web/example/src/freegame_developer/vendor/nikic/php-parser/test/PhpParser/Builder/MethodTest.php" size="4465" time="2016-09-16T12:04:44+00:00" unixtime="1474027484" sha1="457db37d576109554e5f7c29b0ededc4c824ecf5" relative="freegame_developer/vendor/nikic/php-parser/test/PhpParser/Builder/MethodTest.php"/>
+  <extends full="PHPUnit_Framework_TestCase" namespace="" name="PHPUnit_Framework_TestCase"/>
+  <method name="createMethodBuilder" start="13" end="15" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="name" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="testModifiers" start="17" end="60" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testReturnByRef" start="62" end="74" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testParams" start="76" end="93" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testStmts" start="95" end="112" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testDocComment" start="113" end="121" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testReturnType" start="123" end="130" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testAddStmtToAbstractMethodError" start="136" end="141" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <expectedexception value="\LogicException"/>
+      <expectedexceptionmessage value="Cannot add statements to an abstract method"/>
+    </docblock>
+  </method>
+  <method name="testMakeMethodWithStmtsAbstractError" start="147" end="152" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <expectedexception value="\LogicException"/>
+      <expectedexceptionmessage value="Cannot make method with statements abstract"/>
+    </docblock>
+  </method>
+  <method name="testInvalidParamError" start="158" end="162" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <expectedexception value="\LogicException"/>
+      <expectedexceptionmessage value="Expected parameter node, got &quot;Name&quot;"/>
+    </docblock>
+  </method>
+</class>

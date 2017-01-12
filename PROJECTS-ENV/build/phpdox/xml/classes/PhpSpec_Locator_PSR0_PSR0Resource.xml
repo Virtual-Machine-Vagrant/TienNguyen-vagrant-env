@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="PhpSpec\Locator\PSR0\PSR0Resource" namespace="PhpSpec\Locator\PSR0" name="PSR0Resource" abstract="false" final="false" start="18" end="126">
+  <file path="/home/web/example/src/freegame_developer/vendor/phpspec/phpspec/src/PhpSpec/Locator/PSR0" file="PSR0Resource.php" realpath="/home/web/example/src/freegame_developer/vendor/phpspec/phpspec/src/PhpSpec/Locator/PSR0/PSR0Resource.php" size="2885" time="2016-01-01T10:17:54+00:00" unixtime="1451643474" sha1="352ee0dbe55f1811abb4b5e3c15189d0baf255c4" relative="freegame_developer/vendor/phpspec/phpspec/src/PhpSpec/Locator/PSR0/PSR0Resource.php"/>
+  <implements full="PhpSpec\Locator\ResourceInterface" namespace="PhpSpec\Locator" name="ResourceInterface"/>
+  <member name="parts" visibility="private" static="false" line="23">
+    <docblock>
+      <description/>
+      <var type="array"/>
+    </docblock>
+  </member>
+  <member name="locator" visibility="private" static="false" line="27">
+    <docblock>
+      <description/>
+      <var type="object">
+        <type full="PhpSpec\Locator\PSR0\PSR0Locator" namespace="PhpSpec\Locator\PSR0" name="PSR0Locator"/>
+      </var>
+    </docblock>
+  </member>
+  <constructor name="__construct" start="33" end="37" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <param type="array" variable="$parts"/>
+      <param type="object" variable="$locator">
+        <type full="PhpSpec\Locator\PSR0\PSR0Locator" namespace="PhpSpec\Locator\PSR0" name="PSR0Locator"/>
+      </param>
+    </docblock>
+    <parameter name="parts" byreference="false" type="array"/>
+    <parameter name="locator" byreference="false" type="object">
+      <type full="PhpSpec\Locator\PSR0\PSR0Locator" namespace="PhpSpec\Locator\PSR0" name="PSR0Locator"/>
+    </parameter>
+  </constructor>
+  <method name="getName" start="42" end="45" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <return type="mixed"/>
+    </docblock>
+  </method>
+  <method name="getSpecName" start="50" end="53" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <return type="string"/>
+    </docblock>
+  </method>
+  <method name="getSrcFilename" start="58" end="69" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <return type="string"/>
+    </docblock>
+  </method>
+  <method name="getSrcNamespace" start="74" end="80" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <return type="string"/>
+    </docblock>
+  </method>
+  <method name="getSrcClassname" start="85" end="88" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <return type="string"/>
+    </docblock>
+  </method>
+  <method name="getSpecFilename" start="93" end="106" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <return type="string"/>
+    </docblock>
+  </method>
+  <method name="getSpecNamespace" start="111" end="117" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <return type="string"/>
+    </docblock>
+  </method>
+  <method name="getSpecClassname" start="122" end="125" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <return type="string"/>
+    </docblock>
+  </method>
+</class>

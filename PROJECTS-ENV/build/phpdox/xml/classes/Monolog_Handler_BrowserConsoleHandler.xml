@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="Monolog\Handler\BrowserConsoleHandler" namespace="Monolog\Handler" name="BrowserConsoleHandler" abstract="false" final="false" start="21" end="230">
+  <file path="/home/web/example/src/freegame_developer/vendor/monolog/monolog/src/Monolog/Handler" file="BrowserConsoleHandler.php" realpath="/home/web/example/src/freegame_developer/vendor/monolog/monolog/src/Monolog/Handler/BrowserConsoleHandler.php" size="7162" time="2016-07-29T03:23:52+00:00" unixtime="1469762632" sha1="5311f088daa7ea28ebfe87c14d6145cc6a117b46" relative="freegame_developer/vendor/monolog/monolog/src/Monolog/Handler/BrowserConsoleHandler.php"/>
+  <docblock>
+    <description compact="Handler sending logs to browser's javascript console with no browser extension required"/>
+    <author value="Olivier Poitrey &lt;rs@dailymotion.com&gt;"/>
+  </docblock>
+  <extends full="Monolog\Handler\AbstractProcessingHandler" namespace="Monolog\Handler" name="AbstractProcessingHandler"/>
+  <member name="initialized" type="boolean" default="false" visibility="protected" static="true" line="23"/>
+  <member name="records" type="array" default="" visibility="protected" static="true" line="24"/>
+  <method name="getDefaultFormatter" start="35" end="38" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="{@inheritDoc}">Formatted output may contain some formatting markers to be transferred to `console.log` using the %c format.
+
+Example of formatted string:
+
+    You can do [[blue text]]{color: blue} or [[green background]]{background-color: green; color: white}</description>
+    </docblock>
+  </method>
+  <method name="write" start="43" end="53" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="{@inheritDoc}"/>
+    </docblock>
+    <parameter name="record" byreference="false" type="array"/>
+    <inline>
+      <comment value="Accumulate records" line="45"/>
+      <comment value="Register shutdown handler if not already done" line="48"/>
+    </inline>
+  </method>
+  <method name="send" start="59" end="74" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description compact="Convert records to javascript console commands and send it to the browser.">This method is automatically called on PHP shutdown if output is HTML or Javascript.</description>
+    </docblock>
+  </method>
+  <method name="reset" start="79" end="82" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description compact="Forget all logged records"/>
+    </docblock>
+  </method>
+  <method name="registerShutdownFunction" start="87" end="92" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Wrapper for register_shutdown_function to allow overriding"/>
+    </docblock>
+  </method>
+  <method name="writeOutput" start="99" end="102" abstract="false" final="false" static="true" visibility="protected">
+    <docblock>
+      <description compact="Wrapper for echo to allow overriding"/>
+      <param type="string" variable="$str"/>
+    </docblock>
+    <parameter name="str" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="getResponseFormat" start="113" end="131" abstract="false" final="false" static="true" visibility="protected">
+    <docblock>
+      <description compact="Checks the format of the response">If Content-Type is set to application/javascript or text/javascript -&gt; js
+If Content-Type is set to text/html, or is unset -&gt; html
+If Content-Type is anything else -&gt; unknown</description>
+      <return description="One of 'js', 'html' or 'unknown'" type="string"/>
+    </docblock>
+    <inline>
+      <comment value="Check content type" line="115"/>
+    </inline>
+  </method>
+  <method name="generateScript" start="133" end="153" abstract="false" final="false" static="true" visibility="private"/>
+  <method name="handleStyles" start="155" end="172" abstract="false" final="false" static="true" visibility="private">
+    <parameter name="formatted" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="handleCustomStyles" start="174" end="192" abstract="false" final="false" static="true" visibility="private">
+    <parameter name="style" byreference="false" type="{unknown}"/>
+    <parameter name="string" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="dump" start="194" end="211" abstract="false" final="false" static="true" visibility="private">
+    <parameter name="title" byreference="false" type="{unknown}"/>
+    <parameter name="dict" byreference="false" type="array"/>
+  </method>
+  <method name="quote" start="213" end="216" abstract="false" final="false" static="true" visibility="private">
+    <parameter name="arg" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="call" start="218" end="224" abstract="false" final="false" static="true" visibility="private"/>
+  <method name="call_array" start="226" end="229" abstract="false" final="false" static="true" visibility="private">
+    <parameter name="method" byreference="false" type="{unknown}"/>
+    <parameter name="args" byreference="false" type="array"/>
+  </method>
+</class>

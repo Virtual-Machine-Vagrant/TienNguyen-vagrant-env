@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="MongoDB\Tests\Operation\ListIndexesFunctionalTest" namespace="MongoDB\Tests\Operation" name="ListIndexesFunctionalTest" abstract="false" final="false" start="9" end="46">
+  <file path="/home/web/example/src/freegame_developer/vendor/mongodb/mongodb/tests/Operation" file="ListIndexesFunctionalTest.php" realpath="/home/web/example/src/freegame_developer/vendor/mongodb/mongodb/tests/Operation/ListIndexesFunctionalTest.php" size="1712" time="2016-09-23T19:38:29+00:00" unixtime="1474659509" sha1="07b6adb1860931e8116dbbef72ea350f8ef71a98" relative="freegame_developer/vendor/mongodb/mongodb/tests/Operation/ListIndexesFunctionalTest.php"/>
+  <extends full="MongoDB\Tests\Operation\FunctionalTestCase" namespace="MongoDB\Tests\Operation" name="FunctionalTestCase"/>
+  <method name="testListIndexesForNewlyCreatedCollection" start="11" end="34" abstract="false" final="false" static="false" visibility="public">
+    <inline>
+      <comment value="Convert the CursorInfoIterator to an array since we cannot rewind its cursor" line="25"/>
+    </inline>
+  </method>
+  <method name="testListIndexesForNonexistentCollection" start="36" end="45" abstract="false" final="false" static="false" visibility="public"/>
+</class>

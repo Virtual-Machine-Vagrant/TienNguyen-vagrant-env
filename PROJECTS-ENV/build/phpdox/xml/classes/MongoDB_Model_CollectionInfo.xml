@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="MongoDB\Model\CollectionInfo" namespace="MongoDB\Model" name="CollectionInfo" abstract="false" final="false" start="16" end="90">
+  <file path="/home/web/example/src/freegame_developer/vendor/mongodb/mongodb/src/Model" file="CollectionInfo.php" realpath="/home/web/example/src/freegame_developer/vendor/mongodb/mongodb/src/Model/CollectionInfo.php" size="2048" time="2016-09-23T19:38:29+00:00" unixtime="1474659509" sha1="811e4f9228f01123ebfa47abaf40f4137f0ad9ec" relative="freegame_developer/vendor/mongodb/mongodb/src/Model/CollectionInfo.php"/>
+  <docblock>
+    <description compact="Collection information model class.">This class models the collection information returned by the listCollections
+command or, for legacy servers, queries on the "system.namespaces"
+collection. It provides methods to access options for the collection.</description>
+    <api/>
+    <see value="MongoDB\Database::listCollections()"/>
+    <see value="https://github.com/mongodb/specifications/blob/master/source/enumerate-collections.rst"/>
+  </docblock>
+  <member name="info" visibility="private" static="false" line="18"/>
+  <constructor name="__construct" start="25" end="28" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Constructor."/>
+      <param description="Collection info" type="array" variable="$info"/>
+    </docblock>
+    <parameter name="info" byreference="false" type="array"/>
+  </constructor>
+  <method name="__debugInfo" start="36" end="39" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Return the collection info as an array."/>
+      <see value="http://php.net/oop5.magic#language.oop5.magic.debuginfo"/>
+      <return type="array"/>
+    </docblock>
+  </method>
+  <method name="getCappedMax" start="46" end="49" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Return the maximum number of documents to keep in the capped collection."/>
+      <return type="object">
+        <type full="MongoDB\Model\integer|null" namespace="MongoDB\Model" name="integer|null"/>
+      </return>
+    </docblock>
+  </method>
+  <method name="getCappedSize" start="56" end="59" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Return the maximum size (in bytes) of the capped collection."/>
+      <return type="object">
+        <type full="MongoDB\Model\integer|null" namespace="MongoDB\Model" name="integer|null"/>
+      </return>
+    </docblock>
+  </method>
+  <method name="getName" start="66" end="69" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Return the collection name."/>
+      <return type="string"/>
+    </docblock>
+  </method>
+  <method name="getOptions" start="76" end="79" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Return the collection options."/>
+      <return type="array"/>
+    </docblock>
+  </method>
+  <method name="isCapped" start="86" end="89" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Return whether the collection is a capped collection."/>
+      <return type="boolean"/>
+    </docblock>
+  </method>
+</class>

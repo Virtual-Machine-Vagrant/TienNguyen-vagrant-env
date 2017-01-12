@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="App\Models\NetgameCstool\MaintenanceInfo" namespace="App\Models\NetgameCstool" name="MaintenanceInfo" abstract="false" final="false" start="5" end="74">
+  <file path="/home/web/example/src/freegame_developer/app/Models/NetgameCstool" file="MaintenanceInfo.php" realpath="/home/web/example/src/freegame_developer/app/Models/NetgameCstool/MaintenanceInfo.php" size="1705" time="2016-12-13T02:05:42+00:00" unixtime="1481594742" sha1="5b8831e45d0c8c9dddabc730dd2de59b1d0b08ed" relative="freegame_developer/app/Models/NetgameCstool/MaintenanceInfo.php"/>
+  <extends full="App\Models\NetgameCstool\NetgameCstool" namespace="App\Models\NetgameCstool" name="NetgameCstool"/>
+  <member name="table" type="string" default="'maintenance_info'" visibility="protected" static="false" line="7"/>
+  <member name="timestamps" type="boolean" default="false" visibility="public" static="false" line="9"/>
+  <member name="guarded" type="array" default="" visibility="protected" static="false" line="11"/>
+  <method name="add" start="18" end="25" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Insert maintenance info"/>
+      <param type="array" variable="$params"/>
+      <param type="boolean"/>
+    </docblock>
+    <parameter name="params" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="getOne" start="32" end="45" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Get maintenance info by condition"/>
+      <param type="array" variable="$condition"/>
+      <return type="object">
+        <type full="App\Models\NetgameCstool\Object" namespace="App\Models\NetgameCstool" name="Object"/>
+      </return>
+    </docblock>
+    <parameter name="condition" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="edit" start="53" end="59" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Update maintenance info"/>
+      <param type="array" variable="$updateData"/>
+      <param type="array" variable="$conditions"/>
+      <return type="boolean"/>
+    </docblock>
+    <parameter name="updateData" byreference="false" type="{unknown}"/>
+    <parameter name="conditions" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="remove" start="66" end="73" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Delete maintenance info by condition"/>
+      <param type="array" variable="$condition"/>
+      <return type="boolean"/>
+    </docblock>
+    <parameter name="condition" byreference="false" type="{unknown}"/>
+  </method>
+</class>

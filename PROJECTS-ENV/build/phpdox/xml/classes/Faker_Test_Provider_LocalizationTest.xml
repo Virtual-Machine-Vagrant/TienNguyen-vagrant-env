@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="Faker\Test\Provider\LocalizationTest" namespace="Faker\Test\Provider" name="LocalizationTest" abstract="false" final="false" start="7" end="26">
+  <file path="/home/web/example/src/freegame_developer/vendor/fzaninotto/faker/test/Faker/Provider" file="LocalizationTest.php" realpath="/home/web/example/src/freegame_developer/vendor/fzaninotto/faker/test/Faker/Provider/LocalizationTest.php" size="1016" time="2015-05-29T06:29:14+00:00" unixtime="1432880954" sha1="78e7ff17643e891bbd724c1ff57abe4eb75a313c" relative="freegame_developer/vendor/fzaninotto/faker/test/Faker/Provider/LocalizationTest.php"/>
+  <extends full="PHPUnit_Framework_TestCase" namespace="" name="PHPUnit_Framework_TestCase"/>
+  <method name="testLocalizedNameProvidersDoNotThrowErrors" start="9" end="16" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testLocalizedAddressProvidersDoNotThrowErrors" start="18" end="25" abstract="false" final="false" static="false" visibility="public"/>
+</class>

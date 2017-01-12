@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="League\Flysystem\Adapter\Ftpd" namespace="League\Flysystem\Adapter" name="Ftpd" abstract="false" final="false" start="5" end="36">
+  <file path="/home/web/example/src/freegame_developer/vendor/league/flysystem/src/Adapter" file="Ftpd.php" realpath="/home/web/example/src/freegame_developer/vendor/league/flysystem/src/Adapter/Ftpd.php" size="854" time="2016-10-19T20:38:46+00:00" unixtime="1476909526" sha1="882cde45d8d1d2f8ad97696f1a2d1c05a77245a5" relative="freegame_developer/vendor/league/flysystem/src/Adapter/Ftpd.php"/>
+  <extends full="League\Flysystem\Adapter\Ftp" namespace="League\Flysystem\Adapter" name="Ftp"/>
+  <method name="getMetadata" start="10" end="21" abstract="false" final="false" static="false" visibility="public">
+    <docblock inherit="true">
+      <description/>
+    </docblock>
+    <parameter name="path" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="listDirectoryContents" start="26" end="35" abstract="false" final="false" static="false" visibility="protected">
+    <docblock inherit="true">
+      <description/>
+    </docblock>
+    <parameter name="directory" byreference="false" type="{unknown}"/>
+    <parameter name="recursive" byreference="false" type="boolean" default="true"/>
+  </method>
+</class>

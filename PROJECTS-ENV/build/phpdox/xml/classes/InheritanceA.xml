@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="InheritanceA" namespace="" name="InheritanceA" abstract="false" final="false" start="5" end="7">
+  <file path="/home/web/example/src/freegame_developer/vendor/phpunit/phpunit/tests/_files/Inheritance" file="InheritanceA.php" realpath="/home/web/example/src/freegame_developer/vendor/phpunit/phpunit/tests/_files/Inheritance/InheritanceA.php" size="97" time="2016-02-11T14:56:33+00:00" unixtime="1455202593" sha1="272a40d5f75edee37d649a2af1d1a74954b7c84c" relative="freegame_developer/vendor/phpunit/phpunit/tests/_files/Inheritance/InheritanceA.php"/>
+  <extends full="InheritanceB" namespace="" name="InheritanceB"/>
+</class>

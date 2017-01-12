@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="SebastianBergmann\Comparator\Struct" namespace="SebastianBergmann\Comparator" name="Struct" abstract="false" final="false" start="17" end="25">
+  <file path="/home/web/example/src/freegame_developer/vendor/sebastian/comparator/tests/_files" file="Struct.php" realpath="/home/web/example/src/freegame_developer/vendor/sebastian/comparator/tests/_files/Struct.php" size="421" time="2015-07-26T15:48:44+00:00" unixtime="1437925724" sha1="4472e6d7b5c3d51880d2e9d8896c2a1bc600f561" relative="freegame_developer/vendor/sebastian/comparator/tests/_files/Struct.php"/>
+  <docblock>
+    <description compact="A struct."/>
+  </docblock>
+  <member name="var" visibility="public" static="false" line="19"/>
+  <constructor name="__construct" start="21" end="24" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="var" byreference="false" type="{unknown}"/>
+  </constructor>
+</class>

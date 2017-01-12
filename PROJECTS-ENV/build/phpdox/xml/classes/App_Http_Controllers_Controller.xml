@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="App\Http\Controllers\Controller" namespace="App\Http\Controllers" name="Controller" abstract="true" final="false" start="10" end="237">
+  <file path="/home/web/example/src/freegame_developer/app/Http/Controllers" file="Controller.php" realpath="/home/web/example/src/freegame_developer/app/Http/Controllers/Controller.php" size="6537" time="2016-11-16T01:52:54+00:00" unixtime="1479261174" sha1="c057d67481b0024c416ae3c1549b6b65fb6fc64b" relative="freegame_developer/app/Http/Controllers/Controller.php"/>
+  <extends full="Illuminate\Routing\Controller" namespace="Illuminate\Routing" name="Controller"/>
+  <uses full="Illuminate\Foundation\Bus\DispatchesJobs" namespace="Illuminate\Foundation\Bus" name="DispatchesJobs" start="12" end="12"/>
+  <uses full="Illuminate\Foundation\Validation\ValidatesRequests" namespace="Illuminate\Foundation\Validation" name="ValidatesRequests" start="12" end="12"/>
+  <member name="screeName" visibility="protected" static="false" line="14"/>
+  <constructor name="__construct" start="16" end="25" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="renderDeleteConfirmMessageByDataType" start="33" end="42" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Render delete confirm message by dataType"/>
+      <param type="string" variable="$dataType"/>
+      <return type="string"/>
+    </docblock>
+    <parameter name="dataType" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="renderDeleteConfirmMessage" start="50" end="56" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Render delete confirm message"/>
+      <param type="object">
+        <type full="App\Http\Controllers\none" namespace="App\Http\Controllers" name="none"/>
+      </param>
+      <return type="array"/>
+    </docblock>
+  </method>
+  <method name="renderDeleteConfirmMessagePlain" start="64" end="73" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Render delete confirm message"/>
+      <param type="object">
+        <type full="App\Http\Controllers\none" namespace="App\Http\Controllers" name="none"/>
+      </param>
+      <return type="array"/>
+    </docblock>
+  </method>
+  <method name="renderSortConfirmMessageByDataType" start="81" end="90" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Render sort confirm message by dataType"/>
+      <param type="string" variable="$dataType"/>
+      <return type="string"/>
+    </docblock>
+    <parameter name="dataType" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="renderSortConfirmMessage" start="98" end="104" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Render sort confirm message"/>
+      <param type="object">
+        <type full="App\Http\Controllers\none" namespace="App\Http\Controllers" name="none"/>
+      </param>
+      <return type="array"/>
+    </docblock>
+  </method>
+  <method name="renderDisplayLimitConfirmMessageByDataType" start="112" end="121" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Render display limit confirm message by dataType"/>
+      <param type="string" variable="$dataType"/>
+      <return type="string"/>
+    </docblock>
+    <parameter name="dataType" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="renderDisplayLimitConfirmMessage" start="129" end="135" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Render display limit confirm message"/>
+      <param type="object">
+        <type full="App\Http\Controllers\none" namespace="App\Http\Controllers" name="none"/>
+      </param>
+      <return type="array"/>
+    </docblock>
+  </method>
+  <method name="renderDisplayRandomConfirmMessageByDataType" start="143" end="152" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Render display random confirm message by dataType"/>
+      <param variable="$dataType"/>
+      <return type="string"/>
+    </docblock>
+    <parameter name="dataType" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="renderDisplayRandomConfirmMessage" start="160" end="166" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Render display random confirm mesage"/>
+      <param type="object">
+        <type full="App\Http\Controllers\none" namespace="App\Http\Controllers" name="none"/>
+      </param>
+      <return type="array"/>
+    </docblock>
+  </method>
+  <method name="renderDisplayNumberConfirmMessageByDataType" start="174" end="183" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Render display recommend number confirm message by dataType"/>
+      <param variable="$dataType"/>
+      <return type="string"/>
+    </docblock>
+    <parameter name="dataType" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="renderDisplayNumberConfirmMessage" start="191" end="197" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Render display recommend number confirm mesage"/>
+      <param type="object">
+        <type full="App\Http\Controllers\none" namespace="App\Http\Controllers" name="none"/>
+      </param>
+      <return type="array"/>
+    </docblock>
+  </method>
+  <method name="injectJavascript" start="205" end="214" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Inject javascript for each controller."/>
+      <param type="object">
+        <type full="App\Http\Controllers\none" namespace="App\Http\Controllers" name="none"/>
+      </param>
+      <return type="object">
+        <type full="App\Http\Controllers\none" namespace="App\Http\Controllers" name="none"/>
+      </return>
+    </docblock>
+  </method>
+  <method name="getControllerName" start="222" end="225" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Get current controller name."/>
+      <param type="object">
+        <type full="App\Http\Controllers\none" namespace="App\Http\Controllers" name="none"/>
+      </param>
+      <return type="string"/>
+    </docblock>
+  </method>
+  <method name="getActionName" start="233" end="236" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Get current action name."/>
+      <param type="object">
+        <type full="App\Http\Controllers\none" namespace="App\Http\Controllers" name="none"/>
+      </param>
+      <return type="string"/>
+    </docblock>
+  </method>
+</class>

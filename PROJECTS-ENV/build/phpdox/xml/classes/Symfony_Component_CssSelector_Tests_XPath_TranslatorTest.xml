@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="Symfony\Component\CssSelector\Tests\XPath\TranslatorTest" namespace="Symfony\Component\CssSelector\Tests\XPath" name="TranslatorTest" abstract="false" final="false" start="17" end="324">
+  <file path="/home/web/example/src/freegame_developer/vendor/symfony/css-selector/Tests/XPath" file="TranslatorTest.php" realpath="/home/web/example/src/freegame_developer/vendor/symfony/css-selector/Tests/XPath/TranslatorTest.php" size="17216" time="2016-09-06T07:26:07+00:00" unixtime="1473146767" sha1="1e1ca99c2f50abcaf8f66ccabd723bed08f0c963" relative="freegame_developer/vendor/symfony/css-selector/Tests/XPath/TranslatorTest.php"/>
+  <extends full="PHPUnit_Framework_TestCase" namespace="" name="PHPUnit_Framework_TestCase"/>
+  <method name="testXpathLiteral" start="20" end="23" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <dataprovider value="getXpathLiteralTestData"/>
+    </docblock>
+    <parameter name="value" byreference="false" type="{unknown}"/>
+    <parameter name="literal" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="testCssToXPath" start="26" end="31" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <dataprovider value="getCssToXPathTestData"/>
+    </docblock>
+    <parameter name="css" byreference="false" type="{unknown}"/>
+    <parameter name="xpath" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="testXmlLang" start="34" end="43" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <dataprovider value="getXmlLangTestData"/>
+    </docblock>
+    <parameter name="css" byreference="false" type="{unknown}"/>
+    <parameter name="elementsId" byreference="false" type="array"/>
+  </method>
+  <method name="testHtmlIds" start="46" end="64" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <dataprovider value="getHtmlIdsTestData"/>
+    </docblock>
+    <parameter name="css" byreference="false" type="{unknown}"/>
+    <parameter name="elementsId" byreference="false" type="array"/>
+  </method>
+  <method name="testHtmlShakespear" start="67" end="78" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <dataprovider value="getHtmlShakespearTestData"/>
+    </docblock>
+    <parameter name="css" byreference="false" type="{unknown}"/>
+    <parameter name="count" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="getXpathLiteralTestData" start="80" end="88" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="getCssToXPathTestData" start="90" end="133" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="getXmlLangTestData" start="135" end="148" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="getHtmlIdsTestData" start="150" end="271" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="getHtmlShakespearTestData" start="273" end="323" abstract="false" final="false" static="false" visibility="public"/>
+</class>

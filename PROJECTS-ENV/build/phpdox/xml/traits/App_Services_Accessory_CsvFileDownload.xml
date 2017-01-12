@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<trait xmlns="http://xml.phpdox.net/src" full="App\Services\Accessory\CsvFileDownload" namespace="App\Services\Accessory" name="CsvFileDownload" abstract="false" final="false" start="6" end="95">
+  <file path="/home/web/example/src/freegame_developer/app/Services/Accessory" file="CsvFileDownload.php" realpath="/home/web/example/src/freegame_developer/app/Services/Accessory/CsvFileDownload.php" size="2864" time="2016-10-31T07:00:31+00:00" unixtime="1477897231" sha1="43fb7f7614a03012707b6c8e3c27c3f153404ba6" relative="freegame_developer/app/Services/Accessory/CsvFileDownload.php"/>
+  <method name="downloadCsv" start="17" end="25" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Download CSV"/>
+      <param type="string" variable="$fileName"/>
+      <param type="array" variable="$contents"/>
+      <param type="array" variable="$column"/>
+      <param type="boolean" variable="$addTitle"/>
+      <return/>
+    </docblock>
+    <parameter name="fileName" byreference="false" type="{unknown}"/>
+    <parameter name="contents" byreference="false" type="{unknown}"/>
+    <parameter name="column" byreference="false" type="{unknown}"/>
+    <parameter name="addTitle" byreference="false" type="boolean" default="false"/>
+  </method>
+  <method name="makeCsv" start="34" end="69" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Makes CSV data and get"/>
+      <param description="([ ['keyColumnName' =&gt; ['parameter'],[...]] ,  ['keyColumnName' =&gt;...],[...], ...])" type="array" variable="$contents"/>
+      <param description="(['keyColumnName' =&gt; 'viewTitle'],[...]...)" type="array" variable="$column"/>
+      <param type="boolean" variable="$addTitle"/>
+      <return type="object">
+        <type full="App\Services\Accessory\stream" namespace="App\Services\Accessory" name="stream"/>
+      </return>
+    </docblock>
+    <parameter name="contents" byreference="false" type="{unknown}"/>
+    <parameter name="column" byreference="false" type="{unknown}"/>
+    <parameter name="addTitle" byreference="false" type="boolean" default="false"/>
+    <inline>
+      <comment value="仮Open" line="37"/>
+      <comment value="Excelでも開けるように文字コード変換" line="65"/>
+    </inline>
+  </method>
+  <method name="mbFputCsv" start="77" end="94" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="write strings for CSV"/>
+      <param description="stream $fp" type="object">
+        <type full="App\Services\Accessory\file" namespace="App\Services\Accessory" name="file"/>
+      </param>
+      <param type="array" variable="$param"/>
+      <return type="object">
+        <type full="App\Services\Accessory\void" namespace="App\Services\Accessory" name="void"/>
+      </return>
+    </docblock>
+    <parameter name="fp" byreference="true" type="{unknown}"/>
+    <parameter name="param" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="1行分のデータ終了を示す改行コード" line="91"/>
+    </inline>
+  </method>
+</trait>

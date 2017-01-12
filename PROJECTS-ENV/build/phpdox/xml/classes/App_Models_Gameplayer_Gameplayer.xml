@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="App\Models\Gameplayer\Gameplayer" namespace="App\Models\Gameplayer" name="Gameplayer" abstract="false" final="false" start="7" end="10">
+  <file path="/home/web/example/src/freegame_developer/app/Models/Gameplayer" file="Gameplayer.php" realpath="/home/web/example/src/freegame_developer/app/Models/Gameplayer/Gameplayer.php" size="156" time="2016-12-06T02:39:57+00:00" unixtime="1480991997" sha1="dbead9fbab59c3acd0f3cd4dbba80a97366f2896" relative="freegame_developer/app/Models/Gameplayer/Gameplayer.php"/>
+  <extends full="App\Models\CustomModel" namespace="App\Models" name="CustomModel"/>
+  <member name="connection" type="string" default="'gameplayer_db'" visibility="protected" static="false" line="9"/>
+</class>

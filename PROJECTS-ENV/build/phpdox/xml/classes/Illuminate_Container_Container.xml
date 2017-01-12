@@ -1,0 +1,896 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="Illuminate\Container\Container" namespace="Illuminate\Container" name="Container" abstract="false" final="false" start="15" end="1220">
+  <file path="/home/web/example/src/freegame_developer/vendor/laravel/framework/src/Illuminate/Container" file="Container.php" realpath="/home/web/example/src/freegame_developer/vendor/laravel/framework/src/Illuminate/Container/Container.php" size="33903" time="2016-02-24T15:13:21+00:00" unixtime="1456326801" sha1="2dfddcc2d1ab44a3f32920d0473b7991417cd1df" relative="freegame_developer/vendor/laravel/framework/src/Illuminate/Container/Container.php"/>
+  <implements full="ArrayAccess" namespace="" name="ArrayAccess"/>
+  <implements full="Illuminate\Contracts\Container\Container" namespace="Illuminate\Contracts\Container" name="Container"/>
+  <member name="instance" visibility="protected" static="true" line="22">
+    <docblock>
+      <description compact="The current globally available container (if any)."/>
+      <var resolution="static" type="object">
+        <type full="Illuminate\Container\Container" namespace="Illuminate\Container" name="Container"/>
+      </var>
+    </docblock>
+  </member>
+  <member name="resolved" type="array" default="" visibility="protected" static="false" line="29">
+    <docblock>
+      <description compact="An array of the types that have been resolved."/>
+      <var type="array"/>
+    </docblock>
+  </member>
+  <member name="bindings" type="array" default="" visibility="protected" static="false" line="36">
+    <docblock>
+      <description compact="The container's bindings."/>
+      <var type="array"/>
+    </docblock>
+  </member>
+  <member name="instances" type="array" default="" visibility="protected" static="false" line="43">
+    <docblock>
+      <description compact="The container's shared instances."/>
+      <var type="array"/>
+    </docblock>
+  </member>
+  <member name="aliases" type="array" default="" visibility="protected" static="false" line="50">
+    <docblock>
+      <description compact="The registered type aliases."/>
+      <var type="array"/>
+    </docblock>
+  </member>
+  <member name="extenders" type="array" default="" visibility="protected" static="false" line="57">
+    <docblock>
+      <description compact="The extension closures for services."/>
+      <var type="array"/>
+    </docblock>
+  </member>
+  <member name="tags" type="array" default="" visibility="protected" static="false" line="64">
+    <docblock>
+      <description compact="All of the registered tags."/>
+      <var type="array"/>
+    </docblock>
+  </member>
+  <member name="buildStack" type="array" default="" visibility="protected" static="false" line="71">
+    <docblock>
+      <description compact="The stack of concretions currently being built."/>
+      <var type="array"/>
+    </docblock>
+  </member>
+  <member name="contextual" type="array" default="" visibility="public" static="false" line="78">
+    <docblock>
+      <description compact="The contextual binding map."/>
+      <var type="array"/>
+    </docblock>
+  </member>
+  <member name="reboundCallbacks" type="array" default="" visibility="protected" static="false" line="85">
+    <docblock>
+      <description compact="All of the registered rebound callbacks."/>
+      <var type="array"/>
+    </docblock>
+  </member>
+  <member name="globalResolvingCallbacks" type="array" default="" visibility="protected" static="false" line="92">
+    <docblock>
+      <description compact="All of the global resolving callbacks."/>
+      <var type="array"/>
+    </docblock>
+  </member>
+  <member name="globalAfterResolvingCallbacks" type="array" default="" visibility="protected" static="false" line="99">
+    <docblock>
+      <description compact="All of the global after resolving callbacks."/>
+      <var type="array"/>
+    </docblock>
+  </member>
+  <member name="resolvingCallbacks" type="array" default="" visibility="protected" static="false" line="106">
+    <docblock>
+      <description compact="All of the after resolving callbacks by class type."/>
+      <var type="array"/>
+    </docblock>
+  </member>
+  <member name="afterResolvingCallbacks" type="array" default="" visibility="protected" static="false" line="113">
+    <docblock>
+      <description compact="All of the after resolving callbacks by class type."/>
+      <var type="array"/>
+    </docblock>
+  </member>
+  <method name="when" start="121" end="124" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Define a contextual binding."/>
+      <param type="string" variable="$concrete"/>
+      <return type="object">
+        <type full="\Illuminate\Contracts\Container\ContextualBindingBuilder" namespace="\Illuminate\Contracts\Container" name="ContextualBindingBuilder"/>
+      </return>
+    </docblock>
+    <parameter name="concrete" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="bound" start="132" end="135" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Determine if the given abstract type has been bound."/>
+      <param type="string" variable="$abstract"/>
+      <return type="object">
+        <type full="Illuminate\Container\bool" namespace="Illuminate\Container" name="bool"/>
+      </return>
+    </docblock>
+    <parameter name="abstract" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="resolved" start="143" end="150" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Determine if the given abstract type has been resolved."/>
+      <param type="string" variable="$abstract"/>
+      <return type="object">
+        <type full="Illuminate\Container\bool" namespace="Illuminate\Container" name="bool"/>
+      </return>
+    </docblock>
+    <parameter name="abstract" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="isAlias" start="158" end="161" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Determine if a given string is an alias."/>
+      <param type="string" variable="$name"/>
+      <return type="object">
+        <type full="Illuminate\Container\bool" namespace="Illuminate\Container" name="bool"/>
+      </return>
+    </docblock>
+    <parameter name="name" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="bind" start="171" end="206" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Register a binding with the container."/>
+      <param type="object" variable="$abstract">
+        <type full="Illuminate\Container\string|array" namespace="Illuminate\Container" name="string|array"/>
+      </param>
+      <param type="object" variable="$concrete">
+        <type full="\Closure|string|null" namespace="" name="Closure|string|null"/>
+      </param>
+      <param type="object" variable="$shared">
+        <type full="Illuminate\Container\bool" namespace="Illuminate\Container" name="bool"/>
+      </param>
+      <return type="object">
+        <type full="Illuminate\Container\void" namespace="Illuminate\Container" name="void"/>
+      </return>
+    </docblock>
+    <parameter name="abstract" byreference="false" type="{unknown}"/>
+    <parameter name="concrete" byreference="false" type="{unknown}" default="" constant="null"/>
+    <parameter name="shared" byreference="false" type="boolean" default="false"/>
+    <inline>
+      <comment value="If the given types are actually an array, we will assume an alias is being" line="173"/>
+      <comment value="defined and will grab this &quot;real&quot; abstract class name and register this" line="174"/>
+      <comment value="alias with the container so that it can be used as a shortcut for it." line="175"/>
+      <comment value="If no concrete type was given, we will simply set the concrete type to the" line="182"/>
+      <comment value="abstract type. This will allow concrete type to be registered as shared" line="183"/>
+      <comment value="without being forced to state their classes in both of the parameter." line="184"/>
+      <comment value="If the factory is not a Closure, it means it is just a class name which is" line="191"/>
+      <comment value="bound into this container to the abstract type and we will just wrap it" line="192"/>
+      <comment value="up inside its own Closure to give us more convenience when extending." line="193"/>
+      <comment value="If the abstract type was already resolved in this container we'll fire the" line="200"/>
+      <comment value="rebound listener so that any objects which have already gotten resolved" line="201"/>
+      <comment value="can have their copy of the object updated via the listener callbacks." line="202"/>
+    </inline>
+  </method>
+  <method name="getClosure" start="215" end="222" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Get the Closure to be used when building a type."/>
+      <param type="string" variable="$abstract"/>
+      <param type="string" variable="$concrete"/>
+      <return type="object">
+        <type full="\Closure" namespace="" name="Closure"/>
+      </return>
+    </docblock>
+    <parameter name="abstract" byreference="false" type="{unknown}"/>
+    <parameter name="concrete" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="addContextualBinding" start="232" end="235" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Add a contextual binding to the container."/>
+      <param type="string" variable="$concrete"/>
+      <param type="string" variable="$abstract"/>
+      <param type="object" variable="$implementation">
+        <type full="\Closure|string" namespace="" name="Closure|string"/>
+      </param>
+      <return type="object">
+        <type full="Illuminate\Container\void" namespace="Illuminate\Container" name="void"/>
+      </return>
+    </docblock>
+    <parameter name="concrete" byreference="false" type="{unknown}"/>
+    <parameter name="abstract" byreference="false" type="{unknown}"/>
+    <parameter name="implementation" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="bindIf" start="245" end="250" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Register a binding if it hasn't already been registered."/>
+      <param type="string" variable="$abstract"/>
+      <param type="object" variable="$concrete">
+        <type full="\Closure|string|null" namespace="" name="Closure|string|null"/>
+      </param>
+      <param type="object" variable="$shared">
+        <type full="Illuminate\Container\bool" namespace="Illuminate\Container" name="bool"/>
+      </param>
+      <return type="object">
+        <type full="Illuminate\Container\void" namespace="Illuminate\Container" name="void"/>
+      </return>
+    </docblock>
+    <parameter name="abstract" byreference="false" type="{unknown}"/>
+    <parameter name="concrete" byreference="false" type="{unknown}" default="" constant="null"/>
+    <parameter name="shared" byreference="false" type="boolean" default="false"/>
+  </method>
+  <method name="singleton" start="259" end="262" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Register a shared binding in the container."/>
+      <param type="object" variable="$abstract">
+        <type full="Illuminate\Container\string|array" namespace="Illuminate\Container" name="string|array"/>
+      </param>
+      <param type="object" variable="$concrete">
+        <type full="\Closure|string|null" namespace="" name="Closure|string|null"/>
+      </param>
+      <return type="object">
+        <type full="Illuminate\Container\void" namespace="Illuminate\Container" name="void"/>
+      </return>
+    </docblock>
+    <parameter name="abstract" byreference="false" type="{unknown}"/>
+    <parameter name="concrete" byreference="false" type="{unknown}" default="" constant="null"/>
+  </method>
+  <method name="share" start="270" end="284" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Wrap a Closure such that it is shared."/>
+      <param type="object" variable="$closure">
+        <type full="\Closure" namespace="" name="Closure"/>
+      </param>
+      <return type="object">
+        <type full="\Closure" namespace="" name="Closure"/>
+      </return>
+    </docblock>
+    <parameter name="closure" byreference="false" type="object">
+      <type full="Closure" namespace="" name="Closure"/>
+    </parameter>
+  </method>
+  <method name="bindShared" start="295" end="298" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Bind a shared Closure into the container."/>
+      <param type="string" variable="$abstract"/>
+      <param type="object" variable="$closure">
+        <type full="\Closure" namespace="" name="Closure"/>
+      </param>
+      <return type="object">
+        <type full="Illuminate\Container\void" namespace="Illuminate\Container" name="void"/>
+      </return>
+      <deprecated value="since version 5.1. Use singleton instead."/>
+    </docblock>
+    <parameter name="abstract" byreference="false" type="{unknown}"/>
+    <parameter name="closure" byreference="false" type="object">
+      <type full="Closure" namespace="" name="Closure"/>
+    </parameter>
+  </method>
+  <method name="extend" start="309" end="318" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="&quot;Extend&quot; an abstract type in the container."/>
+      <param type="string" variable="$abstract"/>
+      <param type="object" variable="$closure">
+        <type full="\Closure" namespace="" name="Closure"/>
+      </param>
+      <return type="object">
+        <type full="Illuminate\Container\void" namespace="Illuminate\Container" name="void"/>
+      </return>
+      <throws type="object">
+        <type full="\InvalidArgumentException" namespace="" name="InvalidArgumentException"/>
+      </throws>
+    </docblock>
+    <parameter name="abstract" byreference="false" type="{unknown}"/>
+    <parameter name="closure" byreference="false" type="object">
+      <type full="Closure" namespace="" name="Closure"/>
+    </parameter>
+  </method>
+  <method name="instance" start="327" end="350" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Register an existing instance as shared in the container."/>
+      <param type="string" variable="$abstract"/>
+      <param type="mixed" variable="$instance"/>
+      <return type="object">
+        <type full="Illuminate\Container\void" namespace="Illuminate\Container" name="void"/>
+      </return>
+    </docblock>
+    <parameter name="abstract" byreference="false" type="{unknown}"/>
+    <parameter name="instance" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="First, we will extract the alias from the abstract if it is an array so we" line="329"/>
+      <comment value="are using the correct name when binding the type. If we get an alias it" line="330"/>
+      <comment value="will be registered with the container so we can resolve it out later." line="331"/>
+      <comment value="We'll check to determine if this type has been bound before, and if it has" line="340"/>
+      <comment value="we will fire the rebound callbacks registered with the container and it" line="341"/>
+      <comment value="can be updated with consuming classes that have gotten resolved here." line="342"/>
+    </inline>
+  </method>
+  <method name="tag" start="359" end="372" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Assign a set of tags to a given binding."/>
+      <param type="object" variable="$abstracts">
+        <type full="Illuminate\Container\array|string" namespace="Illuminate\Container" name="array|string"/>
+      </param>
+      <param type="object" variable="...$tags">
+        <type full="Illuminate\Container\array|mixed" namespace="Illuminate\Container" name="array|mixed"/>
+      </param>
+      <return type="object">
+        <type full="Illuminate\Container\void" namespace="Illuminate\Container" name="void"/>
+      </return>
+    </docblock>
+    <parameter name="abstracts" byreference="false" type="{unknown}"/>
+    <parameter name="tags" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="tagged" start="380" end="391" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Resolve all of the bindings for a given tag."/>
+      <param type="string" variable="$tag"/>
+      <return type="array"/>
+    </docblock>
+    <parameter name="tag" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="alias" start="400" end="403" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Alias a type to a different name."/>
+      <param type="string" variable="$abstract"/>
+      <param type="string" variable="$alias"/>
+      <return type="object">
+        <type full="Illuminate\Container\void" namespace="Illuminate\Container" name="void"/>
+      </return>
+    </docblock>
+    <parameter name="abstract" byreference="false" type="{unknown}"/>
+    <parameter name="alias" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="extractAlias" start="411" end="414" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Extract the type and alias from a given definition."/>
+      <param type="array" variable="$definition"/>
+      <return type="array"/>
+    </docblock>
+    <parameter name="definition" byreference="false" type="array"/>
+  </method>
+  <method name="rebinding" start="423" end="430" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Bind a new callback to an abstract's rebind event."/>
+      <param type="string" variable="$abstract"/>
+      <param type="object" variable="$callback">
+        <type full="\Closure" namespace="" name="Closure"/>
+      </param>
+      <return type="mixed"/>
+    </docblock>
+    <parameter name="abstract" byreference="false" type="{unknown}"/>
+    <parameter name="callback" byreference="false" type="object">
+      <type full="Closure" namespace="" name="Closure"/>
+    </parameter>
+  </method>
+  <method name="refresh" start="440" end="445" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Refresh an instance on the given target and method."/>
+      <param type="string" variable="$abstract"/>
+      <param type="mixed" variable="$target"/>
+      <param type="string" variable="$method"/>
+      <return type="mixed"/>
+    </docblock>
+    <parameter name="abstract" byreference="false" type="{unknown}"/>
+    <parameter name="target" byreference="false" type="{unknown}"/>
+    <parameter name="method" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="rebound" start="453" end="460" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Fire the &quot;rebound&quot; callbacks for the given abstract type."/>
+      <param type="string" variable="$abstract"/>
+      <return type="object">
+        <type full="Illuminate\Container\void" namespace="Illuminate\Container" name="void"/>
+      </return>
+    </docblock>
+    <parameter name="abstract" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="getReboundCallbacks" start="468" end="475" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Get the rebound callbacks for a given type."/>
+      <param type="string" variable="$abstract"/>
+      <return type="array"/>
+    </docblock>
+    <parameter name="abstract" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="wrap" start="484" end="489" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Wrap the given closure such that its dependencies will be injected when executed."/>
+      <param type="object" variable="$callback">
+        <type full="\Closure" namespace="" name="Closure"/>
+      </param>
+      <param type="array" variable="$parameters"/>
+      <return type="object">
+        <type full="\Closure" namespace="" name="Closure"/>
+      </return>
+    </docblock>
+    <parameter name="callback" byreference="false" type="object">
+      <type full="Closure" namespace="" name="Closure"/>
+    </parameter>
+    <parameter name="parameters" byreference="false" type="array" default=""/>
+  </method>
+  <method name="call" start="499" end="508" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Call the given Closure / class@method and inject its dependencies."/>
+      <param type="object" variable="$callback">
+        <type full="Illuminate\Container\callable|string" namespace="Illuminate\Container" name="callable|string"/>
+      </param>
+      <param type="array" variable="$parameters"/>
+      <param type="object" variable="$defaultMethod">
+        <type full="Illuminate\Container\string|null" namespace="Illuminate\Container" name="string|null"/>
+      </param>
+      <return type="mixed"/>
+    </docblock>
+    <parameter name="callback" byreference="false" type="{unknown}"/>
+    <parameter name="parameters" byreference="false" type="array" default=""/>
+    <parameter name="defaultMethod" byreference="false" type="{unknown}" default="" constant="null"/>
+  </method>
+  <method name="isCallableWithAtSign" start="516" end="523" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Determine if the given string is in Class@method syntax."/>
+      <param type="mixed" variable="$callback"/>
+      <return type="object">
+        <type full="Illuminate\Container\bool" namespace="Illuminate\Container" name="bool"/>
+      </return>
+    </docblock>
+    <parameter name="callback" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="getMethodDependencies" start="532" end="541" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Get all dependencies for a given method."/>
+      <param type="object" variable="$callback">
+        <type full="Illuminate\Container\callable|string" namespace="Illuminate\Container" name="callable|string"/>
+      </param>
+      <param type="array" variable="$parameters"/>
+      <return type="array"/>
+    </docblock>
+    <parameter name="callback" byreference="false" type="{unknown}"/>
+    <parameter name="parameters" byreference="false" type="array" default=""/>
+  </method>
+  <method name="getCallReflector" start="549" end="560" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Get the proper reflection instance for the given callback."/>
+      <param type="object" variable="$callback">
+        <type full="Illuminate\Container\callable|string" namespace="Illuminate\Container" name="callable|string"/>
+      </param>
+      <return type="object">
+        <type full="\ReflectionFunctionAbstract" namespace="" name="ReflectionFunctionAbstract"/>
+      </return>
+    </docblock>
+    <parameter name="callback" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="addDependencyForCallParameter" start="570" end="581" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Get the dependency for the given call parameter."/>
+      <param type="object" variable="$parameter">
+        <type full="\ReflectionParameter" namespace="" name="ReflectionParameter"/>
+      </param>
+      <param type="array" variable="$parameters"/>
+      <param type="array" variable="$dependencies"/>
+      <return type="mixed"/>
+    </docblock>
+    <parameter name="parameter" byreference="false" type="object">
+      <type full="ReflectionParameter" namespace="" name="ReflectionParameter"/>
+    </parameter>
+    <parameter name="parameters" byreference="true" type="array"/>
+    <parameter name="dependencies" byreference="true" type="{unknown}"/>
+  </method>
+  <method name="callClass" start="591" end="605" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Call a string reference to a class using Class@method syntax."/>
+      <param type="string" variable="$target"/>
+      <param type="array" variable="$parameters"/>
+      <param type="object" variable="$defaultMethod">
+        <type full="Illuminate\Container\string|null" namespace="Illuminate\Container" name="string|null"/>
+      </param>
+      <return type="mixed"/>
+    </docblock>
+    <parameter name="target" byreference="false" type="{unknown}"/>
+    <parameter name="parameters" byreference="false" type="array" default=""/>
+    <parameter name="defaultMethod" byreference="false" type="{unknown}" default="" constant="null"/>
+    <inline>
+      <comment value="If the listener has an @ sign, we will assume it is being used to delimit" line="595"/>
+      <comment value="the class name from the handle method name. This allows for handlers" line="596"/>
+      <comment value="to run multiple handler methods in a single class for convenience." line="597"/>
+    </inline>
+  </method>
+  <method name="make" start="614" end="655" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Resolve the given type from the container."/>
+      <param type="string" variable="$abstract"/>
+      <param type="array" variable="$parameters"/>
+      <return type="mixed"/>
+    </docblock>
+    <parameter name="abstract" byreference="false" type="{unknown}"/>
+    <parameter name="parameters" byreference="false" type="array" default=""/>
+    <inline>
+      <comment value="If an instance of the type is currently being managed as a singleton we'll" line="618"/>
+      <comment value="just return an existing instance instead of instantiating new instances" line="619"/>
+      <comment value="so the developer can keep using the same objects instance every time." line="620"/>
+      <comment value="We're ready to instantiate an instance of the concrete type registered for" line="627"/>
+      <comment value="the binding. This will instantiate the types, as well as resolve any of" line="628"/>
+      <comment value="its &quot;nested&quot; dependencies recursively until all have gotten resolved." line="629"/>
+      <comment value="If we defined any extenders for this type, we'll need to spin through them" line="636"/>
+      <comment value="and apply them to the object being built. This allows for the extension" line="637"/>
+      <comment value="of services, such as changing configuration or decorating the object." line="638"/>
+      <comment value="If the requested type is registered as a singleton we'll want to cache off" line="643"/>
+      <comment value="the instances in &quot;memory&quot; so we can return it later without creating an" line="644"/>
+      <comment value="entirely new instance of an object on each subsequent request for it." line="645"/>
+    </inline>
+  </method>
+  <method name="getConcrete" start="663" end="682" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Get the concrete type for a given abstract."/>
+      <param type="string" variable="$abstract"/>
+      <return description="$concrete" type="mixed"/>
+    </docblock>
+    <parameter name="abstract" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="If we don't have a registered resolver or concrete for the type, we'll just" line="669"/>
+      <comment value="assume each type is a concrete name and will attempt to resolve it as is" line="670"/>
+      <comment value="since the container should be able to resolve concretes automatically." line="671"/>
+    </inline>
+  </method>
+  <method name="getContextualConcrete" start="690" end="695" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Get the contextual concrete binding for the given abstract."/>
+      <param type="string" variable="$abstract"/>
+      <return type="object">
+        <type full="Illuminate\Container\string|null" namespace="Illuminate\Container" name="string|null"/>
+      </return>
+    </docblock>
+    <parameter name="abstract" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="missingLeadingSlash" start="703" end="706" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Determine if the given abstract has a leading slash."/>
+      <param type="string" variable="$abstract"/>
+      <return type="object">
+        <type full="Illuminate\Container\bool" namespace="Illuminate\Container" name="bool"/>
+      </return>
+    </docblock>
+    <parameter name="abstract" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="getExtenders" start="714" end="721" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Get the extender callbacks for a given type."/>
+      <param type="string" variable="$abstract"/>
+      <return type="array"/>
+    </docblock>
+    <parameter name="abstract" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="build" start="732" end="781" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Instantiate a concrete instance of the given type."/>
+      <param type="string" variable="$concrete"/>
+      <param type="array" variable="$parameters"/>
+      <return type="mixed"/>
+      <throws type="object">
+        <type full="\Illuminate\Contracts\Container\BindingResolutionException" namespace="\Illuminate\Contracts\Container" name="BindingResolutionException"/>
+      </throws>
+    </docblock>
+    <parameter name="concrete" byreference="false" type="{unknown}"/>
+    <parameter name="parameters" byreference="false" type="array" default=""/>
+    <inline>
+      <comment value="If the concrete type is actually a Closure, we will just execute it and" line="734"/>
+      <comment value="hand back the results of the functions, which allows functions to be" line="735"/>
+      <comment value="used as resolvers for more fine-tuned resolution of these objects." line="736"/>
+      <comment value="If the type is not instantiable, the developer is attempting to resolve" line="743"/>
+      <comment value="an abstract type such as an Interface of Abstract Class and there is" line="744"/>
+      <comment value="no binding registered for the abstractions so we need to bail out." line="745"/>
+      <comment value="If there are no constructors, that means there are no dependencies then" line="756"/>
+      <comment value="we can just resolve the instances of the objects right away, without" line="757"/>
+      <comment value="resolving any other types or dependencies out of these containers." line="758"/>
+      <comment value="Once we have all the constructor's parameters we can create each of the" line="767"/>
+      <comment value="dependency instances and then use the reflection instances to make a" line="768"/>
+      <comment value="new instance of this class, injecting the created dependencies in." line="769"/>
+    </inline>
+  </method>
+  <method name="getDependencies" start="790" end="810" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Resolve all of the dependencies from the ReflectionParameters."/>
+      <param type="array" variable="$parameters"/>
+      <param type="array" variable="$primitives"/>
+      <return type="array"/>
+    </docblock>
+    <parameter name="parameters" byreference="false" type="array"/>
+    <parameter name="primitives" byreference="false" type="array" default=""/>
+  </method>
+  <method name="resolveNonClass" start="820" end="829" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Resolve a non-class hinted dependency."/>
+      <param type="object" variable="$parameter">
+        <type full="\ReflectionParameter" namespace="" name="ReflectionParameter"/>
+      </param>
+      <return type="mixed"/>
+      <throws type="object">
+        <type full="\Illuminate\Contracts\Container\BindingResolutionException" namespace="\Illuminate\Contracts\Container" name="BindingResolutionException"/>
+      </throws>
+    </docblock>
+    <parameter name="parameter" byreference="false" type="object">
+      <type full="ReflectionParameter" namespace="" name="ReflectionParameter"/>
+    </parameter>
+  </method>
+  <method name="resolveClass" start="839" end="855" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Resolve a class based dependency from the container."/>
+      <param type="object" variable="$parameter">
+        <type full="\ReflectionParameter" namespace="" name="ReflectionParameter"/>
+      </param>
+      <return type="mixed"/>
+      <throws type="object">
+        <type full="\Illuminate\Contracts\Container\BindingResolutionException" namespace="\Illuminate\Contracts\Container" name="BindingResolutionException"/>
+      </throws>
+    </docblock>
+    <parameter name="parameter" byreference="false" type="object">
+      <type full="ReflectionParameter" namespace="" name="ReflectionParameter"/>
+    </parameter>
+  </method>
+  <method name="keyParametersByArgument" start="864" end="875" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="If extra parameters are passed by numeric ID, rekey them by argument name."/>
+      <param type="array" variable="$dependencies"/>
+      <param type="array" variable="$parameters"/>
+      <return type="array"/>
+    </docblock>
+    <parameter name="dependencies" byreference="false" type="array"/>
+    <parameter name="parameters" byreference="false" type="array"/>
+  </method>
+  <method name="resolving" start="884" end="891" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Register a new resolving callback."/>
+      <param type="string" variable="$abstract"/>
+      <param type="object" variable="$callback">
+        <type full="\Closure|null" namespace="" name="Closure|null"/>
+      </param>
+      <return type="object">
+        <type full="Illuminate\Container\void" namespace="Illuminate\Container" name="void"/>
+      </return>
+    </docblock>
+    <parameter name="abstract" byreference="false" type="{unknown}"/>
+    <parameter name="callback" byreference="false" type="{unknown}" default="" constant="null">
+      <type full="Closure" namespace="" name="Closure"/>
+    </parameter>
+  </method>
+  <method name="afterResolving" start="900" end="907" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Register a new after resolving callback for all types."/>
+      <param type="string" variable="$abstract"/>
+      <param type="object" variable="$callback">
+        <type full="\Closure|null" namespace="" name="Closure|null"/>
+      </param>
+      <return type="object">
+        <type full="Illuminate\Container\void" namespace="Illuminate\Container" name="void"/>
+      </return>
+    </docblock>
+    <parameter name="abstract" byreference="false" type="{unknown}"/>
+    <parameter name="callback" byreference="false" type="{unknown}" default="" constant="null">
+      <type full="Closure" namespace="" name="Closure"/>
+    </parameter>
+  </method>
+  <method name="resolvingCallback" start="915" end="924" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Register a new resolving callback by type of its first argument."/>
+      <param type="object" variable="$callback">
+        <type full="\Closure" namespace="" name="Closure"/>
+      </param>
+      <return type="object">
+        <type full="Illuminate\Container\void" namespace="Illuminate\Container" name="void"/>
+      </return>
+    </docblock>
+    <parameter name="callback" byreference="false" type="object">
+      <type full="Closure" namespace="" name="Closure"/>
+    </parameter>
+  </method>
+  <method name="afterResolvingCallback" start="932" end="941" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Register a new after resolving callback by type of its first argument."/>
+      <param type="object" variable="$callback">
+        <type full="\Closure" namespace="" name="Closure"/>
+      </param>
+      <return type="object">
+        <type full="Illuminate\Container\void" namespace="Illuminate\Container" name="void"/>
+      </return>
+    </docblock>
+    <parameter name="callback" byreference="false" type="object">
+      <type full="Closure" namespace="" name="Closure"/>
+    </parameter>
+  </method>
+  <method name="getFunctionHint" start="949" end="964" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Get the type hint for this closure's first argument."/>
+      <param type="object" variable="$callback">
+        <type full="\Closure" namespace="" name="Closure"/>
+      </param>
+      <return type="mixed"/>
+    </docblock>
+    <parameter name="callback" byreference="false" type="object">
+      <type full="Closure" namespace="" name="Closure"/>
+    </parameter>
+  </method>
+  <method name="fireResolvingCallbacks" start="973" end="990" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Fire all of the resolving callbacks."/>
+      <param type="string" variable="$abstract"/>
+      <param type="mixed" variable="$object"/>
+      <return type="object">
+        <type full="Illuminate\Container\void" namespace="Illuminate\Container" name="void"/>
+      </return>
+    </docblock>
+    <parameter name="abstract" byreference="false" type="{unknown}"/>
+    <parameter name="object" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="getCallbacksForType" start="1001" end="1012" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Get all callbacks for a given type."/>
+      <param type="string" variable="$abstract"/>
+      <param type="object" variable="$object"/>
+      <param type="array" variable="$callbacksPerType"/>
+      <return type="array"/>
+    </docblock>
+    <parameter name="abstract" byreference="false" type="{unknown}"/>
+    <parameter name="object" byreference="false" type="{unknown}"/>
+    <parameter name="callbacksPerType" byreference="false" type="array"/>
+  </method>
+  <method name="fireCallbackArray" start="1021" end="1026" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Fire an array of callbacks with an object."/>
+      <param type="mixed" variable="$object"/>
+      <param type="array" variable="$callbacks"/>
+      <return type="object">
+        <type full="Illuminate\Container\void" namespace="Illuminate\Container" name="void"/>
+      </return>
+    </docblock>
+    <parameter name="object" byreference="false" type="{unknown}"/>
+    <parameter name="callbacks" byreference="false" type="array"/>
+  </method>
+  <method name="isShared" start="1034" end="1043" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Determine if a given type is shared."/>
+      <param type="string" variable="$abstract"/>
+      <return type="object">
+        <type full="Illuminate\Container\bool" namespace="Illuminate\Container" name="bool"/>
+      </return>
+    </docblock>
+    <parameter name="abstract" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="isBuildable" start="1052" end="1055" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Determine if the given concrete is buildable."/>
+      <param type="mixed" variable="$concrete"/>
+      <param type="string" variable="$abstract"/>
+      <return type="object">
+        <type full="Illuminate\Container\bool" namespace="Illuminate\Container" name="bool"/>
+      </return>
+    </docblock>
+    <parameter name="concrete" byreference="false" type="{unknown}"/>
+    <parameter name="abstract" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="getAlias" start="1063" end="1066" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Get the alias for an abstract if available."/>
+      <param type="string" variable="$abstract"/>
+      <return type="string"/>
+    </docblock>
+    <parameter name="abstract" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="getBindings" start="1073" end="1076" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Get the container's bindings."/>
+      <return type="array"/>
+    </docblock>
+  </method>
+  <method name="dropStaleInstances" start="1084" end="1087" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Drop all of the stale instances and aliases."/>
+      <param type="string" variable="$abstract"/>
+      <return type="object">
+        <type full="Illuminate\Container\void" namespace="Illuminate\Container" name="void"/>
+      </return>
+    </docblock>
+    <parameter name="abstract" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="forgetInstance" start="1095" end="1098" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Remove a resolved instance from the instance cache."/>
+      <param type="string" variable="$abstract"/>
+      <return type="object">
+        <type full="Illuminate\Container\void" namespace="Illuminate\Container" name="void"/>
+      </return>
+    </docblock>
+    <parameter name="abstract" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="forgetInstances" start="1105" end="1108" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Clear all of the instances from the container."/>
+      <return type="object">
+        <type full="Illuminate\Container\void" namespace="Illuminate\Container" name="void"/>
+      </return>
+    </docblock>
+  </method>
+  <method name="flush" start="1115" end="1121" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Flush the container of all bindings and resolved instances."/>
+      <return type="object">
+        <type full="Illuminate\Container\void" namespace="Illuminate\Container" name="void"/>
+      </return>
+    </docblock>
+  </method>
+  <method name="getInstance" start="1128" end="1131" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description compact="Set the globally available instance of the container."/>
+      <return resolution="static" type="object">
+        <type full="Illuminate\Container\Container" namespace="Illuminate\Container" name="Container"/>
+      </return>
+    </docblock>
+  </method>
+  <method name="setInstance" start="1139" end="1142" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description compact="Set the shared instance of the container."/>
+      <param type="object" variable="$container">
+        <type full="\Illuminate\Contracts\Container\Container" namespace="\Illuminate\Contracts\Container" name="Container"/>
+      </param>
+      <return type="object">
+        <type full="Illuminate\Container\void" namespace="Illuminate\Container" name="void"/>
+      </return>
+    </docblock>
+    <parameter name="container" byreference="false" type="object">
+      <type full="Illuminate\Contracts\Container\Container" namespace="Illuminate\Contracts\Container" name="Container"/>
+    </parameter>
+  </method>
+  <method name="offsetExists" start="1150" end="1153" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Determine if a given offset exists."/>
+      <param type="string" variable="$key"/>
+      <return type="object">
+        <type full="Illuminate\Container\bool" namespace="Illuminate\Container" name="bool"/>
+      </return>
+    </docblock>
+    <parameter name="key" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="offsetGet" start="1161" end="1164" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Get the value at a given offset."/>
+      <param type="string" variable="$key"/>
+      <return type="mixed"/>
+    </docblock>
+    <parameter name="key" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="offsetSet" start="1173" end="1185" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Set the value at a given offset."/>
+      <param type="string" variable="$key"/>
+      <param type="mixed" variable="$value"/>
+      <return type="object">
+        <type full="Illuminate\Container\void" namespace="Illuminate\Container" name="void"/>
+      </return>
+    </docblock>
+    <parameter name="key" byreference="false" type="{unknown}"/>
+    <parameter name="value" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="If the value is not a Closure, we will make it one. This simply gives" line="1175"/>
+      <comment value="more &quot;drop-in&quot; replacement functionality for the Pimple which this" line="1176"/>
+      <comment value="container's simplest functions are base modeled and built after." line="1177"/>
+    </inline>
+  </method>
+  <method name="offsetUnset" start="1193" end="1196" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Unset the value at a given offset."/>
+      <param type="string" variable="$key"/>
+      <return type="object">
+        <type full="Illuminate\Container\void" namespace="Illuminate\Container" name="void"/>
+      </return>
+    </docblock>
+    <parameter name="key" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="__get" start="1204" end="1207" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Dynamically access container services."/>
+      <param type="string" variable="$key"/>
+      <return type="mixed"/>
+    </docblock>
+    <parameter name="key" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="__set" start="1216" end="1219" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Dynamically set container services."/>
+      <param type="string" variable="$key"/>
+      <param type="mixed" variable="$value"/>
+      <return type="object">
+        <type full="Illuminate\Container\void" namespace="Illuminate\Container" name="void"/>
+      </return>
+    </docblock>
+    <parameter name="key" byreference="false" type="{unknown}"/>
+    <parameter name="value" byreference="false" type="{unknown}"/>
+  </method>
+</class>

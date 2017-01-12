@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="Squiz_Sniffs_Commenting_InlineCommentSniff" namespace="" name="Squiz_Sniffs_Commenting_InlineCommentSniff" abstract="false" final="false" start="30" end="322">
+  <file path="/home/web/example/src/freegame_developer/vendor/squizlabs/php_codesniffer/CodeSniffer/Standards/Squiz/Sniffs/Commenting" file="InlineCommentSniff.php" realpath="/home/web/example/src/freegame_developer/vendor/squizlabs/php_codesniffer/CodeSniffer/Standards/Squiz/Sniffs/Commenting/InlineCommentSniff.php" size="11898" time="2016-01-19T23:39:10+00:00" unixtime="1453246750" sha1="98f1eac46cbd61c378fbfcf4d71a9a80fb2c054d" relative="freegame_developer/vendor/squizlabs/php_codesniffer/CodeSniffer/Standards/Squiz/Sniffs/Commenting/InlineCommentSniff.php"/>
+  <docblock>
+    <description compact="Squiz_Sniffs_Commenting_InlineCommentSniff.">Checks that there is adequate spacing between comments.</description>
+    <category value="PHP"/>
+    <package value="PHP_CodeSniffer"/>
+    <author value="Greg Sherwood &lt;gsherwood@squiz.net&gt;"/>
+    <author value="Marc McIntyre &lt;mmcintyre@squiz.net&gt;"/>
+    <copyright value="2006-2014 Squiz Pty Ltd (ABN 77 084 670 600)"/>
+    <license name="https://github.com/squizlabs/PHP_CodeSniffer/blob/master/licence.txt BSD Licence"/>
+    <version value="Release: @package_version@"/>
+    <link value="http://pear.php.net/package/PHP_CodeSniffer"/>
+  </docblock>
+  <implements full="PHP_CodeSniffer_Sniff" namespace="" name="PHP_CodeSniffer_Sniff"/>
+  <member name="supportedTokenizers" type="array" default="" visibility="public" static="false" line="38">
+    <docblock>
+      <description compact="A list of tokenizers this sniff supports."/>
+      <var type="array"/>
+    </docblock>
+  </member>
+  <method name="register" start="49" end="56" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Returns an array of tokens this test wants to listen for."/>
+      <return type="array"/>
+    </docblock>
+  </method>
+  <method name="process" start="68" end="319" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Processes this test, when one of its tokens is encountered."/>
+      <param description="The file being scanned." type="object" variable="$phpcsFile">
+        <type full="PHP_CodeSniffer_File" namespace="" name="PHP_CodeSniffer_File"/>
+      </param>
+      <param description="The position of the current token in the" type="int" variable="$stackPtr">stack passed in $tokens.</param>
+      <return type="object">
+        <type full="void" namespace="" name="void"/>
+      </return>
+    </docblock>
+    <parameter name="phpcsFile" byreference="false" type="object">
+      <type full="PHP_CodeSniffer_File" namespace="" name="PHP_CodeSniffer_File"/>
+    </parameter>
+    <parameter name="stackPtr" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="If this is a function/class/interface doc block comment, skip it." line="72"/>
+      <comment value="We are only interested in inline doc block comments, which are" line="73"/>
+      <comment value="not allowed." line="74"/>
+      <comment value="end if" line="135"/>
+      <comment value="We don't want end of block comments. If the last comment is a closing" line="146"/>
+      <comment value="curly brace." line="147"/>
+      <comment value="Only want inline comments." line="167"/>
+      <comment value="end if" line="219"/>
+      <comment value="The below section determines if a comment block is correctly capitalised," line="221"/>
+      <comment value="and ends in a full-stop. It will find the last comment in a block, and" line="222"/>
+      <comment value="work its way up." line="223"/>
+      <comment value="Only check the end of comment character if the start of the comment" line="265"/>
+      <comment value="is a letter, indicating that the comment is just standard text." line="266"/>
+      <comment value="Finally, the line below the last comment cannot be empty if this inline" line="288"/>
+      <comment value="comment is on a line by itself." line="289"/>
+      <comment value="end if" line="317"/>
+    </inline>
+  </method>
+</class>

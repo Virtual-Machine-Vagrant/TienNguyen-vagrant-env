@@ -1,0 +1,1400 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="phpseclib\Math\BigInteger" namespace="phpseclib\Math" name="BigInteger" abstract="false" final="false" start="63" end="3755">
+  <file path="/home/web/example/src/freegame_developer/vendor/phpseclib/phpseclib/phpseclib/Math" file="BigInteger.php" realpath="/home/web/example/src/freegame_developer/vendor/phpseclib/phpseclib/phpseclib/Math/BigInteger.php" size="124635" time="2016-10-04T00:57:04+00:00" unixtime="1475542624" sha1="612714ece8214dfffbba876f5c96087733f5bd3d" relative="freegame_developer/vendor/phpseclib/phpseclib/phpseclib/Math/BigInteger.php"/>
+  <docblock>
+    <description compact="Pure-PHP arbitrary precision integer arithmetic library. Supports base-2, base-10, base-16, and base-256 numbers."/>
+    <package value="BigInteger"/>
+    <author value="Jim Wigginton &lt;terrafrost@php.net&gt;"/>
+    <access value="public"/>
+  </docblock>
+  <constant type="integer" name="MONTGOMERY" value="0">
+    <docblock>
+      <description/>
+      <see value="BigInteger::_montgomery()"/>
+      <see value="BigInteger::_prepMontgomery()"/>
+    </docblock>
+  </constant>
+  <constant type="integer" name="BARRETT" value="1">
+    <docblock>
+      <description/>
+      <see value="BigInteger::_barrett()"/>
+    </docblock>
+  </constant>
+  <constant type="integer" name="POWEROF2" value="2">
+    <docblock>
+      <description/>
+      <see value="BigInteger::_mod2()"/>
+    </docblock>
+  </constant>
+  <constant type="integer" name="CLASSIC" value="3">
+    <docblock>
+      <description/>
+      <see value="BigInteger::_remainder()"/>
+    </docblock>
+  </constant>
+  <constant type="integer" name="NONE" value="4">
+    <docblock>
+      <description/>
+      <see value="BigInteger::__clone()"/>
+    </docblock>
+  </constant>
+  <constant type="integer" name="VALUE" value="0">
+    <docblock>
+      <description compact="$result[self::VALUE] contains the value."/>
+    </docblock>
+  </constant>
+  <constant type="integer" name="SIGN" value="1">
+    <docblock>
+      <description compact="$result[self::SIGN] contains the sign."/>
+    </docblock>
+  </constant>
+  <constant type="integer" name="VARIABLE" value="0">
+    <docblock>
+      <description compact="Cache constants">$cache[self::VARIABLE] tells us whether or not the cached data is still valid.</description>
+    </docblock>
+  </constant>
+  <constant type="integer" name="DATA" value="1">
+    <docblock>
+      <description compact="$cache[self::DATA] contains the cached data."/>
+    </docblock>
+  </constant>
+  <constant type="integer" name="MODE_INTERNAL" value="1">
+    <docblock>
+      <description compact="To use the pure-PHP implementation"/>
+    </docblock>
+  </constant>
+  <constant type="integer" name="MODE_BCMATH" value="2">
+    <docblock>
+      <description compact="To use the BCMath library">(if enabled; otherwise, the internal implementation will be used)</description>
+    </docblock>
+  </constant>
+  <constant type="integer" name="MODE_GMP" value="3">
+    <docblock>
+      <description compact="To use the GMP library">(if present; otherwise, either the BCMath or the internal implementation will be used)</description>
+    </docblock>
+  </constant>
+  <constant type="integer" name="KARATSUBA_CUTOFF" value="25">
+    <docblock>
+      <description compact="Karatsuba Cutoff">At what point do we switch between Karatsuba multiplication and schoolbook long multiplication?</description>
+      <access value="private"/>
+    </docblock>
+  </constant>
+  <member name="base" visibility="protected" static="true" line="167"/>
+  <member name="baseFull" visibility="protected" static="true" line="168"/>
+  <member name="maxDigit" visibility="protected" static="true" line="169"/>
+  <member name="msb" visibility="protected" static="true" line="170"/>
+  <member name="max10" visibility="protected" static="true" line="176">
+    <docblock>
+      <description compact="$max10 in greatest $max10Len satisfying $max10 = 10**$max10Len &lt;= 2**$base."/>
+    </docblock>
+  </member>
+  <member name="max10Len" visibility="protected" static="true" line="182">
+    <docblock>
+      <description compact="$max10Len in greatest $max10Len satisfying $max10 = 10**$max10Len &lt;= 2**$base."/>
+    </docblock>
+  </member>
+  <member name="maxDigit2" visibility="protected" static="true" line="183"/>
+  <member name="value" visibility="public" static="false" line="192">
+    <docblock>
+      <description compact="Holds the BigInteger's value."/>
+      <var type="array"/>
+      <access value="private"/>
+    </docblock>
+  </member>
+  <member name="is_negative" type="boolean" default="false" visibility="public" static="false" line="200">
+    <docblock>
+      <description compact="Holds the BigInteger's magnitude."/>
+      <var type="object">
+        <type full="phpseclib\Math\bool" namespace="phpseclib\Math" name="bool"/>
+      </var>
+      <access value="private"/>
+    </docblock>
+  </member>
+  <member name="precision" type="integer" default="1" visibility="public" static="false" line="208">
+    <docblock>
+      <description compact="Precision"/>
+      <see value="self::setPrecision()"/>
+      <access value="private"/>
+    </docblock>
+  </member>
+  <member name="bitmask" type="boolean" default="false" visibility="public" static="false" line="216">
+    <docblock>
+      <description compact="Precision Bitmask"/>
+      <see value="self::setPrecision()"/>
+      <access value="private"/>
+    </docblock>
+  </member>
+  <member name="hex" visibility="public" static="false" line="230">
+    <docblock>
+      <description compact="Mode independent value used for serialization.">If the bcmath or gmp extensions are installed $this-&gt;value will be a non-serializable resource, hence the need for
+a variable that'll be serializable regardless of whether or not extensions are being used.  Unlike $this-&gt;value,
+however, $this-&gt;hex is only calculated when $this-&gt;__sleep() is called.</description>
+      <see value="self::__sleep()"/>
+      <see value="self::__wakeup()"/>
+      <var type="string"/>
+      <access value="private"/>
+    </docblock>
+  </member>
+  <constructor name="__construct" start="252" end="501" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Converts base-2, base-10, base-16, and binary strings (base-256) to BigIntegers.">If the second parameter - $base - is negative, then it will be assumed that the number's are encoded using
+two's compliment.  The sole exception to this is -10, which is treated the same as 10 is.
+
+Here's an example:
+&lt;code&gt;
+&lt;?php
+   $a = new \phpseclib\Math\BigInteger('0x32', 16); // 50 in base-16
+
+   echo $a-&gt;toString(); // outputs 50
+?&gt;
+&lt;/code&gt;</description>
+      <param description="number or base-$base number if $base set." variable="$x" type="object">
+        <type full="phpseclib\Math\base-10" namespace="phpseclib\Math" name="base-10"/>
+      </param>
+      <param type="int" variable="$base"/>
+      <return type="object">
+        <type full="\phpseclib\Math\BigInteger" namespace="\phpseclib\Math" name="BigInteger"/>
+      </return>
+      <access value="public"/>
+    </docblock>
+    <parameter name="x" byreference="false" type="integer" default="0"/>
+    <parameter name="base" byreference="false" type="integer" default="10"/>
+    <inline>
+      <comment value="'0' counts as empty() but when the base is 256 '0' is equal to ord('0') or 48" line="348"/>
+      <comment value="'0' is the only value like this per http://php.net/empty" line="349"/>
+    </inline>
+  </constructor>
+  <method name="toBytes" start="523" end="596" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Converts a BigInteger to a byte string (eg. base-256).">Negative numbers are saved as positive numbers, unless $twos_compliment is set to true, at which point, they're
+saved as two's compliment.
+
+Here's an example:
+&lt;code&gt;
+&lt;?php
+   $a = new \phpseclib\Math\BigInteger('65');
+
+   echo $a-&gt;toBytes(); // outputs chr(65)
+?&gt;
+&lt;/code&gt;</description>
+      <param type="object" variable="$twos_compliment">
+        <type full="phpseclib\Math\bool" namespace="phpseclib\Math" name="bool"/>
+      </param>
+      <return type="string"/>
+      <access value="public"/>
+      <internal>Converts a base-2**26 number to base-2**8</internal>
+    </docblock>
+    <parameter name="twos_compliment" byreference="false" type="boolean" default="false"/>
+  </method>
+  <method name="toHex" start="618" end="621" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Converts a BigInteger to a hex string (eg. base-16)).">Negative numbers are saved as positive numbers, unless $twos_compliment is set to true, at which point, they're
+saved as two's compliment.
+
+Here's an example:
+&lt;code&gt;
+&lt;?php
+   $a = new \phpseclib\Math\BigInteger('65');
+
+   echo $a-&gt;toHex(); // outputs '41'
+?&gt;
+&lt;/code&gt;</description>
+      <param type="object" variable="$twos_compliment">
+        <type full="phpseclib\Math\bool" namespace="phpseclib\Math" name="bool"/>
+      </param>
+      <return type="string"/>
+      <access value="public"/>
+      <internal>Converts a base-2**26 number to base-2**8</internal>
+    </docblock>
+    <parameter name="twos_compliment" byreference="false" type="boolean" default="false"/>
+  </method>
+  <method name="toBits" start="643" end="660" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Converts a BigInteger to a bit string (eg. base-2).">Negative numbers are saved as positive numbers, unless $twos_compliment is set to true, at which point, they're
+saved as two's compliment.
+
+Here's an example:
+&lt;code&gt;
+&lt;?php
+   $a = new \phpseclib\Math\BigInteger('65');
+
+   echo $a-&gt;toBits(); // outputs '1000001'
+?&gt;
+&lt;/code&gt;</description>
+      <param type="object" variable="$twos_compliment">
+        <type full="phpseclib\Math\bool" namespace="phpseclib\Math" name="bool"/>
+      </param>
+      <return type="string"/>
+      <access value="public"/>
+      <internal>Converts a base-2**26 number to base-2**2</internal>
+    </docblock>
+    <parameter name="twos_compliment" byreference="false" type="boolean" default="false"/>
+  </method>
+  <method name="toString" start="678" end="715" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Converts a BigInteger to a base-10 number.">Here's an example:
+&lt;code&gt;
+&lt;?php
+   $a = new \phpseclib\Math\BigInteger('50');
+
+   echo $a-&gt;toString(); // outputs 50
+?&gt;
+&lt;/code&gt;</description>
+      <return type="string"/>
+      <access value="public"/>
+      <internal>Converts a base-2**26 number to base-10**7 (which is pretty much base-10)</internal>
+    </docblock>
+  </method>
+  <method name="copy" start="729" end="737" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Copy an object">PHP5 passes objects by reference while PHP4 passes by value.  As such, we need a function to guarantee
+that all objects are passed by value, when appropriate.  More information can be found here:
+
+{@link http://php.net/language.oop5.basic#51624}</description>
+      <access value="public"/>
+      <see value="self::__clone()"/>
+      <return type="object">
+        <type full="\phpseclib\Math\BigInteger" namespace="\phpseclib\Math" name="BigInteger"/>
+      </return>
+    </docblock>
+  </method>
+  <method name="__toString" start="748" end="751" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="__toString() magic method">Will be called, automatically, if you're supporting just PHP5.  If you're supporting PHP4, you'll need to call
+toString().</description>
+      <access value="public"/>
+      <internal>Implemented per a suggestion by Techie-Michael - thanks!</internal>
+    </docblock>
+  </method>
+  <method name="__clone" start="765" end="768" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="__clone() magic method">Although you can call BigInteger::__toString() directly in PHP5, you cannot call BigInteger::__clone() directly
+in PHP5.  You can in PHP4 since it's not a magic method, but in PHP5, you have to call it by using the PHP5
+only syntax of $y = clone $x.  As such, if you're trying to write an application that works on both PHP4 and
+PHP5, call BigInteger::copy(), instead.</description>
+      <access value="public"/>
+      <see value="self::copy()"/>
+      <return type="object">
+        <type full="\phpseclib\Math\BigInteger" namespace="\phpseclib\Math" name="BigInteger"/>
+      </return>
+    </docblock>
+  </method>
+  <method name="__sleep" start="778" end="786" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="__sleep() magic method">Will be called, automatically, when serialize() is called on a BigInteger object.</description>
+      <see value="self::__wakeup()"/>
+      <access value="public"/>
+    </docblock>
+  </method>
+  <method name="__wakeup" start="796" end="805" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="__wakeup() magic method">Will be called, automatically, when unserialize() is called on a BigInteger object.</description>
+      <see value="self::__sleep()"/>
+      <access value="public"/>
+    </docblock>
+  </method>
+  <method name="__debugInfo" start="814" end="838" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="__debugInfo() magic method">Will be called, automatically, when print_r() or var_dump() are called</description>
+      <access value="public"/>
+    </docblock>
+  </method>
+  <method name="add" start="860" end="882" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Adds two BigIntegers.">Here's an example:
+&lt;code&gt;
+&lt;?php
+   $a = new \phpseclib\Math\BigInteger('10');
+   $b = new \phpseclib\Math\BigInteger('20');
+
+   $c = $a-&gt;add($b);
+
+   echo $c-&gt;toString(); // outputs 30
+?&gt;
+&lt;/code&gt;</description>
+      <param type="object" variable="$y">
+        <type full="\phpseclib\Math\BigInteger" namespace="\phpseclib\Math" name="BigInteger"/>
+      </param>
+      <return type="object">
+        <type full="\phpseclib\Math\BigInteger" namespace="\phpseclib\Math" name="BigInteger"/>
+      </return>
+      <access value="public"/>
+      <internal>Performs base-2**52 addition</internal>
+    </docblock>
+    <parameter name="y" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="_add" start="894" end="967" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Performs addition."/>
+      <param type="array" variable="$x_value"/>
+      <param type="object" variable="$x_negative">
+        <type full="phpseclib\Math\bool" namespace="phpseclib\Math" name="bool"/>
+      </param>
+      <param type="array" variable="$y_value"/>
+      <param type="object" variable="$y_negative">
+        <type full="phpseclib\Math\bool" namespace="phpseclib\Math" name="bool"/>
+      </param>
+      <return type="array"/>
+      <access value="private"/>
+    </docblock>
+    <parameter name="x_value" byreference="false" type="{unknown}"/>
+    <parameter name="x_negative" byreference="false" type="{unknown}"/>
+    <parameter name="y_value" byreference="false" type="{unknown}"/>
+    <parameter name="y_negative" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="subtract, if appropriate" line="911"/>
+      <comment value="just in case the carry adds an extra digit" line="935"/>
+    </inline>
+  </method>
+  <method name="subtract" start="989" end="1011" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Subtracts two BigIntegers.">Here's an example:
+&lt;code&gt;
+&lt;?php
+   $a = new \phpseclib\Math\BigInteger('10');
+   $b = new \phpseclib\Math\BigInteger('20');
+
+   $c = $a-&gt;subtract($b);
+
+   echo $c-&gt;toString(); // outputs -10
+?&gt;
+&lt;/code&gt;</description>
+      <param type="object" variable="$y">
+        <type full="\phpseclib\Math\BigInteger" namespace="\phpseclib\Math" name="BigInteger"/>
+      </param>
+      <return type="object">
+        <type full="\phpseclib\Math\BigInteger" namespace="\phpseclib\Math" name="BigInteger"/>
+      </return>
+      <access value="public"/>
+      <internal>Performs base-2**52 subtraction</internal>
+    </docblock>
+    <parameter name="y" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="_subtract" start="1023" end="1101" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Performs subtraction."/>
+      <param type="array" variable="$x_value"/>
+      <param type="object" variable="$x_negative">
+        <type full="phpseclib\Math\bool" namespace="phpseclib\Math" name="bool"/>
+      </param>
+      <param type="array" variable="$y_value"/>
+      <param type="object" variable="$y_negative">
+        <type full="phpseclib\Math\bool" namespace="phpseclib\Math" name="bool"/>
+      </param>
+      <return type="array"/>
+      <access value="private"/>
+    </docblock>
+    <parameter name="x_value" byreference="false" type="{unknown}"/>
+    <parameter name="x_negative" byreference="false" type="{unknown}"/>
+    <parameter name="y_value" byreference="false" type="{unknown}"/>
+    <parameter name="y_negative" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="add, if appropriate (ie. -$x - +$y or +$x - -$y)" line="1040"/>
+      <comment value="switch $x and $y around, if appropriate." line="1057"/>
+      <comment value="at this point, $x_value should be at least as big as - if not bigger than - $y_value" line="1069"/>
+    </inline>
+  </method>
+  <method name="multiply" start="1122" end="1144" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Multiplies two BigIntegers">Here's an example:
+&lt;code&gt;
+&lt;?php
+   $a = new \phpseclib\Math\BigInteger('10');
+   $b = new \phpseclib\Math\BigInteger('20');
+
+   $c = $a-&gt;multiply($b);
+
+   echo $c-&gt;toString(); // outputs 200
+?&gt;
+&lt;/code&gt;</description>
+      <param type="object" variable="$x">
+        <type full="\phpseclib\Math\BigInteger" namespace="\phpseclib\Math" name="BigInteger"/>
+      </param>
+      <return type="object">
+        <type full="\phpseclib\Math\BigInteger" namespace="\phpseclib\Math" name="BigInteger"/>
+      </return>
+      <access value="public"/>
+    </docblock>
+    <parameter name="x" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="_multiply" start="1156" end="1181" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Performs multiplication."/>
+      <param type="array" variable="$x_value"/>
+      <param type="object" variable="$x_negative">
+        <type full="phpseclib\Math\bool" namespace="phpseclib\Math" name="bool"/>
+      </param>
+      <param type="array" variable="$y_value"/>
+      <param type="object" variable="$y_negative">
+        <type full="phpseclib\Math\bool" namespace="phpseclib\Math" name="bool"/>
+      </param>
+      <return type="array"/>
+      <access value="private"/>
+    </docblock>
+    <parameter name="x_value" byreference="false" type="{unknown}"/>
+    <parameter name="x_negative" byreference="false" type="{unknown}"/>
+    <parameter name="y_value" byreference="false" type="{unknown}"/>
+    <parameter name="y_negative" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="if ( $x_value == $y_value ) {" line="1158"/>
+      <comment value="return array(" line="1159"/>
+      <comment value="self::VALUE =&gt; $this-&gt;_square($x_value)," line="1160"/>
+      <comment value="self::SIGN =&gt; $x_sign != $y_value" line="1161"/>
+      <comment value=");" line="1162"/>
+      <comment value="}" line="1163"/>
+    </inline>
+  </method>
+  <method name="_regularMultiply" start="1193" end="1244" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Performs long multiplication on two BigIntegers">Modeled after 'multiply' in MutableBigInteger.java.</description>
+      <param type="array" variable="$x_value"/>
+      <param type="array" variable="$y_value"/>
+      <return type="array"/>
+      <access value="private"/>
+    </docblock>
+    <parameter name="x_value" byreference="false" type="{unknown}"/>
+    <parameter name="y_value" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="the following for loop could be removed if the for loop following it" line="1213"/>
+      <comment value="(the one with nested for loops) initially set $i to 0, but" line="1214"/>
+      <comment value="doing so would also make the result in one set of unnecessary adds," line="1215"/>
+      <comment value="since on the outermost loops first pass, $product-&gt;value[$k] is going" line="1216"/>
+      <comment value="to always be 0" line="1217"/>
+      <comment value="the above for loop is what the previous comment was talking about.  the" line="1229"/>
+      <comment value="following for loop is the &quot;one with nested for loops&quot;" line="1230"/>
+    </inline>
+  </method>
+  <method name="_karatsuba" start="1257" end="1286" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Performs Karatsuba multiplication on two BigIntegers">See <link xmlns="http://xml.phpdox.net/src" value="http://en.wikipedia.org/wiki/Karatsuba_algorithm Karatsuba algorithm"/> and
+<link xmlns="http://xml.phpdox.net/src" value="http://math.libtomcrypt.com/files/tommath.pdf#page=120 MPM 5.2.3"/>.
+</description>
+      <param type="array" variable="$x_value"/>
+      <param type="array" variable="$y_value"/>
+      <return type="array"/>
+      <access value="private"/>
+    </docblock>
+    <parameter name="x_value" byreference="false" type="{unknown}"/>
+    <parameter name="y_value" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="_square" start="1295" end="1300" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Performs squaring"/>
+      <param type="array" variable="$x"/>
+      <return type="array"/>
+      <access value="private"/>
+    </docblock>
+    <parameter name="x" byreference="false" type="boolean" default="false"/>
+  </method>
+  <method name="_baseSquare" start="1313" end="1340" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Performs traditional squaring on two BigIntegers">Squaring can be done faster than multiplying a number by itself can be.  See
+{@link http://www.cacr.math.uwaterloo.ca/hac/about/chap14.pdf#page=7 HAC 14.2.4} /
+{@link http://math.libtomcrypt.com/files/tommath.pdf#page=141 MPM 5.3} for more information.</description>
+      <param type="array" variable="$value"/>
+      <return type="array"/>
+      <access value="private"/>
+    </docblock>
+    <parameter name="value" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="_karatsubaSquare" start="1352" end="1378" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Performs Karatsuba &quot;squaring&quot; on two BigIntegers">See <link xmlns="http://xml.phpdox.net/src" value="http://en.wikipedia.org/wiki/Karatsuba_algorithm Karatsuba algorithm"/> and
+<link xmlns="http://xml.phpdox.net/src" value="http://math.libtomcrypt.com/files/tommath.pdf#page=151 MPM 5.3.4"/>.
+</description>
+      <param type="array" variable="$value"/>
+      <return type="array"/>
+      <access value="private"/>
+    </docblock>
+    <parameter name="value" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="divide" start="1407" end="1576" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Divides two BigIntegers.">Returns an array whose first element contains the quotient and whose second element contains the
+"common residue".  If the remainder would be positive, the "common residue" and the remainder are the
+same.  If the remainder would be negative, the "common residue" is equal to the sum of the remainder
+and the divisor (basically, the "common residue" is the first positive modulo).
+
+Here's an example:
+&lt;code&gt;
+&lt;?php
+   $a = new \phpseclib\Math\BigInteger('10');
+   $b = new \phpseclib\Math\BigInteger('20');
+
+   list($quotient, $remainder) = $a-&gt;divide($b);
+
+   echo $quotient-&gt;toString(); // outputs 0
+   echo "\r\n";
+   echo $remainder-&gt;toString(); // outputs 10
+?&gt;
+&lt;/code&gt;</description>
+      <param type="object" variable="$y">
+        <type full="\phpseclib\Math\BigInteger" namespace="\phpseclib\Math" name="BigInteger"/>
+      </param>
+      <return type="array"/>
+      <access value="public"/>
+      <internal>This function is based off of <link xmlns="http://xml.phpdox.net/src" value="http://www.cacr.math.uwaterloo.ca/hac/about/chap14.pdf#page=9 HAC 14.20"/>.
+</internal>
+    </docblock>
+    <parameter name="y" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="normalize $x and $y as described in HAC 14.23 / 14.24" line="1475"/>
+      <comment value="$temp = $y &lt;&lt; ($x_max - $y_max-1) in base 2**26" line="1500"/>
+      <comment value="unnormalize the remainder" line="1564"/>
+      <comment value="calculate the &quot;common residue&quot;, if appropriate" line="1569"/>
+    </inline>
+  </method>
+  <method name="_divide_digit" start="1588" end="1600" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Divides a BigInteger by a regular integer">abc / x = a00 / x + b0 / x + c / x</description>
+      <param type="array" variable="$dividend"/>
+      <param type="array" variable="$divisor"/>
+      <return type="array"/>
+      <access value="private"/>
+    </docblock>
+    <parameter name="dividend" byreference="false" type="{unknown}"/>
+    <parameter name="divisor" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="modPow" start="1642" end="1781" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Performs modular exponentiation.">Here's an example:
+&lt;code&gt;
+&lt;?php
+   $a = new \phpseclib\Math\BigInteger('10');
+   $b = new \phpseclib\Math\BigInteger('20');
+   $c = new \phpseclib\Math\BigInteger('30');
+
+   $c = $a-&gt;modPow($b, $c);
+
+   echo $c-&gt;toString(); // outputs 10
+?&gt;
+&lt;/code&gt;</description>
+      <param type="object" variable="$e">
+        <type full="\phpseclib\Math\BigInteger" namespace="\phpseclib\Math" name="BigInteger"/>
+      </param>
+      <param type="object" variable="$n">
+        <type full="\phpseclib\Math\BigInteger" namespace="\phpseclib\Math" name="BigInteger"/>
+      </param>
+      <return type="object">
+        <type full="\phpseclib\Math\BigInteger" namespace="\phpseclib\Math" name="BigInteger"/>
+      </return>
+      <access value="public"/>
+      <internal>The most naive approach to modular exponentiation has very unreasonable requirements, and</internal>
+    </docblock>
+    <parameter name="e" byreference="false" type="{unknown}"/>
+    <parameter name="n" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="the following code, although not callable, can be run independently of the above code" line="1737"/>
+      <comment value="although the above code performed better in my benchmarks the following could might" line="1738"/>
+      <comment value="perform better under different circumstances. in lieu of deleting it it's just been" line="1739"/>
+      <comment value="made uncallable" line="1740"/>
+      <comment value="is the modulo odd?" line="1742"/>
+      <comment value="if it's not, it's even" line="1746"/>
+      <comment value="find the lowest set bit (eg. the max pow of 2 that divides $n)" line="1748"/>
+      <comment value="at this point, 2^$j * $n/(2^$j) == $n" line="1757"/>
+    </inline>
+  </method>
+  <method name="powMod" start="1793" end="1796" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Performs modular exponentiation.">Alias for modPow().</description>
+      <param type="object" variable="$e">
+        <type full="\phpseclib\Math\BigInteger" namespace="\phpseclib\Math" name="BigInteger"/>
+      </param>
+      <param type="object" variable="$n">
+        <type full="\phpseclib\Math\BigInteger" namespace="\phpseclib\Math" name="BigInteger"/>
+      </param>
+      <return type="object">
+        <type full="\phpseclib\Math\BigInteger" namespace="\phpseclib\Math" name="BigInteger"/>
+      </return>
+      <access value="public"/>
+    </docblock>
+    <parameter name="e" byreference="false" type="{unknown}"/>
+    <parameter name="n" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="_slidingWindow" start="1812" end="1875" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Sliding Window k-ary Modular Exponentiation">Based on <link xmlns="http://xml.phpdox.net/src" value="http://www.cacr.math.uwaterloo.ca/hac/about/chap14.pdf#page=27 HAC 14.85"/> /
+<link xmlns="http://xml.phpdox.net/src" value="http://math.libtomcrypt.com/files/tommath.pdf#page=210 MPM 7.7"/>.  In a departure from those algorithims,
+however, this function performs a modular reduction after every multiplication and squaring operation.
+As such, this function has the same preconditions that the reductions being used do.
+</description>
+      <param type="object" variable="$e">
+        <type full="\phpseclib\Math\BigInteger" namespace="\phpseclib\Math" name="BigInteger"/>
+      </param>
+      <param type="object" variable="$n">
+        <type full="\phpseclib\Math\BigInteger" namespace="\phpseclib\Math" name="BigInteger"/>
+      </param>
+      <param type="int" variable="$mode"/>
+      <return type="object">
+        <type full="\phpseclib\Math\BigInteger" namespace="\phpseclib\Math" name="BigInteger"/>
+      </return>
+      <access value="private"/>
+    </docblock>
+    <parameter name="e" byreference="false" type="{unknown}"/>
+    <parameter name="n" byreference="false" type="{unknown}"/>
+    <parameter name="mode" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="from BigInteger.java's oddModPow function" line="1814"/>
+      <comment value="static $window_ranges = array(0, 7, 36, 140, 450, 1303, 3529); // from MPM 7.3.1" line="1815"/>
+      <comment value="calculate the appropriate window size." line="1826"/>
+      <comment value="$window_size == 3 if $window_ranges is between 25 and 81, for example." line="1827"/>
+      <comment value="precompute $this^0 through $this^$window_size" line="1833"/>
+      <comment value="we do every other number since substr($e_bits, $i, $j+1) (see below) is supposed to end" line="1838"/>
+      <comment value="in a 1.  ie. it's supposed to be odd." line="1839"/>
+    </inline>
+  </method>
+  <method name="_reduce" start="1889" end="1914" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Modular reduction">For most $modes this will return the remainder.</description>
+      <see value="self::_slidingWindow()"/>
+      <access value="private"/>
+      <param type="array" variable="$x"/>
+      <param type="array" variable="$n"/>
+      <param type="int" variable="$mode"/>
+      <return type="array"/>
+    </docblock>
+    <parameter name="x" byreference="false" type="{unknown}"/>
+    <parameter name="n" byreference="false" type="{unknown}"/>
+    <parameter name="mode" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="_prepareReduce" start="1926" end="1932" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Modular reduction preperation"/>
+      <see value="self::_slidingWindow()"/>
+      <access value="private"/>
+      <param type="array" variable="$x"/>
+      <param type="array" variable="$n"/>
+      <param type="int" variable="$mode"/>
+      <return type="array"/>
+    </docblock>
+    <parameter name="x" byreference="false" type="{unknown}"/>
+    <parameter name="n" byreference="false" type="{unknown}"/>
+    <parameter name="mode" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="_multiplyReduce" start="1945" end="1952" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Modular multiply"/>
+      <see value="self::_slidingWindow()"/>
+      <access value="private"/>
+      <param type="array" variable="$x"/>
+      <param type="array" variable="$y"/>
+      <param type="array" variable="$n"/>
+      <param type="int" variable="$mode"/>
+      <return type="array"/>
+    </docblock>
+    <parameter name="x" byreference="false" type="{unknown}"/>
+    <parameter name="y" byreference="false" type="{unknown}"/>
+    <parameter name="n" byreference="false" type="{unknown}"/>
+    <parameter name="mode" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="_squareReduce" start="1964" end="1970" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Modular square"/>
+      <see value="self::_slidingWindow()"/>
+      <access value="private"/>
+      <param type="array" variable="$x"/>
+      <param type="array" variable="$n"/>
+      <param type="int" variable="$mode"/>
+      <return type="array"/>
+    </docblock>
+    <parameter name="x" byreference="false" type="{unknown}"/>
+    <parameter name="n" byreference="false" type="{unknown}"/>
+    <parameter name="mode" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="_mod2" start="1983" end="1988" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Modulos for Powers of Two">Calculates $x%$n, where $n = 2**$e, for some $e.  Since this is basically the same as doing $x &amp; ($n-1),
+we'll just use this function as a wrapper for doing that.</description>
+      <see value="self::_slidingWindow()"/>
+      <access value="private"/>
+      <param type="object">
+        <type full="\phpseclib\Math\BigInteger" namespace="\phpseclib\Math" name="BigInteger"/>
+      </param>
+      <return type="object">
+        <type full="\phpseclib\Math\BigInteger" namespace="\phpseclib\Math" name="BigInteger"/>
+      </return>
+    </docblock>
+    <parameter name="n" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="_barrett" start="2014" end="2097" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Barrett Modular Reduction">See <link xmlns="http://xml.phpdox.net/src" value="http://www.cacr.math.uwaterloo.ca/hac/about/chap14.pdf#page=14 HAC 14.3.3"/> /
+<link xmlns="http://xml.phpdox.net/src" value="http://math.libtomcrypt.com/files/tommath.pdf#page=165 MPM 6.2.5"/> for more information.  Modified slightly,
+so as not to require negative numbers (initially, this script didn't support negative numbers).
+Employs "folding", as described at
+<link xmlns="http://xml.phpdox.net/src" value="http://www.cosic.esat.kuleuven.be/publications/thesis-149.pdf#page=66 thesis-149.pdf#page=66"/>.  To quote from
+it, "the idea [behind folding] is to find a value x' such that x (mod m) = x' (mod m), with x' being smaller than x."
+Unfortunately, the "Barrett Reduction with Folding" algorithm described in thesis-149.pdf is not, as written, all that
+usable on account of (1) its not using reasonable radix points as discussed in
+<link xmlns="http://xml.phpdox.net/src" value="http://math.libtomcrypt.com/files/tommath.pdf#page=162 MPM 6.2.2"/> and (2) the fact that, even with reasonable
+radix points, it only works when there are an even number of digits in the denominator.  The reason for (2) is that
+(x &gt;&gt; 1) + (x &gt;&gt; 1) != x / 2 + x / 2.  If x is even, they're the same, but if x is odd, they're not.  See the in-line
+comments for details.
+</description>
+      <see value="self::_slidingWindow()"/>
+      <access value="private"/>
+      <param type="array" variable="$n"/>
+      <param type="array" variable="$m"/>
+      <return type="array"/>
+    </docblock>
+    <parameter name="n" byreference="false" type="{unknown}"/>
+    <parameter name="m" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="if ($this-&gt;_compare($n, $this-&gt;_square($m)) &gt;= 0) {" line="2023"/>
+      <comment value="if (m.length &gt;&gt; 1) + 2 &lt;= m.length then m is too small and n can't be reduced" line="2033"/>
+      <comment value="n = 2 * m.length" line="2038"/>
+      <comment value="m.length + (m.length &gt;&gt; 1)" line="2064"/>
+      <comment value="m.length &gt;&gt; 1" line="2065"/>
+      <comment value="m.length + (m.length &gt;&gt; 1) + 1" line="2068"/>
+      <comment value="(m.length + (m.length &gt;&gt; 1) + 1) - (m.length - 1) == (m.length &gt;&gt; 1) + 2" line="2074"/>
+      <comment value="if even: ((m.length &gt;&gt; 1) + 2) + (m.length &gt;&gt; 1) == m.length + 2" line="2076"/>
+      <comment value="if odd:  ((m.length &gt;&gt; 1) + 2) + (m.length &gt;&gt; 1) == (m.length - 1) + 2 == m.length + 1" line="2077"/>
+      <comment value="if even: (m.length + 2) - ((m.length &gt;&gt; 1) + 1) = m.length - (m.length &gt;&gt; 1) + 1" line="2079"/>
+      <comment value="if odd:  (m.length + 1) - ((m.length &gt;&gt; 1) + 1) = m.length - (m.length &gt;&gt; 1)" line="2080"/>
+      <comment value="if even: (m.length - (m.length &gt;&gt; 1) + 1) + m.length = 2 * m.length - (m.length &gt;&gt; 1) + 1" line="2082"/>
+      <comment value="if odd:  (m.length - (m.length &gt;&gt; 1)) + m.length     = 2 * m.length - (m.length &gt;&gt; 1)" line="2083"/>
+      <comment value="at this point, if m had an odd number of digits, we'd be subtracting a 2 * m.length - (m.length &gt;&gt; 1) digit" line="2086"/>
+      <comment value="number from a m.length + (m.length &gt;&gt; 1) + 1 digit number.  ie. there'd be an extra digit and the while loop" line="2087"/>
+      <comment value="following this comment would loop a lot (hence our calling _regularBarrett() in that situation)." line="2088"/>
+    </inline>
+  </method>
+  <method name="_regularBarrett" start="2111" end="2169" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="(Regular) Barrett Modular Reduction">For numbers with more than four digits BigInteger::_barrett() is faster.  The difference between that and this
+is that this function does not fold the denominator into a smaller form.</description>
+      <see value="self::_slidingWindow()"/>
+      <access value="private"/>
+      <param type="array" variable="$x"/>
+      <param type="array" variable="$n"/>
+      <return type="array"/>
+    </docblock>
+    <parameter name="x" byreference="false" type="{unknown}"/>
+    <parameter name="n" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="2 * m.length - (m.length - 1) = m.length + 1" line="2142"/>
+      <comment value="(m.length + 1) + m.length = 2 * m.length + 1" line="2144"/>
+      <comment value="(2 * m.length + 1) - (m.length - 1) = m.length + 2" line="2146"/>
+      <comment value="m.length + 1" line="2149"/>
+      <comment value="m.length + 1" line="2151"/>
+      <comment value="$temp == array_slice($temp-&gt;_multiply($temp, false, $n, false)-&gt;value, 0, $n_length + 1)" line="2153"/>
+      <comment value="at this point, we're subtracting a number with m.length + 1 digits from another number with m.length + 1 digits" line="2162"/>
+    </inline>
+  </method>
+  <method name="_multiplyLower" start="2185" end="2247" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Performs long multiplication up to $stop digits">If you're going to be doing array_slice($product-&gt;value, 0, $stop), some cycles can be saved.</description>
+      <see value="self::_regularBarrett()"/>
+      <param type="array" variable="$x_value"/>
+      <param type="object" variable="$x_negative">
+        <type full="phpseclib\Math\bool" namespace="phpseclib\Math" name="bool"/>
+      </param>
+      <param type="array" variable="$y_value"/>
+      <param type="object" variable="$y_negative">
+        <type full="phpseclib\Math\bool" namespace="phpseclib\Math" name="bool"/>
+      </param>
+      <param type="int" variable="$stop"/>
+      <return type="array"/>
+      <access value="private"/>
+    </docblock>
+    <parameter name="x_value" byreference="false" type="{unknown}"/>
+    <parameter name="x_negative" byreference="false" type="{unknown}"/>
+    <parameter name="y_value" byreference="false" type="{unknown}"/>
+    <parameter name="y_negative" byreference="false" type="{unknown}"/>
+    <parameter name="stop" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="the following for loop could be removed if the for loop following it" line="2208"/>
+      <comment value="(the one with nested for loops) initially set $i to 0, but" line="2209"/>
+      <comment value="doing so would also make the result in one set of unnecessary adds," line="2210"/>
+      <comment value="since on the outermost loops first pass, $product-&gt;value[$k] is going" line="2211"/>
+      <comment value="to always be 0" line="2212"/>
+      <comment value="the above for loop is what the previous comment was talking about.  the" line="2226"/>
+      <comment value="following for loop is the &quot;one with nested for loops&quot;" line="2227"/>
+    </inline>
+  </method>
+  <method name="_montgomery" start="2264" end="2296" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Montgomery Modular Reduction">($x-&gt;_prepMontgomery($n))-&gt;_montgomery($n) yields $x % $n.
+{@link http://math.libtomcrypt.com/files/tommath.pdf#page=170 MPM 6.3} provides insights on how this can be
+improved upon (basically, by using the comba method).  gcd($n, 2) must be equal to one for this function
+to work correctly.</description>
+      <see value="self::_prepMontgomery()"/>
+      <see value="self::_slidingWindow()"/>
+      <access value="private"/>
+      <param type="array" variable="$x"/>
+      <param type="array" variable="$n"/>
+      <return type="array"/>
+    </docblock>
+    <parameter name="x" byreference="false" type="{unknown}"/>
+    <parameter name="n" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="_montgomeryMultiply" start="2312" end="2351" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Montgomery Multiply">Interleaves the montgomery reduction and long multiplication algorithms together as described in
+{@link http://www.cacr.math.uwaterloo.ca/hac/about/chap14.pdf#page=13 HAC 14.36}</description>
+      <see value="self::_prepMontgomery()"/>
+      <see value="self::_montgomery()"/>
+      <access value="private"/>
+      <param type="array" variable="$x"/>
+      <param type="array" variable="$y"/>
+      <param type="array" variable="$m"/>
+      <return type="array"/>
+    </docblock>
+    <parameter name="x" byreference="false" type="{unknown}"/>
+    <parameter name="y" byreference="false" type="{unknown}"/>
+    <parameter name="m" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="the following code, although not callable, can be run independently of the above code" line="2317"/>
+      <comment value="although the above code performed better in my benchmarks the following could might" line="2318"/>
+      <comment value="perform better under different circumstances. in lieu of deleting it it's just been" line="2319"/>
+      <comment value="made uncallable" line="2320"/>
+    </inline>
+  </method>
+  <method name="_prepMontgomery" start="2363" end="2372" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Prepare a number for use in Montgomery Modular Reductions"/>
+      <see value="self::_montgomery()"/>
+      <see value="self::_slidingWindow()"/>
+      <access value="private"/>
+      <param type="array" variable="$x"/>
+      <param type="array" variable="$n"/>
+      <return type="array"/>
+    </docblock>
+    <parameter name="x" byreference="false" type="{unknown}"/>
+    <parameter name="n" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="_modInverse67108864" start="2400" end="2409" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Modular Inverse of a number mod 2**26 (eg. 67108864)">Based off of the bnpInvDigit function implemented and justified in the following URL:
+
+{@link http://www-cs-students.stanford.edu/~tjw/jsbn/jsbn.js}
+
+The following URL provides more info:
+
+{@link http://groups.google.com/group/sci.crypt/msg/7a137205c1be7d85}
+
+As for why we do all the bitmasking...  strange things can happen when converting from floats to ints. For
+instance, on some computers, var_dump((int) -4294967297) yields int(-1) and on others, it yields
+int(-2147483648).  To avoid problems stemming from this, we use bitmasks to guarantee that ints aren't
+auto-converted to floats.  The outermost bitmask is present because without it, there's no guarantee that
+the "residue" returned would be the so-called "common residue".  We use fmod, in the last step, because the
+maximum possible $x is 26 bits and the maximum $result is 16 bits.  Thus, we have to be able to handle up to
+40 bits, which only 64-bit floating points will support.
+
+Thanks to Pedro Gimeno Fortea for input!</description>
+      <see value="self::_montgomery()"/>
+      <access value="private"/>
+      <param type="array" variable="$x"/>
+      <return type="int"/>
+    </docblock>
+    <parameter name="x" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="x**-1 mod 2**2" line="2403"/>
+      <comment value="x**-1 mod 2**4" line="2404"/>
+      <comment value="x**-1 mod 2**8" line="2405"/>
+      <comment value="x**-1 mod 2**16" line="2406"/>
+      <comment value="x**-1 mod 2**26" line="2407"/>
+    </inline>
+  </method>
+  <method name="modInverse" start="2438" end="2472" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Calculates modular inverses.">Say you have (30 mod 17 * x mod 17) mod 17 == 1.  x can be found using modular inverses.
+
+Here's an example:
+&lt;code&gt;
+&lt;?php
+   $a = new \phpseclib\Math\BigInteger(30);
+   $b = new \phpseclib\Math\BigInteger(17);
+
+   $c = $a-&gt;modInverse($b);
+   echo $c-&gt;toString(); // outputs 4
+
+   echo "\r\n";
+
+   $d = $a-&gt;multiply($c);
+   list(, $d) = $d-&gt;divide($b);
+   echo $d; // outputs 1 (as per the definition of modular inverse)
+?&gt;
+&lt;/code&gt;</description>
+      <param type="object" variable="$n">
+        <type full="\phpseclib\Math\BigInteger" namespace="\phpseclib\Math" name="BigInteger"/>
+      </param>
+      <return type="object">
+        <type full="\phpseclib\Math\BigInteger|false" namespace="\phpseclib\Math" name="BigInteger|false"/>
+      </return>
+      <access value="public"/>
+      <internal>See <link xmlns="http://xml.phpdox.net/src" value="http://www.cacr.math.uwaterloo.ca/hac/about/chap14.pdf#page=21 HAC 14.64"/> for more information.
+</internal>
+    </docblock>
+    <parameter name="n" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="$x mod -$n == $x mod $n." line="2454"/>
+    </inline>
+  </method>
+  <method name="extendedGCD" start="2502" end="2608" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Calculates the greatest common divisor and Bezout's identity.">Say you have 693 and 609.  The GCD is 21.  Bezout's identity states that there exist integers x and y such that
+693*x + 609*y == 21.  In point of fact, there are actually an infinite number of x and y combinations and which
+combination is returned is dependent upon which mode is in use.  See
+{@link http://en.wikipedia.org/wiki/B%C3%A9zout%27s_identity Bezout's identity - Wikipedia} for more information.
+
+Here's an example:
+&lt;code&gt;
+&lt;?php
+   $a = new \phpseclib\Math\BigInteger(693);
+   $b = new \phpseclib\Math\BigInteger(609);
+
+   extract($a-&gt;extendedGCD($b));
+
+   echo $gcd-&gt;toString() . "\r\n"; // outputs 21
+   echo $a-&gt;toString() * $x-&gt;toString() + $b-&gt;toString() * $y-&gt;toString(); // outputs 21
+?&gt;
+&lt;/code&gt;</description>
+      <param type="object" variable="$n">
+        <type full="\phpseclib\Math\BigInteger" namespace="\phpseclib\Math" name="BigInteger"/>
+      </param>
+      <return type="object">
+        <type full="\phpseclib\Math\BigInteger" namespace="\phpseclib\Math" name="BigInteger"/>
+      </return>
+      <access value="public"/>
+      <internal>Calculates the GCD using the binary xGCD algorithim described in</internal>
+    </docblock>
+    <parameter name="n" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="gcd" start="2631" end="2635" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Calculates the greatest common divisor">Say you have 693 and 609.  The GCD is 21.
+
+Here's an example:
+&lt;code&gt;
+&lt;?php
+   $a = new \phpseclib\Math\BigInteger(693);
+   $b = new \phpseclib\Math\BigInteger(609);
+
+   $gcd = a-&gt;extendedGCD($b);
+
+   echo $gcd-&gt;toString() . "\r\n"; // outputs 21
+?&gt;
+&lt;/code&gt;</description>
+      <param type="object" variable="$n">
+        <type full="\phpseclib\Math\BigInteger" namespace="\phpseclib\Math" name="BigInteger"/>
+      </param>
+      <return type="object">
+        <type full="\phpseclib\Math\BigInteger" namespace="\phpseclib\Math" name="BigInteger"/>
+      </return>
+      <access value="public"/>
+    </docblock>
+    <parameter name="n" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="abs" start="2643" end="2659" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Absolute value."/>
+      <return type="object">
+        <type full="\phpseclib\Math\BigInteger" namespace="\phpseclib\Math" name="BigInteger"/>
+      </return>
+      <access value="public"/>
+    </docblock>
+  </method>
+  <method name="compare" start="2679" end="2689" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Compares two numbers.">Although one might think !$x-&gt;compare($y) means $x != $y, it, in fact, means the opposite.  The reason for this is
+demonstrated thusly:
+
+$x  &gt; $y: $x-&gt;compare($y)  &gt; 0
+$x  &lt; $y: $x-&gt;compare($y)  &lt; 0
+$x == $y: $x-&gt;compare($y) == 0
+
+Note how the same comparison operator is used.  If you want to test for equality, use $x-&gt;equals($y).</description>
+      <param type="object" variable="$y">
+        <type full="\phpseclib\Math\BigInteger" namespace="\phpseclib\Math" name="BigInteger"/>
+      </param>
+      <return description="&lt; 0 if $this is less than $y; &gt; 0 if $this is greater than $y, and 0 if they are equal." type="int"/>
+      <access value="public"/>
+      <see value="self::equals()"/>
+      <internal>Could return $this-&gt;subtract($x), but that's not as fast as what we do do.</internal>
+    </docblock>
+    <parameter name="y" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="_compare" start="2702" end="2725" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Compares two numbers."/>
+      <param type="array" variable="$x_value"/>
+      <param type="object" variable="$x_negative">
+        <type full="phpseclib\Math\bool" namespace="phpseclib\Math" name="bool"/>
+      </param>
+      <param type="array" variable="$y_value"/>
+      <param type="object" variable="$y_negative">
+        <type full="phpseclib\Math\bool" namespace="phpseclib\Math" name="bool"/>
+      </param>
+      <return type="int"/>
+      <see value="self::compare()"/>
+      <access value="private"/>
+    </docblock>
+    <parameter name="x_value" byreference="false" type="{unknown}"/>
+    <parameter name="x_negative" byreference="false" type="{unknown}"/>
+    <parameter name="y_value" byreference="false" type="{unknown}"/>
+    <parameter name="y_negative" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="equals" start="2737" end="2745" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Tests the equality of two numbers.">If you need to see if one number is greater than or less than another number, use BigInteger::compare()</description>
+      <param type="object" variable="$x">
+        <type full="\phpseclib\Math\BigInteger" namespace="\phpseclib\Math" name="BigInteger"/>
+      </param>
+      <return type="object">
+        <type full="phpseclib\Math\bool" namespace="phpseclib\Math" name="bool"/>
+      </return>
+      <access value="public"/>
+      <see value="self::compare()"/>
+    </docblock>
+    <parameter name="x" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="setPrecision" start="2756" end="2767" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Set Precision">Some bitwise operations give different results depending on the precision being used.  Examples include left
+shift, not, and rotates.</description>
+      <param type="int" variable="$bits"/>
+      <access value="public"/>
+    </docblock>
+    <parameter name="bits" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="bitwise_and" start="2777" end="2808" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Logical And"/>
+      <param type="object" variable="$x">
+        <type full="\phpseclib\Math\BigInteger" namespace="\phpseclib\Math" name="BigInteger"/>
+      </param>
+      <access value="public"/>
+      <internal>Implemented per a request by Lluis Pamies i Juarez &lt;lluis _a_ pamies.cat&gt;</internal>
+      <return type="object">
+        <type full="\phpseclib\Math\BigInteger" namespace="\phpseclib\Math" name="BigInteger"/>
+      </return>
+    </docblock>
+    <parameter name="x" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="bitwise_or" start="2818" end="2848" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Logical Or"/>
+      <param type="object" variable="$x">
+        <type full="\phpseclib\Math\BigInteger" namespace="\phpseclib\Math" name="BigInteger"/>
+      </param>
+      <access value="public"/>
+      <internal>Implemented per a request by Lluis Pamies i Juarez &lt;lluis _a_ pamies.cat&gt;</internal>
+      <return type="object">
+        <type full="\phpseclib\Math\BigInteger" namespace="\phpseclib\Math" name="BigInteger"/>
+      </return>
+    </docblock>
+    <parameter name="x" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="bitwise_xor" start="2858" end="2888" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Logical Exclusive-Or"/>
+      <param type="object" variable="$x">
+        <type full="\phpseclib\Math\BigInteger" namespace="\phpseclib\Math" name="BigInteger"/>
+      </param>
+      <access value="public"/>
+      <internal>Implemented per a request by Lluis Pamies i Juarez &lt;lluis _a_ pamies.cat&gt;</internal>
+      <return type="object">
+        <type full="\phpseclib\Math\BigInteger" namespace="\phpseclib\Math" name="BigInteger"/>
+      </return>
+    </docblock>
+    <parameter name="x" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="bitwise_not" start="2897" end="2927" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Logical Not"/>
+      <access value="public"/>
+      <internal>Implemented per a request by Lluis Pamies i Juarez &lt;lluis _a_ pamies.cat&gt;</internal>
+      <return type="object">
+        <type full="\phpseclib\Math\BigInteger" namespace="\phpseclib\Math" name="BigInteger"/>
+      </return>
+    </docblock>
+    <inline>
+      <comment value="calculuate &quot;not&quot; without regard to $this-&gt;precision" line="2899"/>
+      <comment value="(will always result in a smaller number.  ie. ~1 isn't 1111 1110 - it's 0)" line="2900"/>
+      <comment value="see if we need to add extra leading 1's" line="2913"/>
+      <comment value="generate as many leading 1's as we need to." line="2920"/>
+    </inline>
+  </method>
+  <method name="bitwise_rightShift" start="2939" end="2965" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Logical Right Shift">Shifts BigInteger's by $shift bits, effectively dividing by 2**$shift.</description>
+      <param type="int" variable="$shift"/>
+      <return type="object">
+        <type full="\phpseclib\Math\BigInteger" namespace="\phpseclib\Math" name="BigInteger"/>
+      </return>
+      <access value="public"/>
+      <internal>The only version that yields any speed increases is the internal version.</internal>
+    </docblock>
+    <parameter name="shift" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="bitwise_leftShift" start="2977" end="3003" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Logical Left Shift">Shifts BigInteger's by $shift bits, effectively multiplying by 2**$shift.</description>
+      <param type="int" variable="$shift"/>
+      <return type="object">
+        <type full="\phpseclib\Math\BigInteger" namespace="\phpseclib\Math" name="BigInteger"/>
+      </return>
+      <access value="public"/>
+      <internal>The only version that yields any speed increases is the internal version.</internal>
+    </docblock>
+    <parameter name="shift" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="bitwise_leftRotate" start="3014" end="3048" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Logical Left Rotate">Instead of the top x bits being dropped they're appended to the shifted bit string.</description>
+      <param type="int" variable="$shift"/>
+      <return type="object">
+        <type full="\phpseclib\Math\BigInteger" namespace="\phpseclib\Math" name="BigInteger"/>
+      </return>
+      <access value="public"/>
+    </docblock>
+    <parameter name="shift" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="bitwise_rightRotate" start="3059" end="3062" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Logical Right Rotate">Instead of the bottom x bits being dropped they're prepended to the shifted bit string.</description>
+      <param type="int" variable="$shift"/>
+      <return type="object">
+        <type full="\phpseclib\Math\BigInteger" namespace="\phpseclib\Math" name="BigInteger"/>
+      </return>
+      <access value="public"/>
+    </docblock>
+    <parameter name="shift" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="_random_number_helper" start="3073" end="3092" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Generates a random BigInteger">Byte length is equal to $length. Uses \phpseclib\Crypt\Random if it's loaded and mt_rand if it's not.</description>
+      <param type="int" variable="$length"/>
+      <return type="object">
+        <type full="\phpseclib\Math\BigInteger" namespace="\phpseclib\Math" name="BigInteger"/>
+      </return>
+      <access value="private"/>
+    </docblock>
+    <parameter name="size" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="random" start="3110" end="3176" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Generate a random number">Returns a random number between $min and $max where $min and $max
+can be defined using one of the two methods:
+
+$min-&gt;random($max)
+$max-&gt;random($min)</description>
+      <param type="object" variable="$arg1">
+        <type full="\phpseclib\Math\BigInteger" namespace="\phpseclib\Math" name="BigInteger"/>
+      </param>
+      <param type="object" variable="$arg2">
+        <type full="\phpseclib\Math\BigInteger" namespace="\phpseclib\Math" name="BigInteger"/>
+      </param>
+      <return type="object">
+        <type full="\phpseclib\Math\BigInteger" namespace="\phpseclib\Math" name="BigInteger"/>
+      </return>
+      <access value="public"/>
+      <internal>The API for creating random numbers used to be $a-&gt;random($min, $max), where $a was a BigInteger object.</internal>
+    </docblock>
+    <parameter name="arg1" byreference="false" type="{unknown}"/>
+    <parameter name="arg2" byreference="false" type="boolean" default="false"/>
+    <inline>
+      <comment value="doing $random % $max doesn't work because some numbers will be more likely to occur than others." line="3143"/>
+      <comment xmlns="http://xml.phpdox.net/src" value="eg. if $max is 140 and $random's max is 255 then that'd mean both $random = 5 and $random = 145" line="3144"/>
+      <comment xmlns="http://xml.phpdox.net/src" value="would produce 5 whereas the only value of random that could produce 139 would be 139. ie." line="3145"/>
+      <comment xmlns="http://xml.phpdox.net/src" value="not all numbers would be equally likely. some would be more likely than others." line="3146"/>
+      <comment xmlns="http://xml.phpdox.net/src" value="creating a whole new random number until you find one that is within the range doesn't work" line="3147"/>
+      <comment xmlns="http://xml.phpdox.net/src" value="because, for sufficiently small ranges, the likelihood that you'd get a number within that range" line="3148"/>
+      <comment xmlns="http://xml.phpdox.net/src" value="would be pretty small. eg. with $random's max being 255 and if your $max being 1 the probability" line="3149"/>
+      <comment xmlns="http://xml.phpdox.net/src" value="would be pretty high that $random would be greater than $max." line="3150"/>
+      <comment xmlns="http://xml.phpdox.net/src" value="phpseclib works around this using the technique described here:" line="3151"/>
+      <comment xmlns="http://xml.phpdox.net/src" value="http://crypto.stackexchange.com/questions/5708/creating-a-small-number-from-a-cryptographically-secure-random-string" line="3152"/>
+    </inline>
+  </method>
+  <method name="randomPrime" start="3191" end="3281" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Generate a random prime number.">If there's not a prime within the given range, false will be returned.
+If more than $timeout seconds have elapsed, give up and return false.</description>
+      <param type="object" variable="$arg1">
+        <type full="\phpseclib\Math\BigInteger" namespace="\phpseclib\Math" name="BigInteger"/>
+      </param>
+      <param type="object" variable="$arg2">
+        <type full="\phpseclib\Math\BigInteger" namespace="\phpseclib\Math" name="BigInteger"/>
+      </param>
+      <param type="int" variable="$timeout"/>
+      <return type="object">
+        <type full="phpseclib\Math\Math_BigInteger|false" namespace="phpseclib\Math" name="Math_BigInteger|false"/>
+      </return>
+      <access value="public"/>
+      <internal>See <link xmlns="http://xml.phpdox.net/src" value="http://www.cacr.math.uwaterloo.ca/hac/about/chap4.pdf#page=15 HAC 4.44"/>.
+</internal>
+    </docblock>
+    <parameter name="arg1" byreference="false" type="{unknown}"/>
+    <parameter name="arg2" byreference="false" type="boolean" default="false"/>
+    <parameter name="timeout" byreference="false" type="boolean" default="false"/>
+    <inline>
+      <comment value="gmp_nextprime() requires PHP 5 &gt;= 5.2.0 per &lt;http://php.net/gmp-nextprime&gt;." line="3226"/>
+    </inline>
+  </method>
+  <method name="_make_odd" start="3291" end="3305" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Make the current number odd">If the current number is odd it'll be unchanged.  If it's even, one will be added to it.</description>
+      <see value="self::randomPrime()"/>
+      <access value="private"/>
+    </docblock>
+  </method>
+  <method name="isPrime" start="3321" end="3460" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Checks a numer to see if it's prime">Assuming the $t parameter is not set, this function has an error rate of 2**-80.  The main motivation for the
+$t parameter is distributability.  BigInteger::randomPrime() can be distributed across multiple pageloads
+on a website instead of just one.</description>
+      <param type="object" variable="$t">
+        <type full="\phpseclib\Math\BigInteger" namespace="\phpseclib\Math" name="BigInteger"/>
+      </param>
+      <return type="object">
+        <type full="phpseclib\Math\bool" namespace="phpseclib\Math" name="bool"/>
+      </return>
+      <access value="public"/>
+      <internal>Uses the</internal>
+    </docblock>
+    <parameter name="t" byreference="false" type="boolean" default="false"/>
+    <inline>
+      <comment value="ie. gmp_testbit($this, 0)" line="3343"/>
+      <comment value="ie. isEven() or !isOdd()" line="3344"/>
+      <comment value="see HAC 4.4.1 &quot;Random search for probable primes&quot;" line="3397"/>
+      <comment value="ie. $s = gmp_scan1($n, 0) and $r = gmp_div_q($n, gmp_pow(gmp_init('2'), $s));" line="3421"/>
+    </inline>
+  </method>
+  <method name="_lshift" start="3470" end="3495" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Logical Left Shift">Shifts BigInteger's by $shift bits.</description>
+      <param type="int" variable="$shift"/>
+      <access value="private"/>
+    </docblock>
+    <parameter name="shift" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="_rshift" start="3505" end="3529" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Logical Right Shift">Shifts BigInteger's by $shift bits.</description>
+      <param type="int" variable="$shift"/>
+      <access value="private"/>
+    </docblock>
+    <parameter name="shift" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="_normalize" start="3541" end="3579" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Normalize">Removes leading zeros and truncates (if necessary) to maintain the appropriate precision</description>
+      <param type="object">
+        <type full="\phpseclib\Math\BigInteger" namespace="\phpseclib\Math" name="BigInteger"/>
+      </param>
+      <return type="object">
+        <type full="\phpseclib\Math\BigInteger" namespace="\phpseclib\Math" name="BigInteger"/>
+      </return>
+      <see value="self::_trim()"/>
+      <access value="private"/>
+    </docblock>
+    <parameter name="result" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="_trim" start="3590" end="3600" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Trim">Removes leading zeros</description>
+      <param type="array" variable="$value"/>
+      <return type="object">
+        <type full="\phpseclib\Math\BigInteger" namespace="\phpseclib\Math" name="BigInteger"/>
+      </return>
+      <access value="private"/>
+    </docblock>
+    <parameter name="value" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="_array_repeat" start="3610" end="3613" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Array Repeat"/>
+      <param variable="$input" type="object">
+        <type full="phpseclib\Math\Array" namespace="phpseclib\Math" name="Array"/>
+      </param>
+      <param variable="$multiplier" type="mixed"/>
+      <return type="array"/>
+      <access value="private"/>
+    </docblock>
+    <parameter name="input" byreference="false" type="{unknown}"/>
+    <parameter name="multiplier" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="_base256_lshift" start="3625" end="3642" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Logical Left Shift">Shifts binary strings $shift bits, essentially multiplying by 2**$shift.</description>
+      <param variable="$x" type="object">
+        <type full="phpseclib\Math\String" namespace="phpseclib\Math" name="String"/>
+      </param>
+      <param variable="$shift" type="object">
+        <type full="phpseclib\Math\Integer" namespace="phpseclib\Math" name="Integer"/>
+      </param>
+      <return type="string"/>
+      <access value="private"/>
+    </docblock>
+    <parameter name="x" byreference="true" type="{unknown}"/>
+    <parameter name="shift" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="eg. floor($shift/8)" line="3631"/>
+      <comment value="eg. $shift % 8" line="3632"/>
+    </inline>
+  </method>
+  <method name="_base256_rshift" start="3654" end="3683" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Logical Right Shift">Shifts binary strings $shift bits, essentially dividing by 2**$shift and returning the remainder.</description>
+      <param variable="$x" type="object">
+        <type full="phpseclib\Math\String" namespace="phpseclib\Math" name="String"/>
+      </param>
+      <param variable="$shift" type="object">
+        <type full="phpseclib\Math\Integer" namespace="phpseclib\Math" name="Integer"/>
+      </param>
+      <return type="string"/>
+      <access value="private"/>
+    </docblock>
+    <parameter name="x" byreference="true" type="{unknown}"/>
+    <parameter name="shift" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="eg. floor($shift/8)" line="3661"/>
+      <comment value="eg. $shift % 8" line="3662"/>
+    </inline>
+  </method>
+  <method name="_int2bytes" start="3695" end="3698" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Converts 32-bit integers to bytes."/>
+      <param type="int" variable="$x"/>
+      <return type="string"/>
+      <access value="private"/>
+    </docblock>
+    <parameter name="x" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="_bytes2int" start="3707" end="3711" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Converts bytes to 32-bit integers"/>
+      <param type="string" variable="$x"/>
+      <return type="int"/>
+      <access value="private"/>
+    </docblock>
+    <parameter name="x" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="_encodeASN1Length" start="3723" end="3731" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="DER-encode an integer">The ability to DER-encode integers is needed to create RSA public keys for use with OpenSSL</description>
+      <see value="self::modPow()"/>
+      <access value="private"/>
+      <param type="int" variable="$length"/>
+      <return type="string"/>
+    </docblock>
+    <parameter name="length" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="_safe_divide" start="3746" end="3754" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Single digit division">Even if int64 is being used the division operator will return a float64 value
+if the dividend is not evenly divisible by the divisor. Since a float64 doesn't
+have the precision of int64 this is a problem so, when int64 is being used,
+we'll guarantee that the dividend is divisible by first subtracting the remainder.</description>
+      <access value="private"/>
+      <param type="int" variable="$x"/>
+      <param type="int" variable="$y"/>
+      <return type="int"/>
+    </docblock>
+    <parameter name="x" byreference="false" type="{unknown}"/>
+    <parameter name="y" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="self::$base === 31" line="3752"/>
+    </inline>
+  </method>
+</class>

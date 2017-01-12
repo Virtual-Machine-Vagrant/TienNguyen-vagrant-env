@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="DebugBar\Bridge\Twig\TwigCollector" namespace="DebugBar\Bridge\Twig" name="TwigCollector" abstract="false" final="false" start="30" end="87">
+  <file path="/home/web/example/src/freegame_developer/vendor/maximebf/debugbar/src/DebugBar/Bridge/Twig" file="TwigCollector.php" realpath="/home/web/example/src/freegame_developer/vendor/maximebf/debugbar/src/DebugBar/Bridge/Twig/TwigCollector.php" size="2282" time="2016-09-15T14:01:59+00:00" unixtime="1473948119" sha1="96284e7eef9ae8764bca67a6f1ccec6c1f8bdb72" relative="freegame_developer/vendor/maximebf/debugbar/src/DebugBar/Bridge/Twig/TwigCollector.php"/>
+  <docblock>
+    <description compact="Collects data about rendered templates">http://twig.sensiolabs.org/
+
+Your Twig_Environment object needs to be wrapped in a
+TraceableTwigEnvironment object
+
+&lt;code&gt;
+$env = new TraceableTwigEnvironment(new Twig_Environment($loader));
+$debugbar-&gt;addCollector(new TwigCollector($env));
+&lt;/code&gt;</description>
+  </docblock>
+  <extends full="DebugBar\DataCollector\DataCollector" namespace="DebugBar\DataCollector" name="DataCollector"/>
+  <implements full="DebugBar\DataCollector\Renderable" namespace="DebugBar\DataCollector" name="Renderable"/>
+  <implements full="DebugBar\DataCollector\AssetProvider" namespace="DebugBar\DataCollector" name="AssetProvider"/>
+  <constructor name="__construct" start="32" end="35" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="twig" byreference="false" type="object">
+      <type full="DebugBar\Bridge\Twig\TraceableTwigEnvironment" namespace="DebugBar\Bridge\Twig" name="TraceableTwigEnvironment"/>
+    </parameter>
+  </constructor>
+  <method name="collect" start="37" end="57" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="getName" start="59" end="62" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="getWidgets" start="64" end="78" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="getAssets" start="80" end="86" abstract="false" final="false" static="false" visibility="public"/>
+</class>

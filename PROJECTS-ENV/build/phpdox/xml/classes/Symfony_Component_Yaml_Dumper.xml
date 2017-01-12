@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="Symfony\Component\Yaml\Dumper" namespace="Symfony\Component\Yaml" name="Dumper" abstract="false" final="false" start="19" end="114">
+  <file path="/home/web/example/src/freegame_developer/vendor/symfony/yaml" file="Dumper.php" realpath="/home/web/example/src/freegame_developer/vendor/symfony/yaml/Dumper.php" size="3810" time="2016-10-24T18:41:13+00:00" unixtime="1477334473" sha1="d91ef39fb8ae6a31ca163cebffd4833d185ca071" relative="freegame_developer/vendor/symfony/yaml/Dumper.php"/>
+  <docblock>
+    <description compact="Dumper dumps PHP variables to YAML strings."/>
+    <author value="Fabien Potencier &lt;fabien@symfony.com&gt;"/>
+  </docblock>
+  <member name="indentation" visibility="protected" static="false" line="26">
+    <docblock>
+      <description compact="The amount of spaces to use for indentation of nested nodes."/>
+      <var type="int"/>
+    </docblock>
+  </member>
+  <constructor name="__construct" start="31" end="38" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <param type="int" variable="$indentation"/>
+    </docblock>
+    <parameter name="indentation" byreference="false" type="integer" default="4"/>
+  </constructor>
+  <method name="setIndentation" start="45" end="50" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Sets the indentation."/>
+      <param description="The amount of spaces to use for indentation of nested nodes" type="int" variable="$num"/>
+    </docblock>
+    <parameter name="num" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="dump" start="62" end="113" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Dumps a PHP value to YAML."/>
+      <param description="The PHP value" type="mixed" variable="$input"/>
+      <param description="The level where you switch to inline YAML" type="int" variable="$inline"/>
+      <param description="The level of indentation (used internally)" type="int" variable="$indent"/>
+      <param description="A bit field of Yaml::DUMP_* constants to customize the dumped YAML string" type="int" variable="$flags"/>
+      <return description="The YAML representation of the PHP value" type="string"/>
+    </docblock>
+    <parameter name="input" byreference="false" type="{unknown}"/>
+    <parameter name="inline" byreference="false" type="integer" default="0"/>
+    <parameter name="indent" byreference="false" type="integer" default="0"/>
+    <parameter name="flags" byreference="false" type="integer" default="0"/>
+  </method>
+</class>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="Illuminate\Queue\Console\RetryCommand" namespace="Illuminate\Queue\Console" name="RetryCommand" abstract="false" final="false" start="9" end="97">
+  <file path="/home/web/example/src/freegame_developer/vendor/laravel/framework/src/Illuminate/Queue/Console" file="RetryCommand.php" realpath="/home/web/example/src/freegame_developer/vendor/laravel/framework/src/Illuminate/Queue/Console/RetryCommand.php" size="2187" time="2016-02-24T15:13:21+00:00" unixtime="1456326801" sha1="917b1404cb4526e310704669aa940158878bc40a" relative="freegame_developer/vendor/laravel/framework/src/Illuminate/Queue/Console/RetryCommand.php"/>
+  <extends full="Illuminate\Console\Command" namespace="Illuminate\Console" name="Command"/>
+  <member name="name" type="string" default="'queue:retry'" visibility="protected" static="false" line="16">
+    <docblock>
+      <description compact="The console command name."/>
+      <var type="string"/>
+    </docblock>
+  </member>
+  <member name="description" type="string" default="'Retry a failed queue job'" visibility="protected" static="false" line="23">
+    <docblock>
+      <description compact="The console command description."/>
+      <var type="string"/>
+    </docblock>
+  </member>
+  <method name="fire" start="30" end="41" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Execute the console command."/>
+      <return type="object">
+        <type full="Illuminate\Queue\Console\void" namespace="Illuminate\Queue\Console" name="void"/>
+      </return>
+    </docblock>
+  </method>
+  <method name="retryJob" start="49" end="67" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Retry the queue job with the given ID."/>
+      <param type="string" variable="$id"/>
+      <return type="object">
+        <type full="Illuminate\Queue\Console\void" namespace="Illuminate\Queue\Console" name="void"/>
+      </return>
+    </docblock>
+    <parameter name="id" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="resetAttempts" start="75" end="84" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Reset the payload attempts."/>
+      <param type="string" variable="$payload"/>
+      <return type="string"/>
+    </docblock>
+    <parameter name="payload" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="getArguments" start="91" end="96" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Get the console command arguments."/>
+      <return type="array"/>
+    </docblock>
+  </method>
+</class>

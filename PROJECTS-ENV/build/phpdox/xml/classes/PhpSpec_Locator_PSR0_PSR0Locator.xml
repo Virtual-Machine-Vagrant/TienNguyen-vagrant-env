@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="PhpSpec\Locator\PSR0\PSR0Locator" namespace="PhpSpec\Locator\PSR0" name="PSR0Locator" abstract="false" final="false" start="21" end="425">
+  <file path="/home/web/example/src/freegame_developer/vendor/phpspec/phpspec/src/PhpSpec/Locator/PSR0" file="PSR0Locator.php" realpath="/home/web/example/src/freegame_developer/vendor/phpspec/phpspec/src/PhpSpec/Locator/PSR0/PSR0Locator.php" size="11282" time="2016-01-01T10:17:54+00:00" unixtime="1451643474" sha1="e6edec48d7cd9c445bd2ff2c17b91d61e653e520" relative="freegame_developer/vendor/phpspec/phpspec/src/PhpSpec/Locator/PSR0/PSR0Locator.php"/>
+  <implements full="PhpSpec\Locator\ResourceLocatorInterface" namespace="PhpSpec\Locator" name="ResourceLocatorInterface"/>
+  <member name="srcPath" visibility="private" static="false" line="26">
+    <docblock>
+      <description/>
+      <var type="string"/>
+    </docblock>
+  </member>
+  <member name="specPath" visibility="private" static="false" line="30">
+    <docblock>
+      <description/>
+      <var type="string"/>
+    </docblock>
+  </member>
+  <member name="srcNamespace" visibility="private" static="false" line="34">
+    <docblock>
+      <description/>
+      <var type="string"/>
+    </docblock>
+  </member>
+  <member name="specNamespace" visibility="private" static="false" line="38">
+    <docblock>
+      <description/>
+      <var type="string"/>
+    </docblock>
+  </member>
+  <member name="fullSrcPath" visibility="private" static="false" line="42">
+    <docblock>
+      <description/>
+      <var type="string"/>
+    </docblock>
+  </member>
+  <member name="fullSpecPath" visibility="private" static="false" line="46">
+    <docblock>
+      <description/>
+      <var type="string"/>
+    </docblock>
+  </member>
+  <member name="filesystem" visibility="private" static="false" line="50">
+    <docblock>
+      <description/>
+      <var type="object">
+        <type full="PhpSpec\Util\Filesystem" namespace="PhpSpec\Util" name="Filesystem"/>
+      </var>
+    </docblock>
+  </member>
+  <member name="psr4Prefix" visibility="private" static="false" line="55">
+    <docblock>
+      <description/>
+      <var type="string"/>
+    </docblock>
+  </member>
+  <constructor name="__construct" start="65" end="109" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <param type="string" variable="$srcNamespace"/>
+      <param type="string" variable="$specNamespacePrefix"/>
+      <param type="string" variable="$srcPath"/>
+      <param type="string" variable="$specPath"/>
+      <param type="object" variable="$filesystem">
+        <type full="PhpSpec\Util\Filesystem" namespace="PhpSpec\Util" name="Filesystem"/>
+      </param>
+      <param type="string" variable="$psr4Prefix"/>
+    </docblock>
+    <parameter name="srcNamespace" byreference="false" type="string" default="''"/>
+    <parameter name="specNamespacePrefix" byreference="false" type="string" default="'spec'"/>
+    <parameter name="srcPath" byreference="false" type="string" default="'src'"/>
+    <parameter name="specPath" byreference="false" type="string" default="'.'"/>
+    <parameter name="filesystem" byreference="false" type="{unknown}" default="" constant="null">
+      <type full="PhpSpec\Util\Filesystem" namespace="PhpSpec\Util" name="Filesystem"/>
+    </parameter>
+    <parameter name="psr4Prefix" byreference="false" type="{unknown}" default="" constant="null"/>
+  </constructor>
+  <method name="getFullSrcPath" start="114" end="117" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <return type="string"/>
+    </docblock>
+  </method>
+  <method name="getFullSpecPath" start="122" end="125" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <return type="string"/>
+    </docblock>
+  </method>
+  <method name="getSrcNamespace" start="130" end="133" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <return type="string"/>
+    </docblock>
+  </method>
+  <method name="getSpecNamespace" start="138" end="141" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <return type="string"/>
+    </docblock>
+  </method>
+  <method name="getAllResources" start="146" end="149" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <return type="array" of="object">
+        <type full="PhpSpec\Locator\PSR0\ResourceInterface" namespace="PhpSpec\Locator\PSR0" name="ResourceInterface"/>
+      </return>
+    </docblock>
+  </method>
+  <method name="supportsQuery" start="156" end="167" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <param type="string" variable="$query"/>
+      <return type="object">
+        <type full="PhpSpec\Locator\PSR0\bool" namespace="PhpSpec\Locator\PSR0" name="bool"/>
+      </return>
+    </docblock>
+    <parameter name="query" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="isPSR4" start="172" end="175" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <return type="boolean"/>
+    </docblock>
+  </method>
+  <method name="findResources" start="182" end="209" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <param type="string" variable="$query"/>
+      <return type="array" of="object">
+        <type full="PhpSpec\Locator\PSR0\ResourceInterface" namespace="PhpSpec\Locator\PSR0" name="ResourceInterface"/>
+      </return>
+    </docblock>
+    <parameter name="query" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="supportsClass" start="216" end="224" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <param type="string" variable="$classname"/>
+      <return type="object">
+        <type full="PhpSpec\Locator\PSR0\bool" namespace="PhpSpec\Locator\PSR0" name="bool"/>
+      </return>
+    </docblock>
+    <parameter name="classname" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="createResource" start="231" end="250" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <param type="string" variable="$classname"/>
+      <return type="object">
+        <type full="PhpSpec\Locator\PSR0\null|PSR0Resource" namespace="PhpSpec\Locator\PSR0" name="null|PSR0Resource"/>
+      </return>
+    </docblock>
+    <parameter name="classname" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="getPriority" start="255" end="258" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <return type="int"/>
+    </docblock>
+  </method>
+  <method name="findSpecResources" start="265" end="281" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description/>
+      <param type="string" variable="$path"/>
+      <return type="array" of="object">
+        <type full="PhpSpec\Locator\PSR0\PSR0Resource" namespace="PhpSpec\Locator\PSR0" name="PSR0Resource"/>
+      </return>
+    </docblock>
+    <parameter name="path" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="findSpecClassname" start="288" end="318" abstract="false" final="false" static="false" visibility="private">
+    <docblock>
+      <description/>
+      <param variable="$path"/>
+      <return type="object">
+        <type full="PhpSpec\Locator\PSR0\null|string" namespace="PhpSpec\Locator\PSR0" name="null|string"/>
+      </return>
+    </docblock>
+    <parameter name="path" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="Find namespace and class name" line="290"/>
+      <comment value="No class found" line="316"/>
+    </inline>
+  </method>
+  <method name="createResourceFromSpecFile" start="325" end="351" abstract="false" final="false" static="false" visibility="private">
+    <docblock>
+      <description/>
+      <param type="string" variable="$path"/>
+      <return type="object">
+        <type full="PhpSpec\Locator\PSR0\PSR0Resource" namespace="PhpSpec\Locator\PSR0" name="PSR0Resource"/>
+      </return>
+    </docblock>
+    <parameter name="path" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="Remove spec namespace from the begining of the classname." line="333"/>
+      <comment value="cut &quot;Spec&quot; from the end" line="346"/>
+      <comment value="Create the resource" line="349"/>
+    </inline>
+  </method>
+  <method name="validatePsr0Classname" start="358" end="369" abstract="false" final="false" static="false" visibility="private">
+    <docblock>
+      <description/>
+      <param type="string" variable="$classname"/>
+      <throws type="object">
+        <type full="InvalidArgumentException" namespace="" name="InvalidArgumentException"/>
+      </throws>
+    </docblock>
+    <parameter name="classname" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="getQueryPath" start="376" end="394" abstract="false" final="false" static="false" visibility="private">
+    <docblock>
+      <description/>
+      <param type="string" variable="$query"/>
+      <return type="string"/>
+    </docblock>
+    <parameter name="query" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="queryContainsQualifiedClassName" start="401" end="404" abstract="false" final="false" static="false" visibility="private">
+    <docblock>
+      <description/>
+      <param type="string" variable="$query"/>
+      <return type="object">
+        <type full="PhpSpec\Locator\PSR0\bool" namespace="PhpSpec\Locator\PSR0" name="bool"/>
+      </return>
+    </docblock>
+    <parameter name="query" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="queryContainsBlackslashes" start="411" end="414" abstract="false" final="false" static="false" visibility="private">
+    <docblock>
+      <description/>
+      <param type="string" variable="$query"/>
+      <return type="object">
+        <type full="PhpSpec\Locator\PSR0\bool" namespace="PhpSpec\Locator\PSR0" name="bool"/>
+      </return>
+    </docblock>
+    <parameter name="query" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="isWindowsPath" start="421" end="424" abstract="false" final="false" static="false" visibility="private">
+    <docblock>
+      <description/>
+      <param type="string" variable="$query"/>
+      <return type="object">
+        <type full="PhpSpec\Locator\PSR0\bool" namespace="PhpSpec\Locator\PSR0" name="bool"/>
+      </return>
+    </docblock>
+    <parameter name="query" byreference="false" type="{unknown}"/>
+  </method>
+</class>

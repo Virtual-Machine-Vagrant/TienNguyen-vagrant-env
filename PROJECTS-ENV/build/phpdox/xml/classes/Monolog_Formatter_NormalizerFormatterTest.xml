@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="Monolog\Formatter\NormalizerFormatterTest" namespace="Monolog\Formatter" name="NormalizerFormatterTest" abstract="false" final="false" start="17" end="365">
+  <file path="/home/web/example/src/freegame_developer/vendor/monolog/monolog/tests/Monolog/Formatter" file="NormalizerFormatterTest.php" realpath="/home/web/example/src/freegame_developer/vendor/monolog/monolog/tests/Monolog/Formatter/NormalizerFormatterTest.php" size="13350" time="2016-07-29T03:23:52+00:00" unixtime="1469762632" sha1="da93c029b4c601638e245560ce24122eac884584" relative="freegame_developer/vendor/monolog/monolog/tests/Monolog/Formatter/NormalizerFormatterTest.php"/>
+  <docblock>
+    <description/>
+    <covers value="Monolog\Formatter\NormalizerFormatter"/>
+  </docblock>
+  <extends full="PHPUnit_Framework_TestCase" namespace="" name="PHPUnit_Framework_TestCase"/>
+  <method name="tearDown" start="19" end="24" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testFormat" start="26" end="63" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testFormatExceptions" start="65" end="86" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testFormatSoapFaultException" start="88" end="113" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testFormatToStringExceptionHandle" start="115" end="122" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testBatchFormat" start="124" end="163" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testIgnoresRecursiveObjectReferences" start="168" end="194" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Test issue #137"/>
+    </docblock>
+    <inline>
+      <comment value="set up the recursion" line="170"/>
+      <comment value="set an error handler to assert that the error is not raised anymore" line="177"/>
+    </inline>
+  </method>
+  <method name="testIgnoresInvalidTypes" start="196" end="218" abstract="false" final="false" static="false" visibility="public">
+    <inline>
+      <comment value="set up the recursion" line="198"/>
+      <comment value="set an error handler to assert that the error is not raised anymore" line="201"/>
+    </inline>
+  </method>
+  <method name="testThrowsOnInvalidEncoding" start="223" end="240" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <expectedexception value="RuntimeException"/>
+    </docblock>
+    <inline>
+      <comment value="send an invalid unicode sequence as a object that can't be cleaned" line="233"/>
+    </inline>
+  </method>
+  <method name="testConvertsInvalidEncodingAsLatin9" start="242" end="261" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testDetectAndCleanUtf8" start="269" end="274" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <param description="Input" type="mixed" variable="$in"/>
+      <param description="Expected output" type="mixed" variable="$expect"/>
+      <covers value="Monolog\Formatter\NormalizerFormatter::detectAndCleanUtf8"/>
+      <dataprovider value="providesDetectAndCleanUtf8"/>
+    </docblock>
+    <parameter name="in" byreference="false" type="{unknown}"/>
+    <parameter name="expect" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="providesDetectAndCleanUtf8" start="276" end="293" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testHandleJsonErrorFailure" start="300" end="308" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <param type="int" variable="$code"/>
+      <param type="string" variable="$msg"/>
+      <dataprovider value="providesHandleJsonErrorFailure"/>
+    </docblock>
+    <parameter name="code" byreference="false" type="{unknown}"/>
+    <parameter name="msg" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="providesHandleJsonErrorFailure" start="310" end="318" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testExceptionTraceWithArgs" start="320" end="364" abstract="false" final="false" static="false" visibility="public">
+    <inline>
+      <comment value="This happens i.e. in React promises or Guzzle streams where stream wrappers are registered" line="326"/>
+      <comment value="and no file or line are included in the trace because it's treated as internal function" line="327"/>
+      <comment value="Tests that the wrapped resource is ignored while encoding, only works for PHP &lt;= 5.4" line="359"/>
+    </inline>
+  </method>
+</class>

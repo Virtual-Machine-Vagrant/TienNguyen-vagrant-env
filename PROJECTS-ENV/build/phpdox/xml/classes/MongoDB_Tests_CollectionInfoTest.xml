@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="MongoDB\Tests\CollectionInfoTest" namespace="MongoDB\Tests" name="CollectionInfoTest" abstract="false" final="false" start="8" end="53">
+  <file path="/home/web/example/src/freegame_developer/vendor/mongodb/mongodb/tests/Model" file="CollectionInfoTest.php" realpath="/home/web/example/src/freegame_developer/vendor/mongodb/mongodb/tests/Model/CollectionInfoTest.php" size="1755" time="2016-09-23T19:38:29+00:00" unixtime="1474659509" sha1="d7b3b05bc911abb336b4f9fba3b2a51281e342ea" relative="freegame_developer/vendor/mongodb/mongodb/tests/Model/CollectionInfoTest.php"/>
+  <extends full="MongoDB\Tests\TestCase" namespace="MongoDB\Tests" name="TestCase"/>
+  <method name="testGetName" start="10" end="14" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testGetOptions" start="16" end="23" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testCappedCollectionMethods" start="25" end="41" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testDebugInfo" start="43" end="52" abstract="false" final="false" static="false" visibility="public"/>
+</class>

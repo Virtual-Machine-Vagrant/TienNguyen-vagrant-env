@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="Illuminate\View\Engines\Engine" namespace="Illuminate\View\Engines" name="Engine" abstract="true" final="false" start="5" end="23">
+  <file path="/home/web/example/src/freegame_developer/vendor/laravel/framework/src/Illuminate/View/Engines" file="Engine.php" realpath="/home/web/example/src/freegame_developer/vendor/laravel/framework/src/Illuminate/View/Engines/Engine.php" size="362" time="2016-02-24T15:13:21+00:00" unixtime="1456326801" sha1="43bd9ee7c22ec03afaf85ef6ce9542f17d6642df" relative="freegame_developer/vendor/laravel/framework/src/Illuminate/View/Engines/Engine.php"/>
+  <member name="lastRendered" visibility="protected" static="false" line="12">
+    <docblock>
+      <description compact="The view that was last to be rendered."/>
+      <var type="string"/>
+    </docblock>
+  </member>
+  <method name="getLastRendered" start="19" end="22" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Get the last view that was rendered."/>
+      <return type="string"/>
+    </docblock>
+  </method>
+</class>

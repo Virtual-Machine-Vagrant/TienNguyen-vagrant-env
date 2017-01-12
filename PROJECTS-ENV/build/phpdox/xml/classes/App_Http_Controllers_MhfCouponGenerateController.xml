@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="App\Http\Controllers\MhfCouponGenerateController" namespace="App\Http\Controllers" name="MhfCouponGenerateController" abstract="false" final="false" start="9" end="63">
+  <file path="/home/web/example/src/freegame_developer/tests" file="temp.php" realpath="/home/web/example/src/freegame_developer/tests/temp.php" size="1753" time="2016-12-29T02:38:50+00:00" unixtime="1482979130" sha1="839092914e95dfdeaeb9236819042bbd323fb11a" relative="freegame_developer/tests/temp.php"/>
+  <extends full="App\Http\Controllers\Controller" namespace="App\Http\Controllers" name="Controller"/>
+  <member name="mhfCouponGenerateService" visibility="protected" static="false" line="12"/>
+  <constructor name="__construct" start="14" end="41" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="mhfCouponGenerateService" byreference="false" type="object">
+      <type full="App\Services\MhfCouponGenerateService" namespace="App\Services" name="MhfCouponGenerateService"/>
+    </parameter>
+    <parameter name="request" byreference="false" type="object">
+      <type full="Illuminate\Http\Request" namespace="Illuminate\Http" name="Request"/>
+    </parameter>
+  </constructor>
+  <method name="create" start="47" end="51" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Create page"/>
+      <return type="object">
+        <type full="App\Http\Controllers\Response" namespace="App\Http\Controllers" name="Response"/>
+      </return>
+    </docblock>
+    <parameter name="request" byreference="false" type="object">
+      <type full="Illuminate\Http\Request" namespace="Illuminate\Http" name="Request"/>
+    </parameter>
+  </method>
+  <method name="store" start="58" end="62" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Store site maintenance"/>
+      <param type="object" variable="$request">
+        <type full="App\Http\Requests\MhfCouponGenerateRequest" namespace="App\Http\Requests" name="MhfCouponGenerateRequest"/>
+      </param>
+      <return type="object">
+        <type full="App\Http\Controllers\Response" namespace="App\Http\Controllers" name="Response"/>
+      </return>
+    </docblock>
+    <parameter name="request" byreference="false" type="object">
+      <type full="App\Http\Requests\MhfCouponGenerateRequest" namespace="App\Http\Requests" name="MhfCouponGenerateRequest"/>
+    </parameter>
+  </method>
+</class>

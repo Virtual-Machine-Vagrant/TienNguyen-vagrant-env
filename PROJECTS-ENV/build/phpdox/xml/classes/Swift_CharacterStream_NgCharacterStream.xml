@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="Swift_CharacterStream_NgCharacterStream" namespace="" name="Swift_CharacterStream_NgCharacterStream" abstract="false" final="false" start="16" end="267">
+  <file path="/home/web/example/src/freegame_developer/vendor/swiftmailer/swiftmailer/lib/classes/Swift/CharacterStream" file="NgCharacterStream.php" realpath="/home/web/example/src/freegame_developer/vendor/swiftmailer/swiftmailer/lib/classes/Swift/CharacterStream/NgCharacterStream.php" size="6835" time="2016-07-08T11:51:25+00:00" unixtime="1467978685" sha1="85641f8fed8b3260f5636e70812b7cf8a244a48f" relative="freegame_developer/vendor/swiftmailer/swiftmailer/lib/classes/Swift/CharacterStream/NgCharacterStream.php"/>
+  <docblock>
+    <description compact="A CharacterStream implementation which stores characters in an internal array."/>
+    <author value="Xavier De Cock &lt;xdecock@gmail.com&gt;"/>
+  </docblock>
+  <implements full="Swift_CharacterStream" namespace="" name="Swift_CharacterStream"/>
+  <member name="_charReader" visibility="private" static="false" line="23">
+    <docblock>
+      <description compact="The char reader (lazy-loaded) for the current charset."/>
+      <var type="object">
+        <type full="Swift_CharacterReader" namespace="" name="Swift_CharacterReader"/>
+      </var>
+    </docblock>
+  </member>
+  <member name="_charReaderFactory" visibility="private" static="false" line="30">
+    <docblock>
+      <description compact="A factory for creating CharacterReader instances."/>
+      <var type="object">
+        <type full="Swift_CharacterReaderFactory" namespace="" name="Swift_CharacterReaderFactory"/>
+      </var>
+    </docblock>
+  </member>
+  <member name="_charset" visibility="private" static="false" line="37">
+    <docblock>
+      <description compact="The character set this stream is using."/>
+      <var type="string"/>
+    </docblock>
+  </member>
+  <member name="_datas" type="string" default="''" visibility="private" static="false" line="44">
+    <docblock>
+      <description compact="The data's stored as-is."/>
+      <var type="string"/>
+    </docblock>
+  </member>
+  <member name="_datasSize" type="integer" default="0" visibility="private" static="false" line="51">
+    <docblock>
+      <description compact="Number of bytes in the stream."/>
+      <var type="int"/>
+    </docblock>
+  </member>
+  <member name="_map" visibility="private" static="false" line="58">
+    <docblock>
+      <description compact="Map."/>
+      <var type="mixed"/>
+    </docblock>
+  </member>
+  <member name="_mapType" type="integer" default="0" visibility="private" static="false" line="65">
+    <docblock>
+      <description compact="Map Type."/>
+      <var type="int"/>
+    </docblock>
+  </member>
+  <member name="_charCount" type="integer" default="0" visibility="private" static="false" line="72">
+    <docblock>
+      <description compact="Number of characters in the stream."/>
+      <var type="int"/>
+    </docblock>
+  </member>
+  <member name="_currentPos" type="integer" default="0" visibility="private" static="false" line="79">
+    <docblock>
+      <description compact="Position in the stream."/>
+      <var type="int"/>
+    </docblock>
+  </member>
+  <constructor name="__construct" start="87" end="91" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Constructor."/>
+      <param type="object" variable="$factory">
+        <type full="Swift_CharacterReaderFactory" namespace="" name="Swift_CharacterReaderFactory"/>
+      </param>
+      <param type="string" variable="$charset"/>
+    </docblock>
+    <parameter name="factory" byreference="false" type="object">
+      <type full="Swift_CharacterReaderFactory" namespace="" name="Swift_CharacterReaderFactory"/>
+    </parameter>
+    <parameter name="charset" byreference="false" type="{unknown}"/>
+  </constructor>
+  <method name="setCharacterSet" start="100" end="105" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Set the character set used in this CharacterStream."/>
+      <param type="string" variable="$charset"/>
+    </docblock>
+    <parameter name="charset" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="setCharacterReaderFactory" start="112" end="115" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Set the CharacterReaderFactory for multi charset support."/>
+      <param type="object" variable="$factory">
+        <type full="Swift_CharacterReaderFactory" namespace="" name="Swift_CharacterReaderFactory"/>
+      </param>
+    </docblock>
+    <parameter name="factory" byreference="false" type="object">
+      <type full="Swift_CharacterReaderFactory" namespace="" name="Swift_CharacterReaderFactory"/>
+    </parameter>
+  </method>
+  <method name="flushContents" start="120" end="127" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <see value="Swift_CharacterStream::flushContents()"/>
+    </docblock>
+  </method>
+  <method name="importByteStream" start="134" end="142" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <see value="Swift_CharacterStream::importByteStream()"/>
+      <param type="object" variable="$os">
+        <type full="Swift_OutputByteStream" namespace="" name="Swift_OutputByteStream"/>
+      </param>
+    </docblock>
+    <parameter name="os" byreference="false" type="object">
+      <type full="Swift_OutputByteStream" namespace="" name="Swift_OutputByteStream"/>
+    </parameter>
+  </method>
+  <method name="importString" start="149" end="153" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <see value="Swift_CharacterStream::importString()"/>
+      <param type="string" variable="$string"/>
+    </docblock>
+    <parameter name="string" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="read" start="162" end="211" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <see value="Swift_CharacterStream::read()"/>
+      <param type="int" variable="$length"/>
+      <return type="string"/>
+    </docblock>
+    <parameter name="length" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="readBytes" start="220" end="230" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <see value="Swift_CharacterStream::readBytes()"/>
+      <param type="int" variable="$length"/>
+      <return type="array" of="int"/>
+    </docblock>
+    <parameter name="length" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="setPointer" start="237" end="243" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <see value="Swift_CharacterStream::setPointer()"/>
+      <param type="int" variable="$charOffset"/>
+    </docblock>
+    <parameter name="charOffset" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="write" start="250" end="266" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <see value="Swift_CharacterStream::write()"/>
+      <param type="string" variable="$chars"/>
+    </docblock>
+    <parameter name="chars" byreference="false" type="{unknown}"/>
+  </method>
+</class>

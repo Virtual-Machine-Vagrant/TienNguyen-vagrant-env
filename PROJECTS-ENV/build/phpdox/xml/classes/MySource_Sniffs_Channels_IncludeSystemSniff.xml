@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="MySource_Sniffs_Channels_IncludeSystemSniff" namespace="" name="MySource_Sniffs_Channels_IncludeSystemSniff" abstract="false" final="false" start="31" end="335">
+  <file path="/home/web/example/src/freegame_developer/vendor/squizlabs/php_codesniffer/CodeSniffer/Standards/MySource/Sniffs/Channels" file="IncludeSystemSniff.php" realpath="/home/web/example/src/freegame_developer/vendor/squizlabs/php_codesniffer/CodeSniffer/Standards/MySource/Sniffs/Channels/IncludeSystemSniff.php" size="14212" time="2016-01-19T23:39:10+00:00" unixtime="1453246750" sha1="70fc8e30c27feeb5e0d315c4964e12a0e78bac13" relative="freegame_developer/vendor/squizlabs/php_codesniffer/CodeSniffer/Standards/MySource/Sniffs/Channels/IncludeSystemSniff.php"/>
+  <docblock>
+    <description compact="Ensures that systems, asset types and libs are included before they are used."/>
+    <category value="PHP"/>
+    <package value="PHP_CodeSniffer_MySource"/>
+    <author value="Greg Sherwood &lt;gsherwood@squiz.net&gt;"/>
+    <copyright value="2006-2014 Squiz Pty Ltd (ABN 77 084 670 600)"/>
+    <license name="https://github.com/squizlabs/PHP_CodeSniffer/blob/master/licence.txt BSD Licence"/>
+    <version value="Release: @package_version@"/>
+    <link value="http://pear.php.net/package/PHP_CodeSniffer"/>
+  </docblock>
+  <extends full="PHP_CodeSniffer_Standards_AbstractScopeSniff" namespace="" name="PHP_CodeSniffer_Standards_AbstractScopeSniff"/>
+  <member name="_ignore" type="array" default="" visibility="private" static="false" line="39">
+    <docblock>
+      <description compact="A list of classes that don't need to be included."/>
+      <var type="object">
+        <type full="array(string)" namespace="" name="array(string)"/>
+      </var>
+    </docblock>
+  </member>
+  <constructor name="__construct" start="62" end="66" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Constructs a Squiz_Sniffs_Scope_MethodScopeSniff."/>
+    </docblock>
+  </constructor>
+  <method name="processTokenWithinScope" start="78" end="210" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Processes the function tokens within the class."/>
+      <param description="The file where this token was found." type="object" variable="$phpcsFile">
+        <type full="PHP_CodeSniffer_File" namespace="" name="PHP_CodeSniffer_File"/>
+      </param>
+      <param description="The position where the token was found." type="integer" variable="$stackPtr"/>
+      <param description="The current scope opener token." type="integer" variable="$currScope"/>
+      <return type="object">
+        <type full="void" namespace="" name="void"/>
+      </return>
+    </docblock>
+    <parameter name="phpcsFile" byreference="false" type="object">
+      <type full="PHP_CodeSniffer_File" namespace="" name="PHP_CodeSniffer_File"/>
+    </parameter>
+    <parameter name="stackPtr" byreference="false" type="{unknown}"/>
+    <parameter name="currScope" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="Determine the name of the class that the static function" line="85"/>
+      <comment value="is being called on." line="86"/>
+      <comment value="Don't process class names represented by variables as this can be" line="94"/>
+      <comment value="an inexact science." line="95"/>
+      <comment value="Go searching for includeSystem and includeAsset calls within this" line="126"/>
+      <comment value="function, or the inclusion of .inc files, which" line="127"/>
+      <comment value="would be library files." line="128"/>
+      <comment value="Now go searching for includeSystem, includeAsset or require/include" line="141"/>
+      <comment value="calls outside our scope. If we are in a class, look outside the" line="142"/>
+      <comment value="class. If we are not, look outside the function." line="143"/>
+      <comment value="If we are in a testing class, we might have also included" line="166"/>
+      <comment value="some systems and classes in our setUp() method." line="167"/>
+      <comment value="end if" line="191"/>
+      <comment value="end if" line="202"/>
+    </inline>
+  </method>
+  <method name="processTokenOutsideScope" start="222" end="296" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Processes a token within the scope that this test is listening to."/>
+      <param description="The file where the token was found." type="object" variable="$phpcsFile">
+        <type full="PHP_CodeSniffer_File" namespace="" name="PHP_CodeSniffer_File"/>
+      </param>
+      <param description="The position in the stack where" type="int" variable="$stackPtr">this token was found.</param>
+      <return type="object">
+        <type full="void" namespace="" name="void"/>
+      </return>
+    </docblock>
+    <parameter name="phpcsFile" byreference="false" type="object">
+      <type full="PHP_CodeSniffer_File" namespace="" name="PHP_CodeSniffer_File"/>
+    </parameter>
+    <parameter name="stackPtr" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="Some systems are always available." line="242"/>
+      <comment value="Go searching for includeSystem, includeAsset or require/include" line="258"/>
+      <comment value="calls outside our scope." line="259"/>
+      <comment value="end for" line="282"/>
+    </inline>
+  </method>
+  <method name="getIncludedClassFromToken" start="309" end="332" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Determines the included class name from given token."/>
+      <param description="The file where this token was found." type="object" variable="$phpcsFile">
+        <type full="PHP_CodeSniffer_File" namespace="" name="PHP_CodeSniffer_File"/>
+      </param>
+      <param description="The array of file tokens." type="array" variable="$tokens"/>
+      <param description="The position in the tokens array of the" type="int" variable="$stackPtr">potentially included class.</param>
+      <return type="string"/>
+    </docblock>
+    <parameter name="phpcsFile" byreference="false" type="object">
+      <type full="PHP_CodeSniffer_File" namespace="" name="PHP_CodeSniffer_File"/>
+    </parameter>
+    <parameter name="tokens" byreference="false" type="array"/>
+    <parameter name="stackPtr" byreference="false" type="{unknown}"/>
+  </method>
+</class>

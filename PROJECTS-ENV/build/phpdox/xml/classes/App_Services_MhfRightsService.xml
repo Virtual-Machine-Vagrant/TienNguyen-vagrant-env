@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="App\Services\MhfRightsService" namespace="App\Services" name="MhfRightsService" abstract="false" final="false" start="11" end="223">
+  <file path="/home/web/example/src/freegame_developer/app/Services" file="MhfRightsService.php" realpath="/home/web/example/src/freegame_developer/app/Services/MhfRightsService.php" size="7256" time="2017-01-03T08:24:56+00:00" unixtime="1483431896" sha1="1c5a7dd193bd092b2c80c6409464f7f6762c6847" relative="freegame_developer/app/Services/MhfRightsService.php"/>
+  <extends full="App\Services\CustomService" namespace="App\Services" name="CustomService"/>
+  <member name="mhfRights" visibility="protected" static="false" line="13"/>
+  <member name="mhfRightsGroup" visibility="protected" static="false" line="14"/>
+  <member name="sbxMhfRights" visibility="protected" static="false" line="15"/>
+  <constructor name="__construct" start="17" end="25" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="mhfRights" byreference="false" type="object">
+      <type full="App\Models\NetgameCsTool\MhfRights" namespace="App\Models\NetgameCsTool" name="MhfRights"/>
+    </parameter>
+    <parameter name="mhfRightsGroup" byreference="false" type="object">
+      <type full="App\Models\NetgameCsTool\MhfRightsGroup" namespace="App\Models\NetgameCsTool" name="MhfRightsGroup"/>
+    </parameter>
+    <parameter name="sbxMhfRights" byreference="false" type="object">
+      <type full="App\Models\NetgameCsTool\SbxMhfRights" namespace="App\Models\NetgameCsTool" name="SbxMhfRights"/>
+    </parameter>
+  </constructor>
+  <method name="getLists" start="33" end="40" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Get mhfright list"/>
+      <param type="array" variable="$condition"/>
+      <param type="array" variable="$game"/>
+      <return type="array"/>
+    </docblock>
+    <parameter name="condition" byreference="false" type="{unknown}"/>
+    <parameter name="game" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="getFormData" start="46" end="57" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Get values init for multi page"/>
+      <return type="array"/>
+    </docblock>
+  </method>
+  <method name="formatConditions" start="63" end="89" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="format condition"/>
+      <param type="array" variable="$condition"/>
+      <return type="array"/>
+    </docblock>
+    <parameter name="condition" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="revertSearchConditions" start="95" end="111" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="revert search condition"/>
+      <param type="array" variable="$conditions"/>
+      <return type="array"/>
+    </docblock>
+    <parameter name="conditions" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="getRightGroup" start="116" end="124" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="get right group"/>
+      <return type="array"/>
+    </docblock>
+  </method>
+  <method name="getRightGroupById" start="130" end="133" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="get right group title by id"/>
+      <param type="integer" variable="$groupId"/>
+      <return type="array"/>
+    </docblock>
+    <parameter name="groupId" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="storeMhfRight" start="139" end="154" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="store right"/>
+      <param type="array" variable="$params"/>
+      <return type="boolean"/>
+    </docblock>
+    <parameter name="params" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="updateMhfRight" start="160" end="175" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="update mhfright"/>
+      <param type="array" variable="$params"/>
+      <return type="boolean"/>
+    </docblock>
+    <parameter name="params" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="formatValue" start="181" end="195" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="format value before insert"/>
+      <param type="array" variable="$params"/>
+      <return type="array"/>
+    </docblock>
+    <parameter name="params" byreference="false" type="{unknown}"/>
+    <parameter name="sanbox" byreference="false" type="{unknown}" default="" constant="null"/>
+  </method>
+  <method name="getRightEdit" start="202" end="205" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="edit Right"/>
+      <param type="integer" variable="$id"/>
+      <return type="array"/>
+    </docblock>
+    <parameter name="id" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="getEditDisplayEndDate" start="212" end="222" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="get edit display end date"/>
+      <param type="array"/>
+      <return type="array"/>
+    </docblock>
+    <parameter name="params" byreference="false" type="{unknown}"/>
+  </method>
+</class>

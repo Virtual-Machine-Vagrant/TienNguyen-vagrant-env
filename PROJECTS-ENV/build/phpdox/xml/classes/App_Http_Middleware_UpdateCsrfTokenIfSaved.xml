@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="App\Http\Middleware\UpdateCsrfTokenIfSaved" namespace="App\Http\Middleware" name="UpdateCsrfTokenIfSaved" abstract="false" final="false" start="7" end="33">
+  <file path="/home/web/example/src/freegame_developer/app/Http/Middleware" file="UpdateCsrfTokenIfSaved.php" realpath="/home/web/example/src/freegame_developer/app/Http/Middleware/UpdateCsrfTokenIfSaved.php" size="821" time="2016-10-31T07:00:31+00:00" unixtime="1477897231" sha1="d07c8d01b31406dacd72e5950c7d91117f9276dc" relative="freegame_developer/app/Http/Middleware/UpdateCsrfTokenIfSaved.php"/>
+  <method name="handle" start="16" end="32" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Handle an incoming request."/>
+      <param type="object" variable="$request">
+        <type full="\Illuminate\Http\Request" namespace="\Illuminate\Http" name="Request"/>
+      </param>
+      <param type="object" variable="$next">
+        <type full="\Closure" namespace="" name="Closure"/>
+      </param>
+      <return type="mixed"/>
+    </docblock>
+    <parameter name="request" byreference="false" type="{unknown}"/>
+    <parameter name="next" byreference="false" type="object">
+      <type full="Closure" namespace="" name="Closure"/>
+    </parameter>
+  </method>
+</class>

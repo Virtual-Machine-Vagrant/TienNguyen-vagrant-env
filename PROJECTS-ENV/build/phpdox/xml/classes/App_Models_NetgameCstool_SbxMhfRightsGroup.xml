@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="App\Models\NetgameCstool\SbxMhfRightsGroup" namespace="App\Models\NetgameCstool" name="SbxMhfRightsGroup" abstract="false" final="false" start="8" end="54">
+  <file path="/home/web/example/src/freegame_developer/app/Models/NetgameCstool" file="SbxMhfRightsGroup.php" realpath="/home/web/example/src/freegame_developer/app/Models/NetgameCstool/SbxMhfRightsGroup.php" size="1127" time="2017-01-03T08:12:08+00:00" unixtime="1483431128" sha1="0fbf54f5f6d8930280addd0b4a2c9af96422238b" relative="freegame_developer/app/Models/NetgameCstool/SbxMhfRightsGroup.php"/>
+  <extends full="App\Models\NetgameCstool\NetgameCstool" namespace="App\Models\NetgameCstool" name="NetgameCstool"/>
+  <member name="table" type="string" default="'sbx_mhf_rights_group'" visibility="protected" static="false" line="10"/>
+  <member name="timestamps" type="boolean" default="false" visibility="public" static="false" line="12"/>
+  <member name="guarded" type="array" default="" visibility="protected" static="false" line="14"/>
+  <method name="add" start="21" end="34" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Insert SbxMhfRightsGroup"/>
+      <param type="array" variable="$params"/>
+      <return type="boolean"/>
+    </docblock>
+    <parameter name="params" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="edit" start="42" end="53" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Update SbxMhfRightsGroup by id"/>
+      <param type="array" variable="$params"/>
+      <param type="array" variable="$conditions"/>
+      <return type="boolean"/>
+    </docblock>
+    <parameter name="params" byreference="false" type="{unknown}"/>
+    <parameter name="conditions" byreference="false" type="{unknown}"/>
+  </method>
+</class>

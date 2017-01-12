@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="PhpParser\Node\Stmt\Use_" namespace="PhpParser\Node\Stmt" name="Use_" abstract="false" final="false" start="7" end="43">
+  <file path="/home/web/example/src/freegame_developer/vendor/nikic/php-parser/lib/PhpParser/Node/Stmt" file="Use_.php" realpath="/home/web/example/src/freegame_developer/vendor/nikic/php-parser/lib/PhpParser/Node/Stmt/Use_.php" size="1263" time="2016-09-16T12:04:44+00:00" unixtime="1474027484" sha1="0f2c5d50d41721efcd25815e9e245df8956fff1b" relative="freegame_developer/vendor/nikic/php-parser/lib/PhpParser/Node/Stmt/Use_.php"/>
+  <extends full="PhpParser\Node\Stmt" namespace="PhpParser\Node" name="Stmt"/>
+  <constant type="integer" name="TYPE_UNKNOWN" value="0">
+    <docblock>
+      <description compact="Unknown type. Both Stmt\Use_ / Stmt\GroupUse and Stmt\UseUse have a $type property, one of them will always be TYPE_UNKNOWN while the other has one of the three other possible types. For normal use statements the type on the Stmt\UseUse is unknown. It's only the other way around for mixed group use declarations."/>
+    </docblock>
+  </constant>
+  <constant type="integer" name="TYPE_NORMAL" value="1">
+    <docblock>
+      <description compact="Class or namespace import"/>
+    </docblock>
+  </constant>
+  <constant type="integer" name="TYPE_FUNCTION" value="2">
+    <docblock>
+      <description compact="Function import"/>
+    </docblock>
+  </constant>
+  <constant type="integer" name="TYPE_CONSTANT" value="3">
+    <docblock>
+      <description compact="Constant import"/>
+    </docblock>
+  </constant>
+  <member name="type" visibility="public" static="false" line="23">
+    <docblock>
+      <var description="Type of alias" type="int"/>
+    </docblock>
+  </member>
+  <member name="uses" visibility="public" static="false" line="25">
+    <docblock>
+      <var description="Aliases" type="array" of="object">
+        <type full="PhpParser\Node\Stmt\UseUse" namespace="PhpParser\Node\Stmt" name="UseUse"/>
+      </var>
+    </docblock>
+  </member>
+  <constructor name="__construct" start="34" end="38" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Constructs an alias (use) list node."/>
+      <param description="Aliases" type="array" variable="$uses" of="object">
+        <type full="PhpParser\Node\Stmt\UseUse" namespace="PhpParser\Node\Stmt" name="UseUse"/>
+      </param>
+      <param description="Type of alias" type="int" variable="$type"/>
+      <param description="Additional attributes" type="array" variable="$attributes"/>
+    </docblock>
+    <parameter name="uses" byreference="false" type="array"/>
+    <parameter name="type" byreference="false" type="{unknown}" default="" constant="self::TYPE_NORMAL"/>
+    <parameter name="attributes" byreference="false" type="array" default=""/>
+  </constructor>
+  <method name="getSubNodeNames" start="40" end="42" abstract="false" final="false" static="false" visibility="public"/>
+</class>

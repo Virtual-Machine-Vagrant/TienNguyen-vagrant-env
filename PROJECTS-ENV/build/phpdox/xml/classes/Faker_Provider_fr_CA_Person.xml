@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="Faker\Provider\fr_CA\Person" namespace="Faker\Provider\fr_CA" name="Person" abstract="false" final="false" start="5" end="82">
+  <file path="/home/web/example/src/freegame_developer/vendor/fzaninotto/faker/src/Faker/Provider/fr_CA" file="Person.php" realpath="/home/web/example/src/freegame_developer/vendor/fzaninotto/faker/src/Faker/Provider/fr_CA/Person.php" size="5273" time="2015-05-29T06:29:14+00:00" unixtime="1432880954" sha1="b0c52c814f557bd793604d1e1f3451aa26e3fa6c" relative="freegame_developer/vendor/fzaninotto/faker/src/Faker/Provider/fr_CA/Person.php"/>
+  <extends full="Faker\Provider\Person" namespace="Faker\Provider" name="Person"/>
+  <member name="maleNameFormats" type="array" default="" visibility="protected" static="true" line="7"/>
+  <member name="femaleNameFormats" type="array" default="" visibility="protected" static="true" line="17"/>
+  <member name="firstNameMale" type="array" default="" visibility="protected" static="true" line="31">
+    <docblock>
+      <description compact="This list is more or less the same as in \Faker\Provider\fr_FR\Person.php Some common names were added and other removed."/>
+    </docblock>
+  </member>
+  <member name="firstNameFemale" type="array" default="" visibility="protected" static="true" line="42"/>
+  <member name="lastName" type="array" default="" visibility="protected" static="true" line="58">
+    <docblock>
+      <description compact="These last names come from this list of most common family names in Québec (1 to 130) http://fr.wikipedia.org/wiki/Liste_des_noms_de_famille_les_plus_courants_au_Québec"/>
+    </docblock>
+  </member>
+</class>

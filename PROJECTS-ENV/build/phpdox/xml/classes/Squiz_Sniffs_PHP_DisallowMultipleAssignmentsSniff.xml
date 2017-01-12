@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="Squiz_Sniffs_PHP_DisallowMultipleAssignmentsSniff" namespace="" name="Squiz_Sniffs_PHP_DisallowMultipleAssignmentsSniff" abstract="false" final="false" start="31" end="178">
+  <file path="/home/web/example/src/freegame_developer/vendor/squizlabs/php_codesniffer/CodeSniffer/Standards/Squiz/Sniffs/PHP" file="DisallowMultipleAssignmentsSniff.php" realpath="/home/web/example/src/freegame_developer/vendor/squizlabs/php_codesniffer/CodeSniffer/Standards/Squiz/Sniffs/PHP/DisallowMultipleAssignmentsSniff.php" size="6227" time="2016-01-19T23:39:10+00:00" unixtime="1453246750" sha1="11f374065943c46c6435d728f6227ae2d1063a38" relative="freegame_developer/vendor/squizlabs/php_codesniffer/CodeSniffer/Standards/Squiz/Sniffs/PHP/DisallowMultipleAssignmentsSniff.php"/>
+  <docblock>
+    <description compact="Squiz_Sniffs_PHP_DisallowMultipleAssignmentsSniff.">Ensures that there is only one value assignment on a line, and that it is
+the first thing on the line.</description>
+    <category value="PHP"/>
+    <package value="PHP_CodeSniffer"/>
+    <author value="Greg Sherwood &lt;gsherwood@squiz.net&gt;"/>
+    <author value="Marc McIntyre &lt;mmcintyre@squiz.net&gt;"/>
+    <copyright value="2006-2014 Squiz Pty Ltd (ABN 77 084 670 600)"/>
+    <license name="https://github.com/squizlabs/PHP_CodeSniffer/blob/master/licence.txt BSD Licence"/>
+    <version value="Release: @package_version@"/>
+    <link value="http://pear.php.net/package/PHP_CodeSniffer"/>
+  </docblock>
+  <implements full="PHP_CodeSniffer_Sniff" namespace="" name="PHP_CodeSniffer_Sniff"/>
+  <method name="register" start="40" end="44" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Returns an array of tokens this test wants to listen for."/>
+      <return type="array"/>
+    </docblock>
+  </method>
+  <method name="process" start="56" end="175" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Processes this test, when one of its tokens is encountered."/>
+      <param description="The file being scanned." type="object" variable="$phpcsFile">
+        <type full="PHP_CodeSniffer_File" namespace="" name="PHP_CodeSniffer_File"/>
+      </param>
+      <param description="The position of the current token in the" type="int" variable="$stackPtr">stack passed in $tokens.</param>
+      <return type="object">
+        <type full="void" namespace="" name="void"/>
+      </return>
+    </docblock>
+    <parameter name="phpcsFile" byreference="false" type="object">
+      <type full="PHP_CodeSniffer_File" namespace="" name="PHP_CodeSniffer_File"/>
+    </parameter>
+    <parameter name="stackPtr" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="Ignore default value assignments in function definitions." line="60"/>
+      <comment value="The general rule is:" line="70"/>
+      <comment xmlns="http://xml.phpdox.net/src" value="Find an equal sign and go backwards along the line. If you hit an" line="71"/>
+      <comment xmlns="http://xml.phpdox.net/src" value="end bracket, skip to the opening bracket. When you find a variable," line="72"/>
+      <comment xmlns="http://xml.phpdox.net/src" value="stop. That variable must be the first non-empty token on the line" line="73"/>
+      <comment xmlns="http://xml.phpdox.net/src" value="or in the statement. If not, throw an error." line="74"/>
+      <comment value="end for" line="100"/>
+      <comment value="Deal with this type of variable: self::$var by setting the var" line="107"/>
+      <comment value="token to be &quot;self&quot; rather than &quot;$var&quot;." line="108"/>
+      <comment value="Deal with this type of variable: $obj-&gt;$var by setting the var" line="113"/>
+      <comment value="token to be &quot;$obj&quot; rather than &quot;$var&quot;." line="114"/>
+      <comment value="Deal with this type of variable: $$var by setting the var" line="119"/>
+      <comment value="token to be &quot;$&quot; rather than &quot;$var&quot;." line="120"/>
+      <comment value="Ignore member var definitions." line="125"/>
+      <comment value="Make sure this variable is the first thing in the statement." line="135"/>
+      <comment value="end for" line="158"/>
+      <comment value="Ignore the first part of FOR loops as we are allowed to" line="160"/>
+      <comment value="assign variables there even though the variable is not the" line="161"/>
+      <comment value="first thing on the line. Also ignore WHILE loops." line="162"/>
+    </inline>
+  </method>
+</class>

@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="phpDocumentor\Reflection\DocBlock\Tags\Method" namespace="phpDocumentor\Reflection\DocBlock\Tags" name="Method" abstract="false" final="true" start="26" end="230">
+  <file path="/home/web/example/src/freegame_developer/vendor/phpdocumentor/reflection-docblock/src/DocBlock/Tags" file="Method.php" realpath="/home/web/example/src/freegame_developer/vendor/phpdocumentor/reflection-docblock/src/DocBlock/Tags/Method.php" size="6796" time="2016-09-30T07:12:33+00:00" unixtime="1475219553" sha1="df2ef7d8aeabed8b150127ea7934dd2902478a7a" relative="freegame_developer/vendor/phpdocumentor/reflection-docblock/src/DocBlock/Tags/Method.php"/>
+  <docblock>
+    <description compact="Reflection class for an {@}method in a Docblock."/>
+  </docblock>
+  <extends full="phpDocumentor\Reflection\DocBlock\Tags\BaseTag" namespace="phpDocumentor\Reflection\DocBlock\Tags" name="BaseTag"/>
+  <implements full="phpDocumentor\Reflection\DocBlock\Tags\Factory\StaticMethod" namespace="phpDocumentor\Reflection\DocBlock\Tags\Factory" name="StaticMethod"/>
+  <member name="name" type="string" default="'method'" visibility="protected" static="false" line="28"/>
+  <member name="methodName" type="string" default="''" visibility="private" static="false" line="31">
+    <docblock>
+      <var type="string"/>
+    </docblock>
+  </member>
+  <member name="arguments" type="array" default="" visibility="private" static="false" line="34">
+    <docblock>
+      <var type="array" of="object">
+        <type full="phpDocumentor\Reflection\DocBlock\Tags\string" namespace="phpDocumentor\Reflection\DocBlock\Tags" name="string"/>
+      </var>
+    </docblock>
+  </member>
+  <member name="isStatic" type="boolean" default="false" visibility="private" static="false" line="37">
+    <docblock>
+      <var type="object">
+        <type full="phpDocumentor\Reflection\DocBlock\Tags\bool" namespace="phpDocumentor\Reflection\DocBlock\Tags" name="bool"/>
+      </var>
+    </docblock>
+  </member>
+  <member name="returnType" visibility="private" static="false" line="40">
+    <docblock>
+      <var type="object">
+        <type full="phpDocumentor\Reflection\Type" namespace="phpDocumentor\Reflection" name="Type"/>
+      </var>
+    </docblock>
+  </member>
+  <constructor name="__construct" start="42" end="61" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="methodName" byreference="false" type="{unknown}"/>
+    <parameter name="arguments" byreference="false" type="array" default=""/>
+    <parameter name="returnType" byreference="false" type="{unknown}" default="" constant="null">
+      <type full="phpDocumentor\Reflection\Type" namespace="phpDocumentor\Reflection" name="Type"/>
+    </parameter>
+    <parameter name="static" byreference="false" type="boolean" default="false"/>
+    <parameter name="description" byreference="false" type="{unknown}" default="" constant="null">
+      <type full="phpDocumentor\Reflection\DocBlock\Description" namespace="phpDocumentor\Reflection\DocBlock" name="Description"/>
+    </parameter>
+  </constructor>
+  <method name="create" start="66" end="150" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description compact="{@inheritdoc}"/>
+    </docblock>
+    <parameter name="body" byreference="false" type="{unknown}"/>
+    <parameter name="typeResolver" byreference="false" type="{unknown}" default="" constant="null">
+      <type full="phpDocumentor\Reflection\TypeResolver" namespace="phpDocumentor\Reflection" name="TypeResolver"/>
+    </parameter>
+    <parameter name="descriptionFactory" byreference="false" type="{unknown}" default="" constant="null">
+      <type full="phpDocumentor\Reflection\DocBlock\DescriptionFactory" namespace="phpDocumentor\Reflection\DocBlock" name="DescriptionFactory"/>
+    </parameter>
+    <parameter name="context" byreference="false" type="{unknown}" default="" constant="null">
+      <type full="phpDocumentor\Reflection\Types\Context" namespace="phpDocumentor\Reflection\Types" name="Context"/>
+    </parameter>
+    <inline>
+      <comment value="1. none or more whitespace" line="75"/>
+      <comment value="2. optionally the keyword &quot;static&quot; followed by whitespace" line="76"/>
+      <comment value="3. optionally a word with underscores followed by whitespace : as" line="77"/>
+      <comment value="type for the return value" line="78"/>
+      <comment value="4. then optionally a word with underscores followed by () and" line="79"/>
+      <comment value="whitespace : as method name as used by phpDocumentor" line="80"/>
+      <comment value="5. then a word with underscores, followed by ( and any character" line="81"/>
+      <comment value="until a ) and whitespace : as method name with signature" line="82"/>
+      <comment value="6. any remaining text : as description" line="83"/>
+    </inline>
+  </method>
+  <method name="getMethodName" start="157" end="160" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Retrieves the method name."/>
+      <return type="string"/>
+    </docblock>
+  </method>
+  <method name="getArguments" start="165" end="168" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <return type="array" of="object">
+        <type full="phpDocumentor\Reflection\DocBlock\Tags\string" namespace="phpDocumentor\Reflection\DocBlock\Tags" name="string"/>
+      </return>
+    </docblock>
+  </method>
+  <method name="isStatic" start="175" end="178" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Checks whether the method tag describes a static method or not."/>
+      <return description="TRUE if the method declaration is for a static method, FALSE otherwise." type="object">
+        <type full="phpDocumentor\Reflection\DocBlock\Tags\bool" namespace="phpDocumentor\Reflection\DocBlock\Tags" name="bool"/>
+      </return>
+    </docblock>
+  </method>
+  <method name="getReturnType" start="183" end="186" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <return type="object">
+        <type full="phpDocumentor\Reflection\Type" namespace="phpDocumentor\Reflection" name="Type"/>
+      </return>
+    </docblock>
+  </method>
+  <method name="__toString" start="188" end="200" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="filterArguments" start="202" end="220" abstract="false" final="false" static="false" visibility="private">
+    <parameter name="arguments" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="stripRestArg" start="222" end="229" abstract="false" final="false" static="true" visibility="private">
+    <parameter name="argument" byreference="false" type="{unknown}"/>
+  </method>
+</class>

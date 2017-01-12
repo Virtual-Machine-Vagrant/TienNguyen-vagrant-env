@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="phpDocumentor\Reflection\DocBlock\Tags\BaseTag" namespace="phpDocumentor\Reflection\DocBlock\Tags" name="BaseTag" abstract="true" final="false" start="21" end="52">
+  <file path="/home/web/example/src/freegame_developer/vendor/phpdocumentor/reflection-docblock/src/DocBlock/Tags" file="BaseTag.php" realpath="/home/web/example/src/freegame_developer/vendor/phpdocumentor/reflection-docblock/src/DocBlock/Tags/BaseTag.php" size="1215" time="2016-09-30T07:12:33+00:00" unixtime="1475219553" sha1="cd15a7c4d8143bbaf5d24f86a456ec2cdbb675ce" relative="freegame_developer/vendor/phpdocumentor/reflection-docblock/src/DocBlock/Tags/BaseTag.php"/>
+  <docblock>
+    <description compact="Parses a tag definition for a DocBlock."/>
+  </docblock>
+  <implements full="phpDocumentor\Reflection\DocBlock\Tag" namespace="phpDocumentor\Reflection\DocBlock" name="Tag"/>
+  <member name="name" type="string" default="''" visibility="protected" static="false" line="24">
+    <docblock>
+      <var description="Name of the tag" type="string"/>
+    </docblock>
+  </member>
+  <member name="description" visibility="protected" static="false" line="27">
+    <docblock>
+      <var description="Description of the tag." type="object">
+        <type full="phpDocumentor\Reflection\DocBlock\Tags\Description|null" namespace="phpDocumentor\Reflection\DocBlock\Tags" name="Description|null"/>
+      </var>
+    </docblock>
+  </member>
+  <method name="getName" start="34" end="37" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Gets the name of this tag."/>
+      <return description="The name of this tag." type="string"/>
+    </docblock>
+  </method>
+  <method name="getDescription" start="39" end="42" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="render" start="44" end="51" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="formatter" byreference="false" type="{unknown}" default="" constant="null">
+      <type full="phpDocumentor\Reflection\DocBlock\Tags\Formatter" namespace="phpDocumentor\Reflection\DocBlock\Tags" name="Formatter"/>
+    </parameter>
+  </method>
+</class>

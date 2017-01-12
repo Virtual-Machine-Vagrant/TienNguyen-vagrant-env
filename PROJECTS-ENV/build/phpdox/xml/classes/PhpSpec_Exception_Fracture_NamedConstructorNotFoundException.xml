@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="PhpSpec\Exception\Fracture\NamedConstructorNotFoundException" namespace="PhpSpec\Exception\Fracture" name="NamedConstructorNotFoundException" abstract="false" final="false" start="20" end="22">
+  <file path="/home/web/example/src/freegame_developer/vendor/phpspec/phpspec/src/PhpSpec/Exception/Fracture" file="NamedConstructorNotFoundException.php" realpath="/home/web/example/src/freegame_developer/vendor/phpspec/phpspec/src/PhpSpec/Exception/Fracture/NamedConstructorNotFoundException.php" size="577" time="2016-01-01T10:17:54+00:00" unixtime="1451643474" sha1="c428db5d313ba6988fb33a279a74eedd4e2b76c3" relative="freegame_developer/vendor/phpspec/phpspec/src/PhpSpec/Exception/Fracture/NamedConstructorNotFoundException.php"/>
+  <docblock>
+    <description compact="Class NamedConstructorNotFoundException holds information about a named constructor not found exception"/>
+  </docblock>
+  <extends full="PhpSpec\Exception\Fracture\MethodInvocationException" namespace="PhpSpec\Exception\Fracture" name="MethodInvocationException"/>
+</class>

@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="phpDocumentor\Reflection\DocBlockFactory" namespace="phpDocumentor\Reflection" name="DocBlockFactory" abstract="false" final="true" start="21" end="277">
+  <file path="/home/web/example/src/freegame_developer/vendor/phpdocumentor/reflection-docblock/src" file="DocBlockFactory.php" realpath="/home/web/example/src/freegame_developer/vendor/phpdocumentor/reflection-docblock/src/DocBlockFactory.php" size="9363" time="2016-09-30T07:12:33+00:00" unixtime="1475219553" sha1="41607a5af2a0eefbda0e6e861b5c67ad93d151af" relative="freegame_developer/vendor/phpdocumentor/reflection-docblock/src/DocBlockFactory.php"/>
+  <implements full="phpDocumentor\Reflection\DocBlockFactoryInterface" namespace="phpDocumentor\Reflection" name="DocBlockFactoryInterface"/>
+  <member name="descriptionFactory" visibility="private" static="false" line="24">
+    <docblock>
+      <var type="object">
+        <type full="phpDocumentor\Reflection\DocBlock\DescriptionFactory" namespace="phpDocumentor\Reflection\DocBlock" name="DescriptionFactory"/>
+      </var>
+    </docblock>
+  </member>
+  <member name="tagFactory" visibility="private" static="false" line="27">
+    <docblock>
+      <var type="object">
+        <type full="phpDocumentor\Reflection\DocBlock\TagFactory" namespace="phpDocumentor\Reflection\DocBlock" name="TagFactory"/>
+      </var>
+    </docblock>
+  </member>
+  <constructor name="__construct" start="35" end="39" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Initializes this factory with the required subcontractors."/>
+      <param type="object" variable="$descriptionFactory">
+        <type full="phpDocumentor\Reflection\DocBlock\DescriptionFactory" namespace="phpDocumentor\Reflection\DocBlock" name="DescriptionFactory"/>
+      </param>
+      <param type="object" variable="$tagFactory">
+        <type full="phpDocumentor\Reflection\DocBlock\TagFactory" namespace="phpDocumentor\Reflection\DocBlock" name="TagFactory"/>
+      </param>
+    </docblock>
+    <parameter name="descriptionFactory" byreference="false" type="object">
+      <type full="phpDocumentor\Reflection\DocBlock\DescriptionFactory" namespace="phpDocumentor\Reflection\DocBlock" name="DescriptionFactory"/>
+    </parameter>
+    <parameter name="tagFactory" byreference="false" type="object">
+      <type full="phpDocumentor\Reflection\DocBlock\TagFactory" namespace="phpDocumentor\Reflection\DocBlock" name="TagFactory"/>
+    </parameter>
+  </constructor>
+  <method name="createInstance" start="48" end="63" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description compact="Factory method for easy instantiation."/>
+      <param type="array" variable="$additionalTags" of="object">
+        <type full="phpDocumentor\Reflection\string" namespace="phpDocumentor\Reflection" name="string"/>
+      </param>
+      <return type="object">
+        <type full="phpDocumentor\Reflection\DocBlockFactory" namespace="phpDocumentor\Reflection" name="DocBlockFactory"/>
+      </return>
+    </docblock>
+    <parameter name="additionalTags" byreference="false" type="array" default=""/>
+  </method>
+  <method name="create" start="73" end="104" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <param description="A string containing the DocBlock to parse or an object supporting the" type="object" variable="$docblock">getDocComment method (such as a ReflectionClass object).<type full="phpDocumentor\Reflection\object|string" namespace="phpDocumentor\Reflection" name="object|string"/></param>
+      <param type="object" variable="$context">
+        <type full="phpDocumentor\Reflection\Types\Context" namespace="phpDocumentor\Reflection\Types" name="Context"/>
+      </param>
+      <param type="object" variable="$location">
+        <type full="phpDocumentor\Reflection\Location" namespace="phpDocumentor\Reflection" name="Location"/>
+      </param>
+      <return type="object">
+        <type full="phpDocumentor\Reflection\DocBlock" namespace="phpDocumentor\Reflection" name="DocBlock"/>
+      </return>
+    </docblock>
+    <parameter name="docblock" byreference="false" type="{unknown}"/>
+    <parameter name="context" byreference="false" type="{unknown}" default="" constant="null">
+      <type full="phpDocumentor\Reflection\Types\Context" namespace="phpDocumentor\Reflection\Types" name="Context"/>
+    </parameter>
+    <parameter name="location" byreference="false" type="{unknown}" default="" constant="null">
+      <type full="phpDocumentor\Reflection\Location" namespace="phpDocumentor\Reflection" name="Location"/>
+    </parameter>
+  </method>
+  <method name="registerTagHandler" start="106" end="109" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="tagName" byreference="false" type="{unknown}"/>
+    <parameter name="handler" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="stripDocComment" start="118" end="128" abstract="false" final="false" static="false" visibility="private">
+    <docblock>
+      <description compact="Strips the asterisks from the DocBlock comment."/>
+      <param description="String containing the comment text." type="string" variable="$comment"/>
+      <return type="string"/>
+    </docblock>
+    <parameter name="comment" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="reg ex above is not able to remove */ from a single line docblock" line="122"/>
+    </inline>
+  </method>
+  <method name="splitDocBlock" start="140" end="212" abstract="false" final="false" static="false" visibility="private">
+    <docblock>
+      <description compact="Splits the DocBlock into a template marker, summary, description and block of tags."/>
+      <param description="Comment to split into the sub-parts." type="string" variable="$comment"/>
+      <author value="Richard van Velzen (@_richardJ) Special thanks to Richard for the regex responsible for the split."/>
+      <author value="Mike van Riel &lt;me@mikevanriel.com&gt; for extending the regex with template marker support."/>
+      <return description="containing the template marker (if any), summary, description and a string containing the tags." type="array" of="object">
+        <type full="phpDocumentor\Reflection\string" namespace="phpDocumentor\Reflection" name="string"/>
+      </return>
+    </docblock>
+    <parameter name="comment" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="Performance improvement cheat: if the first character is an @ then only tags are in this DocBlock. This" line="142"/>
+      <comment value="method does not split tags so we return this verbatim as the fourth result (tags). This saves us the" line="143"/>
+      <comment value="performance impact of running a regular expression" line="144"/>
+      <comment value="clears all extra horizontal whitespace from the line endings to prevent parsing issues" line="149"/>
+      <comment value="Splits the docblock into a template marker, summary, description and tags section." line="152"/>
+      <comment xmlns="http://xml.phpdox.net/src" value="- The template marker is empty, #@+ or #@- if the DocBlock starts with either of those (a newline may" line="153"/>
+      <comment xmlns="http://xml.phpdox.net/src" value="occur after it and will be stripped)." line="154"/>
+      <comment xmlns="http://xml.phpdox.net/src" value="- The short description is started from the first character until a dot is encountered followed by a" line="155"/>
+      <comment xmlns="http://xml.phpdox.net/src" value="newline OR two consecutive newlines (horizontal whitespace is taken into account to consider spacing" line="156"/>
+      <comment xmlns="http://xml.phpdox.net/src" value="errors). This is optional." line="157"/>
+      <comment xmlns="http://xml.phpdox.net/src" value="- The long description, any character until a new line is encountered followed by an @ and word" line="158"/>
+      <comment xmlns="http://xml.phpdox.net/src" value="characters (a tag). This is optional." line="159"/>
+      <comment xmlns="http://xml.phpdox.net/src" value="- Tags; the remaining characters" line="160"/>
+      <comment xmlns="http://xml.phpdox.net/src" value="Big thanks to RichardJ for contributing this Regular Expression" line="161"/>
+    </inline>
+  </method>
+  <method name="parseTagBlock" start="222" end="235" abstract="false" final="false" static="false" visibility="private">
+    <docblock>
+      <description compact="Creates the tag objects."/>
+      <param description="Tag block to parse." type="string" variable="$tags"/>
+      <param description="Context of the parsed Tag" type="object" variable="$context">
+        <type full="phpDocumentor\Reflection\Types\Context" namespace="phpDocumentor\Reflection\Types" name="Context"/>
+      </param>
+      <return type="array" of="object">
+        <type full="phpDocumentor\Reflection\DocBlock\Tag" namespace="phpDocumentor\Reflection\DocBlock" name="Tag"/>
+      </return>
+    </docblock>
+    <parameter name="tags" byreference="false" type="{unknown}"/>
+    <parameter name="context" byreference="false" type="object">
+      <type full="phpDocumentor\Reflection\Types\Context" namespace="phpDocumentor\Reflection\Types" name="Context"/>
+    </parameter>
+  </method>
+  <method name="splitTagBlockIntoTagLines" start="242" end="254" abstract="false" final="false" static="false" visibility="private">
+    <docblock>
+      <description/>
+      <param type="string" variable="$tags"/>
+      <return type="array" of="object">
+        <type full="phpDocumentor\Reflection\string" namespace="phpDocumentor\Reflection" name="string"/>
+      </return>
+    </docblock>
+    <parameter name="tags" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="filterTagBlock" start="260" end="276" abstract="false" final="false" static="false" visibility="private">
+    <docblock>
+      <description/>
+      <param variable="$tags"/>
+      <return type="string"/>
+    </docblock>
+    <parameter name="tags" byreference="false" type="{unknown}"/>
+  </method>
+</class>

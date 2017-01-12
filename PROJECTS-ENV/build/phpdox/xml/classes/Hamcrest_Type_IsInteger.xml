@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="Hamcrest\Type\IsInteger" namespace="Hamcrest\Type" name="IsInteger" abstract="false" final="false" start="12" end="32">
+  <file path="/home/web/example/src/freegame_developer/vendor/hamcrest/hamcrest-php/hamcrest/Hamcrest/Type" file="IsInteger.php" realpath="/home/web/example/src/freegame_developer/vendor/hamcrest/hamcrest-php/hamcrest/Hamcrest/Type/IsInteger.php" size="494" time="2015-05-11T14:41:42+00:00" unixtime="1431355302" sha1="2d998a674bb3e4f71b88a6b89e39d61a6a0b9f2d" relative="freegame_developer/vendor/hamcrest/hamcrest-php/hamcrest/Hamcrest/Type/IsInteger.php"/>
+  <docblock>
+    <description compact="Tests whether the value is an integer."/>
+  </docblock>
+  <extends full="Hamcrest\Core\IsTypeOf" namespace="Hamcrest\Core" name="IsTypeOf"/>
+  <constructor name="__construct" start="18" end="21" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Creates a new instance of IsInteger"/>
+    </docblock>
+  </constructor>
+  <method name="integerValue" start="28" end="31" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description compact="Is the value an integer?"/>
+      <factory value="intValue"/>
+    </docblock>
+  </method>
+</class>

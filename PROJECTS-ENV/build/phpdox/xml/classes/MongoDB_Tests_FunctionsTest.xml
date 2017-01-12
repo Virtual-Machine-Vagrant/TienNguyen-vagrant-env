@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="MongoDB\Tests\FunctionsTest" namespace="MongoDB\Tests" name="FunctionsTest" abstract="false" final="false" start="11" end="57">
+  <file path="/home/web/example/src/freegame_developer/vendor/mongodb/mongodb/tests" file="FunctionsTest.php" realpath="/home/web/example/src/freegame_developer/vendor/mongodb/mongodb/tests/FunctionsTest.php" size="2231" time="2016-09-23T19:38:29+00:00" unixtime="1474659509" sha1="35d2d66d1d0a2a2733d416cdfdea5aab107bf730" relative="freegame_developer/vendor/mongodb/mongodb/tests/FunctionsTest.php"/>
+  <docblock>
+    <description compact="Unit tests for utility functions."/>
+  </docblock>
+  <extends full="PHPUnit_Framework_TestCase" namespace="" name="PHPUnit_Framework_TestCase"/>
+  <method name="testReadConcernAsDocument" start="16" end="19" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <dataprovider value="provideReadConcernsAndDocuments"/>
+    </docblock>
+    <parameter name="readConcern" byreference="false" type="object">
+      <type full="MongoDB\Driver\ReadConcern" namespace="MongoDB\Driver" name="ReadConcern"/>
+    </parameter>
+    <parameter name="expectedDocument" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="provideReadConcernsAndDocuments" start="21" end="28" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testWriteConcernAsDocument" start="33" end="36" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <dataprovider value="provideWriteConcernsAndDocuments"/>
+    </docblock>
+    <parameter name="writeConcern" byreference="false" type="object">
+      <type full="MongoDB\Driver\WriteConcern" namespace="MongoDB\Driver" name="WriteConcern"/>
+    </parameter>
+    <parameter name="expectedDocument" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="provideWriteConcernsAndDocuments" start="38" end="56" abstract="false" final="false" static="false" visibility="public"/>
+</class>

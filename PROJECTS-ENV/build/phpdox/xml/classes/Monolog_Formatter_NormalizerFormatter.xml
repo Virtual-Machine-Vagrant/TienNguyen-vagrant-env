@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="Monolog\Formatter\NormalizerFormatter" namespace="Monolog\Formatter" name="NormalizerFormatter" abstract="false" final="false" start="21" end="297">
+  <file path="/home/web/example/src/freegame_developer/vendor/monolog/monolog/src/Monolog/Formatter" file="NormalizerFormatter.php" realpath="/home/web/example/src/freegame_developer/vendor/monolog/monolog/src/Monolog/Formatter/NormalizerFormatter.php" size="9410" time="2016-07-29T03:23:52+00:00" unixtime="1469762632" sha1="7d0a916e99c564b240a30e0e532c0ae9be0ee5ea" relative="freegame_developer/vendor/monolog/monolog/src/Monolog/Formatter/NormalizerFormatter.php"/>
+  <docblock>
+    <description compact="Normalizes incoming records to remove objects/resources so it's easier to dump to various targets"/>
+    <author value="Jordi Boggiano &lt;j.boggiano@seld.be&gt;"/>
+  </docblock>
+  <implements full="Monolog\Formatter\FormatterInterface" namespace="Monolog\Formatter" name="FormatterInterface"/>
+  <constant type="string" name="SIMPLE_DATE" value="&quot;Y-m-d H:i:s&quot;"/>
+  <member name="dateFormat" visibility="protected" static="false" line="25"/>
+  <constructor name="__construct" start="30" end="36" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <param description="The format of the timestamp: one supported by DateTime::format" type="string" variable="$dateFormat"/>
+    </docblock>
+    <parameter name="dateFormat" byreference="false" type="{unknown}" default="" constant="null"/>
+  </constructor>
+  <method name="format" start="41" end="44" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="{@inheritdoc}"/>
+    </docblock>
+    <parameter name="record" byreference="false" type="array"/>
+  </method>
+  <method name="formatBatch" start="49" end="56" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="{@inheritdoc}"/>
+    </docblock>
+    <parameter name="records" byreference="false" type="array"/>
+  </method>
+  <method name="normalize" start="58" end="114" abstract="false" final="false" static="false" visibility="protected">
+    <parameter name="data" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="normalizeException" start="116" end="162" abstract="false" final="false" static="false" visibility="protected">
+    <parameter name="e" byreference="false" type="{unknown}"/>
+    <inline>
+      <todo value="2.0 only check for Throwable" line="118"/>
+    </inline>
+  </method>
+  <method name="toJson" start="172" end="186" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Return the JSON representation of a value"/>
+      <param type="mixed" variable="$data"/>
+      <param type="object" variable="$ignoreErrors">
+        <type full="Monolog\Formatter\bool" namespace="Monolog\Formatter" name="bool"/>
+      </param>
+      <throws description="if encoding fails and errors are not ignored" type="object">
+        <type full="\RuntimeException" namespace="" name="RuntimeException"/>
+      </throws>
+      <return type="string"/>
+    </docblock>
+    <parameter name="data" byreference="false" type="{unknown}"/>
+    <parameter name="ignoreErrors" byreference="false" type="boolean" default="false"/>
+    <inline>
+      <comment value="suppress json_encode errors since it's twitchy with some inputs" line="174"/>
+    </inline>
+  </method>
+  <method name="jsonEncode" start="192" end="199" abstract="false" final="false" static="false" visibility="private">
+    <docblock>
+      <description/>
+      <param type="mixed" variable="$data"/>
+      <return description="JSON encoded data or null on failure" type="string"/>
+    </docblock>
+    <parameter name="data" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="handleJsonError" start="214" end="235" abstract="false" final="false" static="false" visibility="private">
+    <docblock>
+      <description compact="Handle a json_encode failure.">If the failure is due to invalid string encoding, try to clean the
+input and encode again. If the second encoding attempt fails, the
+inital error is not encoding related or the input can't be cleaned then
+raise a descriptive exception.</description>
+      <param description="return code of json_last_error function" type="int" variable="$code"/>
+      <param description="data that was meant to be encoded" type="mixed" variable="$data"/>
+      <throws description="if failure can't be corrected" type="object">
+        <type full="\RuntimeException" namespace="" name="RuntimeException"/>
+      </throws>
+      <return description="JSON encoded data after error correction" type="string"/>
+    </docblock>
+    <parameter name="code" byreference="false" type="{unknown}"/>
+    <parameter name="data" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="throwEncodeError" start="244" end="264" abstract="false" final="false" static="false" visibility="private">
+    <docblock>
+      <description compact="Throws an exception according to a given code with a customized message"/>
+      <param description="return code of json_last_error function" type="int" variable="$code"/>
+      <param description="data that was meant to be encoded" type="mixed" variable="$data"/>
+      <throws type="object">
+        <type full="\RuntimeException" namespace="" name="RuntimeException"/>
+      </throws>
+    </docblock>
+    <parameter name="code" byreference="false" type="{unknown}"/>
+    <parameter name="data" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="detectAndCleanUtf8" start="282" end="296" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Detect invalid UTF-8 string characters and convert to valid UTF-8.">Valid UTF-8 input will be left unmodified, but strings containing
+invalid UTF-8 codepoints will be reencoded as UTF-8 with an assumed
+original encoding of ISO-8859-15. This conversion may result in
+incorrect output if the actual encoding was not ISO-8859-15, but it
+will be clean UTF-8 output and will not rely on expensive and fragile
+detection algorithms.
+
+Function converts the input in place in the passed variable so that it
+can be used as a callback for array_walk_recursive.</description>
+      <param description="&amp;$data Input to check and convert if needed" type="mixed"/>
+      <private/>
+    </docblock>
+    <parameter name="data" byreference="true" type="{unknown}"/>
+  </method>
+</class>

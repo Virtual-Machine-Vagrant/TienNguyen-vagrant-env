@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="Monolog\Formatter\ScalarFormatterTest" namespace="Monolog\Formatter" name="ScalarFormatterTest" abstract="false" final="false" start="14" end="110">
+  <file path="/home/web/example/src/freegame_developer/vendor/monolog/monolog/tests/Monolog/Formatter" file="ScalarFormatterTest.php" realpath="/home/web/example/src/freegame_developer/vendor/monolog/monolog/tests/Monolog/Formatter/ScalarFormatterTest.php" size="3276" time="2016-07-29T03:23:52+00:00" unixtime="1469762632" sha1="4b3e37a2eee4315e445bcbf07cf04fc6ac41ebec" relative="freegame_developer/vendor/monolog/monolog/tests/Monolog/Formatter/ScalarFormatterTest.php"/>
+  <extends full="PHPUnit_Framework_TestCase" namespace="" name="PHPUnit_Framework_TestCase"/>
+  <member name="formatter" visibility="private" static="false" line="16"/>
+  <method name="setUp" start="18" end="21" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="buildTrace" start="23" end="36" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="e" byreference="false" type="object">
+      <type full="Exception" namespace="" name="Exception"/>
+    </parameter>
+  </method>
+  <method name="encodeJson" start="38" end="45" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="data" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="testFormat" start="47" end="75" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testFormatWithErrorContext" start="77" end="87" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testFormatWithExceptionContext" start="89" end="109" abstract="false" final="false" static="false" visibility="public"/>
+</class>

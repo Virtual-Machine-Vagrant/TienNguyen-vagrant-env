@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="phpDocumentor\Reflection\DocBlock\Tags\SourceTest" namespace="phpDocumentor\Reflection\DocBlock\Tags" name="SourceTest" abstract="false" final="false" start="26" end="199">
+  <file path="/home/web/example/src/freegame_developer/vendor/phpdocumentor/reflection-docblock/tests/unit/DocBlock/Tags" file="SourceTest.php" realpath="/home/web/example/src/freegame_developer/vendor/phpdocumentor/reflection-docblock/tests/unit/DocBlock/Tags/SourceTest.php" size="6300" time="2016-09-30T07:12:33+00:00" unixtime="1475219553" sha1="640554bca743bf11272397f9863d574337f6dfa9" relative="freegame_developer/vendor/phpdocumentor/reflection-docblock/tests/unit/DocBlock/Tags/SourceTest.php"/>
+  <docblock>
+    <description/>
+    <coversdefaultclass value="\phpDocumentor\Reflection\DocBlock\Tags\Source"/>
+    <covers value="::&lt;private&gt;"/>
+  </docblock>
+  <extends full="PHPUnit_Framework_TestCase" namespace="" name="PHPUnit_Framework_TestCase"/>
+  <method name="testIfCorrectTagNameIsReturned" start="33" end="38" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <uses value="\phpDocumentor\Reflection\DocBlock\Tags\Source::__construct"/>
+      <uses value="\phpDocumentor\Reflection\DocBlock\Description"/>
+      <covers value="\phpDocumentor\Reflection\DocBlock\Tags\BaseTag::getName"/>
+    </docblock>
+  </method>
+  <method name="testIfTagCanBeRenderedUsingDefaultFormatter" start="48" end="58" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <uses value="\phpDocumentor\Reflection\DocBlock\Tags\Source::__construct"/>
+      <uses value="\phpDocumentor\Reflection\DocBlock\Tags\Source::__toString"/>
+      <uses value="\phpDocumentor\Reflection\DocBlock\Tags\Formatter\PassthroughFormatter"/>
+      <uses value="\phpDocumentor\Reflection\DocBlock\Description"/>
+      <covers value="\phpDocumentor\Reflection\DocBlock\Tags\BaseTag::render"/>
+      <covers value="\phpDocumentor\Reflection\DocBlock\Tags\BaseTag::getName"/>
+    </docblock>
+  </method>
+  <method name="testIfTagCanBeRenderedUsingSpecificFormatter" start="64" end="72" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <uses value="\phpDocumentor\Reflection\DocBlock\Tags\Source::__construct"/>
+      <covers value="\phpDocumentor\Reflection\DocBlock\Tags\BaseTag::render"/>
+    </docblock>
+  </method>
+  <method name="testHasStartingLine" start="78" end="85" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <covers value="::__construct"/>
+      <covers value="::getStartingLine"/>
+    </docblock>
+  </method>
+  <method name="testHasLineCount" start="91" end="98" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <covers value="::__construct"/>
+      <covers value="::getLineCount"/>
+    </docblock>
+  </method>
+  <method name="testHasDescription" start="105" end="112" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <covers value="::__construct"/>
+      <covers value="\phpDocumentor\Reflection\DocBlock\Tags\BaseTag::getDescription"/>
+      <uses value="\phpDocumentor\Reflection\DocBlock\Description"/>
+    </docblock>
+  </method>
+  <method name="testStringRepresentationIsReturned" start="120" end="125" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <covers value="::__construct"/>
+      <covers value="::__toString"/>
+      <uses value="\phpDocumentor\Reflection\DocBlock\Description"/>
+      <uses value="\phpDocumentor\Reflection\Types\String_"/>
+    </docblock>
+  </method>
+  <method name="testFactoryMethod" start="134" end="148" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <covers value="::create"/>
+      <uses value="\phpDocumentor\Reflection\DocBlock\Tags\Source::&lt;public&gt;"/>
+      <uses value="\phpDocumentor\Reflection\DocBlock\DescriptionFactory"/>
+      <uses value="\phpDocumentor\Reflection\DocBlock\Description"/>
+      <uses value="\phpDocumentor\Reflection\Types\Context"/>
+    </docblock>
+  </method>
+  <method name="testFactoryMethodFailsIfEmptyBodyIsGiven" start="157" end="161" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <covers value="::create"/>
+      <uses value="\phpDocumentor\Reflection\DocBlock\Tags\Source::&lt;public&gt;"/>
+      <uses value="\phpDocumentor\Reflection\TypeResolver"/>
+      <uses value="\phpDocumentor\Reflection\DocBlock\DescriptionFactory"/>
+      <expectedexception value="\InvalidArgumentException"/>
+    </docblock>
+  </method>
+  <method name="testFactoryMethodFailsIfBodyIsNotString" start="167" end="170" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <covers value="::create"/>
+      <expectedexception value="\InvalidArgumentException"/>
+    </docblock>
+  </method>
+  <method name="testFactoryMethodFailsIfDescriptionFactoryIsNull" start="177" end="180" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <covers value="::create"/>
+      <uses value="\phpDocumentor\Reflection\TypeResolver"/>
+      <expectedexception value="\InvalidArgumentException"/>
+    </docblock>
+  </method>
+  <method name="testExceptionIsThrownIfStartingLineIsNotInteger" start="186" end="189" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <covers value="::__construct"/>
+      <expectedexception value="\InvalidArgumentException"/>
+    </docblock>
+  </method>
+  <method name="testExceptionIsThrownIfLineCountIsNotIntegerOrNull" start="195" end="198" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <covers value="::__construct"/>
+      <expectedexception value="\InvalidArgumentException"/>
+    </docblock>
+  </method>
+</class>

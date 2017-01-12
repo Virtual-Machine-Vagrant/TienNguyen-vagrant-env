@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="Swift_Signers_OpenDKIMSigner" namespace="" name="Swift_Signers_OpenDKIMSigner" abstract="false" final="false" start="17" end="190">
+  <file path="/home/web/example/src/freegame_developer/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Signers" file="OpenDKIMSigner.php" realpath="/home/web/example/src/freegame_developer/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Signers/OpenDKIMSigner.php" size="5369" time="2016-07-08T11:51:25+00:00" unixtime="1467978685" sha1="af558a8e0027e6ba95563123a184a3c719aa7690" relative="freegame_developer/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Signers/OpenDKIMSigner.php"/>
+  <docblock>
+    <description compact="DKIM Signer used to apply DKIM Signature to a message Takes advantage of pecl extension."/>
+    <author value="Xavier De Cock &lt;xdecock@gmail.com&gt;"/>
+  </docblock>
+  <extends full="Swift_Signers_DKIMSigner" namespace="" name="Swift_Signers_DKIMSigner"/>
+  <member name="_peclLoaded" type="boolean" default="false" visibility="private" static="false" line="19"/>
+  <member name="_dkimHandler" type="{unknown}" default="" constant="null" visibility="private" static="false" line="21"/>
+  <member name="dropFirstLF" type="boolean" default="true" visibility="private" static="false" line="23"/>
+  <constant type="integer" name="CANON_RELAXED" value="1"/>
+  <constant type="integer" name="CANON_SIMPLE" value="2"/>
+  <constant type="integer" name="SIG_RSA_SHA1" value="3"/>
+  <constant type="integer" name="SIG_RSA_SHA256" value="4"/>
+  <constructor name="__construct" start="30" end="39" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="privateKey" byreference="false" type="{unknown}"/>
+    <parameter name="domainName" byreference="false" type="{unknown}"/>
+    <parameter name="selector" byreference="false" type="{unknown}"/>
+  </constructor>
+  <method name="newInstance" start="41" end="44" abstract="false" final="false" static="true" visibility="public">
+    <parameter name="privateKey" byreference="false" type="{unknown}"/>
+    <parameter name="domainName" byreference="false" type="{unknown}"/>
+    <parameter name="selector" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="addSignature" start="46" end="57" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="headers" byreference="false" type="object">
+      <type full="Swift_Mime_HeaderSet" namespace="" name="Swift_Mime_HeaderSet"/>
+    </parameter>
+  </method>
+  <method name="setHeaders" start="59" end="100" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="headers" byreference="false" type="object">
+      <type full="Swift_Mime_HeaderSet" namespace="" name="Swift_Mime_HeaderSet"/>
+    </parameter>
+    <inline>
+      <comment value="Hardcode signature Margin for now" line="69"/>
+    </inline>
+  </method>
+  <method name="startBody" start="102" end="111" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="endBody" start="113" end="121" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="reset" start="123" end="129" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="setSignatureTimestamp" start="138" end="143" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Set the signature timestamp."/>
+      <param type="int" variable="$time"/>
+      <return type="object">
+        <type full="Swift_Signers_DKIMSigner" namespace="" name="Swift_Signers_DKIMSigner"/>
+      </return>
+    </docblock>
+    <parameter name="time" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="setSignatureExpiration" start="152" end="157" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Set the signature expiration timestamp."/>
+      <param type="int" variable="$time"/>
+      <return type="object">
+        <type full="Swift_Signers_DKIMSigner" namespace="" name="Swift_Signers_DKIMSigner"/>
+      </return>
+    </docblock>
+    <parameter name="time" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="setDebugHeaders" start="166" end="171" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Enable / disable the DebugHeaders."/>
+      <param type="object" variable="$debug">
+        <type full="bool" namespace="" name="bool"/>
+      </param>
+      <return type="object">
+        <type full="Swift_Signers_DKIMSigner" namespace="" name="Swift_Signers_DKIMSigner"/>
+      </return>
+    </docblock>
+    <parameter name="debug" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="_canonicalizeBody" start="175" end="189" abstract="false" final="false" static="false" visibility="protected">
+    <parameter name="string" byreference="false" type="{unknown}"/>
+  </method>
+</class>

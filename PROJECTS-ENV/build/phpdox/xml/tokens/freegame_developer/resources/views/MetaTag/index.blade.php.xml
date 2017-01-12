@@ -1,0 +1,243 @@
+<?xml version="1.0"?>
+<source xmlns="http://xml.phpdox.net/token">
+  <file xmlns="http://xml.phpdox.net/src" path="/home/web/example/src/freegame_developer/resources/views/MetaTag" file="index.blade.php" realpath="/home/web/example/src/freegame_developer/resources/views/MetaTag/index.blade.php" size="4016" time="2016-12-22T03:19:41+00:00" unixtime="1482376781" sha1="f04b3267d2adaad42ea98ac952713e42e5aa8502" relative="freegame_developer/resources/views/MetaTag/index.blade.php"/>
+  <line no="1">
+    <token name="T_INLINE_HTML">@extends('layout')</token>
+  </line>
+  <line no="2"/>
+  <line no="3">
+    <token name="T_INLINE_HTML">@section('content')</token>
+  </line>
+  <line no="4">
+    <token name="T_INLINE_HTML">    &lt;header id="gnavi"&gt;</token>
+  </line>
+  <line no="5">
+    <token name="T_INLINE_HTML">        @include('partials.breadcrumbs', [</token>
+  </line>
+  <line no="6">
+    <token name="T_INLINE_HTML">            'breadcrumbs' =&gt; array_merge(</token>
+  </line>
+  <line no="7">
+    <token name="T_INLINE_HTML">                $formData['menuName'], [$formData['screenName']]</token>
+  </line>
+  <line no="8">
+    <token name="T_INLINE_HTML">            )</token>
+  </line>
+  <line no="9">
+    <token name="T_INLINE_HTML">         ])    &lt;!-- [#gnavi] --&gt;</token>
+  </line>
+  <line no="10">
+    <token name="T_INLINE_HTML">    &lt;/header&gt;</token>
+  </line>
+  <line no="11"/>
+  <line no="12">
+    <token name="T_INLINE_HTML">    @include('partials.errormessage', ['errors' =&gt; $errors])</token>
+  </line>
+  <line no="13"/>
+  <line no="14">
+    <token name="T_INLINE_HTML">    &lt;section&gt;</token>
+  </line>
+  <line no="15">
+    <token name="T_INLINE_HTML">        &lt;div class="c-area"&gt;</token>
+  </line>
+  <line no="16">
+    <token name="T_INLINE_HTML">            &lt;h2 class="c-headline"&gt;&lt;i class="fa fa-sitemap"&gt;&lt;/i&gt;&#x30E1;&#x30BF;&#x30BF;&#x30B0;&#x4E00;&#x89A7;&lt;/h2&gt;</token>
+  </line>
+  <line no="17"/>
+  <line no="18">
+    <token name="T_INLINE_HTML">            @include('MetaTag.search')</token>
+  </line>
+  <line no="19"/>
+  <line no="20">
+    <token name="T_INLINE_HTML">            @if (count($searchData) &gt; 0)</token>
+  </line>
+  <line no="21">
+    <token name="T_INLINE_HTML">                &lt;div class="c-pager"&gt;</token>
+  </line>
+  <line no="22">
+    <token name="T_INLINE_HTML">                    &lt;p class="bold tx-16"&gt;&lt;i class="fa fa-list-ul"&gt;&lt;/i&gt;&#x691C;&#x7D22;&#x7D50;&#x679C;&lt;/p&gt;</token>
+  </line>
+  <line no="23">
+    <token name="T_INLINE_HTML">                    @include('partials.paginator', array('paginator' =&gt; $searchData, 'from' =&gt; $pagerView['from'], 'to' =&gt; $pagerView['to']))</token>
+  </line>
+  <line no="24">
+    <token name="T_INLINE_HTML">                    @include('partials.paginatorperpage', ['paginator' =&gt; $searchData])</token>
+  </line>
+  <line no="25">
+    <token name="T_INLINE_HTML">                    &lt;!-- /.c-pager --&gt;</token>
+  </line>
+  <line no="26">
+    <token name="T_INLINE_HTML">                &lt;/div&gt;</token>
+  </line>
+  <line no="27">
+    <token name="T_INLINE_HTML">                &lt;div class="area-scroll"&gt;</token>
+  </line>
+  <line no="28">
+    <token name="T_INLINE_HTML">                    &lt;table class="c-table is-scroll"&gt;</token>
+  </line>
+  <line no="29">
+    <token name="T_INLINE_HTML">                        &lt;thead&gt;</token>
+  </line>
+  <line no="30">
+    <token name="T_INLINE_HTML">                        &lt;tr&gt;</token>
+  </line>
+  <line no="31">
+    <token name="T_INLINE_HTML">                            &lt;th&gt;&#x4F5C;&#x6210;&#x65E5;&lt;/th&gt;</token>
+  </line>
+  <line no="32">
+    <token name="T_INLINE_HTML">                            &lt;th&gt;&#x66F4;&#x65B0;&#x65E5;&lt;/th&gt;</token>
+  </line>
+  <line no="33">
+    <token name="T_INLINE_HTML">                            &lt;th&gt;&#x30D1;&#x30B9;&lt;/th&gt;</token>
+  </line>
+  <line no="34">
+    <token name="T_INLINE_HTML">                            &lt;th&gt;title&lt;/th&gt;</token>
+  </line>
+  <line no="35">
+    <token name="T_INLINE_HTML">                            &lt;th&gt;keywords&lt;/th&gt;</token>
+  </line>
+  <line no="36">
+    <token name="T_INLINE_HTML">                            &lt;th&gt;description&lt;/th&gt;</token>
+  </line>
+  <line no="37">
+    <token name="T_INLINE_HTML">                            &lt;th&gt;URL&lt;/th&gt;</token>
+  </line>
+  <line no="38">
+    <token name="T_INLINE_HTML">                            &lt;th&gt;&#x7DE8;&#x96C6;&#xFF0F;&#x524A;&#x9664;&lt;/th&gt;</token>
+  </line>
+  <line no="39">
+    <token name="T_INLINE_HTML">                        &lt;/tr&gt;</token>
+  </line>
+  <line no="40">
+    <token name="T_INLINE_HTML">                        &lt;/thead&gt;</token>
+  </line>
+  <line no="41">
+    <token name="T_INLINE_HTML">                        &lt;tbody&gt;</token>
+  </line>
+  <line no="42">
+    <token name="T_INLINE_HTML">                        @if($searchData)</token>
+  </line>
+  <line no="43">
+    <token name="T_INLINE_HTML">                            @foreach ($searchData as $data)</token>
+  </line>
+  <line no="44">
+    <token name="T_INLINE_HTML">                            &lt;tr&gt;</token>
+  </line>
+  <line no="45">
+    <token name="T_INLINE_HTML">                                &lt;td&gt;{{ $data['created_at']-&gt;format('Y/m/d')}}&lt;/td&gt;</token>
+  </line>
+  <line no="46">
+    <token name="T_INLINE_HTML">                                &lt;td&gt;{{ $data['modified_at']-&gt;format('Y/m/d')}}&lt;/td&gt;</token>
+  </line>
+  <line no="47">
+    <token name="T_INLINE_HTML">                                &lt;td&gt;{{ $data['url']}}&lt;/td&gt;</token>
+  </line>
+  <line no="48">
+    <token name="T_INLINE_HTML">                                &lt;td class="nowrap"&gt;{{ str_limit($data['title'], $formData['limitText']) }}&lt;/td&gt;</token>
+  </line>
+  <line no="49">
+    <token name="T_INLINE_HTML">                                &lt;td class="nowrap"&gt;{{ str_limit($data['keywords'], $formData['limitText']) }}&lt;/td&gt;</token>
+  </line>
+  <line no="50">
+    <token name="T_INLINE_HTML">                                &lt;td class="nowrap"&gt;{{ str_limit($data['description'], $formData['limitText']) }}&lt;/td&gt;</token>
+  </line>
+  <line no="51">
+    <token name="T_INLINE_HTML">                                &lt;td class="nowrap"&gt;&lt;a target="_blank" href="{{ $data['session_url']}}" title="{{$data['session_url']}}</token>
+  </line>
+  <line no="52">
+    <token name="T_INLINE_HTML">                                            "&gt;{{ $data['session_url'] }}&lt;/a&gt;&lt;/td&gt;</token>
+  </line>
+  <line no="53">
+    <token name="T_INLINE_HTML">                                &lt;td&gt;</token>
+  </line>
+  <line no="54">
+    <token name="T_INLINE_HTML">                                    &lt;a href="{{ route('MetaTag.edit', ['get_url' =&gt; urlencode($data['url'])] +</token>
+  </line>
+  <line no="55">
+    <token name="T_INLINE_HTML">                                    $url)</token>
+  </line>
+  <line no="56">
+    <token name="T_INLINE_HTML">                                     }}"</token>
+  </line>
+  <line no="57">
+    <token name="T_INLINE_HTML">                                       class="button"&gt;&lt;i</token>
+  </line>
+  <line no="58">
+    <token name="T_INLINE_HTML">                                                class="fa</token>
+  </line>
+  <line no="59">
+    <token name="T_INLINE_HTML">                                    fa-pencil"&gt;&lt;/i&gt;&#x7DE8;&#x96C6;&lt;/a&gt;</token>
+  </line>
+  <line no="60">
+    <token name="T_INLINE_HTML">                                    &lt;a href="{{ route('MetaTag.deleteconfirm', ['get_url' =&gt; urlencode($data['url'])] +</token>
+  </line>
+  <line no="61">
+    <token name="T_INLINE_HTML">                                    $url) }}" class="button is-danger"&gt;&lt;i</token>
+  </line>
+  <line no="62">
+    <token name="T_INLINE_HTML">                                                class="fa fa-trash-o"&gt;&lt;/i&gt;&#x524A;&#x9664;&lt;/a&gt;</token>
+  </line>
+  <line no="63">
+    <token name="T_INLINE_HTML">                                &lt;/td&gt;</token>
+  </line>
+  <line no="64">
+    <token name="T_INLINE_HTML">                            &lt;/tr&gt;</token>
+  </line>
+  <line no="65">
+    <token name="T_INLINE_HTML">                            @endforeach</token>
+  </line>
+  <line no="66">
+    <token name="T_INLINE_HTML">                        @endif</token>
+  </line>
+  <line no="67">
+    <token name="T_INLINE_HTML">                        &lt;/tbody&gt;</token>
+  </line>
+  <line no="68">
+    <token name="T_INLINE_HTML">                        &lt;!-- /.c-table --&gt;</token>
+  </line>
+  <line no="69">
+    <token name="T_INLINE_HTML">                    &lt;/table&gt;</token>
+  </line>
+  <line no="70">
+    <token name="T_INLINE_HTML">                &lt;/div&gt;</token>
+  </line>
+  <line no="71"/>
+  <line no="72">
+    <token name="T_INLINE_HTML">                &lt;div class="c-pager"&gt;</token>
+  </line>
+  <line no="73">
+    <token name="T_INLINE_HTML">                    @include('partials.paginator', array('paginator' =&gt; $searchData, 'from' =&gt; $pagerView['from'], 'to' =&gt; $pagerView['to']))</token>
+  </line>
+  <line no="74">
+    <token name="T_INLINE_HTML">                    @include('partials.paginatorperpage', ['paginator' =&gt; $searchData])</token>
+  </line>
+  <line no="75">
+    <token name="T_INLINE_HTML">                    &lt;!-- /.c-pager --&gt;</token>
+  </line>
+  <line no="76">
+    <token name="T_INLINE_HTML">                &lt;/div&gt;</token>
+  </line>
+  <line no="77">
+    <token name="T_INLINE_HTML">            @else</token>
+  </line>
+  <line no="78">
+    <token name="T_INLINE_HTML">                &lt;p class="c-notregist"&gt;&lt;i class="fa fa-close"&gt;&lt;/i&gt;&#x691C;&#x7D22;&#x7D50;&#x679C;&#x304C;&#x3042;&#x308A;&#x307E;&#x305B;&#x3093;&#x3002;&lt;/p&gt;</token>
+  </line>
+  <line no="79">
+    <token name="T_INLINE_HTML">            @endif</token>
+  </line>
+  <line no="80"/>
+  <line no="81">
+    <token name="T_INLINE_HTML">            &lt;!-- /.c-area --&gt;</token>
+  </line>
+  <line no="82">
+    <token name="T_INLINE_HTML">        &lt;/div&gt;</token>
+  </line>
+  <line no="83">
+    <token name="T_INLINE_HTML">    &lt;/section&gt;</token>
+  </line>
+  <line no="84">
+    <token name="T_INLINE_HTML">@endsection</token>
+  </line>
+  <line no="85"/>
+</source>

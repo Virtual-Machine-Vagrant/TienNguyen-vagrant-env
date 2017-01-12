@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="App\Models\Freegame\ClApplication" namespace="App\Models\Freegame" name="ClApplication" abstract="false" final="false" start="5" end="35">
+  <file path="/home/web/example/src/freegame_developer/app/Models/Freegame" file="ClApplication.php" realpath="/home/web/example/src/freegame_developer/app/Models/Freegame/ClApplication.php" size="628" time="2016-11-16T01:52:54+00:00" unixtime="1479261174" sha1="3042f2be49037d4fa9220cb00d7dbfadb02aabef" relative="freegame_developer/app/Models/Freegame/ClApplication.php"/>
+  <extends full="App\Models\Freegame\Freegame" namespace="App\Models\Freegame" name="Freegame"/>
+  <member name="table" type="string" default="'cl_application'" visibility="protected" static="false" line="7"/>
+  <member name="timestamps" type="boolean" default="false" visibility="public" static="false" line="9"/>
+  <method name="getClApplicationId" start="18" end="22" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Get cl_application by game_id"/>
+      <param type="integer" variable="$id"/>
+      <return type="object"/>
+    </docblock>
+    <parameter name="id" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="edit" start="31" end="34" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Update"/>
+      <param type="array" variable="$where"/>
+      <param type="array" variable="$updateData"/>
+      <return type="integer"/>
+    </docblock>
+    <parameter name="where" byreference="false" type="{unknown}"/>
+    <parameter name="updateData" byreference="false" type="{unknown}"/>
+  </method>
+</class>

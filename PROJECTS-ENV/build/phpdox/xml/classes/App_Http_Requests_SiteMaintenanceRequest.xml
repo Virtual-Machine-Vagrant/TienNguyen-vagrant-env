@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="App\Http\Requests\SiteMaintenanceRequest" namespace="App\Http\Requests" name="SiteMaintenanceRequest" abstract="false" final="false" start="8" end="168">
+  <file path="/home/web/example/src/freegame_developer/app/Http/Requests" file="SiteMaintenanceRequest.php" realpath="/home/web/example/src/freegame_developer/app/Http/Requests/SiteMaintenanceRequest.php" size="5188" time="2016-12-22T03:19:40+00:00" unixtime="1482376780" sha1="cc13108b772e346786649f2d4d7457de58386a05" relative="freegame_developer/app/Http/Requests/SiteMaintenanceRequest.php"/>
+  <extends full="App\Http\Requests\Request" namespace="App\Http\Requests" name="Request"/>
+  <method name="authorize" start="11" end="14" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="rules" start="21" end="28" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Validation rules list"/>
+      <return type="array"/>
+    </docblock>
+  </method>
+  <method name="rulesSearch" start="35" end="62" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Validation search rules list"/>
+      <return type="array"/>
+    </docblock>
+  </method>
+  <method name="rulesInsertEdit" start="69" end="97" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Validation insert rules list"/>
+      <return type="array"/>
+    </docblock>
+  </method>
+  <method name="attributes" start="104" end="124" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Custom attributes list"/>
+      <return type="array"/>
+    </docblock>
+  </method>
+  <method name="customMessages" start="131" end="145" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Custom validation message"/>
+      <return type="array"/>
+    </docblock>
+  </method>
+  <method name="redirectRules" start="154" end="167" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Redirect rules."/>
+      <param type="object">
+        <type full="App\Http\Requests\none" namespace="App\Http\Requests" name="none"/>
+      </param>
+      <return type="array"/>
+    </docblock>
+  </method>
+</class>

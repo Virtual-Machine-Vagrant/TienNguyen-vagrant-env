@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="Monolog\Formatter\TestBarNorm" namespace="Monolog\Formatter" name="TestBarNorm" abstract="false" final="false" start="372" end="378">
+  <file path="/home/web/example/src/freegame_developer/vendor/monolog/monolog/tests/Monolog/Formatter" file="NormalizerFormatterTest.php" realpath="/home/web/example/src/freegame_developer/vendor/monolog/monolog/tests/Monolog/Formatter/NormalizerFormatterTest.php" size="13350" time="2016-07-29T03:23:52+00:00" unixtime="1469762632" sha1="da93c029b4c601638e245560ce24122eac884584" relative="freegame_developer/vendor/monolog/monolog/tests/Monolog/Formatter/NormalizerFormatterTest.php"/>
+  <method name="__toString" start="374" end="377" abstract="false" final="false" static="false" visibility="public"/>
+</class>

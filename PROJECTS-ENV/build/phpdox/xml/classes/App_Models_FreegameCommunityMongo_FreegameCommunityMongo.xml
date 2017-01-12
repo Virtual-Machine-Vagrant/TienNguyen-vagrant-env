@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="App\Models\FreegameCommunityMongo\FreegameCommunityMongo" namespace="App\Models\FreegameCommunityMongo" name="FreegameCommunityMongo" abstract="true" final="false" start="7" end="10">
+  <file path="/home/web/example/src/freegame_developer/app/Models/FreegameCommunityMongo" file="FreegameCommunityMongo.php" realpath="/home/web/example/src/freegame_developer/app/Models/FreegameCommunityMongo/FreegameCommunityMongo.php" size="219" time="2016-10-31T07:00:31+00:00" unixtime="1477897231" sha1="b3a9e728bc18bc32763635172d17f1a319fcd174" relative="freegame_developer/app/Models/FreegameCommunityMongo/FreegameCommunityMongo.php"/>
+  <extends full="App\Models\CustomMongoModel" namespace="App\Models" name="CustomMongoModel"/>
+  <member name="connection" type="string" default="'freegame_community_mongodb_master'" visibility="protected" static="false" line="9"/>
+</class>

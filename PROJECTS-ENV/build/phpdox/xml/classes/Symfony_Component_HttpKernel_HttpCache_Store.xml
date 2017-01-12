@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="Symfony\Component\HttpKernel\HttpCache\Store" namespace="Symfony\Component\HttpKernel\HttpCache" name="Store" abstract="false" final="false" start="25" end="489">
+  <file path="/home/web/example/src/freegame_developer/vendor/symfony/http-kernel/HttpCache" file="Store.php" realpath="/home/web/example/src/freegame_developer/vendor/symfony/http-kernel/HttpCache/Store.php" size="13884" time="2016-10-27T01:37:19+00:00" unixtime="1477532239" sha1="7c360a035f635a290037366d90f5cd02e2b7ae0e" relative="freegame_developer/vendor/symfony/http-kernel/HttpCache/Store.php"/>
+  <docblock>
+    <description compact="Store implements all the logic for storing cache metadata (Request and Response headers)."/>
+    <author value="Fabien Potencier &lt;fabien@symfony.com&gt;"/>
+  </docblock>
+  <implements full="Symfony\Component\HttpKernel\HttpCache\StoreInterface" namespace="Symfony\Component\HttpKernel\HttpCache" name="StoreInterface"/>
+  <member name="root" visibility="protected" static="false" line="27"/>
+  <member name="keyCache" visibility="private" static="false" line="28"/>
+  <member name="locks" visibility="private" static="false" line="29"/>
+  <constructor name="__construct" start="38" end="46" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Constructor."/>
+      <param description="The path to the cache directory" type="string" variable="$root"/>
+      <throws type="object">
+        <type full="\RuntimeException" namespace="" name="RuntimeException"/>
+      </throws>
+    </docblock>
+    <parameter name="root" byreference="false" type="{unknown}"/>
+  </constructor>
+  <method name="cleanup" start="51" end="60" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Cleanups storage."/>
+    </docblock>
+    <inline>
+      <comment value="unlock everything" line="53"/>
+    </inline>
+  </method>
+  <method name="lock" start="69" end="89" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Tries to lock the cache for a given Request, without blocking."/>
+      <param description="A Request instance" type="object" variable="$request">
+        <type full="Symfony\Component\HttpFoundation\Request" namespace="Symfony\Component\HttpFoundation" name="Request"/>
+      </param>
+      <return description="true if the lock is acquired, the path to the current lock otherwise" type="object">
+        <type full="Symfony\Component\HttpKernel\HttpCache\bool|string" namespace="Symfony\Component\HttpKernel\HttpCache" name="bool|string"/>
+      </return>
+    </docblock>
+    <parameter name="request" byreference="false" type="object">
+      <type full="Symfony\Component\HttpFoundation\Request" namespace="Symfony\Component\HttpFoundation" name="Request"/>
+    </parameter>
+  </method>
+  <method name="unlock" start="98" end="111" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Releases the lock for the given Request."/>
+      <param description="A Request instance" type="object" variable="$request">
+        <type full="Symfony\Component\HttpFoundation\Request" namespace="Symfony\Component\HttpFoundation" name="Request"/>
+      </param>
+      <return description="False if the lock file does not exist or cannot be unlocked, true otherwise" type="object">
+        <type full="Symfony\Component\HttpKernel\HttpCache\bool" namespace="Symfony\Component\HttpKernel\HttpCache" name="bool"/>
+      </return>
+    </docblock>
+    <parameter name="request" byreference="false" type="object">
+      <type full="Symfony\Component\HttpFoundation\Request" namespace="Symfony\Component\HttpFoundation" name="Request"/>
+    </parameter>
+  </method>
+  <method name="isLocked" start="113" end="131" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="request" byreference="false" type="object">
+      <type full="Symfony\Component\HttpFoundation\Request" namespace="Symfony\Component\HttpFoundation" name="Request"/>
+    </parameter>
+    <inline>
+      <comment value="release the lock we just acquired" line="127"/>
+    </inline>
+  </method>
+  <method name="lookup" start="140" end="170" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Locates a cached Response for the Request provided."/>
+      <param description="A Request instance" type="object" variable="$request">
+        <type full="Symfony\Component\HttpFoundation\Request" namespace="Symfony\Component\HttpFoundation" name="Request"/>
+      </param>
+      <return description="A Response instance, or null if no cache entry was found" type="object">
+        <type full="Symfony\Component\HttpKernel\HttpCache\Response|null" namespace="Symfony\Component\HttpKernel\HttpCache" name="Response|null"/>
+      </return>
+    </docblock>
+    <parameter name="request" byreference="false" type="object">
+      <type full="Symfony\Component\HttpFoundation\Request" namespace="Symfony\Component\HttpFoundation" name="Request"/>
+    </parameter>
+    <inline>
+      <comment value="find a cached entry that matches the request." line="148"/>
+      <todo value="the metaStore referenced an entity that doesn't exist in" line="167"/>
+      <comment value="the entityStore. We definitely want to return nil but we should" line="168"/>
+      <comment value="also purge the entry from the meta-store when this is detected." line="169"/>
+    </inline>
+  </method>
+  <method name="write" start="185" end="228" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Writes a cache entry to the store for the given Request and Response.">Existing entries are read and any that match the response are removed. This
+method calls write with the new list of cache entries.</description>
+      <param description="A Request instance" type="object" variable="$request">
+        <type full="Symfony\Component\HttpFoundation\Request" namespace="Symfony\Component\HttpFoundation" name="Request"/>
+      </param>
+      <param description="A Response instance" type="object" variable="$response">
+        <type full="Symfony\Component\HttpFoundation\Response" namespace="Symfony\Component\HttpFoundation" name="Response"/>
+      </param>
+      <return description="The key under which the response is stored" type="string"/>
+      <throws type="object">
+        <type full="\RuntimeException" namespace="" name="RuntimeException"/>
+      </throws>
+    </docblock>
+    <parameter name="request" byreference="false" type="object">
+      <type full="Symfony\Component\HttpFoundation\Request" namespace="Symfony\Component\HttpFoundation" name="Request"/>
+    </parameter>
+    <parameter name="response" byreference="false" type="object">
+      <type full="Symfony\Component\HttpFoundation\Response" namespace="Symfony\Component\HttpFoundation" name="Response"/>
+    </parameter>
+    <inline>
+      <comment value="write the response body to the entity store if this is the original response" line="190"/>
+      <comment value="read existing cache entries, remove non-varying, and add this one to the list" line="205"/>
+    </inline>
+  </method>
+  <method name="generateContentDigest" start="237" end="240" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Returns content digest for $response."/>
+      <param type="object" variable="$response">
+        <type full="Symfony\Component\HttpFoundation\Response" namespace="Symfony\Component\HttpFoundation" name="Response"/>
+      </param>
+      <return type="string"/>
+    </docblock>
+    <parameter name="response" byreference="false" type="object">
+      <type full="Symfony\Component\HttpFoundation\Response" namespace="Symfony\Component\HttpFoundation" name="Response"/>
+    </parameter>
+  </method>
+  <method name="invalidate" start="249" end="269" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Invalidates all cache entries that match the request."/>
+      <param description="A Request instance" type="object" variable="$request">
+        <type full="Symfony\Component\HttpFoundation\Request" namespace="Symfony\Component\HttpFoundation" name="Request"/>
+      </param>
+      <throws type="object">
+        <type full="\RuntimeException" namespace="" name="RuntimeException"/>
+      </throws>
+    </docblock>
+    <parameter name="request" byreference="false" type="object">
+      <type full="Symfony\Component\HttpFoundation\Request" namespace="Symfony\Component\HttpFoundation" name="Request"/>
+    </parameter>
+  </method>
+  <method name="requestsMatch" start="281" end="297" abstract="false" final="false" static="false" visibility="private">
+    <docblock>
+      <description compact="Determines whether two Request HTTP header sets are non-varying based on the vary response header value provided."/>
+      <param description="A Response vary header" type="string" variable="$vary"/>
+      <param description="A Request HTTP header array" type="array" variable="$env1"/>
+      <param description="A Request HTTP header array" type="array" variable="$env2"/>
+      <return description="true if the two environments match, false otherwise" type="object">
+        <type full="Symfony\Component\HttpKernel\HttpCache\bool" namespace="Symfony\Component\HttpKernel\HttpCache" name="bool"/>
+      </return>
+    </docblock>
+    <parameter name="vary" byreference="false" type="{unknown}"/>
+    <parameter name="env1" byreference="false" type="{unknown}"/>
+    <parameter name="env2" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="getMetadata" start="308" end="315" abstract="false" final="false" static="false" visibility="private">
+    <docblock>
+      <description compact="Gets all data associated with the given key.">Use this method only if you know what you are doing.</description>
+      <param description="The store key" type="string" variable="$key"/>
+      <return description="An array of data associated with the key" type="array"/>
+    </docblock>
+    <parameter name="key" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="purge" start="324" end="341" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Purges data for the given URL."/>
+      <param description="A URL" type="string" variable="$url"/>
+      <return description="true if the URL exists and has been purged, false otherwise" type="object">
+        <type full="Symfony\Component\HttpKernel\HttpCache\bool" namespace="Symfony\Component\HttpKernel\HttpCache" name="bool"/>
+      </return>
+    </docblock>
+    <parameter name="url" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="load" start="350" end="355" abstract="false" final="false" static="false" visibility="private">
+    <docblock>
+      <description compact="Loads data for the given key."/>
+      <param description="The store key" type="string" variable="$key"/>
+      <return description="The data associated with the key" type="string"/>
+    </docblock>
+    <parameter name="key" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="save" start="365" end="401" abstract="false" final="false" static="false" visibility="private">
+    <docblock>
+      <description compact="Save data for the given key."/>
+      <param description="The store key" type="string" variable="$key"/>
+      <param description="The data to store" type="string" variable="$data"/>
+      <return type="object">
+        <type full="Symfony\Component\HttpKernel\HttpCache\bool" namespace="Symfony\Component\HttpKernel\HttpCache" name="bool"/>
+      </return>
+    </docblock>
+    <parameter name="key" byreference="false" type="{unknown}"/>
+    <parameter name="data" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="getPath" start="403" end="406" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="key" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="generateCacheKey" start="422" end="425" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Generates a cache key for the given Request.">This method should return a key that must only depend on a
+normalized version of the request URI.
+
+If the same URI can have more than one representation, based on some
+headers, use a Vary header to indicate them, and each representation will
+be stored independently under the same cache key.</description>
+      <param description="A Request instance" type="object" variable="$request">
+        <type full="Symfony\Component\HttpFoundation\Request" namespace="Symfony\Component\HttpFoundation" name="Request"/>
+      </param>
+      <return description="A key for the given Request" type="string"/>
+    </docblock>
+    <parameter name="request" byreference="false" type="object">
+      <type full="Symfony\Component\HttpFoundation\Request" namespace="Symfony\Component\HttpFoundation" name="Request"/>
+    </parameter>
+  </method>
+  <method name="getCacheKey" start="434" end="441" abstract="false" final="false" static="false" visibility="private">
+    <docblock>
+      <description compact="Returns a cache key for the given Request."/>
+      <param description="A Request instance" type="object" variable="$request">
+        <type full="Symfony\Component\HttpFoundation\Request" namespace="Symfony\Component\HttpFoundation" name="Request"/>
+      </param>
+      <return description="A key for the given Request" type="string"/>
+    </docblock>
+    <parameter name="request" byreference="false" type="object">
+      <type full="Symfony\Component\HttpFoundation\Request" namespace="Symfony\Component\HttpFoundation" name="Request"/>
+    </parameter>
+  </method>
+  <method name="persistRequest" start="450" end="453" abstract="false" final="false" static="false" visibility="private">
+    <docblock>
+      <description compact="Persists the Request HTTP headers."/>
+      <param description="A Request instance" type="object" variable="$request">
+        <type full="Symfony\Component\HttpFoundation\Request" namespace="Symfony\Component\HttpFoundation" name="Request"/>
+      </param>
+      <return description="An array of HTTP headers" type="array"/>
+    </docblock>
+    <parameter name="request" byreference="false" type="object">
+      <type full="Symfony\Component\HttpFoundation\Request" namespace="Symfony\Component\HttpFoundation" name="Request"/>
+    </parameter>
+  </method>
+  <method name="persistResponse" start="462" end="468" abstract="false" final="false" static="false" visibility="private">
+    <docblock>
+      <description compact="Persists the Response HTTP headers."/>
+      <param description="A Response instance" type="object" variable="$response">
+        <type full="Symfony\Component\HttpFoundation\Response" namespace="Symfony\Component\HttpFoundation" name="Response"/>
+      </param>
+      <return description="An array of HTTP headers" type="array"/>
+    </docblock>
+    <parameter name="response" byreference="false" type="object">
+      <type full="Symfony\Component\HttpFoundation\Response" namespace="Symfony\Component\HttpFoundation" name="Response"/>
+    </parameter>
+  </method>
+  <method name="restoreResponse" start="478" end="488" abstract="false" final="false" static="false" visibility="private">
+    <docblock>
+      <description compact="Restores a Response from the HTTP headers and body."/>
+      <param description="An array of HTTP headers for the Response" type="array" variable="$headers"/>
+      <param description="The Response body" type="string" variable="$body"/>
+      <return type="object">
+        <type full="Symfony\Component\HttpFoundation\Response" namespace="Symfony\Component\HttpFoundation" name="Response"/>
+      </return>
+    </docblock>
+    <parameter name="headers" byreference="false" type="{unknown}"/>
+    <parameter name="body" byreference="false" type="{unknown}" default="" constant="null"/>
+  </method>
+</class>

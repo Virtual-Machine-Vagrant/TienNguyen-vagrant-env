@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="App\Http\Controllers\MhfCouponMasterController" namespace="App\Http\Controllers" name="MhfCouponMasterController" abstract="false" final="false" start="9" end="161">
+  <file path="/home/web/example/src/freegame_developer/app/Http/Controllers" file="MhfCouponMasterController.php" realpath="/home/web/example/src/freegame_developer/app/Http/Controllers/MhfCouponMasterController.php" size="5191" time="2017-01-03T08:24:56+00:00" unixtime="1483431896" sha1="7d314c003c9c00c6b4dae7a01903acf8da770f58" relative="freegame_developer/app/Http/Controllers/MhfCouponMasterController.php"/>
+  <extends full="App\Http\Controllers\Controller" namespace="App\Http\Controllers" name="Controller"/>
+  <member name="mhfCouponMasterService" visibility="protected" static="false" line="11"/>
+  <constructor name="__construct" start="12" end="30" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="mhfCouponMasterService" byreference="false" type="object">
+      <type full="App\Services\MhfCouponMasterService" namespace="App\Services" name="MhfCouponMasterService"/>
+    </parameter>
+    <parameter name="request" byreference="false" type="object">
+      <type full="Illuminate\Http\Request" namespace="Illuminate\Http" name="Request"/>
+    </parameter>
+  </constructor>
+  <method name="index" start="36" end="51" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Index page"/>
+      <param type="object" variable="$request">
+        <type full="App\Http\Requests\MhfCouponMasterRequest" namespace="App\Http\Requests" name="MhfCouponMasterRequest"/>
+      </param>
+      <return type="object">
+        <type full="App\Http\Controllers\response" namespace="App\Http\Controllers" name="response"/>
+      </return>
+    </docblock>
+    <parameter name="request" byreference="false" type="object">
+      <type full="App\Http\Requests\MhfCouponMasterRequest" namespace="App\Http\Requests" name="MhfCouponMasterRequest"/>
+    </parameter>
+  </method>
+  <method name="create" start="57" end="63" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="create page"/>
+      <param type="object" variable="$request">
+        <type full="App\Http\Controllers\request" namespace="App\Http\Controllers" name="request"/>
+      </param>
+      <return type="object">
+        <type full="App\Http\Controllers\response" namespace="App\Http\Controllers" name="response"/>
+      </return>
+    </docblock>
+    <parameter name="request" byreference="false" type="object">
+      <type full="Illuminate\Http\Request" namespace="Illuminate\Http" name="Request"/>
+    </parameter>
+  </method>
+  <method name="createConfirm" start="69" end="76" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="create confirm page"/>
+      <param type="object" variable="$request">
+        <type full="App\Http\Requests\MhfCouponMasterRequest" namespace="App\Http\Requests" name="MhfCouponMasterRequest"/>
+      </param>
+      <return type="object">
+        <type full="App\Http\Controllers\response" namespace="App\Http\Controllers" name="response"/>
+      </return>
+    </docblock>
+    <parameter name="request" byreference="false" type="object">
+      <type full="App\Http\Requests\MhfCouponMasterRequest" namespace="App\Http\Requests" name="MhfCouponMasterRequest"/>
+    </parameter>
+  </method>
+  <method name="store" start="82" end="91" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="store page"/>
+      <param type="object" variable="$request">
+        <type full="App\Http\Requests\MhfCouponMasterRequest" namespace="App\Http\Requests" name="MhfCouponMasterRequest"/>
+      </param>
+      <return type="object">
+        <type full="App\Http\Controllers\response" namespace="App\Http\Controllers" name="response"/>
+      </return>
+    </docblock>
+    <parameter name="request" byreference="false" type="object">
+      <type full="App\Http\Requests\MhfCouponMasterRequest" namespace="App\Http\Requests" name="MhfCouponMasterRequest"/>
+    </parameter>
+  </method>
+  <method name="edit" start="98" end="129" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="store page"/>
+      <param type="object" variable="$request">
+        <type full="App\Http\Controllers\request" namespace="App\Http\Controllers" name="request"/>
+      </param>
+      <param type="integer" variable="$id"/>
+      <return type="object">
+        <type full="App\Http\Controllers\response" namespace="App\Http\Controllers" name="response"/>
+      </return>
+    </docblock>
+    <parameter name="request" byreference="false" type="object">
+      <type full="Illuminate\Http\Request" namespace="Illuminate\Http" name="Request"/>
+    </parameter>
+    <parameter name="id" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="editConfirm" start="135" end="147" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="edit confirm page"/>
+      <param type="object" variable="$request">
+        <type full="App\Http\Requests\MhfCouponMasterRequest" namespace="App\Http\Requests" name="MhfCouponMasterRequest"/>
+      </param>
+      <return type="object">
+        <type full="App\Http\Controllers\response" namespace="App\Http\Controllers" name="response"/>
+      </return>
+    </docblock>
+    <parameter name="request" byreference="false" type="object">
+      <type full="App\Http\Requests\MhfCouponMasterRequest" namespace="App\Http\Requests" name="MhfCouponMasterRequest"/>
+    </parameter>
+  </method>
+  <method name="update" start="153" end="160" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="update page"/>
+      <param type="object" variable="$request">
+        <type full="App\Http\Requests\MhfCouponMasterRequest" namespace="App\Http\Requests" name="MhfCouponMasterRequest"/>
+      </param>
+      <return type="object">
+        <type full="App\Http\Controllers\response" namespace="App\Http\Controllers" name="response"/>
+      </return>
+    </docblock>
+    <parameter name="request" byreference="false" type="object">
+      <type full="App\Http\Requests\MhfCouponMasterRequest" namespace="App\Http\Requests" name="MhfCouponMasterRequest"/>
+    </parameter>
+  </method>
+</class>

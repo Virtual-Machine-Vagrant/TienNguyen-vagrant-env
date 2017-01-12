@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="PhpParser\Node\Expr\BinaryOp\Plus" namespace="PhpParser\Node\Expr\BinaryOp" name="Plus" abstract="false" final="false" start="7" end="9">
+  <file path="/home/web/example/src/freegame_developer/vendor/nikic/php-parser/lib/PhpParser/Node/Expr/BinaryOp" file="Plus.php" realpath="/home/web/example/src/freegame_developer/vendor/nikic/php-parser/lib/PhpParser/Node/Expr/BinaryOp/Plus.php" size="114" time="2016-09-16T12:04:44+00:00" unixtime="1474027484" sha1="641364d62b3210e603dab5530bd779ebcd2d02a3" relative="freegame_developer/vendor/nikic/php-parser/lib/PhpParser/Node/Expr/BinaryOp/Plus.php"/>
+  <extends full="PhpParser\Node\Expr\BinaryOp" namespace="PhpParser\Node\Expr" name="BinaryOp"/>
+</class>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="Monolog\Handler\FingersCrossed\ChannelLevelActivationStrategy" namespace="Monolog\Handler\FingersCrossed" name="ChannelLevelActivationStrategy" abstract="false" final="false" start="36" end="59">
+  <file path="/home/web/example/src/freegame_developer/vendor/monolog/monolog/src/Monolog/Handler/FingersCrossed" file="ChannelLevelActivationStrategy.php" realpath="/home/web/example/src/freegame_developer/vendor/monolog/monolog/src/Monolog/Handler/FingersCrossed/ChannelLevelActivationStrategy.php" size="1933" time="2016-07-29T03:23:52+00:00" unixtime="1469762632" sha1="b5c842295a491aca621422f17a86f93785d91995" relative="freegame_developer/vendor/monolog/monolog/src/Monolog/Handler/FingersCrossed/ChannelLevelActivationStrategy.php"/>
+  <docblock>
+    <description compact="Channel and Error level based monolog activation strategy. Allows to trigger activation based on level per channel. e.g. trigger activation on level 'ERROR' by default, except for records of the 'sql' channel; those should trigger activation on level 'WARN'.">Example:
+
+&lt;code&gt;
+  $activationStrategy = new ChannelLevelActivationStrategy(
+      Logger::CRITICAL,
+      array(
+          'request' =&gt; Logger::ALERT,
+          'sensitive' =&gt; Logger::ERROR,
+      )
+  );
+  $handler = new FingersCrossedHandler(new StreamHandler('php://stderr'), $activationStrategy);
+&lt;/code&gt;</description>
+    <author value="Mike Meessen &lt;netmikey@gmail.com&gt;"/>
+  </docblock>
+  <implements full="Monolog\Handler\FingersCrossed\ActivationStrategyInterface" namespace="Monolog\Handler\FingersCrossed" name="ActivationStrategyInterface"/>
+  <member name="defaultActionLevel" visibility="private" static="false" line="38"/>
+  <member name="channelToActionLevel" visibility="private" static="false" line="39"/>
+  <constructor name="__construct" start="45" end="49" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <param description="The default action level to be used if the record's category doesn't match any" type="int" variable="$defaultActionLevel"/>
+      <param description="An array that maps channel names to action levels." type="array" variable="$channelToActionLevel"/>
+    </docblock>
+    <parameter name="defaultActionLevel" byreference="false" type="{unknown}"/>
+    <parameter name="channelToActionLevel" byreference="false" type="array" default=""/>
+  </constructor>
+  <method name="isHandlerActivated" start="51" end="58" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="record" byreference="false" type="array"/>
+  </method>
+</class>

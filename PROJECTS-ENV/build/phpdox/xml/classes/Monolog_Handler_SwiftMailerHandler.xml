@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="Monolog\Handler\SwiftMailerHandler" namespace="Monolog\Handler" name="SwiftMailerHandler" abstract="false" final="false" start="22" end="94">
+  <file path="/home/web/example/src/freegame_developer/vendor/monolog/monolog/src/Monolog/Handler" file="SwiftMailerHandler.php" realpath="/home/web/example/src/freegame_developer/vendor/monolog/monolog/src/Monolog/Handler/SwiftMailerHandler.php" size="2934" time="2016-07-29T03:23:52+00:00" unixtime="1469762632" sha1="8dd85363197f539c78e0536926ad63f9d514b452" relative="freegame_developer/vendor/monolog/monolog/src/Monolog/Handler/SwiftMailerHandler.php"/>
+  <docblock>
+    <description compact="SwiftMailerHandler uses Swift_Mailer to send the emails"/>
+    <author value="Gyula Sallai"/>
+  </docblock>
+  <extends full="Monolog\Handler\MailHandler" namespace="Monolog\Handler" name="MailHandler"/>
+  <member name="mailer" visibility="protected" static="false" line="24"/>
+  <member name="messageTemplate" visibility="private" static="false" line="25"/>
+  <constructor name="__construct" start="33" end="39" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <param description="The mailer to use" type="object" variable="$mailer">
+        <type full="\Swift_Mailer" namespace="" name="Swift_Mailer"/>
+      </param>
+      <param description="An example message for real messages, only the body will be replaced" type="object" variable="$message">
+        <type full="Monolog\Handler\callable|\Swift_Message" namespace="Monolog\Handler\callable|" name="Swift_Message"/>
+      </param>
+      <param description="The minimum logging level at which this handler will be triggered" type="int" variable="$level"/>
+      <param description="Whether the messages that are handled can bubble up the stack or not" type="object" variable="$bubble">
+        <type full="Monolog\Handler\Boolean" namespace="Monolog\Handler" name="Boolean"/>
+      </param>
+    </docblock>
+    <parameter name="mailer" byreference="false" type="object">
+      <type full="Swift_Mailer" namespace="" name="Swift_Mailer"/>
+    </parameter>
+    <parameter name="message" byreference="false" type="{unknown}"/>
+    <parameter name="level" byreference="false" type="{unknown}" default="" constant="Logger::ERROR"/>
+    <parameter name="bubble" byreference="false" type="boolean" default="true"/>
+  </constructor>
+  <method name="send" start="44" end="47" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="{@inheritdoc}"/>
+    </docblock>
+    <parameter name="content" byreference="false" type="{unknown}"/>
+    <parameter name="records" byreference="false" type="array"/>
+  </method>
+  <method name="buildMessage" start="56" end="79" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Creates instance of Swift_Message to be sent"/>
+      <param description="formatted email body to be sent" type="string" variable="$content"/>
+      <param description="Log records that formed the content" type="array" variable="$records"/>
+      <return type="object">
+        <type full="\Swift_Message" namespace="" name="Swift_Message"/>
+      </return>
+    </docblock>
+    <parameter name="content" byreference="false" type="{unknown}"/>
+    <parameter name="records" byreference="false" type="array"/>
+  </method>
+  <method name="__get" start="84" end="93" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="BC getter, to be removed in 2.0"/>
+    </docblock>
+    <parameter name="name" byreference="false" type="{unknown}"/>
+  </method>
+</class>

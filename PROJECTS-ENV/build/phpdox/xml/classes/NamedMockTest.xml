@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="NamedMockTest" namespace="" name="NamedMockTest" abstract="false" final="false" start="24" end="54">
+  <file path="/home/web/example/src/freegame_developer/vendor/mockery/mockery/tests/Mockery" file="NamedMockTest.php" realpath="/home/web/example/src/freegame_developer/vendor/mockery/mockery/tests/Mockery/NamedMockTest.php" size="1711" time="2015-04-02T19:54:00+00:00" unixtime="1428004440" sha1="be0ad45825a33e0fb4e6dcf0088c2159b0dd9f94" relative="freegame_developer/vendor/mockery/mockery/tests/Mockery/NamedMockTest.php"/>
+  <extends full="Mockery\Adapter\Phpunit\MockeryTestCase" namespace="Mockery\Adapter\Phpunit" name="MockeryTestCase"/>
+  <method name="itCreatesANamedMock" start="27" end="31" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <test/>
+    </docblock>
+  </method>
+  <method name="itCreatesPassesFurtherArgumentsJustLikeMock" start="34" end="42" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <test/>
+    </docblock>
+  </method>
+  <method name="itShouldThrowIfAttemptingToRedefineNamedMock" start="49" end="53" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <test/>
+      <expectedexception value="Mockery\Exception"/>
+      <expectedexceptionmessage value="The mock named 'Mockery\Dave7' has been already defined with a different mock configuration"/>
+    </docblock>
+  </method>
+</class>

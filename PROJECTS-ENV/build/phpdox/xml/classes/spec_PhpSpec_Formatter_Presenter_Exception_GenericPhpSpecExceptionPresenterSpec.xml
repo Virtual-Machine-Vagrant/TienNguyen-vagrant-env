@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="spec\PhpSpec\Formatter\Presenter\Exception\GenericPhpSpecExceptionPresenterSpec" namespace="spec\PhpSpec\Formatter\Presenter\Exception" name="GenericPhpSpecExceptionPresenterSpec" abstract="false" final="false" start="9" end="20">
+  <file path="/home/web/example/src/freegame_developer/vendor/phpspec/phpspec/spec/PhpSpec/Formatter/Presenter/Exception" file="GenericPhpSpecExceptionPresenterSpec.php" realpath="/home/web/example/src/freegame_developer/vendor/phpspec/phpspec/spec/PhpSpec/Formatter/Presenter/Exception/GenericPhpSpecExceptionPresenterSpec.php" size="543" time="2016-01-01T10:17:54+00:00" unixtime="1451643474" sha1="54052db035d4c9550766ad0fed141dc38727def4" relative="freegame_developer/vendor/phpspec/phpspec/spec/PhpSpec/Formatter/Presenter/Exception/GenericPhpSpecExceptionPresenterSpec.php"/>
+  <extends full="PhpSpec\ObjectBehavior" namespace="PhpSpec" name="ObjectBehavior"/>
+  <method name="let" start="11" end="14" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="elementPresenter" byreference="false" type="object">
+      <type full="PhpSpec\Formatter\Presenter\Exception\ExceptionElementPresenter" namespace="PhpSpec\Formatter\Presenter\Exception" name="ExceptionElementPresenter"/>
+    </parameter>
+  </method>
+  <method name="it_is_a_phpspec_exception_presenter" start="16" end="19" abstract="false" final="false" static="false" visibility="public"/>
+</class>

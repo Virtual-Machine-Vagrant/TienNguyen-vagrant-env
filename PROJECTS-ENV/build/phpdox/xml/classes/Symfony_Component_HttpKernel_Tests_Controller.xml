@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="Symfony\Component\HttpKernel\Tests\Controller" namespace="Symfony\Component\HttpKernel\Tests" name="Controller" abstract="false" final="false" start="319" end="335">
+  <file path="/home/web/example/src/freegame_developer/vendor/symfony/http-kernel/Tests" file="HttpKernelTest.php" realpath="/home/web/example/src/freegame_developer/vendor/symfony/http-kernel/Tests/HttpKernelTest.php" size="12371" time="2016-10-27T01:37:19+00:00" unixtime="1477532239" sha1="f1b65bf1c5ad6ef1e82a60645bbe6530b0a63f59" relative="freegame_developer/vendor/symfony/http-kernel/Tests/HttpKernelTest.php"/>
+  <method name="__invoke" start="321" end="324" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="controller" start="326" end="329" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="staticController" start="331" end="334" abstract="false" final="false" static="true" visibility="public"/>
+</class>

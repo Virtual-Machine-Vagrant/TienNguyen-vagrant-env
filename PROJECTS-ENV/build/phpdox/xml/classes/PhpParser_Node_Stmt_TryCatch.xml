@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="PhpParser\Node\Stmt\TryCatch" namespace="PhpParser\Node\Stmt" name="TryCatch" abstract="false" final="false" start="8" end="39">
+  <file path="/home/web/example/src/freegame_developer/vendor/nikic/php-parser/lib/PhpParser/Node/Stmt" file="TryCatch.php" realpath="/home/web/example/src/freegame_developer/vendor/nikic/php-parser/lib/PhpParser/Node/Stmt/TryCatch.php" size="1134" time="2016-09-16T12:04:44+00:00" unixtime="1474027484" sha1="371fa4980e1f0794a3232215db0fed92d5709fe6" relative="freegame_developer/vendor/nikic/php-parser/lib/PhpParser/Node/Stmt/TryCatch.php"/>
+  <extends full="PhpParser\Node\Stmt" namespace="PhpParser\Node" name="Stmt"/>
+  <member name="stmts" visibility="public" static="false" line="11">
+    <docblock>
+      <var description="Statements" type="array" of="object">
+        <type full="PhpParser\Node\Stmt\Node" namespace="PhpParser\Node\Stmt" name="Node"/>
+      </var>
+    </docblock>
+  </member>
+  <member name="catches" visibility="public" static="false" line="13">
+    <docblock>
+      <var description="Catches" type="array" of="object">
+        <type full="PhpParser\Node\Stmt\Catch_" namespace="PhpParser\Node\Stmt" name="Catch_"/>
+      </var>
+    </docblock>
+  </member>
+  <member name="finallyStmts" visibility="public" static="false" line="15">
+    <docblock>
+      <var description="Finally statements" type="array" of="object">
+        <type full="PhpParser\Node\Stmt\null|Node" namespace="PhpParser\Node\Stmt" name="null|Node"/>
+      </var>
+    </docblock>
+  </member>
+  <constructor name="__construct" start="25" end="34" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Constructs a try catch node."/>
+      <param description="Statements" type="array" variable="$stmts" of="object">
+        <type full="PhpParser\Node\Stmt\Node" namespace="PhpParser\Node\Stmt" name="Node"/>
+      </param>
+      <param description="Catches" type="array" variable="$catches" of="object">
+        <type full="PhpParser\Node\Stmt\Catch_" namespace="PhpParser\Node\Stmt" name="Catch_"/>
+      </param>
+      <param description="Finally statements (null means no finally clause)" type="array" variable="$finallyStmts" of="object">
+        <type full="PhpParser\Node\Stmt\null|Node" namespace="PhpParser\Node\Stmt" name="null|Node"/>
+      </param>
+      <param description="Additional attributes" type="object" variable="$attributes">
+        <type full="PhpParser\Node\Stmt\array|null" namespace="PhpParser\Node\Stmt" name="array|null"/>
+      </param>
+    </docblock>
+    <parameter name="stmts" byreference="false" type="array"/>
+    <parameter name="catches" byreference="false" type="array"/>
+    <parameter name="finallyStmts" byreference="false" type="{unknown}" default="" constant="null"/>
+    <parameter name="attributes" byreference="false" type="array" default=""/>
+  </constructor>
+  <method name="getSubNodeNames" start="36" end="38" abstract="false" final="false" static="false" visibility="public"/>
+</class>

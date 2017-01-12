@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="DebugBar\DataCollector\PhpInfoCollector" namespace="DebugBar\DataCollector" name="PhpInfoCollector" abstract="false" final="false" start="16" end="36">
+  <file path="/home/web/example/src/freegame_developer/vendor/maximebf/debugbar/src/DebugBar/DataCollector" file="PhpInfoCollector.php" realpath="/home/web/example/src/freegame_developer/vendor/maximebf/debugbar/src/DebugBar/DataCollector/PhpInfoCollector.php" size="638" time="2016-09-15T14:01:59+00:00" unixtime="1473948119" sha1="11a97072d8b11b1a0bb57ac732edf07981b9f273" relative="freegame_developer/vendor/maximebf/debugbar/src/DebugBar/DataCollector/PhpInfoCollector.php"/>
+  <docblock>
+    <description compact="Collects info about PHP"/>
+  </docblock>
+  <extends full="DebugBar\DataCollector\DataCollector" namespace="DebugBar\DataCollector" name="DataCollector"/>
+  <method name="collect" start="21" end="27" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <return type="array"/>
+    </docblock>
+  </method>
+  <method name="getName" start="32" end="35" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <return type="string"/>
+    </docblock>
+  </method>
+</class>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="Symfony\Component\Finder\Iterator\FilterIterator" namespace="Symfony\Component\Finder\Iterator" name="FilterIterator" abstract="true" final="false" start="22" end="58">
+  <file path="/home/web/example/src/freegame_developer/vendor/symfony/finder/Iterator" file="FilterIterator.php" realpath="/home/web/example/src/freegame_developer/vendor/symfony/finder/Iterator/FilterIterator.php" size="1683" time="2016-09-16T16:53:37+00:00" unixtime="1474044817" sha1="a2ad0009c64bf0443c2d57d18f18ec6c8a105bc8" relative="freegame_developer/vendor/symfony/finder/Iterator/FilterIterator.php"/>
+  <docblock>
+    <description compact="This iterator just overrides the rewind method in order to correct a PHP bug, which existed before version 5.5.23/5.6.7."/>
+    <see value="https://bugs.php.net/68557"/>
+    <author value="Alex Bogomazov"/>
+  </docblock>
+  <extends full="FilterIterator" namespace="" name="FilterIterator"/>
+  <method name="rewind" start="30" end="57" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="This is a workaround for the problem with \FilterIterator leaving inner \FilesystemIterator in wrong state after rewind in some cases."/>
+      <see value="FilterIterator::rewind()"/>
+    </docblock>
+  </method>
+</class>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="Prophecy\Doubler\Generator\ClassCodeGenerator" namespace="Prophecy\Doubler\Generator" name="ClassCodeGenerator" abstract="false" final="false" start="20" end="112">
+  <file path="/home/web/example/src/freegame_developer/vendor/phpspec/prophecy/src/Prophecy/Doubler/Generator" file="ClassCodeGenerator.php" realpath="/home/web/example/src/freegame_developer/vendor/phpspec/prophecy/src/Prophecy/Doubler/Generator/ClassCodeGenerator.php" size="3383" time="2016-06-07T08:13:47+00:00" unixtime="1465287227" sha1="7e4a420e870b70af88323f92f0e7b591543e270b" relative="freegame_developer/vendor/phpspec/prophecy/src/Prophecy/Doubler/Generator/ClassCodeGenerator.php"/>
+  <docblock>
+    <description compact="Class code creator.">Generates PHP code for specific class node tree.</description>
+    <author value="Konstantin Kudryashov &lt;ever.zet@gmail.com&gt;"/>
+  </docblock>
+  <method name="generate" start="30" end="53" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Generates PHP code for class node."/>
+      <param type="string" variable="$classname"/>
+      <param type="object" variable="$class">
+        <type full="Prophecy\Doubler\Generator\Node\ClassNode" namespace="Prophecy\Doubler\Generator\Node" name="ClassNode"/>
+      </param>
+      <return type="string"/>
+    </docblock>
+    <parameter name="classname" byreference="false" type="{unknown}"/>
+    <parameter name="class" byreference="false" type="object">
+      <type full="Prophecy\Doubler\Generator\Node\ClassNode" namespace="Prophecy\Doubler\Generator\Node" name="ClassNode"/>
+    </parameter>
+  </method>
+  <method name="generateMethod" start="55" end="70" abstract="false" final="false" static="false" visibility="private">
+    <parameter name="method" byreference="false" type="object">
+      <type full="Prophecy\Doubler\Generator\Node\MethodNode" namespace="Prophecy\Doubler\Generator\Node" name="MethodNode"/>
+    </parameter>
+  </method>
+  <method name="generateArguments" start="72" end="111" abstract="false" final="false" static="false" visibility="private">
+    <parameter name="arguments" byreference="false" type="array"/>
+  </method>
+</class>

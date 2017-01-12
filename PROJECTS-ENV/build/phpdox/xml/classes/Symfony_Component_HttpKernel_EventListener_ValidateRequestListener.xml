@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="Symfony\Component\HttpKernel\EventListener\ValidateRequestListener" namespace="Symfony\Component\HttpKernel\EventListener" name="ValidateRequestListener" abstract="false" final="false" start="24" end="55">
+  <file path="/home/web/example/src/freegame_developer/vendor/symfony/http-kernel/EventListener" file="ValidateRequestListener.php" realpath="/home/web/example/src/freegame_developer/vendor/symfony/http-kernel/EventListener/ValidateRequestListener.php" size="1395" time="2016-10-27T01:37:19+00:00" unixtime="1477532239" sha1="d52b210a4de93e09b3026eac1c72a7cc2e72c47e" relative="freegame_developer/vendor/symfony/http-kernel/EventListener/ValidateRequestListener.php"/>
+  <docblock>
+    <description compact="Validates that the headers and other information indicating the client IP address of a request are consistent."/>
+    <author value="Magnus Nordlander &lt;magnus@fervo.se&gt;"/>
+  </docblock>
+  <implements full="Symfony\Component\EventDispatcher\EventSubscriberInterface" namespace="Symfony\Component\EventDispatcher" name="EventSubscriberInterface"/>
+  <method name="onKernelRequest" start="31" end="42" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Performs the validation."/>
+      <param type="object" variable="$event">
+        <type full="Symfony\Component\HttpKernel\Event\GetResponseEvent" namespace="Symfony\Component\HttpKernel\Event" name="GetResponseEvent"/>
+      </param>
+    </docblock>
+    <parameter name="event" byreference="false" type="object">
+      <type full="Symfony\Component\HttpKernel\Event\GetResponseEvent" namespace="Symfony\Component\HttpKernel\Event" name="GetResponseEvent"/>
+    </parameter>
+  </method>
+  <method name="getSubscribedEvents" start="47" end="54" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description compact="{@inheritdoc}"/>
+    </docblock>
+  </method>
+</class>

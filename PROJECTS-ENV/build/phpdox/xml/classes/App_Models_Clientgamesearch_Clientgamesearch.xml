@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="App\Models\Clientgamesearch\Clientgamesearch" namespace="App\Models\Clientgamesearch" name="Clientgamesearch" abstract="false" final="false" start="7" end="10">
+  <file path="/home/web/example/src/freegame_developer/app/Models/ClientgameSearch" file="ClientgameSearch.php" realpath="/home/web/example/src/freegame_developer/app/Models/ClientgameSearch/ClientgameSearch.php" size="175" time="2016-12-06T02:39:57+00:00" unixtime="1480991997" sha1="4ecaed301dacebab98df2d68778b0988c15091c2" relative="freegame_developer/app/Models/ClientgameSearch/ClientgameSearch.php"/>
+  <extends full="App\Models\CustomModel" namespace="App\Models" name="CustomModel"/>
+  <member name="connection" type="string" default="'clientgame_search_db'" visibility="protected" static="false" line="9"/>
+</class>

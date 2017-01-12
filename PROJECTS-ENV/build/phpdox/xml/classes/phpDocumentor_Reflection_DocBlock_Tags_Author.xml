@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="phpDocumentor\Reflection\DocBlock\Tags\Author" namespace="phpDocumentor\Reflection\DocBlock\Tags" name="Author" abstract="false" final="true" start="20" end="100">
+  <file path="/home/web/example/src/freegame_developer/vendor/phpdocumentor/reflection-docblock/src/DocBlock/Tags" file="Author.php" realpath="/home/web/example/src/freegame_developer/vendor/phpdocumentor/reflection-docblock/src/DocBlock/Tags/Author.php" size="2488" time="2016-09-30T07:12:33+00:00" unixtime="1475219553" sha1="ae5470d2713db08918277376050dbd9105390b05" relative="freegame_developer/vendor/phpdocumentor/reflection-docblock/src/DocBlock/Tags/Author.php"/>
+  <docblock>
+    <description compact="Reflection class for an {@}author tag in a Docblock."/>
+  </docblock>
+  <extends full="phpDocumentor\Reflection\DocBlock\Tags\BaseTag" namespace="phpDocumentor\Reflection\DocBlock\Tags" name="BaseTag"/>
+  <implements full="phpDocumentor\Reflection\DocBlock\Tags\Factory\StaticMethod" namespace="phpDocumentor\Reflection\DocBlock\Tags\Factory" name="StaticMethod"/>
+  <member name="name" type="string" default="'author'" visibility="protected" static="false" line="23">
+    <docblock>
+      <var description="register that this is the author tag." type="string"/>
+    </docblock>
+  </member>
+  <member name="authorName" type="string" default="''" visibility="private" static="false" line="26">
+    <docblock>
+      <var description="The name of the author" type="string"/>
+    </docblock>
+  </member>
+  <member name="authorEmail" type="string" default="''" visibility="private" static="false" line="29">
+    <docblock>
+      <var description="The email of the author" type="string"/>
+    </docblock>
+  </member>
+  <constructor name="__construct" start="37" end="47" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Initializes this tag with the author name and e-mail."/>
+      <param type="string" variable="$authorName"/>
+      <param type="string" variable="$authorEmail"/>
+    </docblock>
+    <parameter name="authorName" byreference="false" type="{unknown}"/>
+    <parameter name="authorEmail" byreference="false" type="{unknown}"/>
+  </constructor>
+  <method name="getAuthorName" start="54" end="57" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Gets the author's name."/>
+      <return description="The author's name." type="string"/>
+    </docblock>
+  </method>
+  <method name="getEmail" start="64" end="67" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Returns the author's email."/>
+      <return description="The author's email." type="string"/>
+    </docblock>
+  </method>
+  <method name="__toString" start="74" end="77" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Returns this tag in string form."/>
+      <return type="string"/>
+    </docblock>
+  </method>
+  <method name="create" start="86" end="99" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description compact="Attempts to create a new Author object based on †he tag body."/>
+      <param type="string" variable="$body"/>
+      <return resolution="static" type="object">
+        <type full="phpDocumentor\Reflection\DocBlock\Tags\Author" namespace="phpDocumentor\Reflection\DocBlock\Tags" name="Author"/>
+      </return>
+    </docblock>
+    <parameter name="body" byreference="false" type="{unknown}"/>
+  </method>
+</class>

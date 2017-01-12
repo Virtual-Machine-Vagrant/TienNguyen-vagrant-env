@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="Symfony\Component\Console\Tests\Formatter\OutputFormatterTest" namespace="Symfony\Component\Console\Tests\Formatter" name="OutputFormatterTest" abstract="false" final="false" start="17" end="265">
+  <file path="/home/web/example/src/freegame_developer/vendor/symfony/console/Tests/Formatter" file="OutputFormatterTest.php" realpath="/home/web/example/src/freegame_developer/vendor/symfony/console/Tests/Formatter/OutputFormatterTest.php" size="8333" time="2016-10-05T17:26:56+00:00" unixtime="1475688416" sha1="e45cd54f9e9c1c7c2ccd08983de68abad8a4d3c5" relative="freegame_developer/vendor/symfony/console/Tests/Formatter/OutputFormatterTest.php"/>
+  <extends full="PHPUnit_Framework_TestCase" namespace="" name="PHPUnit_Framework_TestCase"/>
+  <method name="testEmptyTag" start="19" end="23" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testLGCharEscaping" start="25" end="37" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testBundledStyles" start="39" end="64" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testNestedStyles" start="66" end="74" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testAdjacentStyles" start="76" end="84" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testStyleMatchingNotGreedy" start="86" end="94" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testStyleEscaping" start="96" end="109" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testDeepNestedStyles" start="111" end="119" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testNewStyle" start="121" end="135" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testRedefineStyle" start="137" end="145" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testInlineStyle" start="147" end="153" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testNonStyleTag" start="155" end="160" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testFormatLongString" start="162" end="167" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testFormatToStringObject" start="169" end="175" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testNotDecoratedFormatter" start="177" end="213" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testContentWithLineBreaks" start="215" end="264" abstract="false" final="false" static="false" visibility="public"/>
+</class>

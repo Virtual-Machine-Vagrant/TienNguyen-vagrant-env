@@ -1,0 +1,154 @@
+<?xml version="1.0"?>
+<source xmlns="http://xml.phpdox.net/token">
+  <file xmlns="http://xml.phpdox.net/src" path="/home/web/example/src/freegame_developer/resources/views/Faq" file="createcsv.blade.php" realpath="/home/web/example/src/freegame_developer/resources/views/Faq/createcsv.blade.php" size="1901" time="2016-12-06T02:39:57+00:00" unixtime="1480991997" sha1="6e288b9c79ff4b51dc2a2d36e9692a9c25709437" relative="freegame_developer/resources/views/Faq/createcsv.blade.php"/>
+  <line no="1">
+    <token name="T_INLINE_HTML">@extends('layout')</token>
+  </line>
+  <line no="2"/>
+  <line no="3">
+    <token name="T_INLINE_HTML">@section('content')</token>
+  </line>
+  <line no="4"/>
+  <line no="5">
+    <token name="T_INLINE_HTML">&lt;header id="gnavi"&gt;</token>
+  </line>
+  <line no="6">
+    <token name="T_INLINE_HTML">    @include('partials.breadcrumbs', [</token>
+  </line>
+  <line no="7">
+    <token name="T_INLINE_HTML">        'breadcrumbs' =&gt; array_merge(</token>
+  </line>
+  <line no="8">
+    <token name="T_INLINE_HTML">            $formData['menuName'],</token>
+  </line>
+  <line no="9">
+    <token name="T_INLINE_HTML">            [</token>
+  </line>
+  <line no="10">
+    <token name="T_INLINE_HTML">                [$formData['screenName'], 'Faq.index'],</token>
+  </line>
+  <line no="11">
+    <token name="T_INLINE_HTML">                'CSV&#x30A2;&#x30C3;&#x30D7;&#x30ED;&#x30FC;&#x30C9;'</token>
+  </line>
+  <line no="12">
+    <token name="T_INLINE_HTML">            ]</token>
+  </line>
+  <line no="13">
+    <token name="T_INLINE_HTML">        )</token>
+  </line>
+  <line no="14">
+    <token name="T_INLINE_HTML">    ])</token>
+  </line>
+  <line no="15">
+    <token name="T_INLINE_HTML">    &lt;!-- [#gnavi] --&gt;</token>
+  </line>
+  <line no="16">
+    <token name="T_INLINE_HTML">&lt;/header&gt;</token>
+  </line>
+  <line no="17"/>
+  <line no="18">
+    <token name="T_INLINE_HTML">&lt;section&gt;</token>
+  </line>
+  <line no="19">
+    <token name="T_INLINE_HTML">    @include('partials.errormessage', ['errors' =&gt; $errors])</token>
+  </line>
+  <line no="20"/>
+  <line no="21">
+    <token name="T_INLINE_HTML">    &lt;div class="c-area"&gt;</token>
+  </line>
+  <line no="22">
+    <token name="T_INLINE_HTML">        &lt;h2 class="c-headline"&gt;&lt;i class="fa fa-sitemap"&gt;&lt;/i&gt;FAQ CSV&#x30A2;&#x30C3;&#x30D7;&#x30ED;&#x30FC;&#x30C9;&lt;/h2&gt;</token>
+  </line>
+  <line no="23">
+    <token name="T_INLINE_HTML">        {!! Form::open(['route' =&gt; ['Faq.createconfirmCsv'] + $url, 'id' =&gt; 'upload-form', 'files' =&gt; true]) !!}</token>
+  </line>
+  <line no="24">
+    <token name="T_INLINE_HTML">        &lt;table class="c-table"&gt;</token>
+  </line>
+  <line no="25">
+    <token name="T_INLINE_HTML">            &lt;colgroup&gt;</token>
+  </line>
+  <line no="26">
+    <token name="T_INLINE_HTML">                &lt;col class="col-s"&gt;</token>
+  </line>
+  <line no="27">
+    <token name="T_INLINE_HTML">                &lt;col class="null"&gt;</token>
+  </line>
+  <line no="28">
+    <token name="T_INLINE_HTML">            &lt;/colgroup&gt;</token>
+  </line>
+  <line no="29">
+    <token name="T_INLINE_HTML">            &lt;tbody&gt;</token>
+  </line>
+  <line no="30">
+    <token name="T_INLINE_HTML">                &lt;tr&gt;</token>
+  </line>
+  <line no="31">
+    <token name="T_INLINE_HTML">                    &lt;th&gt;CSV&#x30D5;&#x30A1;&#x30A4;&#x30EB;&lt;span class="tag is-danger"&gt;&#x5FC5;&#x9808;&lt;/span&gt;&lt;/th&gt;</token>
+  </line>
+  <line no="32">
+    <token name="T_INLINE_HTML">                    &lt;td&gt;</token>
+  </line>
+  <line no="33">
+    <token name="T_INLINE_HTML">                        &lt;div class="box-file"&gt;</token>
+  </line>
+  <line no="34">
+    <token name="T_INLINE_HTML">                            &lt;div class="button"&gt;&lt;i class="fa fa-file"&gt;&lt;/i&gt;&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x3092;&#x9078;&#x629E;</token>
+  </line>
+  <line no="35">
+    <token name="T_INLINE_HTML">                            {!! Form::file('csv_file', ['onchange' =&gt; 'upFileChange(this)', 'accept' =&gt; '.csv']) !!}</token>
+  </line>
+  <line no="36">
+    <token name="T_INLINE_HTML">                            &lt;/div&gt;&lt;span&gt;&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x304C;&#x9078;&#x629E;&#x3055;&#x308C;&#x3066;&#x3044;&#x307E;&#x305B;&#x3093;&lt;/span&gt;</token>
+  </line>
+  <line no="37">
+    <token name="T_INLINE_HTML">                            &lt;!-- /.box-file --&gt;</token>
+  </line>
+  <line no="38">
+    <token name="T_INLINE_HTML">                        &lt;/div&gt;</token>
+  </line>
+  <line no="39">
+    <token name="T_INLINE_HTML">                    &lt;/td&gt;</token>
+  </line>
+  <line no="40">
+    <token name="T_INLINE_HTML">                &lt;/tr&gt;</token>
+  </line>
+  <line no="41">
+    <token name="T_INLINE_HTML">            &lt;/tbody&gt;</token>
+  </line>
+  <line no="42">
+    <token name="T_INLINE_HTML">            &lt;!-- /.c-table --&gt;</token>
+  </line>
+  <line no="43">
+    <token name="T_INLINE_HTML">        &lt;/table&gt;</token>
+  </line>
+  <line no="44">
+    <token name="T_INLINE_HTML">        {!! Form::close() !!}</token>
+  </line>
+  <line no="45">
+    <token name="T_INLINE_HTML">        &lt;div class="center"&gt;</token>
+  </line>
+  <line no="46">
+    <token name="T_INLINE_HTML">            &lt;a href="{{ route('Faq.index', $url) }}" class="button is-medium"&gt;&lt;i class="fa fa-reply"&gt;&lt;/i&gt;&#x623B;&#x308B;&lt;/a&gt;</token>
+  </line>
+  <line no="47">
+    <token name="T_INLINE_HTML">            &lt;a href="javascript:void(0);" class="button is-warning is-medium submit-button" data-form="upload-form"&gt;&lt;i class="fa fa-check"&gt;&lt;/i&gt;&#x78BA;&#x8A8D;&lt;/a&gt;</token>
+  </line>
+  <line no="48">
+    <token name="T_INLINE_HTML">        &lt;/div&gt;</token>
+  </line>
+  <line no="49">
+    <token name="T_INLINE_HTML">        &lt;!-- /.c-area --&gt;</token>
+  </line>
+  <line no="50">
+    <token name="T_INLINE_HTML">    &lt;/div&gt;</token>
+  </line>
+  <line no="51"/>
+  <line no="52">
+    <token name="T_INLINE_HTML">&lt;/section&gt;</token>
+  </line>
+  <line no="53">
+    <token name="T_INLINE_HTML">@endsection</token>
+  </line>
+  <line no="54"/>
+</source>

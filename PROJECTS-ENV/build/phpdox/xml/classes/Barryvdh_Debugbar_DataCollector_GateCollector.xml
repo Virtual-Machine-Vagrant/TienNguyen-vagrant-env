@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="Barryvdh\Debugbar\DataCollector\GateCollector" namespace="Barryvdh\Debugbar\DataCollector" name="GateCollector" abstract="false" final="false" start="12" end="37">
+  <file path="/home/web/example/src/freegame_developer/vendor/barryvdh/laravel-debugbar/src/DataCollector" file="GateCollector.php" realpath="/home/web/example/src/freegame_developer/vendor/barryvdh/laravel-debugbar/src/DataCollector/GateCollector.php" size="886" time="2016-09-15T14:05:56+00:00" unixtime="1473948356" sha1="6513d67f4f6efea628f47a3b5c8d43fe10243e83" relative="freegame_developer/vendor/barryvdh/laravel-debugbar/src/DataCollector/GateCollector.php"/>
+  <docblock>
+    <description compact="Collector for Laravel's Auth provider"/>
+  </docblock>
+  <extends full="DebugBar\DataCollector\MessagesCollector" namespace="DebugBar\DataCollector" name="MessagesCollector"/>
+  <constructor name="__construct" start="17" end="24" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <param type="object" variable="$gate">
+        <type full="Illuminate\Contracts\Auth\Access\Gate" namespace="Illuminate\Contracts\Auth\Access" name="Gate"/>
+      </param>
+    </docblock>
+    <parameter name="gate" byreference="false" type="object">
+      <type full="Illuminate\Contracts\Auth\Access\Gate" namespace="Illuminate\Contracts\Auth\Access" name="Gate"/>
+    </parameter>
+  </constructor>
+  <method name="addCheck" start="26" end="36" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="user" byreference="false" type="object">
+      <type full="Illuminate\Contracts\Auth\Authenticatable" namespace="Illuminate\Contracts\Auth" name="Authenticatable"/>
+    </parameter>
+    <parameter name="ability" byreference="false" type="{unknown}"/>
+    <parameter name="result" byreference="false" type="{unknown}"/>
+    <parameter name="arguments" byreference="false" type="array" default=""/>
+  </method>
+</class>

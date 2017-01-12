@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="GrahamCampbell\Flysystem\FlysystemFactory" namespace="GrahamCampbell\Flysystem" name="FlysystemFactory" abstract="false" final="false" start="25" end="140">
+  <file path="/home/web/example/src/freegame_developer/vendor/graham-campbell/flysystem/src" file="FlysystemFactory.php" realpath="/home/web/example/src/freegame_developer/vendor/graham-campbell/flysystem/src/FlysystemFactory.php" size="3599" time="2016-04-26T14:23:32+00:00" unixtime="1461680612" sha1="fbffde44478cb2c011827c5b7334a584ea41832c" relative="freegame_developer/vendor/graham-campbell/flysystem/src/FlysystemFactory.php"/>
+  <docblock>
+    <description compact="This is the filesystem factory class."/>
+    <author value="Graham Campbell &lt;graham@alt-three.com&gt;"/>
+  </docblock>
+  <member name="adapter" visibility="protected" static="false" line="32">
+    <docblock>
+      <description compact="The adapter factory instance."/>
+      <var type="object">
+        <type full="\GrahamCampbell\Flysystem\Adapters\ConnectionFactory" namespace="\GrahamCampbell\Flysystem\Adapters" name="ConnectionFactory"/>
+      </var>
+    </docblock>
+  </member>
+  <member name="cache" visibility="protected" static="false" line="39">
+    <docblock>
+      <description compact="The cache factory instance."/>
+      <var type="object">
+        <type full="\GrahamCampbell\Flysystem\Cache\ConnectionFactory" namespace="\GrahamCampbell\Flysystem\Cache" name="ConnectionFactory"/>
+      </var>
+    </docblock>
+  </member>
+  <constructor name="__construct" start="49" end="53" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Create a new filesystem factory instance."/>
+      <param type="object" variable="$adapter">
+        <type full="\GrahamCampbell\Flysystem\Adapters\ConnectionFactory" namespace="\GrahamCampbell\Flysystem\Adapters" name="ConnectionFactory"/>
+      </param>
+      <param type="object" variable="$cache">
+        <type full="\GrahamCampbell\Flysystem\Cache\ConnectionFactory" namespace="\GrahamCampbell\Flysystem\Cache" name="ConnectionFactory"/>
+      </param>
+      <return type="object">
+        <type full="GrahamCampbell\Flysystem\void" namespace="GrahamCampbell\Flysystem" name="void"/>
+      </return>
+    </docblock>
+    <parameter name="adapter" byreference="false" type="object">
+      <type full="GrahamCampbell\Flysystem\Adapters\ConnectionFactory" namespace="GrahamCampbell\Flysystem\Adapters" name="ConnectionFactory"/>
+    </parameter>
+    <parameter name="cache" byreference="false" type="object">
+      <type full="GrahamCampbell\Flysystem\Cache\ConnectionFactory" namespace="GrahamCampbell\Flysystem\Cache" name="ConnectionFactory"/>
+    </parameter>
+  </constructor>
+  <method name="make" start="63" end="78" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Make a new flysystem instance."/>
+      <param type="array" variable="$config"/>
+      <param type="object" variable="$manager">
+        <type full="\GrahamCampbell\Flysystem\FlysystemManager" namespace="\GrahamCampbell\Flysystem" name="FlysystemManager"/>
+      </param>
+      <return type="object">
+        <type full="\League\Flysystem\FilesystemInterface" namespace="\League\Flysystem" name="FilesystemInterface"/>
+      </return>
+    </docblock>
+    <parameter name="config" byreference="false" type="array"/>
+    <parameter name="manager" byreference="false" type="object">
+      <type full="GrahamCampbell\Flysystem\FlysystemManager" namespace="GrahamCampbell\Flysystem" name="FlysystemManager"/>
+    </parameter>
+  </method>
+  <method name="createAdapter" start="87" end="92" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Establish an adapter connection."/>
+      <param type="array" variable="$config"/>
+      <return type="object">
+        <type full="\League\Flysystem\AdapterInterface" namespace="\League\Flysystem" name="AdapterInterface"/>
+      </return>
+    </docblock>
+    <parameter name="config" byreference="false" type="array"/>
+  </method>
+  <method name="createCache" start="102" end="105" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Establish a cache connection."/>
+      <param type="array" variable="$config"/>
+      <param type="object" variable="$manager">
+        <type full="\GrahamCampbell\Flysystem\FlysystemManager" namespace="\GrahamCampbell\Flysystem" name="FlysystemManager"/>
+      </param>
+      <return type="object">
+        <type full="\League\Flysystem\Cached\CacheInterface" namespace="\League\Flysystem\Cached" name="CacheInterface"/>
+      </return>
+    </docblock>
+    <parameter name="config" byreference="false" type="array"/>
+    <parameter name="manager" byreference="false" type="object">
+      <type full="GrahamCampbell\Flysystem\FlysystemManager" namespace="GrahamCampbell\Flysystem" name="FlysystemManager"/>
+    </parameter>
+  </method>
+  <method name="getOptions" start="114" end="119" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Get the flysystem options."/>
+      <param type="array" variable="$config"/>
+      <return type="object">
+        <type full="GrahamCampbell\Flysystem\array|null" namespace="GrahamCampbell\Flysystem" name="array|null"/>
+      </return>
+    </docblock>
+    <parameter name="config" byreference="false" type="array"/>
+  </method>
+  <method name="getAdapter" start="126" end="129" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Get the adapter factory instance."/>
+      <return type="object">
+        <type full="\GrahamCampbell\Flysystem\Adapters\ConnectionFactory" namespace="\GrahamCampbell\Flysystem\Adapters" name="ConnectionFactory"/>
+      </return>
+    </docblock>
+  </method>
+  <method name="getCache" start="136" end="139" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Get the cache factory instance."/>
+      <return type="object">
+        <type full="\GrahamCampbell\Flysystem\Cache\ConnectionFactory" namespace="\GrahamCampbell\Flysystem\Cache" name="ConnectionFactory"/>
+      </return>
+    </docblock>
+  </method>
+</class>

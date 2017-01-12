@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="App\Services\SearchUserService" namespace="App\Services" name="SearchUserService" abstract="false" final="false" start="9" end="211">
+  <file path="/home/web/example/src/freegame_developer/app/Services" file="SearchUserService.php" realpath="/home/web/example/src/freegame_developer/app/Services/SearchUserService.php" size="7564" time="2016-12-13T02:05:42+00:00" unixtime="1481594742" sha1="2859caf267e6e0899b3ed1e739b73d343dd06565" relative="freegame_developer/app/Services/SearchUserService.php"/>
+  <extends full="App\Services\CustomService" namespace="App\Services" name="CustomService"/>
+  <member name="user" visibility="protected" static="false" line="11"/>
+  <constructor name="__construct" start="13" end="18" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="user" byreference="false" type="object">
+      <type full="App\Models\Freegame\User" namespace="App\Models\Freegame" name="User"/>
+    </parameter>
+    <parameter name="chUser" byreference="false" type="object">
+      <type full="App\Models\Freegame\ChUser" namespace="App\Models\Freegame" name="ChUser"/>
+    </parameter>
+    <parameter name="clUser" byreference="false" type="object">
+      <type full="App\Models\Freegame\ClUser" namespace="App\Models\Freegame" name="ClUser"/>
+    </parameter>
+  </constructor>
+  <method name="isPerformSearch" start="25" end="38" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Check if perform search"/>
+      <param type="object" variable="$request">
+        <type full="App\Services\SearchUserRequest" namespace="App\Services" name="SearchUserRequest"/>
+      </param>
+      <return type="boolean"/>
+    </docblock>
+    <parameter name="request" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="getList" start="45" end="88" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Get list User"/>
+      <param type="object" variable="$request">
+        <type full="App\Services\SearchUserRequest" namespace="App\Services" name="SearchUserRequest"/>
+      </param>
+      <return type="object"/>
+    </docblock>
+    <parameter name="request" byreference="false" type="{unknown}"/>
+    <parameter name="isDownload" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="getUserInfoByMemberId" start="96" end="115" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Get user infomation by member id"/>
+      <param type="object" variable="$listSearchUser"/>
+      <param type="array" variable="$conditions"/>
+      <return type="object"/>
+    </docblock>
+    <parameter name="listSearchUser" byreference="false" type="{unknown}"/>
+    <parameter name="conditions" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="getExportUserInfoByMemberId" start="123" end="154" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Get export user infomation by member id"/>
+      <param type="object" variable="$listSearchUser"/>
+      <param type="array" variable="$conditions"/>
+      <return type="array"/>
+    </docblock>
+    <parameter name="listSearchUser" byreference="false" type="{unknown}"/>
+    <parameter name="conditions" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="getSearchParams" start="162" end="193" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Get search conditions from request"/>
+      <param type="object" variable="$request">
+        <type full="App\Services\SearchUserRequest" namespace="App\Services" name="SearchUserRequest"/>
+      </param>
+      <return type="array"/>
+    </docblock>
+    <parameter name="request" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="Pagination" line="165"/>
+      <comment value="Condition query" line="171"/>
+    </inline>
+  </method>
+  <method name="requestUrl" start="200" end="210" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Get search params from request"/>
+      <param type="object" variable="$request">
+        <type full="App\Services\request" namespace="App\Services" name="request"/>
+      </param>
+      <return type="array"/>
+    </docblock>
+    <parameter name="request" byreference="false" type="{unknown}"/>
+  </method>
+</class>

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="phpDocumentor\Reflection\DocBlock\DescriptionFactoryTest" namespace="phpDocumentor\Reflection\DocBlock" name="DescriptionFactoryTest" abstract="false" final="false" start="23" end="174">
+  <file path="/home/web/example/src/freegame_developer/vendor/phpdocumentor/reflection-docblock/tests/unit/DocBlock" file="DescriptionFactoryTest.php" realpath="/home/web/example/src/freegame_developer/vendor/phpdocumentor/reflection-docblock/tests/unit/DocBlock/DescriptionFactoryTest.php" size="5906" time="2016-09-30T07:12:33+00:00" unixtime="1475219553" sha1="c9905d6b5c32327ebaabbd748fbce11d5a1c71f0" relative="freegame_developer/vendor/phpdocumentor/reflection-docblock/tests/unit/DocBlock/DescriptionFactoryTest.php"/>
+  <docblock>
+    <description/>
+    <coversdefaultclass value="\phpDocumentor\Reflection\DocBlock\DescriptionFactory"/>
+    <covers value="::&lt;private&gt;"/>
+  </docblock>
+  <extends full="PHPUnit_Framework_TestCase" namespace="" name="PHPUnit_Framework_TestCase"/>
+  <method name="testDescriptionCanParseASimpleString" start="31" end="40" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <covers value="::__construct"/>
+      <covers value="::create"/>
+      <uses value="phpDocumentor\Reflection\DocBlock\Description"/>
+      <dataprovider value="provideSimpleExampleDescriptions"/>
+    </docblock>
+    <parameter name="contents" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="testEscapeSequences" start="48" end="57" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <covers value="::__construct"/>
+      <covers value="::create"/>
+      <uses value="phpDocumentor\Reflection\DocBlock\Description"/>
+      <dataprovider value="provideEscapeSequences"/>
+    </docblock>
+    <parameter name="contents" byreference="false" type="{unknown}"/>
+    <parameter name="expected" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="testDescriptionCanParseAStringWithInlineTag" start="68" end="83" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <covers value="::__construct"/>
+      <covers value="::create"/>
+      <uses value="phpDocumentor\Reflection\DocBlock\Description"/>
+      <uses value="phpDocumentor\Reflection\DocBlock\Tags\Link"/>
+      <uses value="phpDocumentor\Reflection\DocBlock\Tags\BaseTag"/>
+      <uses value="phpDocumentor\Reflection\DocBlock\Tags\Formatter\PassthroughFormatter"/>
+      <uses value="phpDocumentor\Reflection\Types\Context"/>
+    </docblock>
+  </method>
+  <method name="testDescriptionCanParseAStringStartingWithInlineTag" start="94" end="109" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <covers value="::__construct"/>
+      <covers value="::create"/>
+      <uses value="phpDocumentor\Reflection\DocBlock\Description"/>
+      <uses value="phpDocumentor\Reflection\DocBlock\Tags\Link"/>
+      <uses value="phpDocumentor\Reflection\DocBlock\Tags\BaseTag"/>
+      <uses value="phpDocumentor\Reflection\DocBlock\Tags\Formatter\PassthroughFormatter"/>
+      <uses value="phpDocumentor\Reflection\Types\Context"/>
+    </docblock>
+  </method>
+  <method name="testIfSuperfluousStartingSpacesAreRemoved" start="116" end="150" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <covers value="::__construct"/>
+      <covers value="::create"/>
+      <uses value="phpDocumentor\Reflection\DocBlock\Description"/>
+    </docblock>
+  </method>
+  <method name="provideSimpleExampleDescriptions" start="157" end="165" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Provides a series of example strings that the parser should correctly interpret and return."/>
+      <return type="array" of="object">
+        <type full="phpDocumentor\Reflection\DocBlock\string[]" namespace="phpDocumentor\Reflection\DocBlock" name="string[]"/>
+      </return>
+    </docblock>
+  </method>
+  <method name="provideEscapeSequences" start="167" end="173" abstract="false" final="false" static="false" visibility="public"/>
+</class>

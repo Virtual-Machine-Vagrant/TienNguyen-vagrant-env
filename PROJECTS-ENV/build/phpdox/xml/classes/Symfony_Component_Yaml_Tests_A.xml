@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="Symfony\Component\Yaml\Tests\A" namespace="Symfony\Component\Yaml\Tests" name="A" abstract="false" final="false" start="367" end="370">
+  <file path="/home/web/example/src/freegame_developer/vendor/symfony/yaml/Tests" file="DumperTest.php" realpath="/home/web/example/src/freegame_developer/vendor/symfony/yaml/Tests/DumperTest.php" size="10541" time="2016-10-24T18:41:13+00:00" unixtime="1477334473" sha1="02fea423c8aabe20d87e4320d1df0d8c36de46d6" relative="freegame_developer/vendor/symfony/yaml/Tests/DumperTest.php"/>
+  <member name="a" type="string" default="'foo'" visibility="public" static="false" line="369"/>
+</class>

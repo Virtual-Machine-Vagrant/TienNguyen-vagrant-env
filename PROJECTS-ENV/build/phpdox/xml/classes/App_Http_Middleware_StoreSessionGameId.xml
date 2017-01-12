@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="App\Http\Middleware\StoreSessionGameId" namespace="App\Http\Middleware" name="StoreSessionGameId" abstract="false" final="false" start="9" end="57">
+  <file path="/home/web/example/src/freegame_developer/app/Http/Middleware" file="StoreSessionGameId.php" realpath="/home/web/example/src/freegame_developer/app/Http/Middleware/StoreSessionGameId.php" size="1222" time="2016-11-16T01:52:54+00:00" unixtime="1479261174" sha1="3a84da247bfaec34a296b9247854cf21cdb6fcae" relative="freegame_developer/app/Http/Middleware/StoreSessionGameId.php"/>
+  <member name="auth" visibility="protected" static="false" line="16">
+    <docblock>
+      <description compact="The Guard implementation."/>
+      <var type="object">
+        <type full="Illuminate\Contracts\Auth\Guard" namespace="Illuminate\Contracts\Auth" name="Guard"/>
+      </var>
+    </docblock>
+  </member>
+  <member name="model" visibility="protected" static="false" line="23">
+    <docblock>
+      <description compact="The model implementation."/>
+      <var type="object">
+        <type full="App\Models\Freegame\ClApplication" namespace="App\Models\Freegame" name="ClApplication"/>
+      </var>
+    </docblock>
+  </member>
+  <constructor name="__construct" start="31" end="36" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Create a new filter instance."/>
+      <param type="object" variable="$auth">
+        <type full="Illuminate\Contracts\Auth\Guard" namespace="Illuminate\Contracts\Auth" name="Guard"/>
+      </param>
+      <return type="object">
+        <type full="App\Http\Middleware\void" namespace="App\Http\Middleware" name="void"/>
+      </return>
+    </docblock>
+    <parameter name="auth" byreference="false" type="object">
+      <type full="Illuminate\Contracts\Auth\Guard" namespace="Illuminate\Contracts\Auth" name="Guard"/>
+    </parameter>
+    <parameter name="model" byreference="false" type="object">
+      <type full="App\Models\Freegame\ClApplication" namespace="App\Models\Freegame" name="ClApplication"/>
+    </parameter>
+  </constructor>
+  <method name="handle" start="45" end="56" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Handle an incoming request."/>
+      <param type="object" variable="$request">
+        <type full="\Illuminate\Http\Request" namespace="\Illuminate\Http" name="Request"/>
+      </param>
+      <param type="object" variable="$next">
+        <type full="\Closure" namespace="" name="Closure"/>
+      </param>
+      <return type="mixed"/>
+    </docblock>
+    <parameter name="request" byreference="false" type="{unknown}"/>
+    <parameter name="next" byreference="false" type="object">
+      <type full="Closure" namespace="" name="Closure"/>
+    </parameter>
+  </method>
+</class>

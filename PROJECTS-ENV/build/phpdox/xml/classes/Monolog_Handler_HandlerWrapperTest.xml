@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="Monolog\Handler\HandlerWrapperTest" namespace="Monolog\Handler" name="HandlerWrapperTest" abstract="false" final="false" start="19" end="130">
+  <file path="/home/web/example/src/freegame_developer/vendor/monolog/monolog/tests/Monolog/Handler" file="HandlerWrapperTest.php" realpath="/home/web/example/src/freegame_developer/vendor/monolog/monolog/tests/Monolog/Handler/HandlerWrapperTest.php" size="3301" time="2016-07-29T03:23:52+00:00" unixtime="1469762632" sha1="5de77790274c597be81b76c6210e620232bfdd67" relative="freegame_developer/vendor/monolog/monolog/tests/Monolog/Handler/HandlerWrapperTest.php"/>
+  <docblock>
+    <description/>
+    <author value="Alexey Karapetov &lt;alexey@karapetov.com&gt;"/>
+  </docblock>
+  <extends full="Monolog\TestCase" namespace="Monolog" name="TestCase"/>
+  <member name="wrapper" visibility="private" static="false" line="24">
+    <docblock>
+      <description/>
+      <var type="object">
+        <type full="Monolog\Handler\HandlerWrapper" namespace="Monolog\Handler" name="HandlerWrapper"/>
+      </var>
+    </docblock>
+  </member>
+  <member name="handler" visibility="private" static="false" line="26"/>
+  <method name="setUp" start="28" end="33" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="trueFalseDataProvider" start="38" end="44" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <return type="array"/>
+    </docblock>
+  </method>
+  <method name="testIsHandling" start="50" end="59" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <param variable="$result"/>
+      <dataprovider value="trueFalseDataProvider"/>
+    </docblock>
+    <parameter name="result" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="testHandle" start="65" end="74" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <param variable="$result"/>
+      <dataprovider value="trueFalseDataProvider"/>
+    </docblock>
+    <parameter name="result" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="testHandleBatch" start="80" end="89" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <param variable="$result"/>
+      <dataprovider value="trueFalseDataProvider"/>
+    </docblock>
+    <parameter name="result" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="testPushProcessor" start="91" end="99" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testPopProcessor" start="101" end="109" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testSetFormatter" start="111" end="119" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testGetFormatter" start="121" end="129" abstract="false" final="false" static="false" visibility="public"/>
+</class>

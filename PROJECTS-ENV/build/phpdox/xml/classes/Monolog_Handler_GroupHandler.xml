@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="Monolog\Handler\GroupHandler" namespace="Monolog\Handler" name="GroupHandler" abstract="false" final="false" start="21" end="104">
+  <file path="/home/web/example/src/freegame_developer/vendor/monolog/monolog/src/Monolog/Handler" file="GroupHandler.php" realpath="/home/web/example/src/freegame_developer/vendor/monolog/monolog/src/Monolog/Handler/GroupHandler.php" size="2496" time="2016-07-29T03:23:52+00:00" unixtime="1469762632" sha1="ef45d264a4904e9ac6cf334594926463a7b6f128" relative="freegame_developer/vendor/monolog/monolog/src/Monolog/Handler/GroupHandler.php"/>
+  <docblock>
+    <description compact="Forwards records to multiple handlers"/>
+    <author value="Lenar Lõhmus &lt;lenar@city.ee&gt;"/>
+  </docblock>
+  <extends full="Monolog\Handler\AbstractHandler" namespace="Monolog\Handler" name="AbstractHandler"/>
+  <member name="handlers" visibility="protected" static="false" line="23"/>
+  <constructor name="__construct" start="29" end="39" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <param description="Array of Handlers." type="array" variable="$handlers"/>
+      <param description="Whether the messages that are handled can bubble up the stack or not" type="object" variable="$bubble">
+        <type full="Monolog\Handler\Boolean" namespace="Monolog\Handler" name="Boolean"/>
+      </param>
+    </docblock>
+    <parameter name="handlers" byreference="false" type="array"/>
+    <parameter name="bubble" byreference="false" type="boolean" default="true"/>
+  </constructor>
+  <method name="isHandling" start="44" end="53" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="{@inheritdoc}"/>
+    </docblock>
+    <parameter name="record" byreference="false" type="array"/>
+  </method>
+  <method name="handle" start="58" end="71" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="{@inheritdoc}"/>
+    </docblock>
+    <parameter name="record" byreference="false" type="array"/>
+  </method>
+  <method name="handleBatch" start="76" end="91" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="{@inheritdoc}"/>
+    </docblock>
+    <parameter name="records" byreference="false" type="array"/>
+  </method>
+  <method name="setFormatter" start="96" end="103" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="{@inheritdoc}"/>
+    </docblock>
+    <parameter name="formatter" byreference="false" type="object">
+      <type full="Monolog\Formatter\FormatterInterface" namespace="Monolog\Formatter" name="FormatterInterface"/>
+    </parameter>
+  </method>
+</class>

@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="phpDocumentor\Reflection\DocBlock\StandardTagFactory" namespace="phpDocumentor\Reflection\DocBlock" name="StandardTagFactory" abstract="false" final="true" start="38" end="314">
+  <file path="/home/web/example/src/freegame_developer/vendor/phpdocumentor/reflection-docblock/src/DocBlock" file="StandardTagFactory.php" realpath="/home/web/example/src/freegame_developer/vendor/phpdocumentor/reflection-docblock/src/DocBlock/StandardTagFactory.php" size="11640" time="2016-09-30T07:12:33+00:00" unixtime="1475219553" sha1="bb65654b362f9fb220c4dc062752613957b902c5" relative="freegame_developer/vendor/phpdocumentor/reflection-docblock/src/DocBlock/StandardTagFactory.php"/>
+  <docblock>
+    <description compact="Creates a Tag object given the contents of a tag.">This Factory is capable of determining the appropriate class for a tag and instantiate it using its `create`
+factory method. The `create` factory method of a Tag can have a variable number of arguments; this way you can
+pass the dependencies that you need to construct a tag object.
+&gt; Important: each parameter in addition to the body variable for the `create` method must default to null, otherwise
+&gt; it violates the constraint with the interface; it is recommended to use the <see xmlns="http://xml.phpdox.net/src" value="Assert::notNull()"/> method to
+&gt; verify that a dependency is actually passed.
+This Factory also features a Service Locator component that is used to pass the right dependencies to the
+`create` method of a tag; each dependency should be registered as a service or as a parameter.
+When you want to use a Tag of your own with custom handling you need to call the `registerTagHandler` method, pass
+the name of the tag and a Fully Qualified Class Name pointing to a class that implements the Tag interface.
+</description>
+  </docblock>
+  <implements full="phpDocumentor\Reflection\DocBlock\TagFactory" namespace="phpDocumentor\Reflection\DocBlock" name="TagFactory"/>
+  <constant type="string" name="REGEX_TAGNAME" value="'[\w\-\_\\\\]+'">
+    <docblock>
+      <description compact="PCRE regular expression matching a tag name."/>
+    </docblock>
+  </constant>
+  <member name="tagHandlerMappings" type="array" default="" visibility="private" static="false" line="46">
+    <docblock>
+      <description/>
+      <var description="An array with a tag as a key, and an FQCN to a class that handles it as an array value." type="array" of="object">
+        <type full="phpDocumentor\Reflection\DocBlock\string" namespace="phpDocumentor\Reflection\DocBlock" name="string"/>
+      </var>
+    </docblock>
+  </member>
+  <member name="tagHandlerParameterCache" type="array" default="" visibility="private" static="false" line="71">
+    <docblock>
+      <description/>
+      <var description="a lazy-loading cache containing parameters for each tagHandler that has been used." type="array" of="object">
+        <type full="\ReflectionParameter[]" namespace="" name="ReflectionParameter[]"/>
+      </var>
+    </docblock>
+  </member>
+  <member name="fqsenResolver" visibility="private" static="false" line="76">
+    <docblock>
+      <description/>
+      <var type="object">
+        <type full="phpDocumentor\Reflection\FqsenResolver" namespace="phpDocumentor\Reflection" name="FqsenResolver"/>
+      </var>
+    </docblock>
+  </member>
+  <member name="serviceLocator" type="array" default="" visibility="private" static="false" line="82">
+    <docblock>
+      <description/>
+      <var description="an array representing a simple Service Locator where we can store parameters and" type="array" of="object">services that can be inserted into the Factory Methods of Tag Handlers.<type full="phpDocumentor\Reflection\DocBlock\mixed" namespace="phpDocumentor\Reflection\DocBlock" name="mixed"/></var>
+    </docblock>
+  </member>
+  <constructor name="__construct" start="95" end="103" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Initialize this tag factory with the means to resolve an FQSEN and optionally a list of tag handlers.">If no tag handlers are provided than the default list in the <see xmlns="http://xml.phpdox.net/src" value="self::$tagHandlerMappings"/> property
+is used.
+</description>
+      <param type="object" variable="$fqsenResolver">
+        <type full="phpDocumentor\Reflection\FqsenResolver" namespace="phpDocumentor\Reflection" name="FqsenResolver"/>
+      </param>
+      <param type="array" variable="$tagHandlers" of="object">
+        <type full="phpDocumentor\Reflection\DocBlock\string" namespace="phpDocumentor\Reflection\DocBlock" name="string"/>
+      </param>
+      <see value="self::registerTagHandler() to add a new tag handler to the existing default list."/>
+    </docblock>
+    <parameter name="fqsenResolver" byreference="false" type="object">
+      <type full="phpDocumentor\Reflection\FqsenResolver" namespace="phpDocumentor\Reflection" name="FqsenResolver"/>
+    </parameter>
+    <parameter name="tagHandlers" byreference="false" type="{unknown}" default="" constant="null"/>
+  </constructor>
+  <method name="create" start="108" end="117" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="{@inheritDoc}"/>
+    </docblock>
+    <parameter name="tagLine" byreference="false" type="{unknown}"/>
+    <parameter name="context" byreference="false" type="{unknown}" default="" constant="null">
+      <type full="phpDocumentor\Reflection\Types\Context" namespace="phpDocumentor\Reflection\Types" name="Context"/>
+    </parameter>
+  </method>
+  <method name="addParameter" start="122" end="125" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="{@inheritDoc}"/>
+    </docblock>
+    <parameter name="name" byreference="false" type="{unknown}"/>
+    <parameter name="value" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="addService" start="130" end="133" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="{@inheritDoc}"/>
+    </docblock>
+    <parameter name="service" byreference="false" type="{unknown}"/>
+    <parameter name="alias" byreference="false" type="{unknown}" default="" constant="null"/>
+  </method>
+  <method name="registerTagHandler" start="138" end="152" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="{@inheritDoc}"/>
+    </docblock>
+    <parameter name="tagName" byreference="false" type="{unknown}"/>
+    <parameter name="handler" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="extractTagParts" start="161" end="175" abstract="false" final="false" static="false" visibility="private">
+    <docblock>
+      <description compact="Extracts all components for a tag."/>
+      <param type="string" variable="$tagLine"/>
+      <return type="array" of="object">
+        <type full="phpDocumentor\Reflection\DocBlock\string" namespace="phpDocumentor\Reflection\DocBlock" name="string"/>
+      </return>
+    </docblock>
+    <parameter name="tagLine" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="createTag" start="187" end="197" abstract="false" final="false" static="false" visibility="private">
+    <docblock>
+      <description compact="Creates a new tag object with the given name and body or returns null if the tag name was recognized but the body was invalid."/>
+      <param type="string" variable="$body"/>
+      <param type="string" variable="$name"/>
+      <param type="object" variable="$context">
+        <type full="phpDocumentor\Reflection\Types\Context" namespace="phpDocumentor\Reflection\Types" name="Context"/>
+      </param>
+      <return type="object">
+        <type full="phpDocumentor\Reflection\DocBlock\Tag|null" namespace="phpDocumentor\Reflection\DocBlock" name="Tag|null"/>
+      </return>
+    </docblock>
+    <parameter name="body" byreference="false" type="{unknown}"/>
+    <parameter name="name" byreference="false" type="{unknown}"/>
+    <parameter name="context" byreference="false" type="object">
+      <type full="phpDocumentor\Reflection\Types\Context" namespace="phpDocumentor\Reflection\Types" name="Context"/>
+    </parameter>
+  </method>
+  <method name="findHandlerClassName" start="207" end="221" abstract="false" final="false" static="false" visibility="private">
+    <docblock>
+      <description compact="Determines the Fully Qualified Class Name of the Factory or Tag (containing a Factory Method `create`)."/>
+      <param type="string" variable="$tagName"/>
+      <param type="object" variable="$context">
+        <type full="phpDocumentor\Reflection\Types\Context" namespace="phpDocumentor\Reflection\Types" name="Context"/>
+      </param>
+      <return type="string"/>
+    </docblock>
+    <parameter name="tagName" byreference="false" type="{unknown}"/>
+    <parameter name="context" byreference="false" type="object">
+      <type full="phpDocumentor\Reflection\Types\Context" namespace="phpDocumentor\Reflection\Types" name="Context"/>
+    </parameter>
+  </method>
+  <method name="getArgumentsForParametersFromWiring" start="232" end="252" abstract="false" final="false" static="false" visibility="private">
+    <docblock>
+      <description compact="Retrieves the arguments that need to be passed to the Factory Method with the given Parameters."/>
+      <param type="array" variable="$parameters" of="object">
+        <type full="\ReflectionParameter" namespace="" name="ReflectionParameter"/>
+      </param>
+      <param type="array" variable="$locator" of="object">
+        <type full="phpDocumentor\Reflection\DocBlock\mixed" namespace="phpDocumentor\Reflection\DocBlock" name="mixed"/>
+      </param>
+      <return description="A series of values that can be passed to the Factory Method of the tag whose parameters" type="array" of="object">is provided with this method.<type full="phpDocumentor\Reflection\DocBlock\mixed" namespace="phpDocumentor\Reflection\DocBlock" name="mixed"/></return>
+    </docblock>
+    <parameter name="parameters" byreference="false" type="{unknown}"/>
+    <parameter name="locator" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="fetchParametersForHandlerFactoryMethod" start="262" end="270" abstract="false" final="false" static="false" visibility="private">
+    <docblock>
+      <description compact="Retrieves a series of ReflectionParameter objects for the static 'create' method of the given tag handler class name."/>
+      <param type="string" variable="$handlerClassName"/>
+      <return type="array" of="object">
+        <type full="\ReflectionParameter" namespace="" name="ReflectionParameter"/>
+      </return>
+    </docblock>
+    <parameter name="handlerClassName" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="getServiceLocatorWithDynamicParameters" start="282" end="294" abstract="false" final="false" static="false" visibility="private">
+    <docblock>
+      <description compact="Returns a copy of this class' Service Locator with added dynamic parameters, such as the tag's name, body and Context."/>
+      <param description="The Context (namespace and aliasses) that may be passed and is used to resolve FQSENs." type="object" variable="$context">
+        <type full="phpDocumentor\Reflection\Types\Context" namespace="phpDocumentor\Reflection\Types" name="Context"/>
+      </param>
+      <param description="The name of the tag that may be passed onto the factory method of the Tag class." type="string" variable="$tagName"/>
+      <param description="The body of the tag that may be passed onto the factory method of the Tag class." type="string" variable="$tagBody"/>
+      <return type="array" of="object">
+        <type full="phpDocumentor\Reflection\DocBlock\mixed" namespace="phpDocumentor\Reflection\DocBlock" name="mixed"/>
+      </return>
+    </docblock>
+    <parameter name="context" byreference="false" type="object">
+      <type full="phpDocumentor\Reflection\Types\Context" namespace="phpDocumentor\Reflection\Types" name="Context"/>
+    </parameter>
+    <parameter name="tagName" byreference="false" type="{unknown}"/>
+    <parameter name="tagBody" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="isAnnotation" start="305" end="313" abstract="false" final="false" static="false" visibility="private">
+    <docblock>
+      <description compact="Returns whether the given tag belongs to an annotation."/>
+      <param type="string" variable="$tagContent"/>
+      <todo value="this method should be populated once we implement Annotation notation support."/>
+      <return type="object">
+        <type full="phpDocumentor\Reflection\DocBlock\bool" namespace="phpDocumentor\Reflection\DocBlock" name="bool"/>
+      </return>
+    </docblock>
+    <parameter name="tagContent" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="1. Contains a namespace separator" line="307"/>
+      <comment value="2. Contains parenthesis" line="308"/>
+      <comment value="3. Is present in a list of known annotations (make the algorithm smart by first checking is the last part" line="309"/>
+      <comment value="of the annotation class name matches the found tag name" line="310"/>
+    </inline>
+  </method>
+</class>

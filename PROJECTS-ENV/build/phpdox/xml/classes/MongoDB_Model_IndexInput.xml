@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="MongoDB\Model\IndexInput" namespace="MongoDB\Model" name="IndexInput" abstract="false" final="false" start="18" end="84">
+  <file path="/home/web/example/src/freegame_developer/vendor/mongodb/mongodb/src/Model" file="IndexInput.php" realpath="/home/web/example/src/freegame_developer/vendor/mongodb/mongodb/src/Model/IndexInput.php" size="2460" time="2016-09-23T19:38:29+00:00" unixtime="1474659509" sha1="2bc4f0790513810f494e0cbb757690f4dbeffbd2" relative="freegame_developer/vendor/mongodb/mongodb/src/Model/IndexInput.php"/>
+  <docblock>
+    <description compact="Index input model class.">This class is used to validate user input for index creation.</description>
+    <internal/>
+    <see value="MongoDB\Collection::createIndexes()"/>
+    <see value="https://github.com/mongodb/specifications/blob/master/source/enumerate-indexes.rst"/>
+    <see value="http://docs.mongodb.org/manual/reference/method/db.collection.createIndex/"/>
+  </docblock>
+  <implements full="MongoDB\BSON\Serializable" namespace="MongoDB\BSON" name="Serializable"/>
+  <member name="index" visibility="private" static="false" line="20"/>
+  <constructor name="__construct" start="28" end="61" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Constructor."/>
+      <param description="Index specification" type="array" variable="$index"/>
+      <throws type="object">
+        <type full="MongoDB\Exception\InvalidArgumentException" namespace="MongoDB\Exception" name="InvalidArgumentException"/>
+      </throws>
+    </docblock>
+    <parameter name="index" byreference="false" type="array"/>
+  </constructor>
+  <method name="__toString" start="68" end="71" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Return the index name."/>
+      <param type="string"/>
+    </docblock>
+  </method>
+  <method name="bsonSerialize" start="80" end="83" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Serialize the index information to BSON for index creation."/>
+      <see value="MongoDB\Collection::createIndexes()"/>
+      <see value="http://php.net/mongodb-bson-serializable.bsonserialize"/>
+      <return type="array"/>
+    </docblock>
+  </method>
+</class>

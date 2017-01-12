@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="Squiz_Sniffs_PHP_DiscouragedFunctionsSniff" namespace="" name="Squiz_Sniffs_PHP_DiscouragedFunctionsSniff" abstract="false" final="false" start="32" end="56">
+  <file path="/home/web/example/src/freegame_developer/vendor/squizlabs/php_codesniffer/CodeSniffer/Standards/Squiz/Sniffs/PHP" file="DiscouragedFunctionsSniff.php" realpath="/home/web/example/src/freegame_developer/vendor/squizlabs/php_codesniffer/CodeSniffer/Standards/Squiz/Sniffs/PHP/DiscouragedFunctionsSniff.php" size="1759" time="2016-01-19T23:39:10+00:00" unixtime="1453246750" sha1="1214d1cc3e195cd3c73af956d53e0203d3f82825" relative="freegame_developer/vendor/squizlabs/php_codesniffer/CodeSniffer/Standards/Squiz/Sniffs/PHP/DiscouragedFunctionsSniff.php"/>
+  <docblock>
+    <description compact="Squiz_Sniffs_PHP_DiscouragedFunctionsSniff.">Discourages the use of debug functions.</description>
+    <category value="PHP"/>
+    <package value="PHP_CodeSniffer"/>
+    <author value="Greg Sherwood &lt;gsherwood@squiz.net&gt;"/>
+    <copyright value="2006-2014 Squiz Pty Ltd (ABN 77 084 670 600)"/>
+    <license name="https://github.com/squizlabs/PHP_CodeSniffer/blob/master/licence.txt BSD Licence"/>
+    <version value="Release: @package_version@"/>
+    <link value="http://pear.php.net/package/PHP_CodeSniffer"/>
+  </docblock>
+  <extends full="Generic_Sniffs_PHP_ForbiddenFunctionsSniff" namespace="" name="Generic_Sniffs_PHP_ForbiddenFunctionsSniff"/>
+  <member name="forbiddenFunctions" type="array" default="" visibility="public" static="false" line="43">
+    <docblock>
+      <description compact="A list of forbidden functions with their alternatives.">The value is NULL if no alternative exists. IE, the
+function should just not be used.</description>
+      <var description="=&gt; string|null)" type="object">
+        <type full="array(string" namespace="" name="array(string"/>
+      </var>
+    </docblock>
+  </member>
+  <member name="error" type="boolean" default="false" visibility="public" static="false" line="54">
+    <docblock>
+      <description compact="If true, an error will be thrown; otherwise a warning."/>
+      <var type="object">
+        <type full="bool" namespace="" name="bool"/>
+      </var>
+    </docblock>
+  </member>
+</class>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="MongoDB\Model\BSONDocument" namespace="MongoDB\Model" name="BSONDocument" abstract="false" final="false" start="17" end="69">
+  <file path="/home/web/example/src/freegame_developer/vendor/mongodb/mongodb/src/Model" file="BSONDocument.php" realpath="/home/web/example/src/freegame_developer/vendor/mongodb/mongodb/src/Model/BSONDocument.php" size="1697" time="2016-09-23T19:38:29+00:00" unixtime="1474659509" sha1="f93f828bc6424ad46ee4e56481fde0f25108fe1c" relative="freegame_developer/vendor/mongodb/mongodb/src/Model/BSONDocument.php"/>
+  <docblock>
+    <description compact="Model class for a BSON document.">The internal data will be cast to an object during BSON serialization to
+ensure that it becomes a BSON document.</description>
+    <api/>
+  </docblock>
+  <extends full="ArrayObject" namespace="" name="ArrayObject"/>
+  <implements full="MongoDB\BSON\Serializable" namespace="MongoDB\BSON" name="Serializable"/>
+  <implements full="MongoDB\BSON\Unserializable" namespace="MongoDB\BSON" name="Unserializable"/>
+  <constructor name="__construct" start="27" end="30" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Constructor.">This overrides the parent constructor to allow property access of entries
+by default.</description>
+      <see value="http://php.net/arrayobject.construct"/>
+    </docblock>
+    <parameter name="input" byreference="false" type="array" default=""/>
+    <parameter name="flags" byreference="false" type="{unknown}" default="" constant="ArrayObject::ARRAY_AS_PROPS"/>
+    <parameter name="iterator_class" byreference="false" type="string" default="'ArrayIterator'"/>
+  </constructor>
+  <method name="__set_state" start="40" end="46" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description compact="Factory method for var_export()."/>
+      <see value="http://php.net/oop5.magic#object.set-state"/>
+      <see value="http://php.net/var-export"/>
+      <param type="array" variable="$properties"/>
+      <return resolution="self" type="object">
+        <type full="MongoDB\Model\BSONDocument" namespace="MongoDB\Model" name="BSONDocument"/>
+      </return>
+    </docblock>
+    <parameter name="properties" byreference="false" type="array"/>
+  </method>
+  <method name="bsonSerialize" start="54" end="57" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Serialize the document to BSON."/>
+      <see value="http://php.net/mongodb-bson-serializable.bsonserialize"/>
+      <return type="object"/>
+    </docblock>
+  </method>
+  <method name="bsonUnserialize" start="65" end="68" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Unserialize the document to BSON."/>
+      <see value="http://php.net/mongodb-bson-unserializable.bsonunserialize"/>
+      <param description="Array data" type="array" variable="$data"/>
+    </docblock>
+    <parameter name="data" byreference="false" type="array"/>
+  </method>
+</class>

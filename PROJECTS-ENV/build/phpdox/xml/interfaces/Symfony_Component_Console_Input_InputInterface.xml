@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface xmlns="http://xml.phpdox.net/src" full="Symfony\Component\Console\Input\InputInterface" namespace="Symfony\Component\Console\Input" name="InputInterface" abstract="false" final="false" start="19" end="154">
+  <file path="/home/web/example/src/freegame_developer/vendor/symfony/console/Input" file="InputInterface.php" realpath="/home/web/example/src/freegame_developer/vendor/symfony/console/Input/InputInterface.php" size="4310" time="2016-10-05T17:26:56+00:00" unixtime="1475688416" sha1="36d6359f9e68e50edb9a76d74ea79dc82a944abf" relative="freegame_developer/vendor/symfony/console/Input/InputInterface.php"/>
+  <docblock>
+    <description compact="InputInterface is the interface implemented by all input classes."/>
+    <author value="Fabien Potencier &lt;fabien@symfony.com&gt;"/>
+  </docblock>
+  <method name="getFirstArgument" start="26" end="26" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Returns the first argument from the raw parameters (not parsed)."/>
+      <return description="The value of the first argument or null otherwise" type="string"/>
+    </docblock>
+  </method>
+  <method name="hasParameterOption" start="38" end="38" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Returns true if the raw parameters (not parsed) contain a value.">This method is to be used to introspect the input parameters
+before they have been validated. It must be used carefully.</description>
+      <param description="The values to look for in the raw parameters (can be an array)" type="object" variable="$values">
+        <type full="Symfony\Component\Console\Input\string|array" namespace="Symfony\Component\Console\Input" name="string|array"/>
+      </param>
+      <return description="true if the value is contained in the raw parameters" type="object">
+        <type full="Symfony\Component\Console\Input\bool" namespace="Symfony\Component\Console\Input" name="bool"/>
+      </return>
+    </docblock>
+    <parameter name="values" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="getParameterOption" start="51" end="51" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Returns the value of a raw option (not parsed).">This method is to be used to introspect the input parameters
+before they have been validated. It must be used carefully.</description>
+      <param description="The value(s) to look for in the raw parameters (can be an array)" type="object" variable="$values">
+        <type full="Symfony\Component\Console\Input\string|array" namespace="Symfony\Component\Console\Input" name="string|array"/>
+      </param>
+      <param description="The default value to return if no result is found" type="mixed" variable="$default"/>
+      <return description="The option value" type="mixed"/>
+    </docblock>
+    <parameter name="values" byreference="false" type="{unknown}"/>
+    <parameter name="default" byreference="false" type="boolean" default="false"/>
+  </method>
+  <method name="bind" start="58" end="58" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Binds the current Input instance with the given arguments and options."/>
+      <param description="A InputDefinition instance" type="object" variable="$definition">
+        <type full="Symfony\Component\Console\Input\InputDefinition" namespace="Symfony\Component\Console\Input" name="InputDefinition"/>
+      </param>
+    </docblock>
+    <parameter name="definition" byreference="false" type="object">
+      <type full="Symfony\Component\Console\Input\InputDefinition" namespace="Symfony\Component\Console\Input" name="InputDefinition"/>
+    </parameter>
+  </method>
+  <method name="validate" start="65" end="65" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Validates the input."/>
+      <throws description="When not enough arguments are given" type="object">
+        <type full="\RuntimeException" namespace="" name="RuntimeException"/>
+      </throws>
+    </docblock>
+  </method>
+  <method name="getArguments" start="72" end="72" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Returns all the given arguments merged with the default values."/>
+      <return type="array"/>
+    </docblock>
+  </method>
+  <method name="getArgument" start="83" end="83" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Returns the argument value for a given argument name."/>
+      <param description="The argument name" type="string" variable="$name"/>
+      <return description="The argument value" type="mixed"/>
+      <throws description="When argument given doesn't exist" type="object">
+        <type full="\InvalidArgumentException" namespace="" name="InvalidArgumentException"/>
+      </throws>
+    </docblock>
+    <parameter name="name" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="setArgument" start="93" end="93" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Sets an argument value by name."/>
+      <param description="The argument name" type="string" variable="$name"/>
+      <param description="The argument value" type="string" variable="$value"/>
+      <throws description="When argument given doesn't exist" type="object">
+        <type full="\InvalidArgumentException" namespace="" name="InvalidArgumentException"/>
+      </throws>
+    </docblock>
+    <parameter name="name" byreference="false" type="{unknown}"/>
+    <parameter name="value" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="hasArgument" start="102" end="102" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Returns true if an InputArgument object exists by name or position."/>
+      <param description="The InputArgument name or position" type="object" variable="$name">
+        <type full="Symfony\Component\Console\Input\string|int" namespace="Symfony\Component\Console\Input" name="string|int"/>
+      </param>
+      <return description="true if the InputArgument object exists, false otherwise" type="object">
+        <type full="Symfony\Component\Console\Input\bool" namespace="Symfony\Component\Console\Input" name="bool"/>
+      </return>
+    </docblock>
+    <parameter name="name" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="getOptions" start="109" end="109" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Returns all the given options merged with the default values."/>
+      <return type="array"/>
+    </docblock>
+  </method>
+  <method name="getOption" start="120" end="120" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Returns the option value for a given option name."/>
+      <param description="The option name" type="string" variable="$name"/>
+      <return description="The option value" type="mixed"/>
+      <throws description="When option given doesn't exist" type="object">
+        <type full="\InvalidArgumentException" namespace="" name="InvalidArgumentException"/>
+      </throws>
+    </docblock>
+    <parameter name="name" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="setOption" start="130" end="130" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Sets an option value by name."/>
+      <param description="The option name" type="string" variable="$name"/>
+      <param description="The option value" type="object" variable="$value">
+        <type full="Symfony\Component\Console\Input\string|bool" namespace="Symfony\Component\Console\Input" name="string|bool"/>
+      </param>
+      <throws description="When option given doesn't exist" type="object">
+        <type full="\InvalidArgumentException" namespace="" name="InvalidArgumentException"/>
+      </throws>
+    </docblock>
+    <parameter name="name" byreference="false" type="{unknown}"/>
+    <parameter name="value" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="hasOption" start="139" end="139" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Returns true if an InputOption object exists by name."/>
+      <param description="The InputOption name" type="string" variable="$name"/>
+      <return description="true if the InputOption object exists, false otherwise" type="object">
+        <type full="Symfony\Component\Console\Input\bool" namespace="Symfony\Component\Console\Input" name="bool"/>
+      </return>
+    </docblock>
+    <parameter name="name" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="isInteractive" start="146" end="146" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Is this input means interactive?"/>
+      <return type="object">
+        <type full="Symfony\Component\Console\Input\bool" namespace="Symfony\Component\Console\Input" name="bool"/>
+      </return>
+    </docblock>
+  </method>
+  <method name="setInteractive" start="153" end="153" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Sets the input interactivity."/>
+      <param description="If the input should be interactive" type="object" variable="$interactive">
+        <type full="Symfony\Component\Console\Input\bool" namespace="Symfony\Component\Console\Input" name="bool"/>
+      </param>
+    </docblock>
+    <parameter name="interactive" byreference="false" type="{unknown}"/>
+  </method>
+</interface>

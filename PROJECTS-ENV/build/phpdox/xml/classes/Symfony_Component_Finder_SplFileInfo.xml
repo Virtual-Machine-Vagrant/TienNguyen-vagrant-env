@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="Symfony\Component\Finder\SplFileInfo" namespace="Symfony\Component\Finder" name="SplFileInfo" abstract="false" final="false" start="19" end="81">
+  <file path="/home/web/example/src/freegame_developer/vendor/symfony/finder" file="SplFileInfo.php" realpath="/home/web/example/src/freegame_developer/vendor/symfony/finder/SplFileInfo.php" size="1909" time="2016-09-16T16:53:37+00:00" unixtime="1474044817" sha1="f5ad666093314322c98a2719a0ee2eb390c38201" relative="freegame_developer/vendor/symfony/finder/SplFileInfo.php"/>
+  <docblock>
+    <description compact="Extends \SplFileInfo to support relative paths."/>
+    <author value="Fabien Potencier &lt;fabien@symfony.com&gt;"/>
+  </docblock>
+  <extends full="SplFileInfo" namespace="" name="SplFileInfo"/>
+  <member name="relativePath" visibility="private" static="false" line="21"/>
+  <member name="relativePathname" visibility="private" static="false" line="22"/>
+  <constructor name="__construct" start="31" end="36" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Constructor."/>
+      <param description="The file name" type="string" variable="$file"/>
+      <param description="The relative path" type="string" variable="$relativePath"/>
+      <param description="The relative path name" type="string" variable="$relativePathname"/>
+    </docblock>
+    <parameter name="file" byreference="false" type="{unknown}"/>
+    <parameter name="relativePath" byreference="false" type="{unknown}"/>
+    <parameter name="relativePathname" byreference="false" type="{unknown}"/>
+  </constructor>
+  <method name="getRelativePath" start="45" end="48" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Returns the relative path.">This path does not contain the file name.</description>
+      <return description="the relative path" type="string"/>
+    </docblock>
+  </method>
+  <method name="getRelativePathname" start="57" end="60" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Returns the relative path name.">This path contains the file name.</description>
+      <return description="the relative path name" type="string"/>
+    </docblock>
+  </method>
+  <method name="getContents" start="69" end="80" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Returns the contents of the file."/>
+      <return description="the contents of the file" type="string"/>
+      <throws type="object">
+        <type full="\RuntimeException" namespace="" name="RuntimeException"/>
+      </throws>
+    </docblock>
+  </method>
+</class>

@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="PhpParser\Node\Expr\BinaryOp\GreaterOrEqual" namespace="PhpParser\Node\Expr\BinaryOp" name="GreaterOrEqual" abstract="false" final="false" start="7" end="9">
+  <file path="/home/web/example/src/freegame_developer/vendor/nikic/php-parser/lib/PhpParser/Node/Expr/BinaryOp" file="GreaterOrEqual.php" realpath="/home/web/example/src/freegame_developer/vendor/nikic/php-parser/lib/PhpParser/Node/Expr/BinaryOp/GreaterOrEqual.php" size="124" time="2016-09-16T12:04:44+00:00" unixtime="1474027484" sha1="f4cb83c3090e8ef120d0460bf1e7a8ebb7e3ac02" relative="freegame_developer/vendor/nikic/php-parser/lib/PhpParser/Node/Expr/BinaryOp/GreaterOrEqual.php"/>
+  <extends full="PhpParser\Node\Expr\BinaryOp" namespace="PhpParser\Node\Expr" name="BinaryOp"/>
+</class>

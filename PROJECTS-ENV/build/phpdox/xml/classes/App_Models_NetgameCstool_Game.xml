@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="App\Models\NetgameCstool\Game" namespace="App\Models\NetgameCstool" name="Game" abstract="false" final="false" start="8" end="60">
+  <file path="/home/web/example/src/freegame_developer/app/Models/NetgameCstool" file="Game.php" realpath="/home/web/example/src/freegame_developer/app/Models/NetgameCstool/Game.php" size="1538" time="2016-11-16T01:52:54+00:00" unixtime="1479261174" sha1="91adf354902f8e40f48157e06356b486a911bfc9" relative="freegame_developer/app/Models/NetgameCstool/Game.php"/>
+  <extends full="App\Models\NetgameCstool\NetgameCstool" namespace="App\Models\NetgameCstool" name="NetgameCstool"/>
+  <member name="table" type="string" default="'game'" visibility="protected" static="false" line="10"/>
+  <member name="timestamps" type="boolean" default="false" visibility="public" static="false" line="12"/>
+  <method name="getPublicSetting" start="20" end="24" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Get public setting"/>
+      <param type="array" variable="$params"/>
+      <return type="array"/>
+    </docblock>
+    <parameter name="params" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="updatePublicSetting" start="32" end="44" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Update public setting"/>
+      <param type="array" variable="$params"/>
+      <return type="integer"/>
+    </docblock>
+    <parameter name="params" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="getTopGameList" start="52" end="59" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Get top game list"/>
+      <param type="integer" variable="$gameId"/>
+      <return type="object"/>
+    </docblock>
+    <parameter name="gameId" byreference="false" type="{unknown}"/>
+  </method>
+</class>

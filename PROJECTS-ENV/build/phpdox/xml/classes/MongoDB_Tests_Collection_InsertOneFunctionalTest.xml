@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="MongoDB\Tests\Collection\InsertOneFunctionalTest" namespace="MongoDB\Tests\Collection" name="InsertOneFunctionalTest" abstract="false" final="false" start="10" end="88">
+  <file path="/home/web/example/src/freegame_developer/vendor/mongodb/mongodb/tests/Operation" file="InsertOneFunctionalTest.php" realpath="/home/web/example/src/freegame_developer/vendor/mongodb/mongodb/tests/Operation/InsertOneFunctionalTest.php" size="2828" time="2016-09-23T19:38:29+00:00" unixtime="1474659509" sha1="d56571a5c1c6e0a8039fa70d64fc0ef4ce5d5fa4" relative="freegame_developer/vendor/mongodb/mongodb/tests/Operation/InsertOneFunctionalTest.php"/>
+  <extends full="MongoDB\Tests\Collection\FunctionalTestCase" namespace="MongoDB\Tests\Collection" name="FunctionalTestCase"/>
+  <method name="testInsertOneWithExistingId" start="15" end="29" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <dataprovider value="provideDocumentWithExistingId"/>
+    </docblock>
+    <parameter name="document" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="provideDocumentWithExistingId" start="31" end="38" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testInsertOneWithGeneratedId" start="40" end="56" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testUnacknowledgedWriteConcern" start="58" end="69" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testUnacknowledgedWriteConcernAccessesInsertedCount" start="76" end="79" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <depends value="testUnacknowledgedWriteConcern"/>
+      <expectedexception value="MongoDB\Exception\BadMethodCallException"/>
+      <expectedexceptionmessageregexp value="/[\w:\\]+ should not be called for an unacknowledged write result/"/>
+    </docblock>
+    <parameter name="result" byreference="false" type="object">
+      <type full="MongoDB\InsertOneResult" namespace="MongoDB" name="InsertOneResult"/>
+    </parameter>
+  </method>
+  <method name="testUnacknowledgedWriteConcernAccessesInsertedId" start="84" end="87" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <depends value="testUnacknowledgedWriteConcern"/>
+    </docblock>
+    <parameter name="result" byreference="false" type="object">
+      <type full="MongoDB\InsertOneResult" namespace="MongoDB" name="InsertOneResult"/>
+    </parameter>
+  </method>
+</class>

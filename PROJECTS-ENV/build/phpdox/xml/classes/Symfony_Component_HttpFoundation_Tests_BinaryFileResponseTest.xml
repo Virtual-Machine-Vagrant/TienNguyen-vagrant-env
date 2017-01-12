@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="Symfony\Component\HttpFoundation\Tests\BinaryFileResponseTest" namespace="Symfony\Component\HttpFoundation\Tests" name="BinaryFileResponseTest" abstract="false" final="false" start="19" end="330">
+  <file path="/home/web/example/src/freegame_developer/vendor/symfony/http-foundation/Tests" file="BinaryFileResponseTest.php" realpath="/home/web/example/src/freegame_developer/vendor/symfony/http-foundation/Tests/BinaryFileResponseTest.php" size="11698" time="2016-10-24T14:36:35+00:00" unixtime="1477319795" sha1="6d27bc0995c6c701b9712e8ff764d23aa8f00e4e" relative="freegame_developer/vendor/symfony/http-foundation/Tests/BinaryFileResponseTest.php"/>
+  <extends full="Symfony\Component\HttpFoundation\Tests\ResponseTestCase" namespace="Symfony\Component\HttpFoundation\Tests" name="ResponseTestCase"/>
+  <method name="testConstruction" start="21" end="35" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testConstructWithNonAsciiFilename" start="37" end="46" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testSetContent" start="51" end="55" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <expectedexception value="\LogicException"/>
+    </docblock>
+  </method>
+  <method name="testGetContent" start="57" end="61" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testSetContentDispositionGeneratesSafeFallbackFilename" start="63" end="69" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testRequests" start="74" end="100" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <dataprovider value="provideRanges"/>
+    </docblock>
+    <parameter name="requestRange" byreference="false" type="{unknown}"/>
+    <parameter name="offset" byreference="false" type="{unknown}"/>
+    <parameter name="length" byreference="false" type="{unknown}"/>
+    <parameter name="responseRange" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="do a request to get the ETag" line="78"/>
+      <comment value="prepare a request for a range of the testing file" line="83"/>
+    </inline>
+  </method>
+  <method name="testRequestsWithoutEtag" start="105" end="131" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <dataprovider value="provideRanges"/>
+    </docblock>
+    <parameter name="requestRange" byreference="false" type="{unknown}"/>
+    <parameter name="offset" byreference="false" type="{unknown}"/>
+    <parameter name="length" byreference="false" type="{unknown}"/>
+    <parameter name="responseRange" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="do a request to get the LastModified" line="109"/>
+      <comment value="prepare a request for a range of the testing file" line="114"/>
+    </inline>
+  </method>
+  <method name="provideRanges" start="133" end="142" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testRangeRequestsWithoutLastModifiedDate" start="144" end="161" abstract="false" final="false" static="false" visibility="public">
+    <inline>
+      <comment value="prevent auto last modified" line="146"/>
+      <comment value="prepare a request for a range of the testing file" line="149"/>
+    </inline>
+  </method>
+  <method name="testFullFileRequests" start="166" end="184" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <dataprovider value="provideFullFileRanges"/>
+    </docblock>
+    <parameter name="requestRange" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="prepare a request for a range of the testing file" line="170"/>
+    </inline>
+  </method>
+  <method name="provideFullFileRanges" start="186" end="196" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testInvalidRequests" start="201" end="215" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <dataprovider value="provideInvalidRanges"/>
+    </docblock>
+    <parameter name="requestRange" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="prepare a request for a range of the testing file" line="205"/>
+    </inline>
+  </method>
+  <method name="provideInvalidRanges" start="217" end="223" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testXSendfile" start="228" end="241" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <dataprovider value="provideXSendfileFiles"/>
+    </docblock>
+    <parameter name="file" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="provideXSendfileFiles" start="243" end="249" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testXAccelMapping" start="254" end="271" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <dataprovider value="getSampleXAccelMappings"/>
+    </docblock>
+    <parameter name="realpath" byreference="false" type="{unknown}"/>
+    <parameter name="mapping" byreference="false" type="{unknown}"/>
+    <parameter name="virtual" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="testDeleteFileAfterSend" start="273" end="289" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testAcceptRangeOnUnsafeMethods" start="291" end="298" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testAcceptRangeNotOverriden" start="300" end="308" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="getSampleXAccelMappings" start="310" end="316" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="provideResponse" start="318" end="321" abstract="false" final="false" static="false" visibility="protected"/>
+  <method name="tearDownAfterClass" start="323" end="329" abstract="false" final="false" static="true" visibility="public"/>
+</class>

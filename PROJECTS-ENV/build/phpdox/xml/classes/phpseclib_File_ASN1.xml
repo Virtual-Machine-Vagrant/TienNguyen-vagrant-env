@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="phpseclib\File\ASN1" namespace="phpseclib\File" name="ASN1" abstract="false" final="false" start="36" end="1323">
+  <file path="/home/web/example/src/freegame_developer/vendor/phpseclib/phpseclib/phpseclib/File" file="ASN1.php" realpath="/home/web/example/src/freegame_developer/vendor/phpseclib/phpseclib/phpseclib/File/ASN1.php" size="52999" time="2016-10-04T00:57:04+00:00" unixtime="1475542624" sha1="89518f62ebfe9930c2548a28651cba45c6f5d497" relative="freegame_developer/vendor/phpseclib/phpseclib/phpseclib/File/ASN1.php"/>
+  <docblock>
+    <description compact="Pure-PHP ASN.1 Parser"/>
+    <package value="ASN1"/>
+    <author value="Jim Wigginton &lt;terrafrost@php.net&gt;"/>
+    <access value="public"/>
+  </docblock>
+  <constant type="integer" name="CLASS_UNIVERSAL" value="0"/>
+  <constant type="integer" name="CLASS_APPLICATION" value="1"/>
+  <constant type="integer" name="CLASS_CONTEXT_SPECIFIC" value="2"/>
+  <constant type="integer" name="CLASS_PRIVATE" value="3"/>
+  <constant type="integer" name="TYPE_BOOLEAN" value="1"/>
+  <constant type="integer" name="TYPE_INTEGER" value="2"/>
+  <constant type="integer" name="TYPE_BIT_STRING" value="3"/>
+  <constant type="integer" name="TYPE_OCTET_STRING" value="4"/>
+  <constant type="integer" name="TYPE_NULL" value="5"/>
+  <constant type="integer" name="TYPE_OBJECT_IDENTIFIER" value="6"/>
+  <constant type="integer" name="TYPE_REAL" value="9"/>
+  <constant type="integer" name="TYPE_ENUMERATED" value="10"/>
+  <constant type="integer" name="TYPE_UTF8_STRING" value="12"/>
+  <constant type="integer" name="TYPE_SEQUENCE" value="16"/>
+  <constant type="integer" name="TYPE_SET" value="17"/>
+  <constant type="integer" name="TYPE_NUMERIC_STRING" value="18"/>
+  <constant type="integer" name="TYPE_PRINTABLE_STRING" value="19"/>
+  <constant type="integer" name="TYPE_TELETEX_STRING" value="20"/>
+  <constant type="integer" name="TYPE_VIDEOTEX_STRING" value="21"/>
+  <constant type="integer" name="TYPE_IA5_STRING" value="22"/>
+  <constant type="integer" name="TYPE_UTC_TIME" value="23"/>
+  <constant type="integer" name="TYPE_GENERALIZED_TIME" value="24"/>
+  <constant type="integer" name="TYPE_GRAPHIC_STRING" value="25"/>
+  <constant type="integer" name="TYPE_VISIBLE_STRING" value="26"/>
+  <constant type="integer" name="TYPE_GENERAL_STRING" value="27"/>
+  <constant type="integer" name="TYPE_UNIVERSAL_STRING" value="28"/>
+  <constant type="integer" name="TYPE_BMP_STRING" value="30"/>
+  <constant type="integer" name="TYPE_CHOICE" value="1"/>
+  <constant type="integer" name="TYPE_ANY" value="2"/>
+  <member name="oids" type="array" default="" visibility="public" static="false" line="111">
+    <docblock>
+      <description compact="ASN.1 object identifier"/>
+      <var type="array"/>
+      <access value="private"/>
+      <link value="http://en.wikipedia.org/wiki/Object_identifier"/>
+    </docblock>
+  </member>
+  <member name="format" type="string" default="'D, d M Y H:i:s O'" visibility="public" static="false" line="120">
+    <docblock>
+      <description compact="Default date format"/>
+      <var type="string"/>
+      <access value="private"/>
+      <link value="http://php.net/class.datetime"/>
+    </docblock>
+  </member>
+  <member name="encoded" visibility="public" static="false" line="131">
+    <docblock>
+      <description compact="Default date format"/>
+      <var type="array"/>
+      <access value="private"/>
+      <see value="self::setTimeFormat()"/>
+      <see value="self::asn1map()"/>
+      <link value="http://php.net/class.datetime"/>
+    </docblock>
+  </member>
+  <member name="filters" visibility="public" static="false" line="142">
+    <docblock>
+      <description compact="Filters">If the mapping type is self::TYPE_ANY what do we actually encode it as?</description>
+      <var type="array"/>
+      <access value="private"/>
+      <see value="self::_encode_der()"/>
+    </docblock>
+  </member>
+  <member name="ANYmap" type="array" default="" visibility="public" static="false" line="154">
+    <docblock>
+      <description compact="Type mapping table for the ANY type.">Structured or unknown types are mapped to a \phpseclib\File\ASN1\Element.
+Unambiguous types get the direct mapping (int/real/bool).
+Others are mapped as a choice, with an extra indexing level.</description>
+      <var type="array"/>
+      <access value="public"/>
+    </docblock>
+  </member>
+  <member name="stringTypeSize" type="array" default="" visibility="public" static="false" line="188">
+    <docblock>
+      <description compact="String type to character size mapping table.">Non-convertable types are absent from this table.
+size == 0 indicates variable length encoding.</description>
+      <var type="array"/>
+      <access value="public"/>
+    </docblock>
+  </member>
+  <method name="decodeBER" start="207" end="216" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Parse BER-encoding">Serves a similar purpose to openssl's asn1parse</description>
+      <param type="string" variable="$encoded"/>
+      <return type="array"/>
+      <access value="public"/>
+    </docblock>
+    <parameter name="encoded" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="encapsulate in an array for BC with the old decodeBER" line="214"/>
+    </inline>
+  </method>
+  <method name="_decode_ber" start="231" end="481" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Parse BER-encoding (Helper function)">Sometimes we want to get the BER encoding of a particular tag.  $start lets us do that without having to reencode.
+$encoded is passed by reference for the recursive calls done for self::TYPE_BIT_STRING and
+self::TYPE_OCTET_STRING. In those cases, the indefinite length is used.</description>
+      <param type="string" variable="$encoded"/>
+      <param type="int" variable="$start"/>
+      <param type="int" variable="$encoded_pos"/>
+      <return type="array"/>
+      <access value="private"/>
+    </docblock>
+    <parameter name="encoded" byreference="false" type="{unknown}"/>
+    <parameter name="start" byreference="false" type="integer" default="0"/>
+    <parameter name="encoded_pos" byreference="false" type="integer" default="0"/>
+    <inline>
+      <comment value="Length, as discussed in paragraph 8.1.3 of X.690-0207.pdf#page=13" line="252"/>
+      <comment value="at this point $length can be overwritten. it's only accurate for definite length things as is" line="280"/>
+      <comment value="Class is UNIVERSAL, APPLICATION, PRIVATE, or CONTEXT-SPECIFIC. The UNIVERSAL class is restricted to the ASN.1" line="282"/>
+      <comment xmlns="http://xml.phpdox.net/src" value="built-in types. It defines an application-independent data type that must be distinguishable from all other" line="283"/>
+      <comment xmlns="http://xml.phpdox.net/src" value="data types. The other three classes are user defined. The APPLICATION class distinguishes data types that" line="284"/>
+      <comment xmlns="http://xml.phpdox.net/src" value="have a wide, scattered use within a particular presentation context. PRIVATE distinguishes data types within" line="285"/>
+      <comment xmlns="http://xml.phpdox.net/src" value="a particular organization or country. CONTEXT-SPECIFIC distinguishes members of a sequence or set, the" line="286"/>
+      <comment xmlns="http://xml.phpdox.net/src" value="alternatives of a CHOICE, or universally tagged set members. Only the class number appears in braces for this" line="287"/>
+      <comment xmlns="http://xml.phpdox.net/src" value="data type; the term CONTEXT-SPECIFIC does not appear." line="288"/>
+      <comment xmlns="http://xml.phpdox.net/src" value="-- http://www.obj-sys.com/asn1tutorial/node12.html" line="289"/>
+      <comment value="decode UNIVERSAL tags" line="337"/>
+      <comment value="ie. length is the length of the full TLV encoding - it's not just the length of the value" line="479"/>
+    </inline>
+  </method>
+  <method name="asn1map" start="496" end="772" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="ASN.1 Map">Provides an ASN.1 semantic mapping ($mapping) from a parsed BER-encoding to a human readable format.
+
+"Special" mappings may be applied on a per tag-name basis via $special.</description>
+      <param type="array" variable="$decoded"/>
+      <param type="array" variable="$mapping"/>
+      <param type="array" variable="$special"/>
+      <return type="array"/>
+      <access value="public"/>
+    </docblock>
+    <parameter name="decoded" byreference="false" type="{unknown}"/>
+    <parameter name="mapping" byreference="false" type="{unknown}"/>
+    <parameter name="special" byreference="false" type="array" default=""/>
+  </method>
+  <method name="encodeDER" start="788" end="792" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="ASN.1 Encode">DER-encodes an ASN.1 semantic mapping ($mapping).  Some libraries would probably call this function
+an ASN.1 compiler.
+
+"Special" mappings can be applied via $special.</description>
+      <param type="string" variable="$source"/>
+      <param type="string" variable="$mapping"/>
+      <param type="int" variable="$idx"/>
+      <return type="string"/>
+      <access value="public"/>
+    </docblock>
+    <parameter name="source" byreference="false" type="{unknown}"/>
+    <parameter name="mapping" byreference="false" type="{unknown}"/>
+    <parameter name="special" byreference="false" type="array" default=""/>
+  </method>
+  <method name="_encode_der" start="803" end="1098" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="ASN.1 Encode (Helper function)"/>
+      <param type="string" variable="$source"/>
+      <param type="string" variable="$mapping"/>
+      <param type="int" variable="$idx"/>
+      <return type="string"/>
+      <access value="private"/>
+    </docblock>
+    <parameter name="source" byreference="false" type="{unknown}"/>
+    <parameter name="mapping" byreference="false" type="{unknown}"/>
+    <parameter name="idx" byreference="false" type="{unknown}" default="" constant="null"/>
+    <parameter name="special" byreference="false" type="array" default=""/>
+    <inline>
+      <comment value="do not encode (implicitly optional) fields with value set to default" line="809"/>
+    </inline>
+  </method>
+  <method name="_encodeLength" start="1110" end="1118" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="DER-encode the length">DER supports lengths up to (2**8)**127, however, we'll only support lengths up to (2**8)**4.  See
+{@link http://itu.int/ITU-T/studygroups/com17/languages/X.690-0207.pdf#p=13 X.690 paragraph 8.1.3} for more information.</description>
+      <access value="private"/>
+      <param type="int" variable="$length"/>
+      <return type="string"/>
+    </docblock>
+    <parameter name="length" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="_decodeTime" start="1130" end="1167" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="BER-decode the time">Called by _decode_ber() and in the case of implicit tags asn1map().</description>
+      <access value="private"/>
+      <param type="string" variable="$content"/>
+      <param type="int" variable="$tag"/>
+      <return type="string"/>
+    </docblock>
+    <parameter name="content" byreference="false" type="{unknown}"/>
+    <parameter name="tag" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="UTCTime:" line="1132"/>
+      <comment xmlns="http://xml.phpdox.net/src" value="http://tools.ietf.org/html/rfc5280#section-4.1.2.5.1" line="1133"/>
+      <comment xmlns="http://xml.phpdox.net/src" value="http://www.obj-sys.com/asn1tutorial/node15.html" line="1134"/>
+      <comment xmlns="http://xml.phpdox.net/src" value="GeneralizedTime:" line="1135"/>
+      <comment xmlns="http://xml.phpdox.net/src" value="http://tools.ietf.org/html/rfc5280#section-4.1.2.5.2" line="1136"/>
+      <comment xmlns="http://xml.phpdox.net/src" value="http://www.obj-sys.com/asn1tutorial/node14.html" line="1137"/>
+    </inline>
+  </method>
+  <method name="setTimeFormat" start="1177" end="1180" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Set the time format">Sets the time / date format for asn1map().</description>
+      <access value="public"/>
+      <param type="string" variable="$format"/>
+    </docblock>
+    <parameter name="format" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="loadOIDs" start="1190" end="1193" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Load OIDs">Load the relevant OIDs for a particular ASN.1 semantic mapping.</description>
+      <access value="public"/>
+      <param type="array" variable="$oids"/>
+    </docblock>
+    <parameter name="oids" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="loadFilters" start="1203" end="1206" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Load filters">See \phpseclib\File\X509, etc, for an example.</description>
+      <access value="public"/>
+      <param type="array" variable="$filters"/>
+    </docblock>
+    <parameter name="filters" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="_string_shift" start="1218" end="1223" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="String Shift">Inspired by array_shift</description>
+      <param type="string" variable="$string"/>
+      <param type="int" variable="$index"/>
+      <return type="string"/>
+      <access value="private"/>
+    </docblock>
+    <parameter name="string" byreference="true" type="{unknown}"/>
+    <parameter name="index" byreference="false" type="integer" default="1"/>
+  </method>
+  <method name="convert" start="1237" end="1322" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="String type conversion">This is a lazy conversion, dealing only with character size.
+No real conversion table is used.</description>
+      <param type="string" variable="$in"/>
+      <param type="int" variable="$from"/>
+      <param type="int" variable="$to"/>
+      <return type="string"/>
+      <access value="public"/>
+    </docblock>
+    <parameter name="in" byreference="false" type="{unknown}"/>
+    <parameter name="from" byreference="false" type="{unknown}" default="" constant="self::TYPE_UTF8_STRING"/>
+    <parameter name="to" byreference="false" type="{unknown}" default="" constant="self::TYPE_UTF8_STRING"/>
+  </method>
+</class>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface xmlns="http://xml.phpdox.net/src" full="PhpSpec\CodeGenerator\Writer\CodeWriter" namespace="PhpSpec\CodeGenerator\Writer" name="CodeWriter" abstract="false" final="false" start="16" end="39">
+  <file path="/home/web/example/src/freegame_developer/vendor/phpspec/phpspec/src/PhpSpec/CodeGenerator/Writer" file="CodeWriter.php" realpath="/home/web/example/src/freegame_developer/vendor/phpspec/phpspec/src/PhpSpec/CodeGenerator/Writer/CodeWriter.php" size="922" time="2016-01-01T10:17:54+00:00" unixtime="1451643474" sha1="539ebcce46e5b87e1027e77e897874666ebb55b9" relative="freegame_developer/vendor/phpspec/phpspec/src/PhpSpec/CodeGenerator/Writer/CodeWriter.php"/>
+  <method name="insertMethodFirstInClass" start="23" end="23" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <param type="string" variable="$class"/>
+      <param type="string" variable="$method"/>
+      <return type="string"/>
+    </docblock>
+    <parameter name="class" byreference="false" type="{unknown}"/>
+    <parameter name="method" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="insertMethodLastInClass" start="30" end="30" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <param type="string" variable="$class"/>
+      <param type="string" variable="$method"/>
+      <return type="string"/>
+    </docblock>
+    <parameter name="class" byreference="false" type="{unknown}"/>
+    <parameter name="method" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="insertAfterMethod" start="38" end="38" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <param type="string" variable="$class"/>
+      <param type="string" variable="$methodName"/>
+      <param type="string" variable="$method"/>
+      <return type="string"/>
+    </docblock>
+    <parameter name="class" byreference="false" type="{unknown}"/>
+    <parameter name="methodName" byreference="false" type="{unknown}"/>
+    <parameter name="method" byreference="false" type="{unknown}"/>
+  </method>
+</interface>

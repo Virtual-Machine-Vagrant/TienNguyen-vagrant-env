@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="Swift_Mime_ContentEncoder_QpContentEncoder" namespace="" name="Swift_Mime_ContentEncoder_QpContentEncoder" abstract="false" final="false" start="16" end="134">
+  <file path="/home/web/example/src/freegame_developer/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Mime/ContentEncoder" file="QpContentEncoder.php" realpath="/home/web/example/src/freegame_developer/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Mime/ContentEncoder/QpContentEncoder.php" size="4225" time="2016-07-08T11:51:25+00:00" unixtime="1467978685" sha1="517b1ad70f5a7cdbf544155a10f9e49756efe298" relative="freegame_developer/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Mime/ContentEncoder/QpContentEncoder.php"/>
+  <docblock>
+    <description compact="Handles Quoted Printable (QP) Transfer Encoding in Swift Mailer."/>
+    <author value="Chris Corbyn"/>
+  </docblock>
+  <extends full="Swift_Encoder_QpEncoder" namespace="" name="Swift_Encoder_QpEncoder"/>
+  <implements full="Swift_Mime_ContentEncoder" namespace="" name="Swift_Mime_ContentEncoder"/>
+  <member name="_dotEscape" visibility="protected" static="false" line="18"/>
+  <constructor name="__construct" start="27" end="31" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Creates a new QpContentEncoder for the given CharacterStream."/>
+      <param description="to use for reading characters" type="object" variable="$charStream">
+        <type full="Swift_CharacterStream" namespace="" name="Swift_CharacterStream"/>
+      </param>
+      <param description="if canonicalization should occur" type="object" variable="$filter">
+        <type full="Swift_StreamFilter" namespace="" name="Swift_StreamFilter"/>
+      </param>
+      <param description="if dot stuffing workaround must be enabled" type="object" variable="$dotEscape">
+        <type full="bool" namespace="" name="bool"/>
+      </param>
+    </docblock>
+    <parameter name="charStream" byreference="false" type="object">
+      <type full="Swift_CharacterStream" namespace="" name="Swift_CharacterStream"/>
+    </parameter>
+    <parameter name="filter" byreference="false" type="{unknown}" default="" constant="null">
+      <type full="Swift_StreamFilter" namespace="" name="Swift_StreamFilter"/>
+    </parameter>
+    <parameter name="dotEscape" byreference="false" type="boolean" default="false"/>
+  </constructor>
+  <method name="__sleep" start="33" end="36" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="getSafeMapShareId" start="38" end="41" abstract="false" final="false" static="false" visibility="protected"/>
+  <method name="initSafeMap" start="43" end="50" abstract="false" final="false" static="false" visibility="protected"/>
+  <method name="encodeByteStream" start="64" end="122" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Encode stream $in to stream $out.">QP encoded strings have a maximum line length of 76 characters.
+If the first line needs to be shorter, indicate the difference with
+$firstLineOffset.</description>
+      <param description="output stream" type="object" variable="$os">
+        <type full="Swift_OutputByteStream" namespace="" name="Swift_OutputByteStream"/>
+      </param>
+      <param description="input stream" type="object" variable="$is">
+        <type full="Swift_InputByteStream" namespace="" name="Swift_InputByteStream"/>
+      </param>
+      <param type="int" variable="$firstLineOffset"/>
+      <param type="int" variable="$maxLineLength"/>
+    </docblock>
+    <parameter name="os" byreference="false" type="object">
+      <type full="Swift_OutputByteStream" namespace="" name="Swift_OutputByteStream"/>
+    </parameter>
+    <parameter name="is" byreference="false" type="object">
+      <type full="Swift_InputByteStream" namespace="" name="Swift_InputByteStream"/>
+    </parameter>
+    <parameter name="firstLineOffset" byreference="false" type="integer" default="0"/>
+    <parameter name="maxLineLength" byreference="false" type="integer" default="0"/>
+  </method>
+  <method name="getName" start="130" end="133" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Get the name of this encoding scheme.">Returns the string 'quoted-printable'.</description>
+      <return type="string"/>
+    </docblock>
+  </method>
+</class>

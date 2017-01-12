@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="Illuminate\Queue\Failed\NullFailedJobProvider" namespace="Illuminate\Queue\Failed" name="NullFailedJobProvider" abstract="false" final="false" start="5" end="61">
+  <file path="/home/web/example/src/freegame_developer/vendor/laravel/framework/src/Illuminate/Queue/Failed" file="NullFailedJobProvider.php" realpath="/home/web/example/src/freegame_developer/vendor/laravel/framework/src/Illuminate/Queue/Failed/NullFailedJobProvider.php" size="1000" time="2016-02-24T15:13:21+00:00" unixtime="1456326801" sha1="c178b6b4d10ba3ef28a35ea7f5ac1ae519ec16f3" relative="freegame_developer/vendor/laravel/framework/src/Illuminate/Queue/Failed/NullFailedJobProvider.php"/>
+  <implements full="Illuminate\Queue\Failed\FailedJobProviderInterface" namespace="Illuminate\Queue\Failed" name="FailedJobProviderInterface"/>
+  <method name="log" start="15" end="18" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Log a failed job into storage."/>
+      <param type="string" variable="$connection"/>
+      <param type="string" variable="$queue"/>
+      <param type="string" variable="$payload"/>
+      <return type="object">
+        <type full="Illuminate\Queue\Failed\void" namespace="Illuminate\Queue\Failed" name="void"/>
+      </return>
+    </docblock>
+    <parameter name="connection" byreference="false" type="{unknown}"/>
+    <parameter name="queue" byreference="false" type="{unknown}"/>
+    <parameter name="payload" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="all" start="25" end="28" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Get a list of all of the failed jobs."/>
+      <return type="array"/>
+    </docblock>
+  </method>
+  <method name="find" start="36" end="39" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Get a single failed job."/>
+      <param type="mixed" variable="$id"/>
+      <return type="array"/>
+    </docblock>
+    <parameter name="id" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="forget" start="47" end="50" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Delete a single failed job from storage."/>
+      <param type="mixed" variable="$id"/>
+      <return type="object">
+        <type full="Illuminate\Queue\Failed\bool" namespace="Illuminate\Queue\Failed" name="bool"/>
+      </return>
+    </docblock>
+    <parameter name="id" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="flush" start="57" end="60" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Flush all of the failed jobs from storage."/>
+      <return type="object">
+        <type full="Illuminate\Queue\Failed\void" namespace="Illuminate\Queue\Failed" name="void"/>
+      </return>
+    </docblock>
+  </method>
+</class>

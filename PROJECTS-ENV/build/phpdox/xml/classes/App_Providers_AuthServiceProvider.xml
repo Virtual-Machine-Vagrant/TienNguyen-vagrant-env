@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="App\Providers\AuthServiceProvider" namespace="App\Providers" name="AuthServiceProvider" abstract="false" final="false" start="8" end="32">
+  <file path="/home/web/example/src/freegame_developer/app/Providers" file="AuthServiceProvider.php" realpath="/home/web/example/src/freegame_developer/app/Providers/AuthServiceProvider.php" size="659" time="2016-10-31T07:00:31+00:00" unixtime="1477897231" sha1="3eeaaaf251743ec5ff9ea726d99c88b841bb91c9" relative="freegame_developer/app/Providers/AuthServiceProvider.php"/>
+  <extends full="Illuminate\Support\ServiceProvider" namespace="Illuminate\Support" name="ServiceProvider"/>
+  <method name="boot" start="15" end="18" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Bootstrap the application services."/>
+      <return type="object">
+        <type full="App\Providers\void" namespace="App\Providers" name="void"/>
+      </return>
+    </docblock>
+  </method>
+  <method name="register" start="25" end="31" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Register the application services."/>
+      <return type="object">
+        <type full="App\Providers\void" namespace="App\Providers" name="void"/>
+      </return>
+    </docblock>
+  </method>
+</class>

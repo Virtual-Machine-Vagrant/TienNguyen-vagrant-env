@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="spec\PhpSpec\Formatter\Presenter\Value\TruncatingStringTypePresenterSpec" namespace="spec\PhpSpec\Formatter\Presenter\Value" name="TruncatingStringTypePresenterSpec" abstract="false" final="false" start="9" end="47">
+  <file path="/home/web/example/src/freegame_developer/vendor/phpspec/phpspec/spec/PhpSpec/Formatter/Presenter/Value" file="TruncatingStringTypePresenterSpec.php" realpath="/home/web/example/src/freegame_developer/vendor/phpspec/phpspec/spec/PhpSpec/Formatter/Presenter/Value/TruncatingStringTypePresenterSpec.php" size="1626" time="2016-01-01T10:17:54+00:00" unixtime="1451643474" sha1="cc24e65b003f2854c48b5e1a7708c47494031996" relative="freegame_developer/vendor/phpspec/phpspec/spec/PhpSpec/Formatter/Presenter/Value/TruncatingStringTypePresenterSpec.php"/>
+  <extends full="PhpSpec\ObjectBehavior" namespace="PhpSpec" name="ObjectBehavior"/>
+  <method name="let" start="11" end="14" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="stringTypePresenter" byreference="false" type="object">
+      <type full="PhpSpec\Formatter\Presenter\Value\StringTypePresenter" namespace="PhpSpec\Formatter\Presenter\Value" name="StringTypePresenter"/>
+    </parameter>
+  </method>
+  <method name="it_is_a_string_type_presenter" start="16" end="19" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="it_should_support_string_values" start="21" end="25" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="stringTypePresenter" byreference="false" type="object">
+      <type full="PhpSpec\Formatter\Presenter\Value\StringTypePresenter" namespace="PhpSpec\Formatter\Presenter\Value" name="StringTypePresenter"/>
+    </parameter>
+  </method>
+  <method name="it_should_pass_short_values_directly_to_the_decorated_string_type_presenter" start="27" end="32" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="stringTypePresenter" byreference="false" type="object">
+      <type full="PhpSpec\Formatter\Presenter\Value\StringTypePresenter" namespace="PhpSpec\Formatter\Presenter\Value" name="StringTypePresenter"/>
+    </parameter>
+  </method>
+  <method name="it_should_return_long_values_truncated" start="34" end="40" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="stringTypePresenter" byreference="false" type="object">
+      <type full="PhpSpec\Formatter\Presenter\Value\StringTypePresenter" namespace="PhpSpec\Formatter\Presenter\Value" name="StringTypePresenter"/>
+    </parameter>
+  </method>
+  <method name="it_presents_only_first_line_of_multiline_string" start="42" end="46" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="stringTypePresenter" byreference="false" type="object">
+      <type full="PhpSpec\Formatter\Presenter\Value\StringTypePresenter" namespace="PhpSpec\Formatter\Presenter\Value" name="StringTypePresenter"/>
+    </parameter>
+  </method>
+</class>

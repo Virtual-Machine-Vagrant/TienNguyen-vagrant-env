@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="DebugBar\Bridge\Twig\TraceableTwigEnvironment" namespace="DebugBar\Bridge\Twig" name="TraceableTwigEnvironment" abstract="false" final="false" start="28" end="417">
+  <file path="/home/web/example/src/freegame_developer/vendor/maximebf/debugbar/src/DebugBar/Bridge/Twig" file="TraceableTwigEnvironment.php" realpath="/home/web/example/src/freegame_developer/vendor/maximebf/debugbar/src/DebugBar/Bridge/Twig/TraceableTwigEnvironment.php" size="9384" time="2016-09-15T14:01:59+00:00" unixtime="1473948119" sha1="2979a7e68964c44d9cd2f2a05911414756e4072a" relative="freegame_developer/vendor/maximebf/debugbar/src/DebugBar/Bridge/Twig/TraceableTwigEnvironment.php"/>
+  <docblock>
+    <description compact="Wrapped a Twig Environment to provide profiling features"/>
+  </docblock>
+  <extends full="Twig_Environment" namespace="" name="Twig_Environment"/>
+  <member name="twig" visibility="protected" static="false" line="30"/>
+  <member name="renderedTemplates" type="array" default="" visibility="protected" static="false" line="32"/>
+  <member name="timeDataCollector" visibility="protected" static="false" line="34"/>
+  <constructor name="__construct" start="40" end="44" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <param type="object" variable="$twig">
+        <type full="Twig_Environment" namespace="" name="Twig_Environment"/>
+      </param>
+      <param type="object" variable="$timeDataCollector">
+        <type full="DebugBar\DataCollector\TimeDataCollector" namespace="DebugBar\DataCollector" name="TimeDataCollector"/>
+      </param>
+    </docblock>
+    <parameter name="twig" byreference="false" type="object">
+      <type full="Twig_Environment" namespace="" name="Twig_Environment"/>
+    </parameter>
+    <parameter name="timeDataCollector" byreference="false" type="{unknown}" default="" constant="null">
+      <type full="DebugBar\DataCollector\TimeDataCollector" namespace="DebugBar\DataCollector" name="TimeDataCollector"/>
+    </parameter>
+  </constructor>
+  <method name="__call" start="46" end="49" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="name" byreference="false" type="{unknown}"/>
+    <parameter name="arguments" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="getRenderedTemplates" start="51" end="54" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="addRenderedTemplate" start="56" end="59" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="info" byreference="false" type="array"/>
+  </method>
+  <method name="getTimeDataCollector" start="61" end="64" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="getBaseTemplateClass" start="66" end="69" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="setBaseTemplateClass" start="71" end="74" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="class" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="enableDebug" start="76" end="79" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="disableDebug" start="81" end="84" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="isDebug" start="86" end="89" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="enableAutoReload" start="91" end="94" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="disableAutoReload" start="96" end="99" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="isAutoReload" start="101" end="104" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="enableStrictVariables" start="106" end="109" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="disableStrictVariables" start="111" end="114" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="isStrictVariables" start="116" end="119" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="getCache" start="121" end="124" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="original" byreference="false" type="boolean" default="true"/>
+  </method>
+  <method name="setCache" start="126" end="129" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="cache" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="getCacheFilename" start="131" end="134" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="name" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="getTemplateClass" start="136" end="139" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="name" byreference="false" type="{unknown}"/>
+    <parameter name="index" byreference="false" type="{unknown}" default="" constant="null"/>
+  </method>
+  <method name="getTemplateClassPrefix" start="141" end="144" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="render" start="146" end="149" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="name" byreference="false" type="{unknown}"/>
+    <parameter name="context" byreference="false" type="array" default=""/>
+  </method>
+  <method name="display" start="151" end="154" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="name" byreference="false" type="{unknown}"/>
+    <parameter name="context" byreference="false" type="array" default=""/>
+  </method>
+  <method name="loadTemplate" start="156" end="181" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="name" byreference="false" type="{unknown}"/>
+    <parameter name="index" byreference="false" type="{unknown}" default="" constant="null"/>
+  </method>
+  <method name="isTemplateFresh" start="183" end="186" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="name" byreference="false" type="{unknown}"/>
+    <parameter name="time" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="resolveTemplate" start="188" end="191" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="names" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="clearTemplateCache" start="193" end="196" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="clearCacheFiles" start="198" end="201" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="getLexer" start="203" end="206" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="setLexer" start="208" end="211" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="lexer" byreference="false" type="object">
+      <type full="Twig_LexerInterface" namespace="" name="Twig_LexerInterface"/>
+    </parameter>
+  </method>
+  <method name="tokenize" start="213" end="216" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="source" byreference="false" type="{unknown}"/>
+    <parameter name="name" byreference="false" type="{unknown}" default="" constant="null"/>
+  </method>
+  <method name="getParser" start="218" end="221" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="setParser" start="223" end="226" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="parser" byreference="false" type="object">
+      <type full="Twig_ParserInterface" namespace="" name="Twig_ParserInterface"/>
+    </parameter>
+  </method>
+  <method name="parse" start="228" end="231" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="tokens" byreference="false" type="object">
+      <type full="Twig_TokenStream" namespace="" name="Twig_TokenStream"/>
+    </parameter>
+  </method>
+  <method name="getCompiler" start="233" end="236" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="setCompiler" start="238" end="241" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="compiler" byreference="false" type="object">
+      <type full="Twig_CompilerInterface" namespace="" name="Twig_CompilerInterface"/>
+    </parameter>
+  </method>
+  <method name="compile" start="243" end="246" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="node" byreference="false" type="object">
+      <type full="Twig_NodeInterface" namespace="" name="Twig_NodeInterface"/>
+    </parameter>
+  </method>
+  <method name="compileSource" start="248" end="251" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="source" byreference="false" type="{unknown}"/>
+    <parameter name="name" byreference="false" type="{unknown}" default="" constant="null"/>
+  </method>
+  <method name="setLoader" start="253" end="256" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="loader" byreference="false" type="object">
+      <type full="Twig_LoaderInterface" namespace="" name="Twig_LoaderInterface"/>
+    </parameter>
+  </method>
+  <method name="getLoader" start="258" end="261" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="setCharset" start="263" end="266" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="charset" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="getCharset" start="268" end="271" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="initRuntime" start="273" end="276" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="hasExtension" start="278" end="281" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="name" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="getExtension" start="283" end="286" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="name" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="addExtension" start="288" end="291" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="extension" byreference="false" type="object">
+      <type full="Twig_ExtensionInterface" namespace="" name="Twig_ExtensionInterface"/>
+    </parameter>
+  </method>
+  <method name="removeExtension" start="293" end="296" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="name" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="setExtensions" start="298" end="301" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="extensions" byreference="false" type="array"/>
+  </method>
+  <method name="getExtensions" start="303" end="306" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="addTokenParser" start="308" end="311" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="parser" byreference="false" type="object">
+      <type full="Twig_TokenParserInterface" namespace="" name="Twig_TokenParserInterface"/>
+    </parameter>
+  </method>
+  <method name="getTokenParsers" start="313" end="316" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="getTags" start="318" end="321" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="addNodeVisitor" start="323" end="326" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="visitor" byreference="false" type="object">
+      <type full="Twig_NodeVisitorInterface" namespace="" name="Twig_NodeVisitorInterface"/>
+    </parameter>
+  </method>
+  <method name="getNodeVisitors" start="328" end="331" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="addFilter" start="333" end="336" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="name" byreference="false" type="{unknown}"/>
+    <parameter name="filter" byreference="false" type="{unknown}" default="" constant="null"/>
+  </method>
+  <method name="getFilter" start="338" end="341" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="name" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="registerUndefinedFilterCallback" start="343" end="346" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="callable" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="getFilters" start="348" end="351" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="addTest" start="353" end="356" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="name" byreference="false" type="{unknown}"/>
+    <parameter name="test" byreference="false" type="{unknown}" default="" constant="null"/>
+  </method>
+  <method name="getTests" start="358" end="361" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="getTest" start="363" end="366" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="name" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="addFunction" start="368" end="371" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="name" byreference="false" type="{unknown}"/>
+    <parameter name="function" byreference="false" type="{unknown}" default="" constant="null"/>
+  </method>
+  <method name="getFunction" start="373" end="376" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="name" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="registerUndefinedFunctionCallback" start="378" end="381" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="callable" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="getFunctions" start="383" end="386" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="addGlobal" start="388" end="391" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="name" byreference="false" type="{unknown}"/>
+    <parameter name="value" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="getGlobals" start="393" end="396" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="mergeGlobals" start="398" end="401" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="context" byreference="false" type="array"/>
+  </method>
+  <method name="getUnaryOperators" start="403" end="406" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="getBinaryOperators" start="408" end="411" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="computeAlternatives" start="413" end="416" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="name" byreference="false" type="{unknown}"/>
+    <parameter name="items" byreference="false" type="{unknown}"/>
+  </method>
+</class>

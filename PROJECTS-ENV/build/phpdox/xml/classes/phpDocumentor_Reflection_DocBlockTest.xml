@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="phpDocumentor\Reflection\DocBlockTest" namespace="phpDocumentor\Reflection" name="DocBlockTest" abstract="false" final="false" start="23" end="252">
+  <file path="/home/web/example/src/freegame_developer/vendor/phpdocumentor/reflection-docblock/tests/unit" file="DocBlockTest.php" realpath="/home/web/example/src/freegame_developer/vendor/phpdocumentor/reflection-docblock/tests/unit/DocBlockTest.php" size="6866" time="2016-09-30T07:12:33+00:00" unixtime="1475219553" sha1="19f40f722ca93aa3b10dfdec62fe49860b403f55" relative="freegame_developer/vendor/phpdocumentor/reflection-docblock/tests/unit/DocBlockTest.php"/>
+  <docblock>
+    <description/>
+    <coversdefaultclass value="phpDocumentor\Reflection\DocBlock"/>
+    <covers value="::&lt;private&gt;"/>
+    <uses value="\Webmozart\Assert\Assert"/>
+  </docblock>
+  <extends full="PHPUnit_Framework_TestCase" namespace="" name="PHPUnit_Framework_TestCase"/>
+  <method name="testDocBlockCanHaveASummary" start="31" end="38" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <covers value="::__construct"/>
+      <covers value="::getSummary"/>
+      <uses value="\phpDocumentor\Reflection\DocBlock\Description"/>
+    </docblock>
+  </method>
+  <method name="testExceptionIsThrownIfSummaryIsNotAString" start="45" end="48" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <covers value="::__construct"/>
+      <expectedexception value="\InvalidArgumentException"/>
+    </docblock>
+  </method>
+  <method name="testExceptionIsThrownIfTemplateStartIsNotABoolean" start="55" end="58" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <covers value="::__construct"/>
+      <expectedexception value="\InvalidArgumentException"/>
+    </docblock>
+  </method>
+  <method name="testExceptionIsThrownIfTemplateEndIsNotABoolean" start="65" end="68" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <covers value="::__construct"/>
+      <expectedexception value="\InvalidArgumentException"/>
+    </docblock>
+  </method>
+  <method name="testDocBlockCanHaveADescription" start="76" end="83" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <covers value="::__construct"/>
+      <covers value="::getDescription"/>
+      <uses value="\phpDocumentor\Reflection\DocBlock\Description"/>
+    </docblock>
+  </method>
+  <method name="testDocBlockCanHaveTags" start="92" end="101" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <covers value="::__construct"/>
+      <covers value="::getTags"/>
+      <uses value="\phpDocumentor\Reflection\DocBlock\Description"/>
+      <uses value="\phpDocumentor\Reflection\DocBlock\Tag"/>
+    </docblock>
+  </method>
+  <method name="testDocBlockAllowsOnlyTags" start="112" end="119" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <covers value="::__construct"/>
+      <covers value="::getTags"/>
+      <uses value="\phpDocumentor\Reflection\DocBlock\Description"/>
+      <uses value="\phpDocumentor\Reflection\DocBlock\Tag"/>
+      <expectedexception value="\InvalidArgumentException"/>
+    </docblock>
+  </method>
+  <method name="testFindTagsInDocBlockByName" start="129" end="144" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <covers value="::__construct"/>
+      <covers value="::getTagsByName"/>
+      <uses value="\phpDocumentor\Reflection\DocBlock::getTags"/>
+      <uses value="\phpDocumentor\Reflection\DocBlock\Description"/>
+      <uses value="\phpDocumentor\Reflection\DocBlock\Tag"/>
+    </docblock>
+  </method>
+  <method name="testExceptionIsThrownIfNameForTagsIsNotString" start="152" end="156" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <covers value="::__construct"/>
+      <covers value="::getTagsByName"/>
+      <uses value="\phpDocumentor\Reflection\DocBlock\Description"/>
+      <expectedexception value="\InvalidArgumentException"/>
+    </docblock>
+  </method>
+  <method name="testCheckIfThereAreTagsWithAGivenName" start="166" end="181" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <covers value="::__construct"/>
+      <covers value="::hasTag"/>
+      <uses value="\phpDocumentor\Reflection\DocBlock::getTags"/>
+      <uses value="\phpDocumentor\Reflection\DocBlock\Description"/>
+      <uses value="\phpDocumentor\Reflection\DocBlock\Tag"/>
+    </docblock>
+  </method>
+  <method name="testExceptionIsThrownIfNameForCheckingTagsIsNotString" start="189" end="193" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <covers value="::__construct"/>
+      <covers value="::hasTag"/>
+      <uses value="\phpDocumentor\Reflection\DocBlock\Description"/>
+      <expectedexception value="\InvalidArgumentException"/>
+    </docblock>
+  </method>
+  <method name="testDocBlockKnowsInWhichNamespaceItIsAndWhichAliasesThereAre" start="202" end="209" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <covers value="::__construct"/>
+      <covers value="::getContext"/>
+      <uses value="\phpDocumentor\Reflection\DocBlock\Description"/>
+      <uses value="\phpDocumentor\Reflection\Types\Context"/>
+    </docblock>
+  </method>
+  <method name="testDocBlockKnowsAtWhichLineItIs" start="218" end="225" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <covers value="::__construct"/>
+      <covers value="::getLocation"/>
+      <uses value="\phpDocumentor\Reflection\DocBlock\Description"/>
+      <uses value="\phpDocumentor\Reflection\Location"/>
+    </docblock>
+  </method>
+  <method name="testDocBlockKnowsIfItIsTheStartOfADocBlockTemplate" start="233" end="238" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <covers value="::__construct"/>
+      <covers value="::isTemplateStart"/>
+      <uses value="\phpDocumentor\Reflection\DocBlock\Description"/>
+    </docblock>
+  </method>
+  <method name="testDocBlockKnowsIfItIsTheEndOfADocBlockTemplate" start="246" end="251" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <covers value="::__construct"/>
+      <covers value="::isTemplateEnd"/>
+      <uses value="\phpDocumentor\Reflection\DocBlock\Description"/>
+    </docblock>
+  </method>
+</class>

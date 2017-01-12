@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="phpseclib\Net\SCP" namespace="phpseclib\Net" name="SCP" abstract="false" final="false" start="42" end="334">
+  <file path="/home/web/example/src/freegame_developer/vendor/phpseclib/phpseclib/phpseclib/Net" file="SCP.php" realpath="/home/web/example/src/freegame_developer/vendor/phpseclib/phpseclib/phpseclib/Net/SCP.php" size="8919" time="2016-10-04T00:57:04+00:00" unixtime="1475542624" sha1="611bcd2b0f827d477edea3b3b099eadb38ce39a4" relative="freegame_developer/vendor/phpseclib/phpseclib/phpseclib/Net/SCP.php"/>
+  <docblock>
+    <description compact="Pure-PHP implementations of SCP."/>
+    <package value="SCP"/>
+    <author value="Jim Wigginton &lt;terrafrost@php.net&gt;"/>
+    <access value="public"/>
+  </docblock>
+  <constant type="integer" name="SOURCE_LOCAL_FILE" value="1">
+    <docblock>
+      <description compact="Reads data from a local file."/>
+    </docblock>
+  </constant>
+  <constant type="integer" name="SOURCE_STRING" value="2">
+    <docblock>
+      <description compact="Reads data from a string."/>
+    </docblock>
+  </constant>
+  <constant type="integer" name="MODE_SSH1" value="1">
+    <docblock>
+      <description compact="SSH1 is being used."/>
+    </docblock>
+  </constant>
+  <constant type="integer" name="MODE_SSH2" value="2">
+    <docblock>
+      <description compact="SSH2 is being used."/>
+    </docblock>
+  </constant>
+  <member name="ssh" visibility="public" static="false" line="79">
+    <docblock>
+      <description compact="SSH Object"/>
+      <var type="object"/>
+      <access value="private"/>
+    </docblock>
+  </member>
+  <member name="packet_size" visibility="public" static="false" line="87">
+    <docblock>
+      <description compact="Packet Size"/>
+      <var type="int"/>
+      <access value="private"/>
+    </docblock>
+  </member>
+  <member name="mode" visibility="public" static="false" line="95">
+    <docblock>
+      <description compact="Mode"/>
+      <var type="int"/>
+      <access value="private"/>
+    </docblock>
+  </member>
+  <constructor name="__construct" start="106" end="118" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Default Constructor.">Connects to an SSH server</description>
+      <param type="object" variable="$ssh">
+        <type full="\phpseclib\Net\SSH1|\phpseclin\Net\SSH2" namespace="\phpseclib\Net\SSH1|\phpseclin\Net" name="SSH2"/>
+      </param>
+      <return type="object">
+        <type full="\phpseclib\Net\SCP" namespace="\phpseclib\Net" name="SCP"/>
+      </return>
+      <access value="public"/>
+    </docblock>
+    <parameter name="ssh" byreference="false" type="{unknown}"/>
+  </constructor>
+  <method name="put" start="141" end="201" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Uploads a file to the SCP server.">By default, \phpseclib\Net\SCP::put() does not read from the local filesystem.  $data is dumped directly into $remote_file.
+So, for example, if you set $data to 'filename.ext' and then do \phpseclib\Net\SCP::get(), you will get a file, twelve bytes
+long, containing 'filename.ext' as its contents.
+
+Setting $mode to self::SOURCE_LOCAL_FILE will change the above behavior.  With self::SOURCE_LOCAL_FILE, $remote_file will
+contain as many bytes as filename.ext does on your local filesystem.  If your filename.ext is 1MB then that is how
+large $remote_file will be, as well.
+
+Currently, only binary mode is supported.  As such, if the line endings need to be adjusted, you will need to take
+care of that, yourself.</description>
+      <param type="string" variable="$remote_file"/>
+      <param type="string" variable="$data"/>
+      <param type="int" variable="$mode"/>
+      <param type="object" variable="$callback">
+        <type full="phpseclib\Net\callable" namespace="phpseclib\Net" name="callable"/>
+      </param>
+      <return type="object">
+        <type full="phpseclib\Net\bool" namespace="phpseclib\Net" name="bool"/>
+      </return>
+      <access value="public"/>
+    </docblock>
+    <parameter name="remote_file" byreference="false" type="{unknown}"/>
+    <parameter name="data" byreference="false" type="{unknown}"/>
+    <parameter name="mode" byreference="false" type="{unknown}" default="" constant="self::SOURCE_STRING"/>
+    <parameter name="callback" byreference="false" type="{unknown}" default="" constant="null"/>
+  </method>
+  <method name="get" start="215" end="263" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Downloads a file from the SCP server.">Returns a string containing the contents of $remote_file if $local_file is left undefined or a boolean false if
+the operation was unsuccessful.  If $local_file is defined, returns true or false depending on the success of the
+operation</description>
+      <param type="string" variable="$remote_file"/>
+      <param type="string" variable="$local_file"/>
+      <return type="mixed"/>
+      <access value="public"/>
+    </docblock>
+    <parameter name="remote_file" byreference="false" type="{unknown}"/>
+    <parameter name="local_file" byreference="false" type="boolean" default="false"/>
+  </method>
+  <method name="_send" start="271" end="281" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Sends a packet to an SSH server"/>
+      <param type="string" variable="$data"/>
+      <access value="private"/>
+    </docblock>
+    <parameter name="data" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="_receive" start="289" end="317" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Receives a packet from an SSH server"/>
+      <return type="string"/>
+      <access value="private"/>
+    </docblock>
+  </method>
+  <method name="_close" start="324" end="333" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Closes the connection to an SSH server"/>
+      <access value="private"/>
+    </docblock>
+  </method>
+</class>

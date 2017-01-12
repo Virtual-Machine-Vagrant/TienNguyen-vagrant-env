@@ -1,0 +1,197 @@
+<?xml version="1.0"?>
+<source xmlns="http://xml.phpdox.net/token">
+  <file xmlns="http://xml.phpdox.net/src" path="/home/web/example/src/freegame_developer/resources/views/Tag" file="createconfirm.blade.php" realpath="/home/web/example/src/freegame_developer/resources/views/Tag/createconfirm.blade.php" size="2409" time="2016-12-01T09:32:03+00:00" unixtime="1480584723" sha1="cd3f3c1a5a51a8e9f7aad6b6a6405c5760634ea7" relative="freegame_developer/resources/views/Tag/createconfirm.blade.php"/>
+  <line no="1">
+    <token name="T_INLINE_HTML">@extends('layout')</token>
+  </line>
+  <line no="2"/>
+  <line no="3">
+    <token name="T_INLINE_HTML">@section('content')</token>
+  </line>
+  <line no="4">
+    <token name="T_INLINE_HTML">&lt;header id="gnavi"&gt;</token>
+  </line>
+  <line no="5">
+    <token name="T_INLINE_HTML">    @include('partials.breadcrumbs', [</token>
+  </line>
+  <line no="6">
+    <token name="T_INLINE_HTML">        'breadcrumbs' =&gt; array_merge(</token>
+  </line>
+  <line no="7">
+    <token name="T_INLINE_HTML">            $formData['menuName'],</token>
+  </line>
+  <line no="8">
+    <token name="T_INLINE_HTML">            [</token>
+  </line>
+  <line no="9">
+    <token name="T_INLINE_HTML">                [$formData['screenName'], 'Tag.index'],</token>
+  </line>
+  <line no="10">
+    <token name="T_INLINE_HTML">                '&#x767B;&#x9332;'</token>
+  </line>
+  <line no="11">
+    <token name="T_INLINE_HTML">            ]</token>
+  </line>
+  <line no="12">
+    <token name="T_INLINE_HTML">        )</token>
+  </line>
+  <line no="13">
+    <token name="T_INLINE_HTML">     ])</token>
+  </line>
+  <line no="14">
+    <token name="T_INLINE_HTML">    &lt;!-- [#gnavi] --&gt;</token>
+  </line>
+  <line no="15">
+    <token name="T_INLINE_HTML">&lt;/header&gt;</token>
+  </line>
+  <line no="16"/>
+  <line no="17">
+    <token name="T_INLINE_HTML">&lt;section&gt;</token>
+  </line>
+  <line no="18">
+    <token name="T_INLINE_HTML">    &lt;div class="c-area"&gt;</token>
+  </line>
+  <line no="19">
+    <token name="T_INLINE_HTML">        &lt;h2 class="c-headline"&gt;&lt;i class="fa fa-sitemap"&gt;&lt;/i&gt;&#x30BF;&#x30B0;&#x65B0;&#x898F;&#x767B;&#x9332; &#x78BA;&#x8A8D;&lt;/h2&gt;</token>
+  </line>
+  <line no="20">
+    <token name="T_INLINE_HTML">        &lt;p class="mg-b10"&gt;&#x4E0B;&#x8A18;&#x5185;&#x5BB9;&#x3067;&#x3088;&#x308D;&#x3057;&#x3051;&#x308C;&#x3070;&#x300C;&#x78BA;&#x5B9A;&#x300D;&#x30DC;&#x30BF;&#x30F3;&#x3092;&#x9078;&#x629E;&#x3057;&#x3066;&#x304F;&#x3060;&#x3055;&#x3044;&#x3002;&lt;/p&gt;</token>
+  </line>
+  <line no="21">
+    <token name="T_INLINE_HTML">        &lt;table class="c-table"&gt;</token>
+  </line>
+  <line no="22">
+    <token name="T_INLINE_HTML">            &lt;colgroup&gt;</token>
+  </line>
+  <line no="23">
+    <token name="T_INLINE_HTML">                &lt;col class="col-s"&gt;</token>
+  </line>
+  <line no="24">
+    <token name="T_INLINE_HTML">                &lt;col class="null"&gt;</token>
+  </line>
+  <line no="25">
+    <token name="T_INLINE_HTML">            &lt;/colgroup&gt;</token>
+  </line>
+  <line no="26">
+    <token name="T_INLINE_HTML">            &lt;tbody&gt;</token>
+  </line>
+  <line no="27">
+    <token name="T_INLINE_HTML">                &lt;tr&gt;</token>
+  </line>
+  <line no="28">
+    <token name="T_INLINE_HTML">                    &lt;th&gt;&#x30BF;&#x30B0;&#x7A2E;&#x5225;&lt;/th&gt;</token>
+  </line>
+  <line no="29">
+    <token name="T_INLINE_HTML">                    &lt;td&gt;</token>
+  </line>
+  <line no="30">
+    <token name="T_INLINE_HTML">                        &#x304A;&#x77E5;&#x3089;&#x305B;&#x30BF;&#x30B0;</token>
+  </line>
+  <line no="31">
+    <token name="T_INLINE_HTML">                    &lt;/td&gt;</token>
+  </line>
+  <line no="32">
+    <token name="T_INLINE_HTML">                &lt;/tr&gt;</token>
+  </line>
+  <line no="33">
+    <token name="T_INLINE_HTML">                &lt;tr&gt;</token>
+  </line>
+  <line no="34">
+    <token name="T_INLINE_HTML">                    &lt;th&gt;&#x30BF;&#x30B0;&#x540D;&lt;/th&gt;</token>
+  </line>
+  <line no="35">
+    <token name="T_INLINE_HTML">                    &lt;td&gt;</token>
+  </line>
+  <line no="36">
+    <token name="T_INLINE_HTML">                        {{ $request-&gt;get('tag_name') }}</token>
+  </line>
+  <line no="37">
+    <token name="T_INLINE_HTML">                    &lt;/td&gt;</token>
+  </line>
+  <line no="38">
+    <token name="T_INLINE_HTML">                &lt;/tr&gt;</token>
+  </line>
+  <line no="39">
+    <token name="T_INLINE_HTML">                &lt;tr&gt;</token>
+  </line>
+  <line no="40">
+    <token name="T_INLINE_HTML">                    &lt;th&gt;&#x30BF;&#x30B0;&#x82F1;&#x540D;&lt;/th&gt;</token>
+  </line>
+  <line no="41">
+    <token name="T_INLINE_HTML">                    &lt;td&gt;</token>
+  </line>
+  <line no="42">
+    <token name="T_INLINE_HTML">                        {{ $request-&gt;get('tag_name_english') }}</token>
+  </line>
+  <line no="43">
+    <token name="T_INLINE_HTML">                    &lt;/td&gt;</token>
+  </line>
+  <line no="44">
+    <token name="T_INLINE_HTML">                &lt;/tr&gt;</token>
+  </line>
+  <line no="45">
+    <token name="T_INLINE_HTML">            &lt;/tbody&gt;</token>
+  </line>
+  <line no="46">
+    <token name="T_INLINE_HTML">            &lt;!-- /.c-table --&gt;</token>
+  </line>
+  <line no="47">
+    <token name="T_INLINE_HTML">        &lt;/table&gt;</token>
+  </line>
+  <line no="48">
+    <token name="T_INLINE_HTML">        &lt;div class="center"&gt;</token>
+  </line>
+  <line no="49">
+    <token name="T_INLINE_HTML">            &lt;a href="javascript:void(0)" data-form="form-create" class="button btn-submit is-medium"&gt;&lt;i class="fa fa-reply"&gt;&lt;/i&gt;&#x4FEE;&#x6B63;&lt;/a&gt;</token>
+  </line>
+  <line no="50">
+    <token name="T_INLINE_HTML">            &lt;a href="javascript:void(0);" data-form="form-store" class="button btn-submit is-success is-medium"&gt;&lt;i class="fa fa-circle-o"&gt;&lt;/i&gt;&#x78BA;&#x5B9A;&lt;/a&gt;</token>
+  </line>
+  <line no="51">
+    <token name="T_INLINE_HTML">        &lt;/div&gt;</token>
+  </line>
+  <line no="52">
+    <token name="T_INLINE_HTML">        &lt;!-- /.c-area --&gt;</token>
+  </line>
+  <line no="53">
+    <token name="T_INLINE_HTML">    &lt;/div&gt;</token>
+  </line>
+  <line no="54">
+    <token name="T_INLINE_HTML">&lt;/section&gt;</token>
+  </line>
+  <line no="55">
+    <token name="T_INLINE_HTML">{!! Form::open(['route' =&gt; ['Tag.create'] + $params, 'id' =&gt; 'form-create']) !!}</token>
+  </line>
+  <line no="56">
+    <token name="T_INLINE_HTML">{!! Form::hidden('tag_name', $request-&gt;get('tag_name')) !!}</token>
+  </line>
+  <line no="57">
+    <token name="T_INLINE_HTML">{!! Form::hidden('tag_name_english', $request-&gt;get('tag_name_english')) !!}</token>
+  </line>
+  <line no="58">
+    <token name="T_INLINE_HTML">{!! Form::hidden('contents_type', $request-&gt;get('contents_type', 'info')) !!}</token>
+  </line>
+  <line no="59">
+    <token name="T_INLINE_HTML">{!! Form::close() !!}</token>
+  </line>
+  <line no="60"/>
+  <line no="61">
+    <token name="T_INLINE_HTML">{!! Form::open(['route' =&gt; ['Tag.store'] + $params, 'id' =&gt; 'form-store']) !!}</token>
+  </line>
+  <line no="62">
+    <token name="T_INLINE_HTML">{!! Form::hidden('tag_name', $request-&gt;get('tag_name')) !!}</token>
+  </line>
+  <line no="63">
+    <token name="T_INLINE_HTML">{!! Form::hidden('tag_name_english', $request-&gt;get('tag_name_english')) !!}</token>
+  </line>
+  <line no="64">
+    <token name="T_INLINE_HTML">{!! Form::hidden('contents_type', $request-&gt;get('contents_type', 'info')) !!}</token>
+  </line>
+  <line no="65">
+    <token name="T_INLINE_HTML">{!! Form::close() !!}</token>
+  </line>
+  <line no="66">
+    <token name="T_INLINE_HTML">@endsection</token>
+  </line>
+  <line no="67"/>
+</source>

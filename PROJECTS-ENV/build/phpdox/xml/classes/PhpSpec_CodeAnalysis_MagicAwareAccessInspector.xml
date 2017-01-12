@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="PhpSpec\CodeAnalysis\MagicAwareAccessInspector" namespace="PhpSpec\CodeAnalysis" name="MagicAwareAccessInspector" abstract="false" final="true" start="16" end="63">
+  <file path="/home/web/example/src/freegame_developer/vendor/phpspec/phpspec/src/PhpSpec/CodeAnalysis" file="MagicAwareAccessInspector.php" realpath="/home/web/example/src/freegame_developer/vendor/phpspec/phpspec/src/PhpSpec/CodeAnalysis/MagicAwareAccessInspector.php" size="1605" time="2016-01-01T10:17:54+00:00" unixtime="1451643474" sha1="88a37941a7f1420b5d0ce095cb71b4b98e5ed856" relative="freegame_developer/vendor/phpspec/phpspec/src/PhpSpec/CodeAnalysis/MagicAwareAccessInspector.php"/>
+  <implements full="PhpSpec\CodeAnalysis\AccessInspectorInterface" namespace="PhpSpec\CodeAnalysis" name="AccessInspectorInterface"/>
+  <member name="accessInspector" visibility="private" static="false" line="21">
+    <docblock>
+      <description/>
+      <var type="object">
+        <type full="PhpSpec\CodeAnalysis\AccessInspectorInterface" namespace="PhpSpec\CodeAnalysis" name="AccessInspectorInterface"/>
+      </var>
+    </docblock>
+  </member>
+  <constructor name="__construct" start="26" end="29" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <param type="object" variable="$accessInspector">
+        <type full="PhpSpec\CodeAnalysis\AccessInspectorInterface" namespace="PhpSpec\CodeAnalysis" name="AccessInspectorInterface"/>
+      </param>
+    </docblock>
+    <parameter name="accessInspector" byreference="false" type="object">
+      <type full="PhpSpec\CodeAnalysis\AccessInspectorInterface" namespace="PhpSpec\CodeAnalysis" name="AccessInspectorInterface"/>
+    </parameter>
+  </constructor>
+  <method name="isPropertyReadable" start="37" end="40" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <param type="object" variable="$object"/>
+      <param type="string" variable="$property"/>
+      <return type="object">
+        <type full="PhpSpec\CodeAnalysis\bool" namespace="PhpSpec\CodeAnalysis" name="bool"/>
+      </return>
+    </docblock>
+    <parameter name="object" byreference="false" type="{unknown}"/>
+    <parameter name="property" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="isPropertyWritable" start="48" end="51" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <param type="object" variable="$object"/>
+      <param type="string" variable="$property"/>
+      <return type="object">
+        <type full="PhpSpec\CodeAnalysis\bool" namespace="PhpSpec\CodeAnalysis" name="bool"/>
+      </return>
+    </docblock>
+    <parameter name="object" byreference="false" type="{unknown}"/>
+    <parameter name="property" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="isMethodCallable" start="59" end="62" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <param type="object" variable="$object"/>
+      <param type="string" variable="$method"/>
+      <return type="object">
+        <type full="PhpSpec\CodeAnalysis\bool" namespace="PhpSpec\CodeAnalysis" name="bool"/>
+      </return>
+    </docblock>
+    <parameter name="object" byreference="false" type="{unknown}"/>
+    <parameter name="method" byreference="false" type="{unknown}"/>
+  </method>
+</class>

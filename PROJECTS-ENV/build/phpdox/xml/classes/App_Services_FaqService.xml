@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="App\Services\FaqService" namespace="App\Services" name="FaqService" abstract="false" final="false" start="17" end="755">
+  <file path="/home/web/example/src/freegame_developer/app/Services" file="FaqService.php" realpath="/home/web/example/src/freegame_developer/app/Services/FaqService.php" size="23071" time="2016-12-06T02:39:57+00:00" unixtime="1480991997" sha1="53428b61e6dafc631004674afa7a1168a2fce0c7" relative="freegame_developer/app/Services/FaqService.php"/>
+  <extends full="App\Services\CustomService" namespace="App\Services" name="CustomService"/>
+  <uses full="App\Services\Accessory\ImageFileUpload" namespace="App\Services\Accessory" name="ImageFileUpload" start="19" end="19"/>
+  <member name="faq" visibility="protected" static="false" line="21"/>
+  <member name="clUser" visibility="protected" static="false" line="22"/>
+  <constructor name="__construct" start="24" end="34" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="faq" byreference="false" type="object">
+      <type full="App\Models\NetgameCstool\Faq" namespace="App\Models\NetgameCstool" name="Faq"/>
+    </parameter>
+    <parameter name="faqCategory" byreference="false" type="object">
+      <type full="App\Models\NetgameCstool\FaqCategory" namespace="App\Models\NetgameCstool" name="FaqCategory"/>
+    </parameter>
+    <parameter name="clientgameFaq" byreference="false" type="object">
+      <type full="App\Models\ClientgameSearch\Faq" namespace="App\Models\ClientgameSearch" name="Faq"/>
+    </parameter>
+    <parameter name="faqImage" byreference="false" type="object">
+      <type full="App\Models\NetgameCstool\FaqImage" namespace="App\Models\NetgameCstool" name="FaqImage"/>
+    </parameter>
+  </constructor>
+  <method name="getList" start="42" end="63" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="request" byreference="false" type="{unknown}"/>
+    <parameter name="gameId" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="getListCategory" start="70" end="79" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="gameId" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="exportCsv" start="86" end="110" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="request" byreference="false" type="{unknown}"/>
+    <parameter name="gameData" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="getFaqById" start="118" end="131" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Get faq by faq_id"/>
+      <param type="integer" variable="$faqId"/>
+      <param type="integer" variable="$gameId"/>
+      <return type="array"/>
+    </docblock>
+    <parameter name="faqId" byreference="false" type="{unknown}"/>
+    <parameter name="gameId" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="getFaqImages" start="139" end="156" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Get list faq images"/>
+      <param type="integer" variable="$faqId"/>
+      <param type="array" variable="$gameData"/>
+      <return type="array"/>
+    </docblock>
+    <parameter name="faqId" byreference="false" type="{unknown}"/>
+    <parameter name="gameData" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="getFormData" start="162" end="165" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Get form data"/>
+      <return type="array"/>
+    </docblock>
+  </method>
+  <method name="getImageUrl" start="173" end="177" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Get full image url"/>
+      <param type="string" variable="$fileName"/>
+      <param type="string" variable="$directoryName"/>
+      <return type="string"/>
+    </docblock>
+    <parameter name="fileName" byreference="false" type="{unknown}"/>
+    <parameter name="directoryName" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="create" start="184" end="231" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Create faq"/>
+      <param type="object" variable="$request">
+        <type full="App\Services\FaqRequest" namespace="App\Services" name="FaqRequest"/>
+      </param>
+      <return type="boolean"/>
+    </docblock>
+    <parameter name="request" byreference="false" type="{unknown}"/>
+    <parameter name="gameData" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="createFromUpload" start="239" end="281" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Create form upload csv file"/>
+      <param type="object" variable="$request">
+        <type full="App\Services\FaqRequest" namespace="App\Services" name="FaqRequest"/>
+      </param>
+      <param type="array" variable="$gameData"/>
+      <return type="boolean"/>
+    </docblock>
+    <parameter name="request" byreference="false" type="{unknown}"/>
+    <parameter name="gameData" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="update" start="289" end="333" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Update faq"/>
+      <param type="object" variable="$request">
+        <type full="App\Services\FaqRequest" namespace="App\Services" name="FaqRequest"/>
+      </param>
+      <param type="array" variable="$gameData"/>
+      <return type="boolean"/>
+    </docblock>
+    <parameter name="request" byreference="false" type="{unknown}"/>
+    <parameter name="gameData" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="updateStatus" start="341" end="373" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Update faq status"/>
+      <param type="object" variable="$request">
+        <type full="App\Services\Request" namespace="App\Services" name="Request"/>
+      </param>
+      <param type="array" variable="$gameData"/>
+      <return type="boolean"/>
+    </docblock>
+    <parameter name="request" byreference="false" type="{unknown}"/>
+    <parameter name="gameData" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="delete" start="381" end="422" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Delele faq"/>
+      <param type="integer" variable="$faqId"/>
+      <param type="array" variable="$gameId"/>
+      <return type="boolean"/>
+    </docblock>
+    <parameter name="faqId" byreference="false" type="{unknown}"/>
+    <parameter name="gameData" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="deleteFiles" start="430" end="440" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Delete image files"/>
+      <param type="array" variable="$images"/>
+      <param type="array" variable="$gameData"/>
+      <return type="object">
+        <type full="App\Services\void" namespace="App\Services" name="void"/>
+      </return>
+    </docblock>
+    <parameter name="images" byreference="false" type="{unknown}"/>
+    <parameter name="gameData" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="isPerformSearch" start="447" end="462" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Check if perform search"/>
+      <param type="object" variable="$request">
+        <type full="App\Services\FaqRequest" namespace="App\Services" name="FaqRequest"/>
+      </param>
+      <return type="boolean"/>
+    </docblock>
+    <parameter name="request" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="uploadFaqImages" start="470" end="497" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Upload images"/>
+      <param type="object" variable="$request">
+        <type full="App\Services\Request" namespace="App\Services" name="Request"/>
+      </param>
+      <param type="array" variable="$gameData"/>
+      <return type="boolean"/>
+    </docblock>
+    <parameter name="request" byreference="false" type="{unknown}"/>
+    <parameter name="gameData" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="readUploadFile" start="505" end="511" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Handle upload service"/>
+      <param type="object" variable="$request">
+        <type full="App\Services\FaqRequest" namespace="App\Services" name="FaqRequest"/>
+      </param>
+      <param type="array" variable="$gameData"/>
+      <return type="object">
+        <type full="App\Services\Array" namespace="App\Services" name="Array"/>
+      </return>
+    </docblock>
+    <parameter name="request" byreference="false" type="{unknown}"/>
+    <parameter name="gameData" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="checkUploadFile" start="520" end="583" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="check upload file is validate"/>
+      <param type="object" variable="$request">
+        <type full="App\Services\FaqRequest" namespace="App\Services" name="FaqRequest"/>
+      </param>
+      <param type="array" variable="$uploadData"/>
+      <param type="array" variable="$gameData"/>
+      <return type="array"/>
+    </docblock>
+    <parameter name="request" byreference="false" type="{unknown}"/>
+    <parameter name="uploadData" byreference="false" type="{unknown}"/>
+    <parameter name="gameData" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="uploadCsv" start="590" end="600" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Upload csv file"/>
+      <param type="object" variable="$request">
+        <type full="App\Services\FaqRequest" namespace="App\Services" name="FaqRequest"/>
+      </param>
+      <return type="string"/>
+    </docblock>
+    <parameter name="request" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="upload file" line="592"/>
+    </inline>
+  </method>
+  <method name="checkErrors" start="612" end="643" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Check data in line errors"/>
+      <param type="integer" variable="$line"/>
+      <param type="array" variable="$itemData"/>
+      <param type="array" variable="$rules"/>
+      <param type="array" variable="$attribute"/>
+      <param type="array" variable="$messages"/>
+      <param type="array" variable="$listTitleFaqs"/>
+      <return type="array"/>
+    </docblock>
+    <parameter name="line" byreference="false" type="{unknown}"/>
+    <parameter name="itemData" byreference="false" type="{unknown}"/>
+    <parameter name="rules" byreference="false" type="{unknown}"/>
+    <parameter name="attribute" byreference="false" type="{unknown}"/>
+    <parameter name="messages" byreference="false" type="{unknown}"/>
+    <parameter name="listTitleFaqs" byreference="true" type="{unknown}"/>
+  </method>
+  <method name="readDataUploadFile" start="650" end="682" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Read uploaded data"/>
+      <param type="object" variable="$request">
+        <type full="App\Services\FaqRequest" namespace="App\Services" name="FaqRequest"/>
+      </param>
+      <return type="object">
+        <type full="App\Services\Array" namespace="App\Services" name="Array"/>
+      </return>
+    </docblock>
+    <parameter name="request" byreference="false" type="{unknown}"/>
+    <parameter name="fileName" byreference="false" type="string" default="''"/>
+  </method>
+  <method name="getSearchParams" start="690" end="713" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Get search conditions from request©"/>
+      <param type="object" variable="$request">
+        <type full="App\Services\FaqRequest" namespace="App\Services" name="FaqRequest"/>
+      </param>
+      <return type="array"/>
+    </docblock>
+    <parameter name="request" byreference="false" type="{unknown}"/>
+    <parameter name="gameId" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="Pagination" line="694"/>
+      <comment value="Condition query" line="701"/>
+      <comment value="Add game id" line="709"/>
+    </inline>
+  </method>
+  <method name="requestUrl" start="720" end="742" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Get search params from request"/>
+      <param type="object" variable="$request">
+        <type full="App\Services\request" namespace="App\Services" name="request"/>
+      </param>
+      <return type="array"/>
+    </docblock>
+    <parameter name="request" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="checkDuplicate" start="751" end="754" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Check duplicate"/>
+      <param type="integer" variable="$gameId"/>
+      <param type="string" variable="$title"/>
+      <param type="integer" variable="$faqId"/>
+      <return type="boolean"/>
+    </docblock>
+    <parameter name="gameId" byreference="false" type="{unknown}"/>
+    <parameter name="title" byreference="false" type="{unknown}"/>
+    <parameter name="faqId" byreference="false" type="boolean" default="false"/>
+  </method>
+</class>

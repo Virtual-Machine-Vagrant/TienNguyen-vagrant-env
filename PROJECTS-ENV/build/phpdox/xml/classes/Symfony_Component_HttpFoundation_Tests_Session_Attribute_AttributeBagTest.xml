@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="Symfony\Component\HttpFoundation\Tests\Session\Attribute\AttributeBagTest" namespace="Symfony\Component\HttpFoundation\Tests\Session\Attribute" name="AttributeBagTest" abstract="false" final="false" start="21" end="188">
+  <file path="/home/web/example/src/freegame_developer/vendor/symfony/http-foundation/Tests/Session/Attribute" file="AttributeBagTest.php" realpath="/home/web/example/src/freegame_developer/vendor/symfony/http-foundation/Tests/Session/Attribute/AttributeBagTest.php" size="5120" time="2016-10-24T14:36:35+00:00" unixtime="1477319795" sha1="691f910cc67381a5b912d5cc1611308081294f51" relative="freegame_developer/vendor/symfony/http-foundation/Tests/Session/Attribute/AttributeBagTest.php"/>
+  <docblock>
+    <description compact="Tests AttributeBag."/>
+    <author value="Drak &lt;drak@zikula.org&gt;"/>
+  </docblock>
+  <extends full="PHPUnit_Framework_TestCase" namespace="" name="PHPUnit_Framework_TestCase"/>
+  <member name="array" visibility="private" static="false" line="26">
+    <docblock>
+      <description/>
+      <var type="array"/>
+    </docblock>
+  </member>
+  <member name="bag" visibility="private" static="false" line="31">
+    <docblock>
+      <description/>
+      <var type="object">
+        <type full="Symfony\Component\HttpFoundation\Session\Attribute\AttributeBag" namespace="Symfony\Component\HttpFoundation\Session\Attribute" name="AttributeBag"/>
+      </var>
+    </docblock>
+  </member>
+  <method name="setUp" start="33" end="52" abstract="false" final="false" static="false" visibility="protected"/>
+  <method name="tearDown" start="54" end="58" abstract="false" final="false" static="false" visibility="protected"/>
+  <method name="testInitialize" start="60" end="68" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testGetStorageKey" start="70" end="75" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testGetSetName" start="77" end="82" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testHas" start="87" end="90" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <dataprovider value="attributesProvider"/>
+    </docblock>
+    <parameter name="key" byreference="false" type="{unknown}"/>
+    <parameter name="value" byreference="false" type="{unknown}"/>
+    <parameter name="exists" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="testGet" start="95" end="98" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <dataprovider value="attributesProvider"/>
+    </docblock>
+    <parameter name="key" byreference="false" type="{unknown}"/>
+    <parameter name="value" byreference="false" type="{unknown}"/>
+    <parameter name="expected" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="testGetDefaults" start="100" end="104" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testSet" start="109" end="113" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <dataprovider value="attributesProvider"/>
+    </docblock>
+    <parameter name="key" byreference="false" type="{unknown}"/>
+    <parameter name="value" byreference="false" type="{unknown}"/>
+    <parameter name="expected" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="testAll" start="115" end="123" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testReplace" start="125" end="135" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testRemove" start="137" end="150" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testClear" start="152" end="156" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="attributesProvider" start="158" end="171" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testGetIterator" start="173" end="182" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testCount" start="184" end="187" abstract="false" final="false" static="false" visibility="public"/>
+</class>

@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="Symfony\Component\HttpKernel\Tests\Fixtures\ExtensionLoadedBundle\ExtensionLoadedBundle" namespace="Symfony\Component\HttpKernel\Tests\Fixtures\ExtensionLoadedBundle" name="ExtensionLoadedBundle" abstract="false" final="false" start="16" end="18">
+  <file path="/home/web/example/src/freegame_developer/vendor/symfony/http-kernel/Tests/Fixtures/ExtensionLoadedBundle" file="ExtensionLoadedBundle.php" realpath="/home/web/example/src/freegame_developer/vendor/symfony/http-kernel/Tests/Fixtures/ExtensionLoadedBundle/ExtensionLoadedBundle.php" size="412" time="2016-10-27T01:37:19+00:00" unixtime="1477532239" sha1="ce9a4282a1504de6ff69bef9820da0da856ca722" relative="freegame_developer/vendor/symfony/http-kernel/Tests/Fixtures/ExtensionLoadedBundle/ExtensionLoadedBundle.php"/>
+  <extends full="Symfony\Component\HttpKernel\Bundle\Bundle" namespace="Symfony\Component\HttpKernel\Bundle" name="Bundle"/>
+</class>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="phpDocumentor\Reflection\Types\Context" namespace="phpDocumentor\Reflection\Types" name="Context" abstract="false" final="true" start="29" end="84">
+  <file path="/home/web/example/src/freegame_developer/vendor/phpdocumentor/type-resolver/src/Types" file="Context.php" realpath="/home/web/example/src/freegame_developer/vendor/phpdocumentor/type-resolver/src/Types/Context.php" size="2909" time="2016-06-10T07:14:17+00:00" unixtime="1465542857" sha1="98ef9b3a340448c678ab3130e55a819767d1e6f3" relative="freegame_developer/vendor/phpdocumentor/type-resolver/src/Types/Context.php"/>
+  <docblock>
+    <description compact="Provides information about the Context in which the DocBlock occurs that receives this context.">A DocBlock does not know of its own accord in which namespace it occurs and which namespace aliases are applicable
+for the block of code in which it is in. This information is however necessary to resolve Class names in tags since
+you can provide a short form or make use of namespace aliases.
+
+The phpDocumentor Reflection component knows how to create this class but if you use the DocBlock parser from your
+own application it is possible to generate a Context class using the ContextFactory; this will analyze the file in
+which an associated class resides for its namespace and imports.</description>
+    <see value="ContextFactory::createFromClassReflector()"/>
+    <see value="ContextFactory::createForNamespace()"/>
+  </docblock>
+  <member name="namespace" type="string" default="''" visibility="private" static="false" line="32">
+    <docblock>
+      <var description="The current namespace." type="string"/>
+    </docblock>
+  </member>
+  <member name="namespaceAliases" type="array" default="" visibility="private" static="false" line="35">
+    <docblock>
+      <var description="List of namespace aliases =&gt; Fully Qualified Namespace." type="array"/>
+    </docblock>
+  </member>
+  <constructor name="__construct" start="44" end="62" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Initializes the new context and normalizes all passed namespaces to be in Qualified Namespace Name (QNN) format (without a preceding `\`)."/>
+      <param description="The namespace where this DocBlock resides in." type="string" variable="$namespace"/>
+      <param description="List of namespace aliases =&gt; Fully Qualified Namespace." type="array" variable="$namespaceAliases"/>
+    </docblock>
+    <parameter name="namespace" byreference="false" type="{unknown}"/>
+    <parameter name="namespaceAliases" byreference="false" type="array" default=""/>
+  </constructor>
+  <method name="getNamespace" start="69" end="72" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Returns the Qualified Namespace Name (thus without `\` in front) where the associated element is in."/>
+      <return type="string"/>
+    </docblock>
+  </method>
+  <method name="getNamespaceAliases" start="80" end="83" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Returns a list of Qualified Namespace Names (thus without `\` in front) that are imported, the keys represent the alias for the imported Namespace."/>
+      <return type="array" of="object">
+        <type full="phpDocumentor\Reflection\Types\string" namespace="phpDocumentor\Reflection\Types" name="string"/>
+      </return>
+    </docblock>
+  </method>
+</class>

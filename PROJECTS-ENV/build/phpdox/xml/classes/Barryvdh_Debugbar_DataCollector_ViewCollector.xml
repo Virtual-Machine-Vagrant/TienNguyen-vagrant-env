@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="Barryvdh\Debugbar\DataCollector\ViewCollector" namespace="Barryvdh\Debugbar\DataCollector" name="ViewCollector" abstract="false" final="false" start="9" end="100">
+  <file path="/home/web/example/src/freegame_developer/vendor/barryvdh/laravel-debugbar/src/DataCollector" file="ViewCollector.php" realpath="/home/web/example/src/freegame_developer/vendor/barryvdh/laravel-debugbar/src/DataCollector/ViewCollector.php" size="2494" time="2016-09-15T14:05:56+00:00" unixtime="1473948356" sha1="3a3481b4539af8917d9d674d6f6c71fa446ab6ae" relative="freegame_developer/vendor/barryvdh/laravel-debugbar/src/DataCollector/ViewCollector.php"/>
+  <extends full="DebugBar\Bridge\Twig\TwigCollector" namespace="DebugBar\Bridge\Twig" name="TwigCollector"/>
+  <member name="templates" type="array" default="" visibility="protected" static="false" line="11"/>
+  <member name="collect_data" visibility="protected" static="false" line="12"/>
+  <constructor name="__construct" start="19" end="25" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Create a ViewCollector"/>
+      <param description="Collects view data when tru" type="object" variable="$collectData">
+        <type full="Barryvdh\Debugbar\DataCollector\bool" namespace="Barryvdh\Debugbar\DataCollector" name="bool"/>
+      </param>
+    </docblock>
+    <parameter name="collectData" byreference="false" type="boolean" default="true"/>
+  </constructor>
+  <method name="getName" start="27" end="30" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="getWidgets" start="32" end="46" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="addView" start="53" end="89" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Add a View instance to the Collector"/>
+      <param type="object" variable="$view">
+        <type full="\Illuminate\View\View" namespace="\Illuminate\View" name="View"/>
+      </param>
+    </docblock>
+    <parameter name="view" byreference="false" type="object">
+      <type full="Illuminate\View\View" namespace="Illuminate\View" name="View"/>
+    </parameter>
+  </method>
+  <method name="collect" start="91" end="99" abstract="false" final="false" static="false" visibility="public"/>
+</class>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="League\Flysystem\Plugin\EmptyDir" namespace="League\Flysystem\Plugin" name="EmptyDir" abstract="false" final="false" start="5" end="34">
+  <file path="/home/web/example/src/freegame_developer/vendor/league/flysystem/src/Plugin" file="EmptyDir.php" realpath="/home/web/example/src/freegame_developer/vendor/league/flysystem/src/Plugin/EmptyDir.php" size="677" time="2016-10-19T20:38:46+00:00" unixtime="1476909526" sha1="c93b30d8b3ca5b606c5efc786330df192aad5913" relative="freegame_developer/vendor/league/flysystem/src/Plugin/EmptyDir.php"/>
+  <extends full="League\Flysystem\Plugin\AbstractPlugin" namespace="League\Flysystem\Plugin" name="AbstractPlugin"/>
+  <method name="getMethod" start="12" end="15" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Get the method name."/>
+      <return type="string"/>
+    </docblock>
+  </method>
+  <method name="handle" start="22" end="33" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Empty a directory's contents."/>
+      <param variable="$dirname"/>
+    </docblock>
+    <parameter name="dirname" byreference="false" type="{unknown}"/>
+  </method>
+</class>

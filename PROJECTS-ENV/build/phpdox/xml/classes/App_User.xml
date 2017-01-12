@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="App\User" namespace="App" name="User" abstract="false" final="false" start="11" end="35">
+  <file path="/home/web/example/src/freegame_developer/app" file="User.php" realpath="/home/web/example/src/freegame_developer/app/User.php" size="856" time="2016-10-31T07:00:31+00:00" unixtime="1477897231" sha1="93d829a06e54f554ffa5e4ab8361a2849a4227e9" relative="freegame_developer/app/User.php"/>
+  <extends full="Illuminate\Database\Eloquent\Model" namespace="Illuminate\Database\Eloquent" name="Model"/>
+  <implements full="Illuminate\Contracts\Auth\Authenticatable" namespace="Illuminate\Contracts\Auth" name="Authenticatable"/>
+  <implements full="Illuminate\Contracts\Auth\CanResetPassword" namespace="Illuminate\Contracts\Auth" name="CanResetPassword"/>
+  <uses full="Illuminate\Auth\Authenticatable" namespace="Illuminate\Auth" name="Authenticatable" start="13" end="13"/>
+  <uses full="Illuminate\Auth\Passwords\CanResetPassword" namespace="Illuminate\Auth\Passwords" name="CanResetPassword" start="13" end="13"/>
+  <member name="table" type="string" default="'users'" visibility="protected" static="false" line="20">
+    <docblock>
+      <description compact="The database table used by the model."/>
+      <var type="string"/>
+    </docblock>
+  </member>
+  <member name="fillable" type="array" default="" visibility="protected" static="false" line="27">
+    <docblock>
+      <description compact="The attributes that are mass assignable."/>
+      <var type="array"/>
+    </docblock>
+  </member>
+  <member name="hidden" type="array" default="" visibility="protected" static="false" line="34">
+    <docblock>
+      <description compact="The attributes excluded from the model's JSON form."/>
+      <var type="array"/>
+    </docblock>
+  </member>
+</class>

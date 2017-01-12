@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="PHP_CodeSniffer_CLI" namespace="" name="PHP_CodeSniffer_CLI" abstract="false" final="false" start="43" end="1322">
+  <file path="/home/web/example/src/freegame_developer/vendor/squizlabs/php_codesniffer/CodeSniffer" file="CLI.php" realpath="/home/web/example/src/freegame_developer/vendor/squizlabs/php_codesniffer/CodeSniffer/CLI.php" size="48125" time="2016-01-19T23:39:10+00:00" unixtime="1453246750" sha1="9058af20764302a935fdd12ac27986d0174ed430" relative="freegame_developer/vendor/squizlabs/php_codesniffer/CodeSniffer/CLI.php"/>
+  <docblock>
+    <description compact="A class to process command line phpcs scripts."/>
+    <category value="PHP"/>
+    <package value="PHP_CodeSniffer"/>
+    <author value="Greg Sherwood &lt;gsherwood@squiz.net&gt;"/>
+    <copyright value="2006-2014 Squiz Pty Ltd (ABN 77 084 670 600)"/>
+    <license name="https://github.com/squizlabs/PHP_CodeSniffer/blob/master/licence.txt BSD Licence"/>
+    <version value="Release: @package_version@"/>
+    <link value="http://pear.php.net/package/PHP_CodeSniffer"/>
+  </docblock>
+  <member name="values" type="array" default="" visibility="protected" static="false" line="51">
+    <docblock>
+      <description compact="An array of all values specified on the command line."/>
+      <var type="array"/>
+    </docblock>
+  </member>
+  <member name="errorSeverity" type="integer" default="0" visibility="public" static="false" line="58">
+    <docblock>
+      <description compact="The minimum severity level errors must have to be displayed."/>
+      <var type="object">
+        <type full="bool" namespace="" name="bool"/>
+      </var>
+    </docblock>
+  </member>
+  <member name="warningSeverity" type="integer" default="0" visibility="public" static="false" line="65">
+    <docblock>
+      <description compact="The minimum severity level warnings must have to be displayed."/>
+      <var type="object">
+        <type full="bool" namespace="" name="bool"/>
+      </var>
+    </docblock>
+  </member>
+  <member name="dieOnUnknownArg" type="boolean" default="true" visibility="public" static="false" line="75">
+    <docblock>
+      <description compact="Whether or not to kill the process when an unknown command line arg is found.">If FALSE, arguments that are not command line options or file/directory paths
+will be ignored and execution will continue.</description>
+      <var type="object">
+        <type full="bool" namespace="" name="bool"/>
+      </var>
+    </docblock>
+  </member>
+  <member name="_cliArgs" type="array" default="" visibility="private" static="false" line="82">
+    <docblock>
+      <description compact="An array of the current command line arguments we are processing."/>
+      <var type="array"/>
+    </docblock>
+  </member>
+  <method name="runphpcs" start="90" end="111" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Run the PHPCS script."/>
+      <return type="array"/>
+    </docblock>
+  </method>
+  <method name="runphpcbf" start="119" end="235" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Run the PHPCBF script."/>
+      <return type="array"/>
+    </docblock>
+    <inline>
+      <comment value="Override some of the command line settings that might break the fixes." line="136"/>
+      <comment value="end if" line="224"/>
+    </inline>
+  </method>
+  <method name="checkRequirements" start="243" end="256" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Exits if the minimum requirements of PHP_CodSniffer are not met."/>
+      <return type="array"/>
+    </docblock>
+    <inline>
+      <comment value="Check the PHP version." line="245"/>
+    </inline>
+  </method>
+  <method name="getDefaults" start="264" end="364" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Get a list of default values for all possible command line arguments."/>
+      <return type="array"/>
+    </docblock>
+    <inline>
+      <comment value="The default values for config settings." line="270"/>
+    </inline>
+  </method>
+  <method name="getCommandLineValues" start="375" end="389" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Gets the processed command line values.">If the values have not yet been set, the values will be sourced
+from the command line arguments.</description>
+      <return type="array"/>
+    </docblock>
+  </method>
+  <method name="setCommandLineValues" start="399" end="439" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Set the command line values."/>
+      <param description="An array of command line arguments to process." type="array" variable="$args"/>
+      <return type="object">
+        <type full="void" namespace="" name="void"/>
+      </return>
+    </docblock>
+    <parameter name="args" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="end for" line="437"/>
+    </inline>
+  </method>
+  <method name="processShortArgument" start="450" end="507" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Processes a short (-e) command line argument."/>
+      <param description="The command line argument." type="string" variable="$arg"/>
+      <param description="The position of the argument on the command line." type="int" variable="$pos"/>
+      <return type="object">
+        <type full="void" namespace="" name="void"/>
+      </return>
+    </docblock>
+    <parameter name="arg" byreference="false" type="{unknown}"/>
+    <parameter name="pos" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="end switch" line="505"/>
+    </inline>
+  </method>
+  <method name="processLongArgument" start="518" end="746" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Processes a long (--example) command line argument."/>
+      <param description="The command line argument." type="string" variable="$arg"/>
+      <param description="The position of the argument on the command line." type="int" variable="$pos"/>
+      <return type="object">
+        <type full="void" namespace="" name="void"/>
+      </return>
+    </docblock>
+    <parameter name="arg" byreference="false" type="{unknown}"/>
+    <parameter name="pos" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="end switch" line="744"/>
+    </inline>
+  </method>
+  <method name="processUnknownArgument" start="759" end="785" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Processes an unknown command line argument.">Assumes all unknown arguments are files and folders to check.</description>
+      <param description="The command line argument." type="string" variable="$arg"/>
+      <param description="The position of the argument on the command line." type="int" variable="$pos"/>
+      <return type="object">
+        <type full="void" namespace="" name="void"/>
+      </return>
+    </docblock>
+    <parameter name="arg" byreference="false" type="{unknown}"/>
+    <parameter name="pos" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="We don't know about any additional switches; just files." line="761"/>
+    </inline>
+  </method>
+  <method name="process" start="796" end="921" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Runs PHP_CodeSniffer over files and directories."/>
+      <param description="An array of values determined from CLI args." type="array" variable="$values"/>
+      <return description="The number of error and warning messages shown." type="int"/>
+      <see value="getCommandLineValues()"/>
+    </docblock>
+    <parameter name="values" byreference="false" type="array" default=""/>
+    <inline>
+      <comment value="If no standard is supplied, get the default." line="822"/>
+      <comment value="Set file extensions if they were specified. Otherwise," line="851"/>
+      <comment value="let PHP_CodeSniffer decide on the defaults." line="852"/>
+      <comment value="Set ignore patterns if they were specified." line="857"/>
+      <comment value="Set some convenience member vars." line="863"/>
+      <comment value="Include bootstrap files." line="881"/>
+      <comment value="Interactive runs don't require a final report and it doesn't really" line="906"/>
+      <comment value="matter what the retun value is because we know it isn't being read" line="907"/>
+      <comment value="by a script." line="908"/>
+    </inline>
+  </method>
+  <method name="printErrorReport" start="940" end="1013" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Prints the error report for the run.">Note that this function may actually print multiple reports
+as the user may have specified a number of output formats.</description>
+      <param description="The PHP_CodeSniffer object containing" type="object" variable="$phpcs">the errors.<type full="PHP_CodeSniffer" namespace="" name="PHP_CodeSniffer"/></param>
+      <param description="A list of reports to print." type="array" variable="$reports"/>
+      <param description="TRUE if report should show error sources" type="object" variable="$showSources">(not used by all reports).<type full="bool" namespace="" name="bool"/></param>
+      <param description="A default file to log report output to." type="string" variable="$reportFile"/>
+      <param description="How wide the screen reports should be." type="int" variable="$reportWidth"/>
+      <return description="The number of error and warning messages shown." type="int"/>
+    </docblock>
+    <parameter name="phpcs" byreference="false" type="object">
+      <type full="PHP_CodeSniffer" namespace="" name="PHP_CodeSniffer"/>
+    </parameter>
+    <parameter name="reports" byreference="false" type="{unknown}"/>
+    <parameter name="showSources" byreference="false" type="{unknown}"/>
+    <parameter name="reportFile" byreference="false" type="{unknown}"/>
+    <parameter name="reportWidth" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="end foreach" line="977"/>
+      <comment value="Only print timer output if no reports were" line="979"/>
+      <comment value="printed to the screen so we don't put additional output" line="980"/>
+      <comment value="in something like an XML report. If we are printing to screen," line="981"/>
+      <comment value="the report types would have already worked out who should" line="982"/>
+      <comment value="print the timer info." line="983"/>
+      <comment value="They should all return the same value, so it" line="991"/>
+      <comment value="doesn't matter which return value we end up using." line="992"/>
+    </inline>
+  </method>
+  <method name="validateStandard" start="1025" end="1075" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Convert the passed standards into valid standards.">Checks things like default values and case.</description>
+      <param description="The standards to validate." type="array" variable="$standards"/>
+      <return type="array"/>
+    </docblock>
+    <parameter name="standards" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="end if" line="1055"/>
+      <comment value="Check if the standard name is valid, or if the case is invalid." line="1060"/>
+    </inline>
+  </method>
+  <method name="explainStandard" start="1085" end="1131" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Prints a report showing the sniffs contained in a standard."/>
+      <param description="The standard to validate." type="string" variable="$standard"/>
+      <return type="object">
+        <type full="void" namespace="" name="void"/>
+      </return>
+    </docblock>
+    <parameter name="standard" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="end foreach" line="1127"/>
+    </inline>
+  </method>
+  <method name="printConfigData" start="1141" end="1162" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Prints out the gathered config data."/>
+      <param description="The config data to print." type="array" variable="$data"/>
+      <return type="object">
+        <type full="void" namespace="" name="void"/>
+      </return>
+    </docblock>
+    <parameter name="data" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="printUsage" start="1170" end="1178" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Prints out the usage information for this script."/>
+      <return type="object">
+        <type full="void" namespace="" name="void"/>
+      </return>
+    </docblock>
+  </method>
+  <method name="printPHPCSUsage" start="1186" end="1233" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Prints out the usage information for PHPCS."/>
+      <return type="object">
+        <type full="void" namespace="" name="void"/>
+      </return>
+    </docblock>
+  </method>
+  <method name="printPHPCBFUsage" start="1241" end="1272" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Prints out the usage information for PHPCBF."/>
+      <return type="object">
+        <type full="void" namespace="" name="void"/>
+      </return>
+    </docblock>
+  </method>
+  <method name="printInstalledStandards" start="1280" end="1298" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Prints out a list of installed coding standards."/>
+      <return type="object">
+        <type full="void" namespace="" name="void"/>
+      </return>
+    </docblock>
+  </method>
+  <method name="_validateReportWidth" start="1309" end="1319" abstract="false" final="false" static="false" visibility="private">
+    <docblock>
+      <description compact="Set report width based on terminal width."/>
+      <param description="The width of the report. If &quot;auto&quot; then will" type="int" variable="$width">be replaced by the terminal width.</param>
+      <return type="object">
+        <type full="void" namespace="" name="void"/>
+      </return>
+    </docblock>
+    <parameter name="width" byreference="false" type="{unknown}"/>
+  </method>
+</class>

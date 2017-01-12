@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="Monolog\Handler\PushoverHandler" namespace="Monolog\Handler" name="PushoverHandler" abstract="false" final="false" start="22" end="185">
+  <file path="/home/web/example/src/freegame_developer/vendor/monolog/monolog/src/Monolog/Handler" file="PushoverHandler.php" realpath="/home/web/example/src/freegame_developer/vendor/monolog/monolog/src/Monolog/Handler/PushoverHandler.php" size="6629" time="2016-07-29T03:23:52+00:00" unixtime="1469762632" sha1="eac03733b41c5f9a8e85b9b3a6e0c2042f761722" relative="freegame_developer/vendor/monolog/monolog/src/Monolog/Handler/PushoverHandler.php"/>
+  <docblock>
+    <description compact="Sends notifications through the pushover api to mobile phones"/>
+    <author value="Sebastian Göttschkes &lt;sebastian.goettschkes@googlemail.com&gt;"/>
+    <see value="https://www.pushover.net/api"/>
+  </docblock>
+  <extends full="Monolog\Handler\SocketHandler" namespace="Monolog\Handler" name="SocketHandler"/>
+  <member name="token" visibility="private" static="false" line="24"/>
+  <member name="users" visibility="private" static="false" line="25"/>
+  <member name="title" visibility="private" static="false" line="26"/>
+  <member name="user" visibility="private" static="false" line="27"/>
+  <member name="retry" visibility="private" static="false" line="28"/>
+  <member name="expire" visibility="private" static="false" line="29"/>
+  <member name="highPriorityLevel" visibility="private" static="false" line="31"/>
+  <member name="emergencyLevel" visibility="private" static="false" line="32"/>
+  <member name="useFormattedMessage" type="boolean" default="false" visibility="private" static="false" line="33"/>
+  <member name="parameterNames" type="array" default="" visibility="private" static="false" line="40">
+    <docblock>
+      <description compact="All parameters that can be sent to Pushover"/>
+      <see value="https://pushover.net/api"/>
+      <var type="array"/>
+    </docblock>
+  </member>
+  <member name="sounds" type="array" default="" visibility="private" static="false" line="61">
+    <docblock>
+      <description compact="Sounds the api supports by default"/>
+      <see value="https://pushover.net/api#sounds"/>
+      <var type="array"/>
+    </docblock>
+  </member>
+  <constructor name="__construct" start="82" end="94" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <param description="Pushover api token" type="string" variable="$token"/>
+      <param description="Pushover user id or array of ids the message will be sent to" type="object" variable="$users">
+        <type full="Monolog\Handler\string|array" namespace="Monolog\Handler" name="string|array"/>
+      </param>
+      <param description="Title sent to the Pushover API" type="string" variable="$title"/>
+      <param description="The minimum logging level at which this handler will be triggered" type="int" variable="$level"/>
+      <param description="Whether the messages that are handled can bubble up the stack or not" type="object" variable="$bubble">
+        <type full="Monolog\Handler\Boolean" namespace="Monolog\Handler" name="Boolean"/>
+      </param>
+      <param description="Whether to connect via SSL. Required when pushing messages to users that are not" type="object" variable="$useSSL">the pushover.net app owner. OpenSSL is required for this option.<type full="Monolog\Handler\Boolean" namespace="Monolog\Handler" name="Boolean"/></param>
+      <param description="The minimum logging level at which this handler will start" type="int" variable="$highPriorityLevel">sending "high priority" requests to the Pushover API</param>
+      <param description="The minimum logging level at which this handler will start" type="int" variable="$emergencyLevel">sending "emergency" requests to the Pushover API</param>
+      <param description="The retry parameter specifies how often (in seconds) the Pushover servers will send the same notification to the user." type="int" variable="$retry"/>
+      <param description="The expire parameter specifies how many seconds your notification will continue to be retried for (every retry seconds)." type="int" variable="$expire"/>
+    </docblock>
+    <parameter name="token" byreference="false" type="{unknown}"/>
+    <parameter name="users" byreference="false" type="{unknown}"/>
+    <parameter name="title" byreference="false" type="{unknown}" default="" constant="null"/>
+    <parameter name="level" byreference="false" type="{unknown}" default="" constant="Logger::CRITICAL"/>
+    <parameter name="bubble" byreference="false" type="boolean" default="true"/>
+    <parameter name="useSSL" byreference="false" type="boolean" default="true"/>
+    <parameter name="highPriorityLevel" byreference="false" type="{unknown}" default="" constant="Logger::CRITICAL"/>
+    <parameter name="emergencyLevel" byreference="false" type="{unknown}" default="" constant="Logger::EMERGENCY"/>
+    <parameter name="retry" byreference="false" type="integer" default="30"/>
+    <parameter name="expire" byreference="false" type="integer" default="25200"/>
+  </constructor>
+  <method name="generateDataStream" start="96" end="101" abstract="false" final="false" static="false" visibility="protected">
+    <parameter name="record" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="buildContent" start="103" end="142" abstract="false" final="false" static="false" visibility="private">
+    <parameter name="record" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="Pushover has a limit of 512 characters on title and message combined." line="105"/>
+      <comment value="First determine the available parameters" line="129"/>
+      <comment value="Least important info should be merged with subsequent info" line="133"/>
+      <comment value="Only pass sounds that are supported by the API" line="136"/>
+    </inline>
+  </method>
+  <method name="buildHeader" start="144" end="153" abstract="false" final="false" static="false" visibility="private">
+    <parameter name="content" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="write" start="155" end="165" abstract="false" final="false" static="false" visibility="protected">
+    <parameter name="record" byreference="false" type="array"/>
+  </method>
+  <method name="setHighPriorityLevel" start="167" end="170" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="value" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="setEmergencyLevel" start="172" end="175" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="value" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="useFormattedMessage" start="181" end="184" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Use the formatted message?"/>
+      <param type="object" variable="$value">
+        <type full="Monolog\Handler\bool" namespace="Monolog\Handler" name="bool"/>
+      </param>
+    </docblock>
+    <parameter name="value" byreference="false" type="{unknown}"/>
+  </method>
+</class>

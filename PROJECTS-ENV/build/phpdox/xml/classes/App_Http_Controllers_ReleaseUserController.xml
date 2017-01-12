@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="App\Http\Controllers\ReleaseUserController" namespace="App\Http\Controllers" name="ReleaseUserController" abstract="false" final="false" start="10" end="241">
+  <file path="/home/web/example/src/freegame_developer/app/Http/Controllers" file="ReleaseUserController.php" realpath="/home/web/example/src/freegame_developer/app/Http/Controllers/ReleaseUserController.php" size="7217" time="2016-11-16T01:52:54+00:00" unixtime="1479261174" sha1="5117378b794a02b3d1eaa1fb3e55047e305f429f" relative="freegame_developer/app/Http/Controllers/ReleaseUserController.php"/>
+  <extends full="App\Http\Controllers\Controller" namespace="App\Http\Controllers" name="Controller"/>
+  <member name="releaseUserService" visibility="protected" static="false" line="12"/>
+  <member name="gameData" visibility="protected" static="false" line="13"/>
+  <constructor name="__construct" start="15" end="39" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="releaseUserService" byreference="false" type="object">
+      <type full="App\Services\ReleaseUserService" namespace="App\Services" name="ReleaseUserService"/>
+    </parameter>
+    <parameter name="request" byreference="false" type="object">
+      <type full="Illuminate\Http\Request" namespace="Illuminate\Http" name="Request"/>
+    </parameter>
+  </constructor>
+  <method name="index" start="45" end="57" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="release user index page"/>
+      <return type="object">
+        <type full="App\Http\Controllers\Response" namespace="App\Http\Controllers" name="Response"/>
+      </return>
+    </docblock>
+    <parameter name="request" byreference="false" type="object">
+      <type full="App\Http\Requests\ReleaseUserRequest" namespace="App\Http\Requests" name="ReleaseUserRequest"/>
+    </parameter>
+  </method>
+  <method name="create" start="63" end="66" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Create release user page"/>
+      <return type="object">
+        <type full="App\Http\Controllers\Response" namespace="App\Http\Controllers" name="Response"/>
+      </return>
+    </docblock>
+    <parameter name="request" byreference="false" type="object">
+      <type full="Illuminate\Http\Request" namespace="Illuminate\Http" name="Request"/>
+    </parameter>
+  </method>
+  <method name="createConfirm" start="73" end="76" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Create release user confirm page"/>
+      <param type="object" variable="$request">
+        <type full="App\Http\Requests\ReleaseUserRequest" namespace="App\Http\Requests" name="ReleaseUserRequest"/>
+      </param>
+      <return type="object">
+        <type full="App\Http\Controllers\Response" namespace="App\Http\Controllers" name="Response"/>
+      </return>
+    </docblock>
+    <parameter name="request" byreference="false" type="object">
+      <type full="App\Http\Requests\ReleaseUserRequest" namespace="App\Http\Requests" name="ReleaseUserRequest"/>
+    </parameter>
+  </method>
+  <method name="store" start="83" end="100" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Create user relase"/>
+      <param type="object" variable="$request">
+        <type full="App\Http\Requests\ReleaseUserRequest" namespace="App\Http\Requests" name="ReleaseUserRequest"/>
+      </param>
+      <return type="object">
+        <type full="App\Http\Controllers\Response" namespace="App\Http\Controllers" name="Response"/>
+      </return>
+    </docblock>
+    <parameter name="request" byreference="false" type="object">
+      <type full="App\Http\Requests\ReleaseUserRequest" namespace="App\Http\Requests" name="ReleaseUserRequest"/>
+    </parameter>
+  </method>
+  <method name="edit" start="108" end="123" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Edit release user page"/>
+      <param type="object" variable="$request">
+        <type full="Illuminate\Http\Request" namespace="Illuminate\Http" name="Request"/>
+      </param>
+      <param type="integer" variable="$id"/>
+      <return type="object">
+        <type full="App\Http\Controllers\Response" namespace="App\Http\Controllers" name="Response"/>
+      </return>
+    </docblock>
+    <parameter name="request" byreference="false" type="object">
+      <type full="Illuminate\Http\Request" namespace="Illuminate\Http" name="Request"/>
+    </parameter>
+    <parameter name="id" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="editConfirm" start="130" end="141" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Edit release user confirm page"/>
+      <param type="object" variable="$request">
+        <type full="App\Http\Requests\ReleaseUserRequest" namespace="App\Http\Requests" name="ReleaseUserRequest"/>
+      </param>
+      <return type="object">
+        <type full="App\Http\Controllers\Response" namespace="App\Http\Controllers" name="Response"/>
+      </return>
+    </docblock>
+    <parameter name="request" byreference="false" type="object">
+      <type full="App\Http\Requests\ReleaseUserRequest" namespace="App\Http\Requests" name="ReleaseUserRequest"/>
+    </parameter>
+  </method>
+  <method name="update" start="148" end="156" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Update release user confirm"/>
+      <param type="object" variable="$request">
+        <type full="App\Http\Requests\ReleaseUserRequest" namespace="App\Http\Requests" name="ReleaseUserRequest"/>
+      </param>
+      <return type="object">
+        <type full="App\Http\Controllers\Response" namespace="App\Http\Controllers" name="Response"/>
+      </return>
+    </docblock>
+    <parameter name="request" byreference="false" type="object">
+      <type full="App\Http\Requests\ReleaseUserRequest" namespace="App\Http\Requests" name="ReleaseUserRequest"/>
+    </parameter>
+  </method>
+  <method name="deleteConfirm" start="162" end="170" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Delete release user confirm page"/>
+      <return type="object">
+        <type full="App\Http\Controllers\Response" namespace="App\Http\Controllers" name="Response"/>
+      </return>
+    </docblock>
+    <parameter name="id" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="destroy" start="176" end="191" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Delete release user"/>
+      <return type="object">
+        <type full="App\Http\Controllers\Response" namespace="App\Http\Controllers" name="Response"/>
+      </return>
+    </docblock>
+    <parameter name="request" byreference="false" type="object">
+      <type full="Illuminate\Http\Request" namespace="Illuminate\Http" name="Request"/>
+    </parameter>
+  </method>
+  <method name="downloadCsv" start="197" end="208" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Download csv file"/>
+      <return type="object">
+        <type full="App\Http\Controllers\file" namespace="App\Http\Controllers" name="file"/>
+      </return>
+    </docblock>
+    <parameter name="request" byreference="false" type="object">
+      <type full="App\Http\Requests\ReleaseUserRequest" namespace="App\Http\Requests" name="ReleaseUserRequest"/>
+    </parameter>
+    <inline>
+      <comment value="add headers for each column in the CSV download" line="202"/>
+    </inline>
+  </method>
+  <method name="createCsv" start="215" end="222" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Create csv page"/>
+      <param type="object" variable="$request">
+        <type full="Illuminate\Http\Request" namespace="Illuminate\Http" name="Request"/>
+      </param>
+      <return type="object">
+        <type full="App\Http\Controllers\Response" namespace="App\Http\Controllers" name="Response"/>
+      </return>
+    </docblock>
+    <parameter name="request" byreference="false" type="object">
+      <type full="Illuminate\Http\Request" namespace="Illuminate\Http" name="Request"/>
+    </parameter>
+  </method>
+  <method name="createConfirmCsv" start="229" end="240" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Create csv confirm page"/>
+      <param type="object" variable="$request">
+        <type full="App\Http\Requests\ReleaseUserRequest" namespace="App\Http\Requests" name="ReleaseUserRequest"/>
+      </param>
+      <return type="object">
+        <type full="App\Http\Controllers\Response" namespace="App\Http\Controllers" name="Response"/>
+      </return>
+    </docblock>
+    <parameter name="request" byreference="false" type="object">
+      <type full="App\Http\Requests\ReleaseUserRequest" namespace="App\Http\Requests" name="ReleaseUserRequest"/>
+    </parameter>
+    <inline>
+      <comment value="Upload file" line="236"/>
+    </inline>
+  </method>
+</class>

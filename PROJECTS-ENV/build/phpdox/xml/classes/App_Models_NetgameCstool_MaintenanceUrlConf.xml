@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="App\Models\NetgameCstool\MaintenanceUrlConf" namespace="App\Models\NetgameCstool" name="MaintenanceUrlConf" abstract="false" final="false" start="5" end="125">
+  <file path="/home/web/example/src/freegame_developer/app/Models/NetgameCstool" file="MaintenanceUrlConf.php" realpath="/home/web/example/src/freegame_developer/app/Models/NetgameCstool/MaintenanceUrlConf.php" size="4413" time="2017-01-03T08:12:08+00:00" unixtime="1483431128" sha1="12968b33e50e2db7dc30d3b7f52a1575c83ab3d2" relative="freegame_developer/app/Models/NetgameCstool/MaintenanceUrlConf.php"/>
+  <extends full="App\Models\NetgameCstool\NetgameCstool" namespace="App\Models\NetgameCstool" name="NetgameCstool"/>
+  <member name="table" type="string" default="'maintenance_url_conf'" visibility="protected" static="false" line="7"/>
+  <member name="timestamps" type="boolean" default="false" visibility="public" static="false" line="9"/>
+  <member name="guarded" type="array" default="" visibility="protected" static="false" line="11"/>
+  <member name="dates" type="array" default="" visibility="protected" static="false" line="13"/>
+  <method name="getList" start="25" end="83" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Get maintenance url conf list by condition"/>
+      <param type="array" variable="$condition"/>
+      <return type="object">
+        <type full="App\Models\NetgameCstool\Object" namespace="App\Models\NetgameCstool" name="Object"/>
+      </return>
+    </docblock>
+    <parameter name="condition" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="getData" start="90" end="96" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Get maintenance url conf by condition"/>
+      <param type="array" variable="$condition"/>
+      <return type="object">
+        <type full="App\Models\NetgameCstool\Object" namespace="App\Models\NetgameCstool" name="Object"/>
+      </return>
+    </docblock>
+    <parameter name="condition" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="add" start="103" end="110" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Insert maintenance url conf"/>
+      <param type="array" variable="$params"/>
+      <param type="boolean"/>
+    </docblock>
+    <parameter name="params" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="remove" start="117" end="124" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Delete maintenance url conf by condition"/>
+      <param type="array" variable="$condition"/>
+      <return type="boolean"/>
+    </docblock>
+    <parameter name="condition" byreference="false" type="{unknown}"/>
+  </method>
+</class>

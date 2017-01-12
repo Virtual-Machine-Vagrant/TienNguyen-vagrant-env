@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="Symfony\Component\HttpKernel\EventListener\DebugHandlersListener" namespace="Symfony\Component\HttpKernel\EventListener" name="DebugHandlersListener" abstract="false" final="false" start="30" end="138">
+  <file path="/home/web/example/src/freegame_developer/vendor/symfony/http-kernel/EventListener" file="DebugHandlersListener.php" realpath="/home/web/example/src/freegame_developer/vendor/symfony/http-kernel/EventListener/DebugHandlersListener.php" size="5591" time="2016-10-27T01:37:19+00:00" unixtime="1477532239" sha1="d6d216b43d4e80840fd9b9730296d9059616f665" relative="freegame_developer/vendor/symfony/http-kernel/EventListener/DebugHandlersListener.php"/>
+  <docblock>
+    <description compact="Configures errors and exceptions handlers."/>
+    <author value="Nicolas Grekas &lt;p@tchwork.com&gt;"/>
+  </docblock>
+  <implements full="Symfony\Component\EventDispatcher\EventSubscriberInterface" namespace="Symfony\Component\EventDispatcher" name="EventSubscriberInterface"/>
+  <member name="exceptionHandler" visibility="private" static="false" line="32"/>
+  <member name="logger" visibility="private" static="false" line="33"/>
+  <member name="levels" visibility="private" static="false" line="34"/>
+  <member name="throwAt" visibility="private" static="false" line="35"/>
+  <member name="scream" visibility="private" static="false" line="36"/>
+  <member name="fileLinkFormat" visibility="private" static="false" line="37"/>
+  <member name="firstCall" type="boolean" default="true" visibility="private" static="false" line="38"/>
+  <constructor name="__construct" start="48" end="56" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <param description="A handler that will be called on Exception" type="object" variable="$exceptionHandler">
+        <type full="Symfony\Component\HttpKernel\EventListener\callable|null" namespace="Symfony\Component\HttpKernel\EventListener" name="callable|null"/>
+      </param>
+      <param description="A PSR-3 logger" type="object" variable="$logger">
+        <type full="Symfony\Component\HttpKernel\EventListener\LoggerInterface|null" namespace="Symfony\Component\HttpKernel\EventListener" name="LoggerInterface|null"/>
+      </param>
+      <param description="An array map of E_* to LogLevel::* or an integer bit field of E_* constants" type="object" variable="$levels">
+        <type full="Symfony\Component\HttpKernel\EventListener\array|int" namespace="Symfony\Component\HttpKernel\EventListener" name="array|int"/>
+      </param>
+      <param description="Thrown errors in a bit field of E_* constants, or null to keep the current value" type="object" variable="$throwAt">
+        <type full="Symfony\Component\HttpKernel\EventListener\int|null" namespace="Symfony\Component\HttpKernel\EventListener" name="int|null"/>
+      </param>
+      <param description="Enables/disables screaming mode, where even silenced errors are logged" type="object" variable="$scream">
+        <type full="Symfony\Component\HttpKernel\EventListener\bool" namespace="Symfony\Component\HttpKernel\EventListener" name="bool"/>
+      </param>
+      <param description="The format for links to source files" type="string" variable="$fileLinkFormat"/>
+    </docblock>
+    <parameter name="exceptionHandler" byreference="false" type="{unknown}"/>
+    <parameter name="logger" byreference="false" type="{unknown}" default="" constant="null">
+      <type full="Psr\Log\LoggerInterface" namespace="Psr\Log" name="LoggerInterface"/>
+    </parameter>
+    <parameter name="levels" byreference="false" type="{unknown}" default="" constant="null"/>
+    <parameter name="throwAt" byreference="false" type="integer" default="1"/>
+    <parameter name="scream" byreference="false" type="boolean" default="true"/>
+    <parameter name="fileLinkFormat" byreference="false" type="{unknown}" default="" constant="null"/>
+  </constructor>
+  <method name="configure" start="63" end="126" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Configures the error handler."/>
+      <param description="The triggering event" type="object" variable="$event">
+        <type full="Symfony\Component\HttpKernel\EventListener\Event|null" namespace="Symfony\Component\HttpKernel\EventListener" name="Event|null"/>
+      </param>
+    </docblock>
+    <parameter name="event" byreference="false" type="{unknown}" default="" constant="null">
+      <type full="Symfony\Component\EventDispatcher\Event" namespace="Symfony\Component\EventDispatcher" name="Event"/>
+    </parameter>
+  </method>
+  <method name="getSubscribedEvents" start="128" end="137" abstract="false" final="false" static="true" visibility="public"/>
+</class>

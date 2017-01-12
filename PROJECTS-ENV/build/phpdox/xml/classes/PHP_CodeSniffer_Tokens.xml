@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="PHP_CodeSniffer_Tokens" namespace="" name="PHP_CodeSniffer_Tokens" abstract="false" final="true" start="162" end="749">
+  <file path="/home/web/example/src/freegame_developer/vendor/squizlabs/php_codesniffer/CodeSniffer" file="Tokens.php" realpath="/home/web/example/src/freegame_developer/vendor/squizlabs/php_codesniffer/CodeSniffer/Tokens.php" size="34234" time="2016-01-19T23:39:10+00:00" unixtime="1453246750" sha1="b01ebcbb5c172181961128d330319476e0925d2a" relative="freegame_developer/vendor/squizlabs/php_codesniffer/CodeSniffer/Tokens.php"/>
+  <docblock>
+    <description compact="The Tokens class contains weightings for tokens based on their probability of occurrence in a file.">The less the chance of a high occurrence of an arbitrary token, the higher
+the weighting.</description>
+    <category value="PHP"/>
+    <package value="PHP_CodeSniffer"/>
+    <author value="Greg Sherwood &lt;gsherwood@squiz.net&gt;"/>
+    <author value="Marc McIntyre &lt;mmcintyre@squiz.net&gt;"/>
+    <copyright value="2006-2014 Squiz Pty Ltd (ABN 77 084 670 600)"/>
+    <license name="https://github.com/squizlabs/PHP_CodeSniffer/blob/master/licence.txt BSD Licence"/>
+    <version value="Release: @package_version@"/>
+    <link value="http://pear.php.net/package/PHP_CodeSniffer"/>
+  </docblock>
+  <member name="weightings" type="array" default="" visibility="public" static="true" line="170">
+    <docblock>
+      <description compact="The token weightings."/>
+      <var description="=&gt; int)" type="object">
+        <type full="array(int" namespace="" name="array(int"/>
+      </var>
+    </docblock>
+  </member>
+  <member name="knownLengths" type="array" default="" visibility="public" static="true" line="249">
+    <docblock>
+      <description compact="The token weightings."/>
+      <var description="=&gt; int)" type="object">
+        <type full="array(int" namespace="" name="array(int"/>
+      </var>
+    </docblock>
+  </member>
+  <member name="assignmentTokens" type="array" default="" visibility="public" static="true" line="397">
+    <docblock>
+      <description compact="Tokens that represent assignments."/>
+      <var type="object">
+        <type full="array(int)" namespace="" name="array(int)"/>
+      </var>
+    </docblock>
+  </member>
+  <member name="equalityTokens" type="array" default="" visibility="public" static="true" line="417">
+    <docblock>
+      <description compact="Tokens that represent equality comparisons."/>
+      <var type="object">
+        <type full="array(int)" namespace="" name="array(int)"/>
+      </var>
+    </docblock>
+  </member>
+  <member name="comparisonTokens" type="array" default="" visibility="public" static="true" line="431">
+    <docblock>
+      <description compact="Tokens that represent comparison operator."/>
+      <var type="object">
+        <type full="array(int)" namespace="" name="array(int)"/>
+      </var>
+    </docblock>
+  </member>
+  <member name="arithmeticTokens" type="array" default="" visibility="public" static="true" line="447">
+    <docblock>
+      <description compact="Tokens that represent arithmetic operators."/>
+      <var type="object">
+        <type full="array(int)" namespace="" name="array(int)"/>
+      </var>
+    </docblock>
+  </member>
+  <member name="castTokens" type="array" default="" visibility="public" static="true" line="460">
+    <docblock>
+      <description compact="Tokens that represent casting."/>
+      <var type="object">
+        <type full="array(int)" namespace="" name="array(int)"/>
+      </var>
+    </docblock>
+  </member>
+  <member name="parenthesisOpeners" type="array" default="" visibility="public" static="true" line="476">
+    <docblock>
+      <description compact="Token types that open parenthesis."/>
+      <var type="object">
+        <type full="array(int)" namespace="" name="array(int)"/>
+      </var>
+    </docblock>
+  </member>
+  <member name="scopeOpeners" type="array" default="" visibility="public" static="true" line="495">
+    <docblock>
+      <description compact="Tokens that are allowed to open scopes."/>
+      <var type="object">
+        <type full="array(int)" namespace="" name="array(int)"/>
+      </var>
+    </docblock>
+  </member>
+  <member name="scopeModifiers" type="array" default="" visibility="public" static="true" line="526">
+    <docblock>
+      <description compact="Tokens that represent scope modifiers."/>
+      <var type="object">
+        <type full="array(int)" namespace="" name="array(int)"/>
+      </var>
+    </docblock>
+  </member>
+  <member name="methodPrefixes" type="array" default="" visibility="public" static="true" line="537">
+    <docblock>
+      <description compact="Tokens that can prefix a method name"/>
+      <var type="object">
+        <type full="array(int)" namespace="" name="array(int)"/>
+      </var>
+    </docblock>
+  </member>
+  <member name="operators" type="array" default="" visibility="public" static="true" line="551">
+    <docblock>
+      <description compact="Tokens that perform operations."/>
+      <var type="object">
+        <type full="array(int)" namespace="" name="array(int)"/>
+      </var>
+    </docblock>
+  </member>
+  <member name="booleanOperators" type="array" default="" visibility="public" static="true" line="571">
+    <docblock>
+      <description compact="Tokens that perform boolean operations."/>
+      <var type="object">
+        <type full="array(int)" namespace="" name="array(int)"/>
+      </var>
+    </docblock>
+  </member>
+  <member name="blockOpeners" type="array" default="" visibility="public" static="true" line="584">
+    <docblock>
+      <description compact="Tokens that open code blocks."/>
+      <var type="object">
+        <type full="array(int)" namespace="" name="array(int)"/>
+      </var>
+    </docblock>
+  </member>
+  <member name="emptyTokens" type="array" default="" visibility="public" static="true" line="596">
+    <docblock>
+      <description compact="Tokens that don't represent code."/>
+      <var type="object">
+        <type full="array(int)" namespace="" name="array(int)"/>
+      </var>
+    </docblock>
+  </member>
+  <member name="commentTokens" type="array" default="" visibility="public" static="true" line="613">
+    <docblock>
+      <description compact="Tokens that are comments."/>
+      <var type="object">
+        <type full="array(int)" namespace="" name="array(int)"/>
+      </var>
+    </docblock>
+  </member>
+  <member name="stringTokens" type="array" default="" visibility="public" static="true" line="631">
+    <docblock>
+      <description compact="Tokens that represent strings.">Note that T_STRINGS are NOT represented in this list.</description>
+      <var type="object">
+        <type full="array(int)" namespace="" name="array(int)"/>
+      </var>
+    </docblock>
+  </member>
+  <member name="bracketTokens" type="array" default="" visibility="public" static="true" line="641">
+    <docblock>
+      <description compact="Tokens that represent brackets and parenthesis."/>
+      <var type="object">
+        <type full="array(int)" namespace="" name="array(int)"/>
+      </var>
+    </docblock>
+  </member>
+  <member name="includeTokens" type="array" default="" visibility="public" static="true" line="655">
+    <docblock>
+      <description compact="Tokens that include files."/>
+      <var type="object">
+        <type full="array(int)" namespace="" name="array(int)"/>
+      </var>
+    </docblock>
+  </member>
+  <member name="heredocTokens" type="array" default="" visibility="public" static="true" line="667">
+    <docblock>
+      <description compact="Tokens that make up a heredoc string."/>
+      <var type="object">
+        <type full="array(int)" namespace="" name="array(int)"/>
+      </var>
+    </docblock>
+  </member>
+  <member name="functionNameTokens" type="array" default="" visibility="public" static="true" line="684">
+    <docblock>
+      <description compact="Tokens that represent the names of called functions.">Mostly, these are just strings. But PHP tokeizes some language
+constructs and functions using their own tokens.</description>
+      <var type="object">
+        <type full="array(int)" namespace="" name="array(int)"/>
+      </var>
+    </docblock>
+  </member>
+  <constructor name="__construct" start="703" end="706" abstract="false" final="false" static="false" visibility="private">
+    <docblock>
+      <description compact="A PHP_CodeSniffer_Tokens class cannot be constructed.">Only static calls are allowed.</description>
+    </docblock>
+  </constructor>
+  <method name="getHighestWeightedToken" start="724" end="746" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description compact="Returns the highest weighted token type.">Tokens are weighted by their approximate frequency of appearance in code
+- the less frequently they appear in the code, the higher the weighting.
+For example T_CLASS tokens appear very infrequently in a file, and
+therefore have a high weighting.
+
+Returns false if there are no weightings for any of the specified tokens.</description>
+      <param description="The token types to get the highest weighted" type="object" variable="$tokens">type for.<type full="array(int)" namespace="" name="array(int)"/></param>
+      <return description="The highest weighted token." type="int"/>
+    </docblock>
+    <parameter name="tokens" byreference="false" type="array"/>
+  </method>
+</class>

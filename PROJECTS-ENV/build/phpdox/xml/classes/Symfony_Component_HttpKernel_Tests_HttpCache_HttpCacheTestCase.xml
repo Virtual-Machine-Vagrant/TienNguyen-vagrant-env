@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="Symfony\Component\HttpKernel\Tests\HttpCache\HttpCacheTestCase" namespace="Symfony\Component\HttpKernel\Tests\HttpCache" name="HttpCacheTestCase" abstract="false" final="false" start="20" end="180">
+  <file path="/home/web/example/src/freegame_developer/vendor/symfony/http-kernel/Tests/HttpCache" file="HttpCacheTestCase.php" realpath="/home/web/example/src/freegame_developer/vendor/symfony/http-kernel/Tests/HttpCache/HttpCacheTestCase.php" size="5234" time="2016-10-27T01:37:19+00:00" unixtime="1477532239" sha1="8f155bb51446540ada4c64fb662fe06d8c3208f8" relative="freegame_developer/vendor/symfony/http-kernel/Tests/HttpCache/HttpCacheTestCase.php"/>
+  <extends full="PHPUnit_Framework_TestCase" namespace="" name="PHPUnit_Framework_TestCase"/>
+  <member name="kernel" visibility="protected" static="false" line="22"/>
+  <member name="cache" visibility="protected" static="false" line="23"/>
+  <member name="caches" visibility="protected" static="false" line="24"/>
+  <member name="cacheConfig" visibility="protected" static="false" line="25"/>
+  <member name="request" visibility="protected" static="false" line="26"/>
+  <member name="response" visibility="protected" static="false" line="27"/>
+  <member name="responses" visibility="protected" static="false" line="28"/>
+  <member name="catch" visibility="protected" static="false" line="29"/>
+  <member name="esi" visibility="protected" static="false" line="30"/>
+  <member name="store" visibility="protected" static="false" line="31"/>
+  <method name="setUp" start="33" end="49" abstract="false" final="false" static="false" visibility="protected"/>
+  <method name="tearDown" start="51" end="67" abstract="false" final="false" static="false" visibility="protected"/>
+  <method name="assertHttpKernelIsCalled" start="69" end="72" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="assertHttpKernelIsNotCalled" start="74" end="77" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="assertResponseOk" start="79" end="82" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="assertTraceContains" start="84" end="90" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="trace" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="assertTraceNotContains" start="92" end="98" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="trace" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="assertExceptionsAreCaught" start="100" end="103" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="assertExceptionsAreNotCaught" start="105" end="108" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="request" start="110" end="130" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="method" byreference="false" type="{unknown}"/>
+    <parameter name="uri" byreference="false" type="string" default="'/'"/>
+    <parameter name="server" byreference="false" type="array" default=""/>
+    <parameter name="cookies" byreference="false" type="array" default=""/>
+    <parameter name="esi" byreference="false" type="boolean" default="false"/>
+    <parameter name="headers" byreference="false" type="array" default=""/>
+  </method>
+  <method name="getMetaStorageValues" start="132" end="140" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="setNextResponse" start="143" end="146" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="statusCode" byreference="false" type="integer" default="200"/>
+    <parameter name="headers" byreference="false" type="array" default=""/>
+    <parameter name="body" byreference="false" type="string" default="'Hello World'"/>
+    <parameter name="customizer" byreference="false" type="{unknown}" default="" constant="null">
+      <type full="Closure" namespace="" name="Closure"/>
+    </parameter>
+  </method>
+  <method name="setNextResponses" start="148" end="151" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="responses" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="catchExceptions" start="153" end="156" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="catch" byreference="false" type="boolean" default="true"/>
+  </method>
+  <method name="clearDirectory" start="158" end="179" abstract="false" final="false" static="true" visibility="public">
+    <parameter name="directory" byreference="false" type="{unknown}"/>
+  </method>
+</class>

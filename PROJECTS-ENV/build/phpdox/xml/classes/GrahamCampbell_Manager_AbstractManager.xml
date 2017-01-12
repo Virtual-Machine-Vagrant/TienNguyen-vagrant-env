@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="GrahamCampbell\Manager\AbstractManager" namespace="GrahamCampbell\Manager" name="AbstractManager" abstract="true" final="false" start="22" end="236">
+  <file path="/home/web/example/src/freegame_developer/vendor/graham-campbell/manager/src" file="AbstractManager.php" realpath="/home/web/example/src/freegame_developer/vendor/graham-campbell/manager/src/AbstractManager.php" size="5038" time="2016-04-26T14:27:59+00:00" unixtime="1461680879" sha1="17342e4b930f9af4f6983338c587446e63e87c8a" relative="freegame_developer/vendor/graham-campbell/manager/src/AbstractManager.php"/>
+  <docblock>
+    <description compact="This is the abstract manager class."/>
+    <author value="Graham Campbell &lt;graham@alt-three.com&gt;"/>
+  </docblock>
+  <implements full="GrahamCampbell\Manager\ManagerInterface" namespace="GrahamCampbell\Manager" name="ManagerInterface"/>
+  <member name="config" visibility="protected" static="false" line="29">
+    <docblock>
+      <description compact="The config instance."/>
+      <var type="object">
+        <type full="\Illuminate\Contracts\Config\Repository" namespace="\Illuminate\Contracts\Config" name="Repository"/>
+      </var>
+    </docblock>
+  </member>
+  <member name="connections" type="array" default="" visibility="protected" static="false" line="36">
+    <docblock>
+      <description compact="The active connection instances."/>
+      <var type="array"/>
+    </docblock>
+  </member>
+  <member name="extensions" type="array" default="" visibility="protected" static="false" line="43">
+    <docblock>
+      <description compact="The custom connection resolvers."/>
+      <var type="array"/>
+    </docblock>
+  </member>
+  <constructor name="__construct" start="52" end="55" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Create a new manager instance."/>
+      <param type="object" variable="$config">
+        <type full="\Illuminate\Contracts\Config\Repository" namespace="\Illuminate\Contracts\Config" name="Repository"/>
+      </param>
+      <return type="object">
+        <type full="GrahamCampbell\Manager\void" namespace="GrahamCampbell\Manager" name="void"/>
+      </return>
+    </docblock>
+    <parameter name="config" byreference="false" type="object">
+      <type full="Illuminate\Contracts\Config\Repository" namespace="Illuminate\Contracts\Config" name="Repository"/>
+    </parameter>
+  </constructor>
+  <method name="connection" start="64" end="73" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Get a connection instance."/>
+      <param type="string" variable="$name"/>
+      <return type="object"/>
+    </docblock>
+    <parameter name="name" byreference="false" type="{unknown}" default="" constant="null"/>
+  </method>
+  <method name="reconnect" start="82" end="89" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Reconnect to the given connection."/>
+      <param type="string" variable="$name"/>
+      <return type="object"/>
+    </docblock>
+    <parameter name="name" byreference="false" type="{unknown}" default="" constant="null"/>
+  </method>
+  <method name="disconnect" start="98" end="103" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Disconnect from the given connection."/>
+      <param type="string" variable="$name"/>
+      <return type="object">
+        <type full="GrahamCampbell\Manager\void" namespace="GrahamCampbell\Manager" name="void"/>
+      </return>
+    </docblock>
+    <parameter name="name" byreference="false" type="{unknown}" default="" constant="null"/>
+  </method>
+  <method name="createConnection" start="112" end="112" abstract="true" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Create the connection instance."/>
+      <param type="array" variable="$config"/>
+      <return type="mixed"/>
+    </docblock>
+    <parameter name="config" byreference="false" type="array"/>
+  </method>
+  <method name="makeConnection" start="121" end="136" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Make the connection instance."/>
+      <param type="string" variable="$name"/>
+      <return type="mixed"/>
+    </docblock>
+    <parameter name="name" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="getConfigName" start="143" end="143" abstract="true" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Get the configuration name."/>
+      <return type="string"/>
+    </docblock>
+  </method>
+  <method name="getConnectionConfig" start="154" end="167" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Get the configuration for a connection."/>
+      <param type="string" variable="$name"/>
+      <throws type="object">
+        <type full="\InvalidArgumentException" namespace="" name="InvalidArgumentException"/>
+      </throws>
+      <return type="array"/>
+    </docblock>
+    <parameter name="name" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="getDefaultConnection" start="174" end="177" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Get the default connection name."/>
+      <return type="string"/>
+    </docblock>
+  </method>
+  <method name="setDefaultConnection" start="186" end="189" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Set the default connection name."/>
+      <param type="string" variable="$name"/>
+      <return type="object">
+        <type full="GrahamCampbell\Manager\void" namespace="GrahamCampbell\Manager" name="void"/>
+      </return>
+    </docblock>
+    <parameter name="name" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="extend" start="199" end="202" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Register an extension connection resolver."/>
+      <param type="string" variable="$name"/>
+      <param type="object" variable="$resolver">
+        <type full="GrahamCampbell\Manager\callable" namespace="GrahamCampbell\Manager" name="callable"/>
+      </param>
+      <return type="object">
+        <type full="GrahamCampbell\Manager\void" namespace="GrahamCampbell\Manager" name="void"/>
+      </return>
+    </docblock>
+    <parameter name="name" byreference="false" type="{unknown}"/>
+    <parameter name="resolver" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="getConnections" start="209" end="212" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Return all of the created connections."/>
+      <return type="array" of="object">
+        <type full="GrahamCampbell\Manager\object" namespace="GrahamCampbell\Manager" name="object"/>
+      </return>
+    </docblock>
+  </method>
+  <method name="getConfig" start="219" end="222" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Get the config instance."/>
+      <return type="object">
+        <type full="\Illuminate\Contracts\Config\Repository" namespace="\Illuminate\Contracts\Config" name="Repository"/>
+      </return>
+    </docblock>
+  </method>
+  <method name="__call" start="232" end="235" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Dynamically pass methods to the default connection."/>
+      <param type="string" variable="$method"/>
+      <param type="array" variable="$parameters"/>
+      <return type="mixed"/>
+    </docblock>
+    <parameter name="method" byreference="false" type="{unknown}"/>
+    <parameter name="parameters" byreference="false" type="{unknown}"/>
+  </method>
+</class>

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="App\Http\Controllers\UsersController" namespace="App\Http\Controllers" name="UsersController" abstract="false" final="false" start="7" end="85">
+  <file path="/home/web/example/src/freegame_developer/app/Http/Controllers" file="UsersController.php" realpath="/home/web/example/src/freegame_developer/app/Http/Controllers/UsersController.php" size="1658" time="2016-11-16T01:52:54+00:00" unixtime="1479261174" sha1="ab682cd7c3e718f8c41ad0777f234b1557e443c2" relative="freegame_developer/app/Http/Controllers/UsersController.php"/>
+  <extends full="App\Http\Controllers\Controller" namespace="App\Http\Controllers" name="Controller"/>
+  <member name="usersService" visibility="protected" static="false" line="12">
+    <docblock>
+      <description compact="Users service"/>
+    </docblock>
+  </member>
+  <constructor name="__construct" start="20" end="40" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Construct"/>
+      <param type="object" variable="$usersService">
+        <type full="App\Services\UsersService" namespace="App\Services" name="UsersService"/>
+      </param>
+      <return type="object">
+        <type full="App\Http\Controllers\void" namespace="App\Http\Controllers" name="void"/>
+      </return>
+    </docblock>
+    <parameter name="usersService" byreference="false" type="object">
+      <type full="App\Services\UsersService" namespace="App\Services" name="UsersService"/>
+    </parameter>
+  </constructor>
+  <method name="getLogin" start="48" end="51" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Login"/>
+      <param type="object">
+        <type full="App\Http\Controllers\none" namespace="App\Http\Controllers" name="none"/>
+      </param>
+      <return type="object">
+        <type full="App\Http\Controllers\View" namespace="App\Http\Controllers" name="View"/>
+      </return>
+    </docblock>
+  </method>
+  <method name="postLogin" start="59" end="72" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Post login"/>
+      <param type="object" variable="$request">
+        <type full="App\Http\Requests\UsersRequest" namespace="App\Http\Requests" name="UsersRequest"/>
+      </param>
+      <return type="object">
+        <type full="App\Http\Controllers\View" namespace="App\Http\Controllers" name="View"/>
+      </return>
+    </docblock>
+    <parameter name="request" byreference="false" type="object">
+      <type full="App\Http\Requests\UsersRequest" namespace="App\Http\Requests" name="UsersRequest"/>
+    </parameter>
+  </method>
+  <method name="logout" start="80" end="84" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Logout"/>
+      <param type="object">
+        <type full="App\Http\Controllers\none" namespace="App\Http\Controllers" name="none"/>
+      </param>
+      <return type="object">
+        <type full="App\Http\Controllers\View" namespace="App\Http\Controllers" name="View"/>
+      </return>
+    </docblock>
+  </method>
+</class>

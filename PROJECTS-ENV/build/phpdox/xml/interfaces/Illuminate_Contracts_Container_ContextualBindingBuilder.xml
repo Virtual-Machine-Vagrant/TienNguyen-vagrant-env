@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface xmlns="http://xml.phpdox.net/src" full="Illuminate\Contracts\Container\ContextualBindingBuilder" namespace="Illuminate\Contracts\Container" name="ContextualBindingBuilder" abstract="false" final="false" start="5" end="22">
+  <file path="/home/web/example/src/freegame_developer/vendor/laravel/framework/src/Illuminate/Contracts/Container" file="ContextualBindingBuilder.php" realpath="/home/web/example/src/freegame_developer/vendor/laravel/framework/src/Illuminate/Contracts/Container/ContextualBindingBuilder.php" size="463" time="2016-02-24T15:13:21+00:00" unixtime="1456326801" sha1="3c00ddf62b0df12a7f4a76fb1ac304cf7595d1d7" relative="freegame_developer/vendor/laravel/framework/src/Illuminate/Contracts/Container/ContextualBindingBuilder.php"/>
+  <method name="needs" start="13" end="13" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Define the abstract target that depends on the context."/>
+      <param type="string" variable="$abstract"/>
+      <return type="object">
+        <type full="Illuminate\Contracts\Container\$this" namespace="Illuminate\Contracts\Container" name="$this"/>
+      </return>
+    </docblock>
+    <parameter name="abstract" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="give" start="21" end="21" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Define the implementation for the contextual binding."/>
+      <param type="object" variable="$implementation">
+        <type full="\Closure|string" namespace="" name="Closure|string"/>
+      </param>
+      <return type="object">
+        <type full="Illuminate\Contracts\Container\void" namespace="Illuminate\Contracts\Container" name="void"/>
+      </return>
+    </docblock>
+    <parameter name="implementation" byreference="false" type="{unknown}"/>
+  </method>
+</interface>

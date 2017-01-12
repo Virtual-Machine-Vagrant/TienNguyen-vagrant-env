@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="Symfony\Component\HttpKernel\Tests\HttpCache\StoreTest" namespace="Symfony\Component\HttpKernel\Tests\HttpCache" name="StoreTest" abstract="false" final="false" start="18" end="273">
+  <file path="/home/web/example/src/freegame_developer/vendor/symfony/http-kernel/Tests/HttpCache" file="StoreTest.php" realpath="/home/web/example/src/freegame_developer/vendor/symfony/http-kernel/Tests/HttpCache/StoreTest.php" size="10367" time="2016-10-27T01:37:19+00:00" unixtime="1477532239" sha1="8f0d56a8dfc543badf232870d9c467ff57dd359e" relative="freegame_developer/vendor/symfony/http-kernel/Tests/HttpCache/StoreTest.php"/>
+  <extends full="PHPUnit_Framework_TestCase" namespace="" name="PHPUnit_Framework_TestCase"/>
+  <member name="request" visibility="protected" static="false" line="20"/>
+  <member name="response" visibility="protected" static="false" line="21"/>
+  <member name="store" visibility="protected" static="false" line="26">
+    <docblock>
+      <description/>
+      <var type="object">
+        <type full="Symfony\Component\HttpKernel\HttpCache\Store" namespace="Symfony\Component\HttpKernel\HttpCache" name="Store"/>
+      </var>
+    </docblock>
+  </member>
+  <method name="setUp" start="28" end="36" abstract="false" final="false" static="false" visibility="protected"/>
+  <method name="tearDown" start="38" end="45" abstract="false" final="false" static="false" visibility="protected"/>
+  <method name="testReadsAnEmptyArrayWithReadWhenNothingCachedAtKey" start="47" end="50" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testUnlockFileThatDoesExist" start="52" end="58" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testUnlockFileThatDoesNotExist" start="60" end="63" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testRemovesEntriesForKeyWithPurge" start="65" end="81" abstract="false" final="false" static="false" visibility="public">
+    <inline>
+      <comment value="cached content should be kept after purging" line="76"/>
+    </inline>
+  </method>
+  <method name="testStoresACacheEntry" start="83" end="88" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testSetsTheXContentDigestResponseHeaderBeforeStoring" start="90" end="97" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testFindsAStoredEntryWithLookup" start="99" end="106" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testDoesNotFindAnEntryWithLookupWhenNoneExists" start="108" end="113" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testCanonizesUrlsForCacheKeys" start="115" end="123" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testDoesNotFindAnEntryWithLookupWhenTheBodyDoesNotExist" start="125" end="132" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testRestoresResponseHeadersProperlyWithLookup" start="134" end="140" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testRestoresResponseContentFromEntityStoreWithLookup" start="142" end="147" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testInvalidatesMetaAndEntityStoreEntriesWithInvalidate" start="149" end="156" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testSucceedsQuietlyWhenInvalidateCalledWithNoMatchingEntries" start="158" end="163" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testDoesNotReturnEntriesThatVaryWithLookup" start="165" end="173" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testDoesNotReturnEntriesThatSlightlyVaryWithLookup" start="175" end="183" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testStoresMultipleResponsesForEachVaryCombination" start="185" end="204" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testOverwritesNonVaryingResponseWithStore" start="206" end="224" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testLocking" start="226" end="236" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="storeSimpleEntry" start="238" end="248" abstract="false" final="false" static="false" visibility="protected">
+    <parameter name="path" byreference="false" type="{unknown}" default="" constant="null"/>
+    <parameter name="headers" byreference="false" type="array" default=""/>
+  </method>
+  <method name="getStoreMetadata" start="250" end="263" abstract="false" final="false" static="false" visibility="protected">
+    <parameter name="key" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="getStorePath" start="265" end="272" abstract="false" final="false" static="false" visibility="protected">
+    <parameter name="key" byreference="false" type="{unknown}"/>
+  </method>
+</class>

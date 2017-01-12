@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="App\Services\DeveloperSiteInfoService" namespace="App\Services" name="DeveloperSiteInfoService" abstract="false" final="false" start="7" end="158">
+  <file path="/home/web/example/src/freegame_developer/app/Services" file="DeveloperSiteInfoService.php" realpath="/home/web/example/src/freegame_developer/app/Services/DeveloperSiteInfoService.php" size="4847" time="2016-11-22T07:43:22+00:00" unixtime="1479800602" sha1="6944df0c646d57cb9c45dd9a3baecef9d049f4a5" relative="freegame_developer/app/Services/DeveloperSiteInfoService.php"/>
+  <extends full="App\Services\CustomService" namespace="App\Services" name="CustomService"/>
+  <member name="information" visibility="protected" static="false" line="9"/>
+  <constructor name="__construct" start="11" end="15" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="information" byreference="false" type="object">
+      <type full="App\Models\FreegameDeveloper\Information" namespace="App\Models\FreegameDeveloper" name="Information"/>
+    </parameter>
+  </constructor>
+  <method name="getTopList" start="23" end="31" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Get lists home page"/>
+      <param description="info|failure" type="string" variable="$category"/>
+      <param type="array" variable="$condition"/>
+      <return type="array"/>
+    </docblock>
+    <parameter name="category" byreference="false" type="{unknown}"/>
+    <parameter name="condition" byreference="false" type="array" default=""/>
+  </method>
+  <method name="getList" start="39" end="46" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Get lists info|failure page"/>
+      <param description="info|failure" type="string" variable="$category"/>
+      <param type="array" variable="$condition"/>
+      <return type="array"/>
+    </docblock>
+    <parameter name="category" byreference="false" type="{unknown}"/>
+    <parameter name="condition" byreference="false" type="array" default=""/>
+  </method>
+  <method name="getData" start="54" end="65" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Get lists info|failure page"/>
+      <param type="integer" variable="$id"/>
+      <param type="array" variable="$condition"/>
+      <return type="array"/>
+    </docblock>
+    <parameter name="id" byreference="false" type="{unknown}"/>
+    <parameter name="condition" byreference="false" type="array" default=""/>
+  </method>
+  <method name="formatList" start="73" end="85" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Format result list"/>
+      <param type="array" variable="$results"/>
+      <param type="boolean" variable="$getFirst"/>
+      <return type="array"/>
+    </docblock>
+    <parameter name="results" byreference="false" type="{unknown}"/>
+    <parameter name="getFirst" byreference="false" type="boolean" default="false"/>
+  </method>
+  <method name="getFormData" start="92" end="102" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Get values init for multi page"/>
+      <return type="array"/>
+    </docblock>
+  </method>
+  <method name="getSearchConditions" start="109" end="137" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Get search conditions"/>
+      <param type="array" variable="$condition"/>
+      <return type="array"/>
+    </docblock>
+    <parameter name="condition" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="Condition query" line="112"/>
+      <comment value="Pagination" line="129"/>
+    </inline>
+  </method>
+  <method name="requestUrl" start="144" end="157" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Get search param from url"/>
+      <param type="object" variable="$request">
+        <type full="App\Services\request" namespace="App\Services" name="request"/>
+      </param>
+      <return type="array"/>
+    </docblock>
+    <parameter name="request" byreference="false" type="{unknown}"/>
+  </method>
+</class>

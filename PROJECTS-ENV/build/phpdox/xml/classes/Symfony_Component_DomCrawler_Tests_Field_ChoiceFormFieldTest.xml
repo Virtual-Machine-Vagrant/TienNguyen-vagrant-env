@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="Symfony\Component\DomCrawler\Tests\Field\ChoiceFormFieldTest" namespace="Symfony\Component\DomCrawler\Tests\Field" name="ChoiceFormFieldTest" abstract="false" final="false" start="16" end="404">
+  <file path="/home/web/example/src/freegame_developer/vendor/symfony/dom-crawler/Tests/Field" file="ChoiceFormFieldTest.php" realpath="/home/web/example/src/freegame_developer/vendor/symfony/dom-crawler/Tests/Field/ChoiceFormFieldTest.php" size="18472" time="2016-10-18T13:42:15+00:00" unixtime="1476798135" sha1="cdec9a14195d4e315c501ef89010c1adbf7c4bad" relative="freegame_developer/vendor/symfony/dom-crawler/Tests/Field/ChoiceFormFieldTest.php"/>
+  <extends full="Symfony\Component\DomCrawler\Tests\Field\FormFieldTestCase" namespace="Symfony\Component\DomCrawler\Tests\Field" name="FormFieldTestCase"/>
+  <method name="testInitialize" start="18" end="35" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testGetType" start="37" end="53" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testIsMultiple" start="55" end="81" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testSelects" start="83" end="113" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testSelectWithEmptyBooleanAttribute" start="115" end="121" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testSelectIsDisabled" start="123" end="129" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testMultipleSelects" start="131" end="158" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testRadioButtons" start="160" end="188" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testRadioButtonsWithEmptyBooleanAttribute" start="190" end="199" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testRadioButtonIsDisabled" start="201" end="221" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testCheckboxes" start="223" end="264" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testCheckboxWithEmptyBooleanAttribute" start="266" end="273" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testTick" start="275" end="291" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testUntick" start="293" end="309" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testSelect" start="311" end="324" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testOptionWithNoValue" start="326" end="337" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testDisableValidation" start="339" end="352" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testSelectWithEmptyValue" start="354" end="360" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="createSelectNode" start="362" end="382" abstract="false" final="false" static="false" visibility="protected">
+    <parameter name="options" byreference="false" type="{unknown}"/>
+    <parameter name="attributes" byreference="false" type="array" default=""/>
+    <parameter name="selectedAttrText" byreference="false" type="string" default="'selected'"/>
+  </method>
+  <method name="createSelectNodeWithEmptyOption" start="384" end="403" abstract="false" final="false" static="false" visibility="protected">
+    <parameter name="options" byreference="false" type="{unknown}"/>
+    <parameter name="attributes" byreference="false" type="array" default=""/>
+  </method>
+</class>

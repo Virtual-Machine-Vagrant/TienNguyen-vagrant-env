@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="Symfony\Component\HttpFoundation\Tests\Session\Storage\Handler\MongoDbSessionHandlerTest" namespace="Symfony\Component\HttpFoundation\Tests\Session\Storage\Handler" name="MongoDbSessionHandlerTest" abstract="false" final="false" start="20" end="333">
+  <file path="/home/web/example/src/freegame_developer/vendor/symfony/http-foundation/Tests/Session/Storage/Handler" file="MongoDbSessionHandlerTest.php" realpath="/home/web/example/src/freegame_developer/vendor/symfony/http-foundation/Tests/Session/Storage/Handler/MongoDbSessionHandlerTest.php" size="12557" time="2016-10-24T14:36:35+00:00" unixtime="1477319795" sha1="53002daf95a41f8f357722124059bf651eb55787" relative="freegame_developer/vendor/symfony/http-foundation/Tests/Session/Storage/Handler/MongoDbSessionHandlerTest.php"/>
+  <docblock>
+    <description/>
+    <author value="Markus Bachmann &lt;markus.bachmann@bachi.biz&gt;"/>
+    <group value="time-sensitive"/>
+  </docblock>
+  <extends full="PHPUnit_Framework_TestCase" namespace="" name="PHPUnit_Framework_TestCase"/>
+  <member name="mongo" visibility="private" static="false" line="25">
+    <docblock>
+      <description/>
+      <var type="object">
+        <type full="\PHPUnit_Framework_MockObject_MockObject" namespace="" name="PHPUnit_Framework_MockObject_MockObject"/>
+      </var>
+    </docblock>
+  </member>
+  <member name="storage" visibility="private" static="false" line="26"/>
+  <member name="options" visibility="public" static="false" line="27"/>
+  <method name="setUp" start="29" end="57" abstract="false" final="false" static="false" visibility="protected"/>
+  <method name="testConstructorShouldThrowExceptionForInvalidMongo" start="62" end="65" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <expectedexception value="\InvalidArgumentException"/>
+    </docblock>
+  </method>
+  <method name="testConstructorShouldThrowExceptionForMissingOptions" start="70" end="73" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <expectedexception value="\InvalidArgumentException"/>
+    </docblock>
+  </method>
+  <method name="testOpenMethodAlwaysReturnTrue" start="75" end="78" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testCloseMethodAlwaysReturnTrue" start="80" end="83" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testRead" start="85" end="133" abstract="false" final="false" static="false" visibility="public">
+    <inline>
+      <comment value="defining the timeout before the actual method call" line="96"/>
+      <comment value="allows to test for &quot;greater than&quot; values in the $criteria" line="97"/>
+    </inline>
+  </method>
+  <method name="testWrite" start="135" end="177" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testWriteWhenUsingExpiresField" start="179" end="229" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testReplaceSessionData" start="231" end="258" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testDestroy" start="260" end="276" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testGc" start="278" end="304" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testGetConnection" start="306" end="318" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="createMongoCollectionMock" start="320" end="332" abstract="false" final="false" static="false" visibility="private"/>
+</class>

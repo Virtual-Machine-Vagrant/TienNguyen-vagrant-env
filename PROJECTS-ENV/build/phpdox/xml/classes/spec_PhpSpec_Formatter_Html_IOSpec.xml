@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="spec\PhpSpec\Formatter\Html\IOSpec" namespace="spec\PhpSpec\Formatter\Html" name="IOSpec" abstract="false" final="false" start="10" end="16">
+  <file path="/home/web/example/src/freegame_developer/vendor/phpspec/phpspec/spec/PhpSpec/Formatter/Html" file="IOSpec.php" realpath="/home/web/example/src/freegame_developer/vendor/phpspec/phpspec/spec/PhpSpec/Formatter/Html/IOSpec.php" size="286" time="2016-01-01T10:17:54+00:00" unixtime="1451643474" sha1="c4faac25c8f12b0559c6362de632914546c831a1" relative="freegame_developer/vendor/phpspec/phpspec/spec/PhpSpec/Formatter/Html/IOSpec.php"/>
+  <extends full="PhpSpec\ObjectBehavior" namespace="PhpSpec" name="ObjectBehavior"/>
+  <method name="let" start="12" end="15" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="input" byreference="false" type="object">
+      <type full="Symfony\Component\Console\Input\InputInterface" namespace="Symfony\Component\Console\Input" name="InputInterface"/>
+    </parameter>
+  </method>
+</class>

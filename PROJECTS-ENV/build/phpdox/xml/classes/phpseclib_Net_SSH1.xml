@@ -1,0 +1,728 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="phpseclib\Net\SSH1" namespace="phpseclib\Net" name="SSH1" abstract="false" final="false" start="63" end="1614">
+  <file path="/home/web/example/src/freegame_developer/vendor/phpseclib/phpseclib/phpseclib/Net" file="SSH1.php" realpath="/home/web/example/src/freegame_developer/vendor/phpseclib/phpseclib/phpseclib/Net/SSH1.php" size="51848" time="2016-10-04T00:57:04+00:00" unixtime="1475542624" sha1="4e4ea26e0b80aedffec3b35057fd0496f74262c2" relative="freegame_developer/vendor/phpseclib/phpseclib/phpseclib/Net/SSH1.php"/>
+  <docblock>
+    <description compact="Pure-PHP implementation of SSHv1."/>
+    <package value="SSH1"/>
+    <author value="Jim Wigginton &lt;terrafrost@php.net&gt;"/>
+    <access value="public"/>
+  </docblock>
+  <constant type="integer" name="CIPHER_NONE" value="0">
+    <docblock>
+      <description compact="No encryption">Not supported.</description>
+    </docblock>
+  </constant>
+  <constant type="integer" name="CIPHER_IDEA" value="1">
+    <docblock>
+      <description compact="IDEA in CFB mode">Not supported.</description>
+    </docblock>
+  </constant>
+  <constant type="integer" name="CIPHER_DES" value="2">
+    <docblock>
+      <description compact="DES in CBC mode"/>
+    </docblock>
+  </constant>
+  <constant type="integer" name="CIPHER_3DES" value="3">
+    <docblock>
+      <description compact="Triple-DES in CBC mode">All implementations are required to support this</description>
+    </docblock>
+  </constant>
+  <constant type="integer" name="CIPHER_BROKEN_TSS" value="4">
+    <docblock>
+      <description compact="TRI's Simple Stream encryption CBC">Not supported nor is it defined in the official SSH1 specs.  OpenSSH, however, does define it (see cipher.h),
+although it doesn't use it (see cipher.c)</description>
+    </docblock>
+  </constant>
+  <constant type="integer" name="CIPHER_RC4" value="5">
+    <docblock>
+      <description compact="RC4">Not supported.</description>
+      <internal>According to the SSH1 specs:</internal>
+    </docblock>
+  </constant>
+  <constant type="integer" name="CIPHER_BLOWFISH" value="6">
+    <docblock>
+      <description compact="Blowfish">Not supported nor is it defined in the official SSH1 specs.  OpenSSH, however, defines it (see cipher.h) and
+uses it (see cipher.c)</description>
+    </docblock>
+  </constant>
+  <constant type="integer" name="AUTH_RHOSTS" value="1">
+    <docblock>
+      <description compact=".rhosts or /etc/hosts.equiv"/>
+    </docblock>
+  </constant>
+  <constant type="integer" name="AUTH_RSA" value="2">
+    <docblock>
+      <description compact="pure RSA authentication"/>
+    </docblock>
+  </constant>
+  <constant type="integer" name="AUTH_PASSWORD" value="3">
+    <docblock>
+      <description compact="password authentication">This is the only method that is supported by this library.</description>
+    </docblock>
+  </constant>
+  <constant type="integer" name="AUTH_RHOSTS_RSA" value="4">
+    <docblock>
+      <description compact=".rhosts with RSA host authentication"/>
+    </docblock>
+  </constant>
+  <constant type="integer" name="TTY_OP_END" value="0"/>
+  <constant type="integer" name="RESPONSE_TYPE" value="1">
+    <docblock>
+      <description compact="The Response Type"/>
+      <see value="\phpseclib\Net\SSH1::_get_binary_packet()"/>
+      <access value="private"/>
+    </docblock>
+  </constant>
+  <constant type="integer" name="RESPONSE_DATA" value="2">
+    <docblock>
+      <description compact="The Response Data"/>
+      <see value="\phpseclib\Net\SSH1::_get_binary_packet()"/>
+      <access value="private"/>
+    </docblock>
+  </constant>
+  <constant type="integer" name="MASK_CONSTRUCTOR" value="0x00000001"/>
+  <constant type="integer" name="MASK_CONNECTED" value="0x00000002"/>
+  <constant type="integer" name="MASK_LOGIN" value="0x00000004"/>
+  <constant type="integer" name="MASK_SHELL" value="0x00000008"/>
+  <constant type="integer" name="LOG_SIMPLE" value="1">
+    <docblock>
+      <description compact="Returns the message numbers"/>
+    </docblock>
+  </constant>
+  <constant type="integer" name="LOG_COMPLEX" value="2">
+    <docblock>
+      <description compact="Returns the message content"/>
+    </docblock>
+  </constant>
+  <constant type="integer" name="LOG_REALTIME" value="3">
+    <docblock>
+      <description compact="Outputs the content real-time"/>
+    </docblock>
+  </constant>
+  <constant type="integer" name="LOG_REALTIME_FILE" value="4">
+    <docblock>
+      <description compact="Dumps the content real-time to a file"/>
+    </docblock>
+  </constant>
+  <constant type="integer" name="READ_SIMPLE" value="1">
+    <docblock>
+      <description compact="Returns when a string matching $expect exactly is found"/>
+    </docblock>
+  </constant>
+  <constant type="integer" name="READ_REGEX" value="2">
+    <docblock>
+      <description compact="Returns when a string matching the regular expression $expect is found"/>
+    </docblock>
+  </constant>
+  <member name="identifier" type="string" default="'SSH-1.5-phpseclib'" visibility="public" static="false" line="230">
+    <docblock>
+      <description compact="The SSH identifier"/>
+      <var type="string"/>
+      <access value="private"/>
+    </docblock>
+  </member>
+  <member name="fsock" visibility="public" static="false" line="238">
+    <docblock>
+      <description compact="The Socket Object"/>
+      <var type="object"/>
+      <access value="private"/>
+    </docblock>
+  </member>
+  <member name="crypto" type="boolean" default="false" visibility="public" static="false" line="246">
+    <docblock>
+      <description compact="The cryptography object"/>
+      <var type="object"/>
+      <access value="private"/>
+    </docblock>
+  </member>
+  <member name="bitmap" type="integer" default="0" visibility="public" static="false" line="257">
+    <docblock>
+      <description compact="Execution Bitmap">The bits that are set represent functions that have been called already.  This is used to determine
+if a requisite function has been successfully executed.  If not, an error should be thrown.</description>
+      <var type="int"/>
+      <access value="private"/>
+    </docblock>
+  </member>
+  <member name="server_key_public_exponent" visibility="public" static="false" line="268">
+    <docblock>
+      <description compact="The Server Key Public Exponent">Logged for debug purposes</description>
+      <see value="self::getServerKeyPublicExponent()"/>
+      <var type="string"/>
+      <access value="private"/>
+    </docblock>
+  </member>
+  <member name="server_key_public_modulus" visibility="public" static="false" line="279">
+    <docblock>
+      <description compact="The Server Key Public Modulus">Logged for debug purposes</description>
+      <see value="self::getServerKeyPublicModulus()"/>
+      <var type="string"/>
+      <access value="private"/>
+    </docblock>
+  </member>
+  <member name="host_key_public_exponent" visibility="public" static="false" line="290">
+    <docblock>
+      <description compact="The Host Key Public Exponent">Logged for debug purposes</description>
+      <see value="self::getHostKeyPublicExponent()"/>
+      <var type="string"/>
+      <access value="private"/>
+    </docblock>
+  </member>
+  <member name="host_key_public_modulus" visibility="public" static="false" line="301">
+    <docblock>
+      <description compact="The Host Key Public Modulus">Logged for debug purposes</description>
+      <see value="self::getHostKeyPublicModulus()"/>
+      <var type="string"/>
+      <access value="private"/>
+    </docblock>
+  </member>
+  <member name="supported_ciphers" type="array" default="" visibility="public" static="false" line="312">
+    <docblock>
+      <description compact="Supported Ciphers">Logged for debug purposes</description>
+      <see value="self::getSupportedCiphers()"/>
+      <var type="array"/>
+      <access value="private"/>
+    </docblock>
+  </member>
+  <member name="supported_authentications" type="array" default="" visibility="public" static="false" line="331">
+    <docblock>
+      <description compact="Supported Authentications">Logged for debug purposes</description>
+      <see value="self::getSupportedAuthentications()"/>
+      <var type="array"/>
+      <access value="private"/>
+    </docblock>
+  </member>
+  <member name="server_identification" type="string" default="''" visibility="public" static="false" line="345">
+    <docblock>
+      <description compact="Server Identification"/>
+      <see value="self::getServerIdentification()"/>
+      <var type="string"/>
+      <access value="private"/>
+    </docblock>
+  </member>
+  <member name="protocol_flags" type="array" default="" visibility="public" static="false" line="354">
+    <docblock>
+      <description compact="Protocol Flags"/>
+      <see value="self::__construct()"/>
+      <var type="array"/>
+      <access value="private"/>
+    </docblock>
+  </member>
+  <member name="protocol_flag_log" type="array" default="" visibility="public" static="false" line="363">
+    <docblock>
+      <description compact="Protocol Flag Log"/>
+      <see value="self::getLog()"/>
+      <var type="array"/>
+      <access value="private"/>
+    </docblock>
+  </member>
+  <member name="message_log" type="array" default="" visibility="public" static="false" line="372">
+    <docblock>
+      <description compact="Message Log"/>
+      <see value="self::getLog()"/>
+      <var type="array"/>
+      <access value="private"/>
+    </docblock>
+  </member>
+  <member name="realtime_log_file" visibility="public" static="false" line="381">
+    <docblock>
+      <description compact="Real-time log file pointer"/>
+      <see value="self::_append_log()"/>
+      <var type="resource"/>
+      <access value="private"/>
+    </docblock>
+  </member>
+  <member name="realtime_log_size" visibility="public" static="false" line="390">
+    <docblock>
+      <description compact="Real-time log file size"/>
+      <see value="self::_append_log()"/>
+      <var type="int"/>
+      <access value="private"/>
+    </docblock>
+  </member>
+  <member name="realtime_log_wrap" visibility="public" static="false" line="399">
+    <docblock>
+      <description compact="Real-time log file wrap boolean"/>
+      <see value="self::_append_log()"/>
+      <var type="object">
+        <type full="phpseclib\Net\bool" namespace="phpseclib\Net" name="bool"/>
+      </var>
+      <access value="private"/>
+    </docblock>
+  </member>
+  <member name="interactiveBuffer" type="string" default="''" visibility="public" static="false" line="408">
+    <docblock>
+      <description compact="Interactive Buffer"/>
+      <see value="self::read()"/>
+      <var type="array"/>
+      <access value="private"/>
+    </docblock>
+  </member>
+  <member name="timeout" visibility="public" static="false" line="416">
+    <docblock>
+      <description compact="Timeout"/>
+      <see value="self::setTimeout()"/>
+      <access value="private"/>
+    </docblock>
+  </member>
+  <member name="curTimeout" visibility="public" static="false" line="424">
+    <docblock>
+      <description compact="Current Timeout"/>
+      <see value="self::_get_channel_packet()"/>
+      <access value="private"/>
+    </docblock>
+  </member>
+  <member name="log_boundary" type="string" default="':'" visibility="public" static="false" line="432">
+    <docblock>
+      <description compact="Log Boundary"/>
+      <see value="self::_format_log()"/>
+      <access value="private"/>
+    </docblock>
+  </member>
+  <member name="log_long_width" type="integer" default="65" visibility="public" static="false" line="440">
+    <docblock>
+      <description compact="Log Long Width"/>
+      <see value="self::_format_log()"/>
+      <access value="private"/>
+    </docblock>
+  </member>
+  <member name="log_short_width" type="integer" default="16" visibility="public" static="false" line="448">
+    <docblock>
+      <description compact="Log Short Width"/>
+      <see value="self::_format_log()"/>
+      <access value="private"/>
+    </docblock>
+  </member>
+  <member name="host" visibility="public" static="false" line="458">
+    <docblock>
+      <description compact="Hostname"/>
+      <see value="self::__construct()"/>
+      <see value="self::_connect()"/>
+      <var type="string"/>
+      <access value="private"/>
+    </docblock>
+  </member>
+  <member name="port" visibility="public" static="false" line="468">
+    <docblock>
+      <description compact="Port Number"/>
+      <see value="self::__construct()"/>
+      <see value="self::_connect()"/>
+      <var type="int"/>
+      <access value="private"/>
+    </docblock>
+  </member>
+  <member name="connectionTimeout" visibility="public" static="false" line="483">
+    <docblock>
+      <description compact="Timeout for initial connection">Set by the constructor call. Calling setTimeout() is optional. If it's not called functions like
+exec() won't timeout unless some PHP setting forces it too. The timeout specified in the constructor,
+however, is non-optional. There will be a timeout, whether or not you set it. If you don't it'll be
+10 seconds. It is used by fsockopen() in that function.</description>
+      <see value="self::__construct()"/>
+      <see value="self::_connect()"/>
+      <var type="int"/>
+      <access value="private"/>
+    </docblock>
+  </member>
+  <member name="cipher" visibility="public" static="false" line="493">
+    <docblock>
+      <description compact="Default cipher"/>
+      <see value="self::__construct()"/>
+      <see value="self::_connect()"/>
+      <var type="int"/>
+      <access value="private"/>
+    </docblock>
+  </member>
+  <constructor name="__construct" start="507" end="534" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Default Constructor.">Connects to an SSHv1 server</description>
+      <param type="string" variable="$host"/>
+      <param type="int" variable="$port"/>
+      <param type="int" variable="$timeout"/>
+      <param type="int" variable="$cipher"/>
+      <return type="object">
+        <type full="\phpseclib\Net\SSH1" namespace="\phpseclib\Net" name="SSH1"/>
+      </return>
+      <access value="public"/>
+    </docblock>
+    <parameter name="host" byreference="false" type="{unknown}"/>
+    <parameter name="port" byreference="false" type="integer" default="22"/>
+    <parameter name="timeout" byreference="false" type="integer" default="10"/>
+    <parameter name="cipher" byreference="false" type="{unknown}" default="" constant="self::CIPHER_3DES"/>
+  </constructor>
+  <method name="_connect" start="542" end="692" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Connect to an SSHv1 server"/>
+      <return type="object">
+        <type full="phpseclib\Net\bool" namespace="phpseclib\Net" name="bool"/>
+      </return>
+      <access value="private"/>
+    </docblock>
+    <inline>
+      <comment value="get a list of the supported ciphers" line="598"/>
+      <comment value="get a list of the supported authentications" line="606"/>
+    </inline>
+  </method>
+  <method name="login" start="702" end="762" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Login"/>
+      <param type="string" variable="$username"/>
+      <param type="string" variable="$password"/>
+      <return type="object">
+        <type full="phpseclib\Net\bool" namespace="phpseclib\Net" name="bool"/>
+      </return>
+      <access value="public"/>
+    </docblock>
+    <parameter name="username" byreference="false" type="{unknown}"/>
+    <parameter name="password" byreference="false" type="string" default="''"/>
+    <inline>
+      <comment value="remove the username and password from the last logged packet" line="742"/>
+    </inline>
+  </method>
+  <method name="setTimeout" start="772" end="775" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Set Timeout">$ssh-&gt;exec('ping 127.0.0.1'); on a Linux host will never return and will run indefinitely.  setTimeout() makes it so it'll timeout.
+Setting $timeout to false or 0 will mean there is no timeout.</description>
+      <param type="mixed" variable="$timeout"/>
+    </docblock>
+    <parameter name="timeout" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="exec" start="797" end="836" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Executes a command on a non-interactive shell, returns the output, and quits.">An SSH1 server will close the connection after a command has been executed on a non-interactive shell.  SSH2
+servers don't, however, this isn't an SSH2 client.  The way this works, on the server, is by initiating a
+shell with the -s option, as discussed in the following links:
+
+{@link http://www.faqs.org/docs/bashman/bashref_65.html http://www.faqs.org/docs/bashman/bashref_65.html}
+{@link http://www.faqs.org/docs/bashman/bashref_62.html http://www.faqs.org/docs/bashman/bashref_62.html}
+
+To execute further commands, a new \phpseclib\Net\SSH1 object will need to be created.
+
+Returns false on failure and the output, otherwise.</description>
+      <see value="self::interactiveRead()"/>
+      <see value="self::interactiveWrite()"/>
+      <param type="string" variable="$cmd"/>
+      <return type="mixed"/>
+      <access value="public"/>
+    </docblock>
+    <parameter name="cmd" byreference="false" type="{unknown}"/>
+    <parameter name="block" byreference="false" type="boolean" default="true"/>
+    <inline>
+      <comment value="i don't think it's really all that important if this packet gets sent or not." line="827"/>
+      <comment value="reset the execution bitmap - a new \phpseclib\Net\SSH1 object needs to be created." line="832"/>
+    </inline>
+  </method>
+  <method name="_initShell" start="846" end="880" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Creates an interactive shell"/>
+      <see value="self::interactiveRead()"/>
+      <see value="self::interactiveWrite()"/>
+      <return type="object">
+        <type full="phpseclib\Net\bool" namespace="phpseclib\Net" name="bool"/>
+      </return>
+      <access value="private"/>
+    </docblock>
+    <inline>
+      <comment value="connect using the sample parameters in protocol-1.5.txt." line="848"/>
+      <comment value="according to wikipedia.org's entry on text terminals, &quot;the fundamental type of application running on a text" line="849"/>
+      <comment value="terminal is a command line interpreter or shell&quot;.  thus, opening a terminal session to run the shell." line="850"/>
+      <comment value="stream_set_blocking($this-&gt;fsock, 0);" line="877"/>
+    </inline>
+  </method>
+  <method name="write" start="890" end="893" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Inputs a command into an interactive shell."/>
+      <see value="self::interactiveWrite()"/>
+      <param type="string" variable="$cmd"/>
+      <return type="object">
+        <type full="phpseclib\Net\bool" namespace="phpseclib\Net" name="bool"/>
+      </return>
+      <access value="public"/>
+    </docblock>
+    <parameter name="cmd" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="read" start="907" end="936" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Returns the output of an interactive shell when there's a match for $expect">$expect can take the form of a string literal or, if $mode == self::READ__REGEX,
+a regular expression.</description>
+      <see value="self::write()"/>
+      <param type="string" variable="$expect"/>
+      <param type="int" variable="$mode"/>
+      <return type="object">
+        <type full="phpseclib\Net\bool" namespace="phpseclib\Net" name="bool"/>
+      </return>
+      <access value="public"/>
+    </docblock>
+    <parameter name="expect" byreference="false" type="{unknown}"/>
+    <parameter name="mode" byreference="false" type="{unknown}" default="" constant="self::READ__SIMPLE"/>
+  </method>
+  <method name="interactiveWrite" start="946" end="966" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Inputs a command into an interactive shell."/>
+      <see value="self::interactiveRead()"/>
+      <param type="string" variable="$cmd"/>
+      <return type="object">
+        <type full="phpseclib\Net\bool" namespace="phpseclib\Net" name="bool"/>
+      </return>
+      <access value="public"/>
+    </docblock>
+    <parameter name="cmd" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="interactiveRead" start="981" end="1001" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Returns the output of an interactive shell when no more output is available.">Requires PHP 4.3.0 or later due to the use of the stream_select() function.  If you see stuff like
+"^[[00m", you're seeing ANSI escape codes.  According to
+{@link http://support.microsoft.com/kb/101875 How to Enable ANSI.SYS in a Command Window}, "Windows NT
+does not support ANSI escape sequences in Win32 Console applications", so if you're a Windows user,
+there's not going to be much recourse.</description>
+      <see value="self::interactiveRead()"/>
+      <return type="string"/>
+      <access value="public"/>
+    </docblock>
+  </method>
+  <method name="disconnect" start="1008" end="1011" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Disconnect"/>
+      <access value="public"/>
+    </docblock>
+  </method>
+  <destructor name="__destruct" start="1021" end="1024" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Destructor.">Will be called, automatically, if you're supporting just PHP5.  If you're supporting PHP4, you'll need to call
+disconnect().</description>
+      <access value="public"/>
+    </docblock>
+  </destructor>
+  <method name="_disconnect" start="1032" end="1056" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Disconnect"/>
+      <param type="string" variable="$msg"/>
+      <access value="private"/>
+    </docblock>
+    <parameter name="msg" byreference="false" type="string" default="'Client Quit'"/>
+  </method>
+  <method name="_get_binary_packet" start="1070" end="1135" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Gets Binary Packets">See 'The Binary Packet Protocol' of protocol-1.5.txt for more info.
+
+Also, this function could be improved upon by adding detection for the following exploit:
+http://www.securiteam.com/securitynews/5LP042K3FY.html</description>
+      <see value="self::_send_binary_packet()"/>
+      <return type="array"/>
+      <access value="private"/>
+    </docblock>
+    <inline>
+      <comment value="http://php.net/microtime#61838" line="1093"/>
+      <comment value="if ( $temp['crc'] != $this-&gt;_crc($padding . $type . $data) ) {" line="1117"/>
+      <comment value="user_error('Bad CRC in packet from server');" line="1118"/>
+      <comment value="return false;" line="1119"/>
+      <comment value="}" line="1120"/>
+    </inline>
+  </method>
+  <method name="_send_binary_packet" start="1147" end="1180" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Sends Binary Packets">Returns true on success, false on failure.</description>
+      <see value="self::_get_binary_packet()"/>
+      <param type="string" variable="$data"/>
+      <return type="object">
+        <type full="phpseclib\Net\bool" namespace="phpseclib\Net" name="bool"/>
+      </return>
+      <access value="private"/>
+    </docblock>
+    <parameter name="data" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="http://php.net/microtime#61838" line="1168"/>
+    </inline>
+  </method>
+  <method name="_crc" start="1195" end="1280" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Cyclic Redundancy Check (CRC)">PHP's crc32 function is implemented slightly differently than the one that SSH v1 uses, so
+we've reimplemented it. A more detailed discussion of the differences can be found after
+$crc_lookup_table's initialization.</description>
+      <see value="self::_get_binary_packet()"/>
+      <see value="self::_send_binary_packet()"/>
+      <param type="string" variable="$data"/>
+      <return type="int"/>
+      <access value="private"/>
+    </docblock>
+    <parameter name="data" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="For this function to yield the same output as PHP's crc32 function, $crc would have to be" line="1264"/>
+      <comment value="set to 0xFFFFFFFF, initially - not 0x00000000 as it currently is." line="1265"/>
+      <comment value="In addition to having to set $crc to 0xFFFFFFFF, initially, the return value must be XOR'd with" line="1277"/>
+      <comment value="0xFFFFFFFF for this function to return the same thing that PHP's crc32 function would." line="1278"/>
+    </inline>
+  </method>
+  <method name="_string_shift" start="1292" end="1297" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="String Shift">Inspired by array_shift</description>
+      <param type="string" variable="$string"/>
+      <param type="int" variable="$index"/>
+      <return type="string"/>
+      <access value="private"/>
+    </docblock>
+    <parameter name="string" byreference="true" type="{unknown}"/>
+    <parameter name="index" byreference="false" type="integer" default="1"/>
+  </method>
+  <method name="_rsa_crypt" start="1312" end="1348" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="RSA Encrypt">Returns mod(pow($m, $e), $n), where $n should be the product of two (large) primes $p and $q and where $e
+should be a number with the property that gcd($e, ($p - 1) * ($q - 1)) == 1.  Could just make anything that
+calls this call modexp, instead, but I think this makes things clearer, maybe...</description>
+      <see value="self::__construct()"/>
+      <param type="object" variable="$m">
+        <type full="phpseclib\Math\BigInteger" namespace="phpseclib\Math" name="BigInteger"/>
+      </param>
+      <param type="array" variable="$key"/>
+      <return type="object">
+        <type full="phpseclib\Math\BigInteger" namespace="phpseclib\Math" name="BigInteger"/>
+      </return>
+      <access value="private"/>
+    </docblock>
+    <parameter name="m" byreference="false" type="{unknown}"/>
+    <parameter name="key" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="$rsa = new RSA();" line="1314"/>
+      <comment xmlns="http://xml.phpdox.net/src" value="$rsa-&gt;loadKey($key, RSA::PUBLIC_FORMAT_RAW);" line="1315"/>
+      <comment xmlns="http://xml.phpdox.net/src" value="$rsa-&gt;setEncryptionMode(RSA::ENCRYPTION_PKCS1);" line="1316"/>
+      <comment xmlns="http://xml.phpdox.net/src" value="return $rsa-&gt;encrypt($m);" line="1317"/>
+      <comment value="To quote from protocol-1.5.txt:" line="1321"/>
+      <comment value="The most significant byte (which is only partial as the value must be" line="1322"/>
+      <comment value="less than the public modulus, which is never a power of two) is zero." line="1323"/>
+      <comment value="The next byte contains the value 2 (which stands for public-key" line="1325"/>
+      <comment value="encrypted data in the PKCS standard [PKCS#1]).  Then, there are non-" line="1326"/>
+      <comment value="zero random bytes to fill any unused space, a zero byte, and the data" line="1327"/>
+      <comment value="to be encrypted in the least significant bytes, the last byte of the" line="1328"/>
+      <comment value="data in the least significant byte." line="1329"/>
+      <comment value="Presumably the part of PKCS#1 they're refering to is &quot;Section 7.2.1 Encryption Operation&quot;," line="1331"/>
+      <comment value="under &quot;7.2 RSAES-PKCS1-v1.5&quot; and &quot;7 Encryption schemes&quot; of the following URL:" line="1332"/>
+      <comment value="ftp://ftp.rsasecurity.com/pub/pkcs/pkcs-1/pkcs-1v2-1.pdf" line="1333"/>
+    </inline>
+  </method>
+  <method name="_define_array" start="1360" end="1372" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Define Array">Takes any number of arrays whose indices are integers and whose values are strings and defines a bunch of
+named constants from it, using the value as the name of the constant and the index as the value of the constant.
+If any of the constants that would be defined already exists, none of the constants will be defined.</description>
+      <param type="array" variable="$array"/>
+      <access value="private"/>
+    </docblock>
+  </method>
+  <method name="getLog" start="1382" end="1398" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Returns a log of the packets that have been sent and received.">Returns a string if NET_SSH1_LOGGING == self::LOG_COMPLEX, an array if NET_SSH1_LOGGING == self::LOG_SIMPLE and false if !defined('NET_SSH1_LOGGING')</description>
+      <access value="public"/>
+      <return type="object">
+        <type full="phpseclib\Net\array|false|string" namespace="phpseclib\Net" name="array|false|string"/>
+      </return>
+    </docblock>
+  </method>
+  <method name="_format_log" start="1408" end="1432" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Formats a log for printing"/>
+      <param type="array" variable="$message_log"/>
+      <param type="array" variable="$message_number_log"/>
+      <access value="private"/>
+      <return type="string"/>
+    </docblock>
+    <parameter name="message_log" byreference="false" type="{unknown}"/>
+    <parameter name="message_number_log" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="_format_log_helper" start="1443" end="1446" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Helper function for _format_log">For use with preg_replace_callback()</description>
+      <param type="array" variable="$matches"/>
+      <access value="private"/>
+      <return type="string"/>
+    </docblock>
+    <parameter name="matches" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="getServerKeyPublicExponent" start="1458" end="1461" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Return the server key public exponent">Returns, by default, the base-10 representation.  If $raw_output is set to true, returns, instead,
+the raw bytes.  This behavior is similar to PHP's md5() function.</description>
+      <param type="object" variable="$raw_output">
+        <type full="phpseclib\Net\bool" namespace="phpseclib\Net" name="bool"/>
+      </param>
+      <return type="string"/>
+      <access value="public"/>
+    </docblock>
+    <parameter name="raw_output" byreference="false" type="boolean" default="false"/>
+  </method>
+  <method name="getServerKeyPublicModulus" start="1473" end="1476" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Return the server key public modulus">Returns, by default, the base-10 representation.  If $raw_output is set to true, returns, instead,
+the raw bytes.  This behavior is similar to PHP's md5() function.</description>
+      <param type="object" variable="$raw_output">
+        <type full="phpseclib\Net\bool" namespace="phpseclib\Net" name="bool"/>
+      </param>
+      <return type="string"/>
+      <access value="public"/>
+    </docblock>
+    <parameter name="raw_output" byreference="false" type="boolean" default="false"/>
+  </method>
+  <method name="getHostKeyPublicExponent" start="1488" end="1491" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Return the host key public exponent">Returns, by default, the base-10 representation.  If $raw_output is set to true, returns, instead,
+the raw bytes.  This behavior is similar to PHP's md5() function.</description>
+      <param type="object" variable="$raw_output">
+        <type full="phpseclib\Net\bool" namespace="phpseclib\Net" name="bool"/>
+      </param>
+      <return type="string"/>
+      <access value="public"/>
+    </docblock>
+    <parameter name="raw_output" byreference="false" type="boolean" default="false"/>
+  </method>
+  <method name="getHostKeyPublicModulus" start="1503" end="1506" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Return the host key public modulus">Returns, by default, the base-10 representation.  If $raw_output is set to true, returns, instead,
+the raw bytes.  This behavior is similar to PHP's md5() function.</description>
+      <param type="object" variable="$raw_output">
+        <type full="phpseclib\Net\bool" namespace="phpseclib\Net" name="bool"/>
+      </param>
+      <return type="string"/>
+      <access value="public"/>
+    </docblock>
+    <parameter name="raw_output" byreference="false" type="boolean" default="false"/>
+  </method>
+  <method name="getSupportedCiphers" start="1519" end="1522" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Return a list of ciphers supported by SSH1 server.">Just because a cipher is supported by an SSH1 server doesn't mean it's supported by this library. If $raw_output
+is set to true, returns, instead, an array of constants.  ie. instead of array('Triple-DES in CBC mode'), you'll
+get array(self::CIPHER_3DES).</description>
+      <param type="object" variable="$raw_output">
+        <type full="phpseclib\Net\bool" namespace="phpseclib\Net" name="bool"/>
+      </param>
+      <return type="array"/>
+      <access value="public"/>
+    </docblock>
+    <parameter name="raw_output" byreference="false" type="boolean" default="false"/>
+  </method>
+  <method name="getSupportedAuthentications" start="1535" end="1538" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Return a list of authentications supported by SSH1 server.">Just because a cipher is supported by an SSH1 server doesn't mean it's supported by this library. If $raw_output
+is set to true, returns, instead, an array of constants.  ie. instead of array('password authentication'), you'll
+get array(self::AUTH_PASSWORD).</description>
+      <param type="object" variable="$raw_output">
+        <type full="phpseclib\Net\bool" namespace="phpseclib\Net" name="bool"/>
+      </param>
+      <return type="array"/>
+      <access value="public"/>
+    </docblock>
+    <parameter name="raw_output" byreference="false" type="boolean" default="false"/>
+  </method>
+  <method name="getServerIdentification" start="1546" end="1549" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Return the server identification."/>
+      <return type="string"/>
+      <access value="public"/>
+    </docblock>
+  </method>
+  <method name="_append_log" start="1559" end="1613" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Logs data packets">Makes sure that only the last 1MB worth of packets will be logged</description>
+      <param type="string" variable="$data"/>
+      <access value="private"/>
+    </docblock>
+    <parameter name="protocol_flags" byreference="false" type="{unknown}"/>
+    <parameter name="message" byreference="false" type="{unknown}"/>
+  </method>
+</class>

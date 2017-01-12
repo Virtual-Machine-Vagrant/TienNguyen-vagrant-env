@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="App\Http\Controllers\TopController" namespace="App\Http\Controllers" name="TopController" abstract="false" final="false" start="9" end="42">
+  <file path="/home/web/example/src/freegame_developer/app/Http/Controllers" file="TopController.php" realpath="/home/web/example/src/freegame_developer/app/Http/Controllers/TopController.php" size="924" time="2016-11-16T01:52:54+00:00" unixtime="1479261174" sha1="718b0ed2af0b1deacd9d6973bfc0af64a54146b1" relative="freegame_developer/app/Http/Controllers/TopController.php"/>
+  <extends full="App\Http\Controllers\Controller" namespace="App\Http\Controllers" name="Controller"/>
+  <member name="topService" visibility="protected" static="false" line="11"/>
+  <member name="auth" visibility="protected" static="false" line="13"/>
+  <constructor name="__construct" start="15" end="28" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="topService" byreference="false" type="object">
+      <type full="App\Services\TopService" namespace="App\Services" name="TopService"/>
+    </parameter>
+    <parameter name="auth" byreference="false" type="object">
+      <type full="Illuminate\Contracts\Auth\Guard" namespace="Illuminate\Contracts\Auth" name="Guard"/>
+    </parameter>
+  </constructor>
+  <method name="index" start="34" end="41" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Show list game"/>
+      <return type="object">
+        <type full="App\Http\Controllers\View" namespace="App\Http\Controllers" name="View"/>
+      </return>
+    </docblock>
+    <parameter name="request" byreference="false" type="object">
+      <type full="Illuminate\Http\Request" namespace="Illuminate\Http" name="Request"/>
+    </parameter>
+  </method>
+</class>

@@ -1,0 +1,575 @@
+<?xml version="1.0"?>
+<source xmlns="http://xml.phpdox.net/token">
+  <file xmlns="http://xml.phpdox.net/src" path="/home/web/example/src/freegame_developer/resources/views/News" file="index.blade.php" realpath="/home/web/example/src/freegame_developer/resources/views/News/index.blade.php" size="10612" time="2016-12-22T04:12:13+00:00" unixtime="1482379933" sha1="00e8582f9bee5922ffa613c5a1be06e391419bde" relative="freegame_developer/resources/views/News/index.blade.php"/>
+  <line no="1">
+    <token name="T_INLINE_HTML">@extends('layout')</token>
+  </line>
+  <line no="2"/>
+  <line no="3">
+    <token name="T_INLINE_HTML">@section('content')</token>
+  </line>
+  <line no="4"/>
+  <line no="5">
+    <token name="T_INLINE_HTML">    &lt;header id="gnavi"&gt;</token>
+  </line>
+  <line no="6">
+    <token name="T_INLINE_HTML">    @include('partials.breadcrumbs', [</token>
+  </line>
+  <line no="7">
+    <token name="T_INLINE_HTML">        'breadcrumbs' =&gt; array_merge(</token>
+  </line>
+  <line no="8">
+    <token name="T_INLINE_HTML">            $formData['menuName'],</token>
+  </line>
+  <line no="9">
+    <token name="T_INLINE_HTML">            [</token>
+  </line>
+  <line no="10">
+    <token name="T_INLINE_HTML">                [$formData['screenName']]</token>
+  </line>
+  <line no="11">
+    <token name="T_INLINE_HTML">            ]</token>
+  </line>
+  <line no="12">
+    <token name="T_INLINE_HTML">        )</token>
+  </line>
+  <line no="13">
+    <token name="T_INLINE_HTML">    ])</token>
+  </line>
+  <line no="14">
+    <token name="T_INLINE_HTML">    &lt;!-- [#gnavi] --&gt;</token>
+  </line>
+  <line no="15">
+    <token name="T_INLINE_HTML">    &lt;/header&gt;</token>
+  </line>
+  <line no="16"/>
+  <line no="17">
+    <token name="T_INLINE_HTML">    @include('partials.errormessage', ['errors' =&gt; $errors])</token>
+  </line>
+  <line no="18"/>
+  <line no="19">
+    <token name="T_INLINE_HTML">    &lt;section&gt;</token>
+  </line>
+  <line no="20">
+    <token name="T_INLINE_HTML">        &lt;div class="c-area"&gt;</token>
+  </line>
+  <line no="21">
+    <token name="T_INLINE_HTML">            &lt;h2 class="c-headline"&gt;&lt;i class="fa fa-sitemap"&gt;&lt;/i&gt;&#x30CB;&#x30E5;&#x30FC;&#x30B9;&#x4E00;&#x89A7;&lt;/h2&gt;</token>
+  </line>
+  <line no="22">
+    <token name="T_INLINE_HTML">            &lt;div class="fn-showmore is-hide"&gt;</token>
+  </line>
+  <line no="23">
+    <token name="T_INLINE_HTML">                &lt;div class="mg-b20 clearfix"&gt;</token>
+  </line>
+  <line no="24">
+    <token name="T_INLINE_HTML">                    &lt;a href="{{ URL::route('News.create', $searchQuery) }}" class="button is-primary"&gt;&lt;i class="fa</token>
+  </line>
+  <line no="25">
+    <token name="T_INLINE_HTML">                    fa-plus"&gt;&lt;/i&gt;&#x65B0;&#x898F;&#x8FFD;&#x52A0;&lt;/a&gt;</token>
+  </line>
+  <line no="26">
+    <token name="T_INLINE_HTML">                &lt;/div&gt;</token>
+  </line>
+  <line no="27">
+    <token name="T_INLINE_HTML">                &lt;div class="mg-b20 clearfix"&gt;</token>
+  </line>
+  <line no="28">
+    <token name="T_INLINE_HTML">                    &lt;a class="bt-showmore button"&gt;&lt;i class="fa fa-search"&gt;&lt;/i&gt;&#x691C;&#x7D22;&#x30D5;&#x30A9;&#x30FC;&#x30E0;&#x3092;&#x958B;&#x304F;&lt;/a&gt;</token>
+  </line>
+  <line no="29">
+    <token name="T_INLINE_HTML">                    &lt;a href="" class="bt-showmore-hide button"&gt;&lt;i class="fa fa-chevron-up"&gt;&lt;/i&gt;&#x691C;&#x7D22;&#x30D5;&#x30A9;&#x30FC;&#x30E0;&#x3092;&#x9589;&#x3058;&#x308B;&lt;/a&gt;</token>
+  </line>
+  <line no="30">
+    <token name="T_INLINE_HTML">                    &lt;a data-form="form-search" class="button btn-reset is-warning"&gt;&lt;i class="fa fa-close"&gt;&lt;/i&gt;&#x691C;&#x7D22;&#x6761;&#x4EF6;&#x3092;&#x30EA;&#x30BB;&#x30C3;&#x30C8;&lt;/a&gt;</token>
+  </line>
+  <line no="31">
+    <token name="T_INLINE_HTML">                &lt;/div&gt;</token>
+  </line>
+  <line no="32">
+    <token name="T_INLINE_HTML">                &lt;div class="c-searchform fn-showmore_inner"&gt;</token>
+  </line>
+  <line no="33">
+    <token name="T_INLINE_HTML">                    {!! Form::open(['route' =&gt; 'News.index', 'id' =&gt; 'form-search', 'method' =&gt; 'GET']) !!}</token>
+  </line>
+  <line no="34">
+    <token name="T_INLINE_HTML">                    {!! Form::hidden('search', request('search', 'on'), ['data-open' =&gt; $issearch]) !!}</token>
+  </line>
+  <line no="35">
+    <token name="T_INLINE_HTML">                        &lt;table class="c-table"&gt;</token>
+  </line>
+  <line no="36">
+    <token name="T_INLINE_HTML">                            &lt;colgroup&gt;</token>
+  </line>
+  <line no="37">
+    <token name="T_INLINE_HTML">                                &lt;col class="col-xs"&gt;</token>
+  </line>
+  <line no="38">
+    <token name="T_INLINE_HTML">                                &lt;col class="null"&gt;</token>
+  </line>
+  <line no="39">
+    <token name="T_INLINE_HTML">                            &lt;/colgroup&gt;</token>
+  </line>
+  <line no="40">
+    <token name="T_INLINE_HTML">                            &lt;tbody class="fn-inputchanger"&gt;</token>
+  </line>
+  <line no="41">
+    <token name="T_INLINE_HTML">                            &lt;tr {{ error_class('s_info_id') }}&gt;</token>
+  </line>
+  <line no="42">
+    <token name="T_INLINE_HTML">                                &lt;th&gt;ID&lt;/th&gt;</token>
+  </line>
+  <line no="43">
+    <token name="T_INLINE_HTML">                                &lt;td&gt;</token>
+  </line>
+  <line no="44">
+    <token name="T_INLINE_HTML">                                    {!! Form::text('s_info_id', request('s_info_id'), ['class' =&gt; 'placeholder', 'placeholder' =&gt; '']) !!}</token>
+  </line>
+  <line no="45">
+    <token name="T_INLINE_HTML">                                &lt;/td&gt;</token>
+  </line>
+  <line no="46">
+    <token name="T_INLINE_HTML">                            &lt;/tr&gt;</token>
+  </line>
+  <line no="47">
+    <token name="T_INLINE_HTML">                            &lt;tr {{ error_class('s_start_date') }} {{ error_class('s_end_date') }}&gt;</token>
+  </line>
+  <line no="48">
+    <token name="T_INLINE_HTML">                                &lt;th&gt;&#x63B2;&#x8F09;&#x65E5;&#x6642;&lt;/th&gt;</token>
+  </line>
+  <line no="49">
+    <token name="T_INLINE_HTML">                                &lt;td&gt;</token>
+  </line>
+  <line no="50">
+    <token name="T_INLINE_HTML">                                    {!! Form::text('s_start_date', request('s_start_date'), ['id' =&gt; 'start-date']) !!}</token>
+  </line>
+  <line no="51">
+    <token name="T_INLINE_HTML">                                    &#x301C;</token>
+  </line>
+  <line no="52">
+    <token name="T_INLINE_HTML">                                    {!! Form::text('s_end_date', request('s_end_date'), ['id' =&gt; 'end-date']) !!}</token>
+  </line>
+  <line no="53">
+    <token name="T_INLINE_HTML">                                    </token>
+  </line>
+  <line no="54">
+    <token name="T_INLINE_HTML">                                &lt;/td&gt;</token>
+  </line>
+  <line no="55">
+    <token name="T_INLINE_HTML">                            &lt;/tr&gt;</token>
+  </line>
+  <line no="56">
+    <token name="T_INLINE_HTML">                            &lt;tr&gt;</token>
+  </line>
+  <line no="57">
+    <token name="T_INLINE_HTML">                                &lt;th&gt;&#x30BF;&#x30A4;&#x30C8;&#x30EB;&lt;/th&gt;</token>
+  </line>
+  <line no="58">
+    <token name="T_INLINE_HTML">                                &lt;td&gt;</token>
+  </line>
+  <line no="59">
+    <token name="T_INLINE_HTML">                                    {!! Form::text('s_title', request('s_title'), ['class' =&gt; 'w50 placeholder', 'placeholder' =&gt; '']) !!}</token>
+  </line>
+  <line no="60">
+    <token name="T_INLINE_HTML">                                &lt;/td&gt;</token>
+  </line>
+  <line no="61">
+    <token name="T_INLINE_HTML">                            &lt;/tr&gt;</token>
+  </line>
+  <line no="62">
+    <token name="T_INLINE_HTML">                            &lt;tr&gt;</token>
+  </line>
+  <line no="63">
+    <token name="T_INLINE_HTML">                                &lt;th&gt;&#x672C;&#x6587;&lt;/th&gt;</token>
+  </line>
+  <line no="64">
+    <token name="T_INLINE_HTML">                                &lt;td&gt;</token>
+  </line>
+  <line no="65">
+    <token name="T_INLINE_HTML">                                    {!! Form::text('s_message', request('s_message'), ['class' =&gt; 'w50 placeholder', 'placeholder' =&gt; '']) !!}</token>
+  </line>
+  <line no="66">
+    <token name="T_INLINE_HTML">                                &lt;/td&gt;</token>
+  </line>
+  <line no="67">
+    <token name="T_INLINE_HTML">                            &lt;/tr&gt;</token>
+  </line>
+  <line no="68">
+    <token name="T_INLINE_HTML">                            &lt;tr {{ error_class('s_info_flg') }}&gt;</token>
+  </line>
+  <line no="69">
+    <token name="T_INLINE_HTML">                                &lt;th&gt;&#x512A;&#x5148;&#x3057;&#x3066;&#x8868;&#x793A;&#x3059;&#x308B;&lt;/th&gt;</token>
+  </line>
+  <line no="70">
+    <token name="T_INLINE_HTML">                                &lt;td&gt;</token>
+  </line>
+  <line no="71">
+    <token name="T_INLINE_HTML">                                    {!! Form::select('s_info_flg', $formData['info_flg'], request('s_info_flg'), ['class' =&gt; 'w-auto']) !!}</token>
+  </line>
+  <line no="72">
+    <token name="T_INLINE_HTML">                                &lt;/td&gt;</token>
+  </line>
+  <line no="73">
+    <token name="T_INLINE_HTML">                            &lt;/tr&gt;</token>
+  </line>
+  <line no="74">
+    <token name="T_INLINE_HTML">                            &lt;tr {{ error_class('s_category') }}&gt;</token>
+  </line>
+  <line no="75">
+    <token name="T_INLINE_HTML">                                &lt;th&gt;&#x30AB;&#x30C6;&#x30B4;&#x30EA;&lt;/th&gt;</token>
+  </line>
+  <line no="76">
+    <token name="T_INLINE_HTML">                                &lt;td&gt;</token>
+  </line>
+  <line no="77">
+    <token name="T_INLINE_HTML">                                    {!! Form::select('s_category', $listCategory, request('s_category'), ['class' =&gt; 'w-auto']) !!}</token>
+  </line>
+  <line no="78">
+    <token name="T_INLINE_HTML">                                &lt;/td&gt;</token>
+  </line>
+  <line no="79">
+    <token name="T_INLINE_HTML">                            &lt;/tr&gt;</token>
+  </line>
+  <line no="80">
+    <token name="T_INLINE_HTML">                            @if (count($tagInfo)&gt;0)</token>
+  </line>
+  <line no="81">
+    <token name="T_INLINE_HTML">                                &lt;tr {{ error_class('s_tag') }}&gt;</token>
+  </line>
+  <line no="82">
+    <token name="T_INLINE_HTML">                                    &lt;th&gt;&#x30BF;&#x30B0;&lt;/th&gt;</token>
+  </line>
+  <line no="83">
+    <token name="T_INLINE_HTML">                                    &lt;td&gt;</token>
+  </line>
+  <line no="84">
+    <token name="T_INLINE_HTML">                                        @foreach ($tagInfo as $key =&gt; $value)</token>
+  </line>
+  <line no="85">
+    <token name="T_INLINE_HTML">                                            {!! Form::checkbox('s_tag[]', $value['id'], in_array($value['id'], request('s_tag') ? request('s_tag') : [] ) ? true : false, ['id' =&gt; 'check1-'. $value['id']]) !!}&lt;label for="check1-{{$value['id']}}"&gt;{{ $value['tag_name'] }}&lt;/label&gt;</token>
+  </line>
+  <line no="86">
+    <token name="T_INLINE_HTML">                                        @endforeach</token>
+  </line>
+  <line no="87">
+    <token name="T_INLINE_HTML">                                    &lt;/td&gt;</token>
+  </line>
+  <line no="88">
+    <token name="T_INLINE_HTML">                                &lt;/tr&gt;</token>
+  </line>
+  <line no="89">
+    <token name="T_INLINE_HTML">                            @endif</token>
+  </line>
+  <line no="90">
+    <token name="T_INLINE_HTML">                            &lt;tr {{ error_class('s_type_lp') }} {{ error_class('s_type_of') }}&gt;</token>
+  </line>
+  <line no="91">
+    <token name="T_INLINE_HTML">                                &lt;th&gt;&#x63B2;&#x8F09;&#x30DA;&#x30FC;&#x30B8;&lt;/th&gt;</token>
+  </line>
+  <line no="92">
+    <token name="T_INLINE_HTML">                                &lt;td&gt;</token>
+  </line>
+  <line no="93">
+    <token name="T_INLINE_HTML">                                    {!! Form::checkbox('s_type_lp', '1', request('s_type_lp') ? true :false, ['id' =&gt; 's_type_lp']) !!}&lt;label for="s_type_lp"&gt;&#x30D3;&#x30AE;&#x30CA;&#x30FC;&#x30BA;&lt;/label&gt;</token>
+  </line>
+  <line no="94">
+    <token name="T_INLINE_HTML">                                    {!! Form::checkbox('s_type_of', '1', request('s_type_of') ? true :false, ['id' =&gt; 's_type_of']) !!}&lt;label for="s_type_of"&gt;&#x30E1;&#x30F3;&#x30D0;&#x30FC;&#x30BA;&lt;/label&gt;</token>
+  </line>
+  <line no="95">
+    <token name="T_INLINE_HTML">                                &lt;/td&gt;</token>
+  </line>
+  <line no="96">
+    <token name="T_INLINE_HTML">                            &lt;/tr&gt;</token>
+  </line>
+  <line no="97">
+    <token name="T_INLINE_HTML">                            &lt;tr {{ error_class('s_status') }}&gt;</token>
+  </line>
+  <line no="98">
+    <token name="T_INLINE_HTML">                                &lt;th&gt;&#x30B9;&#x30C6;&#x30FC;&#x30BF;&#x30B9;&lt;/th&gt;</token>
+  </line>
+  <line no="99">
+    <token name="T_INLINE_HTML">                                &lt;td&gt;</token>
+  </line>
+  <line no="100">
+    <token name="T_INLINE_HTML">                                    {!! Form::select('s_status', $formData['news_status'], request('s_status'), ['class' =&gt; 'w-auto']) !!}</token>
+  </line>
+  <line no="101">
+    <token name="T_INLINE_HTML">                                &lt;/td&gt;</token>
+  </line>
+  <line no="102">
+    <token name="T_INLINE_HTML">                            &lt;/tr&gt;</token>
+  </line>
+  <line no="103">
+    <token name="T_INLINE_HTML">                            &lt;/tbody&gt;</token>
+  </line>
+  <line no="104">
+    <token name="T_INLINE_HTML">                            &lt;!-- /.c-table --&gt;</token>
+  </line>
+  <line no="105">
+    <token name="T_INLINE_HTML">                        &lt;/table&gt;</token>
+  </line>
+  <line no="106">
+    <token name="T_INLINE_HTML">                    {!! Form::close() !!}</token>
+  </line>
+  <line no="107">
+    <token name="T_INLINE_HTML">                    &lt;div&gt;</token>
+  </line>
+  <line no="108">
+    <token name="T_INLINE_HTML">                        &lt;a href="#" data-form="form-search" class="button btn-submit is-primary is-medium"&gt;&lt;i class="fa fa-search"&gt;&lt;/i&gt;&#x691C;&#x7D22;&lt;/a&gt;</token>
+  </line>
+  <line no="109">
+    <token name="T_INLINE_HTML">                    &lt;/div&gt;</token>
+  </line>
+  <line no="110">
+    <token name="T_INLINE_HTML">                    &lt;!-- /.c-searchform --&gt;</token>
+  </line>
+  <line no="111">
+    <token name="T_INLINE_HTML">                &lt;/div&gt;</token>
+  </line>
+  <line no="112">
+    <token name="T_INLINE_HTML">                &lt;!-- /.fn-showmore --&gt;</token>
+  </line>
+  <line no="113">
+    <token name="T_INLINE_HTML">            &lt;/div&gt;</token>
+  </line>
+  <line no="114">
+    <token name="T_INLINE_HTML">            @if(count($newsList) &gt; 0)</token>
+  </line>
+  <line no="115">
+    <token name="T_INLINE_HTML">                &lt;div class="c-pager"&gt;</token>
+  </line>
+  <line no="116">
+    <token name="T_INLINE_HTML">                    &lt;p class="bold tx-16"&gt;&lt;i class="fa fa-list-ul"&gt;&lt;/i&gt;&#x691C;&#x7D22;&#x7D50;&#x679C;&lt;/p&gt;</token>
+  </line>
+  <line no="117">
+    <token name="T_INLINE_HTML">                    @include('partials.paginator', array('paginator' =&gt; $newsList, 'from' =&gt; $pagerView['from'], 'to' =&gt; $pagerView['to']))</token>
+  </line>
+  <line no="118">
+    <token name="T_INLINE_HTML">                    @include('partials.paginatorperpage', ['paginator' =&gt; $newsList])</token>
+  </line>
+  <line no="119">
+    <token name="T_INLINE_HTML">                    &lt;!-- /.c-pager --&gt;</token>
+  </line>
+  <line no="120">
+    <token name="T_INLINE_HTML">                &lt;/div&gt;</token>
+  </line>
+  <line no="121">
+    <token name="T_INLINE_HTML">                &lt;div class="area-scroll"&gt;</token>
+  </line>
+  <line no="122">
+    <token name="T_INLINE_HTML">                    &lt;table class="c-table is-scroll"&gt;</token>
+  </line>
+  <line no="123">
+    <token name="T_INLINE_HTML">                        &lt;thead&gt;</token>
+  </line>
+  <line no="124">
+    <token name="T_INLINE_HTML">                        &lt;tr&gt;</token>
+  </line>
+  <line no="125">
+    <token name="T_INLINE_HTML">                            &lt;th&gt;ID&lt;/th&gt;</token>
+  </line>
+  <line no="126">
+    <token name="T_INLINE_HTML">                            &lt;th&gt;&#x63B2;&#x8F09;&#x65E5;&#x6642;&lt;/th&gt;</token>
+  </line>
+  <line no="127">
+    <token name="T_INLINE_HTML">                            &lt;th&gt;&#x30BF;&#x30A4;&#x30C8;&#x30EB;&lt;/th&gt;</token>
+  </line>
+  <line no="128">
+    <token name="T_INLINE_HTML">                            &lt;th&gt;&#x512A;&#x5148;&lt;br&gt;&#x8868;&#x793A;&lt;/th&gt;</token>
+  </line>
+  <line no="129">
+    <token name="T_INLINE_HTML">                            &lt;th&gt;&#x30AB;&#x30C6;&#x30B4;&#x30EA;&lt;/th&gt;</token>
+  </line>
+  <line no="130">
+    <token name="T_INLINE_HTML">                            &lt;th&gt;&#x30BF;&#x30B0;&lt;/th&gt;</token>
+  </line>
+  <line no="131">
+    <token name="T_INLINE_HTML">                            &lt;th&gt;&#x63B2;&#x8F09;&#x30DA;&#x30FC;&#x30B8;&lt;/th&gt;</token>
+  </line>
+  <line no="132">
+    <token name="T_INLINE_HTML">                            &lt;th&gt;URL&lt;/th&gt;</token>
+  </line>
+  <line no="133">
+    <token name="T_INLINE_HTML">                            &lt;th&gt;&#x30B9;&#x30C6;&#x30FC;&#x30BF;&#x30B9;&lt;/th&gt;</token>
+  </line>
+  <line no="134">
+    <token name="T_INLINE_HTML">                            &lt;th&gt;&#x7DE8;&#x96C6;&#xFF0F;&#x524A;&#x9664;&lt;/th&gt;</token>
+  </line>
+  <line no="135">
+    <token name="T_INLINE_HTML">                        &lt;/tr&gt;</token>
+  </line>
+  <line no="136">
+    <token name="T_INLINE_HTML">                        &lt;/thead&gt;</token>
+  </line>
+  <line no="137">
+    <token name="T_INLINE_HTML">                        &lt;tbody&gt;</token>
+  </line>
+  <line no="138">
+    <token name="T_INLINE_HTML">                        @foreach($newsList as $key =&gt; $data)</token>
+  </line>
+  <line no="139">
+    <token name="T_INLINE_HTML">                        &lt;tr&gt;</token>
+  </line>
+  <line no="140">
+    <token name="T_INLINE_HTML">                            &lt;td&gt;{{ $data['info_id'] }}&lt;/td&gt;</token>
+  </line>
+  <line no="141">
+    <token name="T_INLINE_HTML">                            &lt;td&gt;{{ $data['post_date']-&gt;format('Y/m/d') }}&lt;/td&gt;</token>
+  </line>
+  <line no="142">
+    <token name="T_INLINE_HTML">                            &lt;td class="nowrap"&gt;</token>
+  </line>
+  <line no="143">
+    <token name="T_INLINE_HTML">                                @if ($data['isNewIcon'])</token>
+  </line>
+  <line no="144">
+    <token name="T_INLINE_HTML">                                    &lt;span class="tag is-danger mg-r6"&gt;NEW&lt;/span&gt;</token>
+  </line>
+  <line no="145">
+    <token name="T_INLINE_HTML">                                @endif</token>
+  </line>
+  <line no="146">
+    <token name="T_INLINE_HTML">                                {{ str_limit($data['title'], $formData['limitText']) }}</token>
+  </line>
+  <line no="147">
+    <token name="T_INLINE_HTML">                            &lt;/td&gt;</token>
+  </line>
+  <line no="148">
+    <token name="T_INLINE_HTML">                            &lt;td&gt;</token>
+  </line>
+  <line no="149">
+    <token name="T_INLINE_HTML">                                @if ($data['info_top_flg'] == 1)</token>
+  </line>
+  <line no="150">
+    <token name="T_INLINE_HTML">                                    &lt;i class="fa fa-circle-o"&gt;&lt;/i&gt;</token>
+  </line>
+  <line no="151">
+    <token name="T_INLINE_HTML">                                @else</token>
+  </line>
+  <line no="152">
+    <token name="T_INLINE_HTML">                                    &lt;i class="fa fa fa-close"&gt;&lt;/i&gt;</token>
+  </line>
+  <line no="153">
+    <token name="T_INLINE_HTML">                                @endif</token>
+  </line>
+  <line no="154">
+    <token name="T_INLINE_HTML">                            &lt;/td&gt;</token>
+  </line>
+  <line no="155">
+    <token name="T_INLINE_HTML">                            &lt;td&gt;{{ $category[$key] }}&lt;/td&gt;</token>
+  </line>
+  <line no="156">
+    <token name="T_INLINE_HTML">                            &lt;td&gt;{{ $data['tag'] }}&lt;/td&gt;</token>
+  </line>
+  <line no="157">
+    <token name="T_INLINE_HTML">                            &lt;td&gt;</token>
+  </line>
+  <line no="158">
+    <token name="T_INLINE_HTML">                                @if ($data['type_lp'] == 1)</token>
+  </line>
+  <line no="159">
+    <token name="T_INLINE_HTML">                                    &#x30D3;&#x30AE;&#x30CA;&#x30FC;&#x30BA; @if($data['type_of'] == 1), @endif</token>
+  </line>
+  <line no="160">
+    <token name="T_INLINE_HTML">                                @endif</token>
+  </line>
+  <line no="161">
+    <token name="T_INLINE_HTML">                                @if($data['type_of'] == 1)</token>
+  </line>
+  <line no="162">
+    <token name="T_INLINE_HTML">                                    &#x30E1;&#x30F3;&#x30D0;&#x30FC;&#x30BA;</token>
+  </line>
+  <line no="163">
+    <token name="T_INLINE_HTML">                                @endif</token>
+  </line>
+  <line no="164">
+    <token name="T_INLINE_HTML">                            &lt;/td&gt;</token>
+  </line>
+  <line no="165">
+    <token name="T_INLINE_HTML">                            &lt;td class="nowrap"&gt;&lt;a href="{{ $data['url'] }}" title="{{ $data['url'] }}"&gt;{{ $data['url'] }}&lt;/a&gt;&lt;/td&gt;</token>
+  </line>
+  <line no="166">
+    <token name="T_INLINE_HTML">                            &lt;td&gt;</token>
+  </line>
+  <line no="167">
+    <token name="T_INLINE_HTML">                                &lt;a href="javascript:void(0);" class="info-view-flg" data-action="{{ route('News.status') }}" data-info="{{ $data['info_id'] }}" title=""&gt;{{ $formData['news_status'][$data['info_view_flg']] }}&lt;/a&gt;</token>
+  </line>
+  <line no="168">
+    <token name="T_INLINE_HTML">                            &lt;/td&gt;</token>
+  </line>
+  <line no="169">
+    <token name="T_INLINE_HTML">                            &lt;td&gt;</token>
+  </line>
+  <line no="170">
+    <token name="T_INLINE_HTML">                                &lt;a href="{{ URL::route('News.edit', ['id' =&gt; $data['info_id']] + $searchQuery) }}" class="button"&gt;&lt;i class="fa</token>
+  </line>
+  <line no="171">
+    <token name="T_INLINE_HTML">                                fa-pencil"&gt;&lt;/i&gt;&#x7DE8;&#x96C6;&lt;/a&gt;</token>
+  </line>
+  <line no="172">
+    <token name="T_INLINE_HTML">                                &lt;a href="{{ URL::route('News.deleteconfirm', ['id' =&gt; $data['info_id']]+ $searchQuery) }}" class="button</token>
+  </line>
+  <line no="173">
+    <token name="T_INLINE_HTML">                                is-danger"&gt;&lt;i class="fa fa-trash-o"&gt;&lt;/i&gt;&#x524A;&#x9664;&lt;/a&gt;</token>
+  </line>
+  <line no="174">
+    <token name="T_INLINE_HTML">                            &lt;/td&gt;</token>
+  </line>
+  <line no="175">
+    <token name="T_INLINE_HTML">                        &lt;/tr&gt;</token>
+  </line>
+  <line no="176">
+    <token name="T_INLINE_HTML">                        @endforeach</token>
+  </line>
+  <line no="177">
+    <token name="T_INLINE_HTML">                        &lt;/tbody&gt;</token>
+  </line>
+  <line no="178">
+    <token name="T_INLINE_HTML">                        &lt;!-- /.c-table --&gt;</token>
+  </line>
+  <line no="179">
+    <token name="T_INLINE_HTML">                    &lt;/table&gt;</token>
+  </line>
+  <line no="180">
+    <token name="T_INLINE_HTML">                &lt;/div&gt;</token>
+  </line>
+  <line no="181"/>
+  <line no="182">
+    <token name="T_INLINE_HTML">                &lt;div class="c-pager"&gt;</token>
+  </line>
+  <line no="183">
+    <token name="T_INLINE_HTML">                    @include('partials.paginator', array('paginator' =&gt; $newsList, 'from' =&gt; $pagerView['from'], 'to' =&gt; $pagerView['to']))</token>
+  </line>
+  <line no="184">
+    <token name="T_INLINE_HTML">                    @include('partials.paginatorperpage', ['paginator' =&gt; $newsList])</token>
+  </line>
+  <line no="185">
+    <token name="T_INLINE_HTML">                    &lt;!-- /.c-pager --&gt;</token>
+  </line>
+  <line no="186">
+    <token name="T_INLINE_HTML">                &lt;/div&gt;</token>
+  </line>
+  <line no="187">
+    <token name="T_INLINE_HTML">                &lt;!-- /.c-area --&gt;</token>
+  </line>
+  <line no="188">
+    <token name="T_INLINE_HTML">            @else</token>
+  </line>
+  <line no="189">
+    <token name="T_INLINE_HTML">            &lt;p class="c-notregist"&gt;&lt;i class="fa fa-close"&gt;&lt;/i&gt;&#x691C;&#x7D22;&#x7D50;&#x679C;&#x304C;&#x3042;&#x308A;&#x307E;&#x305B;&#x3093;&#x3002;&lt;/p&gt;</token>
+  </line>
+  <line no="190">
+    <token name="T_INLINE_HTML">            @endif</token>
+  </line>
+  <line no="191">
+    <token name="T_INLINE_HTML">        &lt;/div&gt;</token>
+  </line>
+  <line no="192">
+    <token name="T_INLINE_HTML">    &lt;/section&gt;</token>
+  </line>
+  <line no="193"/>
+  <line no="194">
+    <token name="T_INLINE_HTML">@endsection</token>
+  </line>
+  <line no="195"/>
+</source>

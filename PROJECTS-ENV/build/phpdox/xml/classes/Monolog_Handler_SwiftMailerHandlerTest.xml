@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="Monolog\Handler\SwiftMailerHandlerTest" namespace="Monolog\Handler" name="SwiftMailerHandlerTest" abstract="false" final="false" start="17" end="113">
+  <file path="/home/web/example/src/freegame_developer/vendor/monolog/monolog/tests/Monolog/Handler" file="SwiftMailerHandlerTest.php" realpath="/home/web/example/src/freegame_developer/vendor/monolog/monolog/tests/Monolog/Handler/SwiftMailerHandlerTest.php" size="3840" time="2016-07-29T03:23:52+00:00" unixtime="1469762632" sha1="fc45f04f3534952c20aa04e6e55c1ec790e9eb1f" relative="freegame_developer/vendor/monolog/monolog/tests/Monolog/Handler/SwiftMailerHandlerTest.php"/>
+  <extends full="Monolog\TestCase" namespace="Monolog" name="TestCase"/>
+  <member name="mailer" visibility="private" static="false" line="20">
+    <docblock>
+      <var type="object">
+        <type full="\Swift_Mailer|\PHPUnit_Framework_MockObject_MockObject" namespace="\Swift_Mailer|" name="PHPUnit_Framework_MockObject_MockObject"/>
+      </var>
+    </docblock>
+  </member>
+  <method name="setUp" start="22" end="28" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testMessageCreationIsLazyWhenUsingCallback" start="30" end="45" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testMessageCanBeCustomizedGivenLoggedData" start="47" end="73" abstract="false" final="false" static="false" visibility="public">
+    <inline>
+      <comment value="Wire Mailer to expect a specific Swift_Message with a customized Subject" line="49"/>
+      <comment value="Callback dynamically changes subject based on number of logged records" line="59"/>
+      <comment value="Logging 1 record makes this an Emergency" line="68"/>
+    </inline>
+  </method>
+  <method name="testMessageSubjectFormatting" start="75" end="97" abstract="false" final="false" static="false" visibility="public">
+    <inline>
+      <comment value="Wire Mailer to expect a specific Swift_Message with a customized Subject" line="77"/>
+    </inline>
+  </method>
+  <method name="testMessageHaveUniqueId" start="99" end="112" abstract="false" final="false" static="false" visibility="public"/>
+</class>

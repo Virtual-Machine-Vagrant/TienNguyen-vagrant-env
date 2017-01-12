@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<trait xmlns="http://xml.phpdox.net/src" full="Illuminate\Auth\Access\HandlesAuthorization" namespace="Illuminate\Auth\Access" name="HandlesAuthorization" abstract="false" final="false" start="5" end="30">
+  <file path="/home/web/example/src/freegame_developer/vendor/laravel/framework/src/Illuminate/Auth/Access" file="HandlesAuthorization.php" realpath="/home/web/example/src/freegame_developer/vendor/laravel/framework/src/Illuminate/Auth/Access/HandlesAuthorization.php" size="634" time="2016-02-24T15:13:21+00:00" unixtime="1456326801" sha1="d4b68879585bf4ae1e41b279284f619fde8dd45b" relative="freegame_developer/vendor/laravel/framework/src/Illuminate/Auth/Access/HandlesAuthorization.php"/>
+  <method name="allow" start="13" end="16" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Create a new access response."/>
+      <param type="object" variable="$message">
+        <type full="Illuminate\Auth\Access\string|null" namespace="Illuminate\Auth\Access" name="string|null"/>
+      </param>
+      <return type="object">
+        <type full="\Illuminate\Auth\Access\Response" namespace="\Illuminate\Auth\Access" name="Response"/>
+      </return>
+    </docblock>
+    <parameter name="message" byreference="false" type="{unknown}" default="" constant="null"/>
+  </method>
+  <method name="deny" start="26" end="29" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Throws an unauthorized exception."/>
+      <param type="string" variable="$message"/>
+      <return type="object">
+        <type full="Illuminate\Auth\Access\void" namespace="Illuminate\Auth\Access" name="void"/>
+      </return>
+      <throws type="object">
+        <type full="\Illuminate\Auth\Access\UnauthorizedException" namespace="\Illuminate\Auth\Access" name="UnauthorizedException"/>
+      </throws>
+    </docblock>
+    <parameter name="message" byreference="false" type="string" default="'This action is unauthorized.'"/>
+  </method>
+</trait>

@@ -1,0 +1,500 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="DebugBar\JavascriptRenderer" namespace="DebugBar" name="JavascriptRenderer" abstract="false" final="false" start="21" end="1002">
+  <file path="/home/web/example/src/freegame_developer/vendor/maximebf/debugbar/src/DebugBar" file="JavascriptRenderer.php" realpath="/home/web/example/src/freegame_developer/vendor/maximebf/debugbar/src/DebugBar/JavascriptRenderer.php" size="29154" time="2016-09-15T14:01:59+00:00" unixtime="1473948119" sha1="a518137b7c4347929dd6a6f92f2a78d1d23b6c48" relative="freegame_developer/vendor/maximebf/debugbar/src/DebugBar/JavascriptRenderer.php"/>
+  <docblock>
+    <description compact="Renders the debug bar using the client side javascript implementation">Generates all the needed initialization code of controls</description>
+  </docblock>
+  <constant type="integer" name="INITIALIZE_CONSTRUCTOR" value="2"/>
+  <constant type="integer" name="INITIALIZE_CONTROLS" value="4"/>
+  <constant type="string" name="REPLACEABLE_TAG" value="&quot;{--DEBUGBAR_OB_START_REPLACE_ME--}&quot;"/>
+  <constant type="string" name="RELATIVE_PATH" value="'path'"/>
+  <constant type="string" name="RELATIVE_URL" value="'url'"/>
+  <member name="debugBar" visibility="protected" static="false" line="33"/>
+  <member name="baseUrl" visibility="protected" static="false" line="35"/>
+  <member name="basePath" visibility="protected" static="false" line="37"/>
+  <member name="cssVendors" type="array" default="" visibility="protected" static="false" line="39"/>
+  <member name="jsVendors" type="array" default="" visibility="protected" static="false" line="44"/>
+  <member name="includeVendors" type="boolean" default="true" visibility="protected" static="false" line="49"/>
+  <member name="cssFiles" type="array" default="" visibility="protected" static="false" line="51"/>
+  <member name="jsFiles" type="array" default="" visibility="protected" static="false" line="53"/>
+  <member name="additionalAssets" type="array" default="" visibility="protected" static="false" line="55"/>
+  <member name="javascriptClass" type="string" default="'PhpDebugBar.DebugBar'" visibility="protected" static="false" line="57"/>
+  <member name="variableName" type="string" default="'phpdebugbar'" visibility="protected" static="false" line="59"/>
+  <member name="enableJqueryNoConflict" type="boolean" default="true" visibility="protected" static="false" line="61"/>
+  <member name="useRequireJs" type="boolean" default="false" visibility="protected" static="false" line="63"/>
+  <member name="initialization" visibility="protected" static="false" line="65"/>
+  <member name="controls" type="array" default="" visibility="protected" static="false" line="67"/>
+  <member name="ignoredCollectors" type="array" default="" visibility="protected" static="false" line="69"/>
+  <member name="ajaxHandlerClass" type="string" default="'PhpDebugBar.AjaxHandler'" visibility="protected" static="false" line="71"/>
+  <member name="ajaxHandlerBindToJquery" type="boolean" default="true" visibility="protected" static="false" line="73"/>
+  <member name="ajaxHandlerBindToXHR" type="boolean" default="false" visibility="protected" static="false" line="75"/>
+  <member name="openHandlerClass" type="string" default="'PhpDebugBar.OpenHandler'" visibility="protected" static="false" line="77"/>
+  <member name="openHandlerUrl" visibility="protected" static="false" line="79"/>
+  <constructor name="__construct" start="86" end="102" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <param type="object" variable="$debugBar">
+        <type full="\DebugBar\DebugBar" namespace="\DebugBar" name="DebugBar"/>
+      </param>
+      <param type="string" variable="$baseUrl"/>
+      <param type="string" variable="$basePath"/>
+    </docblock>
+    <parameter name="debugBar" byreference="false" type="object">
+      <type full="DebugBar\DebugBar" namespace="DebugBar" name="DebugBar"/>
+    </parameter>
+    <parameter name="baseUrl" byreference="false" type="{unknown}" default="" constant="null"/>
+    <parameter name="basePath" byreference="false" type="{unknown}" default="" constant="null"/>
+    <inline>
+      <comment value="bitwise operations cannot be done in class definition :(" line="100"/>
+    </inline>
+  </constructor>
+  <method name="setOptions" start="125" end="178" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Sets options from an array">Options:
+ - base_path
+ - base_url
+ - include_vendors
+ - javascript_class
+ - variable_name
+ - initialization
+ - enable_jquery_noconflict
+ - controls
+ - disable_controls
+ - ignore_collectors
+ - ajax_handler_classname
+ - ajax_handler_bind_to_jquery
+ - open_handler_classname
+ - open_handler_url</description>
+      <param description="[description]" type="array" variable="$options"/>
+    </docblock>
+    <parameter name="options" byreference="false" type="array"/>
+  </method>
+  <method name="setBasePath" start="185" end="189" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Sets the path which assets are relative to"/>
+      <param type="string" variable="$path"/>
+    </docblock>
+    <parameter name="path" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="getBasePath" start="196" end="199" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Returns the path which assets are relative to"/>
+      <return type="string"/>
+    </docblock>
+  </method>
+  <method name="setBaseUrl" start="206" end="210" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Sets the base URL from which assets will be served"/>
+      <param type="string" variable="$url"/>
+    </docblock>
+    <parameter name="url" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="getBaseUrl" start="217" end="220" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Returns the base URL from which assets will be served"/>
+      <return type="string"/>
+    </docblock>
+  </method>
+  <method name="setIncludeVendors" start="230" end="243" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Whether to include vendor assets">You can only include js or css vendors using
+setIncludeVendors('css') or setIncludeVendors('js')</description>
+      <param type="boolean" variable="$enabled"/>
+    </docblock>
+    <parameter name="enabled" byreference="false" type="boolean" default="true"/>
+  </method>
+  <method name="areVendorsIncluded" start="250" end="253" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Checks if vendors assets are included"/>
+      <return type="boolean"/>
+    </docblock>
+  </method>
+  <method name="disableVendor" start="262" end="270" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Disable a specific vendor's assets."/>
+      <param description="&quot;jquery&quot;, &quot;fontawesome&quot;, &quot;highlightjs&quot;" type="string" variable="$name"/>
+      <return type="object">
+        <type full="DebugBar\void" namespace="DebugBar" name="void"/>
+      </return>
+    </docblock>
+    <parameter name="name" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="setJavascriptClass" start="277" end="281" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Sets the javascript class name"/>
+      <param type="string" variable="$className"/>
+    </docblock>
+    <parameter name="className" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="getJavascriptClass" start="288" end="291" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Returns the javascript class name"/>
+      <return type="string"/>
+    </docblock>
+  </method>
+  <method name="setVariableName" start="298" end="302" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Sets the variable name of the class instance"/>
+      <param type="string" variable="$name"/>
+    </docblock>
+    <parameter name="name" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="getVariableName" start="309" end="312" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Returns the variable name of the class instance"/>
+      <return type="string"/>
+    </docblock>
+  </method>
+  <method name="setInitialization" start="323" end="327" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Sets what should be initialized">- INITIALIZE_CONSTRUCTOR: only initializes the instance
+ - INITIALIZE_CONTROLS: initializes the controls and data mapping
+ - INITIALIZE_CONSTRUCTOR | INITIALIZE_CONTROLS: initialize everything (default)</description>
+      <param type="integer" variable="$init"/>
+    </docblock>
+    <parameter name="init" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="getInitialization" start="334" end="337" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Returns what should be initialized"/>
+      <return type="integer"/>
+    </docblock>
+  </method>
+  <method name="setEnableJqueryNoConflict" start="344" end="348" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Sets whether to call jQuery.noConflict()"/>
+      <param type="boolean" variable="$enabled"/>
+    </docblock>
+    <parameter name="enabled" byreference="false" type="boolean" default="true"/>
+  </method>
+  <method name="isJqueryNoConflictEnabled" start="355" end="358" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Checks if jQuery.noConflict() will be called"/>
+      <return type="boolean"/>
+    </docblock>
+  </method>
+  <method name="setUseRequireJs" start="366" end="370" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Sets whether to use RequireJS or not"/>
+      <param type="boolean" variable="$enabled"/>
+      <return type="object">
+        <type full="DebugBar\$this" namespace="DebugBar" name="$this"/>
+      </return>
+    </docblock>
+    <parameter name="enabled" byreference="false" type="boolean" default="true"/>
+  </method>
+  <method name="isRequireJsUsed" start="377" end="380" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Checks if RequireJS is used"/>
+      <return type="boolean"/>
+    </docblock>
+  </method>
+  <method name="addControl" start="398" end="405" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Adds a control to initialize">Possible options:
+ - icon: icon name
+ - tooltip: string
+ - widget: widget class name
+ - title: tab title
+ - map: a property name from the data to map the control to
+ - default: a js string, default value of the data map
+
+"icon" or "widget" are at least needed</description>
+      <param type="string" variable="$name"/>
+      <param type="array" variable="$options"/>
+    </docblock>
+    <parameter name="name" byreference="false" type="{unknown}"/>
+    <parameter name="options" byreference="false" type="array"/>
+  </method>
+  <method name="disableControl" start="412" end="416" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Disables a control"/>
+      <param type="string" variable="$name"/>
+    </docblock>
+    <parameter name="name" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="getControls" start="425" end="428" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Returns the list of controls">This does not include controls provided by collectors</description>
+      <return type="array"/>
+    </docblock>
+  </method>
+  <method name="ignoreCollector" start="435" end="439" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Ignores widgets provided by a collector"/>
+      <param type="string" variable="$name"/>
+    </docblock>
+    <parameter name="name" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="getIgnoredCollectors" start="446" end="449" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Returns the list of ignored collectors"/>
+      <return type="array"/>
+    </docblock>
+  </method>
+  <method name="setAjaxHandlerClass" start="458" end="462" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Sets the class name of the ajax handler">Set to false to disable</description>
+      <param type="string" variable="$className"/>
+    </docblock>
+    <parameter name="className" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="getAjaxHandlerClass" start="469" end="472" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Returns the class name of the ajax handler"/>
+      <return type="string"/>
+    </docblock>
+  </method>
+  <method name="setBindAjaxHandlerToJquery" start="479" end="483" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Sets whether to call bindToJquery() on the ajax handler"/>
+      <param type="boolean" variable="$bind"/>
+    </docblock>
+    <parameter name="bind" byreference="false" type="boolean" default="true"/>
+  </method>
+  <method name="isAjaxHandlerBoundToJquery" start="490" end="493" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Checks whether bindToJquery() will be called on the ajax handler"/>
+      <return type="boolean"/>
+    </docblock>
+  </method>
+  <method name="setBindAjaxHandlerToXHR" start="500" end="504" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Sets whether to call bindToXHR() on the ajax handler"/>
+      <param type="boolean" variable="$bind"/>
+    </docblock>
+    <parameter name="bind" byreference="false" type="boolean" default="true"/>
+  </method>
+  <method name="isAjaxHandlerBoundToXHR" start="511" end="514" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Checks whether bindToXHR() will be called on the ajax handler"/>
+      <return type="boolean"/>
+    </docblock>
+  </method>
+  <method name="setOpenHandlerClass" start="521" end="525" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Sets the class name of the js open handler"/>
+      <param type="string" variable="$className"/>
+    </docblock>
+    <parameter name="className" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="getOpenHandlerClass" start="532" end="535" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Returns the class name of the js open handler"/>
+      <return type="string"/>
+    </docblock>
+  </method>
+  <method name="setOpenHandlerUrl" start="542" end="546" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Sets the url of the open handler"/>
+      <param type="string" variable="$url"/>
+    </docblock>
+    <parameter name="url" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="getOpenHandlerUrl" start="553" end="556" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Returns the url for the open handler"/>
+      <return type="string"/>
+    </docblock>
+  </method>
+  <method name="addAssets" start="566" end="575" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Add assets to render in the head"/>
+      <param description="An array of filenames" type="array" variable="$cssFiles"/>
+      <param description="An array of filenames" type="array" variable="$jsFiles"/>
+      <param description="Base path of those files" type="string" variable="$basePath"/>
+      <param description="Base url of those files" type="string" variable="$baseUrl"/>
+    </docblock>
+    <parameter name="cssFiles" byreference="false" type="{unknown}"/>
+    <parameter name="jsFiles" byreference="false" type="{unknown}"/>
+    <parameter name="basePath" byreference="false" type="{unknown}" default="" constant="null"/>
+    <parameter name="baseUrl" byreference="false" type="{unknown}" default="" constant="null"/>
+  </method>
+  <method name="getAssets" start="584" end="623" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Returns the list of asset files"/>
+      <param description="Only return css or js files" type="string" variable="$type"/>
+      <param description="The type of path to which filenames must be relative (path, url or null)" type="string" variable="$relativeTo"/>
+      <return type="array"/>
+    </docblock>
+    <parameter name="type" byreference="false" type="{unknown}" default="" constant="null"/>
+    <parameter name="relativeTo" byreference="false" type="{unknown}" default="" constant="self::RELATIVE_PATH"/>
+    <inline>
+      <comment value="finds assets provided by collectors" line="605"/>
+    </inline>
+  </method>
+  <method name="getRelativeRoot" start="633" end="642" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Returns the correct base according to the type"/>
+      <param type="string" variable="$relativeTo"/>
+      <param type="string" variable="$basePath"/>
+      <param type="string" variable="$baseUrl"/>
+      <return type="string"/>
+    </docblock>
+    <parameter name="relativeTo" byreference="false" type="{unknown}"/>
+    <parameter name="basePath" byreference="false" type="{unknown}"/>
+    <parameter name="baseUrl" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="makeUriRelativeTo" start="651" end="669" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Makes a URI relative to another"/>
+      <param type="object" variable="$uri">
+        <type full="DebugBar\string|array" namespace="DebugBar" name="string|array"/>
+      </param>
+      <param type="string" variable="$root"/>
+      <return type="string"/>
+    </docblock>
+    <parameter name="uri" byreference="false" type="{unknown}"/>
+    <parameter name="root" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="filterAssetArray" start="678" end="688" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Filters a tuple of (css, js) assets according to $type"/>
+      <param type="array" variable="$array"/>
+      <param description="'css', 'js' or null for both" type="string" variable="$type"/>
+      <return type="array"/>
+    </docblock>
+    <parameter name="array" byreference="false" type="{unknown}"/>
+    <parameter name="type" byreference="false" type="{unknown}" default="" constant="null"/>
+  </method>
+  <method name="getAsseticCollection" start="697" end="704" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Returns a tuple where the both items are Assetic AssetCollection, the first one being css files and the second js files"/>
+      <param description="Only return css or js collection" type="string" variable="$type"/>
+      <return description="or \Assetic\Asset\AssetCollection" type="array"/>
+    </docblock>
+    <parameter name="type" byreference="false" type="{unknown}" default="" constant="null"/>
+  </method>
+  <method name="createAsseticCollection" start="714" end="721" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Create an Assetic AssetCollection with the given files.">Filenames will be converted to absolute path using
+the base path.</description>
+      <param type="array" variable="$files"/>
+      <return type="object">
+        <type full="\Assetic\Asset\AssetCollection" namespace="\Assetic\Asset" name="AssetCollection"/>
+      </return>
+    </docblock>
+    <parameter name="files" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="dumpCssAssets" start="728" end="731" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Write all CSS assets to standard output or in a file"/>
+      <param type="string" variable="$targetFilename"/>
+    </docblock>
+    <parameter name="targetFilename" byreference="false" type="{unknown}" default="" constant="null"/>
+  </method>
+  <method name="dumpJsAssets" start="738" end="741" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Write all JS assets to standard output or in a file"/>
+      <param type="string" variable="$targetFilename"/>
+    </docblock>
+    <parameter name="targetFilename" byreference="false" type="{unknown}" default="" constant="null"/>
+  </method>
+  <method name="dumpAssets" start="750" end="764" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Write assets to standard output or in a file"/>
+      <param type="array" variable="$files"/>
+      <param type="string" variable="$targetFilename"/>
+      <param type="object" variable="$useRequireJs">
+        <type full="DebugBar\bool" namespace="DebugBar" name="bool"/>
+      </param>
+    </docblock>
+    <parameter name="files" byreference="false" type="{unknown}"/>
+    <parameter name="targetFilename" byreference="false" type="{unknown}" default="" constant="null"/>
+    <parameter name="useRequireJs" byreference="false" type="boolean" default="false"/>
+  </method>
+  <method name="renderHead" start="773" end="791" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Renders the html to include needed assets">Only useful if Assetic is not used</description>
+      <return type="string"/>
+    </docblock>
+  </method>
+  <method name="renderOnShutdown" start="802" end="811" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Register shutdown to display the debug bar"/>
+      <param description="Set position of HTML. True if is to current position or false for end file" type="boolean" variable="$here"/>
+      <param description="Whether to render the de bug bar initialization code" type="boolean" variable="$initialize"/>
+      <param type="object" variable="$renderStackedData">
+        <type full="DebugBar\bool" namespace="DebugBar" name="bool"/>
+      </param>
+      <param type="object" variable="$head">
+        <type full="DebugBar\bool" namespace="DebugBar" name="bool"/>
+      </param>
+      <return description="Return &quot;{--DEBUGBAR_OB_START_REPLACE_ME--}&quot; or return an empty string if $here == false" type="string"/>
+    </docblock>
+    <parameter name="here" byreference="false" type="boolean" default="true"/>
+    <parameter name="initialize" byreference="false" type="boolean" default="true"/>
+    <parameter name="renderStackedData" byreference="false" type="boolean" default="true"/>
+    <parameter name="head" byreference="false" type="boolean" default="false"/>
+  </method>
+  <method name="renderOnShutdownWithHead" start="821" end="824" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Same as renderOnShutdown() with $head = true"/>
+      <param type="boolean" variable="$here"/>
+      <param type="boolean" variable="$initialize"/>
+      <param type="boolean" variable="$renderStackedData"/>
+      <return type="string"/>
+    </docblock>
+    <parameter name="here" byreference="false" type="boolean" default="true"/>
+    <parameter name="initialize" byreference="false" type="boolean" default="true"/>
+    <parameter name="renderStackedData" byreference="false" type="boolean" default="true"/>
+  </method>
+  <method name="replaceTagInBuffer" start="834" end="846" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Is callback function for register_shutdown_function(...)"/>
+      <param description="Set position of HTML. True if is to current position or false for end file" type="boolean" variable="$here"/>
+      <param description="Whether to render the de bug bar initialization code" type="boolean" variable="$initialize"/>
+      <param type="object" variable="$renderStackedData">
+        <type full="DebugBar\bool" namespace="DebugBar" name="bool"/>
+      </param>
+      <param type="object" variable="$head">
+        <type full="DebugBar\bool" namespace="DebugBar" name="bool"/>
+      </param>
+    </docblock>
+    <parameter name="here" byreference="false" type="boolean" default="true"/>
+    <parameter name="initialize" byreference="false" type="boolean" default="true"/>
+    <parameter name="renderStackedData" byreference="false" type="boolean" default="true"/>
+    <parameter name="head" byreference="false" type="boolean" default="false"/>
+  </method>
+  <method name="render" start="857" end="880" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Returns the code needed to display the debug bar">AJAX request should not render the initialization code.</description>
+      <param description="Whether or not to render the debug bar initialization code" type="boolean" variable="$initialize"/>
+      <param description="Whether or not to render the stacked data" type="boolean" variable="$renderStackedData"/>
+      <return type="string"/>
+    </docblock>
+    <parameter name="initialize" byreference="false" type="boolean" default="true"/>
+    <parameter name="renderStackedData" byreference="false" type="boolean" default="true"/>
+  </method>
+  <method name="getJsInitializationCode" start="887" end="915" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Returns the js code needed to initialize the debug bar"/>
+      <return type="string"/>
+    </docblock>
+  </method>
+  <method name="getJsControlsDefinitionCode" start="925" end="982" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Returns the js code needed to initialized the controls and data mapping of the debug bar">Controls can be defined by collectors themselves or using <see xmlns="http://xml.phpdox.net/src" value="addControl()"/></description>
+      <param description="Debug bar's variable name" type="string" variable="$varname"/>
+      <return type="string"/>
+    </docblock>
+    <parameter name="varname" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="finds controls provided by collectors" line="931"/>
+      <comment value="creates the data mapping object" line="971"/>
+      <comment value="activate state restoration" line="978"/>
+    </inline>
+  </method>
+  <method name="getAddDatasetCode" start="992" end="1001" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Returns the js code needed to add a dataset"/>
+      <param type="string" variable="$requestId"/>
+      <param type="array" variable="$data"/>
+      <param type="mixed" variable="$suffix"/>
+      <return type="string"/>
+    </docblock>
+    <parameter name="requestId" byreference="false" type="{unknown}"/>
+    <parameter name="data" byreference="false" type="{unknown}"/>
+    <parameter name="suffix" byreference="false" type="{unknown}" default="" constant="null"/>
+  </method>
+</class>

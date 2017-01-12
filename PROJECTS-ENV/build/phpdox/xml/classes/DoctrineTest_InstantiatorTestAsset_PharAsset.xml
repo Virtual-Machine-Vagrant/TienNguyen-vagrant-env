@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="DoctrineTest\InstantiatorTestAsset\PharAsset" namespace="DoctrineTest\InstantiatorTestAsset" name="PharAsset" abstract="false" final="false" start="30" end="41">
+  <file path="/home/web/example/src/freegame_developer/vendor/doctrine/instantiator/tests/DoctrineTest/InstantiatorTestAsset" file="PharAsset.php" realpath="/home/web/example/src/freegame_developer/vendor/doctrine/instantiator/tests/DoctrineTest/InstantiatorTestAsset/PharAsset.php" size="1435" time="2015-06-14T21:17:01+00:00" unixtime="1434316621" sha1="022a6e873ad5d002faae83e5426427492cec1aee" relative="freegame_developer/vendor/doctrine/instantiator/tests/DoctrineTest/InstantiatorTestAsset/PharAsset.php"/>
+  <docblock>
+    <description compact="Test asset that extends an internal PHP class"/>
+    <author value="Marco Pivetta &lt;ocramius@gmail.com&gt;"/>
+  </docblock>
+  <extends full="Phar" namespace="" name="Phar"/>
+  <constructor name="__construct" start="37" end="40" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Constructor - should not be called"/>
+      <throws type="object">
+        <type full="BadMethodCallException" namespace="" name="BadMethodCallException"/>
+      </throws>
+    </docblock>
+  </constructor>
+</class>

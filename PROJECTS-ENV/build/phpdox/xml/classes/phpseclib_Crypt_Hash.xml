@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="phpseclib\Crypt\Hash" namespace="phpseclib\Crypt" name="Hash" abstract="false" final="false" start="50" end="824">
+  <file path="/home/web/example/src/freegame_developer/vendor/phpseclib/phpseclib/phpseclib/Crypt" file="Hash.php" realpath="/home/web/example/src/freegame_developer/vendor/phpseclib/phpseclib/phpseclib/Crypt/Hash.php" size="27453" time="2016-10-04T00:57:04+00:00" unixtime="1475542624" sha1="0a62ad7a236857812564472e954dcfd8d658de66" relative="freegame_developer/vendor/phpseclib/phpseclib/phpseclib/Crypt/Hash.php"/>
+  <docblock>
+    <description compact="Pure-PHP implementations of keyed-hash message authentication codes (HMACs) and various cryptographic hashing functions."/>
+    <package value="Hash"/>
+    <author value="Jim Wigginton &lt;terrafrost@php.net&gt;"/>
+    <access value="public"/>
+  </docblock>
+  <constant type="integer" name="MODE_INTERNAL" value="1">
+    <docblock>
+      <description compact="Toggles the internal implementation"/>
+    </docblock>
+  </constant>
+  <constant type="integer" name="MODE_MHASH" value="2">
+    <docblock>
+      <description compact="Toggles the mhash() implementation, which has been deprecated on PHP 5.3.0+."/>
+    </docblock>
+  </constant>
+  <constant type="integer" name="MODE_HASH" value="3">
+    <docblock>
+      <description compact="Toggles the hash() implementation, which works on PHP 5.1.2+."/>
+    </docblock>
+  </constant>
+  <member name="hashParam" visibility="public" static="false" line="77">
+    <docblock>
+      <description compact="Hash Parameter"/>
+      <see value="self::setHash()"/>
+      <var type="int"/>
+      <access value="private"/>
+    </docblock>
+  </member>
+  <member name="b" visibility="public" static="false" line="86">
+    <docblock>
+      <description compact="Byte-length of compression blocks / key (Internal HMAC)"/>
+      <see value="self::setAlgorithm()"/>
+      <var type="int"/>
+      <access value="private"/>
+    </docblock>
+  </member>
+  <member name="l" type="boolean" default="false" visibility="public" static="false" line="95">
+    <docblock>
+      <description compact="Byte-length of hash output (Internal HMAC)"/>
+      <see value="self::setHash()"/>
+      <var type="int"/>
+      <access value="private"/>
+    </docblock>
+  </member>
+  <member name="hash" visibility="public" static="false" line="104">
+    <docblock>
+      <description compact="Hash Algorithm"/>
+      <see value="self::setHash()"/>
+      <var type="string"/>
+      <access value="private"/>
+    </docblock>
+  </member>
+  <member name="key" type="boolean" default="false" visibility="public" static="false" line="113">
+    <docblock>
+      <description compact="Key"/>
+      <see value="self::setKey()"/>
+      <var type="string"/>
+      <access value="private"/>
+    </docblock>
+  </member>
+  <member name="opad" visibility="public" static="false" line="122">
+    <docblock>
+      <description compact="Outer XOR (Internal HMAC)"/>
+      <see value="self::setKey()"/>
+      <var type="string"/>
+      <access value="private"/>
+    </docblock>
+  </member>
+  <member name="ipad" visibility="public" static="false" line="131">
+    <docblock>
+      <description compact="Inner XOR (Internal HMAC)"/>
+      <see value="self::setKey()"/>
+      <var type="string"/>
+      <access value="private"/>
+    </docblock>
+  </member>
+  <constructor name="__construct" start="140" end="156" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Default Constructor."/>
+      <param type="string" variable="$hash"/>
+      <return type="object">
+        <type full="\phpseclib\Crypt\Hash" namespace="\phpseclib\Crypt" name="Hash"/>
+      </return>
+      <access value="public"/>
+    </docblock>
+    <parameter name="hash" byreference="false" type="string" default="'sha1'"/>
+  </constructor>
+  <method name="setKey" start="166" end="169" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Sets the key for HMACs">Keys can be of any length.</description>
+      <access value="public"/>
+      <param type="string" variable="$key"/>
+    </docblock>
+    <parameter name="key" byreference="false" type="boolean" default="false"/>
+  </method>
+  <method name="getHash" start="179" end="182" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Gets the hash function.">As set by the constructor or by the setHash() method.</description>
+      <access value="public"/>
+      <return type="string"/>
+    </docblock>
+  </method>
+  <method name="setHash" start="190" end="289" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Sets the hash function."/>
+      <access value="public"/>
+      <param type="string" variable="$hash"/>
+    </docblock>
+    <parameter name="hash" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="hash" start="298" end="339" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Compute the HMAC."/>
+      <access value="public"/>
+      <param type="string" variable="$text"/>
+      <return type="string"/>
+    </docblock>
+    <parameter name="text" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="getLength" start="347" end="350" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Returns the hash length (in bytes)"/>
+      <access value="public"/>
+      <return type="int"/>
+    </docblock>
+  </method>
+  <method name="_md5" start="358" end="361" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Wrapper for MD5"/>
+      <access value="private"/>
+      <param type="string" variable="$m"/>
+    </docblock>
+    <parameter name="m" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="_sha1" start="369" end="372" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Wrapper for SHA1"/>
+      <access value="private"/>
+      <param type="string" variable="$m"/>
+    </docblock>
+    <parameter name="m" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="_md2" start="382" end="448" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Pure-PHP implementation of MD2">See <link xmlns="http://xml.phpdox.net/src" value="http://tools.ietf.org/html/rfc1319 RFC1319"/>.
+</description>
+      <access value="private"/>
+      <param type="string" variable="$m"/>
+    </docblock>
+    <parameter name="m" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="Step 1. Append Padding Bytes" line="405"/>
+      <comment value="Step 2. Append Checksum" line="411"/>
+      <comment value="Step 3. Initialize MD Buffer" line="427"/>
+      <comment value="Step 4. Process Message in 16-Byte Blocks" line="430"/>
+      <comment value="Step 5. Output" line="446"/>
+    </inline>
+  </method>
+  <method name="_sha256" start="458" end="556" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Pure-PHP implementation of SHA256">See <link xmlns="http://xml.phpdox.net/src" value="http://en.wikipedia.org/wiki/SHA_hash_functions#SHA-256_.28a_SHA-2_variant.29_pseudocode SHA-256 (a SHA-2 variant) pseudocode - Wikipedia"/>.
+</description>
+      <access value="private"/>
+      <param type="string" variable="$m"/>
+    </docblock>
+    <parameter name="m" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="Initialize variables" line="464"/>
+      <comment value="Initialize table of round constants" line="468"/>
+      <comment value="(first 32 bits of the fractional parts of the cube roots of the first 64 primes 2..311)" line="469"/>
+      <comment value="Pre-processing" line="481"/>
+      <comment value="to round to nearest 56 mod 64, we'll add 64 - (length + (64 - 56)) % 64" line="483"/>
+      <comment value="we don't support hashing strings 512MB long" line="486"/>
+      <comment value="Process the message in successive 512-bit chunks" line="489"/>
+      <comment value="Produce the final hash value (big-endian)" line="554"/>
+    </inline>
+  </method>
+  <method name="_sha512" start="564" end="735" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Pure-PHP implementation of SHA384 and SHA512"/>
+      <access value="private"/>
+      <param type="string" variable="$m"/>
+    </docblock>
+    <parameter name="m" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="Pre-processing" line="618"/>
+      <comment value="to round to nearest 112 mod 128, we'll add 128 - (length + (128 - 112)) % 128" line="620"/>
+      <comment value="we don't support hashing strings 512MB long" line="623"/>
+      <comment value="Process the message in successive 1024-bit chunks" line="626"/>
+      <comment value="Produce the final hash value (big-endian)" line="726"/>
+      <comment value="(\phpseclib\Crypt\Hash::hash() trims the output for hashes but not for HMACs.  as such, we trim the output here)" line="727"/>
+    </inline>
+  </method>
+  <method name="_rightRotate" start="746" end="751" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Right Rotate"/>
+      <access value="private"/>
+      <param type="int" variable="$int"/>
+      <param type="int" variable="$amt"/>
+      <see value="self::_sha256()"/>
+      <return type="int"/>
+    </docblock>
+    <parameter name="int" byreference="false" type="{unknown}"/>
+    <parameter name="amt" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="_rightShift" start="762" end="766" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Right Shift"/>
+      <access value="private"/>
+      <param type="int" variable="$int"/>
+      <param type="int" variable="$amt"/>
+      <see value="self::_sha256()"/>
+      <return type="int"/>
+    </docblock>
+    <parameter name="int" byreference="false" type="{unknown}"/>
+    <parameter name="amt" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="_not" start="776" end="779" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Not"/>
+      <access value="private"/>
+      <param type="int" variable="$int"/>
+      <see value="self::_sha256()"/>
+      <return type="int"/>
+    </docblock>
+    <parameter name="int" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="_add" start="792" end="806" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Add">_sha256() adds multiple unsigned 32-bit integers.  Since PHP doesn't support unsigned integers and since the
+possibility of overflow exists, care has to be taken.  BigInteger could be used but this should be faster.</description>
+      <param type="int" variable="$..."/>
+      <return type="int"/>
+      <see value="self::_sha256()"/>
+      <access value="private"/>
+    </docblock>
+  </method>
+  <method name="_string_shift" start="818" end="823" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="String Shift">Inspired by array_shift</description>
+      <param type="string" variable="$string"/>
+      <param type="int" variable="$index"/>
+      <return type="string"/>
+      <access value="private"/>
+    </docblock>
+    <parameter name="string" byreference="true" type="{unknown}"/>
+    <parameter name="index" byreference="false" type="integer" default="1"/>
+  </method>
+</class>

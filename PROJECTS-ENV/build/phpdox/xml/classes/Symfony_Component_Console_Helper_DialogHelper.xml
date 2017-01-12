@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="Symfony\Component\Console\Helper\DialogHelper" namespace="Symfony\Component\Console\Helper" name="DialogHelper" abstract="false" final="false" start="26" end="500">
+  <file path="/home/web/example/src/freegame_developer/vendor/symfony/console/Helper" file="DialogHelper.php" realpath="/home/web/example/src/freegame_developer/vendor/symfony/console/Helper/DialogHelper.php" size="17493" time="2016-10-05T17:26:56+00:00" unixtime="1475688416" sha1="413c2dd0f90fd44e1b1f16b298e5d1731047a4ed" relative="freegame_developer/vendor/symfony/console/Helper/DialogHelper.php"/>
+  <docblock>
+    <description compact="The Dialog class provides helpers to interact with the user."/>
+    <author value="Fabien Potencier &lt;fabien@symfony.com&gt;"/>
+    <deprecated value="since version 2.5, to be removed in 3.0.">Use <link xmlns="http://xml.phpdox.net/src" value="\Symfony\Component\Console\Helper\QuestionHelper"/> instead.
+</deprecated>
+  </docblock>
+  <extends full="Symfony\Component\Console\Helper\InputAwareHelper" namespace="Symfony\Component\Console\Helper" name="InputAwareHelper"/>
+  <member name="inputStream" visibility="private" static="false" line="28"/>
+  <member name="shell" visibility="private" static="true" line="29"/>
+  <member name="stty" visibility="private" static="true" line="30"/>
+  <constructor name="__construct" start="32" end="37" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="triggerDeprecationError" byreference="false" type="boolean" default="true"/>
+  </constructor>
+  <method name="select" start="54" end="100" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Asks the user to select a value."/>
+      <param description="An Output instance" type="object" variable="$output">
+        <type full="Symfony\Component\Console\Output\OutputInterface" namespace="Symfony\Component\Console\Output" name="OutputInterface"/>
+      </param>
+      <param description="The question to ask" type="object" variable="$question">
+        <type full="Symfony\Component\Console\Helper\string|array" namespace="Symfony\Component\Console\Helper" name="string|array"/>
+      </param>
+      <param description="List of choices to pick from" type="array" variable="$choices"/>
+      <param description="The default answer if the user enters nothing" type="object" variable="$default">
+        <type full="Symfony\Component\Console\Helper\bool|string" namespace="Symfony\Component\Console\Helper" name="bool|string"/>
+      </param>
+      <param description="Max number of times to ask before giving up (false by default, which means infinite)" type="object" variable="$attempts">
+        <type full="Symfony\Component\Console\Helper\bool|int" namespace="Symfony\Component\Console\Helper" name="bool|int"/>
+      </param>
+      <param description="Message which will be shown if invalid value from choice list would be picked" type="string" variable="$errorMessage"/>
+      <param description="Select more than one value separated by comma" type="object" variable="$multiselect">
+        <type full="Symfony\Component\Console\Helper\bool" namespace="Symfony\Component\Console\Helper" name="bool"/>
+      </param>
+      <return description="The selected value or values (the key of the choices array)" type="object">
+        <type full="Symfony\Component\Console\Helper\int|string|array" namespace="Symfony\Component\Console\Helper" name="int|string|array"/>
+      </return>
+      <throws type="object">
+        <type full="\InvalidArgumentException" namespace="" name="InvalidArgumentException"/>
+      </throws>
+    </docblock>
+    <parameter name="output" byreference="false" type="object">
+      <type full="Symfony\Component\Console\Output\OutputInterface" namespace="Symfony\Component\Console\Output" name="OutputInterface"/>
+    </parameter>
+    <parameter name="question" byreference="false" type="{unknown}"/>
+    <parameter name="choices" byreference="false" type="{unknown}"/>
+    <parameter name="default" byreference="false" type="{unknown}" default="" constant="null"/>
+    <parameter name="attempts" byreference="false" type="boolean" default="false"/>
+    <parameter name="errorMessage" byreference="false" type="string" default="'Value &quot;%s&quot; is invalid'"/>
+    <parameter name="multiselect" byreference="false" type="boolean" default="false"/>
+  </method>
+  <method name="ask" start="114" end="241" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Asks a question to the user."/>
+      <param description="An Output instance" type="object" variable="$output">
+        <type full="Symfony\Component\Console\Output\OutputInterface" namespace="Symfony\Component\Console\Output" name="OutputInterface"/>
+      </param>
+      <param description="The question to ask" type="object" variable="$question">
+        <type full="Symfony\Component\Console\Helper\string|array" namespace="Symfony\Component\Console\Helper" name="string|array"/>
+      </param>
+      <param description="The default answer if none is given by the user" type="string" variable="$default"/>
+      <param description="List of values to autocomplete" type="array" variable="$autocomplete"/>
+      <return description="The user answer" type="string"/>
+      <throws description="If there is no data to read in the input stream" type="object">
+        <type full="\RuntimeException" namespace="" name="RuntimeException"/>
+      </throws>
+    </docblock>
+    <parameter name="output" byreference="false" type="object">
+      <type full="Symfony\Component\Console\Output\OutputInterface" namespace="Symfony\Component\Console\Output" name="OutputInterface"/>
+    </parameter>
+    <parameter name="question" byreference="false" type="{unknown}"/>
+    <parameter name="default" byreference="false" type="{unknown}" default="" constant="null"/>
+    <parameter name="autocomplete" byreference="false" type="{unknown}" default="" constant="null"/>
+  </method>
+  <method name="askConfirmation" start="254" end="266" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Asks a confirmation to the user.">The question will be asked until the user answers by nothing, yes, or no.</description>
+      <param description="An Output instance" type="object" variable="$output">
+        <type full="Symfony\Component\Console\Output\OutputInterface" namespace="Symfony\Component\Console\Output" name="OutputInterface"/>
+      </param>
+      <param description="The question to ask" type="object" variable="$question">
+        <type full="Symfony\Component\Console\Helper\string|array" namespace="Symfony\Component\Console\Helper" name="string|array"/>
+      </param>
+      <param description="The default answer if the user enters nothing" type="object" variable="$default">
+        <type full="Symfony\Component\Console\Helper\bool" namespace="Symfony\Component\Console\Helper" name="bool"/>
+      </param>
+      <return description="true if the user has confirmed, false otherwise" type="object">
+        <type full="Symfony\Component\Console\Helper\bool" namespace="Symfony\Component\Console\Helper" name="bool"/>
+      </return>
+    </docblock>
+    <parameter name="output" byreference="false" type="object">
+      <type full="Symfony\Component\Console\Output\OutputInterface" namespace="Symfony\Component\Console\Output" name="OutputInterface"/>
+    </parameter>
+    <parameter name="question" byreference="false" type="{unknown}"/>
+    <parameter name="default" byreference="false" type="boolean" default="true"/>
+  </method>
+  <method name="askHiddenResponse" start="279" end="340" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Asks a question to the user, the response is hidden."/>
+      <param description="An Output instance" type="object" variable="$output">
+        <type full="Symfony\Component\Console\Output\OutputInterface" namespace="Symfony\Component\Console\Output" name="OutputInterface"/>
+      </param>
+      <param description="The question" type="object" variable="$question">
+        <type full="Symfony\Component\Console\Helper\string|array" namespace="Symfony\Component\Console\Helper" name="string|array"/>
+      </param>
+      <param description="In case the response can not be hidden, whether to fallback on non-hidden question or not" type="object" variable="$fallback">
+        <type full="Symfony\Component\Console\Helper\bool" namespace="Symfony\Component\Console\Helper" name="bool"/>
+      </param>
+      <return description="The answer" type="string"/>
+      <throws description="In case the fallback is deactivated and the response can not be hidden" type="object">
+        <type full="\RuntimeException" namespace="" name="RuntimeException"/>
+      </throws>
+    </docblock>
+    <parameter name="output" byreference="false" type="object">
+      <type full="Symfony\Component\Console\Output\OutputInterface" namespace="Symfony\Component\Console\Output" name="OutputInterface"/>
+    </parameter>
+    <parameter name="question" byreference="false" type="{unknown}"/>
+    <parameter name="fallback" byreference="false" type="boolean" default="true"/>
+  </method>
+  <method name="askAndValidate" start="360" end="369" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Asks for a value and validates the response.">The validator receives the data to validate. It must return the
+validated data when the data is valid and throw an exception
+otherwise.</description>
+      <param description="An Output instance" type="object" variable="$output">
+        <type full="Symfony\Component\Console\Output\OutputInterface" namespace="Symfony\Component\Console\Output" name="OutputInterface"/>
+      </param>
+      <param description="The question to ask" type="object" variable="$question">
+        <type full="Symfony\Component\Console\Helper\string|array" namespace="Symfony\Component\Console\Helper" name="string|array"/>
+      </param>
+      <param description="A PHP callback" type="object" variable="$validator">
+        <type full="Symfony\Component\Console\Helper\callable" namespace="Symfony\Component\Console\Helper" name="callable"/>
+      </param>
+      <param description="Max number of times to ask before giving up (false by default, which means infinite)" type="object" variable="$attempts">
+        <type full="Symfony\Component\Console\Helper\int|false" namespace="Symfony\Component\Console\Helper" name="int|false"/>
+      </param>
+      <param description="The default answer if none is given by the user" type="string" variable="$default"/>
+      <param description="List of values to autocomplete" type="array" variable="$autocomplete"/>
+      <return type="mixed"/>
+      <throws description="When any of the validators return an error" type="object">
+        <type full="\Exception" namespace="" name="Exception"/>
+      </throws>
+    </docblock>
+    <parameter name="output" byreference="false" type="object">
+      <type full="Symfony\Component\Console\Output\OutputInterface" namespace="Symfony\Component\Console\Output" name="OutputInterface"/>
+    </parameter>
+    <parameter name="question" byreference="false" type="{unknown}"/>
+    <parameter name="validator" byreference="false" type="{unknown}"/>
+    <parameter name="attempts" byreference="false" type="boolean" default="false"/>
+    <parameter name="default" byreference="false" type="{unknown}" default="" constant="null"/>
+    <parameter name="autocomplete" byreference="false" type="{unknown}" default="" constant="null"/>
+  </method>
+  <method name="askHiddenResponseAndValidate" start="389" end="398" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Asks for a value, hide and validates the response.">The validator receives the data to validate. It must return the
+validated data when the data is valid and throw an exception
+otherwise.</description>
+      <param description="An Output instance" type="object" variable="$output">
+        <type full="Symfony\Component\Console\Output\OutputInterface" namespace="Symfony\Component\Console\Output" name="OutputInterface"/>
+      </param>
+      <param description="The question to ask" type="object" variable="$question">
+        <type full="Symfony\Component\Console\Helper\string|array" namespace="Symfony\Component\Console\Helper" name="string|array"/>
+      </param>
+      <param description="A PHP callback" type="object" variable="$validator">
+        <type full="Symfony\Component\Console\Helper\callable" namespace="Symfony\Component\Console\Helper" name="callable"/>
+      </param>
+      <param description="Max number of times to ask before giving up (false by default, which means infinite)" type="object" variable="$attempts">
+        <type full="Symfony\Component\Console\Helper\int|false" namespace="Symfony\Component\Console\Helper" name="int|false"/>
+      </param>
+      <param description="In case the response can not be hidden, whether to fallback on non-hidden question or not" type="object" variable="$fallback">
+        <type full="Symfony\Component\Console\Helper\bool" namespace="Symfony\Component\Console\Helper" name="bool"/>
+      </param>
+      <return description="The response" type="string"/>
+      <throws description="When any of the validators return an error" type="object">
+        <type full="\Exception" namespace="" name="Exception"/>
+      </throws>
+      <throws description="In case the fallback is deactivated and the response can not be hidden" type="object">
+        <type full="\RuntimeException" namespace="" name="RuntimeException"/>
+      </throws>
+    </docblock>
+    <parameter name="output" byreference="false" type="object">
+      <type full="Symfony\Component\Console\Output\OutputInterface" namespace="Symfony\Component\Console\Output" name="OutputInterface"/>
+    </parameter>
+    <parameter name="question" byreference="false" type="{unknown}"/>
+    <parameter name="validator" byreference="false" type="{unknown}"/>
+    <parameter name="attempts" byreference="false" type="boolean" default="false"/>
+    <parameter name="fallback" byreference="false" type="boolean" default="true"/>
+  </method>
+  <method name="setInputStream" start="407" end="410" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Sets the input stream to read from when interacting with the user.">This is mainly useful for testing purpose.</description>
+      <param description="The input stream" type="resource" variable="$stream"/>
+    </docblock>
+    <parameter name="stream" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="getInputStream" start="417" end="420" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Returns the helper's input stream."/>
+      <return description="The input stream or null if the default STDIN is used" type="object">
+        <type full="Symfony\Component\Console\Helper\resource|null" namespace="Symfony\Component\Console\Helper" name="resource|null"/>
+      </return>
+    </docblock>
+  </method>
+  <method name="getName" start="425" end="428" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="{@inheritdoc}"/>
+    </docblock>
+  </method>
+  <method name="getShell" start="435" end="455" abstract="false" final="false" static="false" visibility="private">
+    <docblock>
+      <description compact="Return a valid Unix shell."/>
+      <return description="The valid shell name, false in case no valid shell is found" type="object">
+        <type full="Symfony\Component\Console\Helper\string|bool" namespace="Symfony\Component\Console\Helper" name="string|bool"/>
+      </return>
+    </docblock>
+  </method>
+  <method name="hasSttyAvailable" start="457" end="466" abstract="false" final="false" static="false" visibility="private"/>
+  <method name="validateAttempts" start="480" end="499" abstract="false" final="false" static="false" visibility="private">
+    <docblock>
+      <description compact="Validate an attempt."/>
+      <param description="A callable that will ask for a question and return the result" type="object" variable="$interviewer">
+        <type full="Symfony\Component\Console\Helper\callable" namespace="Symfony\Component\Console\Helper" name="callable"/>
+      </param>
+      <param description="An Output instance" type="object" variable="$output">
+        <type full="Symfony\Component\Console\Output\OutputInterface" namespace="Symfony\Component\Console\Output" name="OutputInterface"/>
+      </param>
+      <param description="A PHP callback" type="object" variable="$validator">
+        <type full="Symfony\Component\Console\Helper\callable" namespace="Symfony\Component\Console\Helper" name="callable"/>
+      </param>
+      <param description="Max number of times to ask before giving up; false will ask infinitely" type="object" variable="$attempts">
+        <type full="Symfony\Component\Console\Helper\int|false" namespace="Symfony\Component\Console\Helper" name="int|false"/>
+      </param>
+      <return description="The validated response" type="string"/>
+      <throws description="In case the max number of attempts has been reached and no valid response has been given" type="object">
+        <type full="\Exception" namespace="" name="Exception"/>
+      </throws>
+    </docblock>
+    <parameter name="interviewer" byreference="false" type="{unknown}"/>
+    <parameter name="output" byreference="false" type="object">
+      <type full="Symfony\Component\Console\Output\OutputInterface" namespace="Symfony\Component\Console\Output" name="OutputInterface"/>
+    </parameter>
+    <parameter name="validator" byreference="false" type="{unknown}"/>
+    <parameter name="attempts" byreference="false" type="{unknown}"/>
+  </method>
+</class>

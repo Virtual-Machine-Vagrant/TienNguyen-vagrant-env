@@ -1,0 +1,421 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="phpseclib\Net\SFTP\Stream" namespace="phpseclib\Net\SFTP" name="Stream" abstract="false" final="false" start="30" end="795">
+  <file path="/home/web/example/src/freegame_developer/vendor/phpseclib/phpseclib/phpseclib/Net/SFTP" file="Stream.php" realpath="/home/web/example/src/freegame_developer/vendor/phpseclib/phpseclib/phpseclib/Net/SFTP/Stream.php" size="21791" time="2016-10-04T00:57:04+00:00" unixtime="1475542624" sha1="98232c2e0710040c374a6395394e71d8cbfeca68" relative="freegame_developer/vendor/phpseclib/phpseclib/phpseclib/Net/SFTP/Stream.php"/>
+  <docblock>
+    <description compact="SFTP Stream Wrapper"/>
+    <package value="SFTP"/>
+    <author value="Jim Wigginton &lt;terrafrost@php.net&gt;"/>
+    <access value="public"/>
+  </docblock>
+  <member name="instances" visibility="public" static="true" line="39">
+    <docblock>
+      <description compact="SFTP instances">Rather than re-create the connection we re-use instances if possible</description>
+      <var type="array"/>
+    </docblock>
+  </member>
+  <member name="sftp" visibility="public" static="false" line="47">
+    <docblock>
+      <description compact="SFTP instance"/>
+      <var type="object"/>
+      <access value="private"/>
+    </docblock>
+  </member>
+  <member name="path" visibility="public" static="false" line="55">
+    <docblock>
+      <description compact="Path"/>
+      <var type="string"/>
+      <access value="private"/>
+    </docblock>
+  </member>
+  <member name="mode" visibility="public" static="false" line="63">
+    <docblock>
+      <description compact="Mode"/>
+      <var type="string"/>
+      <access value="private"/>
+    </docblock>
+  </member>
+  <member name="pos" visibility="public" static="false" line="71">
+    <docblock>
+      <description compact="Position"/>
+      <var type="int"/>
+      <access value="private"/>
+    </docblock>
+  </member>
+  <member name="size" visibility="public" static="false" line="79">
+    <docblock>
+      <description compact="Size"/>
+      <var type="int"/>
+      <access value="private"/>
+    </docblock>
+  </member>
+  <member name="entries" visibility="public" static="false" line="87">
+    <docblock>
+      <description compact="Directory entries"/>
+      <var type="array"/>
+      <access value="private"/>
+    </docblock>
+  </member>
+  <member name="eof" visibility="public" static="false" line="95">
+    <docblock>
+      <description compact="EOF flag"/>
+      <var type="object">
+        <type full="phpseclib\Net\SFTP\bool" namespace="phpseclib\Net\SFTP" name="bool"/>
+      </var>
+      <access value="private"/>
+    </docblock>
+  </member>
+  <member name="context" visibility="public" static="false" line="105">
+    <docblock>
+      <description compact="Context resource">Technically this needs to be publically accessible so PHP can set it directly</description>
+      <var type="resource"/>
+      <access value="public"/>
+    </docblock>
+  </member>
+  <member name="notification" visibility="public" static="false" line="113">
+    <docblock>
+      <description compact="Notification callback function"/>
+      <var type="object">
+        <type full="phpseclib\Net\SFTP\callable" namespace="phpseclib\Net\SFTP" name="callable"/>
+      </var>
+      <access value="public"/>
+    </docblock>
+  </member>
+  <method name="register" start="122" end="128" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description compact="Registers this class as a URL wrapper."/>
+      <param description="The wrapper name to be registered." type="string" variable="$protocol"/>
+      <return description="True on success, false otherwise." type="object">
+        <type full="phpseclib\Net\SFTP\bool" namespace="phpseclib\Net\SFTP" name="bool"/>
+      </return>
+      <access value="public"/>
+    </docblock>
+    <parameter name="protocol" byreference="false" type="string" default="'sftp'"/>
+  </method>
+  <constructor name="__construct" start="135" end="140" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="The Constructor"/>
+      <access value="public"/>
+    </docblock>
+  </constructor>
+  <method name="_parse_path" start="154" end="248" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Path Parser">Extract a path from a URI and actually connect to an SSH server if appropriate
+
+If "notification" is set as a context parameter the message code for successful login is
+NET_SSH2_MSG_USERAUTH_SUCCESS. For a failed login it's NET_SSH2_MSG_USERAUTH_FAILURE.</description>
+      <param type="string" variable="$path"/>
+      <return type="string"/>
+      <access value="private"/>
+    </docblock>
+    <parameter name="path" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="_stream_open" start="260" end="293" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Opens file or URL"/>
+      <param type="string" variable="$path"/>
+      <param type="string" variable="$mode"/>
+      <param type="int" variable="$options"/>
+      <param type="string" variable="$opened_path"/>
+      <return type="object">
+        <type full="phpseclib\Net\SFTP\bool" namespace="phpseclib\Net\SFTP" name="bool"/>
+      </return>
+      <access value="public"/>
+    </docblock>
+    <parameter name="path" byreference="false" type="{unknown}"/>
+    <parameter name="mode" byreference="false" type="{unknown}"/>
+    <parameter name="options" byreference="false" type="{unknown}"/>
+    <parameter name="opened_path" byreference="true" type="{unknown}"/>
+  </method>
+  <method name="_stream_read" start="302" end="335" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Read from stream"/>
+      <param type="int" variable="$count"/>
+      <return type="mixed"/>
+      <access value="public"/>
+    </docblock>
+    <parameter name="count" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="commented out because some files - eg. /dev/urandom - will say their size is 0 when in fact it's kinda infinite" line="312"/>
+      <comment value="if ($this-&gt;pos &gt;= $this-&gt;size) {" line="313"/>
+      <comment value="$this-&gt;eof = true;" line="314"/>
+      <comment value="return false;" line="315"/>
+      <comment value="}" line="316"/>
+    </inline>
+  </method>
+  <method name="_stream_write" start="344" end="370" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Write to stream"/>
+      <param type="string" variable="$data"/>
+      <return type="mixed"/>
+      <access value="public"/>
+    </docblock>
+    <parameter name="data" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="_stream_tell" start="378" end="381" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Retrieve the current position of a stream"/>
+      <return type="int"/>
+      <access value="public"/>
+    </docblock>
+  </method>
+  <method name="_stream_eof" start="396" end="399" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Tests for end-of-file on a file pointer">In my testing there are four classes functions that normally effect the pointer:
+fseek, fputs  / fwrite, fgets / fread and ftruncate.
+
+Only fgets / fread, however, results in feof() returning true. do fputs($fp, 'aaa') on a blank file and feof()
+will return false. do fread($fp, 1) and feof() will then return true. do fseek($fp, 10) on ablank file and feof()
+will return false. do fread($fp, 1) and feof() will then return true.</description>
+      <return type="object">
+        <type full="phpseclib\Net\SFTP\bool" namespace="phpseclib\Net\SFTP" name="bool"/>
+      </return>
+      <access value="public"/>
+    </docblock>
+  </method>
+  <method name="_stream_seek" start="409" end="427" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Seeks to specific location in a stream"/>
+      <param type="int" variable="$offset"/>
+      <param type="int" variable="$whence"/>
+      <return type="object">
+        <type full="phpseclib\Net\SFTP\bool" namespace="phpseclib\Net\SFTP" name="bool"/>
+      </return>
+      <access value="public"/>
+    </docblock>
+    <parameter name="offset" byreference="false" type="{unknown}"/>
+    <parameter name="whence" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="_stream_metadata" start="438" end="461" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Change stream options"/>
+      <param type="string" variable="$path"/>
+      <param type="int" variable="$option"/>
+      <param type="mixed" variable="$var"/>
+      <return type="object">
+        <type full="phpseclib\Net\SFTP\bool" namespace="phpseclib\Net\SFTP" name="bool"/>
+      </return>
+      <access value="public"/>
+    </docblock>
+    <parameter name="path" byreference="false" type="{unknown}"/>
+    <parameter name="option" byreference="false" type="{unknown}"/>
+    <parameter name="var" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="stream_metadata was introduced in PHP 5.4.0 but as of 5.4.11 the constants haven't been defined" line="445"/>
+      <comment value="see http://www.php.net/streamwrapper.stream-metadata and https://bugs.php.net/64246" line="446"/>
+      <comment value="and https://github.com/php/php-src/blob/master/main/php_streams.h#L592" line="447"/>
+    </inline>
+  </method>
+  <method name="_stream_cast" start="470" end="473" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Retrieve the underlaying resource"/>
+      <param type="int" variable="$cast_as"/>
+      <return type="resource"/>
+      <access value="public"/>
+    </docblock>
+    <parameter name="cast_as" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="_stream_lock" start="482" end="485" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Advisory file locking"/>
+      <param type="int" variable="$operation"/>
+      <return type="object">
+        <type full="phpseclib\Net\SFTP\bool" namespace="phpseclib\Net\SFTP" name="bool"/>
+      </return>
+      <access value="public"/>
+    </docblock>
+    <parameter name="operation" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="_rename" start="499" end="525" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Renames a file or directory">Attempts to rename oldname to newname, moving it between directories if necessary.
+If newname exists, it will be overwritten.  This is a departure from what \phpseclib\Net\SFTP
+does.</description>
+      <param type="string" variable="$path_from"/>
+      <param type="string" variable="$path_to"/>
+      <return type="object">
+        <type full="phpseclib\Net\SFTP\bool" namespace="phpseclib\Net\SFTP" name="bool"/>
+      </return>
+      <access value="public"/>
+    </docblock>
+    <parameter name="path_from" byreference="false" type="{unknown}"/>
+    <parameter name="path_to" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="the $component part of parse_url() was added in PHP 5.1.2" line="514"/>
+      <comment value="&quot;It is an error if there already exists a file with the name specified by newpath.&quot;" line="515"/>
+      <comment value="-- http://tools.ietf.org/html/draft-ietf-secsh-filexfer-02#section-6.5" line="516"/>
+    </inline>
+  </method>
+  <method name="_dir_opendir" start="551" end="560" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Open directory handle">The only $options is "whether or not to enforce safe_mode (0x04)". Since safe mode was deprecated in 5.3 and
+removed in 5.4 I'm just going to ignore it.
+
+Also, nlist() is the best that this function is realistically going to be able to do. When an SFTP client
+sends a SSH_FXP_READDIR packet you don't generally get info on just one file but on multiple files. Quoting
+the SFTP specs:
+
+   The SSH_FXP_NAME response has the following format:
+
+       uint32     id
+       uint32     count
+       repeats count times:
+               string     filename
+               string     longname
+               ATTRS      attrs</description>
+      <param type="string" variable="$path"/>
+      <param type="int" variable="$options"/>
+      <return type="object">
+        <type full="phpseclib\Net\SFTP\bool" namespace="phpseclib\Net\SFTP" name="bool"/>
+      </return>
+      <access value="public"/>
+    </docblock>
+    <parameter name="path" byreference="false" type="{unknown}"/>
+    <parameter name="options" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="_dir_readdir" start="568" end="574" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Read entry from directory handle"/>
+      <return type="mixed"/>
+      <access value="public"/>
+    </docblock>
+  </method>
+  <method name="_dir_rewinddir" start="582" end="586" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Rewind directory handle"/>
+      <return type="object">
+        <type full="phpseclib\Net\SFTP\bool" namespace="phpseclib\Net\SFTP" name="bool"/>
+      </return>
+      <access value="public"/>
+    </docblock>
+  </method>
+  <method name="_dir_closedir" start="594" end="597" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Close directory handle"/>
+      <return type="object">
+        <type full="phpseclib\Net\SFTP\bool" namespace="phpseclib\Net\SFTP" name="bool"/>
+      </return>
+      <access value="public"/>
+    </docblock>
+  </method>
+  <method name="_mkdir" start="610" end="618" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Create a directory">Only valid $options is STREAM_MKDIR_RECURSIVE</description>
+      <param type="string" variable="$path"/>
+      <param type="int" variable="$mode"/>
+      <param type="int" variable="$options"/>
+      <return type="object">
+        <type full="phpseclib\Net\SFTP\bool" namespace="phpseclib\Net\SFTP" name="bool"/>
+      </return>
+      <access value="public"/>
+    </docblock>
+    <parameter name="path" byreference="false" type="{unknown}"/>
+    <parameter name="mode" byreference="false" type="{unknown}"/>
+    <parameter name="options" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="_rmdir" start="634" end="642" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Removes a directory">Only valid $options is STREAM_MKDIR_RECURSIVE per &lt;http://php.net/streamwrapper.rmdir&gt;, however,
+&lt;http://php.net/rmdir&gt;  does not have a $recursive parameter as mkdir() does so I don't know how
+STREAM_MKDIR_RECURSIVE is supposed to be set. Also, when I try it out with rmdir() I get 8 as
+$options. What does 8 correspond to?</description>
+      <param type="string" variable="$path"/>
+      <param type="int" variable="$mode"/>
+      <param type="int" variable="$options"/>
+      <return type="object">
+        <type full="phpseclib\Net\SFTP\bool" namespace="phpseclib\Net\SFTP" name="bool"/>
+      </return>
+      <access value="public"/>
+    </docblock>
+    <parameter name="path" byreference="false" type="{unknown}"/>
+    <parameter name="options" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="_stream_flush" start="652" end="655" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Flushes the output">See &lt;http://php.net/fflush&gt;. Always returns true because \phpseclib\Net\SFTP doesn't cache stuff before writing</description>
+      <return type="object">
+        <type full="phpseclib\Net\SFTP\bool" namespace="phpseclib\Net\SFTP" name="bool"/>
+      </return>
+      <access value="public"/>
+    </docblock>
+  </method>
+  <method name="_stream_stat" start="663" end="670" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Retrieve information about a file resource"/>
+      <return type="mixed"/>
+      <access value="public"/>
+    </docblock>
+  </method>
+  <method name="_unlink" start="679" end="687" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Delete a file"/>
+      <param type="string" variable="$path"/>
+      <return type="object">
+        <type full="phpseclib\Net\SFTP\bool" namespace="phpseclib\Net\SFTP" name="bool"/>
+      </return>
+      <access value="public"/>
+    </docblock>
+    <parameter name="path" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="_url_stat" start="701" end="714" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Retrieve information about a file">Ignores the STREAM_URL_STAT_QUIET flag because the entirety of \phpseclib\Net\SFTP\Stream is quiet by default
+might be worthwhile to reconstruct bits 12-16 (ie. the file type) if mode doesn't have them but we'll
+cross that bridge when and if it's reached</description>
+      <param type="string" variable="$path"/>
+      <param type="int" variable="$flags"/>
+      <return type="mixed"/>
+      <access value="public"/>
+    </docblock>
+    <parameter name="path" byreference="false" type="{unknown}"/>
+    <parameter name="flags" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="_stream_truncate" start="723" end="733" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Truncate stream"/>
+      <param type="int" variable="$new_size"/>
+      <return type="object">
+        <type full="phpseclib\Net\SFTP\bool" namespace="phpseclib\Net\SFTP" name="bool"/>
+      </return>
+      <access value="public"/>
+    </docblock>
+    <parameter name="new_size" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="_stream_set_option" start="747" end="750" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Change stream options">STREAM_OPTION_WRITE_BUFFER isn't supported for the same reason stream_flush isn't.
+The other two aren't supported because of limitations in \phpseclib\Net\SFTP.</description>
+      <param type="int" variable="$option"/>
+      <param type="int" variable="$arg1"/>
+      <param type="int" variable="$arg2"/>
+      <return type="object">
+        <type full="phpseclib\Net\SFTP\bool" namespace="phpseclib\Net\SFTP" name="bool"/>
+      </return>
+      <access value="public"/>
+    </docblock>
+    <parameter name="option" byreference="false" type="{unknown}"/>
+    <parameter name="arg1" byreference="false" type="{unknown}"/>
+    <parameter name="arg2" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="_stream_close" start="757" end="759" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Close an resource"/>
+      <access value="public"/>
+    </docblock>
+  </method>
+  <method name="__call" start="776" end="794" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="__call Magic Method">When you're utilizing an SFTP stream you're not calling the methods in this class directly - PHP is calling them for you.
+Which kinda begs the question... what methods is PHP calling and what parameters is it passing to them? This function
+lets you figure that out.
+
+If NET_SFTP_STREAM_LOGGING is defined all calls will be output on the screen and then (regardless of whether or not
+NET_SFTP_STREAM_LOGGING is enabled) the parameters will be passed through to the appropriate method.</description>
+      <param type="string"/>
+      <param type="array"/>
+      <return type="mixed"/>
+      <access value="public"/>
+    </docblock>
+    <parameter name="name" byreference="false" type="{unknown}"/>
+    <parameter name="arguments" byreference="false" type="{unknown}"/>
+  </method>
+</class>

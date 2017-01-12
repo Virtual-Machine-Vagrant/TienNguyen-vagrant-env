@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="Symfony\Component\DomCrawler\Tests\FormTest" namespace="Symfony\Component\DomCrawler\Tests" name="FormTest" abstract="false" final="false" start="17" end="939">
+  <file path="/home/web/example/src/freegame_developer/vendor/symfony/dom-crawler/Tests" file="FormTest.php" realpath="/home/web/example/src/freegame_developer/vendor/symfony/dom-crawler/Tests/FormTest.php" size="42606" time="2016-10-18T13:42:15+00:00" unixtime="1476798135" sha1="3667b572676a2cf1ec83d348507d20ba69384cc2" relative="freegame_developer/vendor/symfony/dom-crawler/Tests/FormTest.php"/>
+  <extends full="PHPUnit_Framework_TestCase" namespace="" name="PHPUnit_Framework_TestCase"/>
+  <method name="setUpBeforeClass" start="19" end="23" abstract="false" final="false" static="true" visibility="public">
+    <inline>
+      <comment value="Ensure that the private helper class FormFieldRegistry is loaded" line="21"/>
+    </inline>
+  </method>
+  <method name="testConstructorThrowsExceptionIfTheNodeHasNoFormAncestor" start="25" end="62" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testConstructorThrowsExceptionIfNoRelatedForm" start="69" end="86" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="__construct() should throw \\LogicException if the form attribute is invalid."/>
+      <expectedexception value="\LogicException"/>
+    </docblock>
+  </method>
+  <method name="testConstructorLoadsOnlyFieldsOfTheRightForm" start="88" end="100" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testConstructorHandlesFormAttribute" start="102" end="118" abstract="false" final="false" static="false" visibility="public">
+    <inline>
+      <comment value="Tests if submit buttons are correctly assigned to forms" line="109"/>
+    </inline>
+  </method>
+  <method name="testConstructorHandlesFormValues" start="120" end="146" abstract="false" final="false" static="false" visibility="public">
+    <inline>
+      <comment value="Tests if form values are correctly assigned to forms" line="130"/>
+    </inline>
+  </method>
+  <method name="testMultiValuedFields" start="148" end="181" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testConstructor" start="186" end="200" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <dataprovider value="provideInitializeValues"/>
+    </docblock>
+    <parameter name="message" byreference="false" type="{unknown}"/>
+    <parameter name="form" byreference="false" type="{unknown}"/>
+    <parameter name="values" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="provideInitializeValues" start="202" end="282" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testGetFormNode" start="284" end="292" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testGetFormNodeFromNamedForm" start="294" end="302" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testGetMethod" start="304" end="320" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testGetSetValue" start="322" end="345" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testDisableValidation" start="347" end="365" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testOffsetUnset" start="367" end="372" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testOffsetExists" start="374" end="380" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testGetValues" start="382" end="395" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testSetValues" start="397" end="402" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testMultiselectSetValues" start="404" end="409" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testGetPhpValues" start="411" end="424" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testGetFiles" start="426" end="445" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testGetPhpFiles" start="447" end="457" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testGetUri" start="462" end="468" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <dataprovider value="provideGetUriValues"/>
+    </docblock>
+    <parameter name="message" byreference="false" type="{unknown}"/>
+    <parameter name="form" byreference="false" type="{unknown}"/>
+    <parameter name="values" byreference="false" type="{unknown}"/>
+    <parameter name="uri" byreference="false" type="{unknown}"/>
+    <parameter name="method" byreference="false" type="{unknown}" default="" constant="null"/>
+  </method>
+  <method name="testGetBaseUri" start="470" end="478" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testGetUriWithAnchor" start="480" end="485" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testGetUriActionAbsolute" start="487" end="506" abstract="false" final="false" static="false" visibility="public">
+    <inline>
+      <comment value="The action URI haven't the same domain Host have an another domain as Host" line="500"/>
+    </inline>
+  </method>
+  <method name="testGetUriAbsolute" start="508" end="515" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testGetUriWithOnlyQueryString" start="517" end="521" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testGetUriWithoutAction" start="523" end="527" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="provideGetUriValues" start="529" end="608" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testHas" start="610" end="616" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testRemove" start="618" end="623" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testGet" start="625" end="637" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testAll" start="639" end="646" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testSubmitWithoutAFormButton" start="648" end="662" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testTypeAttributeIsCaseInsensitive" start="664" end="669" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testFormFieldRegistryAcceptAnyNames" start="671" end="684" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testFormFieldRegistryGetThrowAnExceptionWhenTheFieldDoesNotExist" start="689" end="693" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <expectedexception value="\InvalidArgumentException"/>
+    </docblock>
+  </method>
+  <method name="testFormFieldRegistrySetThrowAnExceptionWhenTheFieldDoesNotExist" start="698" end="702" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <expectedexception value="\InvalidArgumentException"/>
+    </docblock>
+  </method>
+  <method name="testFormFieldRegistryHasReturnsTrueWhenTheFQNExists" start="704" end="713" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testFormRegistryFieldsCanBeRemoved" start="715" end="721" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testFormRegistrySupportsMultivaluedFields" start="723" end="736" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testFormRegistrySetValues" start="738" end="774" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testFormRegistrySetValueOnCompoundField" start="780" end="786" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <expectedexception value="\InvalidArgumentException"/>
+      <expectedexceptionmessage value="Cannot set value on a compound field &quot;foo[bar]&quot;."/>
+    </docblock>
+  </method>
+  <method name="testFormRegistrySetArrayOnNotCompoundField" start="792" end="798" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <expectedexception value="\InvalidArgumentException"/>
+      <expectedexceptionmessage value="Unreachable field &quot;0&quot;"/>
+    </docblock>
+  </method>
+  <method name="testDifferentFieldTypesWithSameName" start="800" end="820" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="getFormFieldMock" start="822" end="844" abstract="false" final="false" static="false" visibility="protected">
+    <parameter name="name" byreference="false" type="{unknown}"/>
+    <parameter name="value" byreference="false" type="{unknown}" default="" constant="null"/>
+  </method>
+  <method name="createForm" start="846" end="859" abstract="false" final="false" static="false" visibility="protected">
+    <parameter name="form" byreference="false" type="{unknown}"/>
+    <parameter name="method" byreference="false" type="{unknown}" default="" constant="null"/>
+    <parameter name="currentUri" byreference="false" type="{unknown}" default="" constant="null"/>
+  </method>
+  <method name="createTestHtml5Form" start="861" end="896" abstract="false" final="false" static="false" visibility="protected"/>
+  <method name="createTestMultipleForm" start="898" end="922" abstract="false" final="false" static="false" visibility="protected"/>
+  <method name="testgetPhpValuesWithEmptyTextarea" start="924" end="938" abstract="false" final="false" static="false" visibility="public"/>
+</class>

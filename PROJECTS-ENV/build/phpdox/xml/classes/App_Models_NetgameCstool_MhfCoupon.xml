@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="App\Models\NetgameCstool\MhfCoupon" namespace="App\Models\NetgameCstool" name="MhfCoupon" abstract="false" final="false" start="7" end="170">
+  <file path="/home/web/example/src/freegame_developer/app/Models/NetgameCstool" file="MhfCoupon.php" realpath="/home/web/example/src/freegame_developer/app/Models/NetgameCstool/MhfCoupon.php" size="5166" time="2017-01-03T08:24:56+00:00" unixtime="1483431896" sha1="1cf4da1e97f695209685da021569a28237306fa2" relative="freegame_developer/app/Models/NetgameCstool/MhfCoupon.php"/>
+  <extends full="App\Models\NetgameCstool\NetgameCstool" namespace="App\Models\NetgameCstool" name="NetgameCstool"/>
+  <member name="table" type="string" default="'mhf_coupon'" visibility="protected" static="false" line="9"/>
+  <member name="fillable" type="array" default="" visibility="protected" static="false" line="11"/>
+  <member name="timestamps" type="boolean" default="false" visibility="public" static="false" line="24"/>
+  <member name="guarded" type="array" default="" visibility="protected" static="false" line="26"/>
+  <method name="getListsMhfCoupon" start="33" end="68" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="get list mhf coupon"/>
+      <param type="array" variable="$params"/>
+      <return type="object"/>
+    </docblock>
+    <parameter name="params" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="storeMhfCoupon" start="75" end="92" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="store MhfCoupon"/>
+      <param type="array" variable="$params"/>
+      <return type="boolean"/>
+    </docblock>
+    <parameter name="params" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="updateMhfCoupon" start="99" end="111" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="update MhfCoupon"/>
+      <param type="array" variable="$params"/>
+      <return type="boolean"/>
+    </docblock>
+    <parameter name="params" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="checkDuplicatesPrefix" start="118" end="131" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="check duplicates prefix"/>
+      <param type="array" variable="$params"/>
+      <return type="boolean"/>
+    </docblock>
+    <parameter name="params" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="getOne" start="138" end="145" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="get a record Mhf Coupon"/>
+      <param type="array" variable="$params"/>
+      <return type="object"/>
+    </docblock>
+    <parameter name="params" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="getListByClAppId" start="152" end="158" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Get mhf coupon list by cl_app_id"/>
+      <param type="object" variable="$clAppId">
+        <type full="App\Models\NetgameCstool\interger" namespace="App\Models\NetgameCstool" name="interger"/>
+      </param>
+      <return type="object"/>
+    </docblock>
+    <parameter name="clAppId" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="getById" start="165" end="169" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Get mhf coupon by id"/>
+      <param type="object" variable="$id">
+        <type full="App\Models\NetgameCstool\interger" namespace="App\Models\NetgameCstool" name="interger"/>
+      </param>
+      <return type="object"/>
+    </docblock>
+    <parameter name="id" byreference="false" type="{unknown}"/>
+  </method>
+</class>

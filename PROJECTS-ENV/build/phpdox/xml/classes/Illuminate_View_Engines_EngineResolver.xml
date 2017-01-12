@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="Illuminate\View\Engines\EngineResolver" namespace="Illuminate\View\Engines" name="EngineResolver" abstract="false" final="false" start="8" end="59">
+  <file path="/home/web/example/src/freegame_developer/vendor/laravel/framework/src/Illuminate/View/Engines" file="EngineResolver.php" realpath="/home/web/example/src/freegame_developer/vendor/laravel/framework/src/Illuminate/View/Engines/EngineResolver.php" size="1284" time="2016-02-24T15:13:21+00:00" unixtime="1456326801" sha1="5d2e735523f323e34bc62a0be19a269a754c7796" relative="freegame_developer/vendor/laravel/framework/src/Illuminate/View/Engines/EngineResolver.php"/>
+  <member name="resolvers" type="array" default="" visibility="protected" static="false" line="15">
+    <docblock>
+      <description compact="The array of engine resolvers."/>
+      <var type="array"/>
+    </docblock>
+  </member>
+  <member name="resolved" type="array" default="" visibility="protected" static="false" line="22">
+    <docblock>
+      <description compact="The resolved engine instances."/>
+      <var type="array"/>
+    </docblock>
+  </member>
+  <method name="register" start="33" end="38" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Register a new engine resolver.">The engine string typically corresponds to a file extension.</description>
+      <param type="string" variable="$engine"/>
+      <param type="object" variable="$resolver">
+        <type full="\Closure" namespace="" name="Closure"/>
+      </param>
+      <return type="object">
+        <type full="Illuminate\View\Engines\void" namespace="Illuminate\View\Engines" name="void"/>
+      </return>
+    </docblock>
+    <parameter name="engine" byreference="false" type="{unknown}"/>
+    <parameter name="resolver" byreference="false" type="object">
+      <type full="Closure" namespace="" name="Closure"/>
+    </parameter>
+  </method>
+  <method name="resolve" start="47" end="58" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Resolver an engine instance by name."/>
+      <param type="string" variable="$engine"/>
+      <return type="object">
+        <type full="\Illuminate\View\Engines\EngineInterface" namespace="\Illuminate\View\Engines" name="EngineInterface"/>
+      </return>
+      <throws type="object">
+        <type full="\InvalidArgumentException" namespace="" name="InvalidArgumentException"/>
+      </throws>
+    </docblock>
+    <parameter name="engine" byreference="false" type="{unknown}"/>
+  </method>
+</class>

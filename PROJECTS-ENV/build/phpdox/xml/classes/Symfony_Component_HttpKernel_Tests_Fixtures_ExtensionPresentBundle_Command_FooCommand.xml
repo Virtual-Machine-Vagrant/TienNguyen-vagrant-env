@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="Symfony\Component\HttpKernel\Tests\Fixtures\ExtensionPresentBundle\Command\FooCommand" namespace="Symfony\Component\HttpKernel\Tests\Fixtures\ExtensionPresentBundle\Command" name="FooCommand" abstract="false" final="false" start="16" end="22">
+  <file path="/home/web/example/src/freegame_developer/vendor/symfony/http-kernel/Tests/Fixtures/ExtensionPresentBundle/Command" file="FooCommand.php" realpath="/home/web/example/src/freegame_developer/vendor/symfony/http-kernel/Tests/Fixtures/ExtensionPresentBundle/Command/FooCommand.php" size="506" time="2016-10-27T01:37:19+00:00" unixtime="1477532239" sha1="89c90f740f68951b919698a323f8ff3254d4af9f" relative="freegame_developer/vendor/symfony/http-kernel/Tests/Fixtures/ExtensionPresentBundle/Command/FooCommand.php"/>
+  <extends full="Symfony\Component\Console\Command\Command" namespace="Symfony\Component\Console\Command" name="Command"/>
+  <method name="configure" start="18" end="21" abstract="false" final="false" static="false" visibility="protected"/>
+</class>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="App\Libs\Utilities\ForbiddenWord" namespace="App\Libs\Utilities" name="ForbiddenWord" abstract="false" final="false" start="5" end="107">
+  <file path="/home/web/example/src/freegame_developer/app/Libs/Utilities" file="ForbiddenWord.php" realpath="/home/web/example/src/freegame_developer/app/Libs/Utilities/ForbiddenWord.php" size="2736" time="2016-10-31T07:00:31+00:00" unixtime="1477897231" sha1="380b4d259beb5d5c9d7336bd21118eb9bee1a8b2" relative="freegame_developer/app/Libs/Utilities/ForbiddenWord.php"/>
+  <member name="string" type="{unknown}" default="" constant="null" visibility="protected" static="false" line="8"/>
+  <member name="stringReplace" type="{unknown}" default="" constant="null" visibility="protected" static="false" line="11"/>
+  <member name="stringReplacePattern" type="array" default="" visibility="protected" static="false" line="14"/>
+  <member name="forbiddenWordList" type="array" default="" visibility="protected" static="false" line="17"/>
+  <constructor name="__construct" start="26" end="33" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Construct"/>
+      <access value="public"/>
+      <param type="string" variable="$string"/>
+      <return type="object">
+        <type full="App\Libs\Utilities\$this" namespace="App\Libs\Utilities" name="$this"/>
+      </return>
+    </docblock>
+    <parameter name="forbiddenWordList" byreference="false" type="{unknown}"/>
+  </constructor>
+  <method name="setReplaceString" start="42" end="46" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Set replace string"/>
+      <access value="public"/>
+      <param type="string" variable="$string"/>
+      <return type="object">
+        <type full="App\Libs\Utilities\$this" namespace="App\Libs\Utilities" name="$this"/>
+      </return>
+    </docblock>
+    <parameter name="stringReplace" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="setReplaceStringPattern" start="55" end="61" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Set replace string pattern"/>
+      <access value="public"/>
+      <param type="string" variable="$string"/>
+      <return type="object">
+        <type full="App\Libs\Utilities\$this" namespace="App\Libs\Utilities" name="$this"/>
+      </return>
+    </docblock>
+    <parameter name="stringReplacePattern" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="replaceByString" start="70" end="83" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Replace by string"/>
+      <access value="public"/>
+      <param type="string" variable="$string"/>
+      <return type="string"/>
+    </docblock>
+    <parameter name="string" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="replaceByStringPattern" start="92" end="106" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Replace by string pattern"/>
+      <access value="public"/>
+      <param type="string" variable="$string"/>
+      <return type="string"/>
+    </docblock>
+    <parameter name="string" byreference="false" type="{unknown}"/>
+  </method>
+</class>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="Generic_Sniffs_Debug_JSHintSniff" namespace="" name="Generic_Sniffs_Debug_JSHintSniff" abstract="false" final="false" start="30" end="96">
+  <file path="/home/web/example/src/freegame_developer/vendor/squizlabs/php_codesniffer/CodeSniffer/Standards/Generic/Sniffs/Debug" file="JSHintSniff.php" realpath="/home/web/example/src/freegame_developer/vendor/squizlabs/php_codesniffer/CodeSniffer/Standards/Generic/Sniffs/Debug/JSHintSniff.php" size="2847" time="2016-01-19T23:39:10+00:00" unixtime="1453246750" sha1="a771309e09e558de74a13a1b270fcce3da89e3f4" relative="freegame_developer/vendor/squizlabs/php_codesniffer/CodeSniffer/Standards/Generic/Sniffs/Debug/JSHintSniff.php"/>
+  <docblock>
+    <description compact="Generic_Sniffs_Debug_JSHintSniff.">Runs jshint.js on the file.</description>
+    <category value="PHP"/>
+    <package value="PHP_CodeSniffer"/>
+    <author value="Greg Sherwood &lt;gsherwood@squiz.net&gt;"/>
+    <author value="Alexander Wei§ &lt;aweisswa@gmx.de&gt;"/>
+    <copyright value="2006-2014 Squiz Pty Ltd (ABN 77 084 670 600)"/>
+    <license name="https://github.com/squizlabs/PHP_CodeSniffer/blob/master/licence.txt BSD Licence"/>
+    <version value="Release: @package_version@"/>
+    <link value="http://pear.php.net/package/PHP_CodeSniffer"/>
+  </docblock>
+  <implements full="PHP_CodeSniffer_Sniff" namespace="" name="PHP_CodeSniffer_Sniff"/>
+  <member name="supportedTokenizers" type="array" default="" visibility="public" static="false" line="38">
+    <docblock>
+      <description compact="A list of tokenizers this sniff supports."/>
+      <var type="array"/>
+    </docblock>
+  </member>
+  <method name="register" start="46" end="50" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Returns the token types that this sniff is interested in."/>
+      <return type="array" of="int"/>
+    </docblock>
+  </method>
+  <method name="process" start="63" end="93" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Processes the tokens that this sniff is interested in."/>
+      <param description="The file where the token was found." type="object" variable="$phpcsFile">
+        <type full="PHP_CodeSniffer_File" namespace="" name="PHP_CodeSniffer_File"/>
+      </param>
+      <param description="The position in the stack where" type="int" variable="$stackPtr">the token was found.</param>
+      <return type="object">
+        <type full="void" namespace="" name="void"/>
+      </return>
+      <throws description="If jshint.js could not be run" type="object">
+        <type full="PHP_CodeSniffer_Exception" namespace="" name="PHP_CodeSniffer_Exception"/>
+      </throws>
+    </docblock>
+    <parameter name="phpcsFile" byreference="false" type="object">
+      <type full="PHP_CodeSniffer_File" namespace="" name="PHP_CodeSniffer_File"/>
+    </parameter>
+    <parameter name="stackPtr" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="Ignore the rest of the file." line="90"/>
+    </inline>
+  </method>
+</class>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="Symfony\Component\Process\Exception\ProcessFailedException" namespace="Symfony\Component\Process\Exception" name="ProcessFailedException" abstract="false" final="false" start="21" end="53">
+  <file path="/home/web/example/src/freegame_developer/vendor/symfony/process/Exception" file="ProcessFailedException.php" realpath="/home/web/example/src/freegame_developer/vendor/symfony/process/Exception/ProcessFailedException.php" size="1349" time="2016-09-29T02:20:21+00:00" unixtime="1475115621" sha1="9af3c1d33da87900fd105c59dc514077147d5e56" relative="freegame_developer/vendor/symfony/process/Exception/ProcessFailedException.php"/>
+  <docblock>
+    <description compact="Exception for failed processes."/>
+    <author value="Johannes M. Schmitt &lt;schmittjoh@gmail.com&gt;"/>
+  </docblock>
+  <extends full="Symfony\Component\Process\Exception\RuntimeException" namespace="Symfony\Component\Process\Exception" name="RuntimeException"/>
+  <member name="process" visibility="private" static="false" line="23"/>
+  <constructor name="__construct" start="25" end="47" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="process" byreference="false" type="object">
+      <type full="Symfony\Component\Process\Process" namespace="Symfony\Component\Process" name="Process"/>
+    </parameter>
+  </constructor>
+  <method name="getProcess" start="49" end="52" abstract="false" final="false" static="false" visibility="public"/>
+</class>

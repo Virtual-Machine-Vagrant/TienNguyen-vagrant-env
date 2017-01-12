@@ -1,0 +1,477 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="MongoDB\Collection" namespace="MongoDB" name="Collection" abstract="false" final="false" start="35" end="731">
+  <file path="/home/web/example/src/freegame_developer/vendor/mongodb/mongodb/src" file="Collection.php" realpath="/home/web/example/src/freegame_developer/vendor/mongodb/mongodb/src/Collection.php" size="27756" time="2016-09-23T19:38:29+00:00" unixtime="1474659509" sha1="c54d06aee39b721a48b62d7090b44c6613b09a1c" relative="freegame_developer/vendor/mongodb/mongodb/src/Collection.php"/>
+  <member name="defaultTypeMap" type="array" default="" visibility="private" static="true" line="37"/>
+  <member name="wireVersionForFindAndModifyWriteConcern" type="integer" default="4" visibility="private" static="true" line="42"/>
+  <member name="collectionName" visibility="private" static="false" line="44"/>
+  <member name="databaseName" visibility="private" static="false" line="45"/>
+  <member name="manager" visibility="private" static="false" line="46"/>
+  <member name="readConcern" visibility="private" static="false" line="47"/>
+  <member name="readPreference" visibility="private" static="false" line="48"/>
+  <member name="typeMap" visibility="private" static="false" line="49"/>
+  <member name="writeConcern" visibility="private" static="false" line="50"/>
+  <constructor name="__construct" start="79" end="112" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Constructs new Collection instance.">This class provides methods for collection-specific operations, such as
+CRUD (i.e. create, read, update, and delete) and index management.
+
+Supported options:
+
+ * readConcern (MongoDB\Driver\ReadConcern): The default read concern to
+   use for collection operations. Defaults to the Manager's read concern.
+
+ * readPreference (MongoDB\Driver\ReadPreference): The default read
+   preference to use for collection operations. Defaults to the Manager's
+   read preference.
+
+ * typeMap (array): Default type map for cursors and BSON documents.
+
+ * writeConcern (MongoDB\Driver\WriteConcern): The default write concern
+   to use for collection operations. Defaults to the Manager's write
+   concern.</description>
+      <param description="Manager instance from the driver" type="object" variable="$manager">
+        <type full="MongoDB\Driver\Manager" namespace="MongoDB\Driver" name="Manager"/>
+      </param>
+      <param description="Database name" type="string" variable="$databaseName"/>
+      <param description="Collection name" type="string" variable="$collectionName"/>
+      <param description="Collection options" type="array" variable="$options"/>
+      <throws type="object">
+        <type full="MongoDB\Exception\InvalidArgumentException" namespace="MongoDB\Exception" name="InvalidArgumentException"/>
+      </throws>
+    </docblock>
+    <parameter name="manager" byreference="false" type="object">
+      <type full="MongoDB\Driver\Manager" namespace="MongoDB\Driver" name="Manager"/>
+    </parameter>
+    <parameter name="databaseName" byreference="false" type="{unknown}"/>
+    <parameter name="collectionName" byreference="false" type="{unknown}"/>
+    <parameter name="options" byreference="false" type="array" default=""/>
+  </constructor>
+  <method name="__debugInfo" start="120" end="131" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Return internal properties for debugging purposes."/>
+      <see value="http://php.net/manual/en/language.oop5.magic.php#language.oop5.magic.debuginfo"/>
+      <return type="array"/>
+    </docblock>
+  </method>
+  <method name="__toString" start="139" end="142" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Return the collection namespace (e.g. &quot;db.collection&quot;)."/>
+      <see value="https://docs.mongodb.org/manual/faq/developers/#faq-dev-namespace"/>
+      <return type="string"/>
+    </docblock>
+  </method>
+  <method name="aggregate" start="161" end="188" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Executes an aggregation framework pipeline on the collection.">Note: this method's return value depends on the MongoDB server version
+and the "useCursor" option. If "useCursor" is true, a Cursor will be
+returned; otherwise, an ArrayIterator is returned, which wraps the
+"result" array from the command response document.
+
+Note: BSON deserialization of inline aggregation results (i.e. not using
+a command cursor) does not yet support a custom type map
+(depends on: https://jira.mongodb.org/browse/PHPC-314).</description>
+      <see value="Aggregate::__construct() for supported options"/>
+      <param description="List of pipeline operations" type="array" variable="$pipeline"/>
+      <param description="Command options" type="array" variable="$options"/>
+      <return type="object">
+        <type full="Traversable" namespace="" name="Traversable"/>
+      </return>
+    </docblock>
+    <parameter name="pipeline" byreference="false" type="array"/>
+    <parameter name="options" byreference="false" type="array" default=""/>
+    <inline>
+      <comment value="A &quot;majority&quot; read concern is not compatible with the $out stage, so" line="165"/>
+      <comment xmlns="http://xml.phpdox.net/src" value="avoid providing the Collection's read concern if it would conflict." line="166"/>
+    </inline>
+  </method>
+  <method name="bulkWrite" start="198" end="208" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Executes multiple write operations."/>
+      <see value="BulkWrite::__construct() for supported options"/>
+      <param description="List of write operations" type="array" variable="$operations" of="object">
+        <type full="MongoDB\array" namespace="MongoDB" name="array"/>
+      </param>
+      <param description="Command options" type="array" variable="$options"/>
+      <return type="object">
+        <type full="MongoDB\BulkWriteResult" namespace="MongoDB" name="BulkWriteResult"/>
+      </return>
+    </docblock>
+    <parameter name="operations" byreference="false" type="array"/>
+    <parameter name="options" byreference="false" type="array" default=""/>
+  </method>
+  <method name="count" start="218" end="232" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Gets the number of documents matching the filter."/>
+      <see value="Count::__construct() for supported options"/>
+      <param description="Query by which to filter documents" type="object" variable="$filter">
+        <type full="MongoDB\array|object" namespace="MongoDB" name="array|object"/>
+      </param>
+      <param description="Command options" type="array" variable="$options"/>
+      <return type="integer"/>
+    </docblock>
+    <parameter name="filter" byreference="false" type="array" default=""/>
+    <parameter name="options" byreference="false" type="array" default=""/>
+  </method>
+  <method name="createIndex" start="243" end="246" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Create a single index for the collection."/>
+      <see value="Collection::createIndexes()"/>
+      <param description="Document containing fields mapped to values," type="object" variable="$key">which denote order or an index type<type full="MongoDB\array|object" namespace="MongoDB" name="array|object"/></param>
+      <param description="Index options" type="array" variable="$options"/>
+      <return description="The name of the created index" type="string"/>
+    </docblock>
+    <parameter name="key" byreference="false" type="{unknown}"/>
+    <parameter name="options" byreference="false" type="array" default=""/>
+  </method>
+  <method name="createIndexes" start="271" end="277" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Create one or more indexes for the collection.">Each element in the $indexes array must have a "key" document, which
+contains fields mapped to an order or type. Other options may follow.
+For example:
+
+    $indexes = [
+        // Create a unique index on the "username" field
+        [ 'key' =&gt; [ 'username' =&gt; 1 ], 'unique' =&gt; true ],
+        // Create a 2dsphere index on the "loc" field with a custom name
+        [ 'key' =&gt; [ 'loc' =&gt; '2dsphere' ], 'name' =&gt; 'geo' ],
+    ];
+
+If the "name" option is unspecified, a name will be generated from the
+"key" document.</description>
+      <see value="http://docs.mongodb.org/manual/reference/command/createIndexes/"/>
+      <see value="http://docs.mongodb.org/manual/reference/method/db.collection.createIndex/"/>
+      <param description="List of index specifications" type="array" variable="$indexes" of="object">
+        <type full="MongoDB\array" namespace="MongoDB" name="array"/>
+      </param>
+      <return description="The names of the created indexes" type="array" of="object">
+        <type full="MongoDB\string" namespace="MongoDB" name="string"/>
+      </return>
+      <throws description="if an index specification is invalid" type="object">
+        <type full="MongoDB\Exception\InvalidArgumentException" namespace="MongoDB\Exception" name="InvalidArgumentException"/>
+      </throws>
+    </docblock>
+    <parameter name="indexes" byreference="false" type="array"/>
+  </method>
+  <method name="deleteMany" start="288" end="298" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Deletes all documents matching the filter."/>
+      <see value="DeleteMany::__construct() for supported options"/>
+      <see value="http://docs.mongodb.org/manual/reference/command/delete/"/>
+      <param description="Query by which to delete documents" type="object" variable="$filter">
+        <type full="MongoDB\array|object" namespace="MongoDB" name="array|object"/>
+      </param>
+      <param description="Command options" type="array" variable="$options"/>
+      <return type="object">
+        <type full="MongoDB\DeleteResult" namespace="MongoDB" name="DeleteResult"/>
+      </return>
+    </docblock>
+    <parameter name="filter" byreference="false" type="{unknown}"/>
+    <parameter name="options" byreference="false" type="array" default=""/>
+  </method>
+  <method name="deleteOne" start="309" end="319" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Deletes at most one document matching the filter."/>
+      <see value="DeleteOne::__construct() for supported options"/>
+      <see value="http://docs.mongodb.org/manual/reference/command/delete/"/>
+      <param description="Query by which to delete documents" type="object" variable="$filter">
+        <type full="MongoDB\array|object" namespace="MongoDB" name="array|object"/>
+      </param>
+      <param description="Command options" type="array" variable="$options"/>
+      <return type="object">
+        <type full="MongoDB\DeleteResult" namespace="MongoDB" name="DeleteResult"/>
+      </return>
+    </docblock>
+    <parameter name="filter" byreference="false" type="{unknown}"/>
+    <parameter name="options" byreference="false" type="array" default=""/>
+  </method>
+  <method name="distinct" start="330" end="344" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Finds the distinct values for a specified field across the collection."/>
+      <see value="Distinct::__construct() for supported options"/>
+      <param description="Field for which to return distinct values" type="string" variable="$fieldName"/>
+      <param description="Query by which to filter documents" type="object" variable="$filter">
+        <type full="MongoDB\array|object" namespace="MongoDB" name="array|object"/>
+      </param>
+      <param description="Command options" type="array" variable="$options"/>
+      <return type="array" of="object">
+        <type full="MongoDB\mixed" namespace="MongoDB" name="mixed"/>
+      </return>
+    </docblock>
+    <parameter name="fieldName" byreference="false" type="{unknown}"/>
+    <parameter name="filter" byreference="false" type="array" default=""/>
+    <parameter name="options" byreference="false" type="array" default=""/>
+  </method>
+  <method name="drop" start="353" end="363" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Drop this collection."/>
+      <see value="DropCollection::__construct() for supported options"/>
+      <param description="Additional options" type="array" variable="$options"/>
+      <return description="Command result document" type="object">
+        <type full="MongoDB\array|object" namespace="MongoDB" name="array|object"/>
+      </return>
+    </docblock>
+    <parameter name="options" byreference="false" type="array" default=""/>
+  </method>
+  <method name="dropIndex" start="374" end="390" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Drop a single index in the collection."/>
+      <see value="DropIndexes::__construct() for supported options"/>
+      <param description="Index name" type="string" variable="$indexName"/>
+      <param description="Additional options" type="array" variable="$options"/>
+      <return description="Command result document" type="object">
+        <type full="MongoDB\array|object" namespace="MongoDB" name="array|object"/>
+      </return>
+      <throws description="if $indexName is an empty string or &quot;*&quot;" type="object">
+        <type full="MongoDB\Exception\InvalidArgumentException" namespace="MongoDB\Exception" name="InvalidArgumentException"/>
+      </throws>
+    </docblock>
+    <parameter name="indexName" byreference="false" type="{unknown}"/>
+    <parameter name="options" byreference="false" type="array" default=""/>
+  </method>
+  <method name="dropIndexes" start="399" end="409" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Drop all indexes in the collection."/>
+      <see value="DropIndexes::__construct() for supported options"/>
+      <param description="Additional options" type="array" variable="$options"/>
+      <return description="Command result document" type="object">
+        <type full="MongoDB\array|object" namespace="MongoDB" name="array|object"/>
+      </return>
+    </docblock>
+    <parameter name="options" byreference="false" type="array" default=""/>
+  </method>
+  <method name="find" start="420" end="438" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Finds documents matching the query."/>
+      <see value="Find::__construct() for supported options"/>
+      <see value="http://docs.mongodb.org/manual/core/read-operations-introduction/"/>
+      <param description="Query by which to filter documents" type="object" variable="$filter">
+        <type full="MongoDB\array|object" namespace="MongoDB" name="array|object"/>
+      </param>
+      <param description="Additional options" type="array" variable="$options"/>
+      <return type="object">
+        <type full="MongoDB\Driver\Cursor" namespace="MongoDB\Driver" name="Cursor"/>
+      </return>
+    </docblock>
+    <parameter name="filter" byreference="false" type="array" default=""/>
+    <parameter name="options" byreference="false" type="array" default=""/>
+  </method>
+  <method name="findOne" start="449" end="467" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Finds a single document matching the query."/>
+      <see value="FindOne::__construct() for supported options"/>
+      <see value="http://docs.mongodb.org/manual/core/read-operations-introduction/"/>
+      <param description="Query by which to filter documents" type="object" variable="$filter">
+        <type full="MongoDB\array|object" namespace="MongoDB" name="array|object"/>
+      </param>
+      <param description="Additional options" type="array" variable="$options"/>
+      <return type="object">
+        <type full="MongoDB\array|object|null" namespace="MongoDB" name="array|object|null"/>
+      </return>
+    </docblock>
+    <parameter name="filter" byreference="false" type="array" default=""/>
+    <parameter name="options" byreference="false" type="array" default=""/>
+  </method>
+  <method name="findOneAndDelete" start="483" end="494" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Finds a single document and deletes it, returning the original.">The document to return may be null if no document matched the filter.
+
+Note: BSON deserialization of the returned document does not yet support
+a custom type map (depends on: https://jira.mongodb.org/browse/PHPC-314).</description>
+      <see value="FindOneAndDelete::__construct() for supported options"/>
+      <see value="http://docs.mongodb.org/manual/reference/command/findAndModify/"/>
+      <param description="Query by which to filter documents" type="object" variable="$filter">
+        <type full="MongoDB\array|object" namespace="MongoDB" name="array|object"/>
+      </param>
+      <param description="Command options" type="array" variable="$options"/>
+      <return type="object">
+        <type full="MongoDB\object|null" namespace="MongoDB" name="object|null"/>
+      </return>
+    </docblock>
+    <parameter name="filter" byreference="false" type="{unknown}"/>
+    <parameter name="options" byreference="false" type="array" default=""/>
+  </method>
+  <method name="findOneAndReplace" start="515" end="526" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Finds a single document and replaces it, returning either the original or the replaced document.">The document to return may be null if no document matched the filter. By
+default, the original document is returned. Specify
+FindOneAndReplace::RETURN_DOCUMENT_AFTER for the "returnDocument" option
+to return the updated document.
+
+Note: BSON deserialization of the returned document does not yet support
+a custom type map (depends on: https://jira.mongodb.org/browse/PHPC-314).</description>
+      <see value="FindOneAndReplace::__construct() for supported options"/>
+      <see value="http://docs.mongodb.org/manual/reference/command/findAndModify/"/>
+      <param description="Query by which to filter documents" type="object" variable="$filter">
+        <type full="MongoDB\array|object" namespace="MongoDB" name="array|object"/>
+      </param>
+      <param description="Replacement document" type="object" variable="$replacement">
+        <type full="MongoDB\array|object" namespace="MongoDB" name="array|object"/>
+      </param>
+      <param description="Command options" type="array" variable="$options"/>
+      <return type="object">
+        <type full="MongoDB\object|null" namespace="MongoDB" name="object|null"/>
+      </return>
+    </docblock>
+    <parameter name="filter" byreference="false" type="{unknown}"/>
+    <parameter name="replacement" byreference="false" type="{unknown}"/>
+    <parameter name="options" byreference="false" type="array" default=""/>
+  </method>
+  <method name="findOneAndUpdate" start="547" end="558" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Finds a single document and updates it, returning either the original or the updated document.">The document to return may be null if no document matched the filter. By
+default, the original document is returned. Specify
+FindOneAndUpdate::RETURN_DOCUMENT_AFTER for the "returnDocument" option
+to return the updated document.
+
+Note: BSON deserialization of the returned document does not yet support
+a custom type map (depends on: https://jira.mongodb.org/browse/PHPC-314).</description>
+      <see value="FindOneAndReplace::__construct() for supported options"/>
+      <see value="http://docs.mongodb.org/manual/reference/command/findAndModify/"/>
+      <param description="Query by which to filter documents" type="object" variable="$filter">
+        <type full="MongoDB\array|object" namespace="MongoDB" name="array|object"/>
+      </param>
+      <param description="Update to apply to the matched document" type="object" variable="$update">
+        <type full="MongoDB\array|object" namespace="MongoDB" name="array|object"/>
+      </param>
+      <param description="Command options" type="array" variable="$options"/>
+      <return type="object">
+        <type full="MongoDB\object|null" namespace="MongoDB" name="object|null"/>
+      </return>
+    </docblock>
+    <parameter name="filter" byreference="false" type="{unknown}"/>
+    <parameter name="update" byreference="false" type="{unknown}"/>
+    <parameter name="options" byreference="false" type="array" default=""/>
+  </method>
+  <method name="getCollectionName" start="565" end="568" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Return the collection name."/>
+      <return type="string"/>
+    </docblock>
+  </method>
+  <method name="getDatabaseName" start="575" end="578" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Return the database name."/>
+      <return type="string"/>
+    </docblock>
+  </method>
+  <method name="getNamespace" start="586" end="589" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Return the collection namespace."/>
+      <see value="https://docs.mongodb.org/manual/reference/glossary/#term-namespace"/>
+      <return type="string"/>
+    </docblock>
+  </method>
+  <method name="insertMany" start="600" end="610" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Inserts multiple documents."/>
+      <see value="InsertMany::__construct() for supported options"/>
+      <see value="http://docs.mongodb.org/manual/reference/command/insert/"/>
+      <param description="The documents to insert" type="array" variable="$documents" of="object">
+        <type full="MongoDB\array[]|object" namespace="MongoDB" name="array[]|object"/>
+      </param>
+      <param description="Command options" type="array" variable="$options"/>
+      <return type="object">
+        <type full="MongoDB\InsertManyResult" namespace="MongoDB" name="InsertManyResult"/>
+      </return>
+    </docblock>
+    <parameter name="documents" byreference="false" type="array"/>
+    <parameter name="options" byreference="false" type="array" default=""/>
+  </method>
+  <method name="insertOne" start="621" end="631" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Inserts one document."/>
+      <see value="InsertOne::__construct() for supported options"/>
+      <see value="http://docs.mongodb.org/manual/reference/command/insert/"/>
+      <param description="The document to insert" type="object" variable="$document">
+        <type full="MongoDB\array|object" namespace="MongoDB" name="array|object"/>
+      </param>
+      <param description="Command options" type="array" variable="$options"/>
+      <return type="object">
+        <type full="MongoDB\InsertOneResult" namespace="MongoDB" name="InsertOneResult"/>
+      </return>
+    </docblock>
+    <parameter name="document" byreference="false" type="{unknown}"/>
+    <parameter name="options" byreference="false" type="array" default=""/>
+  </method>
+  <method name="listIndexes" start="639" end="645" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Returns information for all indexes for the collection."/>
+      <see value="ListIndexes::__construct() for supported options"/>
+      <return type="object">
+        <type full="MongoDB\Model\IndexInfoIterator" namespace="MongoDB\Model" name="IndexInfoIterator"/>
+      </return>
+    </docblock>
+    <parameter name="options" byreference="false" type="array" default=""/>
+  </method>
+  <method name="replaceOne" start="657" end="667" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Replaces at most one document matching the filter."/>
+      <see value="ReplaceOne::__construct() for supported options"/>
+      <see value="http://docs.mongodb.org/manual/reference/command/update/"/>
+      <param description="Query by which to filter documents" type="object" variable="$filter">
+        <type full="MongoDB\array|object" namespace="MongoDB" name="array|object"/>
+      </param>
+      <param description="Replacement document" type="object" variable="$replacement">
+        <type full="MongoDB\array|object" namespace="MongoDB" name="array|object"/>
+      </param>
+      <param description="Command options" type="array" variable="$options"/>
+      <return type="object">
+        <type full="MongoDB\UpdateResult" namespace="MongoDB" name="UpdateResult"/>
+      </return>
+    </docblock>
+    <parameter name="filter" byreference="false" type="{unknown}"/>
+    <parameter name="replacement" byreference="false" type="{unknown}"/>
+    <parameter name="options" byreference="false" type="array" default=""/>
+  </method>
+  <method name="updateMany" start="679" end="689" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Updates all documents matching the filter."/>
+      <see value="UpdateMany::__construct() for supported options"/>
+      <see value="http://docs.mongodb.org/manual/reference/command/update/"/>
+      <param description="Query by which to filter documents" type="object" variable="$filter">
+        <type full="MongoDB\array|object" namespace="MongoDB" name="array|object"/>
+      </param>
+      <param description="Update to apply to the matched documents" type="object" variable="$update">
+        <type full="MongoDB\array|object" namespace="MongoDB" name="array|object"/>
+      </param>
+      <param description="Command options" type="array" variable="$options"/>
+      <return type="object">
+        <type full="MongoDB\UpdateResult" namespace="MongoDB" name="UpdateResult"/>
+      </return>
+    </docblock>
+    <parameter name="filter" byreference="false" type="{unknown}"/>
+    <parameter name="update" byreference="false" type="{unknown}"/>
+    <parameter name="options" byreference="false" type="array" default=""/>
+  </method>
+  <method name="updateOne" start="701" end="711" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Updates at most one document matching the filter."/>
+      <see value="UpdateOne::__construct() for supported options"/>
+      <see value="http://docs.mongodb.org/manual/reference/command/update/"/>
+      <param description="Query by which to filter documents" type="object" variable="$filter">
+        <type full="MongoDB\array|object" namespace="MongoDB" name="array|object"/>
+      </param>
+      <param description="Update to apply to the matched document" type="object" variable="$update">
+        <type full="MongoDB\array|object" namespace="MongoDB" name="array|object"/>
+      </param>
+      <param description="Command options" type="array" variable="$options"/>
+      <return type="object">
+        <type full="MongoDB\UpdateResult" namespace="MongoDB" name="UpdateResult"/>
+      </return>
+    </docblock>
+    <parameter name="filter" byreference="false" type="{unknown}"/>
+    <parameter name="update" byreference="false" type="{unknown}"/>
+    <parameter name="options" byreference="false" type="array" default=""/>
+  </method>
+  <method name="withOptions" start="720" end="730" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Get a clone of this collection with different options."/>
+      <see value="Collection::__construct() for supported options"/>
+      <param description="Collection constructor options" type="array" variable="$options"/>
+      <return type="object">
+        <type full="MongoDB\Collection" namespace="MongoDB" name="Collection"/>
+      </return>
+    </docblock>
+    <parameter name="options" byreference="false" type="array" default=""/>
+  </method>
+</class>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="Psy\Exception\TypeErrorException" namespace="Psy\Exception" name="TypeErrorException" abstract="false" final="false" start="17" end="55">
+  <file path="/home/web/example/src/freegame_developer/vendor/psy/psysh/src/Psy/Exception" file="TypeErrorException.php" realpath="/home/web/example/src/freegame_developer/vendor/psy/psysh/src/Psy/Exception/TypeErrorException.php" size="1236" time="2016-03-09T05:03:14+00:00" unixtime="1457499794" sha1="6e8fe2c0771409b74ffd1e5a78cff94ee649f576" relative="freegame_developer/vendor/psy/psysh/src/Psy/Exception/TypeErrorException.php"/>
+  <docblock>
+    <description compact="A &quot;type error&quot; Exception for Psy."/>
+  </docblock>
+  <extends full="Exception" namespace="" name="Exception"/>
+  <implements full="Psy\Exception\Exception" namespace="Psy\Exception" name="Exception"/>
+  <member name="rawMessage" visibility="private" static="false" line="19"/>
+  <constructor name="__construct" start="27" end="32" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Constructor!"/>
+      <param description="(default: &quot;&quot;)" type="string" variable="$message"/>
+      <param description="(default: 0)" type="int" variable="$code"/>
+    </docblock>
+    <parameter name="message" byreference="false" type="string" default="''"/>
+    <parameter name="code" byreference="false" type="integer" default="0"/>
+  </constructor>
+  <method name="getRawMessage" start="39" end="42" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Get the raw (unformatted) message for this error."/>
+      <return type="string"/>
+    </docblock>
+  </method>
+  <method name="fromTypeError" start="51" end="54" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description compact="Create a TypeErrorException from a TypeError."/>
+      <param type="object" variable="$e">
+        <type full="\TypeError" namespace="" name="TypeError"/>
+      </param>
+      <return type="object">
+        <type full="Psy\Exception\TypeErrorException" namespace="Psy\Exception" name="TypeErrorException"/>
+      </return>
+    </docblock>
+    <parameter name="e" byreference="false" type="object">
+      <type full="TypeError" namespace="" name="TypeError"/>
+    </parameter>
+  </method>
+</class>

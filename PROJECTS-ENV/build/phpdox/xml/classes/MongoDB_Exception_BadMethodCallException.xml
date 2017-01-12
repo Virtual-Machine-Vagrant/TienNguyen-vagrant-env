@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="MongoDB\Exception\BadMethodCallException" namespace="MongoDB\Exception" name="BadMethodCallException" abstract="false" final="false" start="5" end="28">
+  <file path="/home/web/example/src/freegame_developer/vendor/mongodb/mongodb/src/Exception" file="BadMethodCallException.php" realpath="/home/web/example/src/freegame_developer/vendor/mongodb/mongodb/src/Exception/BadMethodCallException.php" size="754" time="2016-09-23T19:38:29+00:00" unixtime="1474659509" sha1="660a5710f6515ca46ab4cf541fcd420da9db640b" relative="freegame_developer/vendor/mongodb/mongodb/src/Exception/BadMethodCallException.php"/>
+  <extends full="BadMethodCallException" namespace="" name="BadMethodCallException"/>
+  <implements full="MongoDB\Exception\Exception" namespace="MongoDB\Exception" name="Exception"/>
+  <method name="classIsImmutable" start="13" end="16" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description compact="Thrown when a mutable method is invoked on an immutable object."/>
+      <param description="Class name" type="string" variable="$class"/>
+      <return resolution="self" type="object">
+        <type full="MongoDB\Exception\BadMethodCallException" namespace="MongoDB\Exception" name="BadMethodCallException"/>
+      </return>
+    </docblock>
+    <parameter name="class" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="unacknowledgedWriteResultAccess" start="24" end="27" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description compact="Thrown when accessing a result field on an unacknowledged write result."/>
+      <param description="Method name" type="string" variable="$method"/>
+      <return resolution="self" type="object">
+        <type full="MongoDB\Exception\BadMethodCallException" namespace="MongoDB\Exception" name="BadMethodCallException"/>
+      </return>
+    </docblock>
+    <parameter name="method" byreference="false" type="{unknown}"/>
+  </method>
+</class>

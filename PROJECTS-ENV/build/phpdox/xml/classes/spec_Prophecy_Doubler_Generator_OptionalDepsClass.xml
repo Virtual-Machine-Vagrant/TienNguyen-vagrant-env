@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="spec\Prophecy\Doubler\Generator\OptionalDepsClass" namespace="spec\Prophecy\Doubler\Generator" name="OptionalDepsClass" abstract="false" final="false" start="775" end="784">
+  <file path="/home/web/example/src/freegame_developer/vendor/phpspec/prophecy/spec/Prophecy/Doubler/Generator" file="ClassMirrorSpec.php" realpath="/home/web/example/src/freegame_developer/vendor/phpspec/prophecy/spec/Prophecy/Doubler/Generator/ClassMirrorSpec.php" size="31699" time="2016-06-07T08:13:47+00:00" unixtime="1465287227" sha1="98b5475eb3d88894153a4673e78e1b06497279ee" relative="freegame_developer/vendor/phpspec/prophecy/spec/Prophecy/Doubler/Generator/ClassMirrorSpec.php"/>
+  <method name="iHaveAStrangeTypeHintedArg" start="777" end="779" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="class" byreference="false" type="object">
+      <type full="I\Simply\Am\Nonexistent" namespace="I\Simply\Am" name="Nonexistent"/>
+    </parameter>
+  </method>
+  <method name="iHaveAnEvenStrangerTypeHintedArg" start="781" end="783" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="class" byreference="false" type="object">
+      <type full="I\Simply\Am\Not" namespace="I\Simply\Am" name="Not"/>
+    </parameter>
+  </method>
+</class>

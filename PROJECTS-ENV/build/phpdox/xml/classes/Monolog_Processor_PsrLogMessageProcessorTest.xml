@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="Monolog\Processor\PsrLogMessageProcessorTest" namespace="Monolog\Processor" name="PsrLogMessageProcessorTest" abstract="false" final="false" start="14" end="43">
+  <file path="/home/web/example/src/freegame_developer/vendor/monolog/monolog/tests/Monolog/Processor" file="PsrLogMessageProcessorTest.php" realpath="/home/web/example/src/freegame_developer/vendor/monolog/monolog/tests/Monolog/Processor/PsrLogMessageProcessorTest.php" size="1056" time="2016-07-29T03:23:52+00:00" unixtime="1469762632" sha1="8b196555bba73efb7f1a4b8d66096b12d1fb4dad" relative="freegame_developer/vendor/monolog/monolog/tests/Monolog/Processor/PsrLogMessageProcessorTest.php"/>
+  <extends full="PHPUnit_Framework_TestCase" namespace="" name="PHPUnit_Framework_TestCase"/>
+  <method name="testReplacement" start="19" end="28" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <dataprovider value="getPairs"/>
+    </docblock>
+    <parameter name="val" byreference="false" type="{unknown}"/>
+    <parameter name="expected" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="getPairs" start="30" end="42" abstract="false" final="false" static="false" visibility="public"/>
+</class>

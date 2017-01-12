@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="phpDocumentor\Reflection\DocBlock\Tags\AuthorTest" namespace="phpDocumentor\Reflection\DocBlock\Tags" name="AuthorTest" abstract="false" final="false" start="21" end="148">
+  <file path="/home/web/example/src/freegame_developer/vendor/phpdocumentor/reflection-docblock/tests/unit/DocBlock/Tags" file="AuthorTest.php" realpath="/home/web/example/src/freegame_developer/vendor/phpdocumentor/reflection-docblock/tests/unit/DocBlock/Tags/AuthorTest.php" size="4348" time="2016-09-30T07:12:33+00:00" unixtime="1475219553" sha1="18d0d881b99e78d6c3f4485c2b811473edb604b3" relative="freegame_developer/vendor/phpdocumentor/reflection-docblock/tests/unit/DocBlock/Tags/AuthorTest.php"/>
+  <docblock>
+    <description/>
+    <coversdefaultclass value="\phpDocumentor\Reflection\DocBlock\Tags\Author"/>
+    <covers value="::&lt;private&gt;"/>
+  </docblock>
+  <extends full="PHPUnit_Framework_TestCase" namespace="" name="PHPUnit_Framework_TestCase"/>
+  <method name="testIfCorrectTagNameIsReturned" start="27" end="32" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <uses value="\phpDocumentor\Reflection\DocBlock\Tags\Author::__construct"/>
+      <covers value="\phpDocumentor\Reflection\DocBlock\Tags\BaseTag::getName"/>
+    </docblock>
+  </method>
+  <method name="testIfTagCanBeRenderedUsingDefaultFormatter" start="41" end="46" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <uses value="\phpDocumentor\Reflection\DocBlock\Tags\Author::__construct"/>
+      <uses value="\phpDocumentor\Reflection\DocBlock\Tags\Author::__toString"/>
+      <uses value="\phpDocumentor\Reflection\DocBlock\Tags\Formatter\PassthroughFormatter"/>
+      <covers value="\phpDocumentor\Reflection\DocBlock\Tags\BaseTag::render"/>
+      <covers value="\phpDocumentor\Reflection\DocBlock\Tags\BaseTag::getName"/>
+    </docblock>
+  </method>
+  <method name="testIfTagCanBeRenderedUsingSpecificFormatter" start="52" end="60" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <uses value="\phpDocumentor\Reflection\DocBlock\Tags\Author::__construct"/>
+      <covers value="\phpDocumentor\Reflection\DocBlock\Tags\BaseTag::render"/>
+    </docblock>
+  </method>
+  <method name="testHasTheAuthorName" start="66" end="73" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <covers value="::__construct"/>
+      <covers value="::getAuthorName"/>
+    </docblock>
+  </method>
+  <method name="testInitializationFailsIfAuthorNameIsNotAString" start="80" end="83" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <covers value="::__construct"/>
+      <covers value="::getAuthorName"/>
+      <expectedexception value="\InvalidArgumentException"/>
+    </docblock>
+  </method>
+  <method name="testHasTheAuthorMailAddress" start="89" end="96" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <covers value="::__construct"/>
+      <covers value="::getEmail"/>
+    </docblock>
+  </method>
+  <method name="testInitializationFailsIfEmailIsNotAString" start="102" end="105" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <covers value="::__construct"/>
+      <expectedexception value="\InvalidArgumentException"/>
+    </docblock>
+  </method>
+  <method name="testInitializationFailsIfEmailIsNotValid" start="111" end="114" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <covers value="::__construct"/>
+      <expectedexception value="\InvalidArgumentException"/>
+    </docblock>
+  </method>
+  <method name="testStringRepresentationIsReturned" start="120" end="125" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <covers value="::__construct"/>
+      <covers value="::__toString"/>
+    </docblock>
+  </method>
+  <method name="testFactoryMethod" start="131" end="138" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <covers value="::create"/>
+      <uses value="\phpDocumentor\Reflection\DocBlock\Tags\Author::&lt;public&gt;"/>
+    </docblock>
+  </method>
+  <method name="testFactoryMethodReturnsNullIfItCouldNotReadBody" start="144" end="147" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <covers value="::create"/>
+      <uses value="\phpDocumentor\Reflection\DocBlock\Tags\Author::&lt;public&gt;"/>
+    </docblock>
+  </method>
+</class>

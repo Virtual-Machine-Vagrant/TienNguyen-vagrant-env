@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="Symfony\Component\Yaml\Tests\ParserTest" namespace="Symfony\Component\Yaml\Tests" name="ParserTest" abstract="false" final="false" start="17" end="1333">
+  <file path="/home/web/example/src/freegame_developer/vendor/symfony/yaml/Tests" file="ParserTest.php" realpath="/home/web/example/src/freegame_developer/vendor/symfony/yaml/Tests/ParserTest.php" size="29799" time="2016-10-24T18:41:13+00:00" unixtime="1477334473" sha1="2393e0f85baeb857f258f0efa8479ace20f0b6d8" relative="freegame_developer/vendor/symfony/yaml/Tests/ParserTest.php"/>
+  <extends full="PHPUnit_Framework_TestCase" namespace="" name="PHPUnit_Framework_TestCase"/>
+  <member name="parser" visibility="protected" static="false" line="19"/>
+  <method name="setUp" start="21" end="24" abstract="false" final="false" static="false" visibility="protected"/>
+  <method name="tearDown" start="26" end="29" abstract="false" final="false" static="false" visibility="protected"/>
+  <method name="testSpecifications" start="34" end="37" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <dataprovider value="getDataFormSpecifications"/>
+    </docblock>
+    <parameter name="file" byreference="false" type="{unknown}"/>
+    <parameter name="expected" byreference="false" type="{unknown}"/>
+    <parameter name="yaml" byreference="false" type="{unknown}"/>
+    <parameter name="comment" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="getDataFormSpecifications" start="39" end="67" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testTabsInYaml" start="69" end="89" abstract="false" final="false" static="false" visibility="public">
+    <inline>
+      <comment value="test tabs in YAML" line="71"/>
+    </inline>
+  </method>
+  <method name="testEndOfTheDocumentMarker" start="91" end="100" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="getBlockChompingTests" start="102" end="391" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testBlockChomping" start="396" end="399" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <dataprovider value="getBlockChompingTests"/>
+    </docblock>
+    <parameter name="expected" byreference="false" type="{unknown}"/>
+    <parameter name="yaml" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="testBlockLiteralWithLeadingNewlines" start="406" end="420" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Regression test for issue #7989."/>
+      <see value="https://github.com/symfony/symfony/issues/7989"/>
+    </docblock>
+  </method>
+  <method name="testObjectSupportEnabled" start="422" end="429" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testObjectSupportEnabledPassingTrue" start="434" end="441" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <group value="legacy"/>
+    </docblock>
+  </method>
+  <method name="testObjectSupportEnabledWithDeprecatedTag" start="446" end="453" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <group value="legacy"/>
+    </docblock>
+  </method>
+  <method name="testObjectSupportDisabledButNoExceptions" start="458" end="461" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <dataprovider value="invalidDumpedObjectProvider"/>
+    </docblock>
+    <parameter name="input" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="testObjectForMap" start="466" end="469" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <dataprovider value="getObjectForMapTests"/>
+    </docblock>
+    <parameter name="yaml" byreference="false" type="{unknown}"/>
+    <parameter name="expected" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="testObjectForMapEnabledWithMappingUsingBooleanToggles" start="475" end="478" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <group value="legacy"/>
+      <dataprovider value="getObjectForMapTests"/>
+    </docblock>
+    <parameter name="yaml" byreference="false" type="{unknown}"/>
+    <parameter name="expected" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="getObjectForMapTests" start="480" end="541" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testObjectsSupportDisabledWithExceptions" start="547" end="550" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <dataprovider value="invalidDumpedObjectProvider"/>
+      <expectedexception value="\Symfony\Component\Yaml\Exception\ParseException"/>
+    </docblock>
+    <parameter name="yaml" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="testObjectsSupportDisabledWithExceptionsUsingBooleanToggles" start="557" end="560" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <group value="legacy"/>
+      <dataprovider value="invalidDumpedObjectProvider"/>
+      <expectedexception value="\Symfony\Component\Yaml\Exception\ParseException"/>
+    </docblock>
+    <parameter name="yaml" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="invalidDumpedObjectProvider" start="562" end="577" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testNonUtf8Exception" start="582" end="599" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <requires value="extension iconv"/>
+    </docblock>
+  </method>
+  <method name="testUnindentedCollectionException" start="604" end="616" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <expectedexception value="\Symfony\Component\Yaml\Exception\ParseException"/>
+    </docblock>
+  </method>
+  <method name="testShortcutKeyUnindentedCollectionException" start="621" end="632" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <expectedexception value="\Symfony\Component\Yaml\Exception\ParseException"/>
+    </docblock>
+  </method>
+  <method name="testMultipleDocumentsNotSupportedException" start="638" end="653" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <expectedexception value="\Symfony\Component\Yaml\Exception\ParseException"/>
+      <expectedexceptionmessageregexp value="/^Multiple documents are not supported.+/"/>
+    </docblock>
+  </method>
+  <method name="testSequenceInAMapping" start="658" end="666" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <expectedexception value="\Symfony\Component\Yaml\Exception\ParseException"/>
+    </docblock>
+  </method>
+  <method name="testSequenceInMappingStartedBySingleDashLine" start="668" end="694" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testSequenceFollowedByCommentEmbeddedInMapping" start="696" end="713" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testMappingInASequence" start="718" end="726" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <expectedexception value="\Symfony\Component\Yaml\Exception\ParseException"/>
+    </docblock>
+  </method>
+  <method name="testScalarInSequence" start="732" end="741" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <expectedexception value="\Symfony\Component\Yaml\Exception\ParseException"/>
+      <expectedexceptionmessage value="missing colon"/>
+    </docblock>
+  </method>
+  <method name="testMappingDuplicateKeyBlock" start="753" end="769" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="&gt; It is an error for two equal keys to appear in the same mapping node.">&gt; In such a case the YAML processor may continue, ignoring the second
+&gt; `key: value` pair and issuing an appropriate warning. This strategy
+&gt; preserves a consistent information model for one-pass and random access
+&gt; applications.</description>
+      <see value="http://yaml.org/spec/1.2/spec.html#id2759572"/>
+      <see value="http://yaml.org/spec/1.1/#id932806"/>
+    </docblock>
+  </method>
+  <method name="testMappingDuplicateKeyFlow" start="771" end="783" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testEmptyValue" start="785" end="792" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testCommentAtTheRootIndent" start="794" end="818" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testStringBlockWithComments" start="820" end="846" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testFoldedStringBlockWithComments" start="848" end="875" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testNestedFoldedStringBlockWithComments" start="877" end="907" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testReferenceResolvingInInlineStrings" start="909" end="933" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testYamlDirective" start="935" end="944" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testFloatKeys" start="946" end="962" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testColonInMappingValueException" start="968" end="975" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <expectedexception value="\Symfony\Component\Yaml\Exception\ParseException"/>
+      <expectedexceptionmessage value="A colon cannot be used in an unquoted mapping value"/>
+    </docblock>
+  </method>
+  <method name="testColonInMappingValueExceptionNotTriggeredByColonInComment" start="977" end="985" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testCommentLikeStringsAreNotStrippedInBlockScalars" start="990" end="993" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <dataprovider value="getCommentLikeStringInScalarBlockData"/>
+    </docblock>
+    <parameter name="yaml" byreference="false" type="{unknown}"/>
+    <parameter name="expectedParserResult" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="getCommentLikeStringInScalarBlockData" start="995" end="1119" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testBlankLinesAreParsedAsNewLinesInFoldedBlocks" start="1121" end="1143" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testAdditionallyIndentedLinesAreParsedAsNewLinesInFoldedBlocks" start="1145" end="1170" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testParseBinaryData" start="1175" end="1178" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <dataprovider value="getBinaryData"/>
+    </docblock>
+    <parameter name="data" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="getBinaryData" start="1180" end="1199" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testParseInvalidBinaryData" start="1204" end="1209" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <dataprovider value="getInvalidBinaryData"/>
+    </docblock>
+    <parameter name="data" byreference="false" type="{unknown}"/>
+    <parameter name="expectedMessage" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="getInvalidBinaryData" start="1211" end="1251" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testParseDateAsMappingValue" start="1253" end="1264" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testParserThrowsExceptionWithCorrectLineNumber" start="1271" end="1279" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <param variable="$lineNumber"/>
+      <param variable="$yaml"/>
+      <dataprovider value="parserThrowsExceptionWithCorrectLineNumberProvider"/>
+    </docblock>
+    <parameter name="lineNumber" byreference="false" type="{unknown}"/>
+    <parameter name="yaml" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="parserThrowsExceptionWithCorrectLineNumberProvider" start="1281" end="1332" abstract="false" final="false" static="false" visibility="public"/>
+</class>

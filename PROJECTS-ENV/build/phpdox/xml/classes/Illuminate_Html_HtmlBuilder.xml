@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="Illuminate\Html\HtmlBuilder" namespace="Illuminate\Html" name="HtmlBuilder" abstract="false" final="false" start="6" end="379">
+  <file path="/home/web/example/src/freegame_developer/vendor/illuminate/html" file="HtmlBuilder.php" realpath="/home/web/example/src/freegame_developer/vendor/illuminate/html/HtmlBuilder.php" size="8529" time="2015-01-01T16:31:18+00:00" unixtime="1420129878" sha1="4d606fae19317d518a89f65837f7bce40ad0f40a" relative="freegame_developer/vendor/illuminate/html/HtmlBuilder.php"/>
+  <uses full="Illuminate\Support\Traits\Macroable" namespace="Illuminate\Support\Traits" name="Macroable" start="8" end="8"/>
+  <member name="url" visibility="protected" static="false" line="15">
+    <docblock>
+      <description compact="The URL generator instance."/>
+      <var type="object">
+        <type full="\Illuminate\Routing\UrlGenerator" namespace="\Illuminate\Routing" name="UrlGenerator"/>
+      </var>
+    </docblock>
+  </member>
+  <constructor name="__construct" start="23" end="26" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Create a new HTML builder instance."/>
+      <param type="object" variable="$url">
+        <type full="\Illuminate\Routing\UrlGenerator" namespace="\Illuminate\Routing" name="UrlGenerator"/>
+      </param>
+      <return type="object">
+        <type full="Illuminate\Html\void" namespace="Illuminate\Html" name="void"/>
+      </return>
+    </docblock>
+    <parameter name="url" byreference="false" type="{unknown}" default="" constant="null">
+      <type full="Illuminate\Routing\UrlGenerator" namespace="Illuminate\Routing" name="UrlGenerator"/>
+    </parameter>
+  </constructor>
+  <method name="entities" start="34" end="37" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Convert an HTML string to entities."/>
+      <param type="string" variable="$value"/>
+      <return type="string"/>
+    </docblock>
+    <parameter name="value" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="decode" start="45" end="48" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Convert entities to HTML characters."/>
+      <param type="string" variable="$value"/>
+      <return type="string"/>
+    </docblock>
+    <parameter name="value" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="script" start="58" end="63" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Generate a link to a JavaScript file."/>
+      <param type="string" variable="$url"/>
+      <param type="array" variable="$attributes"/>
+      <param type="object" variable="$secure">
+        <type full="Illuminate\Html\bool" namespace="Illuminate\Html" name="bool"/>
+      </param>
+      <return type="string"/>
+    </docblock>
+    <parameter name="url" byreference="false" type="{unknown}"/>
+    <parameter name="attributes" byreference="false" type="array" default=""/>
+    <parameter name="secure" byreference="false" type="{unknown}" default="" constant="null"/>
+  </method>
+  <method name="style" start="73" end="82" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Generate a link to a CSS file."/>
+      <param type="string" variable="$url"/>
+      <param type="array" variable="$attributes"/>
+      <param type="object" variable="$secure">
+        <type full="Illuminate\Html\bool" namespace="Illuminate\Html" name="bool"/>
+      </param>
+      <return type="string"/>
+    </docblock>
+    <parameter name="url" byreference="false" type="{unknown}"/>
+    <parameter name="attributes" byreference="false" type="array" default=""/>
+    <parameter name="secure" byreference="false" type="{unknown}" default="" constant="null"/>
+  </method>
+  <method name="image" start="93" end="98" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Generate an HTML image element."/>
+      <param type="string" variable="$url"/>
+      <param type="string" variable="$alt"/>
+      <param type="array" variable="$attributes"/>
+      <param type="object" variable="$secure">
+        <type full="Illuminate\Html\bool" namespace="Illuminate\Html" name="bool"/>
+      </param>
+      <return type="string"/>
+    </docblock>
+    <parameter name="url" byreference="false" type="{unknown}"/>
+    <parameter name="alt" byreference="false" type="{unknown}" default="" constant="null"/>
+    <parameter name="attributes" byreference="false" type="array" default=""/>
+    <parameter name="secure" byreference="false" type="{unknown}" default="" constant="null"/>
+  </method>
+  <method name="link" start="109" end="116" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Generate a HTML link."/>
+      <param type="string" variable="$url"/>
+      <param type="string" variable="$title"/>
+      <param type="array" variable="$attributes"/>
+      <param type="object" variable="$secure">
+        <type full="Illuminate\Html\bool" namespace="Illuminate\Html" name="bool"/>
+      </param>
+      <return type="string"/>
+    </docblock>
+    <parameter name="url" byreference="false" type="{unknown}"/>
+    <parameter name="title" byreference="false" type="{unknown}" default="" constant="null"/>
+    <parameter name="attributes" byreference="false" type="array" default=""/>
+    <parameter name="secure" byreference="false" type="{unknown}" default="" constant="null"/>
+  </method>
+  <method name="secureLink" start="126" end="129" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Generate a HTTPS HTML link."/>
+      <param type="string" variable="$url"/>
+      <param type="string" variable="$title"/>
+      <param type="array" variable="$attributes"/>
+      <return type="string"/>
+    </docblock>
+    <parameter name="url" byreference="false" type="{unknown}"/>
+    <parameter name="title" byreference="false" type="{unknown}" default="" constant="null"/>
+    <parameter name="attributes" byreference="false" type="array" default=""/>
+  </method>
+  <method name="linkAsset" start="140" end="145" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Generate a HTML link to an asset."/>
+      <param type="string" variable="$url"/>
+      <param type="string" variable="$title"/>
+      <param type="array" variable="$attributes"/>
+      <param type="object" variable="$secure">
+        <type full="Illuminate\Html\bool" namespace="Illuminate\Html" name="bool"/>
+      </param>
+      <return type="string"/>
+    </docblock>
+    <parameter name="url" byreference="false" type="{unknown}"/>
+    <parameter name="title" byreference="false" type="{unknown}" default="" constant="null"/>
+    <parameter name="attributes" byreference="false" type="array" default=""/>
+    <parameter name="secure" byreference="false" type="{unknown}" default="" constant="null"/>
+  </method>
+  <method name="linkSecureAsset" start="155" end="158" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Generate a HTTPS HTML link to an asset."/>
+      <param type="string" variable="$url"/>
+      <param type="string" variable="$title"/>
+      <param type="array" variable="$attributes"/>
+      <return type="string"/>
+    </docblock>
+    <parameter name="url" byreference="false" type="{unknown}"/>
+    <parameter name="title" byreference="false" type="{unknown}" default="" constant="null"/>
+    <parameter name="attributes" byreference="false" type="array" default=""/>
+  </method>
+  <method name="linkRoute" start="169" end="172" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Generate a HTML link to a named route."/>
+      <param type="string" variable="$name"/>
+      <param type="string" variable="$title"/>
+      <param type="array" variable="$parameters"/>
+      <param type="array" variable="$attributes"/>
+      <return type="string"/>
+    </docblock>
+    <parameter name="name" byreference="false" type="{unknown}"/>
+    <parameter name="title" byreference="false" type="{unknown}" default="" constant="null"/>
+    <parameter name="parameters" byreference="false" type="array" default=""/>
+    <parameter name="attributes" byreference="false" type="array" default=""/>
+  </method>
+  <method name="linkAction" start="183" end="186" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Generate a HTML link to a controller action."/>
+      <param type="string" variable="$action"/>
+      <param type="string" variable="$title"/>
+      <param type="array" variable="$parameters"/>
+      <param type="array" variable="$attributes"/>
+      <return type="string"/>
+    </docblock>
+    <parameter name="action" byreference="false" type="{unknown}"/>
+    <parameter name="title" byreference="false" type="{unknown}" default="" constant="null"/>
+    <parameter name="parameters" byreference="false" type="array" default=""/>
+    <parameter name="attributes" byreference="false" type="array" default=""/>
+  </method>
+  <method name="mailto" start="196" end="205" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Generate a HTML link to an email address."/>
+      <param type="string" variable="$email"/>
+      <param type="string" variable="$title"/>
+      <param type="array" variable="$attributes"/>
+      <return type="string"/>
+    </docblock>
+    <parameter name="email" byreference="false" type="{unknown}"/>
+    <parameter name="title" byreference="false" type="{unknown}" default="" constant="null"/>
+    <parameter name="attributes" byreference="false" type="array" default=""/>
+  </method>
+  <method name="email" start="213" end="216" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Obfuscate an e-mail address to prevent spam-bots from sniffing it."/>
+      <param type="string" variable="$email"/>
+      <return type="string"/>
+    </docblock>
+    <parameter name="email" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="ol" start="225" end="228" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Generate an ordered list of items."/>
+      <param type="array" variable="$list"/>
+      <param type="array" variable="$attributes"/>
+      <return type="string"/>
+    </docblock>
+    <parameter name="list" byreference="false" type="{unknown}"/>
+    <parameter name="attributes" byreference="false" type="array" default=""/>
+  </method>
+  <method name="ul" start="237" end="240" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Generate an un-ordered list of items."/>
+      <param type="array" variable="$list"/>
+      <param type="array" variable="$attributes"/>
+      <return type="string"/>
+    </docblock>
+    <parameter name="list" byreference="false" type="{unknown}"/>
+    <parameter name="attributes" byreference="false" type="array" default=""/>
+  </method>
+  <method name="listing" start="250" end="267" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Create a listing HTML element."/>
+      <param type="string" variable="$type"/>
+      <param type="array" variable="$list"/>
+      <param type="array" variable="$attributes"/>
+      <return type="string"/>
+    </docblock>
+    <parameter name="type" byreference="false" type="{unknown}"/>
+    <parameter name="list" byreference="false" type="{unknown}"/>
+    <parameter name="attributes" byreference="false" type="array" default=""/>
+    <inline>
+      <comment value="Essentially we will just spin through the list and build the list of the HTML" line="256"/>
+      <comment value="elements from the array. We will also handled nested lists in case that is" line="257"/>
+      <comment value="present in the array. Then we will build out the final listing elements." line="258"/>
+    </inline>
+  </method>
+  <method name="listingElement" start="277" end="287" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Create the HTML for a listing element."/>
+      <param type="mixed" variable="$key"/>
+      <param type="string" variable="$type"/>
+      <param type="string" variable="$value"/>
+      <return type="string"/>
+    </docblock>
+    <parameter name="key" byreference="false" type="{unknown}"/>
+    <parameter name="type" byreference="false" type="{unknown}"/>
+    <parameter name="value" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="nestedListing" start="297" end="307" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Create the HTML for a nested listing attribute."/>
+      <param type="mixed" variable="$key"/>
+      <param type="string" variable="$type"/>
+      <param type="string" variable="$value"/>
+      <return type="string"/>
+    </docblock>
+    <parameter name="key" byreference="false" type="{unknown}"/>
+    <parameter name="type" byreference="false" type="{unknown}"/>
+    <parameter name="value" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="attributes" start="315" end="330" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Build an HTML attribute string from an array."/>
+      <param type="array" variable="$attributes"/>
+      <return type="string"/>
+    </docblock>
+    <parameter name="attributes" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="For numeric keys we will assume that the key and the value are the same" line="319"/>
+      <comment value="as this will convert HTML attributes such as &quot;required&quot; to a correct" line="320"/>
+      <comment value="form like required=&quot;required&quot; instead of using incorrect numerics." line="321"/>
+    </inline>
+  </method>
+  <method name="attributeElement" start="339" end="344" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Build a single attribute element."/>
+      <param type="string" variable="$key"/>
+      <param type="string" variable="$value"/>
+      <return type="string"/>
+    </docblock>
+    <parameter name="key" byreference="false" type="{unknown}"/>
+    <parameter name="value" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="obfuscate" start="352" end="377" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Obfuscate a string to prevent spam-bots from sniffing it."/>
+      <param type="string" variable="$value"/>
+      <return type="string"/>
+    </docblock>
+    <parameter name="value" byreference="false" type="{unknown}"/>
+  </method>
+</class>

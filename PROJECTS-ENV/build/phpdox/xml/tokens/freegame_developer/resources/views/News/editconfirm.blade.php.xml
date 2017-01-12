@@ -1,0 +1,573 @@
+<?xml version="1.0"?>
+<source xmlns="http://xml.phpdox.net/token">
+  <file xmlns="http://xml.phpdox.net/src" path="/home/web/example/src/freegame_developer/resources/views/News" file="editconfirm.blade.php" realpath="/home/web/example/src/freegame_developer/resources/views/News/editconfirm.blade.php" size="7025" time="2016-12-13T02:05:42+00:00" unixtime="1481594742" sha1="26272718064e23f0ec0a2616ac698fd731d16417" relative="freegame_developer/resources/views/News/editconfirm.blade.php"/>
+  <line no="1">
+    <token name="T_INLINE_HTML">@extends('layout')</token>
+  </line>
+  <line no="2"/>
+  <line no="3">
+    <token name="T_INLINE_HTML">@section('content')</token>
+  </line>
+  <line no="4"/>
+  <line no="5">
+    <token name="T_INLINE_HTML">&lt;header id="gnavi"&gt;</token>
+  </line>
+  <line no="6">
+    <token name="T_INLINE_HTML">@include('partials.breadcrumbs', [</token>
+  </line>
+  <line no="7">
+    <token name="T_INLINE_HTML">    'breadcrumbs' =&gt; array_merge(</token>
+  </line>
+  <line no="8">
+    <token name="T_INLINE_HTML">        $formData['menuName'],</token>
+  </line>
+  <line no="9">
+    <token name="T_INLINE_HTML">        [</token>
+  </line>
+  <line no="10">
+    <token name="T_INLINE_HTML">            [$formData['screenName'], 'News.index'],</token>
+  </line>
+  <line no="11">
+    <token name="T_INLINE_HTML">            '&#x7DE8;&#x96C6;'</token>
+  </line>
+  <line no="12">
+    <token name="T_INLINE_HTML">        ]</token>
+  </line>
+  <line no="13">
+    <token name="T_INLINE_HTML">    )</token>
+  </line>
+  <line no="14">
+    <token name="T_INLINE_HTML">])</token>
+  </line>
+  <line no="15">
+    <token name="T_INLINE_HTML">&lt;!-- [#gnavi] --&gt;</token>
+  </line>
+  <line no="16">
+    <token name="T_INLINE_HTML">&lt;/header&gt;</token>
+  </line>
+  <line no="17">
+    <token name="T_INLINE_HTML">&lt;section&gt;</token>
+  </line>
+  <line no="18">
+    <token name="T_INLINE_HTML">    &lt;div class="c-area"&gt;</token>
+  </line>
+  <line no="19">
+    <token name="T_INLINE_HTML">        &lt;h2 class="c-headline"&gt;&lt;i class="fa fa-sitemap"&gt;&lt;/i&gt;&#x30CB;&#x30E5;&#x30FC;&#x30B9;&#x7DE8;&#x96C6; &#x78BA;&#x8A8D;&lt;/h2&gt;</token>
+  </line>
+  <line no="20">
+    <token name="T_INLINE_HTML">        &lt;p class="mg-b10"&gt;&#x4E0B;&#x8A18;&#x5185;&#x5BB9;&#x3067;&#x3088;&#x308D;&#x3057;&#x3051;&#x308C;&#x3070;&#x300C;&#x78BA;&#x5B9A;&#x300D;&#x30DC;&#x30BF;&#x30F3;&#x3092;&#x9078;&#x629E;&#x3057;&#x3066;&#x304F;&#x3060;&#x3055;&#x3044;&#x3002;&lt;/p&gt;</token>
+  </line>
+  <line no="21">
+    <token name="T_INLINE_HTML">        &lt;table class="c-table"&gt;</token>
+  </line>
+  <line no="22">
+    <token name="T_INLINE_HTML">            &lt;colgroup&gt;</token>
+  </line>
+  <line no="23">
+    <token name="T_INLINE_HTML">                &lt;col class="col-s"&gt;</token>
+  </line>
+  <line no="24">
+    <token name="T_INLINE_HTML">                &lt;col class="null"&gt;</token>
+  </line>
+  <line no="25">
+    <token name="T_INLINE_HTML">            &lt;/colgroup&gt;</token>
+  </line>
+  <line no="26">
+    <token name="T_INLINE_HTML">            &lt;tbody&gt;</token>
+  </line>
+  <line no="27">
+    <token name="T_INLINE_HTML">                &lt;tr&gt;</token>
+  </line>
+  <line no="28">
+    <token name="T_INLINE_HTML">                    &lt;th&gt;ID&lt;/th&gt;</token>
+  </line>
+  <line no="29">
+    <token name="T_INLINE_HTML">                    &lt;td&gt;</token>
+  </line>
+  <line no="30">
+    <token name="T_INLINE_HTML">                        {{ $request['info_id'] }}</token>
+  </line>
+  <line no="31">
+    <token name="T_INLINE_HTML">                    &lt;/td&gt;</token>
+  </line>
+  <line no="32">
+    <token name="T_INLINE_HTML">                &lt;/tr&gt;</token>
+  </line>
+  <line no="33">
+    <token name="T_INLINE_HTML">                &lt;tr&gt;</token>
+  </line>
+  <line no="34">
+    <token name="T_INLINE_HTML">                    &lt;th&gt;&#x30BF;&#x30A4;&#x30C8;&#x30EB;&lt;/th&gt;</token>
+  </line>
+  <line no="35">
+    <token name="T_INLINE_HTML">                    &lt;td&gt;</token>
+  </line>
+  <line no="36">
+    <token name="T_INLINE_HTML">                        {{ $request['title'] }}</token>
+  </line>
+  <line no="37">
+    <token name="T_INLINE_HTML">                    &lt;/td&gt;</token>
+  </line>
+  <line no="38">
+    <token name="T_INLINE_HTML">                &lt;/tr&gt;</token>
+  </line>
+  <line no="39">
+    <token name="T_INLINE_HTML">                &lt;tr&gt;</token>
+  </line>
+  <line no="40">
+    <token name="T_INLINE_HTML">                    &lt;th&gt;&#x30AB;&#x30C6;&#x30B4;&#x30EA;&lt;/th&gt;</token>
+  </line>
+  <line no="41">
+    <token name="T_INLINE_HTML">                    &lt;td&gt;</token>
+  </line>
+  <line no="42">
+    <token name="T_INLINE_HTML">                        {{ $category }}</token>
+  </line>
+  <line no="43">
+    <token name="T_INLINE_HTML">                    &lt;/td&gt;</token>
+  </line>
+  <line no="44">
+    <token name="T_INLINE_HTML">                &lt;/tr&gt;</token>
+  </line>
+  <line no="45">
+    <token name="T_INLINE_HTML">                @if (!empty($tagInfo))</token>
+  </line>
+  <line no="46">
+    <token name="T_INLINE_HTML">                    &lt;tr&gt;</token>
+  </line>
+  <line no="47">
+    <token name="T_INLINE_HTML">                        &lt;th&gt;&#x30BF;&#x30B0;&lt;/th&gt;</token>
+  </line>
+  <line no="48">
+    <token name="T_INLINE_HTML">                        &lt;td&gt;</token>
+  </line>
+  <line no="49">
+    <token name="T_INLINE_HTML">                            {{ $tagInfo }}</token>
+  </line>
+  <line no="50">
+    <token name="T_INLINE_HTML">                        &lt;/td&gt;</token>
+  </line>
+  <line no="51">
+    <token name="T_INLINE_HTML">                    &lt;/tr&gt;</token>
+  </line>
+  <line no="52">
+    <token name="T_INLINE_HTML">                @endif</token>
+  </line>
+  <line no="53">
+    <token name="T_INLINE_HTML">                &lt;tr&gt;</token>
+  </line>
+  <line no="54">
+    <token name="T_INLINE_HTML">                    &lt;th&gt;&#x512A;&#x5148;&#x3057;&#x3066;&#x8868;&#x793A;&#x3059;&#x308B;&lt;/th&gt;</token>
+  </line>
+  <line no="55">
+    <token name="T_INLINE_HTML">                    &lt;td&gt;</token>
+  </line>
+  <line no="56">
+    <token name="T_INLINE_HTML">                        {{ $formData['info_top_flg'][$request['info_top_flg']] }}</token>
+  </line>
+  <line no="57">
+    <token name="T_INLINE_HTML">                    &lt;/td&gt;</token>
+  </line>
+  <line no="58">
+    <token name="T_INLINE_HTML">                &lt;/tr&gt;</token>
+  </line>
+  <line no="59">
+    <token name="T_INLINE_HTML">                &lt;tr&gt;</token>
+  </line>
+  <line no="60">
+    <token name="T_INLINE_HTML">                    &lt;th&gt;&#x672C;&#x6587;&lt;/th&gt;</token>
+  </line>
+  <line no="61">
+    <token name="T_INLINE_HTML">                    &lt;td&gt;</token>
+  </line>
+  <line no="62">
+    <token name="T_INLINE_HTML">                        {!! $request['message'] !!}</token>
+  </line>
+  <line no="63">
+    <token name="T_INLINE_HTML">                    &lt;/td&gt;</token>
+  </line>
+  <line no="64">
+    <token name="T_INLINE_HTML">                &lt;/tr&gt;</token>
+  </line>
+  <line no="65">
+    <token name="T_INLINE_HTML">                &lt;tr&gt;</token>
+  </line>
+  <line no="66">
+    <token name="T_INLINE_HTML">                    &lt;th&gt;&#x898B;&#x51FA;&#x3057;&#x753B;&#x50CF;&#x6307;&#x5B9A;&lt;/th&gt;</token>
+  </line>
+  <line no="67">
+    <token name="T_INLINE_HTML">                    &lt;td&gt;</token>
+  </line>
+  <line no="68">
+    <token name="T_INLINE_HTML">                        @if ($titleImage)</token>
+  </line>
+  <line no="69">
+    <token name="T_INLINE_HTML">                            {{ $titleImage['filename'] }}</token>
+  </line>
+  <line no="70">
+    <token name="T_INLINE_HTML">                        @else </token>
+  </line>
+  <line no="71">
+    <token name="T_INLINE_HTML">                            &#x6307;&#x5B9A;&#x306A;&#x3057;</token>
+  </line>
+  <line no="72">
+    <token name="T_INLINE_HTML">                        @endif</token>
+  </line>
+  <line no="73">
+    <token name="T_INLINE_HTML">                    &lt;/td&gt;</token>
+  </line>
+  <line no="74">
+    <token name="T_INLINE_HTML">                &lt;/tr&gt;</token>
+  </line>
+  <line no="75">
+    <token name="T_INLINE_HTML">                &lt;tr&gt;</token>
+  </line>
+  <line no="76">
+    <token name="T_INLINE_HTML">                    &lt;th&gt;&#x63B2;&#x8F09;&#x30DA;&#x30FC;&#x30B8;&lt;/th&gt;</token>
+  </line>
+  <line no="77">
+    <token name="T_INLINE_HTML">                    &lt;td&gt;</token>
+  </line>
+  <line no="78">
+    <token name="T_INLINE_HTML">                        @if (isset($request['type_lp']) &amp;&amp; !isset($request['type_of']))</token>
+  </line>
+  <line no="79">
+    <token name="T_INLINE_HTML">                            {{ $formData['type_lp'][$request['type_lp']] }}</token>
+  </line>
+  <line no="80">
+    <token name="T_INLINE_HTML">                        @elseif (isset($request['type_of']) &amp;&amp; !isset($request['type_lp']))</token>
+  </line>
+  <line no="81">
+    <token name="T_INLINE_HTML">                            {{ $formData['type_of'][$request['type_of']] }}</token>
+  </line>
+  <line no="82">
+    <token name="T_INLINE_HTML">                        @elseif (isset($request['type_lp']) &amp;&amp; isset($request['type_of']))</token>
+  </line>
+  <line no="83">
+    <token name="T_INLINE_HTML">                            {{ $formData['type_lp'][$request['type_lp']].', '.$formData['type_of'][$request['type_of']] }}</token>
+  </line>
+  <line no="84">
+    <token name="T_INLINE_HTML">                        @endif</token>
+  </line>
+  <line no="85"/>
+  <line no="86">
+    <token name="T_INLINE_HTML">                    &lt;/td&gt;</token>
+  </line>
+  <line no="87">
+    <token name="T_INLINE_HTML">                &lt;/tr&gt;</token>
+  </line>
+  <line no="88">
+    <token name="T_INLINE_HTML">                &lt;tr&gt;</token>
+  </line>
+  <line no="89">
+    <token name="T_INLINE_HTML">                    &lt;th&gt;&#x63B2;&#x8F09;&#x65E5;&#x6642;&lt;/th&gt;</token>
+  </line>
+  <line no="90">
+    <token name="T_INLINE_HTML">                    &lt;td&gt;</token>
+  </line>
+  <line no="91">
+    <token name="T_INLINE_HTML">                        {{ $request['post_date'] }}</token>
+  </line>
+  <line no="92">
+    <token name="T_INLINE_HTML">                    &lt;/td&gt;</token>
+  </line>
+  <line no="93">
+    <token name="T_INLINE_HTML">                &lt;/tr&gt;</token>
+  </line>
+  <line no="94">
+    <token name="T_INLINE_HTML">                &lt;tr&gt;</token>
+  </line>
+  <line no="95">
+    <token name="T_INLINE_HTML">                    &lt;th&gt;&#x30B9;&#x30C6;&#x30FC;&#x30BF;&#x30B9;&lt;/th&gt;</token>
+  </line>
+  <line no="96">
+    <token name="T_INLINE_HTML">                    &lt;td&gt;</token>
+  </line>
+  <line no="97">
+    <token name="T_INLINE_HTML">                        {!! $formData['news_status'][$request['info_view_flg']] !!}</token>
+  </line>
+  <line no="98">
+    <token name="T_INLINE_HTML">                    &lt;/td&gt;</token>
+  </line>
+  <line no="99">
+    <token name="T_INLINE_HTML">                &lt;/tr&gt;</token>
+  </line>
+  <line no="100">
+    <token name="T_INLINE_HTML">            &lt;/tbody&gt;</token>
+  </line>
+  <line no="101">
+    <token name="T_INLINE_HTML">            &lt;!-- /.c-table --&gt;</token>
+  </line>
+  <line no="102">
+    <token name="T_INLINE_HTML">        &lt;/table&gt;</token>
+  </line>
+  <line no="103">
+    <token name="T_INLINE_HTML">        &lt;div class="center"&gt;</token>
+  </line>
+  <line no="104">
+    <token name="T_INLINE_HTML">            &lt;a href="javascript:void(0)" data-form="form-edit" class="button btn-submit is-medium"&gt;&lt;i class="fa fa-reply"&gt;&lt;/i&gt;&#x4FEE;&#x6B63;&lt;/a&gt;</token>
+  </line>
+  <line no="105">
+    <token name="T_INLINE_HTML">            &lt;a href="javascript:void(0)" data-form="form-update" class="button btn-submit is-success is-medium"&gt;&lt;i class="fa fa-circle-o"&gt;&lt;/i&gt;&#x78BA;&#x5B9A;&lt;/a&gt;</token>
+  </line>
+  <line no="106">
+    <token name="T_INLINE_HTML">        &lt;/div&gt;</token>
+  </line>
+  <line no="107">
+    <token name="T_INLINE_HTML">        &lt;!-- /.c-area --&gt;</token>
+  </line>
+  <line no="108">
+    <token name="T_INLINE_HTML">    &lt;/div&gt;</token>
+  </line>
+  <line no="109">
+    <token name="T_INLINE_HTML">&lt;/section&gt;</token>
+  </line>
+  <line no="110">
+    <token name="T_INLINE_HTML">&lt;!--Form Back To edit --&gt;</token>
+  </line>
+  <line no="111">
+    <token name="T_INLINE_HTML">{!! Form::open(['route' =&gt; ['News.edit', $request['info_id']] + $searchQuery, 'id' =&gt; 'form-edit']) !!}</token>
+  </line>
+  <line no="112"/>
+  <line no="113">
+    <token name="T_INLINE_HTML">{!! Form::hidden('title', $request['title']) !!}</token>
+  </line>
+  <line no="114">
+    <token name="T_INLINE_HTML">{!! Form::hidden('category', $request['category']) !!}</token>
+  </line>
+  <line no="115">
+    <token name="T_INLINE_HTML">{!! Form::hidden('info_id', $request['info_id']) !!}</token>
+  </line>
+  <line no="116"/>
+  <line no="117">
+    <token name="T_INLINE_HTML">@if(isset($request['tag']))</token>
+  </line>
+  <line no="118">
+    <token name="T_INLINE_HTML">    @foreach($request['tag'] as $key =&gt; $value)</token>
+  </line>
+  <line no="119">
+    <token name="T_INLINE_HTML">        {!! Form::hidden('tag[]', $value) !!}</token>
+  </line>
+  <line no="120">
+    <token name="T_INLINE_HTML">    @endforeach</token>
+  </line>
+  <line no="121">
+    <token name="T_INLINE_HTML">@endif</token>
+  </line>
+  <line no="122">
+    <token name="T_INLINE_HTML">@if(isset($request['info_image_id']))</token>
+  </line>
+  <line no="123">
+    <token name="T_INLINE_HTML">    @foreach($request['info_image_id'] as $key =&gt; $value)</token>
+  </line>
+  <line no="124">
+    <token name="T_INLINE_HTML">        {!! Form::hidden('info_image_id[]', $value) !!}</token>
+  </line>
+  <line no="125">
+    <token name="T_INLINE_HTML">    @endforeach</token>
+  </line>
+  <line no="126">
+    <token name="T_INLINE_HTML">@endif</token>
+  </line>
+  <line no="127">
+    <token name="T_INLINE_HTML">@if(isset($request['info_image_file']))</token>
+  </line>
+  <line no="128">
+    <token name="T_INLINE_HTML">    @foreach($request['info_image_file'] as $key =&gt; $value)</token>
+  </line>
+  <line no="129">
+    <token name="T_INLINE_HTML">        {!! Form::hidden('info_image_file[]', $value) !!}</token>
+  </line>
+  <line no="130">
+    <token name="T_INLINE_HTML">    @endforeach</token>
+  </line>
+  <line no="131">
+    <token name="T_INLINE_HTML">@endif</token>
+  </line>
+  <line no="132">
+    <token name="T_INLINE_HTML">@if(isset($request['info_image_url']))</token>
+  </line>
+  <line no="133">
+    <token name="T_INLINE_HTML">    @foreach($request['info_image_url'] as $key =&gt; $value)</token>
+  </line>
+  <line no="134">
+    <token name="T_INLINE_HTML">        {!! Form::hidden('info_image_url[]', $value) !!}</token>
+  </line>
+  <line no="135">
+    <token name="T_INLINE_HTML">    @endforeach</token>
+  </line>
+  <line no="136">
+    <token name="T_INLINE_HTML">@endif</token>
+  </line>
+  <line no="137"/>
+  <line no="138">
+    <token name="T_INLINE_HTML">@if(isset($request['tag_remove']))</token>
+  </line>
+  <line no="139">
+    <token name="T_INLINE_HTML">    @foreach($request['tag_remove'] as $key =&gt; $value)</token>
+  </line>
+  <line no="140">
+    <token name="T_INLINE_HTML">        {!! Form::hidden('tag_remove[]', $value) !!}</token>
+  </line>
+  <line no="141">
+    <token name="T_INLINE_HTML">    @endforeach</token>
+  </line>
+  <line no="142">
+    <token name="T_INLINE_HTML">@endif</token>
+  </line>
+  <line no="143"/>
+  <line no="144">
+    <token name="T_INLINE_HTML">{!! Form::hidden('info_top_flg', $request['info_top_flg']) !!}</token>
+  </line>
+  <line no="145">
+    <token name="T_INLINE_HTML">{!! Form::hidden('message', $request['message']) !!}</token>
+  </line>
+  <line no="146">
+    <token name="T_INLINE_HTML">{!! Form::hidden('title_image', $request['title_image']) !!}</token>
+  </line>
+  <line no="147">
+    <token name="T_INLINE_HTML">{!! Form::hidden('type_lp', request('type_lp', 1)) !!}</token>
+  </line>
+  <line no="148">
+    <token name="T_INLINE_HTML">{!! Form::hidden('type_of', request('type_of', 0)) !!}</token>
+  </line>
+  <line no="149">
+    <token name="T_INLINE_HTML">{!! Form::hidden('post_date', $request['post_date']) !!}</token>
+  </line>
+  <line no="150">
+    <token name="T_INLINE_HTML">{!! Form::hidden('info_view_flg', $request['info_view_flg']) !!}</token>
+  </line>
+  <line no="151"/>
+  <line no="152">
+    <token name="T_INLINE_HTML">{!! Form::close() !!}</token>
+  </line>
+  <line no="153">
+    <token name="T_INLINE_HTML">&lt;!-- End Form Back To Create --&gt;</token>
+  </line>
+  <line no="154">
+    <token name="T_INLINE_HTML">&lt;!--Form Go To Store --&gt;</token>
+  </line>
+  <line no="155">
+    <token name="T_INLINE_HTML">{!! Form::open(['route' =&gt; ['News.update'] + $searchQuery, 'id' =&gt; 'form-update']) !!}</token>
+  </line>
+  <line no="156"/>
+  <line no="157">
+    <token name="T_INLINE_HTML">{!! Form::hidden('title', $request['title']) !!}</token>
+  </line>
+  <line no="158">
+    <token name="T_INLINE_HTML">{!! Form::hidden('category', $request['category']) !!}</token>
+  </line>
+  <line no="159">
+    <token name="T_INLINE_HTML">{!! Form::hidden('info_id', $request['info_id']) !!}</token>
+  </line>
+  <line no="160"/>
+  <line no="161">
+    <token name="T_INLINE_HTML">@if(isset($request['tag']))</token>
+  </line>
+  <line no="162">
+    <token name="T_INLINE_HTML">    @foreach($request['tag'] as $key =&gt; $value)</token>
+  </line>
+  <line no="163">
+    <token name="T_INLINE_HTML">        {!! Form::hidden('tag[]', $value) !!}</token>
+  </line>
+  <line no="164">
+    <token name="T_INLINE_HTML">    @endforeach</token>
+  </line>
+  <line no="165">
+    <token name="T_INLINE_HTML">@endif</token>
+  </line>
+  <line no="166">
+    <token name="T_INLINE_HTML">@if(isset($request['info_image_id']))</token>
+  </line>
+  <line no="167">
+    <token name="T_INLINE_HTML">    @foreach($request['info_image_id'] as $key =&gt; $value)</token>
+  </line>
+  <line no="168">
+    <token name="T_INLINE_HTML">        {!! Form::hidden('info_image_id[]', $value) !!}</token>
+  </line>
+  <line no="169">
+    <token name="T_INLINE_HTML">    @endforeach</token>
+  </line>
+  <line no="170">
+    <token name="T_INLINE_HTML">@endif</token>
+  </line>
+  <line no="171">
+    <token name="T_INLINE_HTML">@if(isset($request['info_image_file']))</token>
+  </line>
+  <line no="172">
+    <token name="T_INLINE_HTML">    @foreach($request['info_image_file'] as $key =&gt; $value)</token>
+  </line>
+  <line no="173">
+    <token name="T_INLINE_HTML">        {!! Form::hidden('info_image_file[]', $value) !!}</token>
+  </line>
+  <line no="174">
+    <token name="T_INLINE_HTML">    @endforeach</token>
+  </line>
+  <line no="175">
+    <token name="T_INLINE_HTML">@endif</token>
+  </line>
+  <line no="176">
+    <token name="T_INLINE_HTML">@if(isset($request['info_image_url']))</token>
+  </line>
+  <line no="177">
+    <token name="T_INLINE_HTML">    @foreach($request['info_image_url'] as $key =&gt; $value)</token>
+  </line>
+  <line no="178">
+    <token name="T_INLINE_HTML">        {!! Form::hidden('info_image_url[]', $value) !!}</token>
+  </line>
+  <line no="179">
+    <token name="T_INLINE_HTML">    @endforeach</token>
+  </line>
+  <line no="180">
+    <token name="T_INLINE_HTML">@endif</token>
+  </line>
+  <line no="181"/>
+  <line no="182">
+    <token name="T_INLINE_HTML">@if(isset($request['tag_remove']))</token>
+  </line>
+  <line no="183">
+    <token name="T_INLINE_HTML">    @foreach($request['tag_remove'] as $key =&gt; $value)</token>
+  </line>
+  <line no="184">
+    <token name="T_INLINE_HTML">        {!! Form::hidden('tag_remove[]', $value) !!}</token>
+  </line>
+  <line no="185">
+    <token name="T_INLINE_HTML">    @endforeach</token>
+  </line>
+  <line no="186">
+    <token name="T_INLINE_HTML">@endif</token>
+  </line>
+  <line no="187"/>
+  <line no="188">
+    <token name="T_INLINE_HTML">{!! Form::hidden('info_top_flg', $request['info_top_flg']) !!}</token>
+  </line>
+  <line no="189">
+    <token name="T_INLINE_HTML">{!! Form::hidden('message', $request['message']) !!}</token>
+  </line>
+  <line no="190">
+    <token name="T_INLINE_HTML">{!! Form::hidden('title_image', $request['title_image']) !!}</token>
+  </line>
+  <line no="191">
+    <token name="T_INLINE_HTML">{!! Form::hidden('type_lp', request('type_lp', 1)) !!}</token>
+  </line>
+  <line no="192">
+    <token name="T_INLINE_HTML">{!! Form::hidden('type_of', request('type_of', 0)) !!}</token>
+  </line>
+  <line no="193">
+    <token name="T_INLINE_HTML">{!! Form::hidden('post_date', $request['post_date']) !!}</token>
+  </line>
+  <line no="194">
+    <token name="T_INLINE_HTML">{!! Form::hidden('info_view_flg', $request['info_view_flg']) !!}</token>
+  </line>
+  <line no="195"/>
+  <line no="196">
+    <token name="T_INLINE_HTML">{!! Form::close() !!}</token>
+  </line>
+  <line no="197">
+    <token name="T_INLINE_HTML">&lt;!--End Form Go To Store --&gt;</token>
+  </line>
+  <line no="198">
+    <token name="T_INLINE_HTML">@endsection</token>
+  </line>
+  <line no="199"/>
+</source>

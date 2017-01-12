@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="DebugBar\DataCollector\PDO\TracedStatement" namespace="DebugBar\DataCollector\PDO" name="TracedStatement" abstract="false" final="false" start="8" end="257">
+  <file path="/home/web/example/src/freegame_developer/vendor/maximebf/debugbar/src/DebugBar/DataCollector/PDO" file="TracedStatement.php" realpath="/home/web/example/src/freegame_developer/vendor/maximebf/debugbar/src/DebugBar/DataCollector/PDO/TracedStatement.php" size="5445" time="2016-09-15T14:01:59+00:00" unixtime="1473948119" sha1="18c3890717531d9447f7dbfa37ff380a0e39cacf" relative="freegame_developer/vendor/maximebf/debugbar/src/DebugBar/DataCollector/PDO/TracedStatement.php"/>
+  <docblock>
+    <description compact="Holds information about a statement"/>
+  </docblock>
+  <member name="sql" visibility="protected" static="false" line="10"/>
+  <member name="rowCount" visibility="protected" static="false" line="12"/>
+  <member name="parameters" visibility="protected" static="false" line="14"/>
+  <member name="startTime" visibility="protected" static="false" line="16"/>
+  <member name="endTime" visibility="protected" static="false" line="18"/>
+  <member name="duration" visibility="protected" static="false" line="20"/>
+  <member name="startMemory" visibility="protected" static="false" line="22"/>
+  <member name="endMemory" visibility="protected" static="false" line="24"/>
+  <member name="memoryDelta" visibility="protected" static="false" line="26"/>
+  <member name="exception" visibility="protected" static="false" line="28"/>
+  <constructor name="__construct" start="35" end="40" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <param type="string" variable="$sql"/>
+      <param type="array" variable="$params"/>
+      <param type="string" variable="$preparedId"/>
+    </docblock>
+    <parameter name="sql" byreference="false" type="{unknown}"/>
+    <parameter name="params" byreference="false" type="array" default=""/>
+    <parameter name="preparedId" byreference="false" type="{unknown}" default="" constant="null"/>
+  </constructor>
+  <method name="start" start="46" end="50" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <param type="null" variable="$startTime"/>
+      <param type="null" variable="$startMemory"/>
+    </docblock>
+    <parameter name="startTime" byreference="false" type="{unknown}" default="" constant="null"/>
+    <parameter name="startMemory" byreference="false" type="{unknown}" default="" constant="null"/>
+  </method>
+  <method name="end" start="58" end="66" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <param type="object" variable="$exception">
+        <type full="\Exception|null" namespace="" name="Exception|null"/>
+      </param>
+      <param type="int" variable="$rowCount"/>
+      <param type="null" variable="$endTime"/>
+      <param type="null" variable="$endMemory"/>
+    </docblock>
+    <parameter name="exception" byreference="false" type="{unknown}" default="" constant="null">
+      <type full="Exception" namespace="" name="Exception"/>
+    </parameter>
+    <parameter name="rowCount" byreference="false" type="integer" default="0"/>
+    <parameter name="endTime" byreference="false" type="{unknown}" default="" constant="null"/>
+    <parameter name="endMemory" byreference="false" type="{unknown}" default="" constant="null"/>
+  </method>
+  <method name="checkParameters" start="74" end="82" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Check parameters for illegal (non UTF-8) strings, like Binary data."/>
+      <param variable="$params"/>
+      <return type="mixed"/>
+    </docblock>
+    <parameter name="params" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="getSql" start="89" end="92" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Returns the SQL string used for the query"/>
+      <return type="string"/>
+    </docblock>
+  </method>
+  <method name="getSqlWithParams" start="100" end="120" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Returns the SQL string with any parameters used embedded"/>
+      <param type="string" variable="$quotationChar"/>
+      <return type="string"/>
+    </docblock>
+    <parameter name="quotationChar" byreference="false" type="string" default="'&lt;&gt;'"/>
+  </method>
+  <method name="getRowCount" start="127" end="130" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Returns the number of rows affected/returned"/>
+      <return type="int"/>
+    </docblock>
+  </method>
+  <method name="getParameters" start="137" end="144" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Returns an array of parameters used with the query"/>
+      <return type="array"/>
+    </docblock>
+  </method>
+  <method name="getPreparedId" start="151" end="154" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Returns the prepared statement id"/>
+      <return type="string"/>
+    </docblock>
+  </method>
+  <method name="isPrepared" start="161" end="164" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Checks if this is a prepared statement"/>
+      <return type="boolean"/>
+    </docblock>
+  </method>
+  <method name="getStartTime" start="169" end="172" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <return type="mixed"/>
+    </docblock>
+  </method>
+  <method name="getEndTime" start="177" end="180" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <return type="mixed"/>
+    </docblock>
+  </method>
+  <method name="getDuration" start="187" end="190" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Returns the duration in seconds of the execution"/>
+      <return type="int"/>
+    </docblock>
+  </method>
+  <method name="getStartMemory" start="195" end="198" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <return type="mixed"/>
+    </docblock>
+  </method>
+  <method name="getEndMemory" start="203" end="206" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <return type="mixed"/>
+    </docblock>
+  </method>
+  <method name="getMemoryUsage" start="213" end="216" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Returns the memory usage during the execution"/>
+      <return type="int"/>
+    </docblock>
+  </method>
+  <method name="isSuccess" start="223" end="226" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Checks if the statement was successful"/>
+      <return type="boolean"/>
+    </docblock>
+  </method>
+  <method name="getException" start="233" end="236" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Returns the exception triggered"/>
+      <return type="object">
+        <type full="\Exception" namespace="" name="Exception"/>
+      </return>
+    </docblock>
+  </method>
+  <method name="getErrorCode" start="243" end="246" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Returns the exception's code"/>
+      <return type="string"/>
+    </docblock>
+  </method>
+  <method name="getErrorMessage" start="253" end="256" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Returns the exception's message"/>
+      <return type="string"/>
+    </docblock>
+  </method>
+</class>

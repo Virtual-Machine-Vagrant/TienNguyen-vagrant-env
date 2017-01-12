@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="Symfony\Component\Console\Tests\Helper\SymfonyQuestionHelperTest" namespace="Symfony\Component\Console\Tests\Helper" name="SymfonyQuestionHelperTest" abstract="false" final="false" start="15" end="137">
+  <file path="/home/web/example/src/freegame_developer/vendor/symfony/console/Tests/Helper" file="SymfonyQuestionHelperTest.php" realpath="/home/web/example/src/freegame_developer/vendor/symfony/console/Tests/Helper/SymfonyQuestionHelperTest.php" size="6303" time="2016-10-05T17:26:56+00:00" unixtime="1475688416" sha1="81eac18ef5369fe0719fba8d923d3b02e66a9e14" relative="freegame_developer/vendor/symfony/console/Tests/Helper/SymfonyQuestionHelperTest.php"/>
+  <docblock>
+    <description/>
+    <group value="tty"/>
+  </docblock>
+  <extends full="PHPUnit_Framework_TestCase" namespace="" name="PHPUnit_Framework_TestCase"/>
+  <method name="testAskChoice" start="17" end="75" abstract="false" final="false" static="false" visibility="public">
+    <inline>
+      <comment value="first answer is an empty answer, we're supposed to receive the default value" line="30"/>
+    </inline>
+  </method>
+  <method name="testAskReturnsNullIfValidatorAllowsIt" start="77" end="84" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testAskEscapeDefaultValue" start="86" end="93" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testAskEscapeLabel" start="95" end="102" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="getInputStream" start="104" end="111" abstract="false" final="false" static="false" visibility="protected">
+    <parameter name="input" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="createOutputInterface" start="113" end="119" abstract="false" final="false" static="false" visibility="protected"/>
+  <method name="createInputInterfaceMock" start="121" end="129" abstract="false" final="false" static="false" visibility="protected">
+    <parameter name="interactive" byreference="false" type="boolean" default="true"/>
+  </method>
+  <method name="assertOutputContains" start="131" end="136" abstract="false" final="false" static="false" visibility="private">
+    <parameter name="expected" byreference="false" type="{unknown}"/>
+    <parameter name="output" byreference="false" type="object">
+      <type full="Symfony\Component\Console\Output\StreamOutput" namespace="Symfony\Component\Console\Output" name="StreamOutput"/>
+    </parameter>
+  </method>
+</class>

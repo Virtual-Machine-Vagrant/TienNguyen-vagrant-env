@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="Squiz_Sniffs_PHP_CommentedOutCodeSniff" namespace="" name="Squiz_Sniffs_PHP_CommentedOutCodeSniff" abstract="false" final="false" start="30" end="237">
+  <file path="/home/web/example/src/freegame_developer/vendor/squizlabs/php_codesniffer/CodeSniffer/Standards/Squiz/Sniffs/PHP" file="CommentedOutCodeSniff.php" realpath="/home/web/example/src/freegame_developer/vendor/squizlabs/php_codesniffer/CodeSniffer/Standards/Squiz/Sniffs/PHP/CommentedOutCodeSniff.php" size="7832" time="2016-01-19T23:39:10+00:00" unixtime="1453246750" sha1="cfb6ce9743b327cabeed6fb0573282b4954d0904" relative="freegame_developer/vendor/squizlabs/php_codesniffer/CodeSniffer/Standards/Squiz/Sniffs/PHP/CommentedOutCodeSniff.php"/>
+  <docblock>
+    <description compact="Squiz_Sniffs_PHP_CommentedOutCodeSniff.">Warn about commented out code.</description>
+    <category value="PHP"/>
+    <package value="PHP_CodeSniffer"/>
+    <author value="Greg Sherwood &lt;gsherwood@squiz.net&gt;"/>
+    <author value="Marc McIntyre &lt;mmcintyre@squiz.net&gt;"/>
+    <copyright value="2006-2014 Squiz Pty Ltd (ABN 77 084 670 600)"/>
+    <license name="https://github.com/squizlabs/PHP_CodeSniffer/blob/master/licence.txt BSD Licence"/>
+    <version value="Release: @package_version@"/>
+    <link value="http://pear.php.net/package/PHP_CodeSniffer"/>
+  </docblock>
+  <implements full="PHP_CodeSniffer_Sniff" namespace="" name="PHP_CodeSniffer_Sniff"/>
+  <member name="supportedTokenizers" type="array" default="" visibility="public" static="false" line="38">
+    <docblock>
+      <description compact="A list of tokenizers this sniff supports."/>
+      <var type="array"/>
+    </docblock>
+  </member>
+  <member name="maxPercentage" type="integer" default="35" visibility="public" static="false" line="48">
+    <docblock>
+      <description compact="If a comment is more than $maxPercentage% code, a warning will be shown."/>
+      <var type="int"/>
+    </docblock>
+  </member>
+  <method name="register" start="56" end="60" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Returns an array of tokens this test wants to listen for."/>
+      <return type="array"/>
+    </docblock>
+  </method>
+  <method name="process" start="72" end="234" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Processes this test, when one of its tokens is encountered."/>
+      <param description="The file being scanned." type="object" variable="$phpcsFile">
+        <type full="PHP_CodeSniffer_File" namespace="" name="PHP_CodeSniffer_File"/>
+      </param>
+      <param description="The position of the current token" type="int" variable="$stackPtr">in the stack passed in $tokens.</param>
+      <return type="object">
+        <type full="void" namespace="" name="void"/>
+      </return>
+    </docblock>
+    <parameter name="phpcsFile" byreference="false" type="object">
+      <type full="PHP_CodeSniffer_File" namespace="" name="PHP_CodeSniffer_File"/>
+    </parameter>
+    <parameter name="stackPtr" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="Process whole comment blocks at once, so skip all but the first token." line="76"/>
+      <comment value="Ignore comments at the end of code blocks." line="81"/>
+      <comment value="end for" line="128"/>
+      <comment value="Quite a few comments use multiple dashes, equals signs etc" line="136"/>
+      <comment value="to frame comments and licence headers." line="137"/>
+      <comment value="Because we are not really parsing code, the tokenizer can throw all sorts" line="140"/>
+      <comment value="of errors that don't mean anything, so ignore them." line="141"/>
+      <comment value="We know what the first two and last two tokens should be" line="165"/>
+      <comment xmlns="http://xml.phpdox.net/src" value="(because we put them there) so ignore this comment if those" line="166"/>
+      <comment xmlns="http://xml.phpdox.net/src" value="tokens were not parsed correctly. It obviously means this is not" line="167"/>
+      <comment xmlns="http://xml.phpdox.net/src" value="valid code." line="168"/>
+      <comment value="First token is always the opening PHP tag." line="172"/>
+      <comment value="Last token is always the closing PHP tag, unless something went wrong." line="177"/>
+      <comment value="Second last token is always whitespace or a comment, depending" line="184"/>
+      <comment value="on the code inside the comment." line="185"/>
+      <comment value="We subtract 3 from the token number so we ignore the start/end tokens" line="213"/>
+      <comment value="and their surrounding whitespace. We take 2 off the number of code" line="214"/>
+      <comment value="tokens so we ignore the start/end tokens." line="215"/>
+    </inline>
+  </method>
+</class>

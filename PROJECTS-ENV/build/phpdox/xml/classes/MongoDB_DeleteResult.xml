@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="MongoDB\DeleteResult" namespace="MongoDB" name="DeleteResult" abstract="false" final="false" start="11" end="57">
+  <file path="/home/web/example/src/freegame_developer/vendor/mongodb/mongodb/src" file="DeleteResult.php" realpath="/home/web/example/src/freegame_developer/vendor/mongodb/mongodb/src/DeleteResult.php" size="1363" time="2016-09-23T19:38:29+00:00" unixtime="1474659509" sha1="837045b30f3377399b9bc27c2d2852759fca8dd8" relative="freegame_developer/vendor/mongodb/mongodb/src/DeleteResult.php"/>
+  <docblock>
+    <description compact="Result class for a delete operation."/>
+  </docblock>
+  <member name="writeResult" visibility="private" static="false" line="13"/>
+  <member name="isAcknowledged" visibility="private" static="false" line="14"/>
+  <constructor name="__construct" start="21" end="25" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Constructor."/>
+      <param type="object" variable="$writeResult">
+        <type full="MongoDB\Driver\WriteResult" namespace="MongoDB\Driver" name="WriteResult"/>
+      </param>
+    </docblock>
+    <parameter name="writeResult" byreference="false" type="object">
+      <type full="MongoDB\Driver\WriteResult" namespace="MongoDB\Driver" name="WriteResult"/>
+    </parameter>
+  </constructor>
+  <method name="getDeletedCount" start="36" end="43" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Return the number of documents that were deleted.">This method should only be called if the write was acknowledged.</description>
+      <see value="DeleteResult::isAcknowledged()"/>
+      <return type="integer"/>
+      <throws description="is the write result is unacknowledged" type="object">
+        <type full="MongoDB\Exception\BadMethodCallException" namespace="MongoDB\Exception" name="BadMethodCallException"/>
+      </throws>
+    </docblock>
+  </method>
+  <method name="isAcknowledged" start="53" end="56" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Return whether this delete was acknowledged by the server.">If the delete was not acknowledged, other fields from the WriteResult
+(e.g. deletedCount) will be undefined.</description>
+      <return type="boolean"/>
+    </docblock>
+  </method>
+</class>

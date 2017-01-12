@@ -1,0 +1,289 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="Barryvdh\Debugbar\LaravelDebugbar" namespace="Barryvdh\Debugbar" name="LaravelDebugbar" abstract="false" final="false" start="50" end="893">
+  <file path="/home/web/example/src/freegame_developer/vendor/barryvdh/laravel-debugbar/src" file="LaravelDebugbar.php" realpath="/home/web/example/src/freegame_developer/vendor/barryvdh/laravel-debugbar/src/LaravelDebugbar.php" size="30195" time="2016-09-15T14:05:56+00:00" unixtime="1473948356" sha1="92c82e15c9b7bcf6553548b78d63f054c2a02034" relative="freegame_developer/vendor/barryvdh/laravel-debugbar/src/LaravelDebugbar.php"/>
+  <docblock>
+    <description compact="Debug bar subclass which adds all without Request and with LaravelCollector.">Rest is added in Service Provider</description>
+    <method value="void emergency($message)"/>
+    <method value="void alert($message)"/>
+    <method value="void critical($message)"/>
+    <method value="void error($message)"/>
+    <method value="void warning($message)"/>
+    <method value="void notice($message)"/>
+    <method value="void info($message)"/>
+    <method value="void debug($message)"/>
+    <method value="void log($message)"/>
+  </docblock>
+  <extends full="DebugBar\DebugBar" namespace="DebugBar" name="DebugBar"/>
+  <member name="app" visibility="protected" static="false" line="57">
+    <docblock>
+      <description compact="The Laravel application instance."/>
+      <var type="object">
+        <type full="\Illuminate\Foundation\Application" namespace="\Illuminate\Foundation" name="Application"/>
+      </var>
+    </docblock>
+  </member>
+  <member name="version" visibility="protected" static="false" line="64">
+    <docblock>
+      <description compact="Normalized Laravel Version"/>
+      <var type="string"/>
+    </docblock>
+  </member>
+  <member name="booted" type="boolean" default="false" visibility="protected" static="false" line="71">
+    <docblock>
+      <description compact="True when booted."/>
+      <var type="object">
+        <type full="Barryvdh\Debugbar\bool" namespace="Barryvdh\Debugbar" name="bool"/>
+      </var>
+    </docblock>
+  </member>
+  <member name="enabled" type="{unknown}" default="" constant="null" visibility="protected" static="false" line="78">
+    <docblock>
+      <description compact="True when enabled, false disabled an null for still unknown"/>
+      <var type="object">
+        <type full="Barryvdh\Debugbar\bool" namespace="Barryvdh\Debugbar" name="bool"/>
+      </var>
+    </docblock>
+  </member>
+  <member name="is_lumen" type="boolean" default="false" visibility="protected" static="false" line="85">
+    <docblock>
+      <description compact="True when this is a Lumen application"/>
+      <var type="object">
+        <type full="Barryvdh\Debugbar\bool" namespace="Barryvdh\Debugbar" name="bool"/>
+      </var>
+    </docblock>
+  </member>
+  <constructor name="__construct" start="90" end="98" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <param type="object" variable="$app">
+        <type full="Illuminate\Contracts\Foundation\Application" namespace="Illuminate\Contracts\Foundation" name="Application"/>
+      </param>
+    </docblock>
+    <parameter name="app" byreference="false" type="{unknown}" default="" constant="null"/>
+  </constructor>
+  <method name="enable" start="103" end="110" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Enable the Debugbar and boot, if not already booted."/>
+    </docblock>
+  </method>
+  <method name="boot" start="115" end="398" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Boot the debugbar (add collectors, renderer and listener)"/>
+    </docblock>
+  </method>
+  <method name="shouldCollect" start="400" end="403" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="name" byreference="false" type="{unknown}"/>
+    <parameter name="default" byreference="false" type="boolean" default="false"/>
+  </method>
+  <method name="startMeasure" start="411" end="418" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Starts a measure"/>
+      <param description="Internal name, used to stop the measure" type="string" variable="$name"/>
+      <param description="Public name" type="string" variable="$label"/>
+    </docblock>
+    <parameter name="name" byreference="false" type="{unknown}"/>
+    <parameter name="label" byreference="false" type="{unknown}" default="" constant="null"/>
+  </method>
+  <method name="stopMeasure" start="425" end="436" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Stops a measure"/>
+      <param type="string" variable="$name"/>
+    </docblock>
+    <parameter name="name" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="addException" start="444" end="447" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Adds an exception to be profiled in the debug bar"/>
+      <param type="object" variable="$e">
+        <type full="Exception" namespace="" name="Exception"/>
+      </param>
+      <deprecated value="in favor of addThrowable"/>
+    </docblock>
+    <parameter name="e" byreference="false" type="object">
+      <type full="Exception" namespace="" name="Exception"/>
+    </parameter>
+  </method>
+  <method name="addThrowable" start="454" end="461" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Adds an exception to be profiled in the debug bar"/>
+      <param type="object" variable="$e">
+        <type full="Exception" namespace="" name="Exception"/>
+      </param>
+    </docblock>
+    <parameter name="e" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="getJavascriptRenderer" start="470" end="476" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Returns a JavascriptRenderer for this instance"/>
+      <param type="string" variable="$baseUrl"/>
+      <param type="string" variable="$basePathng"/>
+      <return type="object">
+        <type full="Barryvdh\Debugbar\JavascriptRenderer" namespace="Barryvdh\Debugbar" name="JavascriptRenderer"/>
+      </return>
+    </docblock>
+    <parameter name="baseUrl" byreference="false" type="{unknown}" default="" constant="null"/>
+    <parameter name="basePath" byreference="false" type="{unknown}" default="" constant="null"/>
+  </method>
+  <method name="modifyResponse" start="485" end="603" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Modify the response and inject the debugbar (or data in headers)"/>
+      <param type="object" variable="$request">
+        <type full="\Symfony\Component\HttpFoundation\Request" namespace="\Symfony\Component\HttpFoundation" name="Request"/>
+      </param>
+      <param type="object" variable="$response">
+        <type full="\Symfony\Component\HttpFoundation\Response" namespace="\Symfony\Component\HttpFoundation" name="Response"/>
+      </param>
+      <return type="object">
+        <type full="\Symfony\Component\HttpFoundation\Response" namespace="\Symfony\Component\HttpFoundation" name="Response"/>
+      </return>
+    </docblock>
+    <parameter name="request" byreference="false" type="object">
+      <type full="Symfony\Component\HttpFoundation\Request" namespace="Symfony\Component\HttpFoundation" name="Request"/>
+    </parameter>
+    <parameter name="response" byreference="false" type="object">
+      <type full="Symfony\Component\HttpFoundation\Response" namespace="Symfony\Component\HttpFoundation" name="Response"/>
+    </parameter>
+    <inline>
+      <comment value="Show the Http Response Exception in the Debugbar, when available" line="492"/>
+    </inline>
+  </method>
+  <method name="isEnabled" start="609" end="616" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Check if the Debugbar is enabled"/>
+      <return type="boolean"/>
+    </docblock>
+  </method>
+  <method name="isDebugbarRequest" start="623" end="626" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Check if this is a request to the Debugbar OpenHandler"/>
+      <return type="object">
+        <type full="Barryvdh\Debugbar\bool" namespace="Barryvdh\Debugbar" name="bool"/>
+      </return>
+    </docblock>
+  </method>
+  <method name="isJsonRequest" start="632" end="642" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description/>
+      <param type="object" variable="$request">
+        <type full="\Symfony\Component\HttpFoundation\Request" namespace="\Symfony\Component\HttpFoundation" name="Request"/>
+      </param>
+      <return type="object">
+        <type full="Barryvdh\Debugbar\bool" namespace="Barryvdh\Debugbar" name="bool"/>
+      </return>
+    </docblock>
+    <parameter name="request" byreference="false" type="object">
+      <type full="Symfony\Component\HttpFoundation\Request" namespace="Symfony\Component\HttpFoundation" name="Request"/>
+    </parameter>
+    <inline>
+      <comment value="If XmlHttpRequest, return true" line="634"/>
+      <comment value="Check if the request wants Json" line="639"/>
+    </inline>
+  </method>
+  <method name="collect" start="649" end="684" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Collects the data from the collectors"/>
+      <return type="array"/>
+    </docblock>
+    <inline>
+      <comment value="Remove all invalid (non UTF-8) characters" line="669"/>
+    </inline>
+  </method>
+  <method name="injectDebugbar" start="692" end="714" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Injects the web debug toolbar into the given Response."/>
+      <param description="A Response instance" type="object" variable="$response">Based on https://github.com/symfony/WebProfilerBundle/blob/master/EventListener/WebDebugToolbarListener.php<type full="\Symfony\Component\HttpFoundation\Response" namespace="\Symfony\Component\HttpFoundation" name="Response"/></param>
+    </docblock>
+    <parameter name="response" byreference="false" type="object">
+      <type full="Symfony\Component\HttpFoundation\Response" namespace="Symfony\Component\HttpFoundation" name="Response"/>
+    </parameter>
+    <inline>
+      <comment value="Update the new content and reset the content length" line="711"/>
+    </inline>
+  </method>
+  <method name="disable" start="719" end="722" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Disable the Debugbar"/>
+    </docblock>
+  </method>
+  <method name="addMeasure" start="731" end="738" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Adds a measure"/>
+      <param type="string" variable="$label"/>
+      <param type="float" variable="$start"/>
+      <param type="float" variable="$end"/>
+    </docblock>
+    <parameter name="label" byreference="false" type="{unknown}"/>
+    <parameter name="start" byreference="false" type="{unknown}"/>
+    <parameter name="end" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="measure" start="746" end="755" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Utility function to measure the execution of a Closure"/>
+      <param type="string" variable="$label"/>
+      <param type="object" variable="$closure">
+        <type full="\Closure" namespace="" name="Closure"/>
+      </param>
+    </docblock>
+    <parameter name="label" byreference="false" type="{unknown}"/>
+    <parameter name="closure" byreference="false" type="object">
+      <type full="Closure" namespace="" name="Closure"/>
+    </parameter>
+  </method>
+  <method name="collectConsole" start="762" end="798" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Collect data in a CLI request"/>
+      <return type="array"/>
+    </docblock>
+    <inline>
+      <comment value="Remove all invalid (non UTF-8) characters" line="783"/>
+    </inline>
+  </method>
+  <method name="__call" start="807" end="815" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Magic calls for adding messages"/>
+      <param type="string" variable="$method"/>
+      <param type="array" variable="$args"/>
+      <return type="object">
+        <type full="Barryvdh\Debugbar\mixed|void" namespace="Barryvdh\Debugbar" name="mixed|void"/>
+      </return>
+    </docblock>
+    <parameter name="method" byreference="false" type="{unknown}"/>
+    <parameter name="args" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="addMessage" start="825" end="832" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Adds a message to the MessagesCollector">A message can be anything from an object to a string</description>
+      <param type="mixed" variable="$message"/>
+      <param type="string" variable="$label"/>
+    </docblock>
+    <parameter name="message" byreference="false" type="{unknown}"/>
+    <parameter name="label" byreference="false" type="string" default="'info'"/>
+  </method>
+  <method name="checkVersion" start="841" end="844" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Check the version of Laravel"/>
+      <param type="string" variable="$version"/>
+      <param description="(default: '&gt;=')" type="string" variable="$operator"/>
+      <return type="boolean"/>
+    </docblock>
+    <parameter name="version" byreference="false" type="{unknown}"/>
+    <parameter name="operator" byreference="false" type="string" default="&quot;&gt;=&quot;"/>
+  </method>
+  <method name="isLumen" start="846" end="849" abstract="false" final="false" static="false" visibility="protected"/>
+  <method name="selectStorage" start="854" end="884" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description/>
+      <param type="object" variable="$debugbar">
+        <type full="DebugBar\DebugBar" namespace="DebugBar" name="DebugBar"/>
+      </param>
+    </docblock>
+    <parameter name="debugbar" byreference="false" type="object">
+      <type full="DebugBar\DebugBar" namespace="DebugBar" name="DebugBar"/>
+    </parameter>
+  </method>
+  <method name="addClockworkHeaders" start="886" end="892" abstract="false" final="false" static="false" visibility="protected">
+    <parameter name="response" byreference="false" type="object">
+      <type full="Symfony\Component\HttpFoundation\Response" namespace="Symfony\Component\HttpFoundation" name="Response"/>
+    </parameter>
+  </method>
+</class>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="Symfony\Component\EventDispatcher\Tests\ContainerAwareEventDispatcherTest" namespace="Symfony\Component\EventDispatcher\Tests" name="ContainerAwareEventDispatcherTest" abstract="false" final="false" start="20" end="246">
+  <file path="/home/web/example/src/freegame_developer/vendor/symfony/event-dispatcher/Tests" file="ContainerAwareEventDispatcherTest.php" realpath="/home/web/example/src/freegame_developer/vendor/symfony/event-dispatcher/Tests/ContainerAwareEventDispatcherTest.php" size="8255" time="2016-10-13T01:43:15+00:00" unixtime="1476322995" sha1="b6740276fa4d3ec17e7ca36afacef5d8a9a97488" relative="freegame_developer/vendor/symfony/event-dispatcher/Tests/ContainerAwareEventDispatcherTest.php"/>
+  <extends full="Symfony\Component\EventDispatcher\Tests\AbstractEventDispatcherTest" namespace="Symfony\Component\EventDispatcher\Tests" name="AbstractEventDispatcherTest"/>
+  <method name="createEventDispatcher" start="22" end="27" abstract="false" final="false" static="false" visibility="protected"/>
+  <method name="testAddAListenerService" start="29" end="48" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testAddASubscriberService" start="50" end="83" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testPreventDuplicateListenerService" start="85" end="105" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testTriggerAListenerServiceOutOfScope" start="111" end="127" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <expectedexception value="\InvalidArgumentException"/>
+      <group value="legacy"/>
+    </docblock>
+  </method>
+  <method name="testReEnteringAScope" start="132" end="171" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <group value="legacy"/>
+    </docblock>
+  </method>
+  <method name="testHasListenersOnLazyLoad" start="173" end="199" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testGetListenersOnLazyLoad" start="201" end="216" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testRemoveAfterDispatch" start="218" end="231" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testRemoveBeforeDispatch" start="233" end="245" abstract="false" final="false" static="false" visibility="public"/>
+</class>

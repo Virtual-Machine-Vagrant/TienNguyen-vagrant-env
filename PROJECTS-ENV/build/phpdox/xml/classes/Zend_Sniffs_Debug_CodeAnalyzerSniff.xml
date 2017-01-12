@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="Zend_Sniffs_Debug_CodeAnalyzerSniff" namespace="" name="Zend_Sniffs_Debug_CodeAnalyzerSniff" abstract="false" final="false" start="30" end="107">
+  <file path="/home/web/example/src/freegame_developer/vendor/squizlabs/php_codesniffer/CodeSniffer/Standards/Zend/Sniffs/Debug" file="CodeAnalyzerSniff.php" realpath="/home/web/example/src/freegame_developer/vendor/squizlabs/php_codesniffer/CodeSniffer/Standards/Zend/Sniffs/Debug/CodeAnalyzerSniff.php" size="3767" time="2016-01-19T23:39:10+00:00" unixtime="1453246750" sha1="61a4d69955d2a3ca3f36bb850e69d8eac9666f45" relative="freegame_developer/vendor/squizlabs/php_codesniffer/CodeSniffer/Standards/Zend/Sniffs/Debug/CodeAnalyzerSniff.php"/>
+  <docblock>
+    <description compact="Zend_Sniffs_Debug_CodeAnalyzerSniff.">Runs the Zend Code Analyzer (from Zend Studio) on the file.</description>
+    <category value="PHP"/>
+    <package value="PHP_CodeSniffer"/>
+    <author value="Holger Kral &lt;holger.kral@zend.com&gt;"/>
+    <author value="Greg Sherwood &lt;gsherwood@squiz.net&gt;"/>
+    <copyright value="2006-2014 Squiz Pty Ltd (ABN 77 084 670 600)"/>
+    <license name="https://github.com/squizlabs/PHP_CodeSniffer/blob/master/licence.txt BSD Licence"/>
+    <version value="Release: @package_version@"/>
+    <link value="http://pear.php.net/package/PHP_CodeSniffer"/>
+  </docblock>
+  <implements full="PHP_CodeSniffer_Sniff" namespace="" name="PHP_CodeSniffer_Sniff"/>
+  <method name="register" start="39" end="43" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Returns the token types that this sniff is interested in."/>
+      <return type="array" of="int"/>
+    </docblock>
+  </method>
+  <method name="process" start="55" end="104" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Processes the tokens that this sniff is interested in."/>
+      <param description="The file where the token was found." type="object" variable="$phpcsFile">
+        <type full="PHP_CodeSniffer_File" namespace="" name="PHP_CodeSniffer_File"/>
+      </param>
+      <param description="The position in the stack where" type="int" variable="$stackPtr">the token was found.</param>
+      <return type="int"/>
+    </docblock>
+    <parameter name="phpcsFile" byreference="false" type="object">
+      <type full="PHP_CodeSniffer_File" namespace="" name="PHP_CodeSniffer_File"/>
+    </parameter>
+    <parameter name="stackPtr" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="In the command, 2&gt;&amp;1 is important because the code analyzer sends its" line="63"/>
+      <comment value="findings to stderr. $output normally contains only stdout, so using 2&gt;&amp;1" line="64"/>
+      <comment value="will pipe even stderr to stdout." line="65"/>
+      <comment value="There is the possibility to pass &quot;--ide&quot; as an option to the analyzer." line="68"/>
+      <comment value="This would result in an output format which would be easier to parse." line="69"/>
+      <comment value="The problem here is that no cleartext error messages are returnwd; only" line="70"/>
+      <comment value="error-code-labels. So for a start we go for cleartext output." line="71"/>
+      <comment value="error it is numeric. Try to handle various error conditions and" line="75"/>
+      <comment value="provide useful error reporting." line="76"/>
+      <comment value="Ignore the rest of the file." line="101"/>
+    </inline>
+  </method>
+</class>

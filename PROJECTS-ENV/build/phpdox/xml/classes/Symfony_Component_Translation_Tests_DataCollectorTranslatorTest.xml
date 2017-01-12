@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="Symfony\Component\Translation\Tests\DataCollectorTranslatorTest" namespace="Symfony\Component\Translation\Tests" name="DataCollectorTranslatorTest" abstract="false" final="false" start="18" end="75">
+  <file path="/home/web/example/src/freegame_developer/vendor/symfony/translation/Tests" file="DataCollectorTranslatorTest.php" realpath="/home/web/example/src/freegame_developer/vendor/symfony/translation/Tests/DataCollectorTranslatorTest.php" size="2485" time="2016-10-16T20:09:53+00:00" unixtime="1476648593" sha1="72ad2725460755b07754e59df134208d81274c83" relative="freegame_developer/vendor/symfony/translation/Tests/DataCollectorTranslatorTest.php"/>
+  <extends full="PHPUnit_Framework_TestCase" namespace="" name="PHPUnit_Framework_TestCase"/>
+  <method name="testCollectMessages" start="20" end="61" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="createCollector" start="63" end="74" abstract="false" final="false" static="false" visibility="private"/>
+</class>

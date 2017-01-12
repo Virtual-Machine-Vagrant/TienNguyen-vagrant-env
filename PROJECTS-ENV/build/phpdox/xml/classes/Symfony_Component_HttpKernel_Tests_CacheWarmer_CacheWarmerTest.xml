@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="Symfony\Component\HttpKernel\Tests\CacheWarmer\CacheWarmerTest" namespace="Symfony\Component\HttpKernel\Tests\CacheWarmer" name="CacheWarmerTest" abstract="false" final="false" start="16" end="47">
+  <file path="/home/web/example/src/freegame_developer/vendor/symfony/http-kernel/Tests/CacheWarmer" file="CacheWarmerTest.php" realpath="/home/web/example/src/freegame_developer/vendor/symfony/http-kernel/Tests/CacheWarmer/CacheWarmerTest.php" size="1566" time="2016-10-27T01:37:19+00:00" unixtime="1477532239" sha1="d13b1ee22d3b598bb334deb6b72a2bebca4134a1" relative="freegame_developer/vendor/symfony/http-kernel/Tests/CacheWarmer/CacheWarmerTest.php"/>
+  <extends full="PHPUnit_Framework_TestCase" namespace="" name="PHPUnit_Framework_TestCase"/>
+  <member name="cacheFile" visibility="protected" static="true" line="18"/>
+  <method name="setUpBeforeClass" start="20" end="23" abstract="false" final="false" static="true" visibility="public"/>
+  <method name="tearDownAfterClass" start="25" end="28" abstract="false" final="false" static="true" visibility="public"/>
+  <method name="testWriteCacheFileCreatesTheFile" start="30" end="36" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testWriteNonWritableCacheFileThrowsARuntimeException" start="41" end="46" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <expectedexception value="\RuntimeException"/>
+    </docblock>
+  </method>
+</class>

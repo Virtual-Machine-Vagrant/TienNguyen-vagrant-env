@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="MongoDB\Model\IndexInfoIteratorIterator" namespace="MongoDB\Model" name="IndexInfoIteratorIterator" abstract="false" final="false" start="20" end="33">
+  <file path="/home/web/example/src/freegame_developer/vendor/mongodb/mongodb/src/Model" file="IndexInfoIteratorIterator.php" realpath="/home/web/example/src/freegame_developer/vendor/mongodb/mongodb/src/Model/IndexInfoIteratorIterator.php" size="974" time="2016-09-23T19:38:29+00:00" unixtime="1474659509" sha1="6e06d15899747a60b65c2dd2faebac1a1d510df2" relative="freegame_developer/vendor/mongodb/mongodb/src/Model/IndexInfoIteratorIterator.php"/>
+  <docblock>
+    <description compact="IndexInfoIterator for both listIndexes command and legacy query results.">This common iterator may be used to wrap a Cursor returned by both the
+listIndexes command and, for legacy servers, queries on the "system.indexes"
+collection.</description>
+    <internal/>
+    <see value="MongoDB\Collection::listIndexes()"/>
+    <see value="https://github.com/mongodb/specifications/blob/master/source/enumerate-indexes.rst"/>
+    <see value="http://docs.mongodb.org/manual/reference/command/listIndexes/"/>
+    <see value="http://docs.mongodb.org/manual/reference/system-collections/"/>
+  </docblock>
+  <extends full="IteratorIterator" namespace="" name="IteratorIterator"/>
+  <implements full="MongoDB\Model\IndexInfoIterator" namespace="MongoDB\Model" name="IndexInfoIterator"/>
+  <method name="current" start="29" end="32" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Return the current element as an IndexInfo instance."/>
+      <see value="IndexInfoIterator::current()"/>
+      <see value="http://php.net/iterator.current"/>
+      <return type="object">
+        <type full="MongoDB\Model\IndexInfo" namespace="MongoDB\Model" name="IndexInfo"/>
+      </return>
+    </docblock>
+  </method>
+</class>

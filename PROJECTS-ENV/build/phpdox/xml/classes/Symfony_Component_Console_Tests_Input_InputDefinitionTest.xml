@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="Symfony\Component\Console\Tests\Input\InputDefinitionTest" namespace="Symfony\Component\Console\Tests\Input" name="InputDefinitionTest" abstract="false" final="false" start="18" end="440">
+  <file path="/home/web/example/src/freegame_developer/vendor/symfony/console/Tests/Input" file="InputDefinitionTest.php" realpath="/home/web/example/src/freegame_developer/vendor/symfony/console/Tests/Input/InputDefinitionTest.php" size="18902" time="2016-10-05T17:26:56+00:00" unixtime="1475688416" sha1="1a5a67c1a54cc90d0c8324a6ab406c39e1e1e61e" relative="freegame_developer/vendor/symfony/console/Tests/Input/InputDefinitionTest.php"/>
+  <extends full="PHPUnit_Framework_TestCase" namespace="" name="PHPUnit_Framework_TestCase"/>
+  <member name="fixtures" visibility="protected" static="true" line="20"/>
+  <member name="foo" visibility="protected" static="false" line="22"/>
+  <member name="bar" visibility="protected" static="false" line="23"/>
+  <member name="foo1" visibility="protected" static="false" line="24"/>
+  <member name="foo2" visibility="protected" static="false" line="25"/>
+  <method name="setUpBeforeClass" start="27" end="30" abstract="false" final="false" static="true" visibility="public"/>
+  <method name="testConstructorArguments" start="32" end="41" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testConstructorOptions" start="43" end="52" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testSetArguments" start="54" end="64" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testAddArguments" start="66" end="75" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testAddArgument" start="77" end="86" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testArgumentsMustHaveDifferentNames" start="92" end="99" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <expectedexception value="\LogicException"/>
+      <expectedexceptionmessage value="An argument with name &quot;foo&quot; already exists."/>
+    </docblock>
+  </method>
+  <method name="testArrayArgumentHasToBeLast" start="105" end="112" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <expectedexception value="\LogicException"/>
+      <expectedexceptionmessage value="Cannot add an argument after an array argument."/>
+    </docblock>
+  </method>
+  <method name="testRequiredArgumentCannotFollowAnOptionalOne" start="118" end="125" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <expectedexception value="\LogicException"/>
+      <expectedexceptionmessage value="Cannot add a required argument after an optional one."/>
+    </docblock>
+  </method>
+  <method name="testGetArgument" start="127" end="134" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testGetInvalidArgument" start="140" end="147" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <expectedexception value="\InvalidArgumentException"/>
+      <expectedexceptionmessage value="The &quot;bar&quot; argument does not exist."/>
+    </docblock>
+  </method>
+  <method name="testHasArgument" start="149" end="158" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testGetArgumentRequiredCount" start="160" end="169" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testGetArgumentCount" start="171" end="180" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testGetArgumentDefaults" start="182" end="196" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testSetOptions" start="198" end="206" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testSetOptionsClearsOptions" start="212" end="219" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <expectedexception value="\InvalidArgumentException"/>
+      <expectedexceptionmessage value="The &quot;-f&quot; option does not exist."/>
+    </docblock>
+  </method>
+  <method name="testAddOptions" start="221" end="229" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testAddOption" start="231" end="240" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testAddDuplicateOption" start="246" end="253" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <expectedexception value="\LogicException"/>
+      <expectedexceptionmessage value="An option named &quot;foo&quot; already exists."/>
+    </docblock>
+  </method>
+  <method name="testAddDuplicateShortcutOption" start="259" end="266" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <expectedexception value="\LogicException"/>
+      <expectedexceptionmessage value="An option with shortcut &quot;f&quot; already exists."/>
+    </docblock>
+  </method>
+  <method name="testGetOption" start="268" end="274" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testGetInvalidOption" start="280" end="286" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <expectedexception value="\InvalidArgumentException"/>
+      <expectedexceptionmessage value="The &quot;--bar&quot; option does not exist."/>
+    </docblock>
+  </method>
+  <method name="testHasOption" start="288" end="295" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testHasShortcut" start="297" end="304" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testGetOptionForShortcut" start="306" end="312" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testGetOptionForMultiShortcut" start="314" end="321" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testGetOptionForInvalidShortcut" start="327" end="333" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <expectedexception value="\InvalidArgumentException"/>
+      <expectedexceptionmessage value="The &quot;-l&quot; option does not exist."/>
+    </docblock>
+  </method>
+  <method name="testGetOptionDefaults" start="335" end="356" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testGetSynopsis" start="361" end="364" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <dataprovider value="getGetSynopsisData"/>
+    </docblock>
+    <parameter name="definition" byreference="false" type="object">
+      <type full="Symfony\Component\Console\Input\InputDefinition" namespace="Symfony\Component\Console\Input" name="InputDefinition"/>
+    </parameter>
+    <parameter name="expectedSynopsis" byreference="false" type="{unknown}"/>
+    <parameter name="message" byreference="false" type="{unknown}" default="" constant="null"/>
+  </method>
+  <method name="getGetSynopsisData" start="366" end="381" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testGetShortSynopsis" start="383" end="387" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testLegacyAsText" start="392" end="406" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <group value="legacy"/>
+    </docblock>
+  </method>
+  <method name="testLegacyAsXml" start="411" end="422" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <group value="legacy"/>
+    </docblock>
+  </method>
+  <method name="initializeArguments" start="424" end="430" abstract="false" final="false" static="false" visibility="protected"/>
+  <method name="initializeOptions" start="432" end="439" abstract="false" final="false" static="false" visibility="protected"/>
+</class>

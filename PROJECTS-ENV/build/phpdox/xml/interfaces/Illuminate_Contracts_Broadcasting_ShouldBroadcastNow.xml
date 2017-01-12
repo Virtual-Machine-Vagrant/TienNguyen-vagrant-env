@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface xmlns="http://xml.phpdox.net/src" full="Illuminate\Contracts\Broadcasting\ShouldBroadcastNow" namespace="Illuminate\Contracts\Broadcasting" name="ShouldBroadcastNow" abstract="false" final="false" start="5" end="8">
+  <file path="/home/web/example/src/freegame_developer/vendor/laravel/framework/src/Illuminate/Contracts/Broadcasting" file="ShouldBroadcastNow.php" realpath="/home/web/example/src/freegame_developer/vendor/laravel/framework/src/Illuminate/Contracts/Broadcasting/ShouldBroadcastNow.php" size="117" time="2016-02-24T15:13:21+00:00" unixtime="1456326801" sha1="820116f3d5b3586de6f66add7794187db74a1565" relative="freegame_developer/vendor/laravel/framework/src/Illuminate/Contracts/Broadcasting/ShouldBroadcastNow.php"/>
+  <extends full="Illuminate\Contracts\Broadcasting\ShouldBroadcast" namespace="Illuminate\Contracts\Broadcasting" name="ShouldBroadcast"/>
+</interface>

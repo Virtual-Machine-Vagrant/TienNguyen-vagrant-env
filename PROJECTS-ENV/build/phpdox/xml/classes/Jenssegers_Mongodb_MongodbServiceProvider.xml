@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="Jenssegers\Mongodb\MongodbServiceProvider" namespace="Jenssegers\Mongodb" name="MongodbServiceProvider" abstract="false" final="false" start="7" end="38">
+  <file path="/home/web/example/src/freegame_developer/vendor/jenssegers/mongodb/src/Jenssegers/Mongodb" file="MongodbServiceProvider.php" realpath="/home/web/example/src/freegame_developer/vendor/jenssegers/mongodb/src/Jenssegers/Mongodb/MongodbServiceProvider.php" size="995" time="2016-10-07T08:39:24+00:00" unixtime="1475829564" sha1="467ac93f9e830b2242a2d4d69520ed4286617f40" relative="freegame_developer/vendor/jenssegers/mongodb/src/Jenssegers/Mongodb/MongodbServiceProvider.php"/>
+  <extends full="Illuminate\Support\ServiceProvider" namespace="Illuminate\Support" name="ServiceProvider"/>
+  <method name="boot" start="12" end="17" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Bootstrap the application events."/>
+    </docblock>
+  </method>
+  <method name="register" start="22" end="37" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Register the service provider."/>
+    </docblock>
+    <inline>
+      <comment value="Add database driver." line="24"/>
+      <comment value="Add connector for queue support." line="31"/>
+    </inline>
+  </method>
+</class>

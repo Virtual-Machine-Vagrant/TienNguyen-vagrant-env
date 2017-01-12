@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="phpDocumentor\Reflection\Types\ContextFactory" namespace="phpDocumentor\Reflection\Types" name="ContextFactory" abstract="false" final="true" start="24" end="210">
+  <file path="/home/web/example/src/freegame_developer/vendor/phpdocumentor/type-resolver/src/Types" file="ContextFactory.php" realpath="/home/web/example/src/freegame_developer/vendor/phpdocumentor/type-resolver/src/Types/ContextFactory.php" size="6900" time="2016-06-10T07:14:17+00:00" unixtime="1465542857" sha1="64e8a6dff45cc79a876311f7195a001f39cf745a" relative="freegame_developer/vendor/phpdocumentor/type-resolver/src/Types/ContextFactory.php"/>
+  <docblock>
+    <description compact="Convenience class to create a Context for DocBlocks when not using the Reflection Component of phpDocumentor.">For a DocBlock to be able to resolve types that use partial namespace names or rely on namespace imports we need to
+provide a bit of context so that the DocBlock can read that and based on it decide how to resolve the types to
+Fully Qualified names.</description>
+    <see value="Context for more information."/>
+  </docblock>
+  <constant type="string" name="T_LITERAL_END_OF_USE" value="';'">
+    <docblock>
+      <description compact="The literal used at the end of a use statement."/>
+    </docblock>
+  </constant>
+  <constant type="string" name="T_LITERAL_USE_SEPARATOR" value="','">
+    <docblock>
+      <description compact="The literal used between sets of use statements"/>
+    </docblock>
+  </constant>
+  <method name="createFromReflector" start="41" end="55" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Build a Context given a Class Reflection."/>
+      <param type="object" variable="$reflector">
+        <type full="\ReflectionClass" namespace="" name="ReflectionClass"/>
+      </param>
+      <see value="Context for more information on Contexts."/>
+      <return type="object">
+        <type full="phpDocumentor\Reflection\Types\Context" namespace="phpDocumentor\Reflection\Types" name="Context"/>
+      </return>
+    </docblock>
+    <parameter name="reflector" byreference="false" type="object">
+      <type full="Reflector" namespace="" name="Reflector"/>
+    </parameter>
+  </method>
+  <method name="createForNamespace" start="67" end="111" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Build a Context for a namespace in the provided file contents."/>
+      <param description="It does not matter if a `\` precedes the namespace name, this method first normalizes." type="string" variable="$namespace"/>
+      <param description="the file's contents to retrieve the aliases from with the given namespace." type="string" variable="$fileContents"/>
+      <see value="Context for more information on Contexts."/>
+      <return type="object">
+        <type full="phpDocumentor\Reflection\Types\Context" namespace="phpDocumentor\Reflection\Types" name="Context"/>
+      </return>
+    </docblock>
+    <parameter name="namespace" byreference="false" type="{unknown}"/>
+    <parameter name="fileContents" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="parseNamespace" start="120" end="133" abstract="false" final="false" static="false" visibility="private">
+    <docblock>
+      <description compact="Deduce the name from tokens when we are at the T_NAMESPACE token."/>
+      <param type="object" variable="$tokens">
+        <type full="\ArrayIterator" namespace="" name="ArrayIterator"/>
+      </param>
+      <return type="string"/>
+    </docblock>
+    <parameter name="tokens" byreference="false" type="object">
+      <type full="ArrayIterator" namespace="" name="ArrayIterator"/>
+    </parameter>
+    <inline>
+      <comment value="skip to the first string or namespace separator" line="122"/>
+    </inline>
+  </method>
+  <method name="parseUseStatement" start="142" end="158" abstract="false" final="false" static="false" visibility="private">
+    <docblock>
+      <description compact="Deduce the names of all imports when we are at the T_USE token."/>
+      <param type="object" variable="$tokens">
+        <type full="\ArrayIterator" namespace="" name="ArrayIterator"/>
+      </param>
+      <return type="array" of="object">
+        <type full="phpDocumentor\Reflection\Types\string" namespace="phpDocumentor\Reflection\Types" name="string"/>
+      </return>
+    </docblock>
+    <parameter name="tokens" byreference="false" type="object">
+      <type full="ArrayIterator" namespace="" name="ArrayIterator"/>
+    </parameter>
+  </method>
+  <method name="skipToNextStringOrNamespaceSeparator" start="167" end="172" abstract="false" final="false" static="false" visibility="private">
+    <docblock>
+      <description compact="Fast-forwards the iterator as longs as we don't encounter a T_STRING or T_NS_SEPARATOR token."/>
+      <param type="object" variable="$tokens">
+        <type full="\ArrayIterator" namespace="" name="ArrayIterator"/>
+      </param>
+      <return type="object">
+        <type full="phpDocumentor\Reflection\Types\void" namespace="phpDocumentor\Reflection\Types" name="void"/>
+      </return>
+    </docblock>
+    <parameter name="tokens" byreference="false" type="object">
+      <type full="ArrayIterator" namespace="" name="ArrayIterator"/>
+    </parameter>
+  </method>
+  <method name="extractUseStatement" start="182" end="209" abstract="false" final="false" static="false" visibility="private">
+    <docblock>
+      <description compact="Deduce the namespace name and alias of an import when we are at the T_USE token or have not reached the end of a USE statement yet."/>
+      <param type="object" variable="$tokens">
+        <type full="\ArrayIterator" namespace="" name="ArrayIterator"/>
+      </param>
+      <return type="string"/>
+    </docblock>
+    <parameter name="tokens" byreference="false" type="object">
+      <type full="ArrayIterator" namespace="" name="ArrayIterator"/>
+    </parameter>
+  </method>
+</class>

@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="App\Services\SiteMaintenanceService" namespace="App\Services" name="SiteMaintenanceService" abstract="false" final="false" start="11" end="362">
+  <file path="/home/web/example/src/freegame_developer/app/Services" file="SiteMaintenanceService.php" realpath="/home/web/example/src/freegame_developer/app/Services/SiteMaintenanceService.php" size="11637" time="2016-12-13T02:05:42+00:00" unixtime="1481594742" sha1="3221e03a00d0939ce2877ad581d99671fa785a2d" relative="freegame_developer/app/Services/SiteMaintenanceService.php"/>
+  <extends full="App\Services\CustomService" namespace="App\Services" name="CustomService"/>
+  <member name="maintenanceUrlConf" visibility="protected" static="false" line="13"/>
+  <member name="maintenanceInfo" visibility="protected" static="false" line="14"/>
+  <constructor name="__construct" start="16" end="22" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="maintenanceUrlConf" byreference="false" type="object">
+      <type full="App\Models\NetgameCstool\MaintenanceUrlConf" namespace="App\Models\NetgameCstool" name="MaintenanceUrlConf"/>
+    </parameter>
+    <parameter name="maintenanceInfo" byreference="false" type="object">
+      <type full="App\Models\NetgameCstool\MaintenanceInfo" namespace="App\Models\NetgameCstool" name="MaintenanceInfo"/>
+    </parameter>
+  </constructor>
+  <method name="getList" start="30" end="37" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Get list maintenance url conf"/>
+      <param type="integer" variable="$gameId"/>
+      <param type="array" variable="$condition"/>
+      <return type="array"/>
+    </docblock>
+    <parameter name="gameId" byreference="false" type="{unknown}"/>
+    <parameter name="condition" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="getMaintenanceInfoByGameId" start="44" end="55" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Get last maintenance info from database by game id"/>
+      <param type="integer" variable="$gameId"/>
+      <return type="array"/>
+    </docblock>
+    <parameter name="gameId" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="getMaintenanceInfo" start="63" end="72" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Get maintenance info from database"/>
+      <param type="integer" variable="$gameId"/>
+      <param type="integer" variable="$id"/>
+      <return type="array"/>
+    </docblock>
+    <parameter name="gameId" byreference="false" type="{unknown}"/>
+    <parameter name="id" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="getMaintenanceUrlConf" start="80" end="89" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Get maintenance url conf from database"/>
+      <param type="integer" variable="$gameId"/>
+      <param type="integer" variable="$id"/>
+      <return type="array"/>
+    </docblock>
+    <parameter name="gameId" byreference="false" type="{unknown}"/>
+    <parameter name="id" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="create" start="97" end="141" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Insert maintenance to database"/>
+      <param type="integer" variable="$gameId"/>
+      <param type="array" variable="$condition"/>
+      <return type="boolean"/>
+    </docblock>
+    <parameter name="gameId" byreference="false" type="{unknown}"/>
+    <parameter name="condition" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="update" start="149" end="200" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Update maintenance from database"/>
+      <param type="integer" variable="$gameId"/>
+      <param type="array" variable="$condition"/>
+      <return type="boolean"/>
+    </docblock>
+    <parameter name="gameId" byreference="false" type="{unknown}"/>
+    <parameter name="condition" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="delete" start="208" end="230" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Delele maintenance from database"/>
+      <param type="integer" variable="$gameId"/>
+      <param type="integer" variable="$maintenanceId"/>
+      <return type="boolean"/>
+    </docblock>
+    <parameter name="gameId" byreference="false" type="{unknown}"/>
+    <parameter name="maintenanceId" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="setInitBeforeShow" start="237" end="251" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Set init before show data"/>
+      <param type="array" variable="$data"/>
+      <return type="array"/>
+    </docblock>
+    <parameter name="data" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="getUrlMaintenance" start="259" end="270" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="get url maintenance"/>
+      <param type="integer" variable="$gameId"/>
+      <param type="integer" variable="$id"/>
+      <return type="string"/>
+    </docblock>
+    <parameter name="gameId" byreference="false" type="{unknown}"/>
+    <parameter name="id" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="getFormData" start="277" end="286" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Get values init for multi page"/>
+      <return type="array"/>
+    </docblock>
+  </method>
+  <method name="getSearchConditions" start="293" end="342" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Get search conditions"/>
+      <param type="array" variable="$condition"/>
+      <return type="array"/>
+    </docblock>
+    <parameter name="condition" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="Condition query" line="296"/>
+      <comment value="Pagination" line="334"/>
+    </inline>
+  </method>
+  <method name="requestUrl" start="349" end="361" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Get search param from url"/>
+      <param type="object" variable="$request">
+        <type full="App\Services\request" namespace="App\Services" name="request"/>
+      </param>
+      <return type="array"/>
+    </docblock>
+    <parameter name="request" byreference="false" type="{unknown}"/>
+  </method>
+</class>

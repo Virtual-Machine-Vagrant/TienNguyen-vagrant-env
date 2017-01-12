@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="Illuminate\Support\Facades\URL" namespace="Illuminate\Support\Facades" name="URL" abstract="false" final="false" start="8" end="19">
+  <file path="/home/web/example/src/freegame_developer/vendor/laravel/framework/src/Illuminate/Support/Facades" file="URL.php" realpath="/home/web/example/src/freegame_developer/vendor/laravel/framework/src/Illuminate/Support/Facades/URL.php" size="302" time="2016-02-24T15:13:21+00:00" unixtime="1456326801" sha1="bbfd675a838a7704fadf92c74bc3ea9baba577cd" relative="freegame_developer/vendor/laravel/framework/src/Illuminate/Support/Facades/URL.php"/>
+  <docblock>
+    <description/>
+    <see value="\Illuminate\Routing\UrlGenerator"/>
+  </docblock>
+  <extends full="Illuminate\Support\Facades\Facade" namespace="Illuminate\Support\Facades" name="Facade"/>
+  <method name="getFacadeAccessor" start="15" end="18" abstract="false" final="false" static="true" visibility="protected">
+    <docblock>
+      <description compact="Get the registered name of the component."/>
+      <return type="string"/>
+    </docblock>
+  </method>
+</class>

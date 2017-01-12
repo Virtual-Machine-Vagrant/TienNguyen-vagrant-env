@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="Squiz_Sniffs_Functions_MultiLineFunctionDeclarationSniff" namespace="" name="Squiz_Sniffs_Functions_MultiLineFunctionDeclarationSniff" abstract="false" final="false" start="33" end="153">
+  <file path="/home/web/example/src/freegame_developer/vendor/squizlabs/php_codesniffer/CodeSniffer/Standards/Squiz/Sniffs/Functions" file="MultiLineFunctionDeclarationSniff.php" realpath="/home/web/example/src/freegame_developer/vendor/squizlabs/php_codesniffer/CodeSniffer/Standards/Squiz/Sniffs/Functions/MultiLineFunctionDeclarationSniff.php" size="5871" time="2016-01-19T23:39:10+00:00" unixtime="1453246750" sha1="51d9d3157d4d1407e34c21399fc8e713b9debd2d" relative="freegame_developer/vendor/squizlabs/php_codesniffer/CodeSniffer/Standards/Squiz/Sniffs/Functions/MultiLineFunctionDeclarationSniff.php"/>
+  <docblock>
+    <description compact="Squiz_Sniffs_Functions_MultiLineFunctionDeclarationSniff.">Ensure single and multi-line function declarations are defined correctly.</description>
+    <category value="PHP"/>
+    <package value="PHP_CodeSniffer"/>
+    <author value="Greg Sherwood &lt;gsherwood@squiz.net&gt;"/>
+    <copyright value="2006-2014 Squiz Pty Ltd (ABN 77 084 670 600)"/>
+    <license name="https://github.com/squizlabs/PHP_CodeSniffer/blob/master/licence.txt BSD Licence"/>
+    <version value="Release: @package_version@"/>
+    <link value="http://pear.php.net/package/PHP_CodeSniffer"/>
+  </docblock>
+  <extends full="PEAR_Sniffs_Functions_FunctionDeclarationSniff" namespace="" name="PEAR_Sniffs_Functions_FunctionDeclarationSniff"/>
+  <member name="supportedTokenizers" type="array" default="" visibility="public" static="false" line="41">
+    <docblock>
+      <description compact="A list of tokenizers this sniff supports."/>
+      <var type="array"/>
+    </docblock>
+  </member>
+  <method name="processMultiLineDeclaration" start="58" end="85" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Processes multi-line declarations."/>
+      <param description="The file being scanned." type="object" variable="$phpcsFile">
+        <type full="PHP_CodeSniffer_File" namespace="" name="PHP_CodeSniffer_File"/>
+      </param>
+      <param description="The position of the current token" type="int" variable="$stackPtr">in the stack passed in $tokens.</param>
+      <param description="The stack of tokens that make up" type="array" variable="$tokens">the file.</param>
+      <return type="object">
+        <type full="void" namespace="" name="void"/>
+      </return>
+    </docblock>
+    <parameter name="phpcsFile" byreference="false" type="object">
+      <type full="PHP_CodeSniffer_File" namespace="" name="PHP_CodeSniffer_File"/>
+    </parameter>
+    <parameter name="stackPtr" byreference="false" type="{unknown}"/>
+    <parameter name="tokens" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="We do everything the parent sniff does, and a bit more." line="60"/>
+      <comment value="Also check spacing." line="78"/>
+    </inline>
+  </method>
+  <method name="processBracket" start="101" end="150" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Processes the contents of a single set of brackets."/>
+      <param description="The file being scanned." type="object" variable="$phpcsFile">
+        <type full="PHP_CodeSniffer_File" namespace="" name="PHP_CodeSniffer_File"/>
+      </param>
+      <param description="The position of the open bracket" type="int" variable="$openBracket">in the stack passed in $tokens.</param>
+      <param description="The stack of tokens that make up" type="array" variable="$tokens">the file.</param>
+      <param description="The type of the token the brackets" type="string" variable="$type">belong to (function or use).</param>
+      <return type="object">
+        <type full="void" namespace="" name="void"/>
+      </return>
+    </docblock>
+    <parameter name="phpcsFile" byreference="false" type="object">
+      <type full="PHP_CodeSniffer_File" namespace="" name="PHP_CodeSniffer_File"/>
+    </parameter>
+    <parameter name="openBracket" byreference="false" type="{unknown}"/>
+    <parameter name="tokens" byreference="false" type="{unknown}"/>
+    <parameter name="type" byreference="false" type="string" default="'function'"/>
+    <inline>
+      <comment value="The open bracket should be the last thing on the line." line="110"/>
+      <comment value="Each line between the brackets should contain a single parameter." line="122"/>
+      <comment value="end for" line="148"/>
+    </inline>
+  </method>
+</class>

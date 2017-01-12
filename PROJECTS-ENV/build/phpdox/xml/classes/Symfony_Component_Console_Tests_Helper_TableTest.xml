@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="Symfony\Component\Console\Tests\Helper\TableTest" namespace="Symfony\Component\Console\Tests\Helper" name="TableTest" abstract="false" final="false" start="20" end="610">
+  <file path="/home/web/example/src/freegame_developer/vendor/symfony/console/Tests/Helper" file="TableTest.php" realpath="/home/web/example/src/freegame_developer/vendor/symfony/console/Tests/Helper/TableTest.php" size="22383" time="2016-10-05T17:26:56+00:00" unixtime="1475688416" sha1="0eeeaf11e9d728124dfac99eb9c0ce54a138d194" relative="freegame_developer/vendor/symfony/console/Tests/Helper/TableTest.php"/>
+  <extends full="PHPUnit_Framework_TestCase" namespace="" name="PHPUnit_Framework_TestCase"/>
+  <member name="stream" visibility="protected" static="false" line="22"/>
+  <method name="setUp" start="24" end="27" abstract="false" final="false" static="false" visibility="protected"/>
+  <method name="tearDown" start="29" end="33" abstract="false" final="false" static="false" visibility="protected"/>
+  <method name="testRender" start="38" end="49" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <dataprovider value="testRenderProvider"/>
+    </docblock>
+    <parameter name="headers" byreference="false" type="{unknown}"/>
+    <parameter name="rows" byreference="false" type="{unknown}"/>
+    <parameter name="style" byreference="false" type="{unknown}"/>
+    <parameter name="expected" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="testRenderAddRows" start="54" end="65" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <dataprovider value="testRenderProvider"/>
+    </docblock>
+    <parameter name="headers" byreference="false" type="{unknown}"/>
+    <parameter name="rows" byreference="false" type="{unknown}"/>
+    <parameter name="style" byreference="false" type="{unknown}"/>
+    <parameter name="expected" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="testRenderAddRowsOneByOne" start="70" end="83" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <dataprovider value="testRenderProvider"/>
+    </docblock>
+    <parameter name="headers" byreference="false" type="{unknown}"/>
+    <parameter name="rows" byreference="false" type="{unknown}"/>
+    <parameter name="style" byreference="false" type="{unknown}"/>
+    <parameter name="expected" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="testRenderProvider" start="85" end="489" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testRenderMultiByte" start="494" end="515" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <requires value="extension mbstring"/>
+    </docblock>
+  </method>
+  <method name="testStyle" start="517" end="545" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testRowSeparator" start="547" end="578" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testIsNotDefinedStyleException" start="584" end="588" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <expectedexception value="\InvalidArgumentException"/>
+      <expectedexceptionmessage value="Style &quot;absent&quot; is not defined."/>
+    </docblock>
+  </method>
+  <method name="testGetStyleDefinition" start="594" end="597" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <expectedexception value="\InvalidArgumentException"/>
+      <expectedexceptionmessage value="Style &quot;absent&quot; is not defined."/>
+    </docblock>
+  </method>
+  <method name="getOutputStream" start="599" end="602" abstract="false" final="false" static="false" visibility="protected"/>
+  <method name="getOutputContent" start="604" end="609" abstract="false" final="false" static="false" visibility="protected">
+    <parameter name="output" byreference="false" type="object">
+      <type full="Symfony\Component\Console\Output\StreamOutput" namespace="Symfony\Component\Console\Output" name="StreamOutput"/>
+    </parameter>
+  </method>
+</class>

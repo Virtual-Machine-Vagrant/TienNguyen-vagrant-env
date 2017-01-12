@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="Squiz_Sniffs_Arrays_ArrayBracketSpacingSniff" namespace="" name="Squiz_Sniffs_Arrays_ArrayBracketSpacingSniff" abstract="false" final="false" start="30" end="115">
+  <file path="/home/web/example/src/freegame_developer/vendor/squizlabs/php_codesniffer/CodeSniffer/Standards/Squiz/Sniffs/Arrays" file="ArrayBracketSpacingSniff.php" realpath="/home/web/example/src/freegame_developer/vendor/squizlabs/php_codesniffer/CodeSniffer/Standards/Squiz/Sniffs/Arrays/ArrayBracketSpacingSniff.php" size="4493" time="2016-01-19T23:39:10+00:00" unixtime="1453246750" sha1="9b54c706a7295ae7ee177604adb3b81b9c9a33c0" relative="freegame_developer/vendor/squizlabs/php_codesniffer/CodeSniffer/Standards/Squiz/Sniffs/Arrays/ArrayBracketSpacingSniff.php"/>
+  <docblock>
+    <description compact="Squiz_Sniffs_Arrays_ArrayBracketSpacingSniff.">Ensure that there are no spaces around square brackets.</description>
+    <category value="PHP"/>
+    <package value="PHP_CodeSniffer"/>
+    <author value="Greg Sherwood &lt;gsherwood@squiz.net&gt;"/>
+    <author value="Marc McIntyre &lt;mmcintyre@squiz.net&gt;"/>
+    <copyright value="2006-2014 Squiz Pty Ltd (ABN 77 084 670 600)"/>
+    <license name="https://github.com/squizlabs/PHP_CodeSniffer/blob/master/licence.txt BSD Licence"/>
+    <version value="Release: @package_version@"/>
+    <link value="http://pear.php.net/package/PHP_CodeSniffer"/>
+  </docblock>
+  <implements full="PHP_CodeSniffer_Sniff" namespace="" name="PHP_CodeSniffer_Sniff"/>
+  <method name="register" start="39" end="46" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Returns an array of tokens this test wants to listen for."/>
+      <return type="array"/>
+    </docblock>
+  </method>
+  <method name="process" start="58" end="112" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Processes this sniff, when one of its tokens is encountered."/>
+      <param description="The current file being checked." type="object" variable="$phpcsFile">
+        <type full="PHP_CodeSniffer_File" namespace="" name="PHP_CodeSniffer_File"/>
+      </param>
+      <param description="The position of the current token in the" type="int" variable="$stackPtr">stack passed in $tokens.</param>
+      <return type="object">
+        <type full="void" namespace="" name="void"/>
+      </return>
+    </docblock>
+    <parameter name="phpcsFile" byreference="false" type="object">
+      <type full="PHP_CodeSniffer_File" namespace="" name="PHP_CodeSniffer_File"/>
+    </parameter>
+    <parameter name="stackPtr" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="PHP 5.4 introduced a shorthand array declaration syntax, so we need" line="62"/>
+      <comment value="to ignore the these type of array declarations because this sniff is" line="63"/>
+      <comment value="only dealing with array usage." line="64"/>
+      <comment value="Square brackets can not have a space before them." line="76"/>
+      <comment value="Open square brackets can't ever have spaces after them." line="93"/>
+    </inline>
+  </method>
+</class>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="spec\PhpSpec\Formatter\Presenter\Exception\SimpleExceptionElementPresenterSpec" namespace="spec\PhpSpec\Formatter\Presenter\Exception" name="SimpleExceptionElementPresenterSpec" abstract="false" final="false" start="10" end="79">
+  <file path="/home/web/example/src/freegame_developer/vendor/phpspec/phpspec/spec/PhpSpec/Formatter/Presenter/Exception" file="SimpleExceptionElementPresenterSpec.php" realpath="/home/web/example/src/freegame_developer/vendor/phpspec/phpspec/spec/PhpSpec/Formatter/Presenter/Exception/SimpleExceptionElementPresenterSpec.php" size="2805" time="2016-01-01T10:17:54+00:00" unixtime="1451643474" sha1="d92dfad6c91a8f3b72a3a19ca2b011b4c5abb89b" relative="freegame_developer/vendor/phpspec/phpspec/spec/PhpSpec/Formatter/Presenter/Exception/SimpleExceptionElementPresenterSpec.php"/>
+  <extends full="PhpSpec\ObjectBehavior" namespace="PhpSpec" name="ObjectBehavior"/>
+  <method name="let" start="12" end="15" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="typePresenter" byreference="false" type="object">
+      <type full="PhpSpec\Formatter\Presenter\Value\ExceptionTypePresenter" namespace="PhpSpec\Formatter\Presenter\Value" name="ExceptionTypePresenter"/>
+    </parameter>
+    <parameter name="valuePresenter" byreference="false" type="object">
+      <type full="PhpSpec\Formatter\Presenter\Value\ValuePresenter" namespace="PhpSpec\Formatter\Presenter\Value" name="ValuePresenter"/>
+    </parameter>
+  </method>
+  <method name="it_is_an_exception_element_presenter" start="17" end="20" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="it_should_return_a_simple_exception_thrown_message" start="22" end="27" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="typePresenter" byreference="false" type="object">
+      <type full="PhpSpec\Formatter\Presenter\Value\ExceptionTypePresenter" namespace="PhpSpec\Formatter\Presenter\Value" name="ExceptionTypePresenter"/>
+    </parameter>
+    <parameter name="exception" byreference="false" type="object">
+      <type full="Exception" namespace="" name="Exception"/>
+    </parameter>
+  </method>
+  <method name="it_should_present_a_code_line" start="29" end="32" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="it_should_present_a_highlighted_line_unchanged" start="34" end="37" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="it_should_present_the_header_of_an_exception_trace_unchanged" start="39" end="42" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="it_should_present_every_argument_in_an_exception_trace_method_as_a_value" start="44" end="51" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="valuePresenter" byreference="false" type="object">
+      <type full="PhpSpec\Formatter\Presenter\Value\ValuePresenter" namespace="PhpSpec\Formatter\Presenter\Value" name="ValuePresenter"/>
+    </parameter>
+  </method>
+  <method name="it_should_present_an_exception_trace_method" start="53" end="60" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="valuePresenter" byreference="false" type="object">
+      <type full="PhpSpec\Formatter\Presenter\Value\ValuePresenter" namespace="PhpSpec\Formatter\Presenter\Value" name="ValuePresenter"/>
+    </parameter>
+  </method>
+  <method name="it_should_present_every_argument_in_an_exception_trace_function_as_a_value" start="62" end="69" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="valuePresenter" byreference="false" type="object">
+      <type full="PhpSpec\Formatter\Presenter\Value\ValuePresenter" namespace="PhpSpec\Formatter\Presenter\Value" name="ValuePresenter"/>
+    </parameter>
+  </method>
+  <method name="it_should_present_an_exception_trace_function" start="71" end="78" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="valuePresenter" byreference="false" type="object">
+      <type full="PhpSpec\Formatter\Presenter\Value\ValuePresenter" namespace="PhpSpec\Formatter\Presenter\Value" name="ValuePresenter"/>
+    </parameter>
+  </method>
+</class>

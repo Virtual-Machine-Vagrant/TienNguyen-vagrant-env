@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="Symfony\Component\Yaml\Escaper" namespace="Symfony\Component\Yaml" name="Escaper" abstract="false" final="false" start="22" end="99">
+  <file path="/home/web/example/src/freegame_developer/vendor/symfony/yaml" file="Escaper.php" realpath="/home/web/example/src/freegame_developer/vendor/symfony/yaml/Escaper.php" size="3870" time="2016-10-24T18:41:13+00:00" unixtime="1477334473" sha1="c36ee6d018078cc61a39c4a31ce4d120ef76ff58" relative="freegame_developer/vendor/symfony/yaml/Escaper.php"/>
+  <docblock>
+    <description compact="Escaper encapsulates escaping rules for single and double-quoted YAML strings."/>
+    <author value="Matthew Lewinski &lt;matthew@lewinski.org&gt;"/>
+    <internal/>
+  </docblock>
+  <constant type="string" name="REGEX_CHARACTER_TO_ESCAPE" value="&quot;[\\x00-\\x1f]|\xc2\x85|\xc2\xa0|\xe2\x80\xa8|\xe2\x80\xa9&quot;"/>
+  <member name="escapees" type="array" default="" visibility="private" static="true" line="31"/>
+  <member name="escaped" type="array" default="" visibility="private" static="true" line="37"/>
+  <method name="requiresDoubleQuoting" start="51" end="54" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description compact="Determines if a PHP value would require double quoting in YAML."/>
+      <param description="A PHP value" type="string" variable="$value"/>
+      <return description="True if the value would require double quotes" type="object">
+        <type full="Symfony\Component\Yaml\bool" namespace="Symfony\Component\Yaml" name="bool"/>
+      </return>
+    </docblock>
+    <parameter name="value" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="escapeWithDoubleQuotes" start="63" end="66" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description compact="Escapes and surrounds a PHP value with double quotes."/>
+      <param description="A PHP value" type="string" variable="$value"/>
+      <return description="The quoted, escaped string" type="string"/>
+    </docblock>
+    <parameter name="value" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="requiresSingleQuoting" start="75" end="86" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description compact="Determines if a PHP value would require single quoting in YAML."/>
+      <param description="A PHP value" type="string" variable="$value"/>
+      <return description="True if the value would require single quotes" type="object">
+        <type full="Symfony\Component\Yaml\bool" namespace="Symfony\Component\Yaml" name="bool"/>
+      </return>
+    </docblock>
+    <parameter name="value" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="Determines if a PHP value is entirely composed of a value that would" line="77"/>
+      <comment value="require single quoting in YAML." line="78"/>
+      <comment value="Determines if the PHP value contains any single characters that would" line="83"/>
+      <comment value="cause it to require single quoting in YAML." line="84"/>
+    </inline>
+  </method>
+  <method name="escapeWithSingleQuotes" start="95" end="98" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description compact="Escapes and surrounds a PHP value with single quotes."/>
+      <param description="A PHP value" type="string" variable="$value"/>
+      <return description="The quoted, escaped string" type="string"/>
+    </docblock>
+    <parameter name="value" byreference="false" type="{unknown}"/>
+  </method>
+</class>

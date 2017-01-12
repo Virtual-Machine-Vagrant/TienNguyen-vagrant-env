@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="spec\PhpSpec\Formatter\Presenter\WithMagicInvoke" namespace="spec\PhpSpec\Formatter\Presenter" name="WithMagicInvoke" abstract="false" final="false" start="126" end="131">
+  <file path="/home/web/example/src/freegame_developer/vendor/phpspec/phpspec/spec/PhpSpec/Formatter/Presenter" file="StringPresenterSpec.php" realpath="/home/web/example/src/freegame_developer/vendor/phpspec/phpspec/spec/PhpSpec/Formatter/Presenter/StringPresenterSpec.php" size="3756" time="2016-01-01T10:17:54+00:00" unixtime="1451643474" sha1="d106609b55a6bd6feed06ae04be85daddf17d941" relative="freegame_developer/vendor/phpspec/phpspec/spec/PhpSpec/Formatter/Presenter/StringPresenterSpec.php"/>
+  <method name="__invoke" start="128" end="130" abstract="false" final="false" static="false" visibility="public"/>
+</class>

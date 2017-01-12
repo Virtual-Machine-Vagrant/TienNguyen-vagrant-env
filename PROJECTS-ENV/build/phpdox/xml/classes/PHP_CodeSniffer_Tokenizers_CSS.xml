@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="PHP_CodeSniffer_Tokenizers_CSS" namespace="" name="PHP_CodeSniffer_Tokenizers_CSS" abstract="false" final="false" start="30" end="505">
+  <file path="/home/web/example/src/freegame_developer/vendor/squizlabs/php_codesniffer/CodeSniffer/Tokenizers" file="CSS.php" realpath="/home/web/example/src/freegame_developer/vendor/squizlabs/php_codesniffer/CodeSniffer/Tokenizers/CSS.php" size="21384" time="2016-01-19T23:39:10+00:00" unixtime="1453246750" sha1="38015cce560ce1b9ea4a1b0a8c82293ba697bde3" relative="freegame_developer/vendor/squizlabs/php_codesniffer/CodeSniffer/Tokenizers/CSS.php"/>
+  <docblock>
+    <description compact="Tokenizes CSS code."/>
+    <category value="PHP"/>
+    <package value="PHP_CodeSniffer"/>
+    <author value="Greg Sherwood &lt;gsherwood@squiz.net&gt;"/>
+    <copyright value="2006-2014 Squiz Pty Ltd (ABN 77 084 670 600)"/>
+    <license name="https://github.com/squizlabs/PHP_CodeSniffer/blob/master/licence.txt BSD Licence"/>
+    <version value="Release: @package_version@"/>
+    <link value="http://pear.php.net/package/PHP_CodeSniffer"/>
+  </docblock>
+  <extends full="PHP_CodeSniffer_Tokenizers_PHP" namespace="" name="PHP_CodeSniffer_Tokenizers_PHP"/>
+  <method name="tokenizeString" start="44" end="484" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Creates an array of tokens when given some CSS code.">Uses the PHP tokenizer to do all the tricky work</description>
+      <param description="The string to tokenize." type="string" variable="$string"/>
+      <param description="The EOL character to use for splitting strings." type="string" variable="$eolChar"/>
+      <return type="array"/>
+    </docblock>
+    <parameter name="string" byreference="false" type="{unknown}"/>
+    <parameter name="eolChar" byreference="false" type="string" default="'\n'"/>
+    <inline>
+      <comment value="If the content doesn't have an EOL char on the end, add one so" line="50"/>
+      <comment value="the open and close tags we add are parsed correctly." line="51"/>
+      <comment value="end for" line="253"/>
+      <comment value="A flag to indicate if we are inside a style definition," line="260"/>
+      <comment value="which is defined using curly braces." line="261"/>
+      <comment value="A flag to indicate if an At-rule like &quot;@media&quot; is used, which will result" line="264"/>
+      <comment value="in nested curly brackets." line="265"/>
+      <comment value="end for" line="454"/>
+      <comment value="Reset the array keys to avoid gaps." line="456"/>
+      <comment value="Blank out the content of the end tag." line="460"/>
+    </inline>
+  </method>
+  <method name="processAdditional" start="495" end="502" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Performs additional processing after main tokenizing."/>
+      <param description="The array of tokens to process." type="array" variable="$tokens"/>
+      <param description="The EOL character to use for splitting strings." type="string" variable="$eolChar"/>
+      <return type="object">
+        <type full="void" namespace="" name="void"/>
+      </return>
+    </docblock>
+    <parameter name="tokens" byreference="true" type="{unknown}"/>
+    <parameter name="eolChar" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="We override this method because we don't want the PHP version to" line="497"/>
+      <comment xmlns="http://xml.phpdox.net/src" value="run during CSS processing because it is wasted processing time." line="498"/>
+    </inline>
+  </method>
+</class>

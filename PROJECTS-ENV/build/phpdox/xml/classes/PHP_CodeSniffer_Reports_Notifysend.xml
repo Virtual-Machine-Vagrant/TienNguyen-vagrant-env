@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="PHP_CodeSniffer_Reports_Notifysend" namespace="" name="PHP_CodeSniffer_Reports_Notifysend" abstract="false" final="false" start="35" end="262">
+  <file path="/home/web/example/src/freegame_developer/vendor/squizlabs/php_codesniffer/CodeSniffer/Reports" file="Notifysend.php" realpath="/home/web/example/src/freegame_developer/vendor/squizlabs/php_codesniffer/CodeSniffer/Reports/Notifysend.php" size="7551" time="2016-01-19T23:39:10+00:00" unixtime="1453246750" sha1="2b9376ed60b5da4ff7e35bd3ab135a807c23d61d" relative="freegame_developer/vendor/squizlabs/php_codesniffer/CodeSniffer/Reports/Notifysend.php"/>
+  <docblock>
+    <description compact="Notify-send report for PHP_CodeSniffer.">Supported configuration parameters:
+- notifysend_path    - Full path to notify-send cli command
+- notifysend_timeout - Timeout in milliseconds
+- notifysend_showok  - Show "ok, all fine" messages (0/1)</description>
+    <category value="PHP"/>
+    <package value="PHP_CodeSniffer"/>
+    <author value="Christian Weiske &lt;christian.weiske@netresearch.de&gt;"/>
+    <author value="Greg Sherwood &lt;gsherwood@squiz.net&gt;"/>
+    <copyright value="2012-2014 Christian Weiske"/>
+    <copyright value="2006-2014 Squiz Pty Ltd (ABN 77 084 670 600)"/>
+    <license name="https://github.com/squizlabs/PHP_CodeSniffer/blob/master/licence.txt BSD Licence"/>
+    <version value="Release: @package_version@"/>
+    <link value="http://pear.php.net/package/PHP_CodeSniffer"/>
+  </docblock>
+  <implements full="PHP_CodeSniffer_Report" namespace="" name="PHP_CodeSniffer_Report"/>
+  <member name="timeout" type="integer" default="3000" visibility="protected" static="false" line="43">
+    <docblock>
+      <description compact="Notification timeout in milliseconds."/>
+      <var type="integer"/>
+    </docblock>
+  </member>
+  <member name="path" type="string" default="'notify-send'" visibility="protected" static="false" line="50">
+    <docblock>
+      <description compact="Path to notify-send command."/>
+      <var type="string"/>
+    </docblock>
+  </member>
+  <member name="showOk" type="boolean" default="true" visibility="protected" static="false" line="57">
+    <docblock>
+      <description compact="Show &quot;ok, all fine&quot; messages."/>
+      <var type="boolean"/>
+    </docblock>
+  </member>
+  <member name="version" type="{unknown}" default="" constant="null" visibility="protected" static="false" line="64">
+    <docblock>
+      <description compact="Version of installed notify-send executable."/>
+      <var type="string"/>
+    </docblock>
+  </member>
+  <member name="_lastCheckedFile" type="string" default="''" visibility="private" static="false" line="75">
+    <docblock>
+      <description compact="A record of the last file checked.">This is used in case we only checked one file and need to print
+the name/path of the file. We wont have access to the checked file list
+after the run has been completed.</description>
+      <var type="string"/>
+    </docblock>
+  </member>
+  <constructor name="__construct" start="81" end="104" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Load configuration data."/>
+    </docblock>
+  </constructor>
+  <method name="generateFileReport" start="121" end="132" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Generate a partial report for a single processed file.">Function should return TRUE if it printed or stored data about the file
+and FALSE if it ignored the file. Returning TRUE indicates that the file and
+its data should be counted in the grand totals.</description>
+      <param description="Prepared report data." type="array" variable="$report"/>
+      <param description="The file being reported on." type="object" variable="$phpcsFile">
+        <type full="PHP_CodeSniffer_File" namespace="" name="PHP_CodeSniffer_File"/>
+      </param>
+      <param description="Show sources?" type="boolean" variable="$showSources"/>
+      <param description="Maximum allowed line width." type="int" variable="$width"/>
+      <return type="boolean"/>
+    </docblock>
+    <parameter name="report" byreference="false" type="{unknown}"/>
+    <parameter name="phpcsFile" byreference="false" type="object">
+      <type full="PHP_CodeSniffer_File" namespace="" name="PHP_CodeSniffer_File"/>
+    </parameter>
+    <parameter name="showSources" byreference="false" type="boolean" default="false"/>
+    <parameter name="width" byreference="false" type="integer" default="80"/>
+    <inline>
+      <comment value="We don't need to print anything, but we want this file counted" line="127"/>
+      <comment value="in the total number of checked files even if it has no errors." line="128"/>
+    </inline>
+  </method>
+  <method name="generate" start="150" end="169" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Generates a summary of errors and warnings for each file processed."/>
+      <param description="Any partial report data that was returned from" type="string" variable="$cachedData">generateFileReport during the run.</param>
+      <param description="Total number of files processed during the run." type="int" variable="$totalFiles"/>
+      <param description="Total number of errors found during the run." type="int" variable="$totalErrors"/>
+      <param description="Total number of warnings found during the run." type="int" variable="$totalWarnings"/>
+      <param description="Total number of problems that can be fixed." type="int" variable="$totalFixable"/>
+      <param description="Show sources?" type="boolean" variable="$showSources"/>
+      <param description="Maximum allowed line width." type="int" variable="$width"/>
+      <param description="Is the report being printed to screen?" type="boolean" variable="$toScreen"/>
+      <return type="object">
+        <type full="void" namespace="" name="void"/>
+      </return>
+    </docblock>
+    <parameter name="cachedData" byreference="false" type="{unknown}"/>
+    <parameter name="totalFiles" byreference="false" type="{unknown}"/>
+    <parameter name="totalErrors" byreference="false" type="{unknown}"/>
+    <parameter name="totalWarnings" byreference="false" type="{unknown}"/>
+    <parameter name="totalFixable" byreference="false" type="{unknown}"/>
+    <parameter name="showSources" byreference="false" type="boolean" default="false"/>
+    <parameter name="width" byreference="false" type="integer" default="80"/>
+    <parameter name="toScreen" byreference="false" type="boolean" default="true"/>
+  </method>
+  <method name="generateMessage" start="181" end="205" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Generate the error message to show to the user."/>
+      <param description="Total number of files processed during the run." type="int" variable="$totalFiles"/>
+      <param description="Total number of errors found during the run." type="int" variable="$totalErrors"/>
+      <param description="Total number of warnings found during the run." type="int" variable="$totalWarnings"/>
+      <return description="Error message or NULL if no error/warning found." type="string"/>
+    </docblock>
+    <parameter name="totalFiles" byreference="false" type="{unknown}"/>
+    <parameter name="totalErrors" byreference="false" type="{unknown}"/>
+    <parameter name="totalWarnings" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="notifyAllFine" start="213" end="221" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Tell the user that all is fine and no error/warning has been found."/>
+      <return type="object">
+        <type full="void" namespace="" name="void"/>
+      </return>
+    </docblock>
+  </method>
+  <method name="notifyErrors" start="231" end="239" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Tell the user that errors/warnings have been found."/>
+      <param description="Message to display." type="string" variable="$msg"/>
+      <return type="object">
+        <type full="void" namespace="" name="void"/>
+      </return>
+    </docblock>
+    <parameter name="msg" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="getBasicCommand" start="247" end="259" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Generate and return the basic notify-send command string to execute."/>
+      <return description="Shell command with common parameters." type="string"/>
+    </docblock>
+  </method>
+</class>

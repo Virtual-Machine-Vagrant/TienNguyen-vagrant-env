@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="Symfony\Component\Debug\Tests\Exception\FlattenExceptionTest" namespace="Symfony\Component\Debug\Tests\Exception" name="FlattenExceptionTest" abstract="false" final="false" start="30" end="270">
+  <file path="/home/web/example/src/freegame_developer/vendor/symfony/debug/Tests/Exception" file="FlattenExceptionTest.php" realpath="/home/web/example/src/freegame_developer/vendor/symfony/debug/Tests/Exception/FlattenExceptionTest.php" size="10796" time="2016-09-06T07:26:07+00:00" unixtime="1473146767" sha1="4e42a8063ec3cf8e96cb7623053b4cd47bd4cbe7" relative="freegame_developer/vendor/symfony/debug/Tests/Exception/FlattenExceptionTest.php"/>
+  <extends full="PHPUnit_Framework_TestCase" namespace="" name="PHPUnit_Framework_TestCase"/>
+  <method name="testStatusCode" start="32" end="81" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testHeadersForHttpException" start="83" end="102" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testFlattenHttpException" start="107" end="117" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <dataprovider value="flattenDataProvider"/>
+    </docblock>
+    <parameter name="exception" byreference="false" type="object">
+      <type full="Exception" namespace="" name="Exception"/>
+    </parameter>
+    <parameter name="statusCode" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="testPrevious" start="122" end="132" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <dataprovider value="flattenDataProvider"/>
+    </docblock>
+    <parameter name="exception" byreference="false" type="object">
+      <type full="Exception" namespace="" name="Exception"/>
+    </parameter>
+    <parameter name="statusCode" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="testPreviousError" start="137" end="146" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <requires value="PHP 7.0"/>
+    </docblock>
+  </method>
+  <method name="testLine" start="151" end="155" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <dataprovider value="flattenDataProvider"/>
+    </docblock>
+    <parameter name="exception" byreference="false" type="object">
+      <type full="Exception" namespace="" name="Exception"/>
+    </parameter>
+  </method>
+  <method name="testFile" start="160" end="164" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <dataprovider value="flattenDataProvider"/>
+    </docblock>
+    <parameter name="exception" byreference="false" type="object">
+      <type full="Exception" namespace="" name="Exception"/>
+    </parameter>
+  </method>
+  <method name="testToArray" start="169" end="184" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <dataprovider value="flattenDataProvider"/>
+    </docblock>
+    <parameter name="exception" byreference="false" type="object">
+      <type full="Exception" namespace="" name="Exception"/>
+    </parameter>
+    <parameter name="statusCode" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="flattenDataProvider" start="186" end="191" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testRecursionInArguments" start="193" end="201" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testTooBigArray" start="203" end="223" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="createException" start="225" end="228" abstract="false" final="false" static="false" visibility="private">
+    <parameter name="foo" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="testSetTraceIncompleteClass" start="230" end="269" abstract="false" final="false" static="false" visibility="public"/>
+</class>

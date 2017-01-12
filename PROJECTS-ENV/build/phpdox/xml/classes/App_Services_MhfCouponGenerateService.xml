@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="App\Services\MhfCouponGenerateService" namespace="App\Services" name="MhfCouponGenerateService" abstract="false" final="false" start="9" end="175">
+  <file path="/home/web/example/src/freegame_developer/app/Services" file="MhfCouponGenerateService.php" realpath="/home/web/example/src/freegame_developer/app/Services/MhfCouponGenerateService.php" size="4727" time="2017-01-03T08:24:56+00:00" unixtime="1483431896" sha1="07a7e19dc9c6aa0da96c3fa4ec7e34d027056f36" relative="freegame_developer/app/Services/MhfCouponGenerateService.php"/>
+  <extends full="App\Services\CustomService" namespace="App\Services" name="CustomService"/>
+  <member name="mhfCoupon" visibility="protected" static="false" line="11"/>
+  <member name="mhfCouponUser" visibility="protected" static="false" line="12"/>
+  <constructor name="__construct" start="14" end="20" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="mhfCoupon" byreference="false" type="object">
+      <type full="App\Models\NetgameCstool\MhfCoupon" namespace="App\Models\NetgameCstool" name="MhfCoupon"/>
+    </parameter>
+    <parameter name="mhfCouponUser" byreference="false" type="object">
+      <type full="App\Models\NetgameCstool\MhfCouponUser" namespace="App\Models\NetgameCstool" name="MhfCouponUser"/>
+    </parameter>
+  </constructor>
+  <method name="getCouponList" start="27" end="34" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Get coupon list by game id"/>
+      <param type="integer" variable="$gameId"/>
+      <return description="| boolean" type="array"/>
+    </docblock>
+    <parameter name="gameId" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="getCouponById" start="41" end="48" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Get coupon by id"/>
+      <param type="integer" variable="$couponId"/>
+      <return type="object">
+        <type full="App\Services\object|boolean" namespace="App\Services" name="object|boolean"/>
+      </return>
+    </docblock>
+    <parameter name="couponId" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="getCouponUserList" start="55" end="58" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Count coupon user by list code"/>
+      <param type="array" variable="$listCode"/>
+      <return type="array"/>
+    </docblock>
+    <parameter name="listCode" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="create" start="66" end="96" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Insert coupon to database"/>
+      <param type="integer" variable="$gameId"/>
+      <param type="array" variable="$condition"/>
+      <return description="| boolean" type="array"/>
+    </docblock>
+    <parameter name="gameId" byreference="false" type="{unknown}"/>
+    <parameter name="condition" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="renderListCode" start="108" end="145" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Generate list code random by limit record"/>
+      <param type="string" variable="$numbRecord"/>
+      <param type="string" variable="$prefix"/>
+      <param type="array" variable="$listCode"/>
+      <param type="array" variable="$mhfCouponData"/>
+      <param type="string" variable="$characters"/>
+      <param type="integer" variable="$length"/>
+      <return type="array"/>
+    </docblock>
+    <parameter name="numbRecord" byreference="false" type="{unknown}"/>
+    <parameter name="prefix" byreference="false" type="{unknown}"/>
+    <parameter name="mhfCouponData" byreference="false" type="{unknown}"/>
+    <parameter name="listCode" byreference="false" type="array" default=""/>
+    <parameter name="characters" byreference="false" type="{unknown}" default="" constant="null"/>
+    <parameter name="length" byreference="false" type="{unknown}" default="" constant="null"/>
+  </method>
+  <method name="generateRandomString" start="154" end="164" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Generate random string"/>
+      <param type="string" variable="$prefix"/>
+      <param type="string" variable="$characters"/>
+      <param type="integer" variable="$length"/>
+      <return type="string"/>
+    </docblock>
+    <parameter name="prefix" byreference="false" type="{unknown}"/>
+    <parameter name="characters" byreference="false" type="{unknown}"/>
+    <parameter name="length" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="getFormData" start="171" end="174" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Get values init for multi page"/>
+      <return type="array"/>
+    </docblock>
+  </method>
+</class>

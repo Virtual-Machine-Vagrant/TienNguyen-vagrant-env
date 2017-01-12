@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="Generic_Sniffs_NamingConventions_UpperCaseConstantNameSniff" namespace="" name="Generic_Sniffs_NamingConventions_UpperCaseConstantNameSniff" abstract="false" final="false" start="30" end="180">
+  <file path="/home/web/example/src/freegame_developer/vendor/squizlabs/php_codesniffer/CodeSniffer/Standards/Generic/Sniffs/NamingConventions" file="UpperCaseConstantNameSniff.php" realpath="/home/web/example/src/freegame_developer/vendor/squizlabs/php_codesniffer/CodeSniffer/Standards/Generic/Sniffs/NamingConventions/UpperCaseConstantNameSniff.php" size="5946" time="2016-01-19T23:39:10+00:00" unixtime="1453246750" sha1="3b9975e7abb02aaa3e4cc8a14baffd7b8f04515b" relative="freegame_developer/vendor/squizlabs/php_codesniffer/CodeSniffer/Standards/Generic/Sniffs/NamingConventions/UpperCaseConstantNameSniff.php"/>
+  <docblock>
+    <description compact="Generic_Sniffs_NamingConventions_UpperCaseConstantNameSniff.">Ensures that constant names are all uppercase.</description>
+    <category value="PHP"/>
+    <package value="PHP_CodeSniffer"/>
+    <author value="Greg Sherwood &lt;gsherwood@squiz.net&gt;"/>
+    <author value="Marc McIntyre &lt;mmcintyre@squiz.net&gt;"/>
+    <copyright value="2006-2014 Squiz Pty Ltd (ABN 77 084 670 600)"/>
+    <license name="https://github.com/squizlabs/PHP_CodeSniffer/blob/master/licence.txt BSD Licence"/>
+    <version value="Release: @package_version@"/>
+    <link value="http://pear.php.net/package/PHP_CodeSniffer"/>
+  </docblock>
+  <implements full="PHP_CodeSniffer_Sniff" namespace="" name="PHP_CodeSniffer_Sniff"/>
+  <method name="register" start="39" end="43" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Returns an array of tokens this test wants to listen for."/>
+      <return type="array"/>
+    </docblock>
+  </method>
+  <method name="process" start="55" end="177" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Processes this test, when one of its tokens is encountered."/>
+      <param description="The file being scanned." type="object" variable="$phpcsFile">
+        <type full="PHP_CodeSniffer_File" namespace="" name="PHP_CodeSniffer_File"/>
+      </param>
+      <param description="The position of the current token in the" type="int" variable="$stackPtr">stack passed in $tokens.</param>
+      <return type="object">
+        <type full="void" namespace="" name="void"/>
+      </return>
+    </docblock>
+    <parameter name="phpcsFile" byreference="false" type="object">
+      <type full="PHP_CodeSniffer_File" namespace="" name="PHP_CodeSniffer_File"/>
+    </parameter>
+    <parameter name="stackPtr" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="If this token is in a heredoc, ignore it." line="60"/>
+      <comment value="Special case for PHP 5.5 class name resolution." line="65"/>
+      <comment value="Special case for PHPUnit." line="72"/>
+      <comment value="If the next non-whitespace token after this token" line="77"/>
+      <comment value="is not an opening parenthesis then it is not a function call." line="78"/>
+      <comment value="end if" line="126"/>
+      <comment value="This may be a &quot;define&quot; function call." line="132"/>
+      <comment value="Make sure this is not a method call." line="136"/>
+      <comment value="The next non-whitespace token must be the constant name." line="144"/>
+      <comment value="Check for constants like self::CONSTANT." line="152"/>
+    </inline>
+  </method>
+</class>

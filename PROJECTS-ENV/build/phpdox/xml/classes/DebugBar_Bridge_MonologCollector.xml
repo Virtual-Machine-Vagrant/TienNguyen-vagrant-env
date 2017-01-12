@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="DebugBar\Bridge\MonologCollector" namespace="DebugBar\Bridge" name="MonologCollector" abstract="false" final="false" start="28" end="118">
+  <file path="/home/web/example/src/freegame_developer/vendor/maximebf/debugbar/src/DebugBar/Bridge" file="MonologCollector.php" realpath="/home/web/example/src/freegame_developer/vendor/maximebf/debugbar/src/DebugBar/Bridge/MonologCollector.php" size="2712" time="2016-09-15T14:01:59+00:00" unixtime="1473948119" sha1="8442afd0634ac00eb1897e83c3101b181d733741" relative="freegame_developer/vendor/maximebf/debugbar/src/DebugBar/Bridge/MonologCollector.php"/>
+  <docblock>
+    <description compact="A monolog handler as well as a data collector">https://github.com/Seldaek/monolog
+
+&lt;code&gt;
+$debugbar-&gt;addCollector(new MonologCollector($logger));
+&lt;/code&gt;</description>
+  </docblock>
+  <extends full="Monolog\Handler\AbstractProcessingHandler" namespace="Monolog\Handler" name="AbstractProcessingHandler"/>
+  <implements full="DebugBar\DataCollector\DataCollectorInterface" namespace="DebugBar\DataCollector" name="DataCollectorInterface"/>
+  <implements full="DebugBar\DataCollector\Renderable" namespace="DebugBar\DataCollector" name="Renderable"/>
+  <implements full="DebugBar\DataCollector\MessagesAggregateInterface" namespace="DebugBar\DataCollector" name="MessagesAggregateInterface"/>
+  <member name="name" visibility="protected" static="false" line="30"/>
+  <member name="records" type="array" default="" visibility="protected" static="false" line="32"/>
+  <constructor name="__construct" start="40" end="47" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <param type="object" variable="$logger">
+        <type full="Monolog\Logger" namespace="Monolog" name="Logger"/>
+      </param>
+      <param type="int" variable="$level"/>
+      <param type="boolean" variable="$bubble"/>
+      <param type="string" variable="$name"/>
+    </docblock>
+    <parameter name="logger" byreference="false" type="{unknown}" default="" constant="null">
+      <type full="Monolog\Logger" namespace="Monolog" name="Logger"/>
+    </parameter>
+    <parameter name="level" byreference="false" type="{unknown}" default="" constant="Logger::DEBUG"/>
+    <parameter name="bubble" byreference="false" type="boolean" default="true"/>
+    <parameter name="name" byreference="false" type="string" default="'monolog'"/>
+  </constructor>
+  <method name="addLogger" start="54" end="57" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Adds logger which messages you want to log"/>
+      <param type="object" variable="$logger">
+        <type full="Monolog\Logger" namespace="Monolog" name="Logger"/>
+      </param>
+    </docblock>
+    <parameter name="logger" byreference="false" type="object">
+      <type full="Monolog\Logger" namespace="Monolog" name="Logger"/>
+    </parameter>
+  </method>
+  <method name="write" start="62" end="70" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description/>
+      <param type="array" variable="$record"/>
+    </docblock>
+    <parameter name="record" byreference="false" type="array"/>
+  </method>
+  <method name="getMessages" start="75" end="78" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <return type="array"/>
+    </docblock>
+  </method>
+  <method name="collect" start="83" end="89" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <return type="array"/>
+    </docblock>
+  </method>
+  <method name="getName" start="94" end="97" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <return type="string"/>
+    </docblock>
+  </method>
+  <method name="getWidgets" start="102" end="117" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <return type="array"/>
+    </docblock>
+  </method>
+</class>

@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="phpseclib\System\SSH\Agent" namespace="phpseclib\System\SSH" name="Agent" abstract="false" final="false" start="48" end="308">
+  <file path="/home/web/example/src/freegame_developer/vendor/phpseclib/phpseclib/phpseclib/System/SSH" file="Agent.php" realpath="/home/web/example/src/freegame_developer/vendor/phpseclib/phpseclib/phpseclib/System/SSH/Agent.php" size="8627" time="2016-10-04T00:57:04+00:00" unixtime="1475542624" sha1="3d79f2e9cb38bffad336b5fc945f6aa0d1cf6764" relative="freegame_developer/vendor/phpseclib/phpseclib/phpseclib/System/SSH/Agent.php"/>
+  <docblock>
+    <description compact="Pure-PHP ssh-agent client identity factory">requestIdentities() method pumps out \phpseclib\System\SSH\Agent\Identity objects</description>
+    <package value="SSH\Agent"/>
+    <author value="Jim Wigginton &lt;terrafrost@php.net&gt;"/>
+    <access value="internal"/>
+  </docblock>
+  <constant type="integer" name="SSH_AGENTC_REQUEST_IDENTITIES" value="11"/>
+  <constant type="integer" name="SSH_AGENT_IDENTITIES_ANSWER" value="12"/>
+  <constant type="integer" name="SSH_AGENTC_SIGN_REQUEST" value="13"/>
+  <constant type="integer" name="SSH_AGENT_SIGN_RESPONSE" value="14"/>
+  <constant type="integer" name="FORWARD_NONE" value="0"/>
+  <constant type="integer" name="FORWARD_REQUEST" value="1"/>
+  <constant type="integer" name="FORWARD_ACTIVE" value="2"/>
+  <constant type="integer" name="SSH_AGENT_FAILURE" value="5">
+    <docblock>
+      <description compact="Unused"/>
+    </docblock>
+  </constant>
+  <member name="fsock" visibility="public" static="false" line="89">
+    <docblock>
+      <description compact="Socket Resource"/>
+      <var type="resource"/>
+      <access value="private"/>
+    </docblock>
+  </member>
+  <member name="forward_status" type="{unknown}" default="" constant="self::FORWARD_NONE" visibility="public" static="false" line="96">
+    <docblock>
+      <description compact="Agent forwarding status"/>
+      <access value="private"/>
+    </docblock>
+  </member>
+  <member name="socket_buffer" type="string" default="''" visibility="public" static="false" line="105">
+    <docblock>
+      <description compact="Buffer for accumulating forwarded authentication agent data arriving on SSH data channel destined for agent unix socket"/>
+      <access value="private"/>
+    </docblock>
+  </member>
+  <member name="expected_bytes" type="integer" default="0" visibility="public" static="false" line="112">
+    <docblock>
+      <description compact="Tracking the number of bytes we are expecting to arrive for the agent socket on the SSH data channel"/>
+    </docblock>
+  </member>
+  <constructor name="__construct" start="120" end="138" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Default Constructor"/>
+      <return type="object">
+        <type full="\phpseclib\System\SSH\Agent" namespace="\phpseclib\System\SSH" name="Agent"/>
+      </return>
+      <access value="public"/>
+    </docblock>
+  </constructor>
+  <method name="requestIdentities" start="149" end="198" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Request Identities">See "2.5.2 Requesting a list of protocol 2 keys"
+Returns an array containing zero or more \phpseclib\System\SSH\Agent\Identity objects</description>
+      <return type="array"/>
+      <access value="public"/>
+    </docblock>
+  </method>
+  <method name="startSSHForwarding" start="208" end="213" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Signal that agent forwarding should be requested when a channel is opened"/>
+      <param type="object" variable="$ssh">
+        <type full="phpseclib\System\SSH\Net_SSH2" namespace="phpseclib\System\SSH" name="Net_SSH2"/>
+      </param>
+      <return type="object">
+        <type full="phpseclib\System\SSH\bool" namespace="phpseclib\System\SSH" name="bool"/>
+      </return>
+      <access value="public"/>
+    </docblock>
+    <parameter name="ssh" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="_request_forwarding" start="222" end="253" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Request agent forwarding of remote server"/>
+      <param type="object" variable="$ssh">
+        <type full="phpseclib\System\SSH\Net_SSH2" namespace="phpseclib\System\SSH" name="Net_SSH2"/>
+      </param>
+      <return type="object">
+        <type full="phpseclib\System\SSH\bool" namespace="phpseclib\System\SSH" name="bool"/>
+      </return>
+      <access value="private"/>
+    </docblock>
+    <parameter name="ssh" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="_on_channel_open" start="265" end="270" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="On successful channel open">This method is called upon successful channel
+open to give the SSH Agent an opportunity
+to take further action. i.e. request agent forwarding</description>
+      <param type="object" variable="$ssh">
+        <type full="phpseclib\System\SSH\Net_SSH2" namespace="phpseclib\System\SSH" name="Net_SSH2"/>
+      </param>
+      <access value="private"/>
+    </docblock>
+    <parameter name="ssh" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="_forward_data" start="279" end="307" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Forward data to SSH Agent and return data reply"/>
+      <param type="string" variable="$data"/>
+      <return description="from SSH Agent" type="object">
+        <type full="phpseclib\System\SSH\data" namespace="phpseclib\System\SSH" name="data"/>
+      </return>
+      <access value="private"/>
+    </docblock>
+    <parameter name="data" byreference="false" type="{unknown}"/>
+  </method>
+</class>

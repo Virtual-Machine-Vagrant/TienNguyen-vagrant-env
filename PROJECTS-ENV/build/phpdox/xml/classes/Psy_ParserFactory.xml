@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="Psy\ParserFactory" namespace="Psy" name="ParserFactory" abstract="false" final="false" start="21" end="91">
+  <file path="/home/web/example/src/freegame_developer/vendor/psy/psysh/src/Psy" file="ParserFactory.php" realpath="/home/web/example/src/freegame_developer/vendor/psy/psysh/src/Psy/ParserFactory.php" size="2333" time="2016-03-09T05:03:14+00:00" unixtime="1457499794" sha1="c21eebbe65d1a60ac54837f381f1ac81c8225bbb" relative="freegame_developer/vendor/psy/psysh/src/Psy/ParserFactory.php"/>
+  <docblock>
+    <description compact="Parser factory to abstract over PHP parser library versions."/>
+  </docblock>
+  <constant type="string" name="ONLY_PHP5" value="'ONLY_PHP5'"/>
+  <constant type="string" name="ONLY_PHP7" value="'ONLY_PHP7'"/>
+  <constant type="string" name="PREFER_PHP5" value="'PREFER_PHP5'"/>
+  <constant type="string" name="PREFER_PHP7" value="'PREFER_PHP7'"/>
+  <method name="getPossibleKinds" start="33" end="36" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description compact="Possible kinds of parsers for the factory, from PHP parser library."/>
+      <return type="array"/>
+    </docblock>
+  </method>
+  <method name="hasKindsSupport" start="45" end="48" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Is this parser factory supports kinds?">PHP parser &lt; 2.0 doesn't support kinds, &gt;= 2.0 — does.</description>
+      <return type="object">
+        <type full="Psy\bool" namespace="Psy" name="bool"/>
+      </return>
+    </docblock>
+  </method>
+  <method name="getDefaultKind" start="55" end="60" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Default kind (if supported, based on current interpreter's version)."/>
+      <return type="object">
+        <type full="Psy\string|null" namespace="Psy" name="string|null"/>
+      </return>
+    </docblock>
+  </method>
+  <method name="createParser" start="69" end="90" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="New parser instance with given kind."/>
+      <param description="One of class constants (only for PHP parser 2.0 and above)." type="object" variable="$kind">
+        <type full="Psy\string|null" namespace="Psy" name="string|null"/>
+      </param>
+      <return type="object">
+        <type full="PhpParser\Parser" namespace="PhpParser" name="Parser"/>
+      </return>
+    </docblock>
+    <parameter name="kind" byreference="false" type="{unknown}" default="" constant="null"/>
+  </method>
+</class>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="Psr\Log\Test\LoggerInterfaceTest" namespace="Psr\Log\Test" name="LoggerInterfaceTest" abstract="true" final="false" start="14" end="133">
+  <file path="/home/web/example/src/freegame_developer/vendor/psr/log/Psr/Log/Test" file="LoggerInterfaceTest.php" realpath="/home/web/example/src/freegame_developer/vendor/psr/log/Psr/Log/Test/LoggerInterfaceTest.php" size="4597" time="2016-10-10T12:19:37+00:00" unixtime="1476101977" sha1="aa10760e5c21cd62e533199caebccd89cea1834a" relative="freegame_developer/vendor/psr/log/Psr/Log/Test/LoggerInterfaceTest.php"/>
+  <docblock>
+    <description compact="Provides a base test class for ensuring compliance with the LoggerInterface.">Implementors can extend the class and implement abstract methods to run this
+as part of their test suite.</description>
+  </docblock>
+  <extends full="PHPUnit_Framework_TestCase" namespace="" name="PHPUnit_Framework_TestCase"/>
+  <method name="getLogger" start="19" end="19" abstract="true" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <return type="object">
+        <type full="Psr\Log\LoggerInterface" namespace="Psr\Log" name="LoggerInterface"/>
+      </return>
+    </docblock>
+  </method>
+  <method name="getLogs" start="30" end="30" abstract="true" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="This must return the log messages in order.">The simple formatting of the messages is: "&lt;LOG LEVEL&gt; &lt;MESSAGE&gt;".
+
+Example -&gt;error('Foo') would yield "error Foo".</description>
+      <return type="array" of="object">
+        <type full="Psr\Log\Test\string" namespace="Psr\Log\Test" name="string"/>
+      </return>
+    </docblock>
+  </method>
+  <method name="testImplements" start="32" end="35" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testLogsAtAllLevels" start="40" end="51" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <dataprovider value="provideLevelsAndMessages"/>
+    </docblock>
+    <parameter name="level" byreference="false" type="{unknown}"/>
+    <parameter name="message" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="provideLevelsAndMessages" start="53" end="65" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testThrowsOnInvalidLevel" start="70" end="74" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <expectedexception value="\Psr\Log\InvalidArgumentException"/>
+    </docblock>
+  </method>
+  <method name="testContextReplacement" start="76" end="83" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testObjectCastToString" start="85" end="100" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testContextCanContainAnything" start="102" end="119" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testContextExceptionKeyCanBeExceptionOrOtherValues" start="121" end="132" abstract="false" final="false" static="false" visibility="public"/>
+</class>

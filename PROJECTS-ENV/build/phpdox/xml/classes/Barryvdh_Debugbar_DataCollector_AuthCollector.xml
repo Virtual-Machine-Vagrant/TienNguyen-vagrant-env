@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="Barryvdh\Debugbar\DataCollector\AuthCollector" namespace="Barryvdh\Debugbar\DataCollector" name="AuthCollector" abstract="false" final="false" start="12" end="115">
+  <file path="/home/web/example/src/freegame_developer/vendor/barryvdh/laravel-debugbar/src/DataCollector" file="AuthCollector.php" realpath="/home/web/example/src/freegame_developer/vendor/barryvdh/laravel-debugbar/src/DataCollector/AuthCollector.php" size="2699" time="2016-09-15T14:05:56+00:00" unixtime="1473948356" sha1="3180152a585c55f2325a46d5c03d46346848bbf7" relative="freegame_developer/vendor/barryvdh/laravel-debugbar/src/DataCollector/AuthCollector.php"/>
+  <docblock>
+    <description compact="Collector for Laravel's Auth provider"/>
+  </docblock>
+  <extends full="DebugBar\DataCollector\DataCollector" namespace="DebugBar\DataCollector" name="DataCollector"/>
+  <implements full="DebugBar\DataCollector\Renderable" namespace="DebugBar\DataCollector" name="Renderable"/>
+  <member name="auth" visibility="protected" static="false" line="15">
+    <docblock>
+      <var type="object">
+        <type full="\Illuminate\Auth\AuthManager" namespace="\Illuminate\Auth" name="AuthManager"/>
+      </var>
+    </docblock>
+  </member>
+  <member name="showName" type="boolean" default="false" visibility="protected" static="false" line="17">
+    <docblock>
+      <var type="object">
+        <type full="Barryvdh\Debugbar\DataCollector\bool" namespace="Barryvdh\Debugbar\DataCollector" name="bool"/>
+      </var>
+    </docblock>
+  </member>
+  <constructor name="__construct" start="22" end="25" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <param type="object" variable="$auth">
+        <type full="\Illuminate\Auth\AuthManager" namespace="\Illuminate\Auth" name="AuthManager"/>
+      </param>
+    </docblock>
+    <parameter name="auth" byreference="false" type="{unknown}"/>
+  </constructor>
+  <method name="setShowName" start="31" end="34" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Set to show the users name/email"/>
+      <param type="object" variable="$showName">
+        <type full="Barryvdh\Debugbar\DataCollector\bool" namespace="Barryvdh\Debugbar\DataCollector" name="bool"/>
+      </param>
+    </docblock>
+    <parameter name="showName" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="collect" start="39" end="47" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <invalid annotation="(undefined)" value=""/>
+    </docblock>
+  </method>
+  <method name="getUserInformation" start="54" end="82" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Get displayed user information"/>
+      <param type="object" variable="$user">
+        <type full="\Illuminate\Auth\UserInterface" namespace="\Illuminate\Auth" name="UserInterface"/>
+      </param>
+      <return type="array"/>
+    </docblock>
+    <parameter name="user" byreference="false" type="{unknown}" default="" constant="null"/>
+    <inline>
+      <comment value="Defaults" line="56"/>
+      <comment value="The default auth identifer is the ID number, which isn't all that" line="64"/>
+      <comment value="useful. Try username and email." line="65"/>
+    </inline>
+  </method>
+  <method name="getName" start="87" end="90" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <invalid annotation="(undefined)" value=""/>
+    </docblock>
+  </method>
+  <method name="getWidgets" start="95" end="114" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <invalid annotation="(undefined)" value=""/>
+    </docblock>
+  </method>
+</class>

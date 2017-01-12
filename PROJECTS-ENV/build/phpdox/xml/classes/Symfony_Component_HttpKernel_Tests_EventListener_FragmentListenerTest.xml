@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="Symfony\Component\HttpKernel\Tests\EventListener\FragmentListenerTest" namespace="Symfony\Component\HttpKernel\Tests\EventListener" name="FragmentListenerTest" abstract="false" final="false" start="20" end="121">
+  <file path="/home/web/example/src/freegame_developer/vendor/symfony/http-kernel/Tests/EventListener" file="FragmentListenerTest.php" realpath="/home/web/example/src/freegame_developer/vendor/symfony/http-kernel/Tests/EventListener/FragmentListenerTest.php" size="4424" time="2016-10-27T01:37:19+00:00" unixtime="1477532239" sha1="d87844c7116e7328f997ad3f489738637cd2c33f" relative="freegame_developer/vendor/symfony/http-kernel/Tests/EventListener/FragmentListenerTest.php"/>
+  <extends full="PHPUnit_Framework_TestCase" namespace="" name="PHPUnit_Framework_TestCase"/>
+  <method name="testOnlyTriggeredOnFragmentRoute" start="22" end="35" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testOnlyTriggeredIfControllerWasNotDefinedYet" start="37" end="50" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testAccessDeniedWithNonSafeMethods" start="55" end="63" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <expectedexception value="\Symfony\Component\HttpKernel\Exception\AccessDeniedHttpException"/>
+    </docblock>
+  </method>
+  <method name="testAccessDeniedWithWrongSignature" start="68" end="76" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <expectedexception value="\Symfony\Component\HttpKernel\Exception\AccessDeniedHttpException"/>
+    </docblock>
+  </method>
+  <method name="testWithSignature" start="78" end="90" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testRemovesPathWithControllerDefined" start="92" end="102" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testRemovesPathWithControllerNotDefined" start="104" end="115" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="createGetResponseEvent" start="117" end="120" abstract="false" final="false" static="false" visibility="private">
+    <parameter name="request" byreference="false" type="object">
+      <type full="Symfony\Component\HttpFoundation\Request" namespace="Symfony\Component\HttpFoundation" name="Request"/>
+    </parameter>
+    <parameter name="requestType" byreference="false" type="{unknown}" default="" constant="HttpKernelInterface::MASTER_REQUEST"/>
+  </method>
+</class>

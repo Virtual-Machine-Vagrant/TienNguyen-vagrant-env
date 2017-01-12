@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="PhpSpec\CodeAnalysis\TokenizedTypeHintRewriter" namespace="PhpSpec\CodeAnalysis" name="TokenizedTypeHintRewriter" abstract="false" final="true" start="18" end="192">
+  <file path="/home/web/example/src/freegame_developer/vendor/phpspec/phpspec/src/PhpSpec/CodeAnalysis" file="TokenizedTypeHintRewriter.php" realpath="/home/web/example/src/freegame_developer/vendor/phpspec/phpspec/src/PhpSpec/CodeAnalysis/TokenizedTypeHintRewriter.php" size="5852" time="2016-01-01T10:17:54+00:00" unixtime="1451643474" sha1="08b5ccf3d31937449fadca6714395ea278e4610a" relative="freegame_developer/vendor/phpspec/phpspec/src/PhpSpec/CodeAnalysis/TokenizedTypeHintRewriter.php"/>
+  <implements full="PhpSpec\CodeAnalysis\TypeHintRewriter" namespace="PhpSpec\CodeAnalysis" name="TypeHintRewriter"/>
+  <constant type="integer" name="STATE_DEFAULT" value="0"/>
+  <constant type="integer" name="STATE_READING_CLASS" value="1"/>
+  <constant type="integer" name="STATE_READING_FUNCTION" value="2"/>
+  <constant type="integer" name="STATE_READING_ARGUMENTS" value="3"/>
+  <constant type="integer" name="STATE_READING_FUNCTION_BODY" value="4"/>
+  <member name="state" type="{unknown}" default="" constant="self::STATE_DEFAULT" visibility="private" static="false" line="26"/>
+  <member name="currentClass" visibility="private" static="false" line="28"/>
+  <member name="currentFunction" visibility="private" static="false" line="29"/>
+  <member name="currentBodyLevel" visibility="private" static="false" line="30"/>
+  <member name="typehintTokens" type="array" default="" visibility="private" static="false" line="32"/>
+  <member name="typeHintIndex" visibility="private" static="false" line="39">
+    <docblock>
+      <description/>
+      <var type="object">
+        <type full="PhpSpec\Loader\Transformer\TypeHintIndex" namespace="PhpSpec\Loader\Transformer" name="TypeHintIndex"/>
+      </var>
+    </docblock>
+  </member>
+  <member name="namespaceResolver" visibility="private" static="false" line="43">
+    <docblock>
+      <description/>
+      <var type="object">
+        <type full="PhpSpec\CodeAnalysis\NamespaceResolver" namespace="PhpSpec\CodeAnalysis" name="NamespaceResolver"/>
+      </var>
+    </docblock>
+  </member>
+  <constructor name="__construct" start="49" end="53" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <param type="object" variable="$typeHintIndex">
+        <type full="PhpSpec\Loader\Transformer\TypeHintIndex" namespace="PhpSpec\Loader\Transformer" name="TypeHintIndex"/>
+      </param>
+      <param type="object" variable="$namespaceResolver">
+        <type full="PhpSpec\CodeAnalysis\NamespaceResolver" namespace="PhpSpec\CodeAnalysis" name="NamespaceResolver"/>
+      </param>
+    </docblock>
+    <parameter name="typeHintIndex" byreference="false" type="object">
+      <type full="PhpSpec\Loader\Transformer\TypeHintIndex" namespace="PhpSpec\Loader\Transformer" name="TypeHintIndex"/>
+    </parameter>
+    <parameter name="namespaceResolver" byreference="false" type="object">
+      <type full="PhpSpec\CodeAnalysis\NamespaceResolver" namespace="PhpSpec\CodeAnalysis" name="NamespaceResolver"/>
+    </parameter>
+  </constructor>
+  <method name="rewrite" start="60" end="69" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <param type="string" variable="$classDefinition"/>
+      <return type="string"/>
+    </docblock>
+    <parameter name="classDefinition" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="reset" start="71" end="76" abstract="false" final="false" static="false" visibility="private"/>
+  <method name="stripTypeHints" start="81" end="135" abstract="false" final="false" static="false" visibility="private">
+    <docblock>
+      <description/>
+      <param type="array" variable="$tokens"/>
+      <return description="$tokens" type="array"/>
+    </docblock>
+    <parameter name="tokens" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="tokensToString" start="141" end="146" abstract="false" final="false" static="false" visibility="private">
+    <docblock>
+      <description/>
+      <param type="array" variable="$tokens"/>
+      <return type="string"/>
+    </docblock>
+    <parameter name="tokens" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="extractTypehints" start="153" end="180" abstract="false" final="false" static="false" visibility="private">
+    <docblock>
+      <description/>
+      <param type="array" variable="$tokens"/>
+      <param type="integer" variable="$index"/>
+      <param type="array" variable="$token"/>
+    </docblock>
+    <parameter name="tokens" byreference="true" type="{unknown}"/>
+    <parameter name="index" byreference="false" type="{unknown}"/>
+    <parameter name="token" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="tokenHasType" start="188" end="191" abstract="false" final="false" static="false" visibility="private">
+    <docblock>
+      <description/>
+      <param type="object" variable="$token">
+        <type full="PhpSpec\CodeAnalysis\array|string" namespace="PhpSpec\CodeAnalysis" name="array|string"/>
+      </param>
+      <param type="string" variable="$type"/>
+      <return type="object">
+        <type full="PhpSpec\CodeAnalysis\bool" namespace="PhpSpec\CodeAnalysis" name="bool"/>
+      </return>
+    </docblock>
+    <parameter name="token" byreference="false" type="{unknown}"/>
+    <parameter name="type" byreference="false" type="{unknown}"/>
+  </method>
+</class>

@@ -1,0 +1,98 @@
+<?xml version="1.0"?>
+<source xmlns="http://xml.phpdox.net/token">
+  <file xmlns="http://xml.phpdox.net/src" path="/home/web/example/src/freegame_developer/resources/views/partials" file="paginator.blade.php" realpath="/home/web/example/src/freegame_developer/resources/views/partials/paginator.blade.php" size="1304" time="2016-11-16T01:52:54+00:00" unixtime="1479261174" sha1="c70f446b702651b66765ad94a75f7c76135bd5c9" relative="freegame_developer/resources/views/partials/paginator.blade.php"/>
+  <line no="1">
+    <token name="T_INLINE_HTML">&lt;ul class="c-pager_link"&gt;</token>
+  </line>
+  <line no="2">
+    <token name="T_INLINE_HTML">@if ($paginator-&gt;lastPage() &gt; 1)</token>
+  </line>
+  <line no="3">
+    <token name="T_INLINE_HTML">    @if ($paginator-&gt;currentPage() == 1)</token>
+  </line>
+  <line no="4">
+    <token name="T_INLINE_HTML">        &lt;li&gt;&lt;span&gt;&#x6700;&#x521D;&#x3078;&lt;/span&gt;&lt;/li&gt;</token>
+  </line>
+  <line no="5">
+    <token name="T_INLINE_HTML">        &lt;li&gt;&lt;span&gt;&lt;i class="fa fa-angle-double-left"&gt;&lt;/i&gt;&lt;/span&gt;&lt;/li&gt;</token>
+  </line>
+  <line no="6">
+    <token name="T_INLINE_HTML">    @else</token>
+  </line>
+  <line no="7">
+    <token name="T_INLINE_HTML">        &lt;li&gt;&lt;a href="{{ $paginator-&gt;url(1) }}"&gt;&#x6700;&#x521D;&#x3078;&lt;/a&gt;&lt;/li&gt;</token>
+  </line>
+  <line no="8">
+    <token name="T_INLINE_HTML">        &lt;li&gt;&lt;a href="{{ $paginator-&gt;url($paginator-&gt;currentPage()-1) }}"&gt;&lt;i class="fa fa-angle-double-left"&gt;&lt;/i&gt;&lt;/a&gt;&lt;/li&gt;</token>
+  </line>
+  <line no="9">
+    <token name="T_INLINE_HTML">    @endif</token>
+  </line>
+  <line no="10">
+    <token name="T_INLINE_HTML">    @for($i = $from; $i &lt;= $to; $i++)</token>
+  </line>
+  <line no="11">
+    <token name="T_INLINE_HTML">       @if ($paginator-&gt;currentPage() == $i)</token>
+  </line>
+  <line no="12">
+    <token name="T_INLINE_HTML">        &lt;li&gt;&lt;span&gt;{{ $i }}&lt;/span&gt;&lt;/li&gt;</token>
+  </line>
+  <line no="13">
+    <token name="T_INLINE_HTML">        @else</token>
+  </line>
+  <line no="14">
+    <token name="T_INLINE_HTML">        &lt;li&gt;&lt;a href="{{ $paginator-&gt;url($i) }}"&gt;{{ $i }}&lt;/a&gt;&lt;/li&gt;</token>
+  </line>
+  <line no="15">
+    <token name="T_INLINE_HTML">        @endif</token>
+  </line>
+  <line no="16">
+    <token name="T_INLINE_HTML">    @endfor</token>
+  </line>
+  <line no="17">
+    <token name="T_INLINE_HTML">    @if ($paginator-&gt;currentPage() == $paginator-&gt;lastPage())</token>
+  </line>
+  <line no="18">
+    <token name="T_INLINE_HTML">        &lt;li&gt;&lt;span&gt;&lt;i class="fa fa-angle-double-right"&gt;&lt;/i&gt;&lt;/span&gt;&lt;/li&gt;</token>
+  </line>
+  <line no="19">
+    <token name="T_INLINE_HTML">        &lt;li&gt;&lt;span&gt;&#x6700;&#x5F8C;&#x3078;&lt;/span&gt;&lt;/li&gt;</token>
+  </line>
+  <line no="20">
+    <token name="T_INLINE_HTML">    @else</token>
+  </line>
+  <line no="21">
+    <token name="T_INLINE_HTML">        &lt;li&gt;&lt;a href="{{ $paginator-&gt;url($paginator-&gt;currentPage()+1) }}"&gt;&lt;i class="fa fa-angle-double-right"&gt;&lt;/i&gt;&lt;/a&gt;&lt;/li&gt;</token>
+  </line>
+  <line no="22">
+    <token name="T_INLINE_HTML">        &lt;li&gt;&lt;a href="{{ $paginator-&gt;url($paginator-&gt;lastPage()) }}"&gt;&#x6700;&#x5F8C;&#x3078;&lt;/a&gt;&lt;/li&gt;</token>
+  </line>
+  <line no="23">
+    <token name="T_INLINE_HTML">    @endif</token>
+  </line>
+  <line no="24">
+    <token name="T_INLINE_HTML">@else</token>
+  </line>
+  <line no="25">
+    <token name="T_INLINE_HTML">    &lt;li&gt;&lt;span&gt;&#x6700;&#x521D;&#x3078;&lt;/span&gt;&lt;/li&gt;</token>
+  </line>
+  <line no="26">
+    <token name="T_INLINE_HTML">    &lt;li&gt;&lt;span&gt;&lt;i class="fa fa-angle-double-left"&gt;&lt;/i&gt;&lt;/span&gt;&lt;/li&gt;</token>
+  </line>
+  <line no="27">
+    <token name="T_INLINE_HTML">    &lt;li&gt;&lt;span&gt;1&lt;/span&gt;&lt;/li&gt;</token>
+  </line>
+  <line no="28">
+    <token name="T_INLINE_HTML">    &lt;li&gt;&lt;span&gt;&lt;i class="fa fa-angle-double-right"&gt;&lt;/i&gt;&lt;/span&gt;&lt;/li&gt;</token>
+  </line>
+  <line no="29">
+    <token name="T_INLINE_HTML">    &lt;li&gt;&lt;span&gt;&#x6700;&#x5F8C;&#x3078;&lt;/span&gt;&lt;/li&gt;</token>
+  </line>
+  <line no="30">
+    <token name="T_INLINE_HTML">@endif</token>
+  </line>
+  <line no="31">
+    <token name="T_INLINE_HTML">&lt;/ul&gt;</token>
+  </line>
+  <line no="32"/>
+</source>

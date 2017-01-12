@@ -1,0 +1,55 @@
+<?xml version="1.0"?>
+<source xmlns="http://xml.phpdox.net/token">
+  <file xmlns="http://xml.phpdox.net/src" path="/home/web/example/src/freegame_developer/resources/views/partials" file="paginatorperpage.blade.php" realpath="/home/web/example/src/freegame_developer/resources/views/partials/paginatorperpage.blade.php" size="825" time="2016-11-16T01:52:54+00:00" unixtime="1479261174" sha1="ce1806c5272f18d3ea48ede9ab012d39fc7022f6" relative="freegame_developer/resources/views/partials/paginatorperpage.blade.php"/>
+  <line no="1">
+    <token name="T_INLINE_HTML">&lt;p class="c-pager_num"&gt;</token>
+  </line>
+  <line no="2">
+    <token name="T_INLINE_HTML">    &lt;span class="tx-12 bold"&gt;&#x8868;&#x793A;&#x4EF6;&#x6570;&#xFF1A;&lt;/span&gt;</token>
+  </line>
+  <line no="3">
+    <token name="T_INLINE_HTML">    &lt;select id="perPage" name="perPage" class="w-auto mg-r6" data-value="{{ $paginator-&gt;perPage() }}"&gt;</token>
+  </line>
+  <line no="4"/>
+  <line no="5">
+    <token name="T_INLINE_HTML">        @foreach([10, 50, 100] as $val)</token>
+  </line>
+  <line no="6"/>
+  <line no="7">
+    <token name="T_INLINE_HTML">            @if($paginator-&gt;perPage() == $val)</token>
+  </line>
+  <line no="8">
+    <token name="T_INLINE_HTML">                &lt;option value="{{ $val }}" data-href="{{ $paginator-&gt;appends(['perPage' =&gt; $val])-&gt;url(1) }}" selected="selected"&gt;{{ $val }}&lt;/option&gt;</token>
+  </line>
+  <line no="9">
+    <token name="T_INLINE_HTML">            @else</token>
+  </line>
+  <line no="10">
+    <token name="T_INLINE_HTML">                &lt;option value="{{ $val }}" data-href="{{ $paginator-&gt;appends(['perPage' =&gt; $val])-&gt;url(1) }}"&gt;{{ $val }}&lt;/option&gt;</token>
+  </line>
+  <line no="11">
+    <token name="T_INLINE_HTML">            @endif</token>
+  </line>
+  <line no="12"/>
+  <line no="13">
+    <token name="T_INLINE_HTML">        @endforeach</token>
+  </line>
+  <line no="14"/>
+  <line no="15">
+    <token name="T_INLINE_HTML">    &lt;/select&gt;</token>
+  </line>
+  <line no="16"/>
+  <line no="17">
+    <token name="T_INLINE_HTML">    {{ $paginator-&gt;firstItem() }}-{{ $paginator-&gt;lastItem() }} / &#x5168;{{ $paginator-&gt;total() }}&#x4EF6;</token>
+  </line>
+  <line no="18"/>
+  <line no="19">
+    <token name="T_INLINE_HTML">    &lt;!-- /.c-pager_num --&gt;</token>
+  </line>
+  <line no="20">
+    <token name="T_INLINE_HTML">&lt;/p&gt;</token>
+  </line>
+  <line no="21">
+    <token name="T_INLINE_HTML">{{-- */ $paginator-&gt;appends(['perPage' =&gt; $paginator-&gt;perPage()]) /* --}}</token>
+  </line>
+</source>

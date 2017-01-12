@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="phpDocumentor\Reflection\Types\Array_" namespace="phpDocumentor\Reflection\Types" name="Array_" abstract="false" final="true" start="27" end="87">
+  <file path="/home/web/example/src/freegame_developer/vendor/phpdocumentor/type-resolver/src/Types" file="Array_.php" realpath="/home/web/example/src/freegame_developer/vendor/phpdocumentor/type-resolver/src/Types/Array_.php" size="2126" time="2016-06-10T07:14:17+00:00" unixtime="1465542857" sha1="e18b8a3a7d8e7fa0b09dfc45a7f529f073f4f8ca" relative="freegame_developer/vendor/phpdocumentor/type-resolver/src/Types/Array_.php"/>
+  <docblock>
+    <description compact="Represents an array type as described in the PSR-5, the PHPDoc Standard.">An array can be represented in two forms:
+
+1. Untyped (`array`), where the key and value type is unknown and hence classified as 'Mixed'.
+2. Types (`string[]`), where the value type is provided by preceding an opening and closing square bracket with a
+   type name.</description>
+  </docblock>
+  <implements full="phpDocumentor\Reflection\Type" namespace="phpDocumentor\Reflection" name="Type"/>
+  <member name="valueType" visibility="private" static="false" line="30">
+    <docblock>
+      <var type="object">
+        <type full="phpDocumentor\Reflection\Type" namespace="phpDocumentor\Reflection" name="Type"/>
+      </var>
+    </docblock>
+  </member>
+  <member name="keyType" visibility="private" static="false" line="33">
+    <docblock>
+      <var type="object">
+        <type full="phpDocumentor\Reflection\Type" namespace="phpDocumentor\Reflection" name="Type"/>
+      </var>
+    </docblock>
+  </member>
+  <constructor name="__construct" start="41" end="52" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Initializes this representation of an array with the given Type or Fqsen."/>
+      <param type="object" variable="$valueType">
+        <type full="phpDocumentor\Reflection\Type" namespace="phpDocumentor\Reflection" name="Type"/>
+      </param>
+      <param type="object" variable="$keyType">
+        <type full="phpDocumentor\Reflection\Type" namespace="phpDocumentor\Reflection" name="Type"/>
+      </param>
+    </docblock>
+    <parameter name="valueType" byreference="false" type="{unknown}" default="" constant="null">
+      <type full="phpDocumentor\Reflection\Type" namespace="phpDocumentor\Reflection" name="Type"/>
+    </parameter>
+    <parameter name="keyType" byreference="false" type="{unknown}" default="" constant="null">
+      <type full="phpDocumentor\Reflection\Type" namespace="phpDocumentor\Reflection" name="Type"/>
+    </parameter>
+  </constructor>
+  <method name="getKeyType" start="59" end="62" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Returns the type for the keys of this array."/>
+      <return type="object">
+        <type full="phpDocumentor\Reflection\Type" namespace="phpDocumentor\Reflection" name="Type"/>
+      </return>
+    </docblock>
+  </method>
+  <method name="getValueType" start="69" end="72" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Returns the value for the keys of this array."/>
+      <return type="object">
+        <type full="phpDocumentor\Reflection\Type" namespace="phpDocumentor\Reflection" name="Type"/>
+      </return>
+    </docblock>
+  </method>
+  <method name="__toString" start="79" end="86" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Returns a rendered output of the Type as it would be used in a DocBlock."/>
+      <return type="string"/>
+    </docblock>
+  </method>
+</class>

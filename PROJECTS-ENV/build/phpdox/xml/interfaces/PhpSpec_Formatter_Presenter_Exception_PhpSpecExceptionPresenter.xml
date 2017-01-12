@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface xmlns="http://xml.phpdox.net/src" full="PhpSpec\Formatter\Presenter\Exception\PhpSpecExceptionPresenter" namespace="PhpSpec\Formatter\Presenter\Exception" name="PhpSpecExceptionPresenter" abstract="false" final="false" start="19" end="26">
+  <file path="/home/web/example/src/freegame_developer/vendor/phpspec/phpspec/src/PhpSpec/Formatter/Presenter/Exception" file="PhpSpecExceptionPresenter.php" realpath="/home/web/example/src/freegame_developer/vendor/phpspec/phpspec/src/PhpSpec/Formatter/Presenter/Exception/PhpSpecExceptionPresenter.php" size="600" time="2016-01-01T10:17:54+00:00" unixtime="1451643474" sha1="cc4bc194ff071a270df74a2e4cd51ab768c0b296" relative="freegame_developer/vendor/phpspec/phpspec/src/PhpSpec/Formatter/Presenter/Exception/PhpSpecExceptionPresenter.php"/>
+  <method name="presentException" start="25" end="25" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <param type="object" variable="$exception">
+        <type full="PhpSpec\Exception\Exception" namespace="PhpSpec\Exception" name="Exception"/>
+      </param>
+      <return type="string"/>
+    </docblock>
+    <parameter name="exception" byreference="false" type="object">
+      <type full="PhpSpec\Exception\Exception" namespace="PhpSpec\Exception" name="Exception"/>
+    </parameter>
+  </method>
+</interface>

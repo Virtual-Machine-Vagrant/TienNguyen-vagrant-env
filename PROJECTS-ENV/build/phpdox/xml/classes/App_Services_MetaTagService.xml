@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="App\Services\MetaTagService" namespace="App\Services" name="MetaTagService" abstract="false" final="false" start="8" end="451">
+  <file path="/home/web/example/src/freegame_developer/app/Services" file="MetaTagService.php" realpath="/home/web/example/src/freegame_developer/app/Services/MetaTagService.php" size="13894" time="2016-12-22T03:19:41+00:00" unixtime="1482376781" sha1="f770080bc34105b69c6bc7afbd927030e5b04b09" relative="freegame_developer/app/Services/MetaTagService.php"/>
+  <extends full="App\Services\CustomService" namespace="App\Services" name="CustomService"/>
+  <member name="metaTagInfo" visibility="protected" static="false" line="10"/>
+  <constructor name="__construct" start="12" end="15" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="metaTagInfo" byreference="false" type="object">
+      <type full="App\Models\NetgameCstool\MetaTagInfo" namespace="App\Models\NetgameCstool" name="MetaTagInfo"/>
+    </parameter>
+  </constructor>
+  <method name="getList" start="24" end="41" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Get MetaTag list"/>
+      <param type="array" variable="$gameData"/>
+      <param type="array" variable="$condition"/>
+      <param type="object" variable="$isDownload">
+        <type full="App\Services\bool" namespace="App\Services" name="bool"/>
+      </param>
+      <return type="object"/>
+    </docblock>
+    <parameter name="gameData" byreference="false" type="{unknown}"/>
+    <parameter name="condition" byreference="false" type="{unknown}"/>
+    <parameter name="isDownload" byreference="false" type="boolean" default="false"/>
+  </method>
+  <method name="getSearchConditions" start="49" end="92" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Get search conditions"/>
+      <param type="array" variable="$condition"/>
+      <param type="boolean" variable="$pagination"/>
+      <return type="array"/>
+    </docblock>
+    <parameter name="condition" byreference="false" type="{unknown}"/>
+    <parameter name="pagination" byreference="false" type="boolean" default="true"/>
+    <inline>
+      <comment value="Condition query" line="52"/>
+      <comment value="Pagination" line="82"/>
+    </inline>
+  </method>
+  <method name="create" start="100" end="111" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Create Meta tag"/>
+      <param type="int" variable="$gameData"/>
+      <param type="object" variable="$request">
+        <type full="App\Services\MetaTagRequest" namespace="App\Services" name="MetaTagRequest"/>
+      </param>
+      <return type="boolean"/>
+    </docblock>
+    <parameter name="gameData" byreference="false" type="{unknown}"/>
+    <parameter name="request" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="getData" start="119" end="132" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Get Metatag"/>
+      <param type="int" variable="$gameId"/>
+      <param type="string" variable="$url"/>
+      <return type="object">
+        <type full="App\Services\Object" namespace="App\Services" name="Object"/>
+      </return>
+    </docblock>
+    <parameter name="gameId" byreference="false" type="{unknown}"/>
+    <parameter name="url" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="update" start="140" end="155" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Update metatag"/>
+      <param type="integer" variable="$gameId"/>
+      <param type="array" variable="$condition"/>
+      <return type="boolean"/>
+    </docblock>
+    <parameter name="gameId" byreference="false" type="{unknown}"/>
+    <parameter name="condition" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="delete" start="163" end="169" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Delele MetaTag by game_id, url"/>
+      <param type="integer" variable="$gameId"/>
+      <param type="array" variable="$url"/>
+      <return type="boolean"/>
+    </docblock>
+    <parameter name="gameId" byreference="false" type="{unknown}"/>
+    <parameter name="url" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="readUploadFile" start="177" end="181" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Handle upload service"/>
+      <param type="array" variable="$gameData"/>
+      <param type="object" variable="$request">
+        <type full="App\Services\MetaTagRequest" namespace="App\Services" name="MetaTagRequest"/>
+      </param>
+      <return type="array"/>
+    </docblock>
+    <parameter name="gameData" byreference="false" type="{unknown}"/>
+    <parameter name="request" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="readDataUploadFile" start="189" end="220" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Read uploaded data"/>
+      <param type="object" variable="$request">
+        <type full="App\Services\MetaTagRequest" namespace="App\Services" name="MetaTagRequest"/>
+      </param>
+      <param type="string" variable="$fileName"/>
+      <return type="object">
+        <type full="App\Services\Array" namespace="App\Services" name="Array"/>
+      </return>
+    </docblock>
+    <parameter name="request" byreference="false" type="{unknown}"/>
+    <parameter name="fileName" byreference="false" type="string" default="''"/>
+  </method>
+  <method name="checkUploadFile" start="229" end="284" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="check upload file is validate"/>
+      <param type="array" variable="$gameData"/>
+      <param type="object" variable="$request">
+        <type full="App\Services\MetaTagRequest" namespace="App\Services" name="MetaTagRequest"/>
+      </param>
+      <param type="array" variable="$uploadData"/>
+      <return type="array"/>
+    </docblock>
+    <parameter name="gameData" byreference="false" type="{unknown}"/>
+    <parameter name="request" byreference="false" type="{unknown}"/>
+    <parameter name="uploadData" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="uploadCsv" start="291" end="299" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Upload csv file"/>
+      <param type="object" variable="$request">
+        <type full="App\Services\MetaTagRequest" namespace="App\Services" name="MetaTagRequest"/>
+      </param>
+      <return type="string"/>
+    </docblock>
+    <parameter name="request" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="createFromUpload" start="307" end="327" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Create form upload csv file"/>
+      <param type="array" variable="$gameData"/>
+      <param type="object" variable="$request">
+        <type full="App\Services\MetaTagRequest" namespace="App\Services" name="MetaTagRequest"/>
+      </param>
+      <return type="boolean"/>
+    </docblock>
+    <parameter name="gameData" byreference="false" type="{unknown}"/>
+    <parameter name="request" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="getExportMetaTag" start="335" end="358" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Export Meta Tag"/>
+      <param type="object" variable="$listSearchMetaTag"/>
+      <param type="array" variable="$conditions"/>
+      <return type="array"/>
+    </docblock>
+    <parameter name="listSearchMetaTag" byreference="false" type="{unknown}"/>
+    <parameter name="conditions" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="checkErrors" start="370" end="391" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Check data in line errors"/>
+      <param type="integer" variable="$line"/>
+      <param type="array" variable="$itemData"/>
+      <param type="array" variable="$rules"/>
+      <param type="array" variable="$attribute"/>
+      <param type="array" variable="$messages"/>
+      <param type="array" variable="$listMetaTag"/>
+      <return type="array"/>
+    </docblock>
+    <parameter name="line" byreference="false" type="{unknown}"/>
+    <parameter name="itemData" byreference="false" type="{unknown}"/>
+    <parameter name="rules" byreference="false" type="{unknown}"/>
+    <parameter name="attribute" byreference="false" type="{unknown}"/>
+    <parameter name="messages" byreference="false" type="{unknown}"/>
+    <parameter name="listMetaTag" byreference="true" type="{unknown}"/>
+  </method>
+  <method name="formatList" start="400" end="411" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Format result list"/>
+      <param type="array" variable="$results"/>
+      <param type="string" variable="$gameUrl"/>
+      <param type="boolean" variable="$getFirst"/>
+      <return type="array"/>
+    </docblock>
+    <parameter name="results" byreference="false" type="{unknown}"/>
+    <parameter name="gameUrl" byreference="false" type="{unknown}"/>
+    <parameter name="getFirst" byreference="false" type="boolean" default="false"/>
+  </method>
+  <method name="requestUrl" start="418" end="429" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Get search param from url"/>
+      <param type="object" variable="$request">
+        <type full="App\Services\request" namespace="App\Services" name="request"/>
+      </param>
+      <return type="array"/>
+    </docblock>
+    <parameter name="request" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="requestBackUrl" start="436" end="450" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Get search param go back from url"/>
+      <param type="object" variable="$request">
+        <type full="App\Services\request" namespace="App\Services" name="request"/>
+      </param>
+      <return type="array"/>
+    </docblock>
+    <parameter name="request" byreference="false" type="{unknown}"/>
+  </method>
+</class>

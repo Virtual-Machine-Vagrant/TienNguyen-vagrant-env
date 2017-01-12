@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="App\Libs\Validation\Validator\File" namespace="App\Libs\Validation\Validator" name="File" abstract="false" final="false" start="7" end="127">
+  <file path="/home/web/example/src/freegame_developer/app/Libs/Validation/Validator" file="File.php" realpath="/home/web/example/src/freegame_developer/app/Libs/Validation/Validator/File.php" size="3594" time="2016-11-28T03:00:57+00:00" unixtime="1480302057" sha1="3fbe2774eba3d93d4b30b455e76e48f2f268e19c" relative="freegame_developer/app/Libs/Validation/Validator/File.php"/>
+  <extends full="Illuminate\Validation\Validator" namespace="Illuminate\Validation" name="Validator"/>
+  <method name="validateHiraganaOnly" start="16" end="25" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description compact="Validate hiragana_only"/>
+      <param type="string" variable="$attribute"/>
+      <param type="string" variable="$value"/>
+      <param type="array" variable="$parameters"/>
+      <return type="boolean"/>
+    </docblock>
+    <parameter name="attribute" byreference="false" type="{unknown}"/>
+    <parameter name="value" byreference="false" type="{unknown}"/>
+    <parameter name="parameters" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="旧処理と同じチェック方法" line="19"/>
+      <comment value="一つも一致しなければ false" line="20"/>
+    </inline>
+  </method>
+  <method name="validateImageSize" start="34" end="56" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description compact="Validate image_size"/>
+      <param type="string" variable="$attribute"/>
+      <param variable="$value"/>
+      <param type="array" variable="$parameters"/>
+      <return type="boolean"/>
+    </docblock>
+    <parameter name="attribute" byreference="false" type="{unknown}"/>
+    <parameter name="value" byreference="false" type="{unknown}"/>
+    <parameter name="parameters" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="replaceImageSize" start="67" end="70" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description compact="Replace all place-holders for the image_size rule."/>
+      <param type="string" variable="$message"/>
+      <param type="string" variable="$attribute"/>
+      <param type="string" variable="$rule"/>
+      <param type="array" variable="$parameters"/>
+      <return type="string"/>
+    </docblock>
+    <parameter name="message" byreference="false" type="{unknown}"/>
+    <parameter name="attribute" byreference="false" type="{unknown}"/>
+    <parameter name="rule" byreference="false" type="{unknown}"/>
+    <parameter name="parameters" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="validateCheckMime" start="79" end="86" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description compact="Validate mime"/>
+      <param type="string" variable="$attribute"/>
+      <param variable="$value"/>
+      <param type="array" variable="$parameters"/>
+      <return type="boolean"/>
+    </docblock>
+    <parameter name="attribute" byreference="false" type="{unknown}"/>
+    <parameter name="value" byreference="false" type="{unknown}"/>
+    <parameter name="parameters" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="validateFileSize" start="95" end="112" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description compact="Validate file size"/>
+      <param type="string" variable="$attribute"/>
+      <param type="string" variable="$value"/>
+      <param type="array" variable="$parameters"/>
+      <return type="boolean"/>
+    </docblock>
+    <parameter name="attribute" byreference="false" type="{unknown}"/>
+    <parameter name="value" byreference="false" type="{unknown}"/>
+    <parameter name="parameters" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="replaceFileSize" start="123" end="126" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description compact="Replace max GB for csv upload file."/>
+      <param type="string" variable="$message"/>
+      <param type="string" variable="$attribute"/>
+      <param type="string" variable="$rule"/>
+      <param type="array" variable="$parameters"/>
+      <return type="string"/>
+    </docblock>
+    <parameter name="message" byreference="false" type="{unknown}"/>
+    <parameter name="attribute" byreference="false" type="{unknown}"/>
+    <parameter name="rule" byreference="false" type="{unknown}"/>
+    <parameter name="parameters" byreference="false" type="{unknown}"/>
+  </method>
+</class>

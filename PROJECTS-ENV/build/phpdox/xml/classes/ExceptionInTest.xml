@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="ExceptionInTest" namespace="" name="ExceptionInTest" abstract="false" final="false" start="2" end="35">
+  <file path="/home/web/example/src/freegame_developer/vendor/phpunit/phpunit/tests/_files" file="ExceptionInTest.php" realpath="/home/web/example/src/freegame_developer/vendor/phpunit/phpunit/tests/_files/ExceptionInTest.php" size="748" time="2016-02-11T14:56:33+00:00" unixtime="1455202593" sha1="fa520644975d072590dfdcda19f00ba230976e33" relative="freegame_developer/vendor/phpunit/phpunit/tests/_files/ExceptionInTest.php"/>
+  <extends full="PHPUnit_Framework_TestCase" namespace="" name="PHPUnit_Framework_TestCase"/>
+  <member name="setUp" type="boolean" default="false" visibility="public" static="false" line="4"/>
+  <member name="assertPreConditions" type="boolean" default="false" visibility="public" static="false" line="5"/>
+  <member name="assertPostConditions" type="boolean" default="false" visibility="public" static="false" line="6"/>
+  <member name="tearDown" type="boolean" default="false" visibility="public" static="false" line="7"/>
+  <member name="testSomething" type="boolean" default="false" visibility="public" static="false" line="8"/>
+  <method name="setUp" start="10" end="13" abstract="false" final="false" static="false" visibility="protected"/>
+  <method name="assertPreConditions" start="15" end="18" abstract="false" final="false" static="false" visibility="protected"/>
+  <method name="testSomething" start="20" end="24" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="assertPostConditions" start="26" end="29" abstract="false" final="false" static="false" visibility="protected"/>
+  <method name="tearDown" start="31" end="34" abstract="false" final="false" static="false" visibility="protected"/>
+</class>

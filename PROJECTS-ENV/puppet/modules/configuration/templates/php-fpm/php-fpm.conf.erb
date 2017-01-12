@@ -1,0 +1,19 @@
+; fpm definition
+pid = <%= scope.lookupvar('php_fpm::pid_path') %>
+error_log = <%= scope.lookupvar('php_fpm::log_path') %>
+
+; pool definition
+[www]
+user = <%= scope.lookupvar('box::user') %>
+group = <%= scope.lookupvar('box::group') %>
+
+listen = <%= scope.lookupvar('php_fpm::socket_path') %>
+listen.owner = <%= scope.lookupvar('box::user') %>
+listen.group = <%= scope.lookupvar('box::group') %>
+
+pm = dynamic
+pm.max_children = 5
+pm.start_servers = 2
+pm.min_spare_servers = 1
+pm.max_spare_servers = 3
+pm.max_requests = 500

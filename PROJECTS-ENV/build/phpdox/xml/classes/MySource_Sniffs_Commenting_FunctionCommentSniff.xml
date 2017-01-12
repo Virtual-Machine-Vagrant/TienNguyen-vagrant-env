@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="MySource_Sniffs_Commenting_FunctionCommentSniff" namespace="" name="MySource_Sniffs_Commenting_FunctionCommentSniff" abstract="false" final="false" start="34" end="100">
+  <file path="/home/web/example/src/freegame_developer/vendor/squizlabs/php_codesniffer/CodeSniffer/Standards/MySource/Sniffs/Commenting" file="FunctionCommentSniff.php" realpath="/home/web/example/src/freegame_developer/vendor/squizlabs/php_codesniffer/CodeSniffer/Standards/MySource/Sniffs/Commenting/FunctionCommentSniff.php" size="4095" time="2016-01-19T23:39:10+00:00" unixtime="1453246750" sha1="170ca486d458d0de055914a217566d461d0db496" relative="freegame_developer/vendor/squizlabs/php_codesniffer/CodeSniffer/Standards/MySource/Sniffs/Commenting/FunctionCommentSniff.php"/>
+  <docblock>
+    <description compact="Parses and verifies the doc comments for functions.">Same as the Squiz standard, but adds support for API tags.</description>
+    <category value="PHP"/>
+    <package value="PHP_CodeSniffer"/>
+    <author value="Greg Sherwood &lt;gsherwood@squiz.net&gt;"/>
+    <copyright value="2006-2014 Squiz Pty Ltd (ABN 77 084 670 600)"/>
+    <license name="https://github.com/squizlabs/PHP_CodeSniffer/blob/master/licence.txt BSD Licence"/>
+    <version value="Release: @package_version@"/>
+    <link value="http://pear.php.net/package/PHP_CodeSniffer"/>
+  </docblock>
+  <extends full="Squiz_Sniffs_Commenting_FunctionCommentSniff" namespace="" name="Squiz_Sniffs_Commenting_FunctionCommentSniff"/>
+  <method name="process" start="47" end="97" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Processes this test, when one of its tokens is encountered."/>
+      <param description="The file being scanned." type="object" variable="$phpcsFile">
+        <type full="PHP_CodeSniffer_File" namespace="" name="PHP_CodeSniffer_File"/>
+      </param>
+      <param description="The position of the current token" type="int" variable="$stackPtr">in the stack passed in $tokens.</param>
+      <return type="object">
+        <type full="void" namespace="" name="void"/>
+      </return>
+    </docblock>
+    <parameter name="phpcsFile" byreference="false" type="object">
+      <type full="PHP_CodeSniffer_File" namespace="" name="PHP_CodeSniffer_File"/>
+    </parameter>
+    <parameter name="stackPtr" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="end foreach" line="89"/>
+    </inline>
+  </method>
+</class>

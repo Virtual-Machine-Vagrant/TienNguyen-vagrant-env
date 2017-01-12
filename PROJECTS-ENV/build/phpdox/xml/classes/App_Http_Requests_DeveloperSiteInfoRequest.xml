@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="App\Http\Requests\DeveloperSiteInfoRequest" namespace="App\Http\Requests" name="DeveloperSiteInfoRequest" abstract="false" final="false" start="7" end="98">
+  <file path="/home/web/example/src/freegame_developer/app/Http/Requests" file="DeveloperSiteInfoRequest.php" realpath="/home/web/example/src/freegame_developer/app/Http/Requests/DeveloperSiteInfoRequest.php" size="2368" time="2016-11-16T01:52:54+00:00" unixtime="1479261174" sha1="5f631e56ce7ebf36d240e32b37f696f47cfd587c" relative="freegame_developer/app/Http/Requests/DeveloperSiteInfoRequest.php"/>
+  <extends full="App\Http\Requests\Request" namespace="App\Http\Requests" name="Request"/>
+  <member name="isSearch" type="boolean" default="false" visibility="protected" static="false" line="9"/>
+  <method name="authorize" start="11" end="14" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="rules" start="21" end="39" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Validation rules list"/>
+      <return type="array"/>
+    </docblock>
+  </method>
+  <method name="attributes" start="46" end="55" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Custom attributes list"/>
+      <return type="array"/>
+    </docblock>
+  </method>
+  <method name="customMessages" start="62" end="69" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Custom validation message"/>
+      <return type="array"/>
+    </docblock>
+  </method>
+  <method name="getValidatorInstance" start="76" end="85" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Get validator instance"/>
+      <return type="array"/>
+    </docblock>
+  </method>
+  <method name="redirectRules" start="94" end="97" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Redirect rules."/>
+      <param type="object">
+        <type full="App\Http\Requests\none" namespace="App\Http\Requests" name="none"/>
+      </param>
+      <return type="array"/>
+    </docblock>
+  </method>
+</class>

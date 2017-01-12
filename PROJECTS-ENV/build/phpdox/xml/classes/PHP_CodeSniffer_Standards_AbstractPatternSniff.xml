@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="PHP_CodeSniffer_Standards_AbstractPatternSniff" namespace="" name="PHP_CodeSniffer_Standards_AbstractPatternSniff" abstract="true" final="false" start="35" end="962">
+  <file path="/home/web/example/src/freegame_developer/vendor/squizlabs/php_codesniffer/CodeSniffer/Standards" file="AbstractPatternSniff.php" realpath="/home/web/example/src/freegame_developer/vendor/squizlabs/php_codesniffer/CodeSniffer/Standards/AbstractPatternSniff.php" size="36376" time="2016-01-19T23:39:10+00:00" unixtime="1453246750" sha1="1d8d7b9320ae48323f96930dfe5442aaa8289f7f" relative="freegame_developer/vendor/squizlabs/php_codesniffer/CodeSniffer/Standards/AbstractPatternSniff.php"/>
+  <docblock>
+    <description compact="Processes pattern strings and checks that the code conforms to the pattern.">This test essentially checks that code is correctly formatted with whitespace.</description>
+    <category value="PHP"/>
+    <package value="PHP_CodeSniffer"/>
+    <author value="Greg Sherwood &lt;gsherwood@squiz.net&gt;"/>
+    <author value="Marc McIntyre &lt;mmcintyre@squiz.net&gt;"/>
+    <copyright value="2006-2014 Squiz Pty Ltd (ABN 77 084 670 600)"/>
+    <license name="https://github.com/squizlabs/PHP_CodeSniffer/blob/master/licence.txt BSD Licence"/>
+    <version value="Release: @package_version@"/>
+    <link value="http://pear.php.net/package/PHP_CodeSniffer"/>
+  </docblock>
+  <implements full="PHP_CodeSniffer_Sniff" namespace="" name="PHP_CodeSniffer_Sniff"/>
+  <member name="ignoreComments" type="boolean" default="false" visibility="public" static="false" line="43">
+    <docblock>
+      <description compact="If true, comments will be ignored if they are found in the code."/>
+      <var type="boolean"/>
+    </docblock>
+  </member>
+  <member name="currFile" type="string" default="''" visibility="protected" static="false" line="50">
+    <docblock>
+      <description compact="The current file being checked."/>
+      <var type="string"/>
+    </docblock>
+  </member>
+  <member name="_parsedPatterns" type="array" default="" visibility="private" static="false" line="57">
+    <docblock>
+      <description compact="The parsed patterns array."/>
+      <var type="array"/>
+    </docblock>
+  </member>
+  <member name="_supplementaryTokens" type="array" default="" visibility="private" static="false" line="66">
+    <docblock>
+      <description compact="Tokens that this sniff wishes to process outside of the patterns."/>
+      <var type="object">
+        <type full="array(int)" namespace="" name="array(int)"/>
+      </var>
+      <see value="registerSupplementary()"/>
+      <see value="processSupplementary()"/>
+    </docblock>
+  </member>
+  <member name="_errorPos" type="array" default="" visibility="private" static="false" line="73">
+    <docblock>
+      <description compact="Positions in the stack where errors have occurred."/>
+      <var type="object">
+        <type full="array()" namespace="" name="array()"/>
+      </var>
+    </docblock>
+  </member>
+  <constructor name="__construct" start="81" end="90" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Constructs a PHP_CodeSniffer_Standards_AbstractPatternSniff."/>
+      <param description="If true, comments will be ignored." type="boolean" variable="$ignoreComments"/>
+    </docblock>
+    <parameter name="ignoreComments" byreference="false" type="{unknown}" default="" constant="null"/>
+    <inline>
+      <comment value="This is here for backwards compatibility." line="83"/>
+    </inline>
+  </constructor>
+  <method name="register" start="102" end="131" abstract="false" final="true" static="false" visibility="public">
+    <docblock>
+      <description compact="Registers the tokens to listen to.">Classes extending &lt;i&gt;AbstractPatternTest&lt;/i&gt; should implement the
+&lt;i&gt;getPatterns()&lt;/i&gt; method to register the patterns they wish to test.</description>
+      <return type="array" of="int"/>
+      <see value="process()"/>
+    </docblock>
+    <inline>
+      <comment value="end foreach" line="127"/>
+    </inline>
+  </method>
+  <method name="_getPatternTokenTypes" start="150" end="163" abstract="false" final="false" static="false" visibility="private">
+    <docblock>
+      <description compact="Returns the token types that the specified pattern is checking for.">Returned array is in the format:
+&lt;code&gt;
+  array(
+     T_WHITESPACE =&gt; 0, // 0 is the position where the T_WHITESPACE token
+                        // should occur in the pattern.
+  );
+&lt;/code&gt;</description>
+      <param description="The parsed pattern to find the acquire the token" type="array" variable="$pattern">types from.</param>
+      <return description="int&gt;" type="object">
+        <type full="array&lt;int" namespace="" name="array&lt;int"/>
+      </return>
+    </docblock>
+    <parameter name="pattern" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="_getListenerTokenPos" start="177" end="191" abstract="false" final="false" static="false" visibility="private">
+    <docblock>
+      <description compact="Returns the position in the pattern that this test should register as a listener for the pattern."/>
+      <param description="The pattern to acquire the listener for." type="array" variable="$pattern"/>
+      <return description="The position in the pattern that this test should register" type="int">as the listener.</return>
+      <throws description="If we could not determine a token" type="object">to listen for.<type full="PHP_CodeSniffer_Exception" namespace="" name="PHP_CodeSniffer_Exception"/></throws>
+    </docblock>
+    <parameter name="pattern" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="If we could not get a token." line="183"/>
+    </inline>
+  </method>
+  <method name="process" start="206" end="257" abstract="false" final="true" static="false" visibility="public">
+    <docblock>
+      <description compact="Processes the test."/>
+      <param description="The PHP_CodeSniffer file where the" type="object" variable="$phpcsFile">token occurred.<type full="PHP_CodeSniffer_File" namespace="" name="PHP_CodeSniffer_File"/></param>
+      <param description="The position in the tokens stack" type="int" variable="$stackPtr">where the listening token type was
+                                       found.</param>
+      <return type="object">
+        <type full="void" namespace="" name="void"/>
+      </return>
+      <see value="register()"/>
+    </docblock>
+    <parameter name="phpcsFile" byreference="false" type="object">
+      <type full="PHP_CodeSniffer_File" namespace="" name="PHP_CodeSniffer_File"/>
+    </parameter>
+    <parameter name="stackPtr" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="If the type is not set, then it must have been a token registered" line="223"/>
+      <comment value="with registerSupplementary()." line="224"/>
+      <comment value="Loop over each pattern that is listening to the current token type" line="231"/>
+      <comment value="that we are processing." line="232"/>
+    </inline>
+  </method>
+  <method name="processPattern" start="274" end="714" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Processes the pattern and verifies the code at $stackPtr."/>
+      <param description="Information about the pattern used" type="array" variable="$patternInfo">for checking, which includes are
+                                         parsed token representation of the
+                                         pattern.</param>
+      <param description="The PHP_CodeSniffer file where the" type="object" variable="$phpcsFile">token occurred.<type full="PHP_CodeSniffer_File" namespace="" name="PHP_CodeSniffer_File"/></param>
+      <param description="The position in the tokens stack where" type="int" variable="$stackPtr">the listening token type was found.</param>
+      <return type="array"/>
+    </docblock>
+    <parameter name="patternInfo" byreference="false" type="{unknown}"/>
+    <parameter name="phpcsFile" byreference="false" type="object">
+      <type full="PHP_CodeSniffer_File" namespace="" name="PHP_CodeSniffer_File"/>
+    </parameter>
+    <parameter name="stackPtr" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="end if" line="436"/>
+      <comment value="end for" line="705"/>
+    </inline>
+  </method>
+  <method name="prepareError" start="725" end="738" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Prepares an error for the specified patternCode."/>
+      <param description="The actual found string in the code." type="string" variable="$found"/>
+      <param description="The expected pattern code." type="string" variable="$patternCode"/>
+      <return description="The error message." type="string"/>
+    </docblock>
+    <parameter name="found" byreference="false" type="{unknown}"/>
+    <parameter name="patternCode" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="getPatterns" start="746" end="746" abstract="true" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Returns the patterns that should be checked."/>
+      <return type="array" of="string"/>
+    </docblock>
+  </method>
+  <method name="registerSupplementary" start="759" end="763" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Registers any supplementary tokens that this test might wish to process.">A sniff may wish to register supplementary tests when it wishes to group
+an arbitrary validation that cannot be performed using a pattern, with
+other pattern tests.</description>
+      <return type="array" of="int"/>
+      <see value="processSupplementary()"/>
+    </docblock>
+  </method>
+  <method name="processSupplementary" start="777" end="782" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Processes any tokens registered with registerSupplementary()."/>
+      <param description="The PHP_CodeSniffer file where to" type="object" variable="$phpcsFile">process the skip.<type full="PHP_CodeSniffer_File" namespace="" name="PHP_CodeSniffer_File"/></param>
+      <param description="The position in the tokens stack to" type="int" variable="$stackPtr">process.</param>
+      <return type="object">
+        <type full="void" namespace="" name="void"/>
+      </return>
+      <see value="registerSupplementary()"/>
+    </docblock>
+    <parameter name="phpcsFile" byreference="false" type="object">
+      <type full="PHP_CodeSniffer_File" namespace="" name="PHP_CodeSniffer_File"/>
+    </parameter>
+    <parameter name="stackPtr" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="_parse" start="794" end="872" abstract="false" final="false" static="false" visibility="private">
+    <docblock>
+      <description compact="Parses a pattern string into an array of pattern steps."/>
+      <param description="The pattern to parse." type="string" variable="$pattern"/>
+      <return description="The parsed pattern array." type="array"/>
+      <see value="_createSkipPattern()"/>
+      <see value="_createTokenPattern()"/>
+    </docblock>
+    <parameter name="pattern" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="end for" line="868"/>
+    </inline>
+  </method>
+  <method name="_createSkipPattern" start="885" end="926" abstract="false" final="false" static="false" visibility="private">
+    <docblock>
+      <description compact="Creates a skip pattern."/>
+      <param description="The pattern being parsed." type="string" variable="$pattern"/>
+      <param description="The token content that the skip pattern starts from." type="string" variable="$from"/>
+      <return description="The pattern step." type="array"/>
+      <see value="_createTokenPattern()"/>
+      <see value="_parse()"/>
+    </docblock>
+    <parameter name="pattern" byreference="false" type="{unknown}"/>
+    <parameter name="from" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="end for" line="918"/>
+    </inline>
+  </method>
+  <method name="_createTokenPattern" start="938" end="959" abstract="false" final="false" static="false" visibility="private">
+    <docblock>
+      <description compact="Creates a token pattern."/>
+      <param description="The tokens string that the pattern should match." type="string" variable="$str"/>
+      <return description="The pattern step." type="array"/>
+      <see value="_createSkipPattern()"/>
+      <see value="_parse()"/>
+    </docblock>
+    <parameter name="str" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="Don't add a space after the closing php tag as it will add a new" line="940"/>
+      <comment value="whitespace token." line="941"/>
+      <comment value="Remove the &lt;?php tag from the front and the end php tag from the back." line="945"/>
+    </inline>
+  </method>
+</class>

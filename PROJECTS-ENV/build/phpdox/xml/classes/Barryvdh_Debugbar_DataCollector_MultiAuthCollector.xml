@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="Barryvdh\Debugbar\DataCollector\MultiAuthCollector" namespace="Barryvdh\Debugbar\DataCollector" name="MultiAuthCollector" abstract="false" final="false" start="8" end="76">
+  <file path="/home/web/example/src/freegame_developer/vendor/barryvdh/laravel-debugbar/src/DataCollector" file="MultiAuthCollector.php" realpath="/home/web/example/src/freegame_developer/vendor/barryvdh/laravel-debugbar/src/DataCollector/MultiAuthCollector.php" size="1751" time="2016-09-15T14:05:56+00:00" unixtime="1473948356" sha1="6001e4e41b3149826377ebbdd6d9b4f608f15e05" relative="freegame_developer/vendor/barryvdh/laravel-debugbar/src/DataCollector/MultiAuthCollector.php"/>
+  <docblock>
+    <description compact="Collector for Laravel's Auth provider"/>
+  </docblock>
+  <extends full="Barryvdh\Debugbar\DataCollector\AuthCollector" namespace="Barryvdh\Debugbar\DataCollector" name="AuthCollector"/>
+  <member name="guards" visibility="protected" static="false" line="11">
+    <docblock>
+      <var description="$guards" type="array"/>
+    </docblock>
+  </member>
+  <constructor name="__construct" start="17" end="21" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <param type="object" variable="$auth">
+        <type full="\Illuminate\Auth\AuthManager" namespace="\Illuminate\Auth" name="AuthManager"/>
+      </param>
+      <param type="array" variable="$guards"/>
+    </docblock>
+    <parameter name="auth" byreference="false" type="{unknown}"/>
+    <parameter name="guards" byreference="false" type="{unknown}"/>
+  </constructor>
+  <method name="collect" start="27" end="49" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <invalid annotation="(undefined)" value=""/>
+    </docblock>
+  </method>
+  <method name="getWidgets" start="54" end="75" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <invalid annotation="(undefined)" value=""/>
+    </docblock>
+  </method>
+</class>

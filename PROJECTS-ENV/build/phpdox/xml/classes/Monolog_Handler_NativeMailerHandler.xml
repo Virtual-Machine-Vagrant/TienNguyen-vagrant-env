@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="Monolog\Handler\NativeMailerHandler" namespace="Monolog\Handler" name="NativeMailerHandler" abstract="false" final="false" start="23" end="185">
+  <file path="/home/web/example/src/freegame_developer/vendor/monolog/monolog/src/Monolog/Handler" file="NativeMailerHandler.php" realpath="/home/web/example/src/freegame_developer/vendor/monolog/monolog/src/Monolog/Handler/NativeMailerHandler.php" size="5206" time="2016-07-29T03:23:52+00:00" unixtime="1469762632" sha1="b15e21d4666805155d27a8c75e539220825b6f84" relative="freegame_developer/vendor/monolog/monolog/src/Monolog/Handler/NativeMailerHandler.php"/>
+  <docblock>
+    <description compact="NativeMailerHandler uses the mail() function to send the emails"/>
+    <author value="Christophe Coevoet &lt;stof@notk.org&gt;"/>
+    <author value="Mark Garrett &lt;mark@moderndeveloperllc.com&gt;"/>
+  </docblock>
+  <extends full="Monolog\Handler\MailHandler" namespace="Monolog\Handler" name="MailHandler"/>
+  <member name="to" visibility="protected" static="false" line="29">
+    <docblock>
+      <description compact="The email addresses to which the message will be sent"/>
+      <var type="array"/>
+    </docblock>
+  </member>
+  <member name="subject" visibility="protected" static="false" line="35">
+    <docblock>
+      <description compact="The subject of the email"/>
+      <var type="string"/>
+    </docblock>
+  </member>
+  <member name="headers" type="array" default="" visibility="protected" static="false" line="41">
+    <docblock>
+      <description compact="Optional headers for the message"/>
+      <var type="array"/>
+    </docblock>
+  </member>
+  <member name="parameters" type="array" default="" visibility="protected" static="false" line="47">
+    <docblock>
+      <description compact="Optional parameters for the message"/>
+      <var type="array"/>
+    </docblock>
+  </member>
+  <member name="maxColumnWidth" visibility="protected" static="false" line="53">
+    <docblock>
+      <description compact="The wordwrap length for the message"/>
+      <var type="int"/>
+    </docblock>
+  </member>
+  <member name="contentType" type="string" default="'text/plain'" visibility="protected" static="false" line="59">
+    <docblock>
+      <description compact="The Content-type for the message"/>
+      <var type="string"/>
+    </docblock>
+  </member>
+  <member name="encoding" type="string" default="'utf-8'" visibility="protected" static="false" line="65">
+    <docblock>
+      <description compact="The encoding for the message"/>
+      <var type="string"/>
+    </docblock>
+  </member>
+  <constructor name="__construct" start="75" end="82" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <param description="The receiver of the mail" type="object" variable="$to">
+        <type full="Monolog\Handler\string|array" namespace="Monolog\Handler" name="string|array"/>
+      </param>
+      <param description="The subject of the mail" type="string" variable="$subject"/>
+      <param description="The sender of the mail" type="string" variable="$from"/>
+      <param description="The minimum logging level at which this handler will be triggered" type="int" variable="$level"/>
+      <param description="Whether the messages that are handled can bubble up the stack or not" type="object" variable="$bubble">
+        <type full="Monolog\Handler\bool" namespace="Monolog\Handler" name="bool"/>
+      </param>
+      <param description="The maximum column width that the message lines will have" type="int" variable="$maxColumnWidth"/>
+    </docblock>
+    <parameter name="to" byreference="false" type="{unknown}"/>
+    <parameter name="subject" byreference="false" type="{unknown}"/>
+    <parameter name="from" byreference="false" type="{unknown}"/>
+    <parameter name="level" byreference="false" type="{unknown}" default="" constant="Logger::ERROR"/>
+    <parameter name="bubble" byreference="false" type="boolean" default="true"/>
+    <parameter name="maxColumnWidth" byreference="false" type="integer" default="70"/>
+  </constructor>
+  <method name="addHeader" start="90" end="100" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Add headers to the message"/>
+      <param description="Custom added headers" type="object" variable="$headers">
+        <type full="Monolog\Handler\string|array" namespace="Monolog\Handler" name="string|array"/>
+      </param>
+      <return resolution="self" type="object">
+        <type full="Monolog\Handler\NativeMailerHandler" namespace="Monolog\Handler" name="NativeMailerHandler"/>
+      </return>
+    </docblock>
+    <parameter name="headers" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="addParameter" start="108" end="113" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Add parameters to the message"/>
+      <param description="Custom added parameters" type="object" variable="$parameters">
+        <type full="Monolog\Handler\string|array" namespace="Monolog\Handler" name="string|array"/>
+      </param>
+      <return resolution="self" type="object">
+        <type full="Monolog\Handler\NativeMailerHandler" namespace="Monolog\Handler" name="NativeMailerHandler"/>
+      </return>
+    </docblock>
+    <parameter name="parameters" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="send" start="118" end="137" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="{@inheritdoc}"/>
+    </docblock>
+    <parameter name="content" byreference="false" type="{unknown}"/>
+    <parameter name="records" byreference="false" type="array"/>
+  </method>
+  <method name="getContentType" start="142" end="145" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <return description="$contentType" type="string"/>
+    </docblock>
+  </method>
+  <method name="getEncoding" start="150" end="153" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <return description="$encoding" type="string"/>
+    </docblock>
+  </method>
+  <method name="setContentType" start="160" end="169" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <param description="The content type of the email - Defaults to text/plain. Use text/html for HTML" type="string" variable="$contentType">messages.</param>
+      <return resolution="self" type="object">
+        <type full="Monolog\Handler\NativeMailerHandler" namespace="Monolog\Handler" name="NativeMailerHandler"/>
+      </return>
+    </docblock>
+    <parameter name="contentType" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="setEncoding" start="175" end="184" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <param type="string" variable="$encoding"/>
+      <return resolution="self" type="object">
+        <type full="Monolog\Handler\NativeMailerHandler" namespace="Monolog\Handler" name="NativeMailerHandler"/>
+      </return>
+    </docblock>
+    <parameter name="encoding" byreference="false" type="{unknown}"/>
+  </method>
+</class>

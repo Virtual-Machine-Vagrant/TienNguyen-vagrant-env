@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="Symfony\Component\Process\Pipes\WindowsPipes" namespace="Symfony\Component\Process\Pipes" name="WindowsPipes" abstract="false" final="false" start="27" end="205">
+  <file path="/home/web/example/src/freegame_developer/vendor/symfony/process/Pipes" file="WindowsPipes.php" realpath="/home/web/example/src/freegame_developer/vendor/symfony/process/Pipes/WindowsPipes.php" size="5809" time="2016-09-29T02:20:21+00:00" unixtime="1475115621" sha1="10d979ee30ec930aec7e754a5dcdf406dd9a35e2" relative="freegame_developer/vendor/symfony/process/Pipes/WindowsPipes.php"/>
+  <docblock>
+    <description compact="WindowsPipes implementation uses temporary files as handles."/>
+    <see value="https://bugs.php.net/bug.php?id=51800"/>
+    <see value="https://bugs.php.net/bug.php?id=65650"/>
+    <author value="Romain Neutron &lt;imprec@gmail.com&gt;"/>
+    <internal/>
+  </docblock>
+  <extends full="Symfony\Component\Process\Pipes\AbstractPipes" namespace="Symfony\Component\Process\Pipes" name="AbstractPipes"/>
+  <member name="files" type="array" default="" visibility="private" static="false" line="30">
+    <docblock>
+      <var type="array"/>
+    </docblock>
+  </member>
+  <member name="fileHandles" type="array" default="" visibility="private" static="false" line="32">
+    <docblock>
+      <var type="array"/>
+    </docblock>
+  </member>
+  <member name="readBytes" type="array" default="" visibility="private" static="false" line="34">
+    <docblock>
+      <var type="array"/>
+    </docblock>
+  </member>
+  <member name="disableOutput" visibility="private" static="false" line="39">
+    <docblock>
+      <var type="object">
+        <type full="Symfony\Component\Process\Pipes\bool" namespace="Symfony\Component\Process\Pipes" name="bool"/>
+      </var>
+    </docblock>
+  </member>
+  <constructor name="__construct" start="41" end="87" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="disableOutput" byreference="false" type="{unknown}"/>
+    <parameter name="input" byreference="false" type="{unknown}"/>
+  </constructor>
+  <destructor name="__destruct" start="89" end="93" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="getDescriptors" start="98" end="118" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="{@inheritdoc}"/>
+    </docblock>
+    <inline>
+      <comment value="We're not using pipe on Windows platform as it hangs (https://bugs.php.net/bug.php?id=51800)" line="110"/>
+      <comment value="We're not using file handles as it can produce corrupted output https://bugs.php.net/bug.php?id=65650" line="111"/>
+      <comment value="So we redirect output within the commandline and pass the nul device to the process" line="112"/>
+    </inline>
+  </method>
+  <method name="getFiles" start="123" end="126" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="{@inheritdoc}"/>
+    </docblock>
+  </method>
+  <method name="readAndWrite" start="131" end="158" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="{@inheritdoc}"/>
+    </docblock>
+    <parameter name="blocking" byreference="false" type="{unknown}"/>
+    <parameter name="close" byreference="false" type="boolean" default="false"/>
+  </method>
+  <method name="areOpen" start="163" end="166" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="{@inheritdoc}"/>
+    </docblock>
+  </method>
+  <method name="close" start="171" end="178" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="{@inheritdoc}"/>
+    </docblock>
+  </method>
+  <method name="create" start="188" end="191" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description compact="Creates a new WindowsPipes instance."/>
+      <param description="The process" type="object" variable="$process">
+        <type full="Symfony\Component\Process\Process" namespace="Symfony\Component\Process" name="Process"/>
+      </param>
+      <param variable="$input"/>
+      <return type="object">
+        <type full="Symfony\Component\Process\Pipes\WindowsPipes" namespace="Symfony\Component\Process\Pipes" name="WindowsPipes"/>
+      </return>
+    </docblock>
+    <parameter name="process" byreference="false" type="object">
+      <type full="Symfony\Component\Process\Process" namespace="Symfony\Component\Process" name="Process"/>
+    </parameter>
+    <parameter name="input" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="removeFiles" start="196" end="204" abstract="false" final="false" static="false" visibility="private">
+    <docblock>
+      <description compact="Removes temporary files."/>
+    </docblock>
+  </method>
+</class>

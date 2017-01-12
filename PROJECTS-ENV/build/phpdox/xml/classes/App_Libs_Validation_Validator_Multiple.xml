@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="App\Libs\Validation\Validator\Multiple" namespace="App\Libs\Validation\Validator" name="Multiple" abstract="false" final="false" start="6" end="41">
+  <file path="/home/web/example/src/freegame_developer/app/Libs/Validation/Validator" file="Multiple.php" realpath="/home/web/example/src/freegame_developer/app/Libs/Validation/Validator/Multiple.php" size="1093" time="2016-10-31T07:00:31+00:00" unixtime="1477897231" sha1="80c711ced9576af0f35ca65d59109ebf9bbedaec" relative="freegame_developer/app/Libs/Validation/Validator/Multiple.php"/>
+  <extends full="Illuminate\Validation\Validator" namespace="Illuminate\Validation" name="Validator"/>
+  <method name="validateRequiredArray" start="15" end="40" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description compact="Validate required_array"/>
+      <param type="string" variable="$attribute"/>
+      <param type="array" variable="$value"/>
+      <param description="all：全てに値があれば正常)" type="array" variable="$parameters(one：ひとつでも値があれば正常"/>
+      <return description="$return" type="boolean"/>
+    </docblock>
+    <parameter name="attribute" byreference="false" type="{unknown}"/>
+    <parameter name="value" byreference="false" type="{unknown}"/>
+    <parameter name="parameters" byreference="false" type="{unknown}"/>
+  </method>
+</class>

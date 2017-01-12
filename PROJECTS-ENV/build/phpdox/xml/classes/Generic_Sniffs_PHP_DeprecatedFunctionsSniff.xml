@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="Generic_Sniffs_PHP_DeprecatedFunctionsSniff" namespace="" name="Generic_Sniffs_PHP_DeprecatedFunctionsSniff" abstract="false" final="false" start="32" end="95">
+  <file path="/home/web/example/src/freegame_developer/vendor/squizlabs/php_codesniffer/CodeSniffer/Standards/Generic/Sniffs/PHP" file="DeprecatedFunctionsSniff.php" realpath="/home/web/example/src/freegame_developer/vendor/squizlabs/php_codesniffer/CodeSniffer/Standards/Generic/Sniffs/PHP/DeprecatedFunctionsSniff.php" size="2993" time="2016-01-19T23:39:10+00:00" unixtime="1453246750" sha1="da87d01978e9e21f9dde6e61ba0fc6cbf9d6af26" relative="freegame_developer/vendor/squizlabs/php_codesniffer/CodeSniffer/Standards/Generic/Sniffs/PHP/DeprecatedFunctionsSniff.php"/>
+  <docblock>
+    <description compact="Generic_Sniffs_PHP_DeprecatedFunctionsSniff.">Discourages the use of deprecated functions that are kept in PHP for
+compatibility with older versions.</description>
+    <category value="PHP"/>
+    <package value="PHP_CodeSniffer"/>
+    <author value="Sebastian Bergmann &lt;sb@sebastian-bergmann.de&gt;"/>
+    <author value="Greg Sherwood &lt;gsherwood@squiz.net&gt;"/>
+    <author value="Marc McIntyre &lt;mmcintyre@squiz.net&gt;"/>
+    <copyright value="2006-2014 Squiz Pty Ltd (ABN 77 084 670 600)"/>
+    <license name="https://github.com/squizlabs/PHP_CodeSniffer/blob/master/licence.txt BSD Licence"/>
+    <version value="Release: @package_version@"/>
+    <link value="http://pear.php.net/package/PHP_CodeSniffer"/>
+  </docblock>
+  <extends full="Generic_Sniffs_PHP_ForbiddenFunctionsSniff" namespace="" name="Generic_Sniffs_PHP_ForbiddenFunctionsSniff"/>
+  <member name="forbiddenFunctions" type="array" default="" visibility="public" static="false" line="43">
+    <docblock>
+      <description compact="A list of forbidden functions with their alternatives.">The value is NULL if no alternative exists. IE, the
+function should just not be used.</description>
+      <var description="=&gt; string|null)" type="object">
+        <type full="array(string" namespace="" name="array(string"/>
+      </var>
+    </docblock>
+  </member>
+  <constructor name="__construct" start="51" end="66" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Constructor.">Uses the Reflection API to get a list of deprecated functions.</description>
+    </docblock>
+  </constructor>
+  <method name="addError" start="80" end="92" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Generates the error or warning for this sniff."/>
+      <param description="The file being scanned." type="object" variable="$phpcsFile">
+        <type full="PHP_CodeSniffer_File" namespace="" name="PHP_CodeSniffer_File"/>
+      </param>
+      <param description="The position of the forbidden function" type="int" variable="$stackPtr">in the token array.</param>
+      <param description="The name of the forbidden function." type="string" variable="$function"/>
+      <param description="The pattern used for the match." type="string" variable="$pattern"/>
+      <return type="object">
+        <type full="void" namespace="" name="void"/>
+      </return>
+    </docblock>
+    <parameter name="phpcsFile" byreference="false" type="{unknown}"/>
+    <parameter name="stackPtr" byreference="false" type="{unknown}"/>
+    <parameter name="function" byreference="false" type="{unknown}"/>
+    <parameter name="pattern" byreference="false" type="{unknown}" default="" constant="null"/>
+  </method>
+</class>

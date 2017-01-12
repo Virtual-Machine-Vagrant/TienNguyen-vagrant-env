@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="Symfony\Component\Finder\Tests\Iterator\ExcludeDirectoryFilterIteratorTest" namespace="Symfony\Component\Finder\Tests\Iterator" name="ExcludeDirectoryFilterIteratorTest" abstract="false" final="false" start="17" end="80">
+  <file path="/home/web/example/src/freegame_developer/vendor/symfony/finder/Tests/Iterator" file="ExcludeDirectoryFilterIteratorTest.php" realpath="/home/web/example/src/freegame_developer/vendor/symfony/finder/Tests/Iterator/ExcludeDirectoryFilterIteratorTest.php" size="2005" time="2016-09-16T16:53:37+00:00" unixtime="1474044817" sha1="60a58a68dc0bbba699ffe290752f1f1e40d0545d" relative="freegame_developer/vendor/symfony/finder/Tests/Iterator/ExcludeDirectoryFilterIteratorTest.php"/>
+  <extends full="Symfony\Component\Finder\Tests\Iterator\RealIteratorTestCase" namespace="Symfony\Component\Finder\Tests\Iterator" name="RealIteratorTestCase"/>
+  <method name="testAccept" start="22" end="29" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <dataprovider value="getAcceptData"/>
+    </docblock>
+    <parameter name="directories" byreference="false" type="{unknown}"/>
+    <parameter name="expected" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="getAcceptData" start="31" end="79" abstract="false" final="false" static="false" visibility="public"/>
+</class>

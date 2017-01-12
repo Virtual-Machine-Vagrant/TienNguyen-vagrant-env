@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="DebugBar\DebugBar" namespace="DebugBar" name="DebugBar" abstract="false" final="false" start="29" end="474">
+  <file path="/home/web/example/src/freegame_developer/vendor/maximebf/debugbar/src/DebugBar" file="DebugBar.php" realpath="/home/web/example/src/freegame_developer/vendor/maximebf/debugbar/src/DebugBar/DebugBar.php" size="12444" time="2016-09-15T14:01:59+00:00" unixtime="1473948119" sha1="9ba9b494df4ed5b851841a052a69b246232d7bc4" relative="freegame_developer/vendor/maximebf/debugbar/src/DebugBar/DebugBar.php"/>
+  <docblock>
+    <description compact="Main DebugBar object">Manages data collectors. DebugBar provides an array-like access
+to collectors by name.
+
+&lt;code&gt;
+    $debugbar = new DebugBar();
+    $debugbar-&gt;addCollector(new DataCollector\MessagesCollector());
+    $debugbar['messages']-&gt;addMessage("foobar");
+&lt;/code&gt;</description>
+  </docblock>
+  <implements full="ArrayAccess" namespace="" name="ArrayAccess"/>
+  <member name="useOpenHandlerWhenSendingDataHeaders" type="boolean" default="false" visibility="public" static="true" line="31"/>
+  <member name="collectors" type="array" default="" visibility="protected" static="false" line="33"/>
+  <member name="data" visibility="protected" static="false" line="35"/>
+  <member name="jsRenderer" visibility="protected" static="false" line="37"/>
+  <member name="requestIdGenerator" visibility="protected" static="false" line="39"/>
+  <member name="requestId" visibility="protected" static="false" line="41"/>
+  <member name="storage" visibility="protected" static="false" line="43"/>
+  <member name="httpDriver" visibility="protected" static="false" line="45"/>
+  <member name="stackSessionNamespace" type="string" default="'PHPDEBUGBAR_STACK_DATA'" visibility="protected" static="false" line="47"/>
+  <member name="stackAlwaysUseSessionStorage" type="boolean" default="false" visibility="protected" static="false" line="49"/>
+  <method name="addCollector" start="59" end="69" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Adds a data collector"/>
+      <param type="object" variable="$collector">
+        <type full="DebugBar\DataCollector\DataCollectorInterface" namespace="DebugBar\DataCollector" name="DataCollectorInterface"/>
+      </param>
+      <throws type="object">
+        <type full="DebugBar\DebugBarException" namespace="DebugBar" name="DebugBarException"/>
+      </throws>
+      <return type="object">
+        <type full="DebugBar\$this" namespace="DebugBar" name="$this"/>
+      </return>
+    </docblock>
+    <parameter name="collector" byreference="false" type="object">
+      <type full="DebugBar\DataCollector\DataCollectorInterface" namespace="DebugBar\DataCollector" name="DataCollectorInterface"/>
+    </parameter>
+  </method>
+  <method name="hasCollector" start="77" end="80" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Checks if a data collector has been added"/>
+      <param type="string" variable="$name"/>
+      <return type="boolean"/>
+    </docblock>
+    <parameter name="name" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="getCollector" start="89" end="95" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Returns a data collector"/>
+      <param type="string" variable="$name"/>
+      <return type="object">
+        <type full="DebugBar\DataCollector\DataCollectorInterface" namespace="DebugBar\DataCollector" name="DataCollectorInterface"/>
+      </return>
+      <throws type="object">
+        <type full="DebugBar\DebugBarException" namespace="DebugBar" name="DebugBarException"/>
+      </throws>
+    </docblock>
+    <parameter name="name" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="getCollectors" start="102" end="105" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Returns an array of all data collectors"/>
+      <return type="object">
+        <type full="DebugBar\array[DataCollectorInterface]" namespace="DebugBar" name="array[DataCollectorInterface]"/>
+      </return>
+    </docblock>
+  </method>
+  <method name="setRequestIdGenerator" start="113" end="117" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Sets the request id generator"/>
+      <param type="object" variable="$generator">
+        <type full="DebugBar\RequestIdGeneratorInterface" namespace="DebugBar" name="RequestIdGeneratorInterface"/>
+      </param>
+      <return type="object">
+        <type full="DebugBar\$this" namespace="DebugBar" name="$this"/>
+      </return>
+    </docblock>
+    <parameter name="generator" byreference="false" type="object">
+      <type full="DebugBar\RequestIdGeneratorInterface" namespace="DebugBar" name="RequestIdGeneratorInterface"/>
+    </parameter>
+  </method>
+  <method name="getRequestIdGenerator" start="122" end="128" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <return type="object">
+        <type full="DebugBar\RequestIdGeneratorInterface" namespace="DebugBar" name="RequestIdGeneratorInterface"/>
+      </return>
+    </docblock>
+  </method>
+  <method name="getCurrentRequestId" start="135" end="141" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Returns the id of the current request"/>
+      <return type="string"/>
+    </docblock>
+  </method>
+  <method name="setStorage" start="149" end="153" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Sets the storage backend to use to store the collected data"/>
+      <param type="object" variable="$storage">
+        <type full="DebugBar\Storage\StorageInterface" namespace="DebugBar\Storage" name="StorageInterface"/>
+      </param>
+      <return type="object">
+        <type full="DebugBar\$this" namespace="DebugBar" name="$this"/>
+      </return>
+    </docblock>
+    <parameter name="storage" byreference="false" type="{unknown}" default="" constant="null">
+      <type full="DebugBar\Storage\StorageInterface" namespace="DebugBar\Storage" name="StorageInterface"/>
+    </parameter>
+  </method>
+  <method name="getStorage" start="158" end="161" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <return type="object">
+        <type full="DebugBar\Storage\StorageInterface" namespace="DebugBar\Storage" name="StorageInterface"/>
+      </return>
+    </docblock>
+  </method>
+  <method name="isDataPersisted" start="168" end="171" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Checks if the data will be persisted"/>
+      <return type="boolean"/>
+    </docblock>
+  </method>
+  <method name="setHttpDriver" start="179" end="183" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Sets the HTTP driver"/>
+      <param type="object" variable="$driver">
+        <type full="DebugBar\HttpDriverInterface" namespace="DebugBar" name="HttpDriverInterface"/>
+      </param>
+      <return type="object">
+        <type full="DebugBar\$this" namespace="DebugBar" name="$this"/>
+      </return>
+    </docblock>
+    <parameter name="driver" byreference="false" type="object">
+      <type full="DebugBar\HttpDriverInterface" namespace="DebugBar" name="HttpDriverInterface"/>
+    </parameter>
+  </method>
+  <method name="getHttpDriver" start="192" end="198" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Returns the HTTP driver">If no http driver where defined, a PhpHttpDriver is automatically created</description>
+      <return type="object">
+        <type full="DebugBar\HttpDriverInterface" namespace="DebugBar" name="HttpDriverInterface"/>
+      </return>
+    </docblock>
+  </method>
+  <method name="collect" start="205" end="234" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Collects the data from the collectors"/>
+      <return type="array"/>
+    </docblock>
+    <inline>
+      <comment value="Remove all invalid (non UTF-8) characters" line="222"/>
+    </inline>
+  </method>
+  <method name="getData" start="243" end="249" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Returns collected data">Will collect the data if none have been collected yet</description>
+      <return type="array"/>
+    </docblock>
+  </method>
+  <method name="getDataAsHeaders" start="258" end="286" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Returns an array of HTTP headers containing the data"/>
+      <param type="string" variable="$headerName"/>
+      <param type="integer" variable="$maxHeaderLength"/>
+      <return type="array"/>
+    </docblock>
+    <parameter name="headerName" byreference="false" type="string" default="'phpdebugbar'"/>
+    <parameter name="maxHeaderLength" byreference="false" type="integer" default="4096"/>
+    <parameter name="maxTotalHeaderLength" byreference="false" type="integer" default="250000"/>
+  </method>
+  <method name="sendDataInHeaders" start="296" end="310" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Sends the data through the HTTP headers"/>
+      <param type="object" variable="$useOpenHandler">
+        <type full="DebugBar\bool" namespace="DebugBar" name="bool"/>
+      </param>
+      <param type="string" variable="$headerName"/>
+      <param type="integer" variable="$maxHeaderLength"/>
+      <return type="object">
+        <type full="DebugBar\$this" namespace="DebugBar" name="$this"/>
+      </return>
+    </docblock>
+    <parameter name="useOpenHandler" byreference="false" type="{unknown}" default="" constant="null"/>
+    <parameter name="headerName" byreference="false" type="string" default="'phpdebugbar'"/>
+    <parameter name="maxHeaderLength" byreference="false" type="integer" default="4096"/>
+  </method>
+  <method name="stackData" start="315" end="330" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Stacks the data in the session for later rendering"/>
+    </docblock>
+  </method>
+  <method name="hasStackedData" start="337" end="345" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Checks if there is stacked data in the session"/>
+      <return type="boolean"/>
+    </docblock>
+  </method>
+  <method name="getStackedData" start="353" end="371" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Returns the data stacked in the session"/>
+      <param description="Whether to delete the data in the session" type="boolean" variable="$delete"/>
+      <return type="array"/>
+    </docblock>
+    <parameter name="delete" byreference="false" type="boolean" default="true"/>
+  </method>
+  <method name="setStackDataSessionNamespace" start="379" end="383" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Sets the key to use in the $_SESSION array"/>
+      <param type="string" variable="$ns"/>
+      <return type="object">
+        <type full="DebugBar\$this" namespace="DebugBar" name="$this"/>
+      </return>
+    </docblock>
+    <parameter name="ns" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="getStackDataSessionNamespace" start="390" end="393" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Returns the key used in the $_SESSION array"/>
+      <return type="string"/>
+    </docblock>
+  </method>
+  <method name="setStackAlwaysUseSessionStorage" start="402" end="406" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Sets whether to only use the session to store stacked data even if a storage is enabled"/>
+      <param type="boolean" variable="$enabled"/>
+      <return type="object">
+        <type full="DebugBar\$this" namespace="DebugBar" name="$this"/>
+      </return>
+    </docblock>
+    <parameter name="enabled" byreference="false" type="boolean" default="true"/>
+  </method>
+  <method name="isStackAlwaysUseSessionStorage" start="414" end="417" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Checks if the session is always used to store stacked data even if a storage is enabled"/>
+      <return type="boolean"/>
+    </docblock>
+  </method>
+  <method name="initStackSession" start="424" end="436" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Initializes the session for stacked data"/>
+      <return type="object">
+        <type full="DebugBar\HttpDriverInterface" namespace="DebugBar" name="HttpDriverInterface"/>
+      </return>
+      <throws type="object">
+        <type full="DebugBar\DebugBarException" namespace="DebugBar" name="DebugBarException"/>
+      </throws>
+    </docblock>
+  </method>
+  <method name="getJavascriptRenderer" start="444" end="450" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Returns a JavascriptRenderer for this instance"/>
+      <param type="string" variable="$baseUrl"/>
+      <param type="string" variable="$basePath"/>
+      <return type="object">
+        <type full="DebugBar\JavascriptRenderer" namespace="DebugBar" name="JavascriptRenderer"/>
+      </return>
+    </docblock>
+    <parameter name="baseUrl" byreference="false" type="{unknown}" default="" constant="null"/>
+    <parameter name="basePath" byreference="false" type="{unknown}" default="" constant="null"/>
+  </method>
+  <method name="offsetSet" start="455" end="458" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="key" byreference="false" type="{unknown}"/>
+    <parameter name="value" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="offsetGet" start="460" end="463" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="key" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="offsetExists" start="465" end="468" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="key" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="offsetUnset" start="470" end="473" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="key" byreference="false" type="{unknown}"/>
+  </method>
+</class>

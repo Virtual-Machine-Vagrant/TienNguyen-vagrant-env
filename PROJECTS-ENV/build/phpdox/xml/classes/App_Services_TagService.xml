@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="App\Services\TagService" namespace="App\Services" name="TagService" abstract="false" final="false" start="8" end="115">
+  <file path="/home/web/example/src/freegame_developer/app/Services" file="TagService.php" realpath="/home/web/example/src/freegame_developer/app/Services/TagService.php" size="3160" time="2016-12-01T09:32:03+00:00" unixtime="1480584723" sha1="7bac9efd12b667acd1780e8a9ecaa5f3b4ab5130" relative="freegame_developer/app/Services/TagService.php"/>
+  <extends full="App\Services\CustomService" namespace="App\Services" name="CustomService"/>
+  <member name="tagRef" visibility="protected" static="false" line="10"/>
+  <member name="tagMaster" visibility="protected" static="false" line="11"/>
+  <member name="gameIdFromSession" visibility="protected" static="false" line="12"/>
+  <constructor name="__construct" start="14" end="21" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="tagRef" byreference="false" type="object">
+      <type full="App\Models\NetgameCstool\TagRef" namespace="App\Models\NetgameCstool" name="TagRef"/>
+    </parameter>
+    <parameter name="tagMaster" byreference="false" type="object">
+      <type full="App\Models\NetgameCstool\TagMaster" namespace="App\Models\NetgameCstool" name="TagMaster"/>
+    </parameter>
+  </constructor>
+  <method name="getFormData" start="27" end="30" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="get Config forms data"/>
+      <return type="object">
+        <type full="App\Services\Array" namespace="App\Services" name="Array"/>
+      </return>
+    </docblock>
+  </method>
+  <method name="getListTag" start="37" end="54" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Get list tag"/>
+      <param type="object" variable="$params">
+        <type full="App\Services\Array" namespace="App\Services" name="Array"/>
+      </param>
+      <return type="object">
+        <type full="App\Services\Array" namespace="App\Services" name="Array"/>
+      </return>
+    </docblock>
+    <parameter name="params" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="checkTagNameDuplicate" start="61" end="66" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Check tag name duplicae"/>
+      <param type="object" variable="$params">
+        <type full="App\Services\Array" namespace="App\Services" name="Array"/>
+      </param>
+      <return type="object">
+        <type full="App\Services\Bolean" namespace="App\Services" name="Bolean"/>
+      </return>
+    </docblock>
+    <parameter name="params" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="checkTagNameEnglishDuplicate" start="73" end="78" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Check tag name english duplicae"/>
+      <param type="object" variable="$params">
+        <type full="App\Services\Array" namespace="App\Services" name="Array"/>
+      </param>
+      <return type="object">
+        <type full="App\Services\Bolean" namespace="App\Services" name="Bolean"/>
+      </return>
+    </docblock>
+    <parameter name="params" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="getStoreTag" start="85" end="90" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Store tag"/>
+      <param type="object" variable="$params">
+        <type full="App\Services\Array" namespace="App\Services" name="Array"/>
+      </param>
+      <return type="object">
+        <type full="App\Services\Bolean" namespace="App\Services" name="Bolean"/>
+      </return>
+    </docblock>
+    <parameter name="params" byreference="false" type="{unknown}"/>
+    <parameter name="isCreate" byreference="false" type="boolean" default="false"/>
+  </method>
+  <method name="getTagEdit" start="96" end="102" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Get tag edit by id"/>
+      <param type="object" variable="$id">
+        <type full="App\Services\Integer" namespace="App\Services" name="Integer"/>
+      </param>
+      <return type="object">
+        <type full="App\Services\Array" namespace="App\Services" name="Array"/>
+      </return>
+    </docblock>
+    <parameter name="id" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="getTagDelete" start="108" end="114" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="delete tag edit by id"/>
+      <param type="object" variable="$id">
+        <type full="App\Services\Integer" namespace="App\Services" name="Integer"/>
+      </param>
+      <return type="object">
+        <type full="App\Services\Array" namespace="App\Services" name="Array"/>
+      </return>
+    </docblock>
+    <parameter name="id" byreference="false" type="{unknown}"/>
+  </method>
+</class>

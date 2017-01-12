@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="PhpParser\Node\Scalar\LNumber" namespace="PhpParser\Node\Scalar" name="LNumber" abstract="false" final="false" start="8" end="67">
+  <file path="/home/web/example/src/freegame_developer/vendor/nikic/php-parser/lib/PhpParser/Node/Scalar" file="LNumber.php" realpath="/home/web/example/src/freegame_developer/vendor/nikic/php-parser/lib/PhpParser/Node/Scalar/LNumber.php" size="2092" time="2016-09-16T12:04:44+00:00" unixtime="1474027484" sha1="78543eff7a7008bfda73df8c7b9f17a654cee55f" relative="freegame_developer/vendor/nikic/php-parser/lib/PhpParser/Node/Scalar/LNumber.php"/>
+  <extends full="PhpParser\Node\Scalar" namespace="PhpParser\Node" name="Scalar"/>
+  <constant type="integer" name="KIND_BIN" value="2"/>
+  <constant type="integer" name="KIND_OCT" value="8"/>
+  <constant type="integer" name="KIND_DEC" value="10"/>
+  <constant type="integer" name="KIND_HEX" value="16"/>
+  <member name="value" visibility="public" static="false" line="17">
+    <docblock>
+      <var description="Number value" type="int"/>
+    </docblock>
+  </member>
+  <constructor name="__construct" start="25" end="28" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Constructs an integer number scalar node."/>
+      <param description="Value of the number" type="int" variable="$value"/>
+      <param description="Additional attributes" type="array" variable="$attributes"/>
+    </docblock>
+    <parameter name="value" byreference="false" type="{unknown}"/>
+    <parameter name="attributes" byreference="false" type="array" default=""/>
+  </constructor>
+  <method name="getSubNodeNames" start="30" end="32" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="fromString" start="43" end="66" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description compact="Constructs an LNumber node from a string number literal."/>
+      <param description="String number literal (decimal, octal, hex or binary)" type="string" variable="$str"/>
+      <param description="Additional attributes" type="array" variable="$attributes"/>
+      <param description="Whether to allow invalid octal numbers (PHP 5)" type="object" variable="$allowInvalidOctal">
+        <type full="PhpParser\Node\Scalar\bool" namespace="PhpParser\Node\Scalar" name="bool"/>
+      </param>
+      <return description="The constructed LNumber, including kind attribute" type="object">
+        <type full="PhpParser\Node\Scalar\LNumber" namespace="PhpParser\Node\Scalar" name="LNumber"/>
+      </return>
+    </docblock>
+    <parameter name="str" byreference="false" type="{unknown}"/>
+    <parameter name="attributes" byreference="false" type="array" default=""/>
+    <parameter name="allowInvalidOctal" byreference="false" type="boolean" default="false"/>
+    <inline>
+      <comment value="use intval instead of octdec to get proper cutting behavior with malformed numbers" line="63"/>
+    </inline>
+  </method>
+</class>

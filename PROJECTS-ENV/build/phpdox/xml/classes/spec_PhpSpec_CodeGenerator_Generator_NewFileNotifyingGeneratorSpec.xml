@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="spec\PhpSpec\CodeGenerator\Generator\NewFileNotifyingGeneratorSpec" namespace="spec\PhpSpec\CodeGenerator\Generator" name="NewFileNotifyingGeneratorSpec" abstract="false" final="false" start="13" end="109">
+  <file path="/home/web/example/src/freegame_developer/vendor/phpspec/phpspec/spec/PhpSpec/CodeGenerator/Generator" file="NewFileNotifyingGeneratorSpec.php" realpath="/home/web/example/src/freegame_developer/vendor/phpspec/phpspec/spec/PhpSpec/CodeGenerator/Generator/NewFileNotifyingGeneratorSpec.php" size="4000" time="2016-01-01T10:17:54+00:00" unixtime="1451643474" sha1="771609304afdce3a339696050ec5f509c9a8e2b9" relative="freegame_developer/vendor/phpspec/phpspec/spec/PhpSpec/CodeGenerator/Generator/NewFileNotifyingGeneratorSpec.php"/>
+  <extends full="PhpSpec\ObjectBehavior" namespace="PhpSpec" name="ObjectBehavior"/>
+  <constant type="string" name="EVENT_CLASS" value="'PhpSpec\Event\FileCreationEvent'"/>
+  <method name="let" start="17" end="20" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="generator" byreference="false" type="object">
+      <type full="PhpSpec\CodeGenerator\Generator\GeneratorInterface" namespace="PhpSpec\CodeGenerator\Generator" name="GeneratorInterface"/>
+    </parameter>
+    <parameter name="dispatcher" byreference="false" type="object">
+      <type full="Symfony\Component\EventDispatcher\EventDispatcherInterface" namespace="Symfony\Component\EventDispatcher" name="EventDispatcherInterface"/>
+    </parameter>
+    <parameter name="filesystem" byreference="false" type="object">
+      <type full="PhpSpec\Util\Filesystem" namespace="PhpSpec\Util" name="Filesystem"/>
+    </parameter>
+  </method>
+  <method name="it_is_a_code_generator" start="22" end="25" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="it_should_proxy_the_support_call_to_the_decorated_object" start="27" end="31" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="generator" byreference="false" type="{unknown}"/>
+    <parameter name="resource" byreference="false" type="object">
+      <type full="PhpSpec\Locator\ResourceInterface" namespace="PhpSpec\Locator" name="ResourceInterface"/>
+    </parameter>
+  </method>
+  <method name="it_should_proxy_the_priority_call_to_the_decorated_object" start="33" end="37" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="generator" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="it_should_proxy_the_generate_call_to_the_decorated_object" start="39" end="43" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="generator" byreference="false" type="{unknown}"/>
+    <parameter name="resource" byreference="false" type="object">
+      <type full="PhpSpec\Locator\ResourceInterface" namespace="PhpSpec\Locator" name="ResourceInterface"/>
+    </parameter>
+  </method>
+  <method name="it_should_dispatch_an_event_when_a_file_is_created" start="45" end="55" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="dispatcher" byreference="false" type="{unknown}"/>
+    <parameter name="filesystem" byreference="false" type="{unknown}"/>
+    <parameter name="resource" byreference="false" type="object">
+      <type full="PhpSpec\Locator\ResourceInterface" namespace="PhpSpec\Locator" name="ResourceInterface"/>
+    </parameter>
+  </method>
+  <method name="it_should_dispatch_an_event_with_the_spec_path_when_a_spec_is_created" start="57" end="69" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="generator" byreference="false" type="{unknown}"/>
+    <parameter name="dispatcher" byreference="false" type="{unknown}"/>
+    <parameter name="filesystem" byreference="false" type="{unknown}"/>
+    <parameter name="resource" byreference="false" type="object">
+      <type full="PhpSpec\Locator\ResourceInterface" namespace="PhpSpec\Locator" name="ResourceInterface"/>
+    </parameter>
+  </method>
+  <method name="it_should_check_that_the_file_was_created" start="71" end="84" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="generator" byreference="false" type="{unknown}"/>
+    <parameter name="filesystem" byreference="false" type="{unknown}"/>
+    <parameter name="resource" byreference="false" type="object">
+      <type full="PhpSpec\Locator\ResourceInterface" namespace="PhpSpec\Locator" name="ResourceInterface"/>
+    </parameter>
+  </method>
+  <method name="it_should_not_dispatch_an_event_if_the_file_was_not_created" start="86" end="96" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="dispatcher" byreference="false" type="{unknown}"/>
+    <parameter name="filesystem" byreference="false" type="{unknown}"/>
+    <parameter name="resource" byreference="false" type="object">
+      <type full="PhpSpec\Locator\ResourceInterface" namespace="PhpSpec\Locator" name="ResourceInterface"/>
+    </parameter>
+  </method>
+  <method name="it_should_not_dispatch_an_event_if_the_file_already_existed" start="98" end="108" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="dispatcher" byreference="false" type="{unknown}"/>
+    <parameter name="filesystem" byreference="false" type="{unknown}"/>
+    <parameter name="resource" byreference="false" type="object">
+      <type full="PhpSpec\Locator\ResourceInterface" namespace="PhpSpec\Locator" name="ResourceInterface"/>
+    </parameter>
+  </method>
+</class>

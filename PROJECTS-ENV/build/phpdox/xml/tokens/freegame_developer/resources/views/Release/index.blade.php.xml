@@ -1,0 +1,173 @@
+<?xml version="1.0"?>
+<source xmlns="http://xml.phpdox.net/token">
+  <file xmlns="http://xml.phpdox.net/src" path="/home/web/example/src/freegame_developer/resources/views/Release" file="index.blade.php" realpath="/home/web/example/src/freegame_developer/resources/views/Release/index.blade.php" size="1970" time="2016-11-16T01:52:54+00:00" unixtime="1479261174" sha1="94108403cd60c981c7997ddefd17df170cc7e257" relative="freegame_developer/resources/views/Release/index.blade.php"/>
+  <line no="1">
+    <token name="T_INLINE_HTML">@extends('layout')</token>
+  </line>
+  <line no="2"/>
+  <line no="3">
+    <token name="T_INLINE_HTML">@section('content')</token>
+  </line>
+  <line no="4">
+    <token name="T_INLINE_HTML">&lt;header id="gnavi"&gt;</token>
+  </line>
+  <line no="5">
+    <token name="T_INLINE_HTML">    @include('partials.breadcrumbs', [</token>
+  </line>
+  <line no="6">
+    <token name="T_INLINE_HTML">        'breadcrumbs' =&gt; array_merge(</token>
+  </line>
+  <line no="7">
+    <token name="T_INLINE_HTML">            $formData['menuName'], [$formData['screenName']]</token>
+  </line>
+  <line no="8">
+    <token name="T_INLINE_HTML">        )</token>
+  </line>
+  <line no="9">
+    <token name="T_INLINE_HTML">     ])</token>
+  </line>
+  <line no="10">
+    <token name="T_INLINE_HTML">    &lt;!-- [#gnavi] --&gt;</token>
+  </line>
+  <line no="11">
+    <token name="T_INLINE_HTML">&lt;/header&gt;</token>
+  </line>
+  <line no="12">
+    <token name="T_INLINE_HTML">&lt;section&gt;</token>
+  </line>
+  <line no="13">
+    <token name="T_INLINE_HTML">    &lt;div class="c-area"&gt;</token>
+  </line>
+  <line no="14">
+    <token name="T_INLINE_HTML">        &lt;h2 class="c-headline"&gt;&lt;i class="fa fa-eye"&gt;&lt;/i&gt;&#x516C;&#x958B;&#x8A2D;&#x5B9A;&lt;/h2&gt;</token>
+  </line>
+  <line no="15">
+    <token name="T_INLINE_HTML">        &lt;p class="bold tx-16"&gt;&#x25BC;&#x30B2;&#x30FC;&#x30E0;&#x516C;&#x958B;&#x7BA1;&#x7406;&lt;/p&gt;</token>
+  </line>
+  <line no="16">
+    <token name="T_INLINE_HTML">        &lt;table class="c-table info-table mg-b20"&gt;</token>
+  </line>
+  <line no="17">
+    <token name="T_INLINE_HTML">            &lt;colgroup&gt;</token>
+  </line>
+  <line no="18">
+    <token name="T_INLINE_HTML">                &lt;col class="col-l"&gt;</token>
+  </line>
+  <line no="19">
+    <token name="T_INLINE_HTML">                &lt;col class="null"&gt;</token>
+  </line>
+  <line no="20">
+    <token name="T_INLINE_HTML">            &lt;/colgroup&gt;</token>
+  </line>
+  <line no="21">
+    <token name="T_INLINE_HTML">            &lt;tbody&gt;</token>
+  </line>
+  <line no="22">
+    <token name="T_INLINE_HTML">                &lt;tr&gt;</token>
+  </line>
+  <line no="23">
+    <token name="T_INLINE_HTML">                    &lt;th&gt;&#x30B2;&#x30FC;&#x30E0;&#x516C;&#x958B;&#x72B6;&#x614B;&lt;/th&gt;</token>
+  </line>
+  <line no="24">
+    <token name="T_INLINE_HTML">                    &lt;td&gt;{{ $formData['publicGame'][$release['button_view_flg']] }}&lt;/td&gt;</token>
+  </line>
+  <line no="25">
+    <token name="T_INLINE_HTML">                &lt;/tr&gt;</token>
+  </line>
+  <line no="26">
+    <token name="T_INLINE_HTML">                &lt;tr&gt;</token>
+  </line>
+  <line no="27">
+    <token name="T_INLINE_HTML">                    &lt;th&gt;&#x30DD;&#x30C3;&#x30D7;&#x30A2;&#x30C3;&#x30D7;&#x8868;&#x793A;&#x30C6;&#x30AD;&#x30B9;&#x30C8;&lt;/th&gt;</token>
+  </line>
+  <line no="28">
+    <token name="T_INLINE_HTML">                    &lt;td&gt;{{ $release['popup_message'] }}&lt;/td&gt;</token>
+  </line>
+  <line no="29">
+    <token name="T_INLINE_HTML">                &lt;/tr&gt;</token>
+  </line>
+  <line no="30">
+    <token name="T_INLINE_HTML">            &lt;/tbody&gt;</token>
+  </line>
+  <line no="31">
+    <token name="T_INLINE_HTML">            &lt;!-- /.c-table --&gt;</token>
+  </line>
+  <line no="32">
+    <token name="T_INLINE_HTML">        &lt;/table&gt;</token>
+  </line>
+  <line no="33">
+    <token name="T_INLINE_HTML">        &lt;p class="bold tx-16"&gt;&#x25BC;&#x30A4;&#x30F3;&#x30B9;&#x30C8;&#x30FC;&#x30EB;&#x7BA1;&#x7406;&#xFF08;&#x975E;&#x516C;&#x958B;&#x3001;CBT&#x4E2D;&#x306E;&#x307F;&#x9069;&#x7528;&#xFF09;&lt;/p&gt;</token>
+  </line>
+  <line no="34">
+    <token name="T_INLINE_HTML">        &lt;table class="c-table info-table"&gt;</token>
+  </line>
+  <line no="35">
+    <token name="T_INLINE_HTML">            &lt;colgroup&gt;</token>
+  </line>
+  <line no="36">
+    <token name="T_INLINE_HTML">                &lt;col class="col-l"&gt;</token>
+  </line>
+  <line no="37">
+    <token name="T_INLINE_HTML">                &lt;col class="null"&gt;</token>
+  </line>
+  <line no="38">
+    <token name="T_INLINE_HTML">            &lt;/colgroup&gt;</token>
+  </line>
+  <line no="39">
+    <token name="T_INLINE_HTML">            &lt;tbody&gt;</token>
+  </line>
+  <line no="40">
+    <token name="T_INLINE_HTML">                &lt;tr&gt;</token>
+  </line>
+  <line no="41">
+    <token name="T_INLINE_HTML">                    &lt;th&gt;&#x30A4;&#x30F3;&#x30B9;&#x30C8;&#x30FC;&#x30EB;&#x53EF;&#x5426;&#x72B6;&#x614B;&lt;/th&gt;</token>
+  </line>
+  <line no="42">
+    <token name="T_INLINE_HTML">                    &lt;td&gt;{{ $formData['installStatus'][$release['install_status']] }}&lt;/td&gt;</token>
+  </line>
+  <line no="43">
+    <token name="T_INLINE_HTML">                &lt;/tr&gt;</token>
+  </line>
+  <line no="44">
+    <token name="T_INLINE_HTML">                &lt;tr&gt;</token>
+  </line>
+  <line no="45">
+    <token name="T_INLINE_HTML">                    &lt;th&gt;&#x30DD;&#x30C3;&#x30D7;&#x30A2;&#x30C3;&#x30D7;&#x8868;&#x793A;&#x30C6;&#x30AD;&#x30B9;&#x30C8;&lt;/th&gt;</token>
+  </line>
+  <line no="46">
+    <token name="T_INLINE_HTML">                    &lt;td&gt;{{ $release['not_install_message'] }}&lt;/td&gt;</token>
+  </line>
+  <line no="47">
+    <token name="T_INLINE_HTML">                &lt;/tr&gt;</token>
+  </line>
+  <line no="48">
+    <token name="T_INLINE_HTML">            &lt;/tbody&gt;</token>
+  </line>
+  <line no="49">
+    <token name="T_INLINE_HTML">            &lt;!-- /.c-table --&gt;</token>
+  </line>
+  <line no="50">
+    <token name="T_INLINE_HTML">        &lt;/table&gt;</token>
+  </line>
+  <line no="51">
+    <token name="T_INLINE_HTML">        &lt;div class="center"&gt;</token>
+  </line>
+  <line no="52">
+    <token name="T_INLINE_HTML">            &lt;a href="{{ route('Release.edit') }}" class="button is-primary is-medium"&gt;&lt;i class="fa fa-pencil"&gt;&lt;/i&gt;&#x7DE8;&#x96C6;&lt;/a&gt;</token>
+  </line>
+  <line no="53">
+    <token name="T_INLINE_HTML">        &lt;/div&gt;</token>
+  </line>
+  <line no="54">
+    <token name="T_INLINE_HTML">        &lt;!-- /.c-area --&gt;</token>
+  </line>
+  <line no="55">
+    <token name="T_INLINE_HTML">    &lt;/div&gt;</token>
+  </line>
+  <line no="56">
+    <token name="T_INLINE_HTML">&lt;/section&gt;</token>
+  </line>
+  <line no="57">
+    <token name="T_INLINE_HTML">@endsection</token>
+  </line>
+</source>

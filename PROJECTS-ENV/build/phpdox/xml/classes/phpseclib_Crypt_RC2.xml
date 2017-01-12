@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="phpseclib\Crypt\RC2" namespace="phpseclib\Crypt" name="RC2" abstract="false" final="false" start="44" end="688">
+  <file path="/home/web/example/src/freegame_developer/vendor/phpseclib/phpseclib/phpseclib/Crypt" file="RC2.php" realpath="/home/web/example/src/freegame_developer/vendor/phpseclib/phpseclib/phpseclib/Crypt/RC2.php" size="22544" time="2016-10-04T00:57:04+00:00" unixtime="1475542624" sha1="0646eed36fb4c53571159a330fabf54309343d72" relative="freegame_developer/vendor/phpseclib/phpseclib/phpseclib/Crypt/RC2.php"/>
+  <docblock>
+    <description compact="Pure-PHP implementation of RC2."/>
+    <package value="RC2"/>
+    <access value="public"/>
+  </docblock>
+  <extends full="phpseclib\Crypt\Base" namespace="phpseclib\Crypt" name="Base"/>
+  <member name="block_size" type="integer" default="8" visibility="public" static="false" line="53">
+    <docblock>
+      <description compact="Block Length of the cipher"/>
+      <see value="\phpseclib\Crypt\Base::block_size"/>
+      <var type="int"/>
+      <access value="private"/>
+    </docblock>
+  </member>
+  <member name="key" visibility="public" static="false" line="63">
+    <docblock>
+      <description compact="The Key"/>
+      <see value="\phpseclib\Crypt\Base::key"/>
+      <see value="self::setKey()"/>
+      <var type="string"/>
+      <access value="private"/>
+    </docblock>
+  </member>
+  <member name="orig_key" visibility="public" static="false" line="75">
+    <docblock>
+      <description compact="The Original (unpadded) Key"/>
+      <see value="\phpseclib\Crypt\Base::key"/>
+      <see value="self::setKey()"/>
+      <see value="self::encrypt()"/>
+      <see value="self::decrypt()"/>
+      <var type="string"/>
+      <access value="private"/>
+    </docblock>
+  </member>
+  <member name="skip_key_adjustment" type="boolean" default="true" visibility="public" static="false" line="84">
+    <docblock>
+      <description compact="Don't truncate / null pad key"/>
+      <see value="\phpseclib\Crypt\Base::_clearBuffers()"/>
+      <var type="object">
+        <type full="phpseclib\Crypt\bool" namespace="phpseclib\Crypt" name="bool"/>
+      </var>
+      <access value="private"/>
+    </docblock>
+  </member>
+  <member name="key_length" type="integer" default="16" visibility="public" static="false" line="93">
+    <docblock>
+      <description compact="Key Length (in bytes)"/>
+      <see value="\phpseclib\Crypt\RC2::setKeyLength()"/>
+      <var type="int"/>
+      <access value="private"/>
+    </docblock>
+  </member>
+  <member name="cipher_name_mcrypt" type="string" default="'rc2'" visibility="public" static="false" line="102">
+    <docblock>
+      <description compact="The mcrypt specific name of the cipher"/>
+      <see value="\phpseclib\Crypt\Base::cipher_name_mcrypt"/>
+      <var type="string"/>
+      <access value="private"/>
+    </docblock>
+  </member>
+  <member name="cfb_init_len" type="integer" default="500" visibility="public" static="false" line="111">
+    <docblock>
+      <description compact="Optimizing value while CFB-encrypting"/>
+      <see value="\phpseclib\Crypt\Base::cfb_init_len"/>
+      <var type="int"/>
+      <access value="private"/>
+    </docblock>
+  </member>
+  <member name="default_key_length" type="integer" default="1024" visibility="public" static="false" line="123">
+    <docblock>
+      <description compact="The key length in bits."/>
+      <see value="self::setKeyLength()"/>
+      <see value="self::setKey()"/>
+      <var type="int"/>
+      <access value="private"/>
+      <internal>Should be in range [1..1024].</internal>
+      <internal>Changing this value after setting the key has no effect.</internal>
+    </docblock>
+  </member>
+  <member name="current_key_length" visibility="public" static="false" line="134">
+    <docblock>
+      <description compact="The key length in bits."/>
+      <see value="self::isValidEnine()"/>
+      <see value="self::setKey()"/>
+      <var type="int"/>
+      <access value="private"/>
+      <internal>Should be in range [1..1024].</internal>
+    </docblock>
+  </member>
+  <member name="keys" visibility="public" static="false" line="143">
+    <docblock>
+      <description compact="The Key Schedule"/>
+      <see value="self::_setupKey()"/>
+      <var type="array"/>
+      <access value="private"/>
+    </docblock>
+  </member>
+  <member name="pitable" type="array" default="" visibility="public" static="false" line="153">
+    <docblock>
+      <description compact="Key expansion randomization table.">Twice the same 256-value sequence to save a modulus in key expansion.</description>
+      <see value="self::setKey()"/>
+      <var type="array"/>
+      <access value="private"/>
+    </docblock>
+  </member>
+  <member name="invpitable" type="array" default="" visibility="public" static="false" line="227">
+    <docblock>
+      <description compact="Inverse key expansion randomization table."/>
+      <see value="self::setKey()"/>
+      <var type="array"/>
+      <access value="private"/>
+    </docblock>
+  </member>
+  <method name="isValidEngine" start="272" end="284" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Test for engine validity">This is mainly just a wrapper to set things up for \phpseclib\Crypt\Base::isValidEngine()</description>
+      <see value="\phpseclib\Crypt\Base::__construct()"/>
+      <param type="int" variable="$engine"/>
+      <access value="public"/>
+      <return type="object">
+        <type full="phpseclib\Crypt\bool" namespace="phpseclib\Crypt" name="bool"/>
+      </return>
+    </docblock>
+    <parameter name="engine" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="setKeyLength" start="296" end="308" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Sets the key length.">Valid key lengths are 8 to 1024.
+Calling this function after setting the key has no effect until the next
+ \phpseclib\Crypt\RC2::setKey() call.</description>
+      <access value="public"/>
+      <param description="in bits" type="int" variable="$length"/>
+    </docblock>
+    <parameter name="length" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="getKeyLength" start="316" end="319" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Returns the current key length"/>
+      <access value="public"/>
+      <return type="int"/>
+    </docblock>
+  </method>
+  <method name="setKey" start="337" end="378" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Sets the key.">Keys can be of any length. RC2, itself, uses 8 to 1024 bit keys (eg.
+strlen($key) &lt;= 128), however, we only use the first 128 bytes if $key
+has more then 128 bytes in it, and set $key to a single null byte if
+it is empty.
+
+If the key is not explicitly set, it'll be assumed to be a single
+null byte.</description>
+      <see value="\phpseclib\Crypt\Base::setKey()"/>
+      <access value="public"/>
+      <param type="string" variable="$key"/>
+      <param description="optional Effective key length in bits." type="int" variable="$t1"/>
+    </docblock>
+    <parameter name="key" byreference="false" type="{unknown}"/>
+    <parameter name="t1" byreference="false" type="integer" default="0"/>
+    <inline>
+      <comment value="Key byte count should be 1..128." line="347"/>
+      <comment value="The mcrypt RC2 implementation only supports effective key length" line="351"/>
+      <comment value="of 1024 bits. It is however possible to handle effective key" line="352"/>
+      <comment value="lengths in range 1..1024 by expanding the key and applying" line="353"/>
+      <comment value="inverse pitable mapping to the first byte before submitting it" line="354"/>
+      <comment value="to mcrypt." line="355"/>
+      <comment value="Key expansion." line="357"/>
+      <comment value="Expand key." line="362"/>
+      <comment value="Prepare the key for mcrypt." line="373"/>
+    </inline>
+  </method>
+  <method name="encrypt" start="390" end="401" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Encrypts a message.">Mostly a wrapper for \phpseclib\Crypt\Base::encrypt, with some additional OpenSSL handling code</description>
+      <see value="self::decrypt()"/>
+      <access value="public"/>
+      <param type="string" variable="$plaintext"/>
+      <return description="$ciphertext" type="string"/>
+    </docblock>
+    <parameter name="plaintext" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="decrypt" start="413" end="424" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Decrypts a message.">Mostly a wrapper for \phpseclib\Crypt\Base::decrypt, with some additional OpenSSL handling code</description>
+      <see value="self::encrypt()"/>
+      <access value="public"/>
+      <param type="string" variable="$ciphertext"/>
+      <return description="$plaintext" type="string"/>
+    </docblock>
+    <parameter name="ciphertext" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="_encryptBlock" start="435" end="469" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Encrypts a block"/>
+      <see value="\phpseclib\Crypt\Base::_encryptBlock()"/>
+      <see value="\phpseclib\Crypt\Base::encrypt()"/>
+      <access value="private"/>
+      <param type="string" variable="$in"/>
+      <return type="string"/>
+    </docblock>
+    <parameter name="in" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="_decryptBlock" start="480" end="514" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Decrypts a block"/>
+      <see value="\phpseclib\Crypt\Base::_decryptBlock()"/>
+      <see value="\phpseclib\Crypt\Base::decrypt()"/>
+      <access value="private"/>
+      <param type="string" variable="$in"/>
+      <return type="string"/>
+    </docblock>
+    <parameter name="in" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="_setupMcrypt" start="522" end="529" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Setup the \phpseclib\Crypt\Base::ENGINE_MCRYPT $engine"/>
+      <see value="\phpseclib\Crypt\Base::_setupMcrypt()"/>
+      <access value="private"/>
+    </docblock>
+  </method>
+  <method name="_setupKey" start="537" end="550" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Creates the key schedule"/>
+      <see value="\phpseclib\Crypt\Base::_setupKey()"/>
+      <access value="private"/>
+    </docblock>
+    <inline>
+      <comment value="Key has already been expanded in \phpseclib\Crypt\RC2::setKey():" line="543"/>
+      <comment value="Only the first value must be altered." line="544"/>
+    </inline>
+  </method>
+  <method name="_setupInlineCrypt" start="558" end="687" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Setup the performance-optimized function for de/encrypt()"/>
+      <see value="\phpseclib\Crypt\Base::_setupInlineCrypt()"/>
+      <access value="private"/>
+    </docblock>
+    <inline>
+      <comment value="The first 10 generated $lambda_functions will use the $keys hardcoded as integers" line="562"/>
+      <comment value="for the mixing rounds, for better inline crypt performance [~20% faster]." line="563"/>
+      <comment value="But for memory reason we have to limit those ultra-optimized $lambda_functions to an amount of 10." line="564"/>
+      <comment value="(Currently, for Crypt_RC2, one generated $lambda_function cost on php5.5@32bit ~60kb unfreeable mem and ~100kb on php5.5@64bit)" line="565"/>
+      <comment value="Generation of a unique hash for our generated code" line="568"/>
+      <comment value="Is there a re-usable $lambda_functions in there?" line="574"/>
+      <comment value="If not, we have to create it." line="575"/>
+      <comment value="Set the inline-crypt function as callback in: $this-&gt;inline_crypt" line="685"/>
+    </inline>
+  </method>
+</class>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="ClassPreloader\Factory" namespace="ClassPreloader" name="Factory" abstract="false" final="false" start="29" end="95">
+  <file path="/home/web/example/src/freegame_developer/vendor/classpreloader/classpreloader/src" file="Factory.php" realpath="/home/web/example/src/freegame_developer/vendor/classpreloader/classpreloader/src/Factory.php" size="2367" time="2015-11-09T22:51:51+00:00" unixtime="1447109511" sha1="a2f6b82b37c328d001d01d7dc2efa741d0556377" relative="freegame_developer/vendor/classpreloader/classpreloader/src/Factory.php"/>
+  <docblock>
+    <description compact="This is the class preloader factory class.">This class is a simple way to create a class preloader instance.</description>
+  </docblock>
+  <method name="create" start="40" end="51" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Create a new class preloader instance.">Any options provided determine how the node traverser is setup.</description>
+      <param type="array" variable="$options" of="object">
+        <type full="ClassPreloader\bool" namespace="ClassPreloader" name="bool"/>
+      </param>
+      <return type="object">
+        <type full="\ClassPreloader\ClassPreloader" namespace="\ClassPreloader" name="ClassPreloader"/>
+      </return>
+    </docblock>
+    <parameter name="options" byreference="false" type="array" default=""/>
+  </method>
+  <method name="getParser" start="58" end="65" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Get the parser to use."/>
+      <return type="object">
+        <type full="\PhpParser\Parser" namespace="\PhpParser" name="Parser"/>
+      </return>
+    </docblock>
+  </method>
+  <method name="getTraverser" start="77" end="94" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Get the node traverser to use."/>
+      <param type="object" variable="$dir">
+        <type full="ClassPreloader\bool" namespace="ClassPreloader" name="bool"/>
+      </param>
+      <param type="object" variable="$file">
+        <type full="ClassPreloader\bool" namespace="ClassPreloader" name="bool"/>
+      </param>
+      <param type="object" variable="$skip">
+        <type full="ClassPreloader\bool" namespace="ClassPreloader" name="bool"/>
+      </param>
+      <param type="object" variable="$strict">
+        <type full="ClassPreloader\bool" namespace="ClassPreloader" name="bool"/>
+      </param>
+      <return type="object">
+        <type full="\ClassPreloader\Parser\NodeTraverser" namespace="\ClassPreloader\Parser" name="NodeTraverser"/>
+      </return>
+    </docblock>
+    <parameter name="dir" byreference="false" type="{unknown}"/>
+    <parameter name="file" byreference="false" type="{unknown}"/>
+    <parameter name="skip" byreference="false" type="{unknown}"/>
+    <parameter name="strict" byreference="false" type="{unknown}"/>
+  </method>
+</class>

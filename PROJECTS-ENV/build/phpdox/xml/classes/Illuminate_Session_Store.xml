@@ -1,0 +1,519 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="Illuminate\Session\Store" namespace="Illuminate\Session" name="Store" abstract="false" final="false" start="13" end="699">
+  <file path="/home/web/example/src/freegame_developer/vendor/laravel/framework/src/Illuminate/Session" file="Store.php" realpath="/home/web/example/src/freegame_developer/vendor/laravel/framework/src/Illuminate/Session/Store.php" size="14212" time="2016-02-24T15:13:21+00:00" unixtime="1456326801" sha1="c85758f1640241caa78bd31392aa21dbb0ef2abb" relative="freegame_developer/vendor/laravel/framework/src/Illuminate/Session/Store.php"/>
+  <implements full="Illuminate\Session\SessionInterface" namespace="Illuminate\Session" name="SessionInterface"/>
+  <member name="id" visibility="protected" static="false" line="20">
+    <docblock>
+      <description compact="The session ID."/>
+      <var type="string"/>
+    </docblock>
+  </member>
+  <member name="name" visibility="protected" static="false" line="27">
+    <docblock>
+      <description compact="The session name."/>
+      <var type="string"/>
+    </docblock>
+  </member>
+  <member name="attributes" type="array" default="" visibility="protected" static="false" line="34">
+    <docblock>
+      <description compact="The session attributes."/>
+      <var type="array"/>
+    </docblock>
+  </member>
+  <member name="bags" type="array" default="" visibility="protected" static="false" line="41">
+    <docblock>
+      <description compact="The session bags."/>
+      <var type="array"/>
+    </docblock>
+  </member>
+  <member name="metaBag" visibility="protected" static="false" line="48">
+    <docblock>
+      <description compact="The meta-data bag instance."/>
+      <var type="object">
+        <type full="\Symfony\Component\HttpFoundation\Session\Storage\MetadataBag" namespace="\Symfony\Component\HttpFoundation\Session\Storage" name="MetadataBag"/>
+      </var>
+    </docblock>
+  </member>
+  <member name="bagData" type="array" default="" visibility="protected" static="false" line="55">
+    <docblock>
+      <description compact="Local copies of the session bag data."/>
+      <var type="array"/>
+    </docblock>
+  </member>
+  <member name="handler" visibility="protected" static="false" line="62">
+    <docblock>
+      <description compact="The session handler implementation."/>
+      <var type="object">
+        <type full="\SessionHandlerInterface" namespace="" name="SessionHandlerInterface"/>
+      </var>
+    </docblock>
+  </member>
+  <member name="started" type="boolean" default="false" visibility="protected" static="false" line="69">
+    <docblock>
+      <description compact="Session store started status."/>
+      <var type="object">
+        <type full="Illuminate\Session\bool" namespace="Illuminate\Session" name="bool"/>
+      </var>
+    </docblock>
+  </member>
+  <constructor name="__construct" start="79" end="85" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Create a new session instance."/>
+      <param type="string" variable="$name"/>
+      <param type="object" variable="$handler">
+        <type full="\SessionHandlerInterface" namespace="" name="SessionHandlerInterface"/>
+      </param>
+      <param type="object" variable="$id">
+        <type full="Illuminate\Session\string|null" namespace="Illuminate\Session" name="string|null"/>
+      </param>
+      <return type="object">
+        <type full="Illuminate\Session\void" namespace="Illuminate\Session" name="void"/>
+      </return>
+    </docblock>
+    <parameter name="name" byreference="false" type="{unknown}"/>
+    <parameter name="handler" byreference="false" type="object">
+      <type full="SessionHandlerInterface" namespace="" name="SessionHandlerInterface"/>
+    </parameter>
+    <parameter name="id" byreference="false" type="{unknown}" default="" constant="null"/>
+  </constructor>
+  <method name="start" start="90" end="99" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="{@inheritdoc}"/>
+    </docblock>
+  </method>
+  <method name="loadSession" start="106" end="115" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Load the session data from the handler."/>
+      <return type="object">
+        <type full="Illuminate\Session\void" namespace="Illuminate\Session" name="void"/>
+      </return>
+    </docblock>
+  </method>
+  <method name="readFromHandler" start="122" end="135" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Read the session data from the handler."/>
+      <return type="array"/>
+    </docblock>
+  </method>
+  <method name="prepareForUnserialize" start="143" end="146" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Prepare the raw string data from the session for unserialization."/>
+      <param type="string" variable="$data"/>
+      <return type="string"/>
+    </docblock>
+    <parameter name="data" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="initializeLocalBag" start="154" end="157" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Initialize a bag in storage if it doesn't exist."/>
+      <param type="object" variable="$bag">
+        <type full="\Symfony\Component\HttpFoundation\Session\SessionBagInterface" namespace="\Symfony\Component\HttpFoundation\Session" name="SessionBagInterface"/>
+      </param>
+      <return type="object">
+        <type full="Illuminate\Session\void" namespace="Illuminate\Session" name="void"/>
+      </return>
+    </docblock>
+    <parameter name="bag" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="getId" start="162" end="165" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="{@inheritdoc}"/>
+    </docblock>
+  </method>
+  <method name="setId" start="170" end="177" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="{@inheritdoc}"/>
+    </docblock>
+    <parameter name="id" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="isValidId" start="185" end="188" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Determine if this is a valid session ID."/>
+      <param type="string" variable="$id"/>
+      <return type="object">
+        <type full="Illuminate\Session\bool" namespace="Illuminate\Session" name="bool"/>
+      </return>
+    </docblock>
+    <parameter name="id" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="generateSessionId" start="195" end="198" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Get a new, random session ID."/>
+      <return type="string"/>
+    </docblock>
+  </method>
+  <method name="getName" start="203" end="206" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="{@inheritdoc}"/>
+    </docblock>
+  </method>
+  <method name="setName" start="211" end="214" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="{@inheritdoc}"/>
+    </docblock>
+    <parameter name="name" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="invalidate" start="219" end="224" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="{@inheritdoc}"/>
+    </docblock>
+    <parameter name="lifetime" byreference="false" type="{unknown}" default="" constant="null"/>
+  </method>
+  <method name="migrate" start="229" end="240" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="{@inheritdoc}"/>
+    </docblock>
+    <parameter name="destroy" byreference="false" type="boolean" default="false"/>
+    <parameter name="lifetime" byreference="false" type="{unknown}" default="" constant="null"/>
+  </method>
+  <method name="regenerate" start="248" end="251" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Generate a new session identifier."/>
+      <param type="object" variable="$destroy">
+        <type full="Illuminate\Session\bool" namespace="Illuminate\Session" name="bool"/>
+      </param>
+      <return type="object">
+        <type full="Illuminate\Session\bool" namespace="Illuminate\Session" name="bool"/>
+      </return>
+    </docblock>
+    <parameter name="destroy" byreference="false" type="boolean" default="false"/>
+  </method>
+  <method name="save" start="256" end="265" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="{@inheritdoc}"/>
+    </docblock>
+  </method>
+  <method name="prepareForStorage" start="273" end="276" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Prepare the serialized session data for storage."/>
+      <param type="string" variable="$data"/>
+      <return type="string"/>
+    </docblock>
+    <parameter name="data" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="addBagDataToSession" start="283" end="292" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Merge all of the bag data into the session."/>
+      <return type="object">
+        <type full="Illuminate\Session\void" namespace="Illuminate\Session" name="void"/>
+      </return>
+    </docblock>
+  </method>
+  <method name="ageFlashData" start="299" end="306" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Age the flash data for the session."/>
+      <return type="object">
+        <type full="Illuminate\Session\void" namespace="Illuminate\Session" name="void"/>
+      </return>
+    </docblock>
+  </method>
+  <method name="has" start="311" end="314" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="{@inheritdoc}"/>
+    </docblock>
+    <parameter name="name" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="get" start="319" end="322" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="{@inheritdoc}"/>
+    </docblock>
+    <parameter name="name" byreference="false" type="{unknown}"/>
+    <parameter name="default" byreference="false" type="{unknown}" default="" constant="null"/>
+  </method>
+  <method name="pull" start="331" end="334" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Get the value of a given key and then forget it."/>
+      <param type="string" variable="$key"/>
+      <param type="string" variable="$default"/>
+      <return type="mixed"/>
+    </docblock>
+    <parameter name="key" byreference="false" type="{unknown}"/>
+    <parameter name="default" byreference="false" type="{unknown}" default="" constant="null"/>
+  </method>
+  <method name="hasOldInput" start="342" end="347" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Determine if the session contains old input."/>
+      <param type="string" variable="$key"/>
+      <return type="object">
+        <type full="Illuminate\Session\bool" namespace="Illuminate\Session" name="bool"/>
+      </return>
+    </docblock>
+    <parameter name="key" byreference="false" type="{unknown}" default="" constant="null"/>
+  </method>
+  <method name="getOldInput" start="356" end="364" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Get the requested item from the flashed input array."/>
+      <param type="string" variable="$key"/>
+      <param type="mixed" variable="$default"/>
+      <return type="mixed"/>
+    </docblock>
+    <parameter name="key" byreference="false" type="{unknown}" default="" constant="null"/>
+    <parameter name="default" byreference="false" type="{unknown}" default="" constant="null"/>
+    <inline>
+      <comment value="Input that is flashed to the session can be easily retrieved by the" line="360"/>
+      <comment value="developer, making repopulating old forms and the like much more" line="361"/>
+      <comment value="convenient, since the request's previous input is available." line="362"/>
+    </inline>
+  </method>
+  <method name="set" start="369" end="372" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="{@inheritdoc}"/>
+    </docblock>
+    <parameter name="name" byreference="false" type="{unknown}"/>
+    <parameter name="value" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="put" start="381" end="390" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Put a key / value pair or array of key / value pairs in the session."/>
+      <param type="object" variable="$key">
+        <type full="Illuminate\Session\string|array" namespace="Illuminate\Session" name="string|array"/>
+      </param>
+      <param type="mixed" variable="$value"/>
+      <return type="object">
+        <type full="Illuminate\Session\void" namespace="Illuminate\Session" name="void"/>
+      </return>
+    </docblock>
+    <parameter name="key" byreference="false" type="{unknown}"/>
+    <parameter name="value" byreference="false" type="{unknown}" default="" constant="null"/>
+  </method>
+  <method name="push" start="399" end="406" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Push a value onto a session array."/>
+      <param type="string" variable="$key"/>
+      <param type="mixed" variable="$value"/>
+      <return type="object">
+        <type full="Illuminate\Session\void" namespace="Illuminate\Session" name="void"/>
+      </return>
+    </docblock>
+    <parameter name="key" byreference="false" type="{unknown}"/>
+    <parameter name="value" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="flash" start="415" end="422" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Flash a key / value pair to the session."/>
+      <param type="string" variable="$key"/>
+      <param type="mixed" variable="$value"/>
+      <return type="object">
+        <type full="Illuminate\Session\void" namespace="Illuminate\Session" name="void"/>
+      </return>
+    </docblock>
+    <parameter name="key" byreference="false" type="{unknown}"/>
+    <parameter name="value" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="now" start="432" end="437" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Flash a key / value pair to the session for immediate use."/>
+      <param type="string" variable="$key"/>
+      <param type="mixed" variable="$value"/>
+      <return type="object">
+        <type full="Illuminate\Session\void" namespace="Illuminate\Session" name="void"/>
+      </return>
+    </docblock>
+    <parameter name="key" byreference="false" type="{unknown}"/>
+    <parameter name="value" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="flashInput" start="445" end="448" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Flash an input array to the session."/>
+      <param type="array" variable="$value"/>
+      <return type="object">
+        <type full="Illuminate\Session\void" namespace="Illuminate\Session" name="void"/>
+      </return>
+    </docblock>
+    <parameter name="value" byreference="false" type="array"/>
+  </method>
+  <method name="reflash" start="455" end="460" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Reflash all of the session flash data."/>
+      <return type="object">
+        <type full="Illuminate\Session\void" namespace="Illuminate\Session" name="void"/>
+      </return>
+    </docblock>
+  </method>
+  <method name="keep" start="468" end="475" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Reflash a subset of the current flash data."/>
+      <param type="object" variable="$keys">
+        <type full="Illuminate\Session\array|mixed" namespace="Illuminate\Session" name="array|mixed"/>
+      </param>
+      <return type="object">
+        <type full="Illuminate\Session\void" namespace="Illuminate\Session" name="void"/>
+      </return>
+    </docblock>
+    <parameter name="keys" byreference="false" type="{unknown}" default="" constant="null"/>
+  </method>
+  <method name="mergeNewFlashes" start="483" end="488" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Merge new flash keys into the new flash array."/>
+      <param type="array" variable="$keys"/>
+      <return type="object">
+        <type full="Illuminate\Session\void" namespace="Illuminate\Session" name="void"/>
+      </return>
+    </docblock>
+    <parameter name="keys" byreference="false" type="array"/>
+  </method>
+  <method name="removeFromOldFlashData" start="496" end="499" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Remove the given keys from the old flash data."/>
+      <param type="array" variable="$keys"/>
+      <return type="object">
+        <type full="Illuminate\Session\void" namespace="Illuminate\Session" name="void"/>
+      </return>
+    </docblock>
+    <parameter name="keys" byreference="false" type="array"/>
+  </method>
+  <method name="all" start="504" end="507" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="{@inheritdoc}"/>
+    </docblock>
+  </method>
+  <method name="replace" start="512" end="515" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="{@inheritdoc}"/>
+    </docblock>
+    <parameter name="attributes" byreference="false" type="array"/>
+  </method>
+  <method name="remove" start="520" end="523" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="{@inheritdoc}"/>
+    </docblock>
+    <parameter name="name" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="forget" start="531" end="534" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Remove one or many items from the session."/>
+      <param type="object" variable="$keys">
+        <type full="Illuminate\Session\string|array" namespace="Illuminate\Session" name="string|array"/>
+      </param>
+      <return type="object">
+        <type full="Illuminate\Session\void" namespace="Illuminate\Session" name="void"/>
+      </return>
+    </docblock>
+    <parameter name="keys" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="clear" start="539" end="546" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="{@inheritdoc}"/>
+    </docblock>
+  </method>
+  <method name="flush" start="553" end="556" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Remove all of the items from the session."/>
+      <return type="object">
+        <type full="Illuminate\Session\void" namespace="Illuminate\Session" name="void"/>
+      </return>
+    </docblock>
+  </method>
+  <method name="isStarted" start="561" end="564" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="{@inheritdoc}"/>
+    </docblock>
+  </method>
+  <method name="registerBag" start="569" end="572" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="{@inheritdoc}"/>
+    </docblock>
+    <parameter name="bag" byreference="false" type="object">
+      <type full="Symfony\Component\HttpFoundation\Session\SessionBagInterface" namespace="Symfony\Component\HttpFoundation\Session" name="SessionBagInterface"/>
+    </parameter>
+  </method>
+  <method name="getBag" start="577" end="582" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="{@inheritdoc}"/>
+    </docblock>
+    <parameter name="name" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="getMetadataBag" start="587" end="590" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="{@inheritdoc}"/>
+    </docblock>
+  </method>
+  <method name="getBagData" start="598" end="601" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Get the raw bag data array for a given bag."/>
+      <param type="string" variable="$name"/>
+      <return type="array"/>
+    </docblock>
+    <parameter name="name" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="token" start="608" end="611" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Get the CSRF token value."/>
+      <return type="string"/>
+    </docblock>
+  </method>
+  <method name="getToken" start="618" end="621" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Get the CSRF token value."/>
+      <return type="string"/>
+    </docblock>
+  </method>
+  <method name="regenerateToken" start="628" end="631" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Regenerate the CSRF token value."/>
+      <return type="object">
+        <type full="Illuminate\Session\void" namespace="Illuminate\Session" name="void"/>
+      </return>
+    </docblock>
+  </method>
+  <method name="previousUrl" start="638" end="641" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Get the previous URL from the session."/>
+      <return type="object">
+        <type full="Illuminate\Session\string|null" namespace="Illuminate\Session" name="string|null"/>
+      </return>
+    </docblock>
+  </method>
+  <method name="setPreviousUrl" start="649" end="652" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Set the &quot;previous&quot; URL in the session."/>
+      <param type="string" variable="$url"/>
+      <return type="object">
+        <type full="Illuminate\Session\void" namespace="Illuminate\Session" name="void"/>
+      </return>
+    </docblock>
+    <parameter name="url" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="setExists" start="660" end="665" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Set the existence of the session on the handler if applicable."/>
+      <param type="object" variable="$value">
+        <type full="Illuminate\Session\bool" namespace="Illuminate\Session" name="bool"/>
+      </param>
+      <return type="object">
+        <type full="Illuminate\Session\void" namespace="Illuminate\Session" name="void"/>
+      </return>
+    </docblock>
+    <parameter name="value" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="getHandler" start="672" end="675" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Get the underlying session handler implementation."/>
+      <return type="object">
+        <type full="\SessionHandlerInterface" namespace="" name="SessionHandlerInterface"/>
+      </return>
+    </docblock>
+  </method>
+  <method name="handlerNeedsRequest" start="682" end="685" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Determine if the session handler needs a request."/>
+      <return type="object">
+        <type full="Illuminate\Session\bool" namespace="Illuminate\Session" name="bool"/>
+      </return>
+    </docblock>
+  </method>
+  <method name="setRequestOnHandler" start="693" end="698" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Set the request on the handler instance."/>
+      <param type="object" variable="$request">
+        <type full="\Symfony\Component\HttpFoundation\Request" namespace="\Symfony\Component\HttpFoundation" name="Request"/>
+      </param>
+      <return type="object">
+        <type full="Illuminate\Session\void" namespace="Illuminate\Session" name="void"/>
+      </return>
+    </docblock>
+    <parameter name="request" byreference="false" type="object">
+      <type full="Symfony\Component\HttpFoundation\Request" namespace="Symfony\Component\HttpFoundation" name="Request"/>
+    </parameter>
+  </method>
+</class>

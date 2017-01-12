@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="League\Flysystem\Adapter\Ftp" namespace="League\Flysystem\Adapter" name="Ftp" abstract="false" final="false" start="13" end="505">
+  <file path="/home/web/example/src/freegame_developer/vendor/league/flysystem/src/Adapter" file="Ftp.php" realpath="/home/web/example/src/freegame_developer/vendor/league/flysystem/src/Adapter/Ftp.php" size="12023" time="2016-10-19T20:38:46+00:00" unixtime="1476909526" sha1="406efc0d0bf63cdf736ffe9cdd7bba1dee509411" relative="freegame_developer/vendor/league/flysystem/src/Adapter/Ftp.php"/>
+  <extends full="League\Flysystem\Adapter\AbstractFtpAdapter" namespace="League\Flysystem\Adapter" name="AbstractFtpAdapter"/>
+  <uses full="League\Flysystem\Adapter\Polyfill\StreamedCopyTrait" namespace="League\Flysystem\Adapter\Polyfill" name="StreamedCopyTrait" start="15" end="15"/>
+  <member name="transferMode" type="{unknown}" default="" constant="FTP_BINARY" visibility="protected" static="false" line="20">
+    <docblock>
+      <description/>
+      <var type="int"/>
+    </docblock>
+  </member>
+  <member name="ignorePassiveAddress" type="{unknown}" default="" constant="null" visibility="protected" static="false" line="25">
+    <docblock>
+      <description/>
+      <var type="object">
+        <type full="League\Flysystem\Adapter\null|bool" namespace="League\Flysystem\Adapter" name="null|bool"/>
+      </var>
+    </docblock>
+  </member>
+  <member name="recurseManually" type="boolean" default="false" visibility="protected" static="false" line="30">
+    <docblock>
+      <description/>
+      <var type="object">
+        <type full="League\Flysystem\Adapter\bool" namespace="League\Flysystem\Adapter" name="bool"/>
+      </var>
+    </docblock>
+  </member>
+  <member name="configurable" type="array" default="" visibility="protected" static="false" line="35">
+    <docblock>
+      <description/>
+      <var type="array"/>
+    </docblock>
+  </member>
+  <method name="setTransferMode" start="59" end="64" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Set the transfer mode."/>
+      <param type="int" variable="$mode"/>
+      <return type="object">
+        <type full="League\Flysystem\Adapter\$this" namespace="League\Flysystem\Adapter" name="$this"/>
+      </return>
+    </docblock>
+    <parameter name="mode" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="setSsl" start="73" end="78" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Set if Ssl is enabled."/>
+      <param type="object" variable="$ssl">
+        <type full="League\Flysystem\Adapter\bool" namespace="League\Flysystem\Adapter" name="bool"/>
+      </param>
+      <return type="object">
+        <type full="League\Flysystem\Adapter\$this" namespace="League\Flysystem\Adapter" name="$this"/>
+      </return>
+    </docblock>
+    <parameter name="ssl" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="setPassive" start="85" end="88" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Set if passive mode should be used."/>
+      <param type="object" variable="$passive">
+        <type full="League\Flysystem\Adapter\bool" namespace="League\Flysystem\Adapter" name="bool"/>
+      </param>
+    </docblock>
+    <parameter name="passive" byreference="false" type="boolean" default="true"/>
+  </method>
+  <method name="setIgnorePassiveAddress" start="93" end="96" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <param type="object" variable="$ignorePassiveAddress">
+        <type full="League\Flysystem\Adapter\bool" namespace="League\Flysystem\Adapter" name="bool"/>
+      </param>
+    </docblock>
+    <parameter name="ignorePassiveAddress" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="setRecurseManually" start="101" end="104" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <param type="object" variable="$recurseManually">
+        <type full="League\Flysystem\Adapter\bool" namespace="League\Flysystem\Adapter" name="bool"/>
+      </param>
+    </docblock>
+    <parameter name="recurseManually" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="connect" start="109" end="124" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Connect to the FTP server."/>
+    </docblock>
+  </method>
+  <method name="setConnectionPassiveMode" start="131" end="142" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Set the connections to passive mode."/>
+      <throws type="object">
+        <type full="RuntimeException" namespace="" name="RuntimeException"/>
+      </throws>
+    </docblock>
+  </method>
+  <method name="setConnectionRoot" start="147" end="161" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Set the connection root."/>
+    </docblock>
+    <inline>
+      <comment value="Store absolute path for further reference." line="156"/>
+      <comment value="This is needed when creating directories and" line="157"/>
+      <comment value="initial root was a relative path, else the root" line="158"/>
+      <comment value="would be relative to the chdir'd path." line="159"/>
+    </inline>
+  </method>
+  <method name="login" start="168" end="184" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Login."/>
+      <throws type="object">
+        <type full="RuntimeException" namespace="" name="RuntimeException"/>
+      </throws>
+    </docblock>
+  </method>
+  <method name="disconnect" start="189" end="196" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Disconnect from the FTP server."/>
+    </docblock>
+  </method>
+  <method name="write" start="201" end="217" abstract="false" final="false" static="false" visibility="public">
+    <docblock inherit="true">
+      <description/>
+    </docblock>
+    <parameter name="path" byreference="false" type="{unknown}"/>
+    <parameter name="contents" byreference="false" type="{unknown}"/>
+    <parameter name="config" byreference="false" type="object">
+      <type full="League\Flysystem\Config" namespace="League\Flysystem" name="Config"/>
+    </parameter>
+  </method>
+  <method name="writeStream" start="222" end="235" abstract="false" final="false" static="false" visibility="public">
+    <docblock inherit="true">
+      <description/>
+    </docblock>
+    <parameter name="path" byreference="false" type="{unknown}"/>
+    <parameter name="resource" byreference="false" type="{unknown}"/>
+    <parameter name="config" byreference="false" type="object">
+      <type full="League\Flysystem\Config" namespace="League\Flysystem" name="Config"/>
+    </parameter>
+  </method>
+  <method name="update" start="240" end="243" abstract="false" final="false" static="false" visibility="public">
+    <docblock inherit="true">
+      <description/>
+    </docblock>
+    <parameter name="path" byreference="false" type="{unknown}"/>
+    <parameter name="contents" byreference="false" type="{unknown}"/>
+    <parameter name="config" byreference="false" type="object">
+      <type full="League\Flysystem\Config" namespace="League\Flysystem" name="Config"/>
+    </parameter>
+  </method>
+  <method name="updateStream" start="248" end="251" abstract="false" final="false" static="false" visibility="public">
+    <docblock inherit="true">
+      <description/>
+    </docblock>
+    <parameter name="path" byreference="false" type="{unknown}"/>
+    <parameter name="resource" byreference="false" type="{unknown}"/>
+    <parameter name="config" byreference="false" type="object">
+      <type full="League\Flysystem\Config" namespace="League\Flysystem" name="Config"/>
+    </parameter>
+  </method>
+  <method name="rename" start="256" end="259" abstract="false" final="false" static="false" visibility="public">
+    <docblock inherit="true">
+      <description/>
+    </docblock>
+    <parameter name="path" byreference="false" type="{unknown}"/>
+    <parameter name="newpath" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="delete" start="264" end="267" abstract="false" final="false" static="false" visibility="public">
+    <docblock inherit="true">
+      <description/>
+    </docblock>
+    <parameter name="path" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="deleteDir" start="272" end="288" abstract="false" final="false" static="false" visibility="public">
+    <docblock inherit="true">
+      <description/>
+    </docblock>
+    <parameter name="dirname" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="createDir" start="293" end="311" abstract="false" final="false" static="false" visibility="public">
+    <docblock inherit="true">
+      <description/>
+    </docblock>
+    <parameter name="dirname" byreference="false" type="{unknown}"/>
+    <parameter name="config" byreference="false" type="object">
+      <type full="League\Flysystem\Config" namespace="League\Flysystem" name="Config"/>
+    </parameter>
+  </method>
+  <method name="createActualDirectory" start="321" end="337" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Create a directory."/>
+      <param type="string" variable="$directory"/>
+      <param type="resource" variable="$connection"/>
+      <return type="object">
+        <type full="League\Flysystem\Adapter\bool" namespace="League\Flysystem\Adapter" name="bool"/>
+      </return>
+    </docblock>
+    <parameter name="directory" byreference="false" type="{unknown}"/>
+    <parameter name="connection" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="List the current directory" line="323"/>
+    </inline>
+  </method>
+  <method name="getMetadata" start="342" end="371" abstract="false" final="false" static="false" visibility="public">
+    <docblock inherit="true">
+      <description/>
+    </docblock>
+    <parameter name="path" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="getMimetype" start="376" end="385" abstract="false" final="false" static="false" visibility="public">
+    <docblock inherit="true">
+      <description/>
+    </docblock>
+    <parameter name="path" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="getTimestamp" start="390" end="395" abstract="false" final="false" static="false" visibility="public">
+    <docblock inherit="true">
+      <description/>
+    </docblock>
+    <parameter name="path" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="read" start="400" end="411" abstract="false" final="false" static="false" visibility="public">
+    <docblock inherit="true">
+      <description/>
+    </docblock>
+    <parameter name="path" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="readStream" start="416" end="429" abstract="false" final="false" static="false" visibility="public">
+    <docblock inherit="true">
+      <description/>
+    </docblock>
+    <parameter name="path" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="setVisibility" start="434" end="443" abstract="false" final="false" static="false" visibility="public">
+    <docblock inherit="true">
+      <description/>
+    </docblock>
+    <parameter name="path" byreference="false" type="{unknown}"/>
+    <parameter name="visibility" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="listDirectoryContents" start="450" end="462" abstract="false" final="false" static="false" visibility="protected">
+    <docblock inherit="true">
+      <description/>
+      <param type="string" variable="$directory"/>
+    </docblock>
+    <parameter name="directory" byreference="false" type="{unknown}"/>
+    <parameter name="recursive" byreference="false" type="boolean" default="true"/>
+  </method>
+  <method name="listDirectoryContentsRecursive" start="469" end="482" abstract="false" final="false" static="false" visibility="protected">
+    <docblock inherit="true">
+      <description/>
+      <param type="string" variable="$directory"/>
+    </docblock>
+    <parameter name="directory" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="isConnected" start="490" end="504" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Check if the connection is open."/>
+      <return type="object">
+        <type full="League\Flysystem\Adapter\bool" namespace="League\Flysystem\Adapter" name="bool"/>
+      </return>
+      <throws type="object">
+        <type full="ErrorException" namespace="" name="ErrorException"/>
+      </throws>
+    </docblock>
+  </method>
+</class>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="MongoDB\Tests\Collection\CrudSpec\UpdateOneFunctionalTest" namespace="MongoDB\Tests\Collection\CrudSpec" name="UpdateOneFunctionalTest" abstract="false" final="false" start="10" end="97">
+  <file path="/home/web/example/src/freegame_developer/vendor/mongodb/mongodb/tests/Collection/CrudSpec" file="UpdateOneFunctionalTest.php" realpath="/home/web/example/src/freegame_developer/vendor/mongodb/mongodb/tests/Collection/CrudSpec/UpdateOneFunctionalTest.php" size="2945" time="2016-09-23T19:38:29+00:00" unixtime="1474659509" sha1="98a14aefc21352954d1d9c0f313db630f85629db" relative="freegame_developer/vendor/mongodb/mongodb/tests/Collection/CrudSpec/UpdateOneFunctionalTest.php"/>
+  <docblock>
+    <description compact="CRUD spec functional tests for updateOne()."/>
+    <see value="https://github.com/mongodb/specifications/tree/master/source/crud/tests"/>
+  </docblock>
+  <extends full="MongoDB\Tests\Collection\CrudSpec\FunctionalTestCase" namespace="MongoDB\Tests\Collection\CrudSpec" name="FunctionalTestCase"/>
+  <member name="omitModifiedCount" visibility="private" static="false" line="12"/>
+  <method name="setUp" start="14" end="21" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testUpdateOneWhenManyDocumentsMatch" start="23" end="39" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testUpdateOneWhenOneDocumentMatches" start="41" end="57" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testUpdateOneWhenNoDocumentsMatch" start="59" end="75" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testUpdateOneWithUpsertWhenNoDocumentsMatch" start="77" end="96" abstract="false" final="false" static="false" visibility="public"/>
+</class>

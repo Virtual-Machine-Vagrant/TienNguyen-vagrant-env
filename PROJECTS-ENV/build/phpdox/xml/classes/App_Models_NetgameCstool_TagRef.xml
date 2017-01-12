@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="App\Models\NetgameCstool\TagRef" namespace="App\Models\NetgameCstool" name="TagRef" abstract="false" final="false" start="8" end="83">
+  <file path="/home/web/example/src/freegame_developer/app/Models/NetgameCstool" file="TagRef.php" realpath="/home/web/example/src/freegame_developer/app/Models/NetgameCstool/TagRef.php" size="2326" time="2016-12-13T02:05:42+00:00" unixtime="1481594742" sha1="0f666bfdf741c3ac3dfffa312b15f1e12941c258" relative="freegame_developer/app/Models/NetgameCstool/TagRef.php"/>
+  <extends full="App\Models\NetgameCstool\NetgameCstool" namespace="App\Models\NetgameCstool" name="NetgameCstool"/>
+  <member name="table" type="string" default="'tag_ref'" visibility="protected" static="false" line="10"/>
+  <member name="fillable" type="array" default="" visibility="protected" static="false" line="11"/>
+  <member name="timestamps" type="boolean" default="false" visibility="public" static="false" line="12"/>
+  <method name="tagMaster" start="18" end="21" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Tag Master relationships"/>
+      <return/>
+    </docblock>
+  </method>
+  <method name="storeTag" start="28" end="46" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="store tag ref"/>
+      <param type="array" variable="$params"/>
+      <return/>
+    </docblock>
+    <parameter name="params" byreference="false" type="{unknown}"/>
+    <parameter name="tagMaster" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="getTagEditByInfoIdAndGameId" start="53" end="61" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="get tag edit by info id and game id"/>
+      <param type="integer" variable="$game"/>
+      <param type="integer" variable="$infoId"/>
+      <return type="array"/>
+    </docblock>
+    <parameter name="game" byreference="false" type="{unknown}"/>
+    <parameter name="infoId" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="deleteInfoTag" start="67" end="73" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="delete info tag"/>
+      <param type="array" variable="$params"/>
+      <return type="object">
+        <type full="App\Models\NetgameCstool\bolean" namespace="App\Models\NetgameCstool" name="bolean"/>
+      </return>
+    </docblock>
+    <parameter name="params" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="deleteInfoTagByTagId" start="75" end="82" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="params" byreference="false" type="{unknown}"/>
+    <parameter name="tagId" byreference="false" type="{unknown}"/>
+  </method>
+</class>

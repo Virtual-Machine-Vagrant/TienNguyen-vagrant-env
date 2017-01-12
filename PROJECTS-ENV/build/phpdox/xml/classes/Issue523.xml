@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="Issue523" namespace="" name="Issue523" abstract="false" final="false" start="10" end="13">
+  <file path="/home/web/example/src/freegame_developer/vendor/phpunit/phpunit/tests/Regression/523" file="Issue523Test.php" realpath="/home/web/example/src/freegame_developer/vendor/phpunit/phpunit/tests/Regression/523/Issue523Test.php" size="261" time="2016-02-11T14:56:33+00:00" unixtime="1455202593" sha1="794a6fbaf7c192ce28f750b4229b28f938be89be" relative="freegame_developer/vendor/phpunit/phpunit/tests/Regression/523/Issue523Test.php"/>
+  <extends full="ArrayIterator" namespace="" name="ArrayIterator"/>
+  <member name="field" type="string" default="'foo'" visibility="protected" static="false" line="12"/>
+</class>

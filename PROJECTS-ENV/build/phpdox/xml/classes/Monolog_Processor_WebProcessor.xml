@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="Monolog\Processor\WebProcessor" namespace="Monolog\Processor" name="WebProcessor" abstract="false" final="false" start="19" end="113">
+  <file path="/home/web/example/src/freegame_developer/vendor/monolog/monolog/src/Monolog/Processor" file="WebProcessor.php" realpath="/home/web/example/src/freegame_developer/vendor/monolog/monolog/src/Monolog/Processor/WebProcessor.php" size="3212" time="2016-07-29T03:23:52+00:00" unixtime="1469762632" sha1="d2351d4aca31dc9157ef39aec6f1e992c3c7d7b2" relative="freegame_developer/vendor/monolog/monolog/src/Monolog/Processor/WebProcessor.php"/>
+  <docblock>
+    <description compact="Injects url/method and remote IP of the current web request in all records"/>
+    <author value="Jordi Boggiano &lt;j.boggiano@seld.be&gt;"/>
+  </docblock>
+  <member name="serverData" visibility="protected" static="false" line="24">
+    <docblock>
+      <description/>
+      <var type="object">
+        <type full="Monolog\Processor\array|\ArrayAccess" namespace="Monolog\Processor\array|" name="ArrayAccess"/>
+      </var>
+    </docblock>
+  </member>
+  <member name="extraFields" type="array" default="" visibility="protected" static="false" line="33">
+    <docblock>
+      <description compact="Default fields">Array is structured as [key in record.extra =&gt; key in $serverData]</description>
+      <var type="array"/>
+    </docblock>
+  </member>
+  <constructor name="__construct" start="45" end="66" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <param description="Array or object w/ ArrayAccess that provides access to the $_SERVER data" type="object" variable="$serverData">
+        <type full="Monolog\Processor\array|\ArrayAccess" namespace="Monolog\Processor\array|" name="ArrayAccess"/>
+      </param>
+      <param description="Field names and the related key inside $serverData to be added. If not provided it defaults to: url, ip, http_method, server, referrer" type="object" variable="$extraFields">
+        <type full="Monolog\Processor\array|null" namespace="Monolog\Processor" name="array|null"/>
+      </param>
+    </docblock>
+    <parameter name="serverData" byreference="false" type="{unknown}" default="" constant="null"/>
+    <parameter name="extraFields" byreference="false" type="{unknown}" default="" constant="null"/>
+  </constructor>
+  <method name="__invoke" start="72" end="83" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <param type="array" variable="$record"/>
+      <return type="array"/>
+    </docblock>
+    <parameter name="record" byreference="false" type="array"/>
+    <inline>
+      <comment value="skip processing if for some reason request data" line="74"/>
+      <comment value="is not present (CLI or wonky SAPIs)" line="75"/>
+    </inline>
+  </method>
+  <method name="addExtraField" start="90" end="95" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <param type="string" variable="$extraName"/>
+      <param type="string" variable="$serverName"/>
+      <return type="object">
+        <type full="Monolog\Processor\$this" namespace="Monolog\Processor" name="$this"/>
+      </return>
+    </docblock>
+    <parameter name="extraName" byreference="false" type="{unknown}"/>
+    <parameter name="serverName" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="appendExtraFields" start="101" end="112" abstract="false" final="false" static="false" visibility="private">
+    <docblock>
+      <description/>
+      <param type="array" variable="$extra"/>
+      <return type="array"/>
+    </docblock>
+    <parameter name="extra" byreference="false" type="array"/>
+  </method>
+</class>

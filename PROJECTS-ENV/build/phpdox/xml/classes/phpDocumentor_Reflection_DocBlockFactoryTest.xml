@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="phpDocumentor\Reflection\DocBlockFactoryTest" namespace="phpDocumentor\Reflection" name="DocBlockFactoryTest" abstract="false" final="false" start="29" end="290">
+  <file path="/home/web/example/src/freegame_developer/vendor/phpdocumentor/reflection-docblock/tests/unit" file="DocBlockFactoryTest.php" realpath="/home/web/example/src/freegame_developer/vendor/phpdocumentor/reflection-docblock/tests/unit/DocBlockFactoryTest.php" size="9394" time="2016-09-30T07:12:33+00:00" unixtime="1475219553" sha1="e2fcf1da1bad5f9b592e6c0608ea0dfb04b58f08" relative="freegame_developer/vendor/phpdocumentor/reflection-docblock/tests/unit/DocBlockFactoryTest.php"/>
+  <docblock>
+    <description/>
+    <coversdefaultclass value="phpDocumentor\Reflection\DocBlockFactory"/>
+    <covers value="::&lt;private&gt;"/>
+    <uses value="\Webmozart\Assert\Assert"/>
+    <uses value="phpDocumentor\Reflection\DocBlock"/>
+  </docblock>
+  <extends full="PHPUnit_Framework_TestCase" namespace="" name="PHPUnit_Framework_TestCase"/>
+  <method name="testCreateFactoryUsingFactoryMethod" start="37" end="42" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <covers value="::__construct"/>
+      <covers value="::createInstance"/>
+      <uses value="\phpDocumentor\Reflection\DocBlock\StandardTagFactory"/>
+      <uses value="\phpDocumentor\Reflection\DocBlock\DescriptionFactory"/>
+    </docblock>
+  </method>
+  <method name="testCreateDocBlockFromReflection" start="49" end="64" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <covers value="::__construct"/>
+      <covers value="::create"/>
+      <uses value="phpDocumentor\Reflection\DocBlock\Description"/>
+    </docblock>
+  </method>
+  <method name="testCreateDocBlockFromStringWithDocComment" start="71" end="83" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <covers value="::__construct"/>
+      <covers value="::create"/>
+      <uses value="phpDocumentor\Reflection\DocBlock\Description"/>
+    </docblock>
+  </method>
+  <method name="testCreateDocBlockFromStringWithoutDocComment" start="90" end="102" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <covers value="::create"/>
+      <covers value="::__construct"/>
+      <uses value="phpDocumentor\Reflection\DocBlock\Description"/>
+    </docblock>
+  </method>
+  <method name="testSummaryAndDescriptionAreSeparated" start="111" end="120" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <covers value="::__construct"/>
+      <covers value="::create"/>
+      <uses value="phpDocumentor\Reflection\DocBlock\DescriptionFactory"/>
+      <uses value="phpDocumentor\Reflection\DocBlock\Description"/>
+      <dataprovider value="provideSummaryAndDescriptions"/>
+    </docblock>
+    <parameter name="given" byreference="false" type="{unknown}"/>
+    <parameter name="summary" byreference="false" type="{unknown}"/>
+    <parameter name="description" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="testDescriptionsRetainFormatting" start="128" end="153" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <covers value="::__construct"/>
+      <covers value="::create"/>
+      <uses value="phpDocumentor\Reflection\DocBlock\DescriptionFactory"/>
+      <uses value="phpDocumentor\Reflection\DocBlock\Description"/>
+    </docblock>
+  </method>
+  <method name="testTagsAreInterpretedUsingFactory" start="161" end="186" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <covers value="::__construct"/>
+      <covers value="::create"/>
+      <uses value="phpDocumentor\Reflection\DocBlock\DescriptionFactory"/>
+      <uses value="phpDocumentor\Reflection\DocBlock\Description"/>
+    </docblock>
+  </method>
+  <method name="provideSummaryAndDescriptions" start="188" end="237" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testTagsWithContextNamespace" start="248" end="256" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <covers value="::__construct"/>
+      <covers value="::create"/>
+      <uses value="phpDocumentor\Reflection\DocBlock\DescriptionFactory"/>
+      <uses value="phpDocumentor\Reflection\DocBlock\Description"/>
+      <uses value="phpDocumentor\Reflection\Types\Context"/>
+      <uses value="phpDocumentor\Reflection\DocBlock\Tags\Param"/>
+    </docblock>
+  </method>
+  <method name="testTagsAreFilteredForNullValues" start="265" end="289" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <covers value="::__construct"/>
+      <covers value="::create"/>
+      <uses value="phpDocumentor\Reflection\DocBlock\DescriptionFactory"/>
+      <uses value="phpDocumentor\Reflection\DocBlock\Description"/>
+    </docblock>
+  </method>
+</class>

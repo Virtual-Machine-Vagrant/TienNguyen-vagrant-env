@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="Prophecy\Call\CallCenter" namespace="Prophecy\Call" name="CallCenter" abstract="false" final="false" start="25" end="162">
+  <file path="/home/web/example/src/freegame_developer/vendor/phpspec/prophecy/src/Prophecy/Call" file="CallCenter.php" realpath="/home/web/example/src/freegame_developer/vendor/phpspec/prophecy/src/Prophecy/Call/CallCenter.php" size="5519" time="2016-06-07T08:13:47+00:00" unixtime="1465287227" sha1="764c37176b714aa7107bc8aadf65b1d41016d7eb" relative="freegame_developer/vendor/phpspec/prophecy/src/Prophecy/Call/CallCenter.php"/>
+  <docblock>
+    <description compact="Calls receiver &amp; manager."/>
+    <author value="Konstantin Kudryashov &lt;ever.zet@gmail.com&gt;"/>
+  </docblock>
+  <member name="util" visibility="private" static="false" line="27"/>
+  <member name="recordedCalls" type="array" default="" visibility="private" static="false" line="32">
+    <docblock>
+      <description/>
+      <var type="array" of="object">
+        <type full="Prophecy\Call\Call" namespace="Prophecy\Call" name="Call"/>
+      </var>
+    </docblock>
+  </member>
+  <constructor name="__construct" start="39" end="42" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Initializes call center."/>
+      <param type="object" variable="$util">
+        <type full="Prophecy\Util\StringUtil" namespace="Prophecy\Util" name="StringUtil"/>
+      </param>
+    </docblock>
+    <parameter name="util" byreference="false" type="{unknown}" default="" constant="null">
+      <type full="Prophecy\Util\StringUtil" namespace="Prophecy\Util" name="StringUtil"/>
+    </parameter>
+  </constructor>
+  <method name="makeCall" start="55" end="118" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Makes and records specific method call for object prophecy."/>
+      <param type="object" variable="$prophecy">
+        <type full="Prophecy\Prophecy\ObjectProphecy" namespace="Prophecy\Prophecy" name="ObjectProphecy"/>
+      </param>
+      <param type="string" variable="$methodName"/>
+      <param type="array" variable="$arguments"/>
+      <return description="Returns null if no promise for prophecy found or promise return value." type="mixed"/>
+      <throws description="If no appropriate method prophecy found" type="object">
+        <type full="\Prophecy\Exception\Call\UnexpectedCallException" namespace="\Prophecy\Exception\Call" name="UnexpectedCallException"/>
+      </throws>
+    </docblock>
+    <parameter name="prophecy" byreference="false" type="object">
+      <type full="Prophecy\Prophecy\ObjectProphecy" namespace="Prophecy\Prophecy" name="ObjectProphecy"/>
+    </parameter>
+    <parameter name="methodName" byreference="false" type="{unknown}"/>
+    <parameter name="arguments" byreference="false" type="array"/>
+    <inline>
+      <comment value="For efficiency exclude 'args' from the generated backtrace" line="57"/>
+      <comment value="If no method prophecies defined, then it's a dummy, so we'll just return null" line="75"/>
+      <comment value="There are method prophecies, so it's a fake/stub. Searching prophecy for this call" line="82"/>
+      <comment value="If fake/stub doesn't have method prophecy for this call - throw exception" line="90"/>
+      <comment value="Sort matches by their score value" line="95"/>
+      <comment value="If Highest rated method prophecy has a promise - execute it or return null instead" line="98"/>
+    </inline>
+  </method>
+  <method name="findCalls" start="128" end="137" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Searches for calls by method name &amp; arguments wildcard."/>
+      <param type="string" variable="$methodName"/>
+      <param type="object" variable="$wildcard">
+        <type full="Prophecy\Argument\ArgumentsWildcard" namespace="Prophecy\Argument" name="ArgumentsWildcard"/>
+      </param>
+      <return type="array" of="object">
+        <type full="Prophecy\Call\Call" namespace="Prophecy\Call" name="Call"/>
+      </return>
+    </docblock>
+    <parameter name="methodName" byreference="false" type="{unknown}"/>
+    <parameter name="wildcard" byreference="false" type="object">
+      <type full="Prophecy\Argument\ArgumentsWildcard" namespace="Prophecy\Argument" name="ArgumentsWildcard"/>
+    </parameter>
+  </method>
+  <method name="createUnexpectedCallException" start="139" end="161" abstract="false" final="false" static="false" visibility="private">
+    <parameter name="prophecy" byreference="false" type="object">
+      <type full="Prophecy\Prophecy\ObjectProphecy" namespace="Prophecy\Prophecy" name="ObjectProphecy"/>
+    </parameter>
+    <parameter name="methodName" byreference="false" type="{unknown}"/>
+    <parameter name="arguments" byreference="false" type="array"/>
+  </method>
+</class>

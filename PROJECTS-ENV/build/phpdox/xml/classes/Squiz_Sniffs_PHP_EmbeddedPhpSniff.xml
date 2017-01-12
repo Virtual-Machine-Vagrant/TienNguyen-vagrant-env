@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="Squiz_Sniffs_PHP_EmbeddedPhpSniff" namespace="" name="Squiz_Sniffs_PHP_EmbeddedPhpSniff" abstract="false" final="false" start="30" end="400">
+  <file path="/home/web/example/src/freegame_developer/vendor/squizlabs/php_codesniffer/CodeSniffer/Standards/Squiz/Sniffs/PHP" file="EmbeddedPhpSniff.php" realpath="/home/web/example/src/freegame_developer/vendor/squizlabs/php_codesniffer/CodeSniffer/Standards/Squiz/Sniffs/PHP/EmbeddedPhpSniff.php" size="16870" time="2016-01-19T23:39:10+00:00" unixtime="1453246750" sha1="4f5cf4be6f0ff09c9492dfc35584b8bff1e78b29" relative="freegame_developer/vendor/squizlabs/php_codesniffer/CodeSniffer/Standards/Squiz/Sniffs/PHP/EmbeddedPhpSniff.php"/>
+  <docblock>
+    <description compact="Squiz_Sniffs_PHP_EmbeddedPhpSniff.">Checks the indentation of embedded PHP code segments.</description>
+    <category value="PHP"/>
+    <package value="PHP_CodeSniffer"/>
+    <author value="Greg Sherwood &lt;gsherwood@squiz.net&gt;"/>
+    <author value="Marc McIntyre &lt;mmcintyre@squiz.net&gt;"/>
+    <copyright value="2006-2014 Squiz Pty Ltd (ABN 77 084 670 600)"/>
+    <license name="https://github.com/squizlabs/PHP_CodeSniffer/blob/master/licence.txt BSD Licence"/>
+    <version value="Release: @package_version@"/>
+    <link value="http://pear.php.net/package/PHP_CodeSniffer"/>
+  </docblock>
+  <implements full="PHP_CodeSniffer_Sniff" namespace="" name="PHP_CodeSniffer_Sniff"/>
+  <method name="register" start="39" end="43" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Returns an array of tokens this test wants to listen for."/>
+      <return type="array"/>
+    </docblock>
+  </method>
+  <method name="process" start="55" end="68" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Processes this test, when one of its tokens is encountered."/>
+      <param description="The file being scanned." type="object" variable="$phpcsFile">
+        <type full="PHP_CodeSniffer_File" namespace="" name="PHP_CodeSniffer_File"/>
+      </param>
+      <param description="The position of the current token in the" type="int" variable="$stackPtr">stack passed in $tokens.</param>
+      <return type="object">
+        <type full="void" namespace="" name="void"/>
+      </return>
+    </docblock>
+    <parameter name="phpcsFile" byreference="false" type="object">
+      <type full="PHP_CodeSniffer_File" namespace="" name="PHP_CodeSniffer_File"/>
+    </parameter>
+    <parameter name="stackPtr" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="If the close php tag is on the same line as the opening" line="59"/>
+      <comment value="then we have an inline embedded PHP block." line="60"/>
+    </inline>
+  </method>
+  <method name="_validateMultilineEmbeddedPhp" start="80" end="301" abstract="false" final="false" static="false" visibility="private">
+    <docblock>
+      <description compact="Validates embedded PHP that exists on multiple lines."/>
+      <param description="The file being scanned." type="object" variable="$phpcsFile">
+        <type full="PHP_CodeSniffer_File" namespace="" name="PHP_CodeSniffer_File"/>
+      </param>
+      <param description="The position of the current token in the" type="int" variable="$stackPtr">stack passed in $tokens.</param>
+      <return type="object">
+        <type full="void" namespace="" name="void"/>
+      </return>
+    </docblock>
+    <parameter name="phpcsFile" byreference="false" type="object">
+      <type full="PHP_CodeSniffer_File" namespace="" name="PHP_CodeSniffer_File"/>
+    </parameter>
+    <parameter name="stackPtr" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="end if" line="114"/>
+      <comment value="end if" line="184"/>
+      <comment value="end if" line="236"/>
+      <comment value="end if" line="265"/>
+      <comment value="Check for a blank line at the bottom." line="272"/>
+      <comment value="end if" line="299"/>
+    </inline>
+  </method>
+  <method name="_validateInlineEmbeddedPhp" start="313" end="397" abstract="false" final="false" static="false" visibility="private">
+    <docblock>
+      <description compact="Validates embedded PHP that exists on one line."/>
+      <param description="The file being scanned." type="object" variable="$phpcsFile">
+        <type full="PHP_CodeSniffer_File" namespace="" name="PHP_CodeSniffer_File"/>
+      </param>
+      <param description="The position of the current token in the" type="int" variable="$stackPtr">stack passed in $tokens.</param>
+      <return type="object">
+        <type full="void" namespace="" name="void"/>
+      </return>
+    </docblock>
+    <parameter name="phpcsFile" byreference="false" type="object">
+      <type full="PHP_CodeSniffer_File" namespace="" name="PHP_CodeSniffer_File"/>
+    </parameter>
+    <parameter name="stackPtr" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="We only want one line PHP sections, so return if the closing tag is" line="317"/>
+      <comment value="on the next line." line="318"/>
+      <comment value="Check that there is one, and only one space at the start of the statement." line="324"/>
+      <comment value="The open tag token always contains a single space after it." line="342"/>
+    </inline>
+  </method>
+</class>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="Monolog\Handler\NewRelicHandlerTest" namespace="Monolog\Handler" name="NewRelicHandlerTest" abstract="false" final="false" start="18" end="162">
+  <file path="/home/web/example/src/freegame_developer/vendor/monolog/monolog/tests/Monolog/Handler" file="NewRelicHandlerTest.php" realpath="/home/web/example/src/freegame_developer/vendor/monolog/monolog/tests/Monolog/Handler/NewRelicHandlerTest.php" size="6061" time="2016-07-29T03:23:52+00:00" unixtime="1469762632" sha1="a140d66be3282a7a8510211b9167dc2a11f654fe" relative="freegame_developer/vendor/monolog/monolog/tests/Monolog/Handler/NewRelicHandlerTest.php"/>
+  <extends full="Monolog\TestCase" namespace="Monolog" name="TestCase"/>
+  <member name="appname" visibility="public" static="true" line="20"/>
+  <member name="customParameters" visibility="public" static="true" line="21"/>
+  <member name="transactionName" visibility="public" static="true" line="22"/>
+  <method name="setUp" start="24" end="29" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testThehandlerThrowsAnExceptionIfTheNRExtensionIsNotLoaded" start="34" end="38" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <expectedexception value="Monolog\Handler\MissingExtensionException"/>
+    </docblock>
+  </method>
+  <method name="testThehandlerCanHandleTheRecord" start="40" end="44" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testThehandlerCanAddContextParamsToTheNewRelicTrace" start="46" end="51" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testThehandlerCanAddExplodedContextParamsToTheNewRelicTrace" start="53" end="65" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testThehandlerCanAddExtraParamsToTheNewRelicTrace" start="67" end="76" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testThehandlerCanAddExplodedExtraParamsToTheNewRelicTrace" start="78" end="90" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testThehandlerCanAddExtraContextAndParamsToTheNewRelicTrace" start="92" end="106" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testThehandlerCanHandleTheRecordsFormattedUsingTheLineFormatter" start="108" end="113" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testTheAppNameIsNullByDefault" start="115" end="121" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testTheAppNameCanBeInjectedFromtheConstructor" start="123" end="129" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testTheAppNameCanBeOverriddenFromEachLog" start="131" end="137" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testTheTransactionNameIsNullByDefault" start="139" end="145" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testTheTransactionNameCanBeInjectedFromTheConstructor" start="147" end="153" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testTheTransactionNameCanBeOverriddenFromEachLog" start="155" end="161" abstract="false" final="false" static="false" visibility="public"/>
+</class>

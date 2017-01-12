@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="App\Models\CustomModel" namespace="App\Models" name="CustomModel" abstract="true" final="false" start="9" end="115">
+  <file path="/home/web/example/src/freegame_developer/app/Models" file="CustomModel.php" realpath="/home/web/example/src/freegame_developer/app/Models/CustomModel.php" size="3488" time="2016-10-31T07:00:31+00:00" unixtime="1477897231" sha1="61b82dd505315e4601387fe2c875eb5157a7a037" relative="freegame_developer/app/Models/CustomModel.php"/>
+  <extends full="Illuminate\Database\Eloquent\Model" namespace="Illuminate\Database\Eloquent" name="Model"/>
+  <method name="toEncode" start="11" end="27" abstract="false" final="false" static="true" visibility="protected">
+    <parameter name="data" byreference="false" type="{unknown}"/>
+    <parameter name="to" byreference="false" type="string" default="'euc-jp'"/>
+    <parameter name="from" byreference="false" type="string" default="'utf8'"/>
+  </method>
+  <method name="toDecode" start="29" end="45" abstract="false" final="false" static="true" visibility="protected">
+    <parameter name="data" byreference="false" type="{unknown}"/>
+    <parameter name="to" byreference="false" type="string" default="'utf8'"/>
+    <parameter name="from" byreference="false" type="string" default="'euc-jp'"/>
+  </method>
+  <method name="transaction" start="56" end="61" abstract="false" final="false" static="true" visibility="protected">
+    <docblock>
+      <description compact="Call transaction method">上位にある BaseCollection, QueryBuilder, Model に Transaction 関係のものが無いので
+Illuminate\Database\Eloquent\Model を参考に getConnection() で接続情報を得て利用します</description>
+      <param type="string" variable="$method"/>
+      <return type="mixed"/>
+    </docblock>
+    <parameter name="callback" byreference="false" type="object">
+      <type full="Closure" namespace="" name="Closure"/>
+    </parameter>
+  </method>
+  <method name="beginTransaction" start="71" end="75" abstract="false" final="false" static="true" visibility="protected">
+    <docblock>
+      <description compact="Call beginTransaction method">上位にある BaseCollection, QueryBuilder, Model に Transaction 関係のものが無いので
+Illuminate\Database\Eloquent\Model を参考に getConnection() で接続情報を得て利用します</description>
+      <return type="object">
+        <type full="App\Models\void" namespace="App\Models" name="void"/>
+      </return>
+    </docblock>
+  </method>
+  <method name="commit" start="85" end="89" abstract="false" final="false" static="true" visibility="protected">
+    <docblock>
+      <description compact="Call commit method">上位にある BaseCollection, QueryBuilder, Model に Transaction 関係のものが無いので
+Illuminate\Database\Eloquent\Model を参考に getConnection() で接続情報を得て利用します</description>
+      <return type="object">
+        <type full="App\Models\void" namespace="App\Models" name="void"/>
+      </return>
+    </docblock>
+  </method>
+  <method name="rollback" start="99" end="103" abstract="false" final="false" static="true" visibility="protected">
+    <docblock>
+      <description compact="Call rollback method">上位にある BaseCollection, QueryBuilder, Model に Transaction 関係のものが無いので
+Illuminate\Database\Eloquent\Model を参考に getConnection() で接続情報を得て利用します</description>
+      <return type="object">
+        <type full="App\Models\void" namespace="App\Models" name="void"/>
+      </return>
+    </docblock>
+  </method>
+  <method name="newEloquentBuilder" start="111" end="114" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Create a new Eloquent query builder for the model."/>
+      <param type="object" variable="$query">
+        <type full="\Illuminate\Database\Query\Builder" namespace="\Illuminate\Database\Query" name="Builder"/>
+      </param>
+      <return type="object">
+        <type full="\Illuminate\Database\Eloquent\Builder|static" namespace="\Illuminate\Database\Eloquent" name="Builder|static"/>
+      </return>
+    </docblock>
+    <parameter name="query" byreference="false" type="{unknown}"/>
+  </method>
+</class>

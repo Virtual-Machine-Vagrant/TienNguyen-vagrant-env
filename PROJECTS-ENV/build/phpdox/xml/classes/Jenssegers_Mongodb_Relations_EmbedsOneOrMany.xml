@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="Jenssegers\Mongodb\Relations\EmbedsOneOrMany" namespace="Jenssegers\Mongodb\Relations" name="EmbedsOneOrMany" abstract="true" final="false" start="8" end="387">
+  <file path="/home/web/example/src/freegame_developer/vendor/jenssegers/mongodb/src/Jenssegers/Mongodb/Relations" file="EmbedsOneOrMany.php" realpath="/home/web/example/src/freegame_developer/vendor/jenssegers/mongodb/src/Jenssegers/Mongodb/Relations/EmbedsOneOrMany.php" size="9832" time="2016-10-07T08:39:24+00:00" unixtime="1475829564" sha1="eb28f8bbc9205de24aff6235704915ef38d072d5" relative="freegame_developer/vendor/jenssegers/mongodb/src/Jenssegers/Mongodb/Relations/EmbedsOneOrMany.php"/>
+  <extends full="Illuminate\Database\Eloquent\Relations\Relation" namespace="Illuminate\Database\Eloquent\Relations" name="Relation"/>
+  <member name="localKey" visibility="protected" static="false" line="15">
+    <docblock>
+      <description compact="The local key of the parent model."/>
+      <var type="string"/>
+    </docblock>
+  </member>
+  <member name="foreignKey" visibility="protected" static="false" line="22">
+    <docblock>
+      <description compact="The foreign key of the parent model."/>
+      <var type="string"/>
+    </docblock>
+  </member>
+  <member name="relation" visibility="protected" static="false" line="29">
+    <docblock>
+      <description compact="The &quot;name&quot; of the relationship."/>
+      <var type="string"/>
+    </docblock>
+  </member>
+  <constructor name="__construct" start="41" end="56" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Create a new embeds many relationship instance."/>
+      <param type="object" variable="$query">
+        <type full="\Illuminate\Database\Eloquent\Builder" namespace="\Illuminate\Database\Eloquent" name="Builder"/>
+      </param>
+      <param type="object" variable="$parent">
+        <type full="\Illuminate\Database\Eloquent\Model" namespace="\Illuminate\Database\Eloquent" name="Model"/>
+      </param>
+      <param type="object" variable="$related">
+        <type full="\Illuminate\Database\Eloquent\Model" namespace="\Illuminate\Database\Eloquent" name="Model"/>
+      </param>
+      <param type="string" variable="$localKey"/>
+      <param type="string" variable="$foreignKey"/>
+      <param type="string" variable="$relation"/>
+    </docblock>
+    <parameter name="query" byreference="false" type="object">
+      <type full="Illuminate\Database\Eloquent\Builder" namespace="Illuminate\Database\Eloquent" name="Builder"/>
+    </parameter>
+    <parameter name="parent" byreference="false" type="object">
+      <type full="Illuminate\Database\Eloquent\Model" namespace="Illuminate\Database\Eloquent" name="Model"/>
+    </parameter>
+    <parameter name="related" byreference="false" type="object">
+      <type full="Illuminate\Database\Eloquent\Model" namespace="Illuminate\Database\Eloquent" name="Model"/>
+    </parameter>
+    <parameter name="localKey" byreference="false" type="{unknown}"/>
+    <parameter name="foreignKey" byreference="false" type="{unknown}"/>
+    <parameter name="relation" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="If this is a nested relation, we need to get the parent query instead." line="50"/>
+    </inline>
+  </constructor>
+  <method name="addConstraints" start="61" end="66" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Set the base constraints on the relation query."/>
+    </docblock>
+  </method>
+  <method name="addEagerConstraints" start="73" end="76" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Set the constraints for an eager load of the relation."/>
+      <param type="array" variable="$models"/>
+    </docblock>
+    <parameter name="models" byreference="false" type="array"/>
+    <inline>
+      <comment value="There are no eager loading constraints." line="75"/>
+    </inline>
+  </method>
+  <method name="match" start="86" end="97" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Match the eagerly loaded results to their parents."/>
+      <param type="array" variable="$models"/>
+      <param type="object" variable="$results">
+        <type full="\Illuminate\Database\Eloquent\Collection" namespace="\Illuminate\Database\Eloquent" name="Collection"/>
+      </param>
+      <param type="string" variable="$relation"/>
+      <return type="array"/>
+    </docblock>
+    <parameter name="models" byreference="false" type="array"/>
+    <parameter name="results" byreference="false" type="object">
+      <type full="Illuminate\Database\Eloquent\Collection" namespace="Illuminate\Database\Eloquent" name="Collection"/>
+    </parameter>
+    <parameter name="relation" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="get" start="104" end="107" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Shorthand to get the results of the relationship."/>
+      <return type="object">
+        <type full="\Illuminate\Database\Eloquent\Collection" namespace="\Illuminate\Database\Eloquent" name="Collection"/>
+      </return>
+    </docblock>
+  </method>
+  <method name="count" start="114" end="117" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Get the number of embedded models."/>
+      <return type="int"/>
+    </docblock>
+  </method>
+  <method name="save" start="125" end="130" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Attach a model instance to the parent model."/>
+      <param type="object" variable="$model">
+        <type full="\Illuminate\Database\Eloquent\Model" namespace="\Illuminate\Database\Eloquent" name="Model"/>
+      </param>
+      <return type="object">
+        <type full="\Illuminate\Database\Eloquent\Model" namespace="\Illuminate\Database\Eloquent" name="Model"/>
+      </return>
+    </docblock>
+    <parameter name="model" byreference="false" type="object">
+      <type full="Illuminate\Database\Eloquent\Model" namespace="Illuminate\Database\Eloquent" name="Model"/>
+    </parameter>
+  </method>
+  <method name="saveMany" start="138" end="145" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Attach a collection of models to the parent instance."/>
+      <param type="object" variable="$models">
+        <type full="\Illuminate\Database\Eloquent\Collection|array" namespace="\Illuminate\Database\Eloquent" name="Collection|array"/>
+      </param>
+      <return type="object">
+        <type full="\Illuminate\Database\Eloquent\Collection|array" namespace="\Illuminate\Database\Eloquent" name="Collection|array"/>
+      </return>
+    </docblock>
+    <parameter name="models" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="create" start="153" end="165" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Create a new instance of the related model."/>
+      <param type="array" variable="$attributes"/>
+      <return type="object">
+        <type full="\Illuminate\Database\Eloquent\Model" namespace="\Illuminate\Database\Eloquent" name="Model"/>
+      </return>
+    </docblock>
+    <parameter name="attributes" byreference="false" type="array"/>
+    <inline>
+      <comment value="Here we will set the raw attributes to avoid hitting the &quot;fill&quot; method so" line="155"/>
+      <comment value="that we do not have to worry about a mass accessor rules blocking sets" line="156"/>
+      <comment value="on the models. Otherwise, some of these attributes will not get set." line="157"/>
+    </inline>
+  </method>
+  <method name="createMany" start="173" end="182" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Create an array of new instances of the related model."/>
+      <param type="array" variable="$records"/>
+      <return type="array"/>
+    </docblock>
+    <parameter name="records" byreference="false" type="array"/>
+  </method>
+  <method name="getIdsArrayFrom" start="190" end="207" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Transform single ID, single Model or array of Models into an array of IDs."/>
+      <param type="mixed" variable="$ids"/>
+      <return type="array"/>
+    </docblock>
+    <parameter name="ids" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="getEmbedded" start="214" end="223" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Get the embedded records array."/>
+      <return type="array"/>
+    </docblock>
+    <inline>
+      <comment value="Get raw attributes to skip relations and accessors." line="216"/>
+      <comment value="Get embedded models form parent attributes." line="219"/>
+    </inline>
+  </method>
+  <method name="setEmbedded" start="231" end="242" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Set the embedded records array."/>
+      <param type="array" variable="$records"/>
+      <return type="object">
+        <type full="\Illuminate\Database\Eloquent\Model" namespace="\Illuminate\Database\Eloquent" name="Model"/>
+      </return>
+    </docblock>
+    <parameter name="records" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="Assign models to parent attributes array." line="233"/>
+      <comment value="Set raw attributes to skip mutators." line="237"/>
+      <comment value="Set the relation on the parent." line="240"/>
+    </inline>
+  </method>
+  <method name="getForeignKeyValue" start="250" end="258" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Get the foreign key value for the relation."/>
+      <param type="mixed" variable="$id"/>
+      <return type="mixed"/>
+    </docblock>
+    <parameter name="id" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="Convert the id to MongoId if necessary." line="256"/>
+    </inline>
+  </method>
+  <method name="toCollection" start="266" end="279" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Convert an array of records to a Collection."/>
+      <param type="array" variable="$records"/>
+      <return type="object">
+        <type full="\Jenssegers\Mongodb\Eloquent\Collection" namespace="\Jenssegers\Mongodb\Eloquent" name="Collection"/>
+      </return>
+    </docblock>
+    <parameter name="records" byreference="false" type="array" default=""/>
+  </method>
+  <method name="toModel" start="287" end="303" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Create a related model instanced."/>
+      <param type="array" variable="$attributes"/>
+      <return type="object">
+        <type full="\Illuminate\Database\Eloquent\Model" namespace="\Illuminate\Database\Eloquent" name="Model"/>
+      </return>
+    </docblock>
+    <parameter name="attributes" byreference="false" type="array" default=""/>
+    <inline>
+      <comment value="If you remove this, you will get segmentation faults!" line="299"/>
+    </inline>
+  </method>
+  <method name="getParentRelation" start="310" end="313" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Get the relation instance of the parent."/>
+      <return type="object">
+        <type full="\Illuminate\Database\Eloquent\Relations\Relation" namespace="\Illuminate\Database\Eloquent\Relations" name="Relation"/>
+      </return>
+    </docblock>
+  </method>
+  <method name="getQuery" start="320" end="325" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Get the underlying query for the relation."/>
+      <return type="object">
+        <type full="\Illuminate\Database\Eloquent\Builder" namespace="\Illuminate\Database\Eloquent" name="Builder"/>
+      </return>
+    </docblock>
+    <inline>
+      <comment value="Because we are sharing this relation instance to models, we need" line="322"/>
+      <comment value="to make sure we use separate query instances." line="323"/>
+    </inline>
+  </method>
+  <method name="getBaseQuery" start="332" end="337" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Get the base query builder driving the Eloquent builder."/>
+      <return type="object">
+        <type full="\Illuminate\Database\Query\Builder" namespace="\Illuminate\Database\Query" name="Builder"/>
+      </return>
+    </docblock>
+    <inline>
+      <comment value="Because we are sharing this relation instance to models, we need" line="334"/>
+      <comment value="to make sure we use separate query instances." line="335"/>
+    </inline>
+  </method>
+  <method name="isNested" start="344" end="347" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Check if this relation is nested in another relation."/>
+      <return type="object">
+        <type full="Jenssegers\Mongodb\Relations\bool" namespace="Jenssegers\Mongodb\Relations" name="bool"/>
+      </return>
+    </docblock>
+  </method>
+  <method name="getPathHierarchy" start="355" end="362" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Get the fully qualified local key name."/>
+      <param type="string" variable="$glue"/>
+      <return type="string"/>
+    </docblock>
+    <parameter name="glue" byreference="false" type="string" default="'.'"/>
+  </method>
+  <method name="getQualifiedParentKeyName" start="369" end="376" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Get the parent's fully qualified key name."/>
+      <return type="string"/>
+    </docblock>
+  </method>
+  <method name="getParentKey" start="383" end="386" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Get the primary key value of the parent."/>
+      <return type="string"/>
+    </docblock>
+  </method>
+</class>

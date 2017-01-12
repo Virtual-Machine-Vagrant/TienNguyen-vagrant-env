@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="PhpParser\PrettyPrinterTest" namespace="PhpParser" name="PrettyPrinterTest" abstract="false" final="false" start="15" end="164">
+  <file path="/home/web/example/src/freegame_developer/vendor/nikic/php-parser/test/PhpParser" file="PrettyPrinterTest.php" realpath="/home/web/example/src/freegame_developer/vendor/nikic/php-parser/test/PhpParser/PrettyPrinterTest.php" size="7247" time="2016-09-16T12:04:44+00:00" unixtime="1474027484" sha1="dfc83ae650f2a3fd409bdf8cfdbbda0a23ed9cfb" relative="freegame_developer/vendor/nikic/php-parser/test/PhpParser/PrettyPrinterTest.php"/>
+  <extends full="PhpParser\CodeTestAbstract" namespace="PhpParser" name="CodeTestAbstract"/>
+  <method name="doTestPrettyPrintMethod" start="17" end="53" abstract="false" final="false" static="false" visibility="protected">
+    <parameter name="method" byreference="false" type="{unknown}"/>
+    <parameter name="name" byreference="false" type="{unknown}"/>
+    <parameter name="code" byreference="false" type="{unknown}"/>
+    <parameter name="expected" byreference="false" type="{unknown}"/>
+    <parameter name="modeLine" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="testPrettyPrint" start="59" end="61" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <dataprovider value="provideTestPrettyPrint"/>
+      <covers value="PhpParser\PrettyPrinter\Standard&lt;extended&gt;"/>
+    </docblock>
+    <parameter name="name" byreference="false" type="{unknown}"/>
+    <parameter name="code" byreference="false" type="{unknown}"/>
+    <parameter name="expected" byreference="false" type="{unknown}"/>
+    <parameter name="mode" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="testPrettyPrintFile" start="67" end="69" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <dataprovider value="provideTestPrettyPrintFile"/>
+      <covers value="PhpParser\PrettyPrinter\Standard&lt;extended&gt;"/>
+    </docblock>
+    <parameter name="name" byreference="false" type="{unknown}"/>
+    <parameter name="code" byreference="false" type="{unknown}"/>
+    <parameter name="expected" byreference="false" type="{unknown}"/>
+    <parameter name="mode" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="provideTestPrettyPrint" start="71" end="73" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="provideTestPrettyPrintFile" start="75" end="77" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testPrettyPrintExpr" start="79" end="91" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testCommentBeforeInlineHTML" start="93" end="99" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="parseModeLine" start="101" end="106" abstract="false" final="false" static="false" visibility="private">
+    <parameter name="modeLine" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="testArraySyntaxDefault" start="108" end="115" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testKindAttributes" start="120" end="124" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <dataprovider value="provideTestKindAttributes"/>
+    </docblock>
+    <parameter name="node" byreference="false" type="{unknown}"/>
+    <parameter name="expected" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="provideTestKindAttributes" start="126" end="163" abstract="false" final="false" static="false" visibility="public"/>
+</class>

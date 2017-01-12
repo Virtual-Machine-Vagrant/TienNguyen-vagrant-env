@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface xmlns="http://xml.phpdox.net/src" full="b" namespace="" name="b" abstract="false" final="false" start="15" end="18">
+  <file path="/home/web/example/src/freegame_developer/vendor/phpunit/php-token-stream/tests/_fixture" file="source4.php" realpath="/home/web/example/src/freegame_developer/vendor/phpunit/php-token-stream/tests/_fixture/source4.php" size="436" time="2015-09-15T10:49:45+00:00" unixtime="1442314185" sha1="84c81422e2aec72edab85b93ee29dbccd16b6238" relative="freegame_developer/vendor/phpunit/php-token-stream/tests/_fixture/source4.php"/>
+  <extends full="a" namespace="" name="a"/>
+  <method name="baz" start="17" end="17" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="baz" byreference="false" type="object">
+      <type full="Baz" namespace="" name="Baz"/>
+    </parameter>
+  </method>
+</interface>

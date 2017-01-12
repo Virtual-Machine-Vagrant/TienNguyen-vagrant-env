@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="Symfony\Component\HttpFoundation\Tests\Session\Attribute\NamespacedAttributeBagTest" namespace="Symfony\Component\HttpFoundation\Tests\Session\Attribute" name="NamespacedAttributeBagTest" abstract="false" final="false" start="21" end="184">
+  <file path="/home/web/example/src/freegame_developer/vendor/symfony/http-foundation/Tests/Session/Attribute" file="NamespacedAttributeBagTest.php" realpath="/home/web/example/src/freegame_developer/vendor/symfony/http-foundation/Tests/Session/Attribute/NamespacedAttributeBagTest.php" size="5407" time="2016-10-24T14:36:35+00:00" unixtime="1477319795" sha1="fb5f84db11e3b18e5b708599f48edacfbf14486f" relative="freegame_developer/vendor/symfony/http-foundation/Tests/Session/Attribute/NamespacedAttributeBagTest.php"/>
+  <docblock>
+    <description compact="Tests NamespacedAttributeBag."/>
+    <author value="Drak &lt;drak@zikula.org&gt;"/>
+  </docblock>
+  <extends full="PHPUnit_Framework_TestCase" namespace="" name="PHPUnit_Framework_TestCase"/>
+  <member name="array" visibility="private" static="false" line="26">
+    <docblock>
+      <description/>
+      <var type="array"/>
+    </docblock>
+  </member>
+  <member name="bag" visibility="private" static="false" line="31">
+    <docblock>
+      <description/>
+      <var type="object">
+        <type full="Symfony\Component\HttpFoundation\Session\Attribute\NamespacedAttributeBag" namespace="Symfony\Component\HttpFoundation\Session\Attribute" name="NamespacedAttributeBag"/>
+      </var>
+    </docblock>
+  </member>
+  <method name="setUp" start="33" end="52" abstract="false" final="false" static="false" visibility="protected"/>
+  <method name="tearDown" start="54" end="58" abstract="false" final="false" static="false" visibility="protected"/>
+  <method name="testInitialize" start="60" end="70" abstract="false" final="false" static="false" visibility="public">
+    <inline>
+      <comment value="should have remained the same" line="68"/>
+    </inline>
+  </method>
+  <method name="testGetStorageKey" start="72" end="77" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testHas" start="82" end="85" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <dataprovider value="attributesProvider"/>
+    </docblock>
+    <parameter name="key" byreference="false" type="{unknown}"/>
+    <parameter name="value" byreference="false" type="{unknown}"/>
+    <parameter name="exists" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="testGet" start="90" end="93" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <dataprovider value="attributesProvider"/>
+    </docblock>
+    <parameter name="key" byreference="false" type="{unknown}"/>
+    <parameter name="value" byreference="false" type="{unknown}"/>
+    <parameter name="expected" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="testGetDefaults" start="95" end="99" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testSet" start="104" end="108" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <dataprovider value="attributesProvider"/>
+    </docblock>
+    <parameter name="key" byreference="false" type="{unknown}"/>
+    <parameter name="value" byreference="false" type="{unknown}"/>
+    <parameter name="expected" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="testAll" start="110" end="118" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testReplace" start="120" end="130" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testRemove" start="132" end="145" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testRemoveExistingNamespacedAttribute" start="147" end="150" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testRemoveNonexistingNamespacedAttribute" start="152" end="155" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testClear" start="157" end="161" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="attributesProvider" start="163" end="183" abstract="false" final="false" static="false" visibility="public"/>
+</class>

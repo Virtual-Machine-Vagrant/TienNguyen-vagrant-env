@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="Faker\Provider\uk_UA\Person" namespace="Faker\Provider\uk_UA" name="Person" abstract="false" final="false" start="5" end="57">
+  <file path="/home/web/example/src/freegame_developer/vendor/fzaninotto/faker/src/Faker/Provider/uk_UA" file="Person.php" realpath="/home/web/example/src/freegame_developer/vendor/fzaninotto/faker/src/Faker/Provider/uk_UA/Person.php" size="3691" time="2015-05-29T06:29:14+00:00" unixtime="1432880954" sha1="0860764c341c8d8600f50092fa93a7a97f90d447" relative="freegame_developer/vendor/fzaninotto/faker/src/Faker/Provider/uk_UA/Person.php"/>
+  <extends full="Faker\Provider\Person" namespace="Faker\Provider" name="Person"/>
+  <member name="maleNameFormats" type="array" default="" visibility="protected" static="true" line="7"/>
+  <member name="femaleNameFormats" type="array" default="" visibility="protected" static="true" line="12"/>
+  <member name="firstNameMale" type="array" default="" visibility="protected" static="true" line="17"/>
+  <member name="firstNameFemale" type="array" default="" visibility="protected" static="true" line="25"/>
+  <member name="middleName" type="array" default="" visibility="protected" static="true" line="32"/>
+  <member name="lastName" type="array" default="" visibility="protected" static="true" line="39"/>
+  <method name="middleName" start="53" end="56" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Return middle name"/>
+      <example value="'Іванович'"/>
+      <access value="public"/>
+      <return description="Middle name" type="string"/>
+    </docblock>
+  </method>
+</class>

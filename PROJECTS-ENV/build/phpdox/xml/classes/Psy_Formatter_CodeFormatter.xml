@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="Psy\Formatter\CodeFormatter" namespace="Psy\Formatter" name="CodeFormatter" abstract="false" final="false" start="22" end="58">
+  <file path="/home/web/example/src/freegame_developer/vendor/psy/psysh/src/Psy/Formatter" file="CodeFormatter.php" realpath="/home/web/example/src/freegame_developer/vendor/psy/psysh/src/Psy/Formatter/CodeFormatter.php" size="1700" time="2016-03-09T05:03:14+00:00" unixtime="1457499794" sha1="805d9b5628be8940edcb6319c5423f124b73beb9" relative="freegame_developer/vendor/psy/psysh/src/Psy/Formatter/CodeFormatter.php"/>
+  <docblock>
+    <description compact="A pretty-printer for code."/>
+  </docblock>
+  <implements full="Psy\Formatter\Formatter" namespace="Psy\Formatter" name="Formatter"/>
+  <method name="format" start="32" end="57" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description compact="Format the code represented by $reflector."/>
+      <param type="object" variable="$reflector">
+        <type full="\Reflector" namespace="" name="Reflector"/>
+      </param>
+      <param description="(default: null)" type="object" variable="$colorMode">
+        <type full="Psy\Formatter\null|string" namespace="Psy\Formatter" name="null|string"/>
+      </param>
+      <return description="formatted code" type="string"/>
+    </docblock>
+    <parameter name="reflector" byreference="false" type="object">
+      <type full="Reflector" namespace="" name="Reflector"/>
+    </parameter>
+    <parameter name="colorMode" byreference="false" type="{unknown}" default="" constant="null"/>
+  </method>
+</class>

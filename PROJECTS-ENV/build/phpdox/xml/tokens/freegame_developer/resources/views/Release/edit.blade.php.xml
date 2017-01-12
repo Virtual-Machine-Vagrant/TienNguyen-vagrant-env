@@ -1,0 +1,254 @@
+<?xml version="1.0"?>
+<source xmlns="http://xml.phpdox.net/token">
+  <file xmlns="http://xml.phpdox.net/src" path="/home/web/example/src/freegame_developer/resources/views/Release" file="edit.blade.php" realpath="/home/web/example/src/freegame_developer/resources/views/Release/edit.blade.php" size="4350" time="2016-11-16T01:52:54+00:00" unixtime="1479261174" sha1="713857208c1e63806fd7b982cd8f9eacdc323c8f" relative="freegame_developer/resources/views/Release/edit.blade.php"/>
+  <line no="1">
+    <token name="T_INLINE_HTML">@extends('layout')</token>
+  </line>
+  <line no="2"/>
+  <line no="3">
+    <token name="T_INLINE_HTML">@section('content')</token>
+  </line>
+  <line no="4">
+    <token name="T_INLINE_HTML">&lt;header id="gnavi"&gt;</token>
+  </line>
+  <line no="5">
+    <token name="T_INLINE_HTML">    @include('partials.breadcrumbs', [</token>
+  </line>
+  <line no="6">
+    <token name="T_INLINE_HTML">        'breadcrumbs' =&gt; array_merge(</token>
+  </line>
+  <line no="7">
+    <token name="T_INLINE_HTML">            $formData['menuName'],</token>
+  </line>
+  <line no="8">
+    <token name="T_INLINE_HTML">            [</token>
+  </line>
+  <line no="9">
+    <token name="T_INLINE_HTML">                [$formData['screenName'], 'Release.index'],</token>
+  </line>
+  <line no="10">
+    <token name="T_INLINE_HTML">                '&#x7DE8;&#x96C6;'</token>
+  </line>
+  <line no="11">
+    <token name="T_INLINE_HTML">            ]</token>
+  </line>
+  <line no="12"/>
+  <line no="13">
+    <token name="T_INLINE_HTML">        )</token>
+  </line>
+  <line no="14">
+    <token name="T_INLINE_HTML">    ])</token>
+  </line>
+  <line no="15">
+    <token name="T_INLINE_HTML">    &lt;!-- [#gnavi] --&gt;</token>
+  </line>
+  <line no="16">
+    <token name="T_INLINE_HTML">&lt;/header&gt;</token>
+  </line>
+  <line no="17">
+    <token name="T_INLINE_HTML">@include('partials.errormessage', ['errors' =&gt; $errors])</token>
+  </line>
+  <line no="18">
+    <token name="T_INLINE_HTML">&lt;section&gt;</token>
+  </line>
+  <line no="19">
+    <token name="T_INLINE_HTML">    &lt;div class="c-area"&gt;</token>
+  </line>
+  <line no="20">
+    <token name="T_INLINE_HTML">        &lt;h2 class="c-headline"&gt;&lt;i class="fa fa-eye"&gt;&lt;/i&gt;&#x516C;&#x958B;&#x8A2D;&#x5B9A; &#x7DE8;&#x96C6;&lt;/h2&gt;</token>
+  </line>
+  <line no="21">
+    <token name="T_INLINE_HTML">        &lt;p class="bold tx-16"&gt;&#x25BC;&#x30B2;&#x30FC;&#x30E0;&#x516C;&#x958B;&#x7BA1;&#x7406;&lt;/p&gt;</token>
+  </line>
+  <line no="22">
+    <token name="T_INLINE_HTML">        {!! Form::open(['route' =&gt; 'Release.editconfirm', 'id' =&gt; 'form-confirm']) !!}</token>
+  </line>
+  <line no="23">
+    <token name="T_INLINE_HTML">        &lt;table class="c-table"&gt;</token>
+  </line>
+  <line no="24">
+    <token name="T_INLINE_HTML">            &lt;colgroup&gt;</token>
+  </line>
+  <line no="25">
+    <token name="T_INLINE_HTML">                &lt;col class="col-l"&gt;</token>
+  </line>
+  <line no="26">
+    <token name="T_INLINE_HTML">                &lt;col class="null"&gt;</token>
+  </line>
+  <line no="27">
+    <token name="T_INLINE_HTML">            &lt;/colgroup&gt;</token>
+  </line>
+  <line no="28">
+    <token name="T_INLINE_HTML">            &lt;tbody&gt;</token>
+  </line>
+  <line no="29">
+    <token name="T_INLINE_HTML">                &lt;tr {{ error_class('button_view_flg') }}&gt;</token>
+  </line>
+  <line no="30">
+    <token name="T_INLINE_HTML">                    &lt;th&gt;&#x30B2;&#x30FC;&#x30E0;&#x516C;&#x958B;&#x72B6;&#x614B;&lt;/th&gt;</token>
+  </line>
+  <line no="31">
+    <token name="T_INLINE_HTML">                    &lt;td class="v-middle"&gt;</token>
+  </line>
+  <line no="32">
+    <token name="T_INLINE_HTML">                        {!! Form::radio('button_view_flg', 1, isset($release['button_view_flg']) ? $release['button_view_flg'] == 1 ? true : false : false, ['id' =&gt; 'button_view_flg1']); !!}&lt;label for="button_view_flg1"&gt;</token>
+  </line>
+  <line no="33">
+    <token name="T_INLINE_HTML">                        &#x516C;&#x958B;&lt;/label&gt;</token>
+  </line>
+  <line no="34">
+    <token name="T_INLINE_HTML">                        {!! Form::radio('button_view_flg', 0, isset($release['button_view_flg']) ? $release['button_view_flg'] == 0 ? true : false : false , ['id' =&gt; 'button_view_flg2']); !!}&lt;label for="button_view_flg2"&gt;</token>
+  </line>
+  <line no="35">
+    <token name="T_INLINE_HTML">                        &#x975E;&#x516C;&#x958B;&lt;/label&gt;</token>
+  </line>
+  <line no="36">
+    <token name="T_INLINE_HTML">                        {!! Form::radio('button_view_flg', 2, isset($release['button_view_flg']) ? $release['button_view_flg'] == 2 ? true : false : false, ['id' =&gt; 'button_view_flg3']); !!}&lt;label for="button_view_flg3"&gt;</token>
+  </line>
+  <line no="37">
+    <token name="T_INLINE_HTML">                        CBT&#x4E2D;&lt;/label&gt;</token>
+  </line>
+  <line no="38">
+    <token name="T_INLINE_HTML">                    &lt;/td&gt;</token>
+  </line>
+  <line no="39">
+    <token name="T_INLINE_HTML">                &lt;/tr&gt;</token>
+  </line>
+  <line no="40">
+    <token name="T_INLINE_HTML">                &lt;tr {{ error_class('popup_message') }}&gt;</token>
+  </line>
+  <line no="41">
+    <token name="T_INLINE_HTML">                    &lt;th&gt;&#x30DD;&#x30C3;&#x30D7;&#x30A2;&#x30C3;&#x30D7;&#x8868;&#x793A;&#x30C6;&#x30AD;&#x30B9;&#x30C8;&lt;/th&gt;</token>
+  </line>
+  <line no="42">
+    <token name="T_INLINE_HTML">                    &lt;td&gt;</token>
+  </line>
+  <line no="43">
+    <token name="T_INLINE_HTML">                        {!! Form::textarea('popup_message', $release['popup_message'], ['rows' =&gt; 4, 'class' =&gt; 'w100', 'placeholder' =&gt; '&#x6700;&#x5927;80&#x6587;&#x5B57;']) !!}</token>
+  </line>
+  <line no="44">
+    <token name="T_INLINE_HTML">                    &lt;/td&gt;</token>
+  </line>
+  <line no="45">
+    <token name="T_INLINE_HTML">                &lt;/tr&gt;</token>
+  </line>
+  <line no="46">
+    <token name="T_INLINE_HTML">            &lt;/tbody&gt;</token>
+  </line>
+  <line no="47">
+    <token name="T_INLINE_HTML">            &lt;!-- /.c-table --&gt;</token>
+  </line>
+  <line no="48">
+    <token name="T_INLINE_HTML">        &lt;/table&gt;</token>
+  </line>
+  <line no="49">
+    <token name="T_INLINE_HTML">        &lt;p class="bold tx-16"&gt;&#x25BC;&#x30A4;&#x30F3;&#x30B9;&#x30C8;&#x30FC;&#x30EB;&#x7BA1;&#x7406;&#xFF08;&#x975E;&#x516C;&#x958B;&#x3001;CBT&#x4E2D;&#x306E;&#x307F;&#x9069;&#x7528;&#xFF09;&lt;/p&gt;</token>
+  </line>
+  <line no="50">
+    <token name="T_INLINE_HTML">        &lt;table class="c-table"&gt;</token>
+  </line>
+  <line no="51">
+    <token name="T_INLINE_HTML">            &lt;colgroup&gt;</token>
+  </line>
+  <line no="52">
+    <token name="T_INLINE_HTML">                &lt;col class="col-l"&gt;</token>
+  </line>
+  <line no="53">
+    <token name="T_INLINE_HTML">                &lt;col class="null"&gt;</token>
+  </line>
+  <line no="54">
+    <token name="T_INLINE_HTML">            &lt;/colgroup&gt;</token>
+  </line>
+  <line no="55">
+    <token name="T_INLINE_HTML">            &lt;tbody&gt;</token>
+  </line>
+  <line no="56">
+    <token name="T_INLINE_HTML">                &lt;tr {{ error_class('install_status') }}&gt;</token>
+  </line>
+  <line no="57">
+    <token name="T_INLINE_HTML">                    &lt;th&gt;&#x30A4;&#x30F3;&#x30B9;&#x30C8;&#x30FC;&#x30EB;&#x53EF;&#x5426;&#x72B6;&#x614B;&lt;/th&gt;</token>
+  </line>
+  <line no="58">
+    <token name="T_INLINE_HTML">                    &lt;td class="v-middle"&gt;</token>
+  </line>
+  <line no="59">
+    <token name="T_INLINE_HTML">                        {!! Form::radio('install_status', 1, isset($release['install_status']) ? $release['install_status'] == 1 ? true : false : false, ['id' =&gt; 'install_status1']); !!}&lt;label for="install_status1"&gt;</token>
+  </line>
+  <line no="60">
+    <token name="T_INLINE_HTML">                        &#x5168;&#x30E6;&#x30FC;&#x30B6;&#x53EF;&lt;/label&gt;</token>
+  </line>
+  <line no="61">
+    <token name="T_INLINE_HTML">                        {!! Form::radio('install_status', 0, isset($release['install_status']) ? $release['install_status'] == 0 ? true : false : false, ['id' =&gt; 'install_status2']); !!}&lt;label for="install_status2"&gt;</token>
+  </line>
+  <line no="62">
+    <token name="T_INLINE_HTML">                        &#x5168;&#x30E6;&#x30FC;&#x30B6;&#x4E0D;&#x53EF;&lt;/label&gt;</token>
+  </line>
+  <line no="63">
+    <token name="T_INLINE_HTML">                        {!! Form::radio('install_status', 2, isset($release['install_status']) ? $release['install_status'] == 2 ? true : false : false, ['id' =&gt; 'install_status3']); !!}&lt;label for="install_status3"&gt;</token>
+  </line>
+  <line no="64">
+    <token name="T_INLINE_HTML">                        CBT&#x5F53;&#x9078;&#x8005;&#x306E;&#x307F;&#x53EF;&lt;/label&gt;</token>
+  </line>
+  <line no="65">
+    <token name="T_INLINE_HTML">                    &lt;/td&gt;</token>
+  </line>
+  <line no="66">
+    <token name="T_INLINE_HTML">                &lt;/tr&gt;</token>
+  </line>
+  <line no="67">
+    <token name="T_INLINE_HTML">                &lt;tr {{ error_class('not_install_message') }}&gt;</token>
+  </line>
+  <line no="68">
+    <token name="T_INLINE_HTML">                    &lt;th&gt;&#x30DD;&#x30C3;&#x30D7;&#x30A2;&#x30C3;&#x30D7;&#x8868;&#x793A;&#x30C6;&#x30AD;&#x30B9;&#x30C8;&lt;/th&gt;</token>
+  </line>
+  <line no="69">
+    <token name="T_INLINE_HTML">                    &lt;td&gt;</token>
+  </line>
+  <line no="70">
+    <token name="T_INLINE_HTML">                        {!! Form::textarea('not_install_message', $release['not_install_message'], ['rows' =&gt; 4, 'class' =&gt; 'w100', 'placeholder' =&gt; '&#x6700;&#x5927;80&#x6587;&#x5B57;']) !!}</token>
+  </line>
+  <line no="71">
+    <token name="T_INLINE_HTML">                    &lt;/td&gt;</token>
+  </line>
+  <line no="72">
+    <token name="T_INLINE_HTML">                &lt;/tr&gt;</token>
+  </line>
+  <line no="73">
+    <token name="T_INLINE_HTML">            &lt;/tbody&gt;</token>
+  </line>
+  <line no="74">
+    <token name="T_INLINE_HTML">            &lt;!-- /.c-table --&gt;</token>
+  </line>
+  <line no="75">
+    <token name="T_INLINE_HTML">        &lt;/table&gt;</token>
+  </line>
+  <line no="76">
+    <token name="T_INLINE_HTML">        {!! Form::close() !!}</token>
+  </line>
+  <line no="77">
+    <token name="T_INLINE_HTML">        &lt;div class="center"&gt;</token>
+  </line>
+  <line no="78">
+    <token name="T_INLINE_HTML">            &lt;a href="{{ route('Release.index') }}" class="button is-medium"&gt;&lt;i class="fa fa-reply"&gt;&lt;/i&gt;&#x623B;&#x308B;&lt;/a&gt;</token>
+  </line>
+  <line no="79">
+    <token name="T_INLINE_HTML">            &lt;a href="javascript:void(0);" data-form="form-confirm" class="button btn-submit is-warning is-medium"&gt;&lt;i class="fa fa-check"&gt;&lt;/i&gt;&#x78BA;&#x8A8D;&lt;/a&gt;</token>
+  </line>
+  <line no="80">
+    <token name="T_INLINE_HTML">        &lt;/div&gt;</token>
+  </line>
+  <line no="81">
+    <token name="T_INLINE_HTML">        &lt;!-- /.c-area --&gt;</token>
+  </line>
+  <line no="82">
+    <token name="T_INLINE_HTML">    &lt;/div&gt;</token>
+  </line>
+  <line no="83">
+    <token name="T_INLINE_HTML">&lt;/section&gt;</token>
+  </line>
+  <line no="84"/>
+  <line no="85">
+    <token name="T_INLINE_HTML">@endsection</token>
+  </line>
+  <line no="86"/>
+</source>

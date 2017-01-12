@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="Faker\Provider\en_PH\Address" namespace="Faker\Provider\en_PH" name="Address" abstract="false" final="false" start="5" end="421">
+  <file path="/home/web/example/src/freegame_developer/vendor/fzaninotto/faker/src/Faker/Provider/en_PH" file="Address.php" realpath="/home/web/example/src/freegame_developer/vendor/fzaninotto/faker/src/Faker/Provider/en_PH/Address.php" size="27481" time="2015-05-29T06:29:14+00:00" unixtime="1432880954" sha1="d8aeeffe4f7706eaab0f9179dd089c57feb8197a" relative="freegame_developer/vendor/fzaninotto/faker/src/Faker/Provider/en_PH/Address.php"/>
+  <extends full="Faker\Provider\Address" namespace="Faker\Provider" name="Address"/>
+  <member name="streetNameFormats" type="array" default="" visibility="protected" static="true" line="7"/>
+  <member name="addressFormats" type="array" default="" visibility="protected" static="true" line="12"/>
+  <member name="buildingNumber" type="array" default="" visibility="protected" static="true" line="16"/>
+  <member name="postcode" type="array" default="" visibility="protected" static="true" line="17"/>
+  <member name="country" type="array" default="" visibility="protected" static="true" line="19"/>
+  <member name="province" type="array" default="" visibility="protected" static="true" line="24"/>
+  <member name="city" type="array" default="" visibility="protected" static="true" line="48"/>
+  <member name="municipality" type="array" default="" visibility="protected" static="true" line="78"/>
+  <member name="barangay" type="array" default="" visibility="protected" static="true" line="398"/>
+  <method name="province" start="402" end="405" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="city" start="407" end="410" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="municipality" start="412" end="415" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="barangay" start="417" end="420" abstract="false" final="false" static="false" visibility="public"/>
+</class>

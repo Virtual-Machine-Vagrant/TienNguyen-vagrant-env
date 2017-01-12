@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="Psr\Log\NullLogger" namespace="Psr\Log" name="NullLogger" abstract="false" final="false" start="13" end="28">
+  <file path="/home/web/example/src/freegame_developer/vendor/psr/log/Psr/Log" file="NullLogger.php" realpath="/home/web/example/src/freegame_developer/vendor/psr/log/Psr/Log/NullLogger.php" size="651" time="2016-10-10T12:19:37+00:00" unixtime="1476101977" sha1="e7b8b644efbaa3d4a9bb1a4086f974897ad75e42" relative="freegame_developer/vendor/psr/log/Psr/Log/NullLogger.php"/>
+  <docblock>
+    <description compact="This Logger can be used to avoid conditional log calls.">Logging should always be optional, and if no logger is provided to your
+library creating a NullLogger instance to have something to throw logs at
+is a good way to avoid littering your code with `if ($this-&gt;logger) { }`
+blocks.</description>
+  </docblock>
+  <extends full="Psr\Log\AbstractLogger" namespace="Psr\Log" name="AbstractLogger"/>
+  <method name="log" start="24" end="27" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Logs with an arbitrary level."/>
+      <param type="mixed" variable="$level"/>
+      <param type="string" variable="$message"/>
+      <param type="array" variable="$context"/>
+      <return type="object">
+        <type full="Psr\Log\void" namespace="Psr\Log" name="void"/>
+      </return>
+    </docblock>
+    <parameter name="level" byreference="false" type="{unknown}"/>
+    <parameter name="message" byreference="false" type="{unknown}"/>
+    <parameter name="context" byreference="false" type="array" default=""/>
+    <inline>
+      <comment value="noop" line="26"/>
+    </inline>
+  </method>
+</class>

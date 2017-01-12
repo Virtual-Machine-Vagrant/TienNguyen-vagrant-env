@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="Squiz_Sniffs_Functions_FunctionDeclarationSniff" namespace="" name="Squiz_Sniffs_Functions_FunctionDeclarationSniff" abstract="false" final="false" start="34" end="54">
+  <file path="/home/web/example/src/freegame_developer/vendor/squizlabs/php_codesniffer/CodeSniffer/Standards/Squiz/Sniffs/Functions" file="FunctionDeclarationSniff.php" realpath="/home/web/example/src/freegame_developer/vendor/squizlabs/php_codesniffer/CodeSniffer/Standards/Squiz/Sniffs/Functions/FunctionDeclarationSniff.php" size="1621" time="2016-01-19T23:39:10+00:00" unixtime="1453246750" sha1="61ac772680127e9f861c878a63432ac1d9a91c44" relative="freegame_developer/vendor/squizlabs/php_codesniffer/CodeSniffer/Standards/Squiz/Sniffs/Functions/FunctionDeclarationSniff.php"/>
+  <docblock>
+    <description compact="Squiz_Sniffs_Functions_FunctionDeclarationSniff.">Checks the function declaration is correct.</description>
+    <category value="PHP"/>
+    <package value="PHP_CodeSniffer"/>
+    <author value="Greg Sherwood &lt;gsherwood@squiz.net&gt;"/>
+    <author value="Marc McIntyre &lt;mmcintyre@squiz.net&gt;"/>
+    <copyright value="2006-2014 Squiz Pty Ltd (ABN 77 084 670 600)"/>
+    <license name="https://github.com/squizlabs/PHP_CodeSniffer/blob/master/licence.txt BSD Licence"/>
+    <version value="Release: @package_version@"/>
+    <link value="http://pear.php.net/package/PHP_CodeSniffer"/>
+  </docblock>
+  <extends full="PHP_CodeSniffer_Standards_AbstractPatternSniff" namespace="" name="PHP_CodeSniffer_Standards_AbstractPatternSniff"/>
+  <method name="getPatterns" start="43" end="51" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Returns an array of patterns to check are correct."/>
+      <return type="array"/>
+    </docblock>
+  </method>
+</class>

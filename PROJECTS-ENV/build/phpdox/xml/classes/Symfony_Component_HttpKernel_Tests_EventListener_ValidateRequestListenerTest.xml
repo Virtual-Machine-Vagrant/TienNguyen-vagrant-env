@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="Symfony\Component\HttpKernel\Tests\EventListener\ValidateRequestListenerTest" namespace="Symfony\Component\HttpKernel\Tests\EventListener" name="ValidateRequestListenerTest" abstract="false" final="false" start="21" end="42">
+  <file path="/home/web/example/src/freegame_developer/vendor/symfony/http-kernel/Tests/EventListener" file="ValidateRequestListenerTest.php" realpath="/home/web/example/src/freegame_developer/vendor/symfony/http-kernel/Tests/EventListener/ValidateRequestListenerTest.php" size="1582" time="2016-10-27T01:37:19+00:00" unixtime="1477532239" sha1="f1d109a3dd2dd6f2acd142a926daae46fab738d5" relative="freegame_developer/vendor/symfony/http-kernel/Tests/EventListener/ValidateRequestListenerTest.php"/>
+  <extends full="PHPUnit_Framework_TestCase" namespace="" name="PHPUnit_Framework_TestCase"/>
+  <method name="testListenerThrowsWhenMasterRequestHasInconsistentClientIps" start="26" end="41" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <expectedexception value="\Symfony\Component\HttpFoundation\Exception\ConflictingHeadersException"/>
+    </docblock>
+  </method>
+</class>

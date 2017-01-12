@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="App\Models\NetgameCstool\MhfCouponUser" namespace="App\Models\NetgameCstool" name="MhfCouponUser" abstract="false" final="false" start="5" end="37">
+  <file path="/home/web/example/src/freegame_developer/app/Models/NetgameCstool" file="MhfCouponUser.php" realpath="/home/web/example/src/freegame_developer/app/Models/NetgameCstool/MhfCouponUser.php" size="706" time="2017-01-03T08:12:08+00:00" unixtime="1483431128" sha1="d172e7d839ae0a0c0b1fbba62cc13cd5e51ffbb6" relative="freegame_developer/app/Models/NetgameCstool/MhfCouponUser.php"/>
+  <extends full="App\Models\NetgameCstool\NetgameCstool" namespace="App\Models\NetgameCstool" name="NetgameCstool"/>
+  <member name="table" type="string" default="'mhf_coupon_user'" visibility="protected" static="false" line="7"/>
+  <member name="timestamps" type="boolean" default="false" visibility="public" static="false" line="9"/>
+  <member name="guarded" type="array" default="" visibility="protected" static="false" line="11"/>
+  <method name="getCouponListByListCode" start="18" end="22" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Get mhf coupon user list by list code"/>
+      <param type="string" variable="$code"/>
+      <return type="array"/>
+    </docblock>
+    <parameter name="listCode" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="addMultiple" start="29" end="36" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Insert coupon user"/>
+      <param type="array" variable="$params"/>
+      <param type="boolean"/>
+    </docblock>
+    <parameter name="params" byreference="false" type="{unknown}"/>
+  </method>
+</class>

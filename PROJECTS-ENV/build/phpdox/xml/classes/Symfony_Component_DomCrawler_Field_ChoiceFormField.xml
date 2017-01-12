@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="Symfony\Component\DomCrawler\Field\ChoiceFormField" namespace="Symfony\Component\DomCrawler\Field" name="ChoiceFormField" abstract="false" final="false" start="21" end="324">
+  <file path="/home/web/example/src/freegame_developer/vendor/symfony/dom-crawler/Field" file="ChoiceFormField.php" realpath="/home/web/example/src/freegame_developer/vendor/symfony/dom-crawler/Field/ChoiceFormField.php" size="9356" time="2016-10-18T13:42:15+00:00" unixtime="1476798135" sha1="79ab213379ae334527a5edc6b6f90364bd292ae8" relative="freegame_developer/vendor/symfony/dom-crawler/Field/ChoiceFormField.php"/>
+  <docblock>
+    <description compact="ChoiceFormField represents a choice form field.">It is constructed from a HTML select tag, or a HTML checkbox, or radio inputs.</description>
+    <author value="Fabien Potencier &lt;fabien@symfony.com&gt;"/>
+  </docblock>
+  <extends full="Symfony\Component\DomCrawler\Field\FormField" namespace="Symfony\Component\DomCrawler\Field" name="FormField"/>
+  <member name="type" visibility="private" static="false" line="26">
+    <docblock>
+      <description/>
+      <var type="string"/>
+    </docblock>
+  </member>
+  <member name="multiple" visibility="private" static="false" line="30">
+    <docblock>
+      <description/>
+      <var type="object">
+        <type full="Symfony\Component\DomCrawler\Field\bool" namespace="Symfony\Component\DomCrawler\Field" name="bool"/>
+      </var>
+    </docblock>
+  </member>
+  <member name="options" visibility="private" static="false" line="34">
+    <docblock>
+      <description/>
+      <var type="array"/>
+    </docblock>
+  </member>
+  <member name="validationDisabled" type="boolean" default="false" visibility="private" static="false" line="38">
+    <docblock>
+      <description/>
+      <var type="object">
+        <type full="Symfony\Component\DomCrawler\Field\bool" namespace="Symfony\Component\DomCrawler\Field" name="bool"/>
+      </var>
+    </docblock>
+  </member>
+  <method name="hasValue" start="45" end="53" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Returns true if the field should be included in the submitted values."/>
+      <return description="true if the field should be included in the submitted values, false otherwise" type="object">
+        <type full="Symfony\Component\DomCrawler\Field\bool" namespace="Symfony\Component\DomCrawler\Field" name="bool"/>
+      </return>
+    </docblock>
+    <inline>
+      <comment value="don't send a value for unchecked checkboxes" line="47"/>
+    </inline>
+  </method>
+  <method name="isDisabled" start="60" end="73" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Check if the current selected option is disabled."/>
+      <return type="object">
+        <type full="Symfony\Component\DomCrawler\Field\bool" namespace="Symfony\Component\DomCrawler\Field" name="bool"/>
+      </return>
+    </docblock>
+  </method>
+  <method name="select" start="80" end="83" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Sets the value of the field."/>
+      <param description="The value of the field" type="string" variable="$value"/>
+    </docblock>
+    <parameter name="value" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="tick" start="90" end="97" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Ticks a checkbox."/>
+      <throws description="When the type provided is not correct" type="object">
+        <type full="\LogicException" namespace="" name="LogicException"/>
+      </throws>
+    </docblock>
+  </method>
+  <method name="untick" start="104" end="111" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Ticks a checkbox."/>
+      <throws description="When the type provided is not correct" type="object">
+        <type full="\LogicException" namespace="" name="LogicException"/>
+      </throws>
+    </docblock>
+  </method>
+  <method name="setValue" start="120" end="153" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Sets the value of the field."/>
+      <param description="The value of the field" type="string" variable="$value"/>
+      <throws description="When value type provided is not correct" type="object">
+        <type full="\InvalidArgumentException" namespace="" name="InvalidArgumentException"/>
+      </throws>
+    </docblock>
+    <parameter name="value" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="addChoice" start="164" end="176" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Adds a choice to the current ones.">This method should only be used internally.</description>
+      <param type="object" variable="$node">
+        <type full="\DOMElement" namespace="" name="DOMElement"/>
+      </param>
+      <throws description="When choice provided is not multiple nor radio" type="object">
+        <type full="\LogicException" namespace="" name="LogicException"/>
+      </throws>
+    </docblock>
+    <parameter name="node" byreference="false" type="object">
+      <type full="DOMElement" namespace="" name="DOMElement"/>
+    </parameter>
+  </method>
+  <method name="getType" start="183" end="186" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Returns the type of the choice field (radio, select, or checkbox)."/>
+      <return description="The type" type="string"/>
+    </docblock>
+  </method>
+  <method name="isMultiple" start="193" end="196" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Returns true if the field accepts multiple values."/>
+      <return description="true if the field accepts multiple values, false otherwise" type="object">
+        <type full="Symfony\Component\DomCrawler\Field\bool" namespace="Symfony\Component\DomCrawler\Field" name="bool"/>
+      </return>
+    </docblock>
+  </method>
+  <method name="initialize" start="203" end="253" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Initializes the form field."/>
+      <throws description="When node type is incorrect" type="object">
+        <type full="\LogicException" namespace="" name="LogicException"/>
+      </throws>
+    </docblock>
+  </method>
+  <method name="buildOptionValue" start="262" end="272" abstract="false" final="false" static="false" visibility="private">
+    <docblock>
+      <description compact="Returns option value with associated disabled flag."/>
+      <param type="object" variable="$node">
+        <type full="\DOMElement" namespace="" name="DOMElement"/>
+      </param>
+      <return type="array"/>
+    </docblock>
+    <parameter name="node" byreference="false" type="object">
+      <type full="DOMElement" namespace="" name="DOMElement"/>
+    </parameter>
+  </method>
+  <method name="containsOption" start="282" end="295" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Checks whether given value is in the existing options."/>
+      <param type="string" variable="$optionValue"/>
+      <param type="array" variable="$options"/>
+      <return type="object">
+        <type full="Symfony\Component\DomCrawler\Field\bool" namespace="Symfony\Component\DomCrawler\Field" name="bool"/>
+      </return>
+    </docblock>
+    <parameter name="optionValue" byreference="false" type="{unknown}"/>
+    <parameter name="options" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="availableOptionValues" start="302" end="311" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Returns list of available field options."/>
+      <return type="array"/>
+    </docblock>
+  </method>
+  <method name="disableValidation" start="318" end="323" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Disables the internal validation of the field."/>
+      <return resolution="self" type="object">
+        <type full="Symfony\Component\DomCrawler\Field\ChoiceFormField" namespace="Symfony\Component\DomCrawler\Field" name="ChoiceFormField"/>
+      </return>
+    </docblock>
+  </method>
+</class>

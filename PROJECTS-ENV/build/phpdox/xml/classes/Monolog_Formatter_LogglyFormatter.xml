@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="Monolog\Formatter\LogglyFormatter" namespace="Monolog\Formatter" name="LogglyFormatter" abstract="false" final="false" start="19" end="47">
+  <file path="/home/web/example/src/freegame_developer/vendor/monolog/monolog/src/Monolog/Formatter" file="LogglyFormatter.php" realpath="/home/web/example/src/freegame_developer/vendor/monolog/monolog/src/Monolog/Formatter/LogglyFormatter.php" size="1322" time="2016-07-29T03:23:52+00:00" unixtime="1469762632" sha1="b089e3e677eaf2a3cc84d88efed68ccc603a5ee4" relative="freegame_developer/vendor/monolog/monolog/src/Monolog/Formatter/LogglyFormatter.php"/>
+  <docblock>
+    <description compact="Encodes message information into JSON in a format compatible with Loggly."/>
+    <author value="Adam Pancutt &lt;adam@pancutt.com&gt;"/>
+  </docblock>
+  <extends full="Monolog\Formatter\JsonFormatter" namespace="Monolog\Formatter" name="JsonFormatter"/>
+  <constructor name="__construct" start="27" end="30" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Overrides the default batch mode to new lines for compatibility with the Loggly bulk API."/>
+      <param type="int" variable="$batchMode"/>
+    </docblock>
+    <parameter name="batchMode" byreference="false" type="{unknown}" default="" constant="self::BATCH_MODE_NEWLINES"/>
+    <parameter name="appendNewline" byreference="false" type="boolean" default="false"/>
+  </constructor>
+  <method name="format" start="38" end="46" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Appends the 'timestamp' parameter for indexing by Loggly."/>
+      <see value="https://www.loggly.com/docs/automated-parsing/#json"/>
+      <see value="\Monolog\Formatter\JsonFormatter::format()"/>
+    </docblock>
+    <parameter name="record" byreference="false" type="array"/>
+  </method>
+</class>

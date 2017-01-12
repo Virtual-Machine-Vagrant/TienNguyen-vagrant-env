@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="GrahamCampbell\Flysystem\Cache\IlluminateConnector" namespace="GrahamCampbell\Flysystem\Cache" name="IlluminateConnector" abstract="false" final="false" start="23" end="97">
+  <file path="/home/web/example/src/freegame_developer/vendor/graham-campbell/flysystem/src/Cache" file="IlluminateConnector.php" realpath="/home/web/example/src/freegame_developer/vendor/graham-campbell/flysystem/src/Cache/IlluminateConnector.php" size="2225" time="2016-04-26T14:23:32+00:00" unixtime="1461680612" sha1="9da924f3aec8afd0c3e24a179b2c53f2719a5687" relative="freegame_developer/vendor/graham-campbell/flysystem/src/Cache/IlluminateConnector.php"/>
+  <docblock>
+    <description compact="This is the illuminate connector class."/>
+    <author value="Graham Campbell &lt;graham@alt-three.com&gt;"/>
+  </docblock>
+  <implements full="GrahamCampbell\Manager\ConnectorInterface" namespace="GrahamCampbell\Manager" name="ConnectorInterface"/>
+  <member name="cache" visibility="protected" static="false" line="30">
+    <docblock>
+      <description compact="The cache factory instance."/>
+      <var type="object">
+        <type full="\Illuminate\Contracts\Cache\Factory" namespace="\Illuminate\Contracts\Cache" name="Factory"/>
+      </var>
+    </docblock>
+  </member>
+  <constructor name="__construct" start="39" end="42" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Create a new illuminate connector instance."/>
+      <param type="object" variable="$cache">
+        <type full="\Illuminate\Contracts\Cache\Factory" namespace="\Illuminate\Contracts\Cache" name="Factory"/>
+      </param>
+      <return type="object">
+        <type full="GrahamCampbell\Flysystem\Cache\void" namespace="GrahamCampbell\Flysystem\Cache" name="void"/>
+      </return>
+    </docblock>
+    <parameter name="cache" byreference="false" type="object">
+      <type full="Illuminate\Contracts\Cache\Factory" namespace="Illuminate\Contracts\Cache" name="Factory"/>
+    </parameter>
+  </constructor>
+  <method name="connect" start="51" end="56" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Establish a cache connection."/>
+      <param type="array" variable="$config" of="object">
+        <type full="GrahamCampbell\Flysystem\Cache\string" namespace="GrahamCampbell\Flysystem\Cache" name="string"/>
+      </param>
+      <return type="object">
+        <type full="\GrahamCampbell\Flysystem\Cache\IlluminateCache" namespace="\GrahamCampbell\Flysystem\Cache" name="IlluminateCache"/>
+      </return>
+    </docblock>
+    <parameter name="config" byreference="false" type="array"/>
+  </method>
+  <method name="getClient" start="65" end="70" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Get the cache client."/>
+      <param type="array" variable="$config" of="object">
+        <type full="GrahamCampbell\Flysystem\Cache\string" namespace="GrahamCampbell\Flysystem\Cache" name="string"/>
+      </param>
+      <return type="object">
+        <type full="\Illuminate\Contracts\Cache\Store" namespace="\Illuminate\Contracts\Cache" name="Store"/>
+      </return>
+    </docblock>
+    <parameter name="config" byreference="false" type="array"/>
+  </method>
+  <method name="getAdapter" start="80" end="86" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Get the illuminate cache adapter."/>
+      <param type="object" variable="$client">
+        <type full="\Illuminate\Contracts\Cache\Store" namespace="\Illuminate\Contracts\Cache" name="Store"/>
+      </param>
+      <param type="array" variable="$config" of="object">
+        <type full="GrahamCampbell\Flysystem\Cache\string" namespace="GrahamCampbell\Flysystem\Cache" name="string"/>
+      </param>
+      <return type="object">
+        <type full="\GrahamCampbell\Flysystem\Cache\IlluminateCache" namespace="\GrahamCampbell\Flysystem\Cache" name="IlluminateCache"/>
+      </return>
+    </docblock>
+    <parameter name="client" byreference="false" type="object">
+      <type full="Illuminate\Contracts\Cache\Store" namespace="Illuminate\Contracts\Cache" name="Store"/>
+    </parameter>
+    <parameter name="config" byreference="false" type="array"/>
+  </method>
+  <method name="getCache" start="93" end="96" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Get the cache instance."/>
+      <return type="object">
+        <type full="\Illuminate\Contracts\Cache\Factory" namespace="\Illuminate\Contracts\Cache" name="Factory"/>
+      </return>
+    </docblock>
+  </method>
+</class>

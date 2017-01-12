@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="spec\PhpSpec\Message\CurrentExampleTrackerSpec" namespace="spec\PhpSpec\Message" name="CurrentExampleTrackerSpec" abstract="false" final="false" start="9" end="28">
+  <file path="/home/web/example/src/freegame_developer/vendor/phpspec/phpspec/spec/PhpSpec/Message" file="CurrentExampleTrackerSpec.php" realpath="/home/web/example/src/freegame_developer/vendor/phpspec/phpspec/spec/PhpSpec/Message/CurrentExampleTrackerSpec.php" size="723" time="2016-01-01T10:17:54+00:00" unixtime="1451643474" sha1="b4d02dcd36ce1a8f1b388b7d6470fc5175079ab9" relative="freegame_developer/vendor/phpspec/phpspec/spec/PhpSpec/Message/CurrentExampleTrackerSpec.php"/>
+  <extends full="PhpSpec\ObjectBehavior" namespace="PhpSpec" name="ObjectBehavior"/>
+  <method name="it_is_initializable" start="11" end="14" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="it_should_set_a_message" start="16" end="21" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="it_should_be_null_on_construction" start="23" end="27" abstract="false" final="false" static="false" visibility="public"/>
+</class>

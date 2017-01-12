@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="Barryvdh\Debugbar\Storage\FilesystemStorage" namespace="Barryvdh\Debugbar\Storage" name="FilesystemStorage" abstract="false" final="false" start="12" end="142">
+  <file path="/home/web/example/src/freegame_developer/vendor/barryvdh/laravel-debugbar/src/Storage" file="FilesystemStorage.php" realpath="/home/web/example/src/freegame_developer/vendor/barryvdh/laravel-debugbar/src/Storage/FilesystemStorage.php" size="3961" time="2016-09-15T14:05:56+00:00" unixtime="1473948356" sha1="666b5cbb00c4f8021f5a08cb7994f8b158d53e9f" relative="freegame_developer/vendor/barryvdh/laravel-debugbar/src/Storage/FilesystemStorage.php"/>
+  <docblock>
+    <description compact="Stores collected data into files"/>
+  </docblock>
+  <implements full="DebugBar\Storage\StorageInterface" namespace="DebugBar\Storage" name="StorageInterface"/>
+  <member name="dirname" visibility="protected" static="false" line="14"/>
+  <member name="files" visibility="protected" static="false" line="15"/>
+  <member name="gc_lifetime" type="integer" default="24" visibility="protected" static="false" line="16"/>
+  <member name="gc_probability" type="integer" default="5" visibility="protected" static="false" line="17"/>
+  <constructor name="__construct" start="23" end="27" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <param description="The filesystem" type="object" variable="$files">
+        <type full="\Illuminate\Filesystem\Filesystem" namespace="\Illuminate\Filesystem" name="Filesystem"/>
+      </param>
+      <param description="Directories where to store files" type="string" variable="$dirname"/>
+    </docblock>
+    <parameter name="files" byreference="false" type="{unknown}"/>
+    <parameter name="dirname" byreference="false" type="{unknown}"/>
+  </constructor>
+  <method name="save" start="32" end="52" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="{@inheritDoc}"/>
+    </docblock>
+    <parameter name="id" byreference="false" type="{unknown}"/>
+    <parameter name="data" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="Randomly check if we should collect old files" line="48"/>
+    </inline>
+  </method>
+  <method name="makeFilename" start="60" end="63" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Create the filename for the data, based on the id."/>
+      <param variable="$id"/>
+      <return type="string"/>
+    </docblock>
+    <parameter name="id" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="garbageCollect" start="68" end="75" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Delete files older then a certain age (gc_lifetime)"/>
+    </docblock>
+  </method>
+  <method name="get" start="80" end="83" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="{@inheritDoc}"/>
+    </docblock>
+    <parameter name="id" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="find" start="88" end="114" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="{@inheritDoc}"/>
+    </docblock>
+    <parameter name="filters" byreference="false" type="array" default=""/>
+    <parameter name="max" byreference="false" type="integer" default="20"/>
+    <parameter name="offset" byreference="false" type="integer" default="0"/>
+    <inline>
+      <comment value="Sort by modified time, newest first" line="90"/>
+      <comment value="Loop through .json files, filter the metadata and stop when max is found." line="95"/>
+    </inline>
+  </method>
+  <method name="filter" start="123" end="131" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Filter the metadata for matches."/>
+      <param variable="$meta"/>
+      <param variable="$filters"/>
+      <return type="object">
+        <type full="Barryvdh\Debugbar\Storage\bool" namespace="Barryvdh\Debugbar\Storage" name="bool"/>
+      </return>
+    </docblock>
+    <parameter name="meta" byreference="false" type="{unknown}"/>
+    <parameter name="filters" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="clear" start="136" end="141" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="{@inheritDoc}"/>
+    </docblock>
+  </method>
+</class>

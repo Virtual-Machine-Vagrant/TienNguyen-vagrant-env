@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="App\Services\TopService" namespace="App\Services" name="TopService" abstract="false" final="false" start="7" end="25">
+  <file path="/home/web/example/src/freegame_developer/app/Services" file="TopService.php" realpath="/home/web/example/src/freegame_developer/app/Services/TopService.php" size="416" time="2016-11-16T01:52:54+00:00" unixtime="1479261174" sha1="8135701798ff721e284e8158d1e3ecd5ab0966eb" relative="freegame_developer/app/Services/TopService.php"/>
+  <extends full="App\Services\CustomService" namespace="App\Services" name="CustomService"/>
+  <member name="games" visibility="protected" static="false" line="9"/>
+  <constructor name="__construct" start="11" end="14" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="games" byreference="false" type="object">
+      <type full="App\Models\NetgameCstool\Game" namespace="App\Models\NetgameCstool" name="Game"/>
+    </parameter>
+  </constructor>
+  <method name="getTopGameList" start="21" end="24" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Get list game"/>
+      <param variable="$game_id"/>
+      <return type="array"/>
+    </docblock>
+    <parameter name="game_id" byreference="false" type="{unknown}"/>
+  </method>
+</class>

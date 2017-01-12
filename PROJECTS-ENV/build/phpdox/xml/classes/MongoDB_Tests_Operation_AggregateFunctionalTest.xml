@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="MongoDB\Tests\Operation\AggregateFunctionalTest" namespace="MongoDB\Tests\Operation" name="AggregateFunctionalTest" abstract="false" final="false" start="8" end="86">
+  <file path="/home/web/example/src/freegame_developer/vendor/mongodb/mongodb/tests/Operation" file="AggregateFunctionalTest.php" realpath="/home/web/example/src/freegame_developer/vendor/mongodb/mongodb/tests/Operation/AggregateFunctionalTest.php" size="2636" time="2016-09-23T19:38:29+00:00" unixtime="1474659509" sha1="0b28c1b50d689c5a768d483d893371f5e95e6c2d" relative="freegame_developer/vendor/mongodb/mongodb/tests/Operation/AggregateFunctionalTest.php"/>
+  <extends full="MongoDB\Tests\Operation\FunctionalTestCase" namespace="MongoDB\Tests\Operation" name="FunctionalTestCase"/>
+  <member name="wireVersionForCursor" type="integer" default="2" visibility="private" static="true" line="10"/>
+  <method name="testUnrecognizedPipelineState" start="15" end="19" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <expectedexception value="MongoDB\Driver\Exception\RuntimeException"/>
+    </docblock>
+  </method>
+  <method name="testTypeMapOption" start="24" end="37" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <dataprovider value="provideTypeMapOptionsAndExpectedDocument"/>
+    </docblock>
+    <parameter name="typeMap" byreference="false" type="array"/>
+    <parameter name="expectedDocuments" byreference="false" type="array"/>
+  </method>
+  <method name="provideTypeMapOptionsAndExpectedDocument" start="39" end="64" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="createFixtures" start="71" end="85" abstract="false" final="false" static="false" visibility="private">
+    <docblock>
+      <description compact="Create data fixtures."/>
+      <param type="integer" variable="$n"/>
+    </docblock>
+    <parameter name="n" byreference="false" type="{unknown}"/>
+  </method>
+</class>

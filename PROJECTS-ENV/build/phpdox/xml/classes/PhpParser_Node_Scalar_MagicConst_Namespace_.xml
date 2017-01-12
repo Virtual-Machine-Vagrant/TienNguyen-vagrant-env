@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="PhpParser\Node\Scalar\MagicConst\Namespace_" namespace="PhpParser\Node\Scalar\MagicConst" name="Namespace_" abstract="false" final="false" start="7" end="12">
+  <file path="/home/web/example/src/freegame_developer/vendor/nikic/php-parser/lib/PhpParser/Node/Scalar/MagicConst" file="Namespace_.php" realpath="/home/web/example/src/freegame_developer/vendor/nikic/php-parser/lib/PhpParser/Node/Scalar/MagicConst/Namespace_.php" size="200" time="2016-09-16T12:04:44+00:00" unixtime="1474027484" sha1="6a4b2d3394eb35fd2729ce445da045a9a8c28e42" relative="freegame_developer/vendor/nikic/php-parser/lib/PhpParser/Node/Scalar/MagicConst/Namespace_.php"/>
+  <extends full="PhpParser\Node\Scalar\MagicConst" namespace="PhpParser\Node\Scalar" name="MagicConst"/>
+  <method name="getName" start="9" end="11" abstract="false" final="false" static="false" visibility="public"/>
+</class>

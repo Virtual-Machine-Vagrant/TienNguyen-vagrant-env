@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="Monolog\Formatter\LineFormatter" namespace="Monolog\Formatter" name="LineFormatter" abstract="false" final="false" start="22" end="169">
+  <file path="/home/web/example/src/freegame_developer/vendor/monolog/monolog/src/Monolog/Formatter" file="LineFormatter.php" realpath="/home/web/example/src/freegame_developer/vendor/monolog/monolog/src/Monolog/Formatter/LineFormatter.php" size="5184" time="2016-07-29T03:23:52+00:00" unixtime="1469762632" sha1="97d89f7c1e4a894fedf7b13b4947be05f5b9633a" relative="freegame_developer/vendor/monolog/monolog/src/Monolog/Formatter/LineFormatter.php"/>
+  <docblock>
+    <description compact="Formats incoming records into a one-line string">This is especially useful for logging to files</description>
+    <author value="Jordi Boggiano &lt;j.boggiano@seld.be&gt;"/>
+    <author value="Christophe Coevoet &lt;stof@notk.org&gt;"/>
+  </docblock>
+  <extends full="Monolog\Formatter\NormalizerFormatter" namespace="Monolog\Formatter" name="NormalizerFormatter"/>
+  <constant type="string" name="SIMPLE_FORMAT" value="&quot;[%datetime%] %channel%.%level_name%: %message% %context% %extra%\n&quot;"/>
+  <member name="format" visibility="protected" static="false" line="26"/>
+  <member name="allowInlineLineBreaks" visibility="protected" static="false" line="27"/>
+  <member name="ignoreEmptyContextAndExtra" visibility="protected" static="false" line="28"/>
+  <member name="includeStacktraces" visibility="protected" static="false" line="29"/>
+  <constructor name="__construct" start="37" end="43" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <param description="The format of the message" type="string" variable="$format"/>
+      <param description="The format of the timestamp: one supported by DateTime::format" type="string" variable="$dateFormat"/>
+      <param description="Whether to allow inline line breaks in log entries" type="object" variable="$allowInlineLineBreaks">
+        <type full="Monolog\Formatter\bool" namespace="Monolog\Formatter" name="bool"/>
+      </param>
+      <param type="object" variable="$ignoreEmptyContextAndExtra">
+        <type full="Monolog\Formatter\bool" namespace="Monolog\Formatter" name="bool"/>
+      </param>
+    </docblock>
+    <parameter name="format" byreference="false" type="{unknown}" default="" constant="null"/>
+    <parameter name="dateFormat" byreference="false" type="{unknown}" default="" constant="null"/>
+    <parameter name="allowInlineLineBreaks" byreference="false" type="boolean" default="false"/>
+    <parameter name="ignoreEmptyContextAndExtra" byreference="false" type="boolean" default="false"/>
+  </constructor>
+  <method name="includeStacktraces" start="45" end="51" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="include" byreference="false" type="boolean" default="true"/>
+  </method>
+  <method name="allowInlineLineBreaks" start="53" end="56" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="allow" byreference="false" type="boolean" default="true"/>
+  </method>
+  <method name="ignoreEmptyContextAndExtra" start="58" end="61" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="ignore" byreference="false" type="boolean" default="true"/>
+  </method>
+  <method name="format" start="66" end="105" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="{@inheritdoc}"/>
+    </docblock>
+    <parameter name="record" byreference="false" type="array"/>
+  </method>
+  <method name="formatBatch" start="107" end="115" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="records" byreference="false" type="array"/>
+  </method>
+  <method name="stringify" start="117" end="120" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="value" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="normalizeException" start="122" end="142" abstract="false" final="false" static="false" visibility="protected">
+    <parameter name="e" byreference="false" type="{unknown}"/>
+    <inline>
+      <todo value="2.0 only check for Throwable" line="124"/>
+    </inline>
+  </method>
+  <method name="convertToString" start="144" end="159" abstract="false" final="false" static="false" visibility="protected">
+    <parameter name="data" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="replaceNewlines" start="161" end="168" abstract="false" final="false" static="false" visibility="protected">
+    <parameter name="str" byreference="false" type="{unknown}"/>
+  </method>
+</class>

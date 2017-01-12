@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="Symfony\Component\DomCrawler\Tests\CrawlerTest" namespace="Symfony\Component\DomCrawler\Tests" name="CrawlerTest" abstract="false" final="false" start="17" end="1040">
+  <file path="/home/web/example/src/freegame_developer/vendor/symfony/dom-crawler/Tests" file="CrawlerTest.php" realpath="/home/web/example/src/freegame_developer/vendor/symfony/dom-crawler/Tests/CrawlerTest.php" size="47509" time="2016-10-18T13:42:15+00:00" unixtime="1476798135" sha1="e33bbdc20b7738e7b46d7ee78ad82788ebcddd9f" relative="freegame_developer/vendor/symfony/dom-crawler/Tests/CrawlerTest.php"/>
+  <extends full="PHPUnit_Framework_TestCase" namespace="" name="PHPUnit_Framework_TestCase"/>
+  <method name="testConstructor" start="19" end="26" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testAdd" start="28" end="52" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testAddInvalidNode" start="57" end="61" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <expectedexception value="\InvalidArgumentException"/>
+    </docblock>
+  </method>
+  <method name="testAddHtmlContent" start="63" end="74" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testAddHtmlContentCharset" start="79" end="85" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <requires value="extension mbstring"/>
+    </docblock>
+  </method>
+  <method name="testAddHtmlContentInvalidBaseTag" start="87" end="94" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testAddHtmlContentUnsupportedCharset" start="96" end="102" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testAddHtmlContentCharsetGbk" start="107" end="114" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <requires value="extension mbstring"/>
+    </docblock>
+    <inline>
+      <comment value="gbk encode of &lt;html&gt;&lt;p&gt;中文&lt;/p&gt;&lt;/html&gt;" line="110"/>
+    </inline>
+  </method>
+  <method name="testAddHtmlContentWithErrors" start="116" end="139" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testAddXmlContent" start="141" end="147" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testAddXmlContentCharset" start="149" end="155" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testAddXmlContentWithErrors" start="157" end="178" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testAddContent" start="180" end="213" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testAddDocument" start="215" end="221" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testAddNodeList" start="223" end="229" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testAddNodes" start="231" end="241" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testAddNode" start="243" end="249" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testClear" start="251" end="256" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testEq" start="258" end="266" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testEach" start="268" end="275" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testSlice" start="277" end="285" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testReduce" start="287" end="297" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testAttr" start="299" end="309" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testMissingAttrValueIsNull" start="311" end="320" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testNodeName" start="322" end="332" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testText" start="334" end="344" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testHtml" start="346" end="357" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testExtract" start="359" end="367" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testFilterXpathComplexQueries" start="369" end="391" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testFilterXPath" start="393" end="404" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testFilterXPathWithDefaultNamespace" start="406" end="411" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testFilterXPathWithCustomDefaultNamespace" start="413" end="421" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testFilterXPathWithNamespace" start="423" end="427" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testFilterXPathWithMultipleNamespaces" start="429" end="434" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testFilterXPathWithManuallyRegisteredNamespace" start="436" end="444" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testFilterXPathWithAnUrl" start="446" end="453" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testFilterXPathWithFakeRoot" start="455" end="462" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testFilterXPathWithAncestorAxis" start="464" end="469" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testFilterXPathWithAncestorOrSelfAxis" start="471" end="476" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testFilterXPathWithAttributeAxis" start="478" end="483" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testFilterXPathWithAttributeAxisAfterElementAxis" start="485" end="488" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testFilterXPathWithChildAxis" start="490" end="495" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testFilterXPathWithFollowingAxis" start="497" end="502" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testFilterXPathWithFollowingSiblingAxis" start="504" end="509" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testFilterXPathWithNamespaceAxis" start="511" end="516" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testFilterXPathWithNamespaceAxisAfterElementAxis" start="518" end="523" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testFilterXPathWithParentAxis" start="525" end="530" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testFilterXPathWithPrecedingAxis" start="532" end="537" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testFilterXPathWithPrecedingSiblingAxis" start="539" end="544" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testFilterXPathWithSelfAxes" start="546" end="553" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testFilter" start="555" end="564" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testFilterWithDefaultNamespace" start="566" end="571" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testFilterWithNamespace" start="573" end="579" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testFilterWithMultipleNamespaces" start="581" end="588" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testFilterWithDefaultNamespaceOnly" start="590" end="610" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testSelectLink" start="612" end="629" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testSelectButton" start="631" end="647" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testSelectButtonWithSingleQuotesInNameAttribute" start="649" end="668" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testSelectButtonWithDoubleQuotesInNameAttribute" start="670" end="689" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testLink" start="691" end="707" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testSelectLinkAndLinkFiltered" start="709" end="738" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testChaining" start="740" end="745" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testLinks" start="747" end="757" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testForm" start="759" end="779" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testLast" start="781" end="788" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testFirst" start="790" end="797" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testSiblings" start="799" end="821" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testNextAll" start="823" end="839" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testPreviousAll" start="841" end="857" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testChildren" start="859" end="885" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testParents" start="887" end="905" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testBaseTag" start="910" end="914" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <dataprovider value="getBaseTagData"/>
+    </docblock>
+    <parameter name="baseValue" byreference="false" type="{unknown}"/>
+    <parameter name="linkValue" byreference="false" type="{unknown}"/>
+    <parameter name="expectedUri" byreference="false" type="{unknown}"/>
+    <parameter name="currentUri" byreference="false" type="{unknown}" default="" constant="null"/>
+    <parameter name="description" byreference="false" type="{unknown}" default="" constant="null"/>
+  </method>
+  <method name="getBaseTagData" start="916" end="925" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testBaseTagWithForm" start="930" end="934" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <dataprovider value="getBaseTagWithFormData"/>
+    </docblock>
+    <parameter name="baseValue" byreference="false" type="{unknown}"/>
+    <parameter name="actionValue" byreference="false" type="{unknown}"/>
+    <parameter name="expectedUri" byreference="false" type="{unknown}"/>
+    <parameter name="currentUri" byreference="false" type="{unknown}" default="" constant="null"/>
+    <parameter name="description" byreference="false" type="{unknown}" default="" constant="null"/>
+  </method>
+  <method name="getBaseTagWithFormData" start="936" end="946" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testCountOfNestedElements" start="948" end="953" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="createTestCrawler" start="955" end="1005" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="uri" byreference="false" type="{unknown}" default="" constant="null"/>
+  </method>
+  <method name="createTestXmlCrawler" start="1007" end="1022" abstract="false" final="false" static="false" visibility="protected">
+    <parameter name="uri" byreference="false" type="{unknown}" default="" constant="null"/>
+  </method>
+  <method name="createDomDocument" start="1024" end="1030" abstract="false" final="false" static="false" visibility="protected"/>
+  <method name="createNodeList" start="1032" end="1039" abstract="false" final="false" static="false" visibility="protected"/>
+</class>

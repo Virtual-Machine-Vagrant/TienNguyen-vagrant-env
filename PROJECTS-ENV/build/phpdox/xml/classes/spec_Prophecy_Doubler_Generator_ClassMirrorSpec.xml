@@ -1,0 +1,305 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="spec\Prophecy\Doubler\Generator\ClassMirrorSpec" namespace="spec\Prophecy\Doubler\Generator" name="ClassMirrorSpec" abstract="false" final="false" start="11" end="773">
+  <file path="/home/web/example/src/freegame_developer/vendor/phpspec/prophecy/spec/Prophecy/Doubler/Generator" file="ClassMirrorSpec.php" realpath="/home/web/example/src/freegame_developer/vendor/phpspec/prophecy/spec/Prophecy/Doubler/Generator/ClassMirrorSpec.php" size="31699" time="2016-06-07T08:13:47+00:00" unixtime="1465287227" sha1="98b5475eb3d88894153a4673e78e1b06497279ee" relative="freegame_developer/vendor/phpspec/prophecy/spec/Prophecy/Doubler/Generator/ClassMirrorSpec.php"/>
+  <extends full="PhpSpec\ObjectBehavior" namespace="PhpSpec" name="ObjectBehavior"/>
+  <method name="it_reflects_a_class_by_mirroring_all_its_public_methods" start="20" end="88" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <param type="object" variable="$class">
+        <type full="ReflectionClass" namespace="" name="ReflectionClass"/>
+      </param>
+      <param type="object" variable="$parent">
+        <type full="ReflectionClass" namespace="" name="ReflectionClass"/>
+      </param>
+      <param type="object" variable="$method1">
+        <type full="ReflectionMethod" namespace="" name="ReflectionMethod"/>
+      </param>
+      <param type="object" variable="$method2">
+        <type full="ReflectionMethod" namespace="" name="ReflectionMethod"/>
+      </param>
+      <param type="object" variable="$method3">
+        <type full="ReflectionMethod" namespace="" name="ReflectionMethod"/>
+      </param>
+    </docblock>
+    <parameter name="class" byreference="false" type="{unknown}"/>
+    <parameter name="parent" byreference="false" type="{unknown}"/>
+    <parameter name="method1" byreference="false" type="{unknown}"/>
+    <parameter name="method2" byreference="false" type="{unknown}"/>
+    <parameter name="method3" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="it_changes_argument_names_if_they_are_varying" start="95" end="132" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <param type="object" variable="$class">
+        <type full="ReflectionClass" namespace="" name="ReflectionClass"/>
+      </param>
+      <param type="object" variable="$method">
+        <type full="ReflectionMethod" namespace="" name="ReflectionMethod"/>
+      </param>
+      <param type="object" variable="$parameter">
+        <type full="ReflectionParameter" namespace="" name="ReflectionParameter"/>
+      </param>
+    </docblock>
+    <parameter name="class" byreference="false" type="{unknown}"/>
+    <parameter name="method" byreference="false" type="{unknown}"/>
+    <parameter name="parameter" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="it_reflects_protected_abstract_methods" start="138" end="164" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <param type="object" variable="$class">
+        <type full="ReflectionClass" namespace="" name="ReflectionClass"/>
+      </param>
+      <param type="object" variable="$method">
+        <type full="ReflectionMethod" namespace="" name="ReflectionMethod"/>
+      </param>
+    </docblock>
+    <parameter name="class" byreference="false" type="{unknown}"/>
+    <parameter name="method" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="it_reflects_public_static_methods" start="170" end="197" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <param type="object" variable="$class">
+        <type full="ReflectionClass" namespace="" name="ReflectionClass"/>
+      </param>
+      <param type="object" variable="$method">
+        <type full="ReflectionMethod" namespace="" name="ReflectionMethod"/>
+      </param>
+    </docblock>
+    <parameter name="class" byreference="false" type="{unknown}"/>
+    <parameter name="method" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="it_reflects_allowed_magic_methods" start="209" end="283" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <param type="object" variable="$class">
+        <type full="ReflectionClass" namespace="" name="ReflectionClass"/>
+      </param>
+      <param type="object" variable="$constructMethod">
+        <type full="ReflectionMethod" namespace="" name="ReflectionMethod"/>
+      </param>
+      <param type="object" variable="$destructMethod">
+        <type full="ReflectionMethod" namespace="" name="ReflectionMethod"/>
+      </param>
+      <param type="object" variable="$sleepMethod">
+        <type full="ReflectionMethod" namespace="" name="ReflectionMethod"/>
+      </param>
+      <param type="object" variable="$wakeupMethod">
+        <type full="ReflectionMethod" namespace="" name="ReflectionMethod"/>
+      </param>
+      <param type="object" variable="$toStringMethod">
+        <type full="ReflectionMethod" namespace="" name="ReflectionMethod"/>
+      </param>
+      <param type="object" variable="$callMethod">
+        <type full="ReflectionMethod" namespace="" name="ReflectionMethod"/>
+      </param>
+      <param type="object" variable="$invokeMethod">
+        <type full="ReflectionMethod" namespace="" name="ReflectionMethod"/>
+      </param>
+    </docblock>
+    <parameter name="class" byreference="false" type="{unknown}"/>
+    <parameter name="constructMethod" byreference="false" type="{unknown}"/>
+    <parameter name="destructMethod" byreference="false" type="{unknown}"/>
+    <parameter name="sleepMethod" byreference="false" type="{unknown}"/>
+    <parameter name="wakeupMethod" byreference="false" type="{unknown}"/>
+    <parameter name="toStringMethod" byreference="false" type="{unknown}"/>
+    <parameter name="callMethod" byreference="false" type="{unknown}"/>
+    <parameter name="invokeMethod" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="it_properly_reads_methods_arguments_with_types" start="294" end="389" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <param type="object" variable="$class">
+        <type full="ReflectionClass" namespace="" name="ReflectionClass"/>
+      </param>
+      <param type="object" variable="$method">
+        <type full="ReflectionMethod" namespace="" name="ReflectionMethod"/>
+      </param>
+      <param type="object" variable="$param1">
+        <type full="ReflectionParameter" namespace="" name="ReflectionParameter"/>
+      </param>
+      <param type="object" variable="$param2">
+        <type full="ReflectionParameter" namespace="" name="ReflectionParameter"/>
+      </param>
+      <param type="object" variable="$typeHint">
+        <type full="ReflectionClass" namespace="" name="ReflectionClass"/>
+      </param>
+      <param type="object" variable="$param3">
+        <type full="ReflectionParameter" namespace="" name="ReflectionParameter"/>
+      </param>
+      <param type="object" variable="$param4">
+        <type full="ReflectionParameter" namespace="" name="ReflectionParameter"/>
+      </param>
+    </docblock>
+    <parameter name="class" byreference="false" type="{unknown}"/>
+    <parameter name="method" byreference="false" type="{unknown}"/>
+    <parameter name="param1" byreference="false" type="{unknown}"/>
+    <parameter name="param2" byreference="false" type="{unknown}"/>
+    <parameter name="typeHint" byreference="false" type="{unknown}"/>
+    <parameter name="param3" byreference="false" type="{unknown}"/>
+    <parameter name="param4" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="it_marks_required_args_without_types_as_not_optional" start="396" end="444" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <param type="object" variable="$class">
+        <type full="ReflectionClass" namespace="" name="ReflectionClass"/>
+      </param>
+      <param type="object" variable="$method">
+        <type full="ReflectionMethod" namespace="" name="ReflectionMethod"/>
+      </param>
+      <param type="object" variable="$param1">
+        <type full="ReflectionParameter" namespace="" name="ReflectionParameter"/>
+      </param>
+    </docblock>
+    <parameter name="class" byreference="false" type="{unknown}"/>
+    <parameter name="method" byreference="false" type="{unknown}"/>
+    <parameter name="param1" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="it_marks_passed_by_reference_args_as_passed_by_reference" start="454" end="533" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <param type="object" variable="$class">
+        <type full="ReflectionClass" namespace="" name="ReflectionClass"/>
+      </param>
+      <param type="object" variable="$method">
+        <type full="ReflectionMethod" namespace="" name="ReflectionMethod"/>
+      </param>
+      <param type="object" variable="$param1">
+        <type full="ReflectionParameter" namespace="" name="ReflectionParameter"/>
+      </param>
+      <param type="object" variable="$param2">
+        <type full="ReflectionParameter" namespace="" name="ReflectionParameter"/>
+      </param>
+      <param type="object" variable="$param3">
+        <type full="ReflectionParameter" namespace="" name="ReflectionParameter"/>
+      </param>
+      <param type="object" variable="$typeHint">
+        <type full="ReflectionClass" namespace="" name="ReflectionClass"/>
+      </param>
+    </docblock>
+    <parameter name="class" byreference="false" type="{unknown}"/>
+    <parameter name="method" byreference="false" type="{unknown}"/>
+    <parameter name="param1" byreference="false" type="{unknown}"/>
+    <parameter name="param2" byreference="false" type="{unknown}"/>
+    <parameter name="param3" byreference="false" type="{unknown}"/>
+    <parameter name="typeHint" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="it_throws_an_exception_if_class_is_final" start="538" end="546" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <param type="object" variable="$class">
+        <type full="ReflectionClass" namespace="" name="ReflectionClass"/>
+      </param>
+    </docblock>
+    <parameter name="class" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="it_ignores_final_methods" start="552" end="565" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <param type="object" variable="$class">
+        <type full="ReflectionClass" namespace="" name="ReflectionClass"/>
+      </param>
+      <param type="object" variable="$method">
+        <type full="ReflectionMethod" namespace="" name="ReflectionMethod"/>
+      </param>
+    </docblock>
+    <parameter name="class" byreference="false" type="{unknown}"/>
+    <parameter name="method" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="it_marks_final_methods_as_unextendable" start="571" end="585" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <param type="object" variable="$class">
+        <type full="ReflectionClass" namespace="" name="ReflectionClass"/>
+      </param>
+      <param type="object" variable="$method">
+        <type full="ReflectionMethod" namespace="" name="ReflectionMethod"/>
+      </param>
+    </docblock>
+    <parameter name="class" byreference="false" type="{unknown}"/>
+    <parameter name="method" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="it_throws_an_exception_if_interface_provided_instead_of_class" start="590" end="597" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <param type="object" variable="$interface">
+        <type full="ReflectionClass" namespace="" name="ReflectionClass"/>
+      </param>
+    </docblock>
+    <parameter name="interface" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="it_reflects_all_interfaces_methods" start="606" end="659" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <param type="object" variable="$interface1">
+        <type full="ReflectionClass" namespace="" name="ReflectionClass"/>
+      </param>
+      <param type="object" variable="$interface2">
+        <type full="ReflectionClass" namespace="" name="ReflectionClass"/>
+      </param>
+      <param type="object" variable="$method1">
+        <type full="ReflectionMethod" namespace="" name="ReflectionMethod"/>
+      </param>
+      <param type="object" variable="$method2">
+        <type full="ReflectionMethod" namespace="" name="ReflectionMethod"/>
+      </param>
+      <param type="object" variable="$method3">
+        <type full="ReflectionMethod" namespace="" name="ReflectionMethod"/>
+      </param>
+    </docblock>
+    <parameter name="interface1" byreference="false" type="{unknown}"/>
+    <parameter name="interface2" byreference="false" type="{unknown}"/>
+    <parameter name="method1" byreference="false" type="{unknown}"/>
+    <parameter name="method2" byreference="false" type="{unknown}"/>
+    <parameter name="method3" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="it_ignores_virtually_private_methods" start="667" end="710" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <param type="object" variable="$class">
+        <type full="ReflectionClass" namespace="" name="ReflectionClass"/>
+      </param>
+      <param type="object" variable="$method1">
+        <type full="ReflectionMethod" namespace="" name="ReflectionMethod"/>
+      </param>
+      <param type="object" variable="$method2">
+        <type full="ReflectionMethod" namespace="" name="ReflectionMethod"/>
+      </param>
+      <param type="object" variable="$method3">
+        <type full="ReflectionMethod" namespace="" name="ReflectionMethod"/>
+      </param>
+    </docblock>
+    <parameter name="class" byreference="false" type="{unknown}"/>
+    <parameter name="method1" byreference="false" type="{unknown}"/>
+    <parameter name="method2" byreference="false" type="{unknown}"/>
+    <parameter name="method3" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="it_does_not_throw_exception_for_virtually_private_finals" start="716" end="728" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <param type="object" variable="$class">
+        <type full="ReflectionClass" namespace="" name="ReflectionClass"/>
+      </param>
+      <param type="object" variable="$method">
+        <type full="ReflectionMethod" namespace="" name="ReflectionMethod"/>
+      </param>
+    </docblock>
+    <parameter name="class" byreference="false" type="{unknown}"/>
+    <parameter name="method" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="it_throws_an_exception_if_class_provided_in_interfaces_list" start="733" end="740" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <param type="object" variable="$class">
+        <type full="ReflectionClass" namespace="" name="ReflectionClass"/>
+      </param>
+    </docblock>
+    <parameter name="class" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="it_throws_an_exception_if_not_reflection_provided_as_interface" start="742" end="746" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="it_doesnt_fail_to_typehint_nonexistent_FQCN" start="748" end="754" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="it_doesnt_fail_to_typehint_nonexistent_RQCN" start="756" end="762" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="it_doesnt_use_scalar_typehints" start="764" end="772" abstract="false" final="false" static="false" visibility="public"/>
+</class>

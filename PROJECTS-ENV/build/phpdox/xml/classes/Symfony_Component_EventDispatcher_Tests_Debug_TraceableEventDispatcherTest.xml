@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="Symfony\Component\EventDispatcher\Tests\Debug\TraceableEventDispatcherTest" namespace="Symfony\Component\EventDispatcher\Tests\Debug" name="TraceableEventDispatcherTest" abstract="false" final="false" start="21" end="218">
+  <file path="/home/web/example/src/freegame_developer/vendor/symfony/event-dispatcher/Tests/Debug" file="TraceableEventDispatcherTest.php" realpath="/home/web/example/src/freegame_developer/vendor/symfony/event-dispatcher/Tests/Debug/TraceableEventDispatcherTest.php" size="9115" time="2016-10-13T01:43:15+00:00" unixtime="1476322995" sha1="556688b8e04fee320b3aeda4040d5671b2606f56" relative="freegame_developer/vendor/symfony/event-dispatcher/Tests/Debug/TraceableEventDispatcherTest.php"/>
+  <extends full="PHPUnit_Framework_TestCase" namespace="" name="PHPUnit_Framework_TestCase"/>
+  <method name="testAddRemoveListener" start="23" end="35" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testGetListeners" start="37" end="44" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testHasListeners" start="46" end="57" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testGetListenerPriority" start="59" end="74" abstract="false" final="false" static="false" visibility="public">
+    <inline>
+      <comment value="Verify that priority is preserved when listener is removed and re-added" line="69"/>
+      <comment value="in preProcess() and postProcess()." line="70"/>
+    </inline>
+  </method>
+  <method name="testGetListenerPriorityReturnsZeroWhenWrappedMethodDoesNotExist" start="76" end="84" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testAddRemoveSubscriber" start="86" end="100" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testGetCalledListeners" start="102" end="115" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testGetCalledListenersNested" start="117" end="129" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testLogger" start="131" end="144" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testLoggerWithStoppedEvent" start="146" end="160" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testDispatchCallListeners" start="162" end="174" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testDispatchNested" start="176" end="188" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testDispatchReusedEventNested" start="190" end="204" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testListenerCanRemoveItselfWhenExecuted" start="206" end="217" abstract="false" final="false" static="false" visibility="public"/>
+</class>

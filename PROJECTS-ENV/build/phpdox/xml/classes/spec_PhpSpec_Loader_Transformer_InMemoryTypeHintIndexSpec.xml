@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="spec\PhpSpec\Loader\Transformer\InMemoryTypeHintIndexSpec" namespace="spec\PhpSpec\Loader\Transformer" name="InMemoryTypeHintIndexSpec" abstract="false" final="false" start="9" end="43">
+  <file path="/home/web/example/src/freegame_developer/vendor/phpspec/phpspec/spec/PhpSpec/Loader/Transformer" file="InMemoryTypeHintIndexSpec.php" realpath="/home/web/example/src/freegame_developer/vendor/phpspec/phpspec/spec/PhpSpec/Loader/Transformer/InMemoryTypeHintIndexSpec.php" size="1089" time="2016-01-01T10:17:54+00:00" unixtime="1451643474" sha1="7df63fd3dd751ecc36983e410f9a36c4c8bd6822" relative="freegame_developer/vendor/phpspec/phpspec/spec/PhpSpec/Loader/Transformer/InMemoryTypeHintIndexSpec.php"/>
+  <extends full="PhpSpec\ObjectBehavior" namespace="PhpSpec" name="ObjectBehavior"/>
+  <method name="it_is_a_typehint_index" start="11" end="14" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="it_is_case_insensitive" start="16" end="21" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="it_remembers_the_typehints_that_are_added" start="23" end="28" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="it_returns_false_for_typehints_that_have_not_been_added" start="30" end="33" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="it_throws_invalid_argument_exceptions" start="35" end="42" abstract="false" final="false" static="false" visibility="public"/>
+</class>

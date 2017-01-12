@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="Monolog\Handler\NullHandler" namespace="Monolog\Handler" name="NullHandler" abstract="false" final="false" start="24" end="45">
+  <file path="/home/web/example/src/freegame_developer/vendor/monolog/monolog/src/Monolog/Handler" file="NullHandler.php" realpath="/home/web/example/src/freegame_developer/vendor/monolog/monolog/src/Monolog/Handler/NullHandler.php" size="953" time="2016-07-29T03:23:52+00:00" unixtime="1469762632" sha1="881411f2cfaa32f9909cec0a5e2dac2ddbac90e4" relative="freegame_developer/vendor/monolog/monolog/src/Monolog/Handler/NullHandler.php"/>
+  <docblock>
+    <description compact="Blackhole">Any record it can handle will be thrown away. This can be used
+to put on top of an existing stack to override it temporarily.</description>
+    <author value="Jordi Boggiano &lt;j.boggiano@seld.be&gt;"/>
+  </docblock>
+  <extends full="Monolog\Handler\AbstractHandler" namespace="Monolog\Handler" name="AbstractHandler"/>
+  <constructor name="__construct" start="29" end="32" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <param description="The minimum logging level at which this handler will be triggered" type="int" variable="$level"/>
+    </docblock>
+    <parameter name="level" byreference="false" type="{unknown}" default="" constant="Logger::DEBUG"/>
+  </constructor>
+  <method name="handle" start="37" end="44" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="{@inheritdoc}"/>
+    </docblock>
+    <parameter name="record" byreference="false" type="array"/>
+  </method>
+</class>

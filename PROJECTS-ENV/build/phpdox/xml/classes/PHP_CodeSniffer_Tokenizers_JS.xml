@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="PHP_CodeSniffer_Tokenizers_JS" namespace="" name="PHP_CodeSniffer_Tokenizers_JS" abstract="false" final="false" start="27" end="1150">
+  <file path="/home/web/example/src/freegame_developer/vendor/squizlabs/php_codesniffer/CodeSniffer/Tokenizers" file="JS.php" realpath="/home/web/example/src/freegame_developer/vendor/squizlabs/php_codesniffer/CodeSniffer/Tokenizers/JS.php" size="50518" time="2016-01-19T23:39:10+00:00" unixtime="1453246750" sha1="2d35fe089f40fe698a6898cf37143e33d30636df" relative="freegame_developer/vendor/squizlabs/php_codesniffer/CodeSniffer/Tokenizers/JS.php"/>
+  <docblock>
+    <description compact="Tokenizes JS code."/>
+    <category value="PHP"/>
+    <package value="PHP_CodeSniffer"/>
+    <author value="Greg Sherwood &lt;gsherwood@squiz.net&gt;"/>
+    <copyright value="2006-2014 Squiz Pty Ltd (ABN 77 084 670 600)"/>
+    <license name="https://github.com/squizlabs/PHP_CodeSniffer/blob/master/licence.txt BSD Licence"/>
+    <version value="Release: @package_version@"/>
+    <link value="http://pear.php.net/package/PHP_CodeSniffer"/>
+  </docblock>
+  <member name="scopeOpeners" type="array" default="" visibility="public" static="false" line="40">
+    <docblock>
+      <description compact="A list of tokens that are allowed to open a scope.">This array also contains information about what kind of token the scope
+opener uses to open and close the scope, if the token strictly requires
+an opener, if the token can share a scope closer, and who it can be shared
+with. An example of a token that shares a scope closer is a CASE scope.</description>
+      <var type="array"/>
+    </docblock>
+  </member>
+  <member name="endScopeTokens" type="array" default="" visibility="public" static="false" line="146">
+    <docblock>
+      <description compact="A list of tokens that end the scope.">This array is just a unique collection of the end tokens
+from the _scopeOpeners array. The data is duplicated here to
+save time during parsing of the file.</description>
+      <var type="array"/>
+    </docblock>
+  </member>
+  <member name="tokenValues" type="array" default="" visibility="protected" static="false" line="156">
+    <docblock>
+      <description compact="A list of special JS tokens and their types."/>
+      <var type="array"/>
+    </docblock>
+  </member>
+  <member name="stringTokens" type="array" default="" visibility="protected" static="false" line="228">
+    <docblock>
+      <description compact="A list string delimiters."/>
+      <var type="array"/>
+    </docblock>
+  </member>
+  <member name="commentTokens" type="array" default="" visibility="protected" static="false" line="238">
+    <docblock>
+      <description compact="A list tokens that start and end comments."/>
+      <var type="array"/>
+    </docblock>
+  </member>
+  <method name="tokenizeString" start="256" end="858" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Creates an array of tokens when given some PHP code.">Starts by using token_get_all() but does a lot of extra processing
+to insert information about the context of the token.</description>
+      <param description="The string to tokenize." type="string" variable="$string"/>
+      <param description="The EOL character to use for splitting strings." type="string" variable="$eolChar"/>
+      <return type="array"/>
+    </docblock>
+    <parameter name="string" byreference="false" type="{unknown}"/>
+    <parameter name="eolChar" byreference="false" type="string" default="'\n'"/>
+    <inline>
+      <comment value="Convert newlines to single characters for ease of" line="285"/>
+      <comment value="processing. We will change them back later." line="286"/>
+      <comment value="end for" line="678"/>
+      <comment value="Now that we have done some basic tokenizing, we need to" line="700"/>
+      <comment xmlns="http://xml.phpdox.net/src" value="modify the tokens to join some together and split some apart" line="701"/>
+      <comment xmlns="http://xml.phpdox.net/src" value="so they match what the PHP tokenizer does." line="702"/>
+      <comment value="end for" line="850"/>
+    </inline>
+  </method>
+  <method name="getRegexToken" start="874" end="994" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Tokenizes a regular expression if one is found.">If a regular expression is not found, NULL is returned.</description>
+      <param description="The index of the possible regex start character." type="string" variable="$char"/>
+      <param description="The complete content of the string being tokenized." type="string" variable="$string"/>
+      <param description="An array of characters being tokenized." type="string" variable="$chars"/>
+      <param description="The current array of tokens found in the string." type="string" variable="$tokens"/>
+      <param description="The EOL character to use for splitting strings." type="string" variable="$eolChar"/>
+      <return type="object">
+        <type full="void" namespace="" name="void"/>
+      </return>
+    </docblock>
+    <parameter name="char" byreference="false" type="{unknown}"/>
+    <parameter name="string" byreference="false" type="{unknown}"/>
+    <parameter name="chars" byreference="false" type="{unknown}"/>
+    <parameter name="tokens" byreference="false" type="{unknown}"/>
+    <parameter name="eolChar" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="Find the last non-whitespace token that was added" line="900"/>
+      <comment value="to the tokens array." line="901"/>
+      <comment value="This is probably a regular expression, so look for the end of it." line="913"/>
+      <comment value="This is a regular expression, so join all the tokens together." line="980"/>
+    </inline>
+  </method>
+  <method name="processAdditional" start="1007" end="1147" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Performs additional processing after main tokenizing.">This additional processing looks for properties, closures, labels and objects.</description>
+      <param description="The array of tokens to process." type="array" variable="$tokens"/>
+      <param description="The EOL character to use for splitting strings." type="string" variable="$eolChar"/>
+      <return type="object">
+        <type full="void" namespace="" name="void"/>
+      </return>
+    </docblock>
+    <parameter name="tokens" byreference="true" type="{unknown}"/>
+    <parameter name="eolChar" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="end for" line="1141"/>
+    </inline>
+  </method>
+</class>

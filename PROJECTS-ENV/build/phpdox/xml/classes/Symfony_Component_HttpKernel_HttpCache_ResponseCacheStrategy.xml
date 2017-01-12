@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="Symfony\Component\HttpKernel\HttpCache\ResponseCacheStrategy" namespace="Symfony\Component\HttpKernel\HttpCache" name="ResponseCacheStrategy" abstract="false" final="false" start="29" end="93">
+  <file path="/home/web/example/src/freegame_developer/vendor/symfony/http-kernel/HttpCache" file="ResponseCacheStrategy.php" realpath="/home/web/example/src/freegame_developer/vendor/symfony/http-kernel/HttpCache/ResponseCacheStrategy.php" size="2861" time="2016-10-27T01:37:19+00:00" unixtime="1477532239" sha1="7e8177e0ea57424a0c3e46904c31ad0c53df669d" relative="freegame_developer/vendor/symfony/http-kernel/HttpCache/ResponseCacheStrategy.php"/>
+  <docblock>
+    <description compact="ResponseCacheStrategy knows how to compute the Response cache HTTP header based on the different response cache headers.">This implementation changes the master response TTL to the smallest TTL received
+or force validation if one of the surrogates has validation cache strategy.</description>
+    <author value="Fabien Potencier &lt;fabien@symfony.com&gt;"/>
+  </docblock>
+  <implements full="Symfony\Component\HttpKernel\HttpCache\ResponseCacheStrategyInterface" namespace="Symfony\Component\HttpKernel\HttpCache" name="ResponseCacheStrategyInterface"/>
+  <member name="cacheable" type="boolean" default="true" visibility="private" static="false" line="31"/>
+  <member name="embeddedResponses" type="integer" default="0" visibility="private" static="false" line="32"/>
+  <member name="ttls" type="array" default="" visibility="private" static="false" line="33"/>
+  <member name="maxAges" type="array" default="" visibility="private" static="false" line="34"/>
+  <member name="isNotCacheableResponseEmbedded" type="boolean" default="false" visibility="private" static="false" line="35"/>
+  <method name="add" start="40" end="55" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="{@inheritdoc}"/>
+    </docblock>
+    <parameter name="response" byreference="false" type="object">
+      <type full="Symfony\Component\HttpFoundation\Response" namespace="Symfony\Component\HttpFoundation" name="Response"/>
+    </parameter>
+  </method>
+  <method name="update" start="60" end="92" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="{@inheritdoc}"/>
+    </docblock>
+    <parameter name="response" byreference="false" type="object">
+      <type full="Symfony\Component\HttpFoundation\Response" namespace="Symfony\Component\HttpFoundation" name="Response"/>
+    </parameter>
+    <inline>
+      <comment value="if we have no embedded Response, do nothing" line="62"/>
+      <comment value="Remove validation related headers in order to avoid browsers using" line="67"/>
+      <comment value="their own cache, because some of the response content comes from" line="68"/>
+      <comment value="at least one embedded response (which likely has a different caching strategy)." line="69"/>
+    </inline>
+  </method>
+</class>

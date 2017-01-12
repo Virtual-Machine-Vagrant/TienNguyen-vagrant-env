@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="App\Http\Controllers\MhfRightsController" namespace="App\Http\Controllers" name="MhfRightsController" abstract="false" final="false" start="9" end="158">
+  <file path="/home/web/example/src/freegame_developer/app/Http/Controllers" file="MhfRightsController.php" realpath="/home/web/example/src/freegame_developer/app/Http/Controllers/MhfRightsController.php" size="4834" time="2017-01-03T08:12:08+00:00" unixtime="1483431128" sha1="7f29f94af0110a320882061dd87c1fe554c5cf97" relative="freegame_developer/app/Http/Controllers/MhfRightsController.php"/>
+  <extends full="App\Http\Controllers\Controller" namespace="App\Http\Controllers" name="Controller"/>
+  <member name="mhfRightsService" visibility="protected" static="false" line="11"/>
+  <constructor name="__construct" start="13" end="47" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="mhfRightsService" byreference="false" type="object">
+      <type full="App\Services\MhfRightsService" namespace="App\Services" name="MhfRightsService"/>
+    </parameter>
+    <parameter name="request" byreference="false" type="object">
+      <type full="Illuminate\Http\Request" namespace="Illuminate\Http" name="Request"/>
+    </parameter>
+  </constructor>
+  <method name="index" start="54" end="69" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Index page"/>
+      <param type="object" variable="$request">
+        <type full="App\Http\Requests\MhfRightsRequest" namespace="App\Http\Requests" name="MhfRightsRequest"/>
+      </param>
+      <return type="object">
+        <type full="App\Http\Controllers\response" namespace="App\Http\Controllers" name="response"/>
+      </return>
+    </docblock>
+    <parameter name="request" byreference="false" type="object">
+      <type full="App\Http\Requests\MhfRightsRequest" namespace="App\Http\Requests" name="MhfRightsRequest"/>
+    </parameter>
+  </method>
+  <method name="create" start="76" end="80" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="create page"/>
+      <param type="object" variable="$request">
+        <type full="Illuminate\Http\Request" namespace="Illuminate\Http" name="Request"/>
+      </param>
+      <return type="object">
+        <type full="App\Http\Controllers\response" namespace="App\Http\Controllers" name="response"/>
+      </return>
+    </docblock>
+    <parameter name="request" byreference="false" type="object">
+      <type full="Illuminate\Http\Request" namespace="Illuminate\Http" name="Request"/>
+    </parameter>
+  </method>
+  <method name="createConfirm" start="86" end="90" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="create confirm page"/>
+      <param type="object" variable="$request">
+        <type full="App\Http\Requests\MhfRightsRequest" namespace="App\Http\Requests" name="MhfRightsRequest"/>
+      </param>
+      <return type="object">
+        <type full="App\Http\Controllers\response" namespace="App\Http\Controllers" name="response"/>
+      </return>
+    </docblock>
+    <parameter name="request" byreference="false" type="object">
+      <type full="App\Http\Requests\MhfRightsRequest" namespace="App\Http\Requests" name="MhfRightsRequest"/>
+    </parameter>
+  </method>
+  <method name="store" start="96" end="105" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="store page"/>
+      <param type="object" variable="$request">
+        <type full="App\Http\Requests\MhfRightsRequest" namespace="App\Http\Requests" name="MhfRightsRequest"/>
+      </param>
+      <return type="object">
+        <type full="App\Http\Controllers\response" namespace="App\Http\Controllers" name="response"/>
+      </return>
+    </docblock>
+    <parameter name="request" byreference="false" type="object">
+      <type full="App\Http\Requests\MhfRightsRequest" namespace="App\Http\Requests" name="MhfRightsRequest"/>
+    </parameter>
+  </method>
+  <method name="edit" start="112" end="132" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="store page"/>
+      <param type="object" variable="$request">
+        <type full="Illuminate\Http\Request" namespace="Illuminate\Http" name="Request"/>
+      </param>
+      <param type="integer" variable="$id"/>
+      <return type="object">
+        <type full="App\Http\Controllers\response" namespace="App\Http\Controllers" name="response"/>
+      </return>
+    </docblock>
+    <parameter name="request" byreference="false" type="object">
+      <type full="Illuminate\Http\Request" namespace="Illuminate\Http" name="Request"/>
+    </parameter>
+    <parameter name="id" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="editConfirm" start="138" end="142" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="edit confirm page"/>
+      <param type="object" variable="$request">
+        <type full="App\Http\Requests\MhfRightsRequest" namespace="App\Http\Requests" name="MhfRightsRequest"/>
+      </param>
+      <return type="object">
+        <type full="App\Http\Controllers\response" namespace="App\Http\Controllers" name="response"/>
+      </return>
+    </docblock>
+    <parameter name="request" byreference="false" type="object">
+      <type full="App\Http\Requests\MhfRightsRequest" namespace="App\Http\Requests" name="MhfRightsRequest"/>
+    </parameter>
+  </method>
+  <method name="update" start="148" end="157" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="store page"/>
+      <param type="object" variable="$request">
+        <type full="App\Http\Requests\MhfRightsRequest" namespace="App\Http\Requests" name="MhfRightsRequest"/>
+      </param>
+      <return type="object">
+        <type full="App\Http\Controllers\response" namespace="App\Http\Controllers" name="response"/>
+      </return>
+    </docblock>
+    <parameter name="request" byreference="false" type="object">
+      <type full="App\Http\Requests\MhfRightsRequest" namespace="App\Http\Requests" name="MhfRightsRequest"/>
+    </parameter>
+  </method>
+</class>

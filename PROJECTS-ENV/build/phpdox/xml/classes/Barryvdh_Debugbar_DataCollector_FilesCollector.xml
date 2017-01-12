@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="Barryvdh\Debugbar\DataCollector\FilesCollector" namespace="Barryvdh\Debugbar\DataCollector" name="FilesCollector" abstract="false" final="false" start="9" end="135">
+  <file path="/home/web/example/src/freegame_developer/vendor/barryvdh/laravel-debugbar/src/DataCollector" file="FilesCollector.php" realpath="/home/web/example/src/freegame_developer/vendor/barryvdh/laravel-debugbar/src/DataCollector/FilesCollector.php" size="3817" time="2016-09-15T14:05:56+00:00" unixtime="1473948356" sha1="af3c667fb5ce9b62c73d9b2140ab65eb82f99ce4" relative="freegame_developer/vendor/barryvdh/laravel-debugbar/src/DataCollector/FilesCollector.php"/>
+  <extends full="DebugBar\DataCollector\DataCollector" namespace="DebugBar\DataCollector" name="DataCollector"/>
+  <implements full="DebugBar\DataCollector\Renderable" namespace="DebugBar\DataCollector" name="Renderable"/>
+  <member name="app" visibility="protected" static="false" line="12">
+    <docblock>
+      <var type="object">
+        <type full="\Illuminate\Contracts\Foundation\Application" namespace="\Illuminate\Contracts\Foundation" name="Application"/>
+      </var>
+    </docblock>
+  </member>
+  <member name="basePath" visibility="protected" static="false" line="13"/>
+  <constructor name="__construct" start="18" end="22" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <param type="object" variable="$app">
+        <type full="\Illuminate\Contracts\Foundation\Application" namespace="\Illuminate\Contracts\Foundation" name="Application"/>
+      </param>
+    </docblock>
+    <parameter name="app" byreference="false" type="{unknown}" default="" constant="null">
+      <type full="Illuminate\Contracts\Foundation\Application" namespace="Illuminate\Contracts\Foundation" name="Application"/>
+    </parameter>
+  </constructor>
+  <method name="collect" start="27" end="65" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="{@inheritDoc}"/>
+    </docblock>
+    <inline>
+      <comment value="First the included files, then those that are going to be compiled." line="58"/>
+    </inline>
+  </method>
+  <method name="getIncludedFiles" start="72" end="75" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Get the files included on load."/>
+      <return type="array"/>
+    </docblock>
+  </method>
+  <method name="getCompiledFiles" start="82" end="95" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Get the files that are going to be compiled, so they aren't as important."/>
+      <return type="array"/>
+    </docblock>
+  </method>
+  <method name="stripBasePath" start="103" end="106" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Remove the basePath from the paths, so they are relative to the base"/>
+      <param variable="$path"/>
+      <return type="string"/>
+    </docblock>
+    <parameter name="path" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="getWidgets" start="111" end="126" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="{@inheritDoc}"/>
+    </docblock>
+  </method>
+  <method name="getName" start="131" end="134" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="{@inheritDoc}"/>
+    </docblock>
+  </method>
+</class>

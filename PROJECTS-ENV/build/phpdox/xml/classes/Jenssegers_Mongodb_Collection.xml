@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="Jenssegers\Mongodb\Collection" namespace="Jenssegers\Mongodb" name="Collection" abstract="false" final="false" start="7" end="75">
+  <file path="/home/web/example/src/freegame_developer/vendor/jenssegers/mongodb/src/Jenssegers/Mongodb" file="Collection.php" realpath="/home/web/example/src/freegame_developer/vendor/jenssegers/mongodb/src/Jenssegers/Mongodb/Collection.php" size="2099" time="2016-10-07T08:39:24+00:00" unixtime="1475829564" sha1="e2eca65d716fcfe9270ba8c006af442ffa1c0d01" relative="freegame_developer/vendor/jenssegers/mongodb/src/Jenssegers/Mongodb/Collection.php"/>
+  <member name="connection" visibility="protected" static="false" line="14">
+    <docblock>
+      <description compact="The connection instance."/>
+      <var type="object">
+        <type full="Jenssegers\Mongodb\Connection" namespace="Jenssegers\Mongodb" name="Connection"/>
+      </var>
+    </docblock>
+  </member>
+  <member name="collection" visibility="protected" static="false" line="21">
+    <docblock>
+      <description compact="The MongoCollection instance.."/>
+      <var type="object">
+        <type full="MongoDB\Collection" namespace="MongoDB" name="Collection"/>
+      </var>
+    </docblock>
+  </member>
+  <constructor name="__construct" start="26" end="30" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Constructor."/>
+    </docblock>
+    <parameter name="connection" byreference="false" type="object">
+      <type full="Jenssegers\Mongodb\Connection" namespace="Jenssegers\Mongodb" name="Connection"/>
+    </parameter>
+    <parameter name="collection" byreference="false" type="object">
+      <type full="MongoDB\Collection" namespace="MongoDB" name="Collection"/>
+    </parameter>
+  </constructor>
+  <method name="__call" start="39" end="74" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Handle dynamic method calls."/>
+      <param type="string" variable="$method"/>
+      <param type="array" variable="$parameters"/>
+      <return type="mixed"/>
+    </docblock>
+    <parameter name="method" byreference="false" type="{unknown}"/>
+    <parameter name="parameters" byreference="false" type="{unknown}"/>
+  </method>
+</class>

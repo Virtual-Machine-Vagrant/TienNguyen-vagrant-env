@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="Illuminate\Foundation\Console\JobMakeCommand" namespace="Illuminate\Foundation\Console" name="JobMakeCommand" abstract="false" final="false" start="8" end="67">
+  <file path="/home/web/example/src/freegame_developer/vendor/laravel/framework/src/Illuminate/Foundation/Console" file="JobMakeCommand.php" realpath="/home/web/example/src/freegame_developer/vendor/laravel/framework/src/Illuminate/Foundation/Console/JobMakeCommand.php" size="1349" time="2016-02-24T15:13:21+00:00" unixtime="1456326801" sha1="e47b0f3c50096afe76f5b3b73296fcc36e8e8600" relative="freegame_developer/vendor/laravel/framework/src/Illuminate/Foundation/Console/JobMakeCommand.php"/>
+  <extends full="Illuminate\Console\GeneratorCommand" namespace="Illuminate\Console" name="GeneratorCommand"/>
+  <member name="name" type="string" default="'make:job'" visibility="protected" static="false" line="15">
+    <docblock>
+      <description compact="The console command name."/>
+      <var type="string"/>
+    </docblock>
+  </member>
+  <member name="description" type="string" default="'Create a new job class'" visibility="protected" static="false" line="22">
+    <docblock>
+      <description compact="The console command description."/>
+      <var type="string"/>
+    </docblock>
+  </member>
+  <member name="type" type="string" default="'Job'" visibility="protected" static="false" line="29">
+    <docblock>
+      <description compact="The type of class being generated."/>
+      <var type="string"/>
+    </docblock>
+  </member>
+  <method name="getStub" start="36" end="43" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Get the stub file for the generator."/>
+      <return type="string"/>
+    </docblock>
+  </method>
+  <method name="getDefaultNamespace" start="51" end="54" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Get the default namespace for the class."/>
+      <param type="string" variable="$rootNamespace"/>
+      <return type="string"/>
+    </docblock>
+    <parameter name="rootNamespace" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="getOptions" start="61" end="66" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Get the console command options."/>
+      <return type="array"/>
+    </docblock>
+  </method>
+</class>

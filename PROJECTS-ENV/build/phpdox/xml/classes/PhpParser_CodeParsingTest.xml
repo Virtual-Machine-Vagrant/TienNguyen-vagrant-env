@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="PhpParser\CodeParsingTest" namespace="PhpParser" name="CodeParsingTest" abstract="false" final="false" start="9" end="69">
+  <file path="/home/web/example/src/freegame_developer/vendor/nikic/php-parser/test/PhpParser" file="CodeParsingTest.php" realpath="/home/web/example/src/freegame_developer/vendor/nikic/php-parser/test/PhpParser/CodeParsingTest.php" size="2159" time="2016-09-16T12:04:44+00:00" unixtime="1474027484" sha1="4e3ad19103037ad41428d7a2efff3e7624ae9f3e" relative="freegame_developer/vendor/nikic/php-parser/test/PhpParser/CodeParsingTest.php"/>
+  <extends full="PhpParser\CodeTestAbstract" namespace="PhpParser" name="CodeTestAbstract"/>
+  <method name="testParse" start="14" end="38" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <dataprovider value="provideTestParse"/>
+    </docblock>
+    <parameter name="name" byreference="false" type="{unknown}"/>
+    <parameter name="code" byreference="false" type="{unknown}"/>
+    <parameter name="expected" byreference="false" type="{unknown}"/>
+    <parameter name="mode" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="getParseOutput" start="40" end="55" abstract="false" final="false" static="false" visibility="private">
+    <parameter name="parser" byreference="false" type="object">
+      <type full="PhpParser\Parser" namespace="PhpParser" name="Parser"/>
+    </parameter>
+    <parameter name="code" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="provideTestParse" start="57" end="59" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="formatErrorMessage" start="61" end="68" abstract="false" final="false" static="false" visibility="private">
+    <parameter name="e" byreference="false" type="object">
+      <type full="PhpParser\Error" namespace="PhpParser" name="Error"/>
+    </parameter>
+    <parameter name="code" byreference="false" type="{unknown}"/>
+  </method>
+</class>

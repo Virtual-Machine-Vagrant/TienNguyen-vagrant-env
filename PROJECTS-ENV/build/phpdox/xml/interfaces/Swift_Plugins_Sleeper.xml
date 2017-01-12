@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface xmlns="http://xml.phpdox.net/src" full="Swift_Plugins_Sleeper" namespace="" name="Swift_Plugins_Sleeper" abstract="false" final="false" start="16" end="24">
+  <file path="/home/web/example/src/freegame_developer/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Plugins" file="Sleeper.php" realpath="/home/web/example/src/freegame_developer/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Plugins/Sleeper.php" size="431" time="2016-07-08T11:51:25+00:00" unixtime="1467978685" sha1="a6d01c23083bc5d003412783defc4fd15be818a2" relative="freegame_developer/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Plugins/Sleeper.php"/>
+  <docblock>
+    <description compact="Sleeps for a duration of time."/>
+    <author value="Chris Corbyn"/>
+  </docblock>
+  <method name="sleep" start="23" end="23" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Sleep for $seconds."/>
+      <param type="int" variable="$seconds"/>
+    </docblock>
+    <parameter name="seconds" byreference="false" type="{unknown}"/>
+  </method>
+</interface>

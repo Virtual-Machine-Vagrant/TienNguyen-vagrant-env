@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="ParentSuite" namespace="" name="ParentSuite" abstract="false" final="false" start="4" end="13">
+  <file path="/home/web/example/src/freegame_developer/vendor/phpunit/phpunit/tests/Regression/783" file="ParentSuite.php" realpath="/home/web/example/src/freegame_developer/vendor/phpunit/phpunit/tests/Regression/783/ParentSuite.php" size="237" time="2016-02-11T14:56:33+00:00" unixtime="1455202593" sha1="19ac6339d6feda62fec22385033848c641267ab2" relative="freegame_developer/vendor/phpunit/phpunit/tests/Regression/783/ParentSuite.php"/>
+  <method name="suite" start="6" end="12" abstract="false" final="false" static="true" visibility="public"/>
+</class>

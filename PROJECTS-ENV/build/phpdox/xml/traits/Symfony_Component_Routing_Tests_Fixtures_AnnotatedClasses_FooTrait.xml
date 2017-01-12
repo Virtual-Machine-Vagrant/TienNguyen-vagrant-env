@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<trait xmlns="http://xml.phpdox.net/src" full="Symfony\Component\Routing\Tests\Fixtures\AnnotatedClasses\FooTrait" namespace="Symfony\Component\Routing\Tests\Fixtures\AnnotatedClasses" name="FooTrait" abstract="false" final="false" start="5" end="13">
+  <file path="/home/web/example/src/freegame_developer/vendor/symfony/routing/Tests/Fixtures/AnnotatedClasses" file="FooTrait.php" realpath="/home/web/example/src/freegame_developer/vendor/symfony/routing/Tests/Fixtures/AnnotatedClasses/FooTrait.php" size="194" time="2016-08-16T10:55:04+00:00" unixtime="1471344904" sha1="e84d6bcee2cd0cc5de6fc82fbacb81c1f1d4b3b3" relative="freegame_developer/vendor/symfony/routing/Tests/Fixtures/AnnotatedClasses/FooTrait.php"/>
+  <method name="doBar" start="7" end="12" abstract="false" final="false" static="false" visibility="public"/>
+</trait>

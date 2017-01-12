@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface xmlns="http://xml.phpdox.net/src" full="DebugBar\DataCollector\Renderable" namespace="DebugBar\DataCollector" name="Renderable" abstract="false" final="false" start="16" end="25">
+  <file path="/home/web/example/src/freegame_developer/vendor/maximebf/debugbar/src/DebugBar/DataCollector" file="Renderable.php" realpath="/home/web/example/src/freegame_developer/vendor/maximebf/debugbar/src/DebugBar/DataCollector/Renderable.php" size="600" time="2016-09-15T14:01:59+00:00" unixtime="1473948119" sha1="dc8b824917a10a790b3494d79ba1a8dde270c8e7" relative="freegame_developer/vendor/maximebf/debugbar/src/DebugBar/DataCollector/Renderable.php"/>
+  <docblock>
+    <description compact="Indicates that a DataCollector is renderable using JavascriptRenderer"/>
+  </docblock>
+  <method name="getWidgets" start="24" end="24" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Returns a hash where keys are control names and their values an array of options as defined in {@see DebugBar\JavascriptRenderer::addControl()}"/>
+      <return type="array"/>
+    </docblock>
+  </method>
+</interface>

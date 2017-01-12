@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="DebugBar\DataFormatter\DataFormatter" namespace="DebugBar\DataFormatter" name="DataFormatter" abstract="false" final="false" start="16" end="81">
+  <file path="/home/web/example/src/freegame_developer/vendor/maximebf/debugbar/src/DebugBar/DataFormatter" file="DataFormatter.php" realpath="/home/web/example/src/freegame_developer/vendor/maximebf/debugbar/src/DebugBar/DataFormatter/DataFormatter.php" size="2014" time="2016-09-15T14:01:59+00:00" unixtime="1473948119" sha1="5928beaef71b2c8e9a70e906aea5f9218b269a69" relative="freegame_developer/vendor/maximebf/debugbar/src/DebugBar/DataFormatter/DataFormatter.php"/>
+  <implements full="DebugBar\DataFormatter\DataFormatterInterface" namespace="DebugBar\DataFormatter" name="DataFormatterInterface"/>
+  <constructor name="__construct" start="21" end="25" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="DataFormatter constructor."/>
+    </docblock>
+  </constructor>
+  <method name="formatVar" start="31" end="47" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <param variable="$data"/>
+      <return type="string"/>
+    </docblock>
+    <parameter name="data" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="formatDuration" start="53" end="61" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <param type="float" variable="$seconds"/>
+      <return type="string"/>
+    </docblock>
+    <parameter name="seconds" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="formatBytes" start="68" end="80" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <param type="string" variable="$size"/>
+      <param type="int" variable="$precision"/>
+      <return type="string"/>
+    </docblock>
+    <parameter name="size" byreference="false" type="{unknown}"/>
+    <parameter name="precision" byreference="false" type="integer" default="2"/>
+  </method>
+</class>

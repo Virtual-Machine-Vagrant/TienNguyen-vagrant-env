@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="Squiz_Sniffs_Operators_ComparisonOperatorUsageSniff" namespace="" name="Squiz_Sniffs_Operators_ComparisonOperatorUsageSniff" abstract="false" final="false" start="49" end="237">
+  <file path="/home/web/example/src/freegame_developer/vendor/squizlabs/php_codesniffer/CodeSniffer/Standards/Squiz/Sniffs/Operators" file="ComparisonOperatorUsageSniff.php" realpath="/home/web/example/src/freegame_developer/vendor/squizlabs/php_codesniffer/CodeSniffer/Standards/Squiz/Sniffs/Operators/ComparisonOperatorUsageSniff.php" size="8589" time="2016-01-19T23:39:10+00:00" unixtime="1453246750" sha1="3b0a8e88e8beb804e9f161c94d97fe2ec7dced3b" relative="freegame_developer/vendor/squizlabs/php_codesniffer/CodeSniffer/Standards/Squiz/Sniffs/Operators/ComparisonOperatorUsageSniff.php"/>
+  <docblock>
+    <description compact="A Sniff to enforce the use of IDENTICAL type operators rather than EQUAL operators.">The use of === true is enforced over implicit true statements,
+for example:
+
+&lt;code&gt;
+if ($a)
+{
+    ...
+}
+&lt;/code&gt;
+
+should be:
+
+&lt;code&gt;
+if ($a === true)
+{
+    ...
+}
+&lt;/code&gt;
+
+It also enforces the use of === false over ! operators.</description>
+    <category value="PHP"/>
+    <package value="PHP_CodeSniffer"/>
+    <author value="Greg Sherwood &lt;gsherwood@squiz.net&gt;"/>
+    <author value="Marc McIntyre &lt;mmcintyre@squiz.net&gt;"/>
+    <copyright value="2006-2014 Squiz Pty Ltd (ABN 77 084 670 600)"/>
+    <license name="https://github.com/squizlabs/PHP_CodeSniffer/blob/master/licence.txt BSD Licence"/>
+    <version value="Release: @package_version@"/>
+    <link value="http://pear.php.net/package/PHP_CodeSniffer"/>
+  </docblock>
+  <implements full="PHP_CodeSniffer_Sniff" namespace="" name="PHP_CodeSniffer_Sniff"/>
+  <member name="supportedTokenizers" type="array" default="" visibility="public" static="false" line="57">
+    <docblock>
+      <description compact="A list of tokenizers this sniff supports."/>
+      <var type="array"/>
+    </docblock>
+  </member>
+  <member name="_validOps" type="array" default="" visibility="private" static="true" line="67">
+    <docblock>
+      <description compact="A list of valid comparison operators."/>
+      <var type="array"/>
+    </docblock>
+  </member>
+  <member name="_invalidOps" type="array" default="" visibility="private" static="true" line="82">
+    <docblock>
+      <description compact="A list of invalid operators with their alternatives."/>
+      <var description="=&gt; string)" type="object">
+        <type full="array(int" namespace="" name="array(int"/>
+      </var>
+    </docblock>
+  </member>
+  <method name="register" start="100" end="110" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Registers the token types that this sniff wishes to listen to."/>
+      <return type="array"/>
+    </docblock>
+  </method>
+  <method name="process" start="122" end="234" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Process the tokens that this sniff is listening for."/>
+      <param description="The file where the token was found." type="object" variable="$phpcsFile">
+        <type full="PHP_CodeSniffer_File" namespace="" name="PHP_CodeSniffer_File"/>
+      </param>
+      <param description="The position in the stack where the token" type="int" variable="$stackPtr">was found.</param>
+      <return type="object">
+        <type full="void" namespace="" name="void"/>
+      </return>
+    </docblock>
+    <parameter name="phpcsFile" byreference="false" type="object">
+      <type full="PHP_CodeSniffer_File" namespace="" name="PHP_CodeSniffer_File"/>
+    </parameter>
+    <parameter name="stackPtr" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="end if" line="183"/>
+      <comment value="end for" line="223"/>
+    </inline>
+  </method>
+</class>

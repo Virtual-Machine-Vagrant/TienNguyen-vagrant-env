@@ -1,0 +1,373 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="Symfony\Component\HttpFoundation\Tests\RequestTest" namespace="Symfony\Component\HttpFoundation\Tests" name="RequestTest" abstract="false" final="false" start="18" end="1977">
+  <file path="/home/web/example/src/freegame_developer/vendor/symfony/http-foundation/Tests" file="RequestTest.php" realpath="/home/web/example/src/freegame_developer/vendor/symfony/http-foundation/Tests/RequestTest.php" size="84038" time="2016-10-24T14:36:35+00:00" unixtime="1477319795" sha1="e5a9b9129f0f2a4385ca72ffe68a4da4028d957b" relative="freegame_developer/vendor/symfony/http-foundation/Tests/RequestTest.php"/>
+  <extends full="PHPUnit_Framework_TestCase" namespace="" name="PHPUnit_Framework_TestCase"/>
+  <method name="testInitialize" start="20" end="35" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testGetLocale" start="37" end="43" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testGetUser" start="45" end="51" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testGetPassword" start="53" end="59" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testIsNoCache" start="61" end="67" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testGetContentType" start="69" end="75" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testSetDefaultLocale" start="77" end="84" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testCreate" start="86" end="227" abstract="false" final="false" static="false" visibility="public">
+    <inline>
+      <comment value="assume rewrite rule: (.*) --&gt; app/app.php; app/ is a symlink to a symfony web/ directory" line="213"/>
+    </inline>
+  </method>
+  <method name="testCreateCheckPrecedence" start="229" end="261" abstract="false" final="false" static="false" visibility="public">
+    <inline>
+      <comment value="server is used by default" line="231"/>
+      <comment value="URI has precedence over server" line="249"/>
+    </inline>
+  </method>
+  <method name="testDuplicate" start="263" end="279" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testDuplicateWithFormat" start="281" end="294" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testGetFormatFromMimeType" start="299" end="309" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <dataprovider value="getFormatToMimeTypeMapProvider"/>
+    </docblock>
+    <parameter name="format" byreference="false" type="{unknown}"/>
+    <parameter name="mimeTypes" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="testGetFormatFromMimeTypeWithParameters" start="311" end="315" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testGetMimeTypeFromFormat" start="320" end="326" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <dataprovider value="getFormatToMimeTypeMapProvider"/>
+    </docblock>
+    <parameter name="format" byreference="false" type="{unknown}"/>
+    <parameter name="mimeTypes" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="testGetFormatWithCustomMimeType" start="328" end="333" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="getFormatToMimeTypeMapProvider" start="335" end="347" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testGetUri" start="349" end="462" abstract="false" final="false" static="false" visibility="public">
+    <inline>
+      <comment value="Standard Request on non default PORT" line="353"/>
+      <comment value="http://host:8080/index.php/path/info?query=string" line="354"/>
+      <comment value="Use std port number" line="374"/>
+      <comment value="Without HOST HEADER" line="383"/>
+      <comment value="Request with URL REWRITING (hide index.php)" line="392"/>
+      <comment value="RewriteCond %{REQUEST_FILENAME} !-f" line="393"/>
+      <comment value="RewriteRule ^(.*)$ index.php [QSA,L]" line="394"/>
+      <comment value="http://host:8080/path/info?query=string" line="395"/>
+      <comment value="Use std port number" line="413"/>
+      <comment value="http://host/path/info?query=string" line="414"/>
+      <comment value="Without HOST HEADER" line="423"/>
+      <comment value="With encoded characters" line="432"/>
+      <comment value="with user info" line="453"/>
+    </inline>
+  </method>
+  <method name="testGetUriForPath" start="464" end="569" abstract="false" final="false" static="false" visibility="public">
+    <inline>
+      <comment value="Standard Request on non default PORT" line="480"/>
+      <comment value="http://host:8080/index.php/path/info?query=string" line="481"/>
+      <comment value="Use std port number" line="501"/>
+      <comment value="Without HOST HEADER" line="510"/>
+      <comment value="Request with URL REWRITING (hide index.php)" line="519"/>
+      <comment value="RewriteCond %{REQUEST_FILENAME} !-f" line="520"/>
+      <comment value="RewriteRule ^(.*)$ index.php [QSA,L]" line="521"/>
+      <comment value="http://host:8080/path/info?query=string" line="522"/>
+      <comment value="Use std port number" line="540"/>
+      <comment value="http://host/path/info?query=string" line="541"/>
+      <comment value="Without HOST HEADER" line="550"/>
+      <comment value="with user info" line="560"/>
+    </inline>
+  </method>
+  <method name="testGetRelativeUriForPath" start="574" end="577" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <dataprovider value="getRelativeUriForPathData()"/>
+    </docblock>
+    <parameter name="expected" byreference="false" type="{unknown}"/>
+    <parameter name="pathinfo" byreference="false" type="{unknown}"/>
+    <parameter name="path" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="getRelativeUriForPathData" start="579" end="589" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testGetUserInfo" start="591" end="606" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testGetSchemeAndHttpHost" start="608" end="629" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testGetQueryString" start="634" end="640" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <dataprovider value="getQueryStringNormalizationData"/>
+    </docblock>
+    <parameter name="query" byreference="false" type="{unknown}"/>
+    <parameter name="expectedQuery" byreference="false" type="{unknown}"/>
+    <parameter name="msg" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="getQueryStringNormalizationData" start="642" end="667" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testGetQueryStringReturnsNull" start="669" end="677" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testGetHost" start="679" end="699" abstract="false" final="false" static="false" visibility="public">
+    <inline>
+      <comment value="Host header with port number" line="689"/>
+      <comment value="Server values" line="693"/>
+    </inline>
+  </method>
+  <method name="testGetPort" start="701" end="755" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testGetHostWithFakeHttpHostValue" start="760" end="765" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <expectedexception value="\RuntimeException"/>
+    </docblock>
+  </method>
+  <method name="testGetSetMethod" start="767" end="820" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testGetClientIp" start="825" end="832" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <dataprovider value="testGetClientIpsProvider"/>
+    </docblock>
+    <parameter name="expected" byreference="false" type="{unknown}"/>
+    <parameter name="remoteAddr" byreference="false" type="{unknown}"/>
+    <parameter name="httpForwardedFor" byreference="false" type="{unknown}"/>
+    <parameter name="trustedProxies" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="testGetClientIps" start="837" end="844" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <dataprovider value="testGetClientIpsProvider"/>
+    </docblock>
+    <parameter name="expected" byreference="false" type="{unknown}"/>
+    <parameter name="remoteAddr" byreference="false" type="{unknown}"/>
+    <parameter name="httpForwardedFor" byreference="false" type="{unknown}"/>
+    <parameter name="trustedProxies" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="testGetClientIpsForwarded" start="849" end="856" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <dataprovider value="testGetClientIpsForwardedProvider"/>
+    </docblock>
+    <parameter name="expected" byreference="false" type="{unknown}"/>
+    <parameter name="remoteAddr" byreference="false" type="{unknown}"/>
+    <parameter name="httpForwarded" byreference="false" type="{unknown}"/>
+    <parameter name="trustedProxies" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="testGetClientIpsForwardedProvider" start="858" end="869" abstract="false" final="false" static="false" visibility="public">
+    <inline>
+      <comment value="$expected                                  $remoteAddr  $httpForwarded                                       $trustedProxies" line="860"/>
+    </inline>
+  </method>
+  <method name="testGetClientIpsProvider" start="871" end="924" abstract="false" final="false" static="false" visibility="public">
+    <inline>
+      <comment value="$expected                   $remoteAddr                $httpForwardedFor            $trustedProxies" line="873"/>
+    </inline>
+  </method>
+  <method name="testGetClientIpsWithConflictingHeaders" start="930" end="945" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <expectedexception value="\Symfony\Component\HttpFoundation\Exception\ConflictingHeadersException"/>
+      <dataprovider value="testGetClientIpsWithConflictingHeadersProvider"/>
+    </docblock>
+    <parameter name="httpForwarded" byreference="false" type="{unknown}"/>
+    <parameter name="httpXForwardedFor" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="testGetClientIpsWithConflictingHeadersProvider" start="947" end="957" abstract="false" final="false" static="false" visibility="public">
+    <inline>
+      <comment value="$httpForwarded                   $httpXForwardedFor" line="949"/>
+    </inline>
+  </method>
+  <method name="testGetClientIpsWithAgreeingHeaders" start="962" end="979" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <dataprovider value="testGetClientIpsWithAgreeingHeadersProvider"/>
+    </docblock>
+    <parameter name="httpForwarded" byreference="false" type="{unknown}"/>
+    <parameter name="httpXForwardedFor" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="testGetClientIpsWithAgreeingHeadersProvider" start="981" end="992" abstract="false" final="false" static="false" visibility="public">
+    <inline>
+      <comment value="$httpForwarded                               $httpXForwardedFor" line="983"/>
+    </inline>
+  </method>
+  <method name="testGetContentWorksTwiceInDefaultMode" start="994" end="999" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testGetContentReturnsResource" start="1001" end="1008" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testGetContentReturnsResourceWhenContentSetInConstructor" start="1010" end="1017" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testContentAsResource" start="1019" end="1028" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testGetContentCantBeCalledTwiceWithResources" start="1034" end="1043" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <expectedexception value="\LogicException"/>
+      <dataprovider value="getContentCantBeCalledTwiceWithResourcesProvider"/>
+    </docblock>
+    <parameter name="first" byreference="false" type="{unknown}"/>
+    <parameter name="second" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="getContentCantBeCalledTwiceWithResourcesProvider" start="1045" end="1051" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testGetContentCanBeCalledTwiceWithResources" start="1057" end="1072" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <dataprovider value="getContentCanBeCalledTwiceWithResourcesProvider"/>
+      <requires value="PHP 5.6"/>
+    </docblock>
+    <parameter name="first" byreference="false" type="{unknown}"/>
+    <parameter name="second" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="getContentCanBeCalledTwiceWithResourcesProvider" start="1074" end="1082" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="provideOverloadedMethods" start="1084" end="1095" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testCreateFromGlobals" start="1100" end="1139" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <dataprovider value="provideOverloadedMethods"/>
+    </docblock>
+    <parameter name="method" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="testOverrideGlobals" start="1141" end="1191" abstract="false" final="false" static="false" visibility="public">
+    <inline>
+      <comment value="as the Request::overrideGlobals really work, it erase $_SERVER, so we must backup it" line="1146"/>
+      <comment value="restore initial $_SERVER array" line="1189"/>
+    </inline>
+  </method>
+  <method name="testGetScriptName" start="1193" end="1217" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testGetBasePath" start="1219" end="1249" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testGetPathInfo" start="1251" end="1267" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testGetPreferredLanguage" start="1269" end="1294" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testIsXmlHttpRequest" start="1296" end="1306" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testIntlLocale" start="1311" end="1326" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <requires value="extension intl"/>
+    </docblock>
+  </method>
+  <method name="testGetCharsets" start="1328" end="1342" abstract="false" final="false" static="false" visibility="public">
+    <inline>
+      <comment value="testing caching" line="1333"/>
+    </inline>
+  </method>
+  <method name="testGetEncodings" start="1344" end="1358" abstract="false" final="false" static="false" visibility="public">
+    <inline>
+      <comment value="testing caching" line="1349"/>
+    </inline>
+  </method>
+  <method name="testGetAcceptableContentTypes" start="1360" end="1370" abstract="false" final="false" static="false" visibility="public">
+    <inline>
+      <comment value="testing caching" line="1365"/>
+    </inline>
+  </method>
+  <method name="testGetLanguages" start="1372" end="1397" abstract="false" final="false" static="false" visibility="public">
+    <inline>
+      <comment value="Test out of order qvalues" line="1384"/>
+      <comment value="Test equal weighting without qvalues" line="1388"/>
+      <comment value="Test equal weighting with qvalues" line="1392"/>
+    </inline>
+  </method>
+  <method name="testGetRequestFormat" start="1399" end="1410" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testHasSession" start="1412" end="1419" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testGetSession" start="1421" end="1432" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testHasPreviousSession" start="1434" end="1443" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testToString" start="1445" end="1452" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testIsMethod" start="1454" end="1468" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testGetBaseUrl" start="1473" end="1479" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <dataprovider value="getBaseUrlData"/>
+    </docblock>
+    <parameter name="uri" byreference="false" type="{unknown}"/>
+    <parameter name="server" byreference="false" type="{unknown}"/>
+    <parameter name="expectedBaseUrl" byreference="false" type="{unknown}"/>
+    <parameter name="expectedPathInfo" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="getBaseUrlData" start="1481" end="1555" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testUrlencodedStringPrefix" start="1560" end="1568" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <dataprovider value="urlencodedStringPrefixData"/>
+    </docblock>
+    <parameter name="string" byreference="false" type="{unknown}"/>
+    <parameter name="prefix" byreference="false" type="{unknown}"/>
+    <parameter name="expect" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="urlencodedStringPrefixData" start="1570" end="1582" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="disableHttpMethodParameterOverride" start="1584" end="1590" abstract="false" final="false" static="false" visibility="private"/>
+  <method name="getRequestInstanceForClientIpTests" start="1592" end="1608" abstract="false" final="false" static="false" visibility="private">
+    <parameter name="remoteAddr" byreference="false" type="{unknown}"/>
+    <parameter name="httpForwardedFor" byreference="false" type="{unknown}"/>
+    <parameter name="trustedProxies" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="getRequestInstanceForClientIpsForwardedTests" start="1610" end="1627" abstract="false" final="false" static="false" visibility="private">
+    <parameter name="remoteAddr" byreference="false" type="{unknown}"/>
+    <parameter name="httpForwarded" byreference="false" type="{unknown}"/>
+    <parameter name="trustedProxies" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="testTrustedProxies" start="1629" end="1710" abstract="false" final="false" static="false" visibility="public">
+    <inline>
+      <comment value="no trusted proxies" line="1642"/>
+      <comment value="disabling proxy trusting" line="1648"/>
+      <comment value="request is forwarded by a non-trusted proxy" line="1655"/>
+      <comment value="trusted proxy via setTrustedProxies()" line="1662"/>
+      <comment value="trusted proxy via setTrustedProxies()" line="1669"/>
+      <comment value="check various X_FORWARDED_PROTO header values" line="1676"/>
+      <comment value="custom header names" line="1684"/>
+      <comment value="disabling via empty header names" line="1694"/>
+      <comment value="reset" line="1704"/>
+    </inline>
+  </method>
+  <method name="testSetTrustedProxiesInvalidHeaderName" start="1715" end="1719" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <expectedexception value="\InvalidArgumentException"/>
+    </docblock>
+  </method>
+  <method name="testGetTrustedProxiesInvalidHeaderName" start="1724" end="1728" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <expectedexception value="\InvalidArgumentException"/>
+    </docblock>
+  </method>
+  <method name="testIISRequestUri" start="1733" end="1744" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <dataprovider value="iisRequestUriProvider"/>
+    </docblock>
+    <parameter name="headers" byreference="false" type="{unknown}"/>
+    <parameter name="server" byreference="false" type="{unknown}"/>
+    <parameter name="expectedRequestUri" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="iisRequestUriProvider" start="1746" end="1817" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testTrustedHosts" start="1819" end="1860" abstract="false" final="false" static="false" visibility="public">
+    <inline>
+      <comment value="create a request" line="1821"/>
+      <comment value="no trusted host set -&gt; no host check" line="1824"/>
+      <comment value="add a trusted domain and all its subdomains" line="1828"/>
+      <comment value="untrusted host" line="1831"/>
+      <comment value="trusted hosts" line="1840"/>
+      <comment value="reset request for following tests" line="1858"/>
+    </inline>
+  </method>
+  <method name="testFactory" start="1862" end="1871" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testVeryLongHosts" start="1876" end="1884" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <dataprovider value="getLongHostNames"/>
+    </docblock>
+    <parameter name="host" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="testHostValidity" start="1889" end="1903" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <dataprovider value="getHostValidities"/>
+    </docblock>
+    <parameter name="host" byreference="false" type="{unknown}"/>
+    <parameter name="isValid" byreference="false" type="{unknown}"/>
+    <parameter name="expectedHost" byreference="false" type="{unknown}" default="" constant="null"/>
+    <parameter name="expectedPort" byreference="false" type="{unknown}" default="" constant="null"/>
+  </method>
+  <method name="getHostValidities" start="1905" end="1916" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="getLongHostNames" start="1918" end="1924" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testMethodSafe" start="1929" end="1934" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <dataprovider value="methodSafeProvider"/>
+    </docblock>
+    <parameter name="method" byreference="false" type="{unknown}"/>
+    <parameter name="safe" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="methodSafeProvider" start="1936" end="1950" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testMethodCacheable" start="1955" end="1960" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <dataprovider value="methodCacheableProvider"/>
+    </docblock>
+    <parameter name="method" byreference="false" type="{unknown}"/>
+    <parameter name="chacheable" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="methodCacheableProvider" start="1962" end="1976" abstract="false" final="false" static="false" visibility="public"/>
+</class>

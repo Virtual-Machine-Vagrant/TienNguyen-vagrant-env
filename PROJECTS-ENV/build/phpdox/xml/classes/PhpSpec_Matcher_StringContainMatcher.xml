@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="PhpSpec\Matcher\StringContainMatcher" namespace="PhpSpec\Matcher" name="StringContainMatcher" abstract="false" final="true" start="19" end="76">
+  <file path="/home/web/example/src/freegame_developer/vendor/phpspec/phpspec/src/PhpSpec/Matcher" file="StringContainMatcher.php" realpath="/home/web/example/src/freegame_developer/vendor/phpspec/phpspec/src/PhpSpec/Matcher/StringContainMatcher.php" size="1930" time="2016-01-01T10:17:54+00:00" unixtime="1451643474" sha1="346177e904dea202d10d9dc3e68ee01637ab4055" relative="freegame_developer/vendor/phpspec/phpspec/src/PhpSpec/Matcher/StringContainMatcher.php"/>
+  <extends full="PhpSpec\Matcher\BasicMatcher" namespace="PhpSpec\Matcher" name="BasicMatcher"/>
+  <member name="presenter" visibility="private" static="false" line="24">
+    <docblock>
+      <description/>
+      <var type="object">
+        <type full="PhpSpec\Formatter\Presenter\PresenterInterface" namespace="PhpSpec\Formatter\Presenter" name="PresenterInterface"/>
+      </var>
+    </docblock>
+  </member>
+  <constructor name="__construct" start="29" end="32" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <param type="object" variable="$presenter">
+        <type full="PhpSpec\Formatter\Presenter\PresenterInterface" namespace="PhpSpec\Formatter\Presenter" name="PresenterInterface"/>
+      </param>
+    </docblock>
+    <parameter name="presenter" byreference="false" type="object">
+      <type full="PhpSpec\Formatter\Presenter\PresenterInterface" namespace="PhpSpec\Formatter\Presenter" name="PresenterInterface"/>
+    </parameter>
+  </constructor>
+  <method name="supports" start="37" end="43" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="{@inheritdoc}"/>
+    </docblock>
+    <parameter name="name" byreference="false" type="{unknown}"/>
+    <parameter name="subject" byreference="false" type="{unknown}"/>
+    <parameter name="arguments" byreference="false" type="array"/>
+  </method>
+  <method name="matches" start="48" end="51" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="{@inheritdoc}"/>
+    </docblock>
+    <parameter name="subject" byreference="false" type="{unknown}"/>
+    <parameter name="arguments" byreference="false" type="array"/>
+  </method>
+  <method name="getFailureException" start="56" end="63" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="{@inheritdoc}"/>
+    </docblock>
+    <parameter name="name" byreference="false" type="{unknown}"/>
+    <parameter name="subject" byreference="false" type="{unknown}"/>
+    <parameter name="arguments" byreference="false" type="array"/>
+  </method>
+  <method name="getNegativeFailureException" start="68" end="75" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="{@inheritdoc}"/>
+    </docblock>
+    <parameter name="name" byreference="false" type="{unknown}"/>
+    <parameter name="subject" byreference="false" type="{unknown}"/>
+    <parameter name="arguments" byreference="false" type="array"/>
+  </method>
+</class>

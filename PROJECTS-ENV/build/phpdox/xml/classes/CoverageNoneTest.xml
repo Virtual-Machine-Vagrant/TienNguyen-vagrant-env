@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="CoverageNoneTest" namespace="" name="CoverageNoneTest" abstract="false" final="false" start="2" end="9">
+  <file path="/home/web/example/src/freegame_developer/vendor/phpunit/phpunit/tests/_files" file="CoverageNoneTest.php" realpath="/home/web/example/src/freegame_developer/vendor/phpunit/phpunit/tests/_files/CoverageNoneTest.php" size="175" time="2016-02-11T14:56:33+00:00" unixtime="1455202593" sha1="4ca8e9e5039f840a3321bddf0dd7bcdba041bf34" relative="freegame_developer/vendor/phpunit/phpunit/tests/_files/CoverageNoneTest.php"/>
+  <extends full="PHPUnit_Framework_TestCase" namespace="" name="PHPUnit_Framework_TestCase"/>
+  <method name="testSomething" start="4" end="8" abstract="false" final="false" static="false" visibility="public"/>
+</class>

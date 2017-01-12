@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="phpseclib\Crypt\Random" namespace="phpseclib\Crypt" name="Random" abstract="false" final="false" start="34" end="235">
+  <file path="/home/web/example/src/freegame_developer/vendor/phpseclib/phpseclib/phpseclib/Crypt" file="Random.php" realpath="/home/web/example/src/freegame_developer/vendor/phpseclib/phpseclib/phpseclib/Crypt/Random.php" size="12163" time="2016-10-04T00:57:04+00:00" unixtime="1475542624" sha1="8ce820ea31dcf33cb13acbed126f213ea2374428" relative="freegame_developer/vendor/phpseclib/phpseclib/phpseclib/Crypt/Random.php"/>
+  <docblock>
+    <description compact="Pure-PHP Random Number Generator"/>
+    <package value="Random"/>
+    <author value="Jim Wigginton &lt;terrafrost@php.net&gt;"/>
+    <access value="public"/>
+  </docblock>
+  <method name="string" start="46" end="234" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description compact="Generate a random string.">Although microoptimizations are generally discouraged as they impair readability this function is ripe with
+microoptimizations because this function has the potential of being called a huge number of times.
+eg. for RSA key generation.</description>
+      <param type="int" variable="$length"/>
+      <return type="string"/>
+    </docblock>
+    <parameter name="length" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="at this point we have no choice but to use a pure-PHP CSPRNG" line="107"/>
+      <comment value="cascade entropy across multiple PHP instances by fixing the session and collecting all" line="109"/>
+      <comment value="environmental variables, including the previous session data and the current session" line="110"/>
+      <comment value="data." line="111"/>
+      <comment value="mt_rand seeds itself by looking at the PID and the time, both of which are (relatively)" line="113"/>
+      <comment value="easy to guess at. linux uses mouse clicks, keyboard timings, etc, as entropy sources, but" line="114"/>
+      <comment value="PHP isn't low level to be able to use those as sources and on a web server there's not likely" line="115"/>
+      <comment value="going to be a ton of keyboard or mouse action. web servers do have one thing that we can use" line="116"/>
+      <comment value="however, a ton of people visiting the website. obviously you don't want to base your seeding" line="117"/>
+      <comment value="soley on parameters a potential attacker sends but (1) not everything in $_SERVER is controlled" line="118"/>
+      <comment value="by the user and (2) this isn't just looking at the data sent by the current user - it's based" line="119"/>
+      <comment value="on the data sent by all users. one user requests the page and a hash of their info is saved." line="120"/>
+      <comment value="another user visits the page and the serialization of their data is utilized along with the" line="121"/>
+      <comment value="server envirnment stuff and a hash of the previous http request data (which itself utilizes" line="122"/>
+      <comment value="a hash of the session data before that). certainly an attacker should be assumed to have" line="123"/>
+      <comment value="full control over his own http requests. he, however, is not going to have control over" line="124"/>
+      <comment value="everyone's http requests." line="125"/>
+      <comment value="return $crypto-&gt;encrypt(str_repeat(&quot;\0&quot;, $length));" line="216"/>
+      <comment value="the following is based off of ANSI X9.31:" line="218"/>
+      <comment value="http://csrc.nist.gov/groups/STM/cavp/documents/rng/931rngext.pdf" line="220"/>
+      <comment value="OpenSSL uses that same standard for it's random numbers:" line="222"/>
+      <comment value="http://www.opensource.apple.com/source/OpenSSL/OpenSSL-38/openssl/fips-1.0/rand/fips_rand.c" line="224"/>
+      <comment value="(do a search for &quot;ANS X9.31 A.2.4&quot;)" line="225"/>
+    </inline>
+  </method>
+</class>

@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="PHP_CodeSniffer_DocGenerators_Generator" namespace="" name="PHP_CodeSniffer_DocGenerators_Generator" abstract="true" final="false" start="31" end="184">
+  <file path="/home/web/example/src/freegame_developer/vendor/squizlabs/php_codesniffer/CodeSniffer/DocGenerators" file="Generator.php" realpath="/home/web/example/src/freegame_developer/vendor/squizlabs/php_codesniffer/CodeSniffer/DocGenerators/Generator.php" size="5606" time="2016-01-19T23:39:10+00:00" unixtime="1453246750" sha1="079d019930191c25d647e21fa68011f9d27fdd22" relative="freegame_developer/vendor/squizlabs/php_codesniffer/CodeSniffer/DocGenerators/Generator.php"/>
+  <docblock>
+    <description compact="The base class for all PHP_CodeSniffer documentation generators.">Documentation generators are used to print documentation about code sniffs
+in a standard.</description>
+    <category value="PHP"/>
+    <package value="PHP_CodeSniffer"/>
+    <author value="Greg Sherwood &lt;gsherwood@squiz.net&gt;"/>
+    <author value="Marc McIntyre &lt;mmcintyre@squiz.net&gt;"/>
+    <copyright value="2006-2014 Squiz Pty Ltd (ABN 77 084 670 600)"/>
+    <license name="https://github.com/squizlabs/PHP_CodeSniffer/blob/master/licence.txt BSD Licence"/>
+    <version value="Release: @package_version@"/>
+    <link value="http://pear.php.net/package/PHP_CodeSniffer"/>
+  </docblock>
+  <member name="_standard" type="string" default="''" visibility="private" static="false" line="39">
+    <docblock>
+      <description compact="The name of the coding standard we are generating docs for."/>
+      <var type="string"/>
+    </docblock>
+  </member>
+  <member name="_sniffs" type="array" default="" visibility="private" static="false" line="49">
+    <docblock>
+      <description compact="An array of sniffs that we are limiting the generated docs to.">If this array is empty, docs are generated for all sniffs in the
+supplied coding standard.</description>
+      <var type="string"/>
+    </docblock>
+  </member>
+  <constructor name="__construct" start="62" end="67" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Constructs a PHP_CodeSniffer_DocGenerators_Generator object."/>
+      <param description="The name of the coding standard to generate" type="string" variable="$standard">docs for.</param>
+      <param description="An array of sniffs that we are limiting the" type="array" variable="$sniffs">generated docs to.</param>
+      <see value="generate()"/>
+    </docblock>
+    <parameter name="standard" byreference="false" type="{unknown}"/>
+    <parameter name="sniffs" byreference="false" type="array" default=""/>
+  </constructor>
+  <method name="getTitle" start="79" end="83" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Retrieves the title of the sniff from the DOMNode supplied."/>
+      <param description="The DOMNode object for the sniff." type="object" variable="$doc">It represents the "documentation" tag in the XML
+                    standard file.<type full="DOMNode" namespace="" name="DOMNode"/></param>
+      <return type="string"/>
+    </docblock>
+    <parameter name="doc" byreference="false" type="object">
+      <type full="DOMNode" namespace="" name="DOMNode"/>
+    </parameter>
+  </method>
+  <method name="getStandard" start="91" end="95" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Retrieves the name of the standard we are generating docs for."/>
+      <return type="string"/>
+    </docblock>
+  </method>
+  <method name="generate" start="108" end="119" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Generates the documentation for a standard.">It's probably wise for doc generators to override this method so they
+have control over how the docs are produced. Otherwise, the processSniff
+method should be overridden to output content for each sniff.</description>
+      <return type="object">
+        <type full="void" namespace="" name="void"/>
+      </return>
+      <see value="processSniff()"/>
+    </docblock>
+  </method>
+  <method name="getStandardFiles" start="132" end="166" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Returns a list of paths to XML standard files for all sniffs in a standard.">Any sniffs that do not have an XML standard file are obviously not included
+in the returned array. If documentation is only being generated for some
+sniffs (ie. $this-&gt;_sniffs is not empty) then all others sniffs will
+be filtered from the results as well.</description>
+      <return type="array" of="string"/>
+    </docblock>
+    <inline>
+      <comment value="end foreach" line="162"/>
+    </inline>
+  </method>
+  <method name="processSniff" start="181" end="181" abstract="true" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Process the documentation for a single sniff.">Doc generators must implement this function to produce output.</description>
+      <param description="The DOMNode object for the sniff." type="object" variable="$doc">It represents the "documentation" tag in the XML
+                    standard file.<type full="DOMNode" namespace="" name="DOMNode"/></param>
+      <return type="object">
+        <type full="void" namespace="" name="void"/>
+      </return>
+      <see value="generate()"/>
+    </docblock>
+    <parameter name="doc" byreference="false" type="object">
+      <type full="DOMNode" namespace="" name="DOMNode"/>
+    </parameter>
+  </method>
+</class>

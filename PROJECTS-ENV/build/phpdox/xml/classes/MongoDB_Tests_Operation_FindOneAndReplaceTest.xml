@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="MongoDB\Tests\Operation\FindOneAndReplaceTest" namespace="MongoDB\Tests\Operation" name="FindOneAndReplaceTest" abstract="false" final="false" start="7" end="73">
+  <file path="/home/web/example/src/freegame_developer/vendor/mongodb/mongodb/tests/Operation" file="FindOneAndReplaceTest.php" realpath="/home/web/example/src/freegame_developer/vendor/mongodb/mongodb/tests/Operation/FindOneAndReplaceTest.php" size="2366" time="2016-09-23T19:38:29+00:00" unixtime="1474659509" sha1="af0fee51d41bf6574a8b8df5f20549f7707db58d" relative="freegame_developer/vendor/mongodb/mongodb/tests/Operation/FindOneAndReplaceTest.php"/>
+  <extends full="MongoDB\Tests\Operation\TestCase" namespace="MongoDB\Tests\Operation" name="TestCase"/>
+  <method name="testConstructorFilterArgumentTypeCheck" start="13" end="16" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <expectedexception value="MongoDB\Exception\InvalidArgumentException"/>
+      <dataprovider value="provideInvalidDocumentValues"/>
+    </docblock>
+    <parameter name="filter" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="testConstructorReplacementArgumentTypeCheck" start="22" end="25" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <expectedexception value="MongoDB\Exception\InvalidArgumentException"/>
+      <dataprovider value="provideInvalidDocumentValues"/>
+    </docblock>
+    <parameter name="replacement" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="testConstructorReplacementArgumentRequiresNoOperators" start="31" end="34" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <expectedexception value="MongoDB\Exception\InvalidArgumentException"/>
+      <expectedexceptionmessage value="First key in $replacement argument is an update operator"/>
+    </docblock>
+  </method>
+  <method name="testConstructorOptionTypeChecks" start="40" end="43" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <expectedexception value="MongoDB\Exception\InvalidArgumentException"/>
+      <dataprovider value="provideInvalidConstructorOptions"/>
+    </docblock>
+    <parameter name="options" byreference="false" type="array"/>
+  </method>
+  <method name="provideInvalidConstructorOptions" start="45" end="58" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testConstructorReturnDocumentOption" start="64" end="67" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <expectedexception value="MongoDB\Exception\InvalidArgumentException"/>
+      <dataprovider value="provideInvalidConstructorReturnDocumentOptions"/>
+    </docblock>
+    <parameter name="returnDocument" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="provideInvalidConstructorReturnDocumentOptions" start="69" end="72" abstract="false" final="false" static="false" visibility="public"/>
+</class>

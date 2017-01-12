@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="App\Services\UsersService" namespace="App\Services" name="UsersService" abstract="false" final="false" start="11" end="168">
+  <file path="/home/web/example/src/freegame_developer/app/Services" file="UsersService.php" realpath="/home/web/example/src/freegame_developer/app/Services/UsersService.php" size="4401" time="2016-11-16T01:52:54+00:00" unixtime="1479261174" sha1="8ce312adeff4ba194ab41039f1d6a6ab45abf09c" relative="freegame_developer/app/Services/UsersService.php"/>
+  <docblock>
+    <description compact="ログイン認証"/>
+  </docblock>
+  <extends full="App\Services\CustomService" namespace="App\Services" name="CustomService"/>
+  <member name="account" visibility="protected" static="false" line="16">
+    <docblock>
+      <description compact="Account model"/>
+    </docblock>
+  </member>
+  <member name="menuAuth" visibility="protected" static="false" line="21">
+    <docblock>
+      <description compact="MenuAuth model"/>
+    </docblock>
+  </member>
+  <member name="accountingAuth" visibility="protected" static="false" line="26">
+    <docblock>
+      <description compact="Accounting model"/>
+    </docblock>
+  </member>
+  <constructor name="__construct" start="36" end="43" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Construct"/>
+      <param type="object" variable="$account">
+        <type full="App\Models\NetgameCstool\Account" namespace="App\Models\NetgameCstool" name="Account"/>
+      </param>
+      <param type="object" variable="$menuAuth">
+        <type full="App\Models\NetgameCstool\MenuAuth" namespace="App\Models\NetgameCstool" name="MenuAuth"/>
+      </param>
+      <param type="object" variable="$accountingAuth">
+        <type full="App\Models\NetgameCstool\AccountingAuth" namespace="App\Models\NetgameCstool" name="AccountingAuth"/>
+      </param>
+      <return type="object">
+        <type full="App\Services\void" namespace="App\Services" name="void"/>
+      </return>
+    </docblock>
+    <parameter name="account" byreference="false" type="object">
+      <type full="App\Models\NetgameCstool\Account" namespace="App\Models\NetgameCstool" name="Account"/>
+    </parameter>
+    <parameter name="menuAuth" byreference="false" type="object">
+      <type full="App\Models\NetgameCstool\MenuAuth" namespace="App\Models\NetgameCstool" name="MenuAuth"/>
+    </parameter>
+    <parameter name="accountingAuth" byreference="false" type="object">
+      <type full="App\Models\NetgameCstool\AccountingAuth" namespace="App\Models\NetgameCstool" name="AccountingAuth"/>
+    </parameter>
+  </constructor>
+  <method name="getFormData" start="51" end="56" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Get form data"/>
+      <param type="object">
+        <type full="App\Services\none" namespace="App\Services" name="none"/>
+      </param>
+      <return type="object">
+        <type full="App\Services\void" namespace="App\Services" name="void"/>
+      </return>
+    </docblock>
+  </method>
+  <method name="getMessage" start="64" end="76" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Get message"/>
+      <param type="string" variable="$code"/>
+      <return type="array"/>
+    </docblock>
+    <parameter name="code" byreference="false" type="{unknown}" default="" constant="null"/>
+  </method>
+  <method name="isLockLogin60Minutes" start="84" end="87" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Check is lock login 60 minutes"/>
+      <param type="object" variable="$loginTrialDate">
+        <type full="App\Services\datetime" namespace="App\Services" name="datetime"/>
+      </param>
+      <return type="boolean"/>
+    </docblock>
+    <parameter name="loginTrialDate" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="isLoginFailIn10Minutes" start="95" end="98" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Check is login fail in 10 minutes"/>
+      <param type="object" variable="$loginTrialDate">
+        <type full="App\Services\datetime" namespace="App\Services" name="datetime"/>
+      </param>
+      <return type="boolean"/>
+    </docblock>
+    <parameter name="loginTrialDate" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="login" start="106" end="155" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Login"/>
+      <param type="array" variable="$data"/>
+      <return type="object">
+        <type full="App\Services\array/boolean" namespace="App\Services" name="array/boolean"/>
+      </return>
+    </docblock>
+    <parameter name="data" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="logout" start="163" end="167" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Logout"/>
+      <param type="object">
+        <type full="App\Services\none" namespace="App\Services" name="none"/>
+      </param>
+      <return type="boolean"/>
+    </docblock>
+  </method>
+</class>

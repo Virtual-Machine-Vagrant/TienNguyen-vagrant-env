@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="StarshipTest" namespace="" name="StarshipTest" abstract="false" final="false" start="7" end="21">
+  <file path="/home/web/example/src/freegame_developer/vendor/mockery/mockery/examples/starship" file="StarshipTest.php" realpath="/home/web/example/src/freegame_developer/vendor/mockery/mockery/examples/starship/StarshipTest.php" size="719" time="2015-04-02T19:54:00+00:00" unixtime="1428004440" sha1="8b80825480f142403ec7c9b87c50fba5abf0fcfe" relative="freegame_developer/vendor/mockery/mockery/examples/starship/StarshipTest.php"/>
+  <extends full="PHPUnit_Framework_TestCase" namespace="" name="PHPUnit_Framework_TestCase"/>
+  <method name="testEngineeringResponseToEnteringOrbit" start="9" end="20" abstract="false" final="false" static="false" visibility="public"/>
+</class>

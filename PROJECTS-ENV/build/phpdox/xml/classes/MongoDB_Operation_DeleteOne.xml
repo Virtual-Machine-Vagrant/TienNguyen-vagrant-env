@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="MongoDB\Operation\DeleteOne" namespace="MongoDB\Operation" name="DeleteOne" abstract="false" final="false" start="16" end="49">
+  <file path="/home/web/example/src/freegame_developer/vendor/mongodb/mongodb/src/Operation" file="DeleteOne.php" realpath="/home/web/example/src/freegame_developer/vendor/mongodb/mongodb/src/Operation/DeleteOne.php" size="1302" time="2016-09-23T19:38:29+00:00" unixtime="1474659509" sha1="8301dd8681dee8048555a4b64d5f8ecdffa5cce7" relative="freegame_developer/vendor/mongodb/mongodb/src/Operation/DeleteOne.php"/>
+  <docblock>
+    <description compact="Operation for deleting a single document with the delete command."/>
+    <api/>
+    <see value="MongoDB\Collection::deleteOne()"/>
+    <see value="http://docs.mongodb.org/manual/reference/command/delete/"/>
+  </docblock>
+  <implements full="MongoDB\Operation\Executable" namespace="MongoDB\Operation" name="Executable"/>
+  <member name="delete" visibility="private" static="false" line="18"/>
+  <constructor name="__construct" start="33" end="36" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Constructs a delete command.">Supported options:
+
+ * writeConcern (MongoDB\Driver\WriteConcern): Write concern.</description>
+      <param description="Database name" type="string" variable="$databaseName"/>
+      <param description="Collection name" type="string" variable="$collectionName"/>
+      <param description="Query by which to delete documents" type="object" variable="$filter">
+        <type full="MongoDB\Operation\array|object" namespace="MongoDB\Operation" name="array|object"/>
+      </param>
+      <param description="Command options" type="array" variable="$options"/>
+      <throws type="object">
+        <type full="MongoDB\Exception\InvalidArgumentException" namespace="MongoDB\Exception" name="InvalidArgumentException"/>
+      </throws>
+    </docblock>
+    <parameter name="databaseName" byreference="false" type="{unknown}"/>
+    <parameter name="collectionName" byreference="false" type="{unknown}"/>
+    <parameter name="filter" byreference="false" type="{unknown}"/>
+    <parameter name="options" byreference="false" type="array" default=""/>
+  </constructor>
+  <method name="execute" start="45" end="48" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Execute the operation."/>
+      <see value="Executable::execute()"/>
+      <param type="object" variable="$server">
+        <type full="MongoDB\Driver\Server" namespace="MongoDB\Driver" name="Server"/>
+      </param>
+      <return type="object">
+        <type full="MongoDB\DeleteResult" namespace="MongoDB" name="DeleteResult"/>
+      </return>
+    </docblock>
+    <parameter name="server" byreference="false" type="object">
+      <type full="MongoDB\Driver\Server" namespace="MongoDB\Driver" name="Server"/>
+    </parameter>
+  </method>
+</class>

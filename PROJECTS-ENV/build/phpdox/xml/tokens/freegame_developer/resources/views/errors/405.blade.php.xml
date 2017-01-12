@@ -1,0 +1,104 @@
+<?xml version="1.0"?>
+<source xmlns="http://xml.phpdox.net/token">
+  <file xmlns="http://xml.phpdox.net/src" path="/home/web/example/src/freegame_developer/resources/views/errors" file="405.blade.php" realpath="/home/web/example/src/freegame_developer/resources/views/errors/405.blade.php" size="1415" time="2016-11-16T01:52:54+00:00" unixtime="1479261174" sha1="56de1a4dbf2c46ee91d07565e18e5a8c47f057e7" relative="freegame_developer/resources/views/errors/405.blade.php"/>
+  <line no="1">
+    <token name="T_INLINE_HTML">@extends('layoutwithoutnavi')</token>
+  </line>
+  <line no="2"/>
+  <line no="3">
+    <token name="T_INLINE_HTML">@section('content')</token>
+  </line>
+  <line no="4"/>
+  <line no="5">
+    <token name="T_INLINE_HTML">&lt;section class="mg-20"&gt;</token>
+  </line>
+  <line no="6">
+    <token name="T_INLINE_HTML">    &lt;div class="c-area"&gt;</token>
+  </line>
+  <line no="7">
+    <token name="T_INLINE_HTML">        &lt;h2 class="c-headline"&gt;&lt;i class="fa fa-exclamation-circle"&gt;&lt;/i&gt;&#x30A8;&#x30E9;&#x30FC;&lt;/h2&gt;</token>
+  </line>
+  <line no="8">
+    <token name="T_INLINE_HTML">        &lt;div class="center mg-b20"&gt;</token>
+  </line>
+  <line no="9">
+    <token name="T_INLINE_HTML">            &lt;p class="bold tx-20 mg-b6"&gt;405 Method Not Allowed&lt;/p&gt;</token>
+  </line>
+  <line no="10">
+    <token name="T_INLINE_HTML">            @if(!empty($exception)) {{ $exception-&gt;getMessage() }} @endif</token>
+  </line>
+  <line no="11">
+    <token name="T_INLINE_HTML">        &lt;/div&gt;</token>
+  </line>
+  <line no="12">
+    <token name="T_INLINE_HTML">        &lt;div class="center mg-b20"&gt;</token>
+  </line>
+  <line no="13">
+    <token name="T_INLINE_HTML">            &lt;a href="/" class="button"&gt;&lt;i class="fa fa-reply"&gt;&lt;/i&gt;&#x30C8;&#x30C3;&#x30D7;&#x30DA;&#x30FC;&#x30B8;&#x306B;&#x623B;&#x308B;&lt;/a&gt;</token>
+  </line>
+  <line no="14">
+    <token name="T_INLINE_HTML">        &lt;/div&gt;</token>
+  </line>
+  <line no="15">
+    <token name="T_INLINE_HTML">        &lt;div class="center mg-b20"&gt;</token>
+  </line>
+  <line no="16">
+    <token name="T_INLINE_HTML">            &lt;a href="" class="button"&gt;&lt;i class="fa fa-reply"&gt;&lt;/i&gt;&#x30ED;&#x30B0;&#x30A2;&#x30A6;&#x30C8;&lt;/a&gt;</token>
+  </line>
+  <line no="17">
+    <token name="T_INLINE_HTML">        &lt;/div&gt;</token>
+  </line>
+  <line no="18">
+    <token name="T_INLINE_HTML">        @if(!empty($exception))</token>
+  </line>
+  <line no="19">
+    <token name="T_INLINE_HTML">        &lt;div class="fn-showmore mg-b20 is-hide"&gt;</token>
+  </line>
+  <line no="20">
+    <token name="T_INLINE_HTML">            &lt;div class="mg-b20 clearfix"&gt;</token>
+  </line>
+  <line no="21">
+    <token name="T_INLINE_HTML">                &lt;a class="bt-showmore button"&gt;&lt;i class="fa fa-chevron-down"&gt;&lt;/i&gt;&#x8A73;&#x7D30;&#x60C5;&#x5831;&#x3092;&#x958B;&#x304F;&lt;/a&gt;</token>
+  </line>
+  <line no="22">
+    <token name="T_INLINE_HTML">                &lt;a href="" class="bt-showmore-hide button"&gt;&lt;i class="fa fa-chevron-up"&gt;&lt;/i&gt;&#x8A73;&#x7D30;&#x60C5;&#x5831;&#x3092;&#x9589;&#x3058;&#x308B;&lt;/a&gt;</token>
+  </line>
+  <line no="23">
+    <token name="T_INLINE_HTML">            &lt;/div&gt;</token>
+  </line>
+  <line no="24">
+    <token name="T_INLINE_HTML">            &lt;div class="fn-showmore_inner is-show"&gt;</token>
+  </line>
+  <line no="25">
+    <token name="T_INLINE_HTML">                {!! Form::textarea('trace', $exception-&gt;getTraceAsString(), ['rows' =&gt; '8', 'class' =&gt; 'w100', 'readonly' =&gt; 'readonly']) !!}</token>
+  </line>
+  <line no="26">
+    <token name="T_INLINE_HTML">                &lt;!-- /.fn-showmore_inner --&gt;</token>
+  </line>
+  <line no="27">
+    <token name="T_INLINE_HTML">            &lt;/div&gt;</token>
+  </line>
+  <line no="28">
+    <token name="T_INLINE_HTML">            &lt;!-- /.fn-showmore --&gt;</token>
+  </line>
+  <line no="29">
+    <token name="T_INLINE_HTML">        &lt;/div&gt;</token>
+  </line>
+  <line no="30">
+    <token name="T_INLINE_HTML">        @endif</token>
+  </line>
+  <line no="31">
+    <token name="T_INLINE_HTML">        &lt;!-- /.class --&gt;</token>
+  </line>
+  <line no="32">
+    <token name="T_INLINE_HTML">    &lt;/div&gt;</token>
+  </line>
+  <line no="33">
+    <token name="T_INLINE_HTML">&lt;/section&gt;</token>
+  </line>
+  <line no="34"/>
+  <line no="35">
+    <token name="T_INLINE_HTML">@endsection</token>
+  </line>
+  <line no="36"/>
+</source>

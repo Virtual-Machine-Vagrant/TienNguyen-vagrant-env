@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="spec\PhpSpec\CodeAnalysis\TokenizedNamespaceResolverSpec" namespace="spec\PhpSpec\CodeAnalysis" name="TokenizedNamespaceResolverSpec" abstract="false" final="false" start="8" end="105">
+  <file path="/home/web/example/src/freegame_developer/vendor/phpspec/phpspec/spec/PhpSpec/CodeAnalysis" file="TokenizedNamespaceResolverSpec.php" realpath="/home/web/example/src/freegame_developer/vendor/phpspec/phpspec/spec/PhpSpec/CodeAnalysis/TokenizedNamespaceResolverSpec.php" size="1885" time="2016-01-01T10:17:54+00:00" unixtime="1451643474" sha1="7bbe1c2136e1ad23b8dab9f9c3145267a237eb0f" relative="freegame_developer/vendor/phpspec/phpspec/spec/PhpSpec/CodeAnalysis/TokenizedNamespaceResolverSpec.php"/>
+  <extends full="PhpSpec\ObjectBehavior" namespace="PhpSpec" name="ObjectBehavior"/>
+  <method name="it_is_initializable" start="10" end="13" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="it_resolves_types_outside_of_namespaces" start="15" end="27" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="it_resolves_types_from_current_namespace" start="29" end="44" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="it_resolves_types_with_use_statements" start="46" end="63" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="it_resolves_types_with_use_aliases" start="65" end="82" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="it_resolves_types_with_partial_use_statements" start="84" end="104" abstract="false" final="false" static="false" visibility="public"/>
+</class>

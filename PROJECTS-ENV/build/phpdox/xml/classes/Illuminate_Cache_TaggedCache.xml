@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="Illuminate\Cache\TaggedCache" namespace="Illuminate\Cache" name="TaggedCache" abstract="false" final="false" start="7" end="92">
+  <file path="/home/web/example/src/freegame_developer/vendor/laravel/framework/src/Illuminate/Cache" file="TaggedCache.php" realpath="/home/web/example/src/freegame_developer/vendor/laravel/framework/src/Illuminate/Cache/TaggedCache.php" size="1834" time="2016-02-24T15:13:21+00:00" unixtime="1456326801" sha1="f7324eb81220b8da3a09f3801734220bc15702e5" relative="freegame_developer/vendor/laravel/framework/src/Illuminate/Cache/TaggedCache.php"/>
+  <extends full="Illuminate\Cache\Repository" namespace="Illuminate\Cache" name="Repository"/>
+  <member name="tags" visibility="protected" static="false" line="14">
+    <docblock>
+      <description compact="The tag set instance."/>
+      <var type="object">
+        <type full="\Illuminate\Cache\TagSet" namespace="\Illuminate\Cache" name="TagSet"/>
+      </var>
+    </docblock>
+  </member>
+  <constructor name="__construct" start="23" end="28" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Create a new tagged cache instance."/>
+      <param type="object" variable="$store">
+        <type full="\Illuminate\Contracts\Cache\Store" namespace="\Illuminate\Contracts\Cache" name="Store"/>
+      </param>
+      <param type="object" variable="$tags">
+        <type full="\Illuminate\Cache\TagSet" namespace="\Illuminate\Cache" name="TagSet"/>
+      </param>
+      <return type="object">
+        <type full="Illuminate\Cache\void" namespace="Illuminate\Cache" name="void"/>
+      </return>
+    </docblock>
+    <parameter name="store" byreference="false" type="object">
+      <type full="Illuminate\Contracts\Cache\Store" namespace="Illuminate\Contracts\Cache" name="Store"/>
+    </parameter>
+    <parameter name="tags" byreference="false" type="object">
+      <type full="Illuminate\Cache\TagSet" namespace="Illuminate\Cache" name="TagSet"/>
+    </parameter>
+  </constructor>
+  <method name="fireCacheEvent" start="33" end="38" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="{@inheritdoc}"/>
+    </docblock>
+    <parameter name="event" byreference="false" type="{unknown}"/>
+    <parameter name="payload" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="increment" start="47" end="50" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Increment the value of an item in the cache."/>
+      <param type="string" variable="$key"/>
+      <param type="mixed" variable="$value"/>
+      <return type="object">
+        <type full="Illuminate\Cache\void" namespace="Illuminate\Cache" name="void"/>
+      </return>
+    </docblock>
+    <parameter name="key" byreference="false" type="{unknown}"/>
+    <parameter name="value" byreference="false" type="integer" default="1"/>
+  </method>
+  <method name="decrement" start="59" end="62" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Increment the value of an item in the cache."/>
+      <param type="string" variable="$key"/>
+      <param type="mixed" variable="$value"/>
+      <return type="object">
+        <type full="Illuminate\Cache\void" namespace="Illuminate\Cache" name="void"/>
+      </return>
+    </docblock>
+    <parameter name="key" byreference="false" type="{unknown}"/>
+    <parameter name="value" byreference="false" type="integer" default="1"/>
+  </method>
+  <method name="flush" start="69" end="72" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Remove all items from the cache."/>
+      <return type="object">
+        <type full="Illuminate\Cache\void" namespace="Illuminate\Cache" name="void"/>
+      </return>
+    </docblock>
+  </method>
+  <method name="itemKey" start="77" end="80" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="{@inheritdoc}"/>
+    </docblock>
+    <parameter name="key" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="taggedItemKey" start="88" end="91" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Get a fully qualified key for a tagged item."/>
+      <param type="string" variable="$key"/>
+      <return type="string"/>
+    </docblock>
+    <parameter name="key" byreference="false" type="{unknown}"/>
+  </method>
+</class>

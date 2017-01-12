@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="Generic_Sniffs_NamingConventions_ConstructorNameSniff" namespace="" name="Generic_Sniffs_NamingConventions_ConstructorNameSniff" abstract="false" final="false" start="34" end="148">
+  <file path="/home/web/example/src/freegame_developer/vendor/squizlabs/php_codesniffer/CodeSniffer/Standards/Generic/Sniffs/NamingConventions" file="ConstructorNameSniff.php" realpath="/home/web/example/src/freegame_developer/vendor/squizlabs/php_codesniffer/CodeSniffer/Standards/Generic/Sniffs/NamingConventions/ConstructorNameSniff.php" size="5056" time="2016-01-19T23:39:10+00:00" unixtime="1453246750" sha1="c32b3bde1e9b08a04f8c090df8b600a5c5d80ca8" relative="freegame_developer/vendor/squizlabs/php_codesniffer/CodeSniffer/Standards/Generic/Sniffs/NamingConventions/ConstructorNameSniff.php"/>
+  <docblock>
+    <description compact="Generic_Sniffs_NamingConventions_ConstructorNameSniff.">Favor PHP 5 constructor syntax, which uses "function __construct()".
+Avoid PHP 4 constructor syntax, which uses "function ClassName()".</description>
+    <category value="PHP"/>
+    <package value="PHP_CodeSniffer"/>
+    <author value="Leif Wickland &lt;lwickland@rightnow.com&gt;"/>
+    <license name="https://github.com/squizlabs/PHP_CodeSniffer/blob/master/licence.txt BSD Licence"/>
+    <version value="Release: @package_version@"/>
+    <link value="http://pear.php.net/package/PHP_CodeSniffer"/>
+  </docblock>
+  <extends full="PHP_CodeSniffer_Standards_AbstractScopeSniff" namespace="" name="PHP_CodeSniffer_Standards_AbstractScopeSniff"/>
+  <member name="_currentClass" type="string" default="''" visibility="private" static="false" line="42">
+    <docblock>
+      <description compact="The name of the class we are currently checking."/>
+      <var type="string"/>
+    </docblock>
+  </member>
+  <member name="_functionList" type="array" default="" visibility="private" static="false" line="49">
+    <docblock>
+      <description compact="A list of functions in the current class."/>
+      <var type="array" of="string"/>
+    </docblock>
+  </member>
+  <constructor name="__construct" start="55" end="59" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Constructs the test with the tokens it wishes to listen for."/>
+    </docblock>
+  </constructor>
+  <method name="processTokenWithinScope" start="72" end="120" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Processes this test when one of its tokens is encountered."/>
+      <param description="The current file being scanned." type="object" variable="$phpcsFile">
+        <type full="PHP_CodeSniffer_File" namespace="" name="PHP_CodeSniffer_File"/>
+      </param>
+      <param description="The position of the current token" type="int" variable="$stackPtr">in the stack passed in $tokens.</param>
+      <param description="A pointer to the start of the scope." type="int" variable="$currScope"/>
+      <return type="object">
+        <type full="void" namespace="" name="void"/>
+      </return>
+    </docblock>
+    <parameter name="phpcsFile" byreference="false" type="object">
+      <type full="PHP_CodeSniffer_File" namespace="" name="PHP_CodeSniffer_File"/>
+    </parameter>
+    <parameter name="stackPtr" byreference="false" type="{unknown}"/>
+    <parameter name="currScope" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="Stop if the constructor doesn't have a body, like when it is abstract." line="102"/>
+    </inline>
+  </method>
+  <method name="loadFunctionNamesInScope" start="131" end="145" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Extracts all the function names found in the given scope."/>
+      <param description="The current file being scanned." type="object" variable="$phpcsFile">
+        <type full="PHP_CodeSniffer_File" namespace="" name="PHP_CodeSniffer_File"/>
+      </param>
+      <param description="A pointer to the start of the scope." type="int" variable="$currScope"/>
+      <return type="object">
+        <type full="void" namespace="" name="void"/>
+      </return>
+    </docblock>
+    <parameter name="phpcsFile" byreference="false" type="object">
+      <type full="PHP_CodeSniffer_File" namespace="" name="PHP_CodeSniffer_File"/>
+    </parameter>
+    <parameter name="currScope" byreference="false" type="{unknown}"/>
+  </method>
+</class>

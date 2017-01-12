@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="MongoDB\Tests\Operation\UpdateTest" namespace="MongoDB\Tests\Operation" name="UpdateTest" abstract="false" final="false" start="7" end="60">
+  <file path="/home/web/example/src/freegame_developer/vendor/mongodb/mongodb/tests/Operation" file="UpdateTest.php" realpath="/home/web/example/src/freegame_developer/vendor/mongodb/mongodb/tests/Operation/UpdateTest.php" size="1928" time="2016-09-23T19:38:29+00:00" unixtime="1474659509" sha1="57dcdd1668f41c8a4bfdcf777f380679733fb9da" relative="freegame_developer/vendor/mongodb/mongodb/tests/Operation/UpdateTest.php"/>
+  <extends full="MongoDB\Tests\Operation\TestCase" namespace="MongoDB\Tests\Operation" name="TestCase"/>
+  <method name="testConstructorFilterArgumentTypeCheck" start="14" end="17" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <expectedexception value="MongoDB\Exception\InvalidArgumentException"/>
+      <expectedexceptionmessageregexp value="/Expected \$filter to have type &quot;array or object&quot; but found &quot;[\w ]+&quot;/"/>
+      <dataprovider value="provideInvalidDocumentValues"/>
+    </docblock>
+    <parameter name="filter" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="testConstructorUpdateArgumentTypeCheck" start="24" end="27" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <expectedexception value="MongoDB\Exception\InvalidArgumentException"/>
+      <expectedexceptionmessageregexp value="/Expected \$update to have type &quot;array or object&quot; but found &quot;[\w ]+&quot;/"/>
+      <dataprovider value="provideInvalidDocumentValues"/>
+    </docblock>
+    <parameter name="update" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="testConstructorOptionTypeChecks" start="33" end="36" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <expectedexception value="MongoDB\Exception\InvalidArgumentException"/>
+      <dataprovider value="provideInvalidConstructorOptions"/>
+    </docblock>
+    <parameter name="options" byreference="false" type="array"/>
+  </method>
+  <method name="provideInvalidConstructorOptions" start="38" end="59" abstract="false" final="false" static="false" visibility="public"/>
+</class>

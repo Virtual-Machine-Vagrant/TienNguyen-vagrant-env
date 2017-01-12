@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="App\Http\Requests\SearchUserRequest" namespace="App\Http\Requests" name="SearchUserRequest" abstract="false" final="false" start="7" end="83">
+  <file path="/home/web/example/src/freegame_developer/app/Http/Requests" file="SearchUserRequest.php" realpath="/home/web/example/src/freegame_developer/app/Http/Requests/SearchUserRequest.php" size="1835" time="2016-11-28T03:00:57+00:00" unixtime="1480302057" sha1="531ec3edac433faa4bae11ef13910260ed655729" relative="freegame_developer/app/Http/Requests/SearchUserRequest.php"/>
+  <extends full="App\Http\Requests\Request" namespace="App\Http\Requests" name="Request"/>
+  <member name="isSearch" type="boolean" default="false" visibility="protected" static="false" line="9"/>
+  <method name="authorize" start="16" end="19" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Determine if the user is authorized to make this request."/>
+      <return type="object">
+        <type full="App\Http\Requests\bool" namespace="App\Http\Requests" name="bool"/>
+      </return>
+    </docblock>
+  </method>
+  <method name="rules" start="26" end="42" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Get the validation rules that apply to the request."/>
+      <return type="array"/>
+    </docblock>
+  </method>
+  <method name="attributes" start="48" end="54" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Custom attributes list"/>
+      <return type="array"/>
+    </docblock>
+  </method>
+  <method name="customMessages" start="61" end="68" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Custom validation message"/>
+      <return type="array"/>
+    </docblock>
+  </method>
+  <method name="getValidatorInstance" start="75" end="82" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Get validator instance"/>
+      <return type="array"/>
+    </docblock>
+  </method>
+</class>

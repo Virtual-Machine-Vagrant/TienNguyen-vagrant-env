@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="PhpParser\ParserAbstract" namespace="PhpParser" name="ParserAbstract" abstract="true" final="false" start="11" end="501">
+  <file path="/home/web/example/src/freegame_developer/vendor/nikic/php-parser/lib/PhpParser" file="ParserAbstract.php" realpath="/home/web/example/src/freegame_developer/vendor/nikic/php-parser/lib/PhpParser/ParserAbstract.php" size="20678" time="2016-09-16T12:04:44+00:00" unixtime="1474027484" sha1="586fed9566c91f29918ac675afbe60ea8360d7a0" relative="freegame_developer/vendor/nikic/php-parser/lib/PhpParser/ParserAbstract.php"/>
+  <implements full="PhpParser\Parser" namespace="PhpParser" name="Parser"/>
+  <constant type="integer" name="SYMBOL_NONE" value="1"/>
+  <member name="tokenToSymbolMapSize" visibility="protected" static="false" line="20">
+    <docblock>
+      <var description="Size of $tokenToSymbol map" type="int"/>
+    </docblock>
+  </member>
+  <member name="actionTableSize" visibility="protected" static="false" line="22">
+    <docblock>
+      <var description="Size of $action table" type="int"/>
+    </docblock>
+  </member>
+  <member name="gotoTableSize" visibility="protected" static="false" line="24">
+    <docblock>
+      <var description="Size of $goto table" type="int"/>
+    </docblock>
+  </member>
+  <member name="invalidSymbol" visibility="protected" static="false" line="27">
+    <docblock>
+      <var description="Symbol number signifying an invalid token" type="int"/>
+    </docblock>
+  </member>
+  <member name="errorSymbol" visibility="protected" static="false" line="29">
+    <docblock>
+      <var description="Symbol number of error recovery token" type="int"/>
+    </docblock>
+  </member>
+  <member name="defaultAction" visibility="protected" static="false" line="31">
+    <docblock>
+      <var description="Action number signifying default action" type="int"/>
+    </docblock>
+  </member>
+  <member name="unexpectedTokenRule" visibility="protected" static="false" line="33">
+    <docblock>
+      <var description="Rule number signifying that an unexpected token was encountered" type="int"/>
+    </docblock>
+  </member>
+  <member name="YY2TBLSTATE" visibility="protected" static="false" line="35"/>
+  <member name="YYNLSTATES" visibility="protected" static="false" line="36"/>
+  <member name="tokenToSymbol" visibility="protected" static="false" line="39">
+    <docblock>
+      <var description="Map of lexer tokens to internal symbols" type="array"/>
+    </docblock>
+  </member>
+  <member name="symbolToName" visibility="protected" static="false" line="41">
+    <docblock>
+      <var description="Map of symbols to their names" type="array"/>
+    </docblock>
+  </member>
+  <member name="productions" visibility="protected" static="false" line="43">
+    <docblock>
+      <var description="Names of the production rules (only necessary for debugging)" type="array"/>
+    </docblock>
+  </member>
+  <member name="actionBase" visibility="protected" static="false" line="48">
+    <docblock>
+      <description/>
+      <var description="Map of states to a displacement into the $action table. The corresponding action for this" type="array">state/symbol pair is $action[$actionBase[$state] + $symbol]. If $actionBase[$state] is 0, the
+action is defaulted, i.e. $actionDefault[$state] should be used instead.</var>
+    </docblock>
+  </member>
+  <member name="action" visibility="protected" static="false" line="50">
+    <docblock>
+      <var description="Table of actions. Indexed according to $actionBase comment." type="array"/>
+    </docblock>
+  </member>
+  <member name="actionCheck" visibility="protected" static="false" line="53">
+    <docblock>
+      <description/>
+      <var description="Table indexed analogously to $action. If $actionCheck[$actionBase[$state] + $symbol] != $symbol" type="array">then the action is defaulted, i.e. $actionDefault[$state] should be used instead.</var>
+    </docblock>
+  </member>
+  <member name="actionDefault" visibility="protected" static="false" line="55">
+    <docblock>
+      <var description="Map of states to their default action" type="array"/>
+    </docblock>
+  </member>
+  <member name="gotoBase" visibility="protected" static="false" line="59">
+    <docblock>
+      <description/>
+      <var description="Map of non-terminals to a displacement into the $goto table. The corresponding goto state for this" type="array">non-terminal/state pair is $goto[$gotoBase[$nonTerminal] + $state] (unless defaulted)</var>
+    </docblock>
+  </member>
+  <member name="goto" visibility="protected" static="false" line="61">
+    <docblock>
+      <var description="Table of states to goto after reduction. Indexed according to $gotoBase comment." type="array"/>
+    </docblock>
+  </member>
+  <member name="gotoCheck" visibility="protected" static="false" line="64">
+    <docblock>
+      <description/>
+      <var description="Table indexed analogously to $goto. If $gotoCheck[$gotoBase[$nonTerminal] + $state] != $nonTerminal" type="array">then the goto state is defaulted, i.e. $gotoDefault[$nonTerminal] should be used.</var>
+    </docblock>
+  </member>
+  <member name="gotoDefault" visibility="protected" static="false" line="66">
+    <docblock>
+      <var description="Map of non-terminals to the default state to goto after their reduction" type="array"/>
+    </docblock>
+  </member>
+  <member name="ruleToNonTerminal" visibility="protected" static="false" line="70">
+    <docblock>
+      <description/>
+      <var description="Map of rules to the non-terminal on their left-hand side, i.e. the non-terminal to use for" type="array">determining the state to goto after reduction.</var>
+    </docblock>
+  </member>
+  <member name="ruleToLength" visibility="protected" static="false" line="73">
+    <docblock>
+      <description/>
+      <var description="Map of rules to the length of their right-hand side, which is the number of elements that have to" type="array">be popped from the stack(s) on reduction.</var>
+    </docblock>
+  </member>
+  <member name="lexer" visibility="protected" static="false" line="80">
+    <docblock>
+      <var description="Lexer that is used when parsing" type="object">
+        <type full="PhpParser\Lexer" namespace="PhpParser" name="Lexer"/>
+      </var>
+    </docblock>
+  </member>
+  <member name="semValue" visibility="protected" static="false" line="82">
+    <docblock>
+      <var description="Temporary value containing the result of last semantic action (reduction)" type="mixed"/>
+    </docblock>
+  </member>
+  <member name="stackPos" visibility="protected" static="false" line="84">
+    <docblock>
+      <var description="Position in stacks (state stack, semantic value stack, attribute stack)" type="int"/>
+    </docblock>
+  </member>
+  <member name="semStack" visibility="protected" static="false" line="86">
+    <docblock>
+      <var description="Semantic value stack (contains values of tokens and semantic action results)" type="array"/>
+    </docblock>
+  </member>
+  <member name="startAttributeStack" visibility="protected" static="false" line="88">
+    <docblock>
+      <var description="Start attribute stack" type="array" of="object">
+        <type full="PhpParser\array" namespace="PhpParser" name="array"/>
+      </var>
+    </docblock>
+  </member>
+  <member name="endAttributes" visibility="protected" static="false" line="90">
+    <docblock>
+      <var description="End attributes of last *shifted* token" type="array"/>
+    </docblock>
+  </member>
+  <member name="lookaheadStartAttributes" visibility="protected" static="false" line="92">
+    <docblock>
+      <var description="Start attributes of last *read* token" type="array"/>
+    </docblock>
+  </member>
+  <member name="throwOnError" visibility="protected" static="false" line="95">
+    <docblock>
+      <var description="Whether to throw on first error" type="object">
+        <type full="PhpParser\bool" namespace="PhpParser" name="bool"/>
+      </var>
+    </docblock>
+  </member>
+  <member name="errors" visibility="protected" static="false" line="97">
+    <docblock>
+      <var description="Errors collected during last parse" type="array" of="object">
+        <type full="PhpParser\Error" namespace="PhpParser" name="Error"/>
+      </var>
+    </docblock>
+  </member>
+  <constructor name="__construct" start="107" end="111" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Creates a parser instance."/>
+      <param description="A lexer" type="object" variable="$lexer">
+        <type full="PhpParser\Lexer" namespace="PhpParser" name="Lexer"/>
+      </param>
+      <param description="Options array. The boolean 'throwOnError' option determines whether an exception should be" type="array" variable="$options">thrown on first error, or if the parser should try to continue parsing the remaining code
+                      and build a partial AST.</param>
+    </docblock>
+    <parameter name="lexer" byreference="false" type="object">
+      <type full="PhpParser\Lexer" namespace="PhpParser" name="Lexer"/>
+    </parameter>
+    <parameter name="options" byreference="false" type="array" default=""/>
+  </constructor>
+  <method name="getErrors" start="120" end="122" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Get array of errors that occurred during the last parse.">This method may only return multiple errors if the 'throwOnError' option is disabled.</description>
+      <return type="array" of="object">
+        <type full="PhpParser\Error" namespace="PhpParser" name="Error"/>
+      </return>
+    </docblock>
+  </method>
+  <method name="parse" start="132" end="332" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Parses PHP code into a node tree."/>
+      <param description="The source code to parse" type="string" variable="$code"/>
+      <return description="Array of statements (or null if the 'throwOnError' option is disabled and the parser was" type="array" of="object">unable to recover from an error).<type full="PhpParser\Node[]|nu" namespace="PhpParser" name="Node[]|nu"/></return>
+    </docblock>
+    <parameter name="code" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="We start off with no lookahead-token" line="136"/>
+      <comment value="The attributes for a node are taken from the first and last token of the node." line="139"/>
+      <comment value="From the first token only the startAttributes are taken and from the last only" line="140"/>
+      <comment value="the endAttributes. Both are merged using the array union operator (+)." line="141"/>
+      <comment value="In order to figure out the attributes for the starting token, we have to keep" line="146"/>
+      <comment value="them in a stack" line="147"/>
+      <comment value="Start off in the initial state and keep a stack of previous states" line="150"/>
+      <comment value="Semantic value stack (contains values of tokens and semantic action results)" line="154"/>
+      <comment value="Current position in the stack(s)" line="157"/>
+    </inline>
+  </method>
+  <method name="getErrorMessage" start="334" end="341" abstract="false" final="false" static="false" visibility="protected">
+    <parameter name="symbol" byreference="false" type="{unknown}"/>
+    <parameter name="state" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="getExpectedTokens" start="343" end="368" abstract="false" final="false" static="false" visibility="protected">
+    <parameter name="state" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="handleNamespaces" start="415" end="449" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Moves statements of semicolon-style namespaces into $ns-&gt;stmts and checks various error conditions."/>
+      <param type="array" variable="$stmts" of="object">
+        <type full="PhpParser\Node" namespace="PhpParser" name="Node"/>
+      </param>
+      <return type="array" of="object">
+        <type full="PhpParser\Node" namespace="PhpParser" name="Node"/>
+      </return>
+    </docblock>
+    <parameter name="stmts" byreference="false" type="array"/>
+  </method>
+  <method name="getNamespacingStyle" start="451" end="484" abstract="false" final="false" static="false" visibility="private">
+    <parameter name="stmts" byreference="false" type="array"/>
+  </method>
+  <method name="handleScalarTypes" start="486" end="500" abstract="false" final="false" static="false" visibility="protected">
+    <parameter name="name" byreference="false" type="object">
+      <type full="PhpParser\Node\Name" namespace="PhpParser\Node" name="Name"/>
+    </parameter>
+  </method>
+</class>

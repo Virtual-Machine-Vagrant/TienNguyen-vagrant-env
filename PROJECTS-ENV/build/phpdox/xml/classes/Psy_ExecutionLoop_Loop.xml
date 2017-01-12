@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="Psy\ExecutionLoop\Loop" namespace="Psy\ExecutionLoop" name="Loop" abstract="false" final="false" start="23" end="175">
+  <file path="/home/web/example/src/freegame_developer/vendor/psy/psysh/src/Psy/ExecutionLoop" file="Loop.php" realpath="/home/web/example/src/freegame_developer/vendor/psy/psysh/src/Psy/ExecutionLoop/Loop.php" size="4962" time="2016-03-09T05:03:14+00:00" unixtime="1457499794" sha1="e313b301a3a24b00f668e7493ef5a3a24e2b75b5" relative="freegame_developer/vendor/psy/psysh/src/Psy/ExecutionLoop/Loop.php"/>
+  <docblock>
+    <description compact="The Psy Shell execution loop."/>
+  </docblock>
+  <constant type="string" name="NOOP_INPUT" value="'return null;'"/>
+  <constructor name="__construct" start="35" end="38" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Loop constructor.">The non-forking loop doesn't have much use for Configuration, so we'll
+just ignore it.</description>
+      <param type="object" variable="$config">
+        <type full="Psy\Configuration" namespace="Psy" name="Configuration"/>
+      </param>
+    </docblock>
+    <parameter name="config" byreference="false" type="object">
+      <type full="Psy\Configuration" namespace="Psy" name="Configuration"/>
+    </parameter>
+    <inline>
+      <comment value="don't need this" line="37"/>
+    </inline>
+  </constructor>
+  <method name="run" start="47" end="136" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Run the execution loop."/>
+      <throws description="if thrown by the `throw-up` command." type="object">
+        <type full="Psy\Exception\ThrowUpException" namespace="Psy\Exception" name="ThrowUpException"/>
+      </throws>
+      <param type="object" variable="$shell">
+        <type full="Psy\Shell" namespace="Psy" name="Shell"/>
+      </param>
+    </docblock>
+    <parameter name="shell" byreference="false" type="object">
+      <type full="Psy\Shell" namespace="Psy" name="Shell"/>
+    </parameter>
+    <inline>
+      <comment value="bind the closure to $this from the shell scope variables..." line="119"/>
+    </inline>
+  </method>
+  <method name="beforeLoop" start="144" end="147" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="A beforeLoop callback.">This is executed at the start of each loop iteration. In the default
+(non-forking) loop implementation, this is a no-op.</description>
+    </docblock>
+    <inline>
+      <comment value="no-op" line="146"/>
+    </inline>
+  </method>
+  <method name="afterLoop" start="155" end="158" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="A afterLoop callback.">This is executed at the end of each loop iteration. In the default
+(non-forking) loop implementation, this is a no-op.</description>
+    </docblock>
+    <inline>
+      <comment value="no-op" line="157"/>
+    </inline>
+  </method>
+  <method name="bindLoop" start="165" end="174" abstract="false" final="false" static="true" visibility="protected">
+    <docblock>
+      <description compact="Decide whether to bind the execution loop."/>
+      <return type="object">
+        <type full="Psy\ExecutionLoop\bool" namespace="Psy\ExecutionLoop" name="bool"/>
+      </return>
+    </docblock>
+    <inline>
+      <comment value="skip binding on HHVM &lt;= 3.5.0" line="167"/>
+      <comment value="see https://github.com/facebook/hhvm/issues/1203" line="168"/>
+    </inline>
+  </method>
+</class>

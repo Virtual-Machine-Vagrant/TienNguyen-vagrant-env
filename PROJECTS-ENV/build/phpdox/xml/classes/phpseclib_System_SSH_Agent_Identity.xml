@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="phpseclib\System\SSH\Agent\Identity" namespace="phpseclib\System\SSH\Agent" name="Identity" abstract="false" final="false" start="33" end="158">
+  <file path="/home/web/example/src/freegame_developer/vendor/phpseclib/phpseclib/phpseclib/System/SSH/Agent" file="Identity.php" realpath="/home/web/example/src/freegame_developer/vendor/phpseclib/phpseclib/phpseclib/System/SSH/Agent/Identity.php" size="4166" time="2016-10-04T00:57:04+00:00" unixtime="1475542624" sha1="030f384dabe6221373c2eff754ec07a9f21cfb68" relative="freegame_developer/vendor/phpseclib/phpseclib/phpseclib/System/SSH/Agent/Identity.php"/>
+  <docblock>
+    <description compact="Pure-PHP ssh-agent client identity object">Instantiation should only be performed by \phpseclib\System\SSH\Agent class.
+This could be thought of as implementing an interface that phpseclib\Crypt\RSA
+implements. ie. maybe a Net_SSH_Auth_PublicKey interface or something.
+The methods in this interface would be getPublicKey and sign since those are the
+methods phpseclib looks for to perform public key authentication.</description>
+    <package value="SSH\Agent"/>
+    <author value="Jim Wigginton &lt;terrafrost@php.net&gt;"/>
+    <access value="internal"/>
+  </docblock>
+  <member name="key" visibility="public" static="false" line="42">
+    <docblock>
+      <description compact="Key Object"/>
+      <var type="object">
+        <type full="\phpseclib\Crypt\RSA" namespace="\phpseclib\Crypt" name="RSA"/>
+      </var>
+      <access value="private"/>
+      <see value="self::getPublicKey()"/>
+    </docblock>
+  </member>
+  <member name="key_blob" visibility="public" static="false" line="51">
+    <docblock>
+      <description compact="Key Blob"/>
+      <var type="string"/>
+      <access value="private"/>
+      <see value="self::sign()"/>
+    </docblock>
+  </member>
+  <member name="fsock" visibility="public" static="false" line="60">
+    <docblock>
+      <description compact="Socket Resource"/>
+      <var type="resource"/>
+      <access value="private"/>
+      <see value="self::sign()"/>
+    </docblock>
+  </member>
+  <constructor name="__construct" start="69" end="72" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Default Constructor."/>
+      <param type="resource" variable="$fsock"/>
+      <return type="object">
+        <type full="\phpseclib\System\SSH\Agent\Identity" namespace="\phpseclib\System\SSH\Agent" name="Identity"/>
+      </return>
+      <access value="private"/>
+    </docblock>
+    <parameter name="fsock" byreference="false" type="{unknown}"/>
+  </constructor>
+  <method name="setPublicKey" start="82" end="86" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Set Public Key">Called by \phpseclib\System\SSH\Agent::requestIdentities()</description>
+      <param type="object" variable="$key">
+        <type full="\phpseclib\Crypt\RSA" namespace="\phpseclib\Crypt" name="RSA"/>
+      </param>
+      <access value="private"/>
+    </docblock>
+    <parameter name="key" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="setPublicKeyBlob" start="97" end="100" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Set Public Key">Called by \phpseclib\System\SSH\Agent::requestIdentities(). The key blob could be extracted from $this-&gt;key
+but this saves a small amount of computation.</description>
+      <param type="string" variable="$key_blob"/>
+      <access value="private"/>
+    </docblock>
+    <parameter name="key_blob" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="getPublicKey" start="111" end="114" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Get Public Key">Wrapper for $this-&gt;key-&gt;getPublicKey()</description>
+      <param description="optional" type="int" variable="$format"/>
+      <return type="mixed"/>
+      <access value="public"/>
+    </docblock>
+    <parameter name="format" byreference="false" type="{unknown}" default="" constant="null"/>
+  </method>
+  <method name="setSignatureMode" start="125" end="127" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Set Signature Mode">Doesn't do anything as ssh-agent doesn't let you pick and choose the signature mode. ie.
+ssh-agent's only supported mode is \phpseclib\Crypt\RSA::SIGNATURE_PKCS1</description>
+      <param type="int" variable="$mode"/>
+      <access value="public"/>
+    </docblock>
+    <parameter name="mode" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="sign" start="138" end="157" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Create a signature">See "2.6.2 Protocol 2 private key signature request"</description>
+      <param type="string" variable="$message"/>
+      <return type="string"/>
+      <access value="public"/>
+    </docblock>
+    <parameter name="message" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="the last parameter (currently 0) is for flags and ssh-agent only defines one flag (for ssh-dss): SSH_AGENT_OLD_SIGNATURE" line="140"/>
+      <comment value="the only other signature format defined - ssh-dss - is the same length as ssh-rsa" line="154"/>
+      <comment value="the + 12 is for the other various SSH added length fields" line="155"/>
+    </inline>
+  </method>
+</class>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="spec\PhpSpec\Formatter\Presenter\Value\CallableTypePresenterSpec" namespace="spec\PhpSpec\Formatter\Presenter\Value" name="CallableTypePresenterSpec" abstract="false" final="false" start="9" end="78">
+  <file path="/home/web/example/src/freegame_developer/vendor/phpspec/phpspec/spec/PhpSpec/Formatter/Presenter/Value" file="CallableTypePresenterSpec.php" realpath="/home/web/example/src/freegame_developer/vendor/phpspec/phpspec/spec/PhpSpec/Formatter/Presenter/Value/CallableTypePresenterSpec.php" size="2814" time="2016-01-01T10:17:54+00:00" unixtime="1451643474" sha1="ce1307fbb25604a8073df3a87b666f6901df1630" relative="freegame_developer/vendor/phpspec/phpspec/spec/PhpSpec/Formatter/Presenter/Value/CallableTypePresenterSpec.php"/>
+  <extends full="PhpSpec\ObjectBehavior" namespace="PhpSpec" name="ObjectBehavior"/>
+  <method name="let" start="11" end="14" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="presenter" byreference="false" type="object">
+      <type full="PhpSpec\Formatter\Presenter\Presenter" namespace="PhpSpec\Formatter\Presenter" name="Presenter"/>
+    </parameter>
+  </method>
+  <method name="it_is_a_type_presenter" start="16" end="19" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="it_should_support_callable_values" start="21" end="24" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="it_should_present_a_closure" start="26" end="29" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="it_should_present_function_callable_as_string" start="31" end="34" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="it_should_present_a_method_as_string" start="36" end="45" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="object" byreference="false" type="object">
+      <type full="spec\PhpSpec\Formatter\Presenter\Value\WithMethod" namespace="spec\PhpSpec\Formatter\Presenter\Value" name="WithMethod"/>
+    </parameter>
+    <parameter name="presenter" byreference="false" type="object">
+      <type full="PhpSpec\Formatter\Presenter\Presenter" namespace="PhpSpec\Formatter\Presenter" name="Presenter"/>
+    </parameter>
+  </method>
+  <method name="it_should_present_a_magic_method_as_string" start="47" end="56" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="object" byreference="false" type="object">
+      <type full="spec\PhpSpec\Formatter\Presenter\Value\WithMagicCall" namespace="spec\PhpSpec\Formatter\Presenter\Value" name="WithMagicCall"/>
+    </parameter>
+    <parameter name="presenter" byreference="false" type="object">
+      <type full="PhpSpec\Formatter\Presenter\Presenter" namespace="PhpSpec\Formatter\Presenter" name="Presenter"/>
+    </parameter>
+  </method>
+  <method name="it_should_present_a_static_method_as_string" start="58" end="63" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="object" byreference="false" type="object">
+      <type full="spec\PhpSpec\Formatter\Presenter\Value\WithMethod" namespace="spec\PhpSpec\Formatter\Presenter\Value" name="WithMethod"/>
+    </parameter>
+  </method>
+  <method name="it_should_present_a_static_magic_method_as_string" start="65" end="70" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="it_should_present_an_invokable_object_as_string" start="72" end="76" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="object" byreference="false" type="object">
+      <type full="spec\PhpSpec\Formatter\Presenter\Value\WithMagicInvoke" namespace="spec\PhpSpec\Formatter\Presenter\Value" name="WithMagicInvoke"/>
+    </parameter>
+  </method>
+</class>

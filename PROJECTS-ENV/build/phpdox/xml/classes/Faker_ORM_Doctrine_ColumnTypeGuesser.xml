@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="Faker\ORM\Doctrine\ColumnTypeGuesser" namespace="Faker\ORM\Doctrine" name="ColumnTypeGuesser" abstract="false" final="false" start="7" end="68">
+  <file path="/home/web/example/src/freegame_developer/vendor/fzaninotto/faker/src/Faker/ORM/Doctrine" file="ColumnTypeGuesser.php" realpath="/home/web/example/src/freegame_developer/vendor/fzaninotto/faker/src/Faker/ORM/Doctrine/ColumnTypeGuesser.php" size="2282" time="2015-05-29T06:29:14+00:00" unixtime="1432880954" sha1="452fb121854ab9be52b49828a80ae98845ee4414" relative="freegame_developer/vendor/fzaninotto/faker/src/Faker/ORM/Doctrine/ColumnTypeGuesser.php"/>
+  <member name="generator" visibility="protected" static="false" line="9"/>
+  <constructor name="__construct" start="11" end="14" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="generator" byreference="false" type="object">
+      <type full="Faker\Generator" namespace="Faker" name="Generator"/>
+    </parameter>
+  </constructor>
+  <method name="guessFormat" start="16" end="67" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="fieldName" byreference="false" type="{unknown}"/>
+    <parameter name="class" byreference="false" type="object">
+      <type full="Doctrine\Common\Persistence\Mapping\ClassMetadata" namespace="Doctrine\Common\Persistence\Mapping" name="ClassMetadata"/>
+    </parameter>
+  </method>
+</class>

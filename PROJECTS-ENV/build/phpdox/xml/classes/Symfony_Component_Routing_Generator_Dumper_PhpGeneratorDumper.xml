@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="Symfony\Component\Routing\Generator\Dumper\PhpGeneratorDumper" namespace="Symfony\Component\Routing\Generator\Dumper" name="PhpGeneratorDumper" abstract="false" final="false" start="20" end="123">
+  <file path="/home/web/example/src/freegame_developer/vendor/symfony/routing/Generator/Dumper" file="PhpGeneratorDumper.php" realpath="/home/web/example/src/freegame_developer/vendor/symfony/routing/Generator/Dumper/PhpGeneratorDumper.php" size="3640" time="2016-08-16T10:55:04+00:00" unixtime="1471344904" sha1="04c3f0b5135bf11606b00c20b3d1de17f8d5f5a4" relative="freegame_developer/vendor/symfony/routing/Generator/Dumper/PhpGeneratorDumper.php"/>
+  <docblock>
+    <description compact="PhpGeneratorDumper creates a PHP class able to generate URLs for a given set of routes."/>
+    <author value="Fabien Potencier &lt;fabien@symfony.com&gt;"/>
+    <author value="Tobias Schultze &lt;http://tobion.de&gt;"/>
+  </docblock>
+  <extends full="Symfony\Component\Routing\Generator\Dumper\GeneratorDumper" namespace="Symfony\Component\Routing\Generator\Dumper" name="GeneratorDumper"/>
+  <method name="dump" start="34" end="74" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Dumps a set of routes to a PHP class.">Available options:
+
+ * class:      The class name
+ * base_class: The base class name</description>
+      <param description="An array of options" type="array" variable="$options"/>
+      <return description="A PHP class representing the generator class" type="string"/>
+    </docblock>
+    <parameter name="options" byreference="false" type="array" default=""/>
+  </method>
+  <method name="generateDeclaredRoutes" start="82" end="101" abstract="false" final="false" static="false" visibility="private">
+    <docblock>
+      <description compact="Generates PHP code representing an array of defined routes together with the routes properties (e.g. requirements)."/>
+      <return description="PHP code" type="string"/>
+    </docblock>
+  </method>
+  <method name="generateGenerateMethod" start="108" end="122" abstract="false" final="false" static="false" visibility="private">
+    <docblock>
+      <description compact="Generates PHP code representing the `generate` method that implements the UrlGeneratorInterface."/>
+      <return description="PHP code" type="string"/>
+    </docblock>
+  </method>
+</class>

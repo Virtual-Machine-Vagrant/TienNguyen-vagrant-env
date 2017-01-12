@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="Generic_Sniffs_Commenting_DocCommentSniff" namespace="" name="Generic_Sniffs_Commenting_DocCommentSniff" abstract="false" final="false" start="26" end="350">
+  <file path="/home/web/example/src/freegame_developer/vendor/squizlabs/php_codesniffer/CodeSniffer/Standards/Generic/Sniffs/Commenting" file="DocCommentSniff.php" realpath="/home/web/example/src/freegame_developer/vendor/squizlabs/php_codesniffer/CodeSniffer/Standards/Generic/Sniffs/Commenting/DocCommentSniff.php" size="14265" time="2016-01-19T23:39:10+00:00" unixtime="1453246750" sha1="7fdeedcad09af2067164e607dcbce979b892e174" relative="freegame_developer/vendor/squizlabs/php_codesniffer/CodeSniffer/Standards/Generic/Sniffs/Commenting/DocCommentSniff.php"/>
+  <docblock>
+    <description compact="Ensures doc blocks follow basic formatting."/>
+    <category value="PHP"/>
+    <package value="PHP_CodeSniffer"/>
+    <author value="Greg Sherwood &lt;gsherwood@squiz.net&gt;"/>
+    <copyright value="2006-2012 Squiz Pty Ltd (ABN 77 084 670 600)"/>
+    <license name="https://github.com/squizlabs/PHP_CodeSniffer/blob/master/licence.txt BSD Licence"/>
+    <version value="Release: @package_version@"/>
+    <link value="http://pear.php.net/package/PHP_CodeSniffer"/>
+  </docblock>
+  <implements full="PHP_CodeSniffer_Sniff" namespace="" name="PHP_CodeSniffer_Sniff"/>
+  <member name="supportedTokenizers" type="array" default="" visibility="public" static="false" line="34">
+    <docblock>
+      <description compact="A list of tokenizers this sniff supports."/>
+      <var type="array"/>
+    </docblock>
+  </member>
+  <method name="register" start="45" end="49" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Returns an array of tokens this test wants to listen for."/>
+      <return type="array"/>
+    </docblock>
+  </method>
+  <method name="process" start="61" end="347" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Processes this test, when one of its tokens is encountered."/>
+      <param description="The file being scanned." type="object" variable="$phpcsFile">
+        <type full="PHP_CodeSniffer_File" namespace="" name="PHP_CodeSniffer_File"/>
+      </param>
+      <param description="The position of the current token" type="int" variable="$stackPtr">in the stack passed in $tokens.</param>
+      <return type="object">
+        <type full="void" namespace="" name="void"/>
+      </return>
+    </docblock>
+    <parameter name="phpcsFile" byreference="false" type="object">
+      <type full="PHP_CodeSniffer_File" namespace="" name="PHP_CodeSniffer_File"/>
+    </parameter>
+    <parameter name="stackPtr" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="The first line of the comment should just be the /** code." line="80"/>
+      <comment value="The last line of the comment should just be the */ code." line="92"/>
+      <comment value="Check for additional blank lines at the end of the comment." line="102"/>
+      <comment value="Check for a comment description." line="120"/>
+      <comment value="No extra newline before short description." line="127"/>
+      <comment value="Account for the fact that a short description might cover" line="147"/>
+      <comment value="multiple lines." line="148"/>
+      <comment value="end if" line="192"/>
+      <comment value="Break out the tags into groups and check alignment within each." line="220"/>
+      <comment value="A tag group is one where there are no blank lines between tags." line="221"/>
+      <comment value="The param tag group is special as it requires all @param tags to be inside." line="222"/>
+      <comment value="end foreach" line="262"/>
+      <comment value="end foreach" line="323"/>
+      <comment value="If there is a param group, it needs to be first." line="325"/>
+    </inline>
+  </method>
+</class>

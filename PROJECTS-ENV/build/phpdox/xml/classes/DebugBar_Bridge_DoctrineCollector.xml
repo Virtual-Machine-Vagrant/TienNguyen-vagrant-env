@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="DebugBar\Bridge\DoctrineCollector" namespace="DebugBar\Bridge" name="DoctrineCollector" abstract="false" final="false" start="33" end="115">
+  <file path="/home/web/example/src/freegame_developer/vendor/maximebf/debugbar/src/DebugBar/Bridge" file="DoctrineCollector.php" realpath="/home/web/example/src/freegame_developer/vendor/maximebf/debugbar/src/DebugBar/Bridge/DoctrineCollector.php" size="3176" time="2016-09-15T14:01:59+00:00" unixtime="1473948119" sha1="c97daa7deaf733054086a69c80a91d1a8a10cd16" relative="freegame_developer/vendor/maximebf/debugbar/src/DebugBar/Bridge/DoctrineCollector.php"/>
+  <docblock>
+    <description compact="Collects Doctrine queries">http://doctrine-project.org
+
+Uses the DebugStack logger to collects data about queries
+
+&lt;code&gt;
+$debugStack = new Doctrine\DBAL\Logging\DebugStack();
+$entityManager-&gt;getConnection()-&gt;getConfiguration()-&gt;setSQLLogger($debugStack);
+$debugbar-&gt;addCollector(new DoctrineCollector($debugStack));
+&lt;/code&gt;</description>
+  </docblock>
+  <extends full="DebugBar\DataCollector\DataCollector" namespace="DebugBar\DataCollector" name="DataCollector"/>
+  <implements full="DebugBar\DataCollector\Renderable" namespace="DebugBar\DataCollector" name="Renderable"/>
+  <implements full="DebugBar\DataCollector\AssetProvider" namespace="DebugBar\DataCollector" name="AssetProvider"/>
+  <member name="debugStack" visibility="protected" static="false" line="35"/>
+  <constructor name="__construct" start="42" end="51" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="DoctrineCollector constructor."/>
+      <param variable="$debugStackOrEntityManager"/>
+      <throws type="object">
+        <type full="DebugBar\DebugBarException" namespace="DebugBar" name="DebugBarException"/>
+      </throws>
+    </docblock>
+    <parameter name="debugStackOrEntityManager" byreference="false" type="{unknown}"/>
+  </constructor>
+  <method name="collect" start="56" end="76" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <return type="array"/>
+    </docblock>
+  </method>
+  <method name="getName" start="81" end="84" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <return type="string"/>
+    </docblock>
+  </method>
+  <method name="getWidgets" start="89" end="103" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <return type="array"/>
+    </docblock>
+  </method>
+  <method name="getAssets" start="108" end="114" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <return type="array"/>
+    </docblock>
+  </method>
+</class>

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="App\Http\Requests\FaqRequest" namespace="App\Http\Requests" name="FaqRequest" abstract="false" final="false" start="13" end="192">
+  <file path="/home/web/example/src/freegame_developer/app/Http/Requests" file="FaqRequest.php" realpath="/home/web/example/src/freegame_developer/app/Http/Requests/FaqRequest.php" size="6186" time="2016-12-06T02:39:57+00:00" unixtime="1480991997" sha1="f7878e4a50634ec62c11ddc8cfae9d3fb6b52c76" relative="freegame_developer/app/Http/Requests/FaqRequest.php"/>
+  <extends full="App\Http\Requests\Request" namespace="App\Http\Requests" name="Request"/>
+  <method name="authorize" start="15" end="18" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="rules" start="25" end="39" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Validation rules list"/>
+      <return type="array"/>
+    </docblock>
+  </method>
+  <method name="rulesInsert" start="46" end="75" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Validation insert rules list"/>
+      <return type="array"/>
+    </docblock>
+    <inline>
+      <comment value="check upload form" line="48"/>
+    </inline>
+  </method>
+  <method name="rulesSearch" start="82" end="106" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Validation search rules list"/>
+      <return type="array"/>
+    </docblock>
+  </method>
+  <method name="rulesUpload" start="113" end="118" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Validation upload rules list"/>
+      <return type="array"/>
+    </docblock>
+  </method>
+  <method name="attributes" start="125" end="145" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Custom attributes list"/>
+      <return type="array"/>
+    </docblock>
+  </method>
+  <method name="customMessages" start="152" end="170" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Custom validation message"/>
+      <return type="array"/>
+    </docblock>
+  </method>
+  <method name="redirectRules" start="178" end="191" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Redirect rules."/>
+      <param type="object">
+        <type full="App\Http\Requests\none" namespace="App\Http\Requests" name="none"/>
+      </param>
+      <return type="array"/>
+    </docblock>
+  </method>
+</class>

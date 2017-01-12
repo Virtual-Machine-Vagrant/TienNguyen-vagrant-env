@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="MongoDB\Model\IndexInfo" namespace="MongoDB\Model" name="IndexInfo" abstract="false" final="false" start="23" end="171">
+  <file path="/home/web/example/src/freegame_developer/vendor/mongodb/mongodb/src/Model" file="IndexInfo.php" realpath="/home/web/example/src/freegame_developer/vendor/mongodb/mongodb/src/Model/IndexInfo.php" size="4107" time="2016-09-23T19:38:29+00:00" unixtime="1474659509" sha1="75065c9ac16c0a14a2e84275fdcef47d54d7839f" relative="freegame_developer/vendor/mongodb/mongodb/src/Model/IndexInfo.php"/>
+  <docblock>
+    <description compact="Index information model class.">This class models the index information returned by the listIndexes command
+or, for legacy servers, queries on the "system.indexes" collection. It
+provides methods to access common index options, and allows access to other
+options through the ArrayAccess interface (write methods are not supported).
+For information on keys and index options, see the referenced
+db.collection.createIndex() documentation.</description>
+    <api/>
+    <see value="MongoDB\Collection::listIndexes()"/>
+    <see value="https://github.com/mongodb/specifications/blob/master/source/enumerate-indexes.rst"/>
+    <see value="http://docs.mongodb.org/manual/reference/method/db.collection.createIndex/"/>
+  </docblock>
+  <implements full="ArrayAccess" namespace="" name="ArrayAccess"/>
+  <member name="info" visibility="private" static="false" line="25"/>
+  <constructor name="__construct" start="32" end="35" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Constructor."/>
+      <param description="Index info" type="array" variable="$info"/>
+    </docblock>
+    <parameter name="info" byreference="false" type="array"/>
+  </constructor>
+  <method name="__debugInfo" start="43" end="46" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Return the collection info as an array."/>
+      <see value="http://php.net/oop5.magic#language.oop5.magic.debuginfo"/>
+      <return type="array"/>
+    </docblock>
+  </method>
+  <method name="getKey" start="53" end="56" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Return the index key."/>
+      <return type="array"/>
+    </docblock>
+  </method>
+  <method name="getName" start="63" end="66" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Return the index name."/>
+      <return type="string"/>
+    </docblock>
+  </method>
+  <method name="getNamespace" start="73" end="76" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Return the index namespace (e.g. &quot;db.collection&quot;)."/>
+      <return type="string"/>
+    </docblock>
+  </method>
+  <method name="getVersion" start="83" end="86" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Return the index version."/>
+      <return type="integer"/>
+    </docblock>
+  </method>
+  <method name="isSparse" start="94" end="97" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Return whether this is a sparse index."/>
+      <see value="http://docs.mongodb.org/manual/core/index-sparse/"/>
+      <return type="boolean"/>
+    </docblock>
+  </method>
+  <method name="isTtl" start="105" end="108" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Return whether this is a TTL index."/>
+      <see value="http://docs.mongodb.org/manual/core/index-ttl/"/>
+      <return type="boolean"/>
+    </docblock>
+  </method>
+  <method name="isUnique" start="116" end="119" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Return whether this is a unique index."/>
+      <see value="http://docs.mongodb.org/manual/core/index-unique/"/>
+      <return type="boolean"/>
+    </docblock>
+  </method>
+  <method name="offsetExists" start="128" end="131" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Check whether a field exists in the index information."/>
+      <see value="http://php.net/arrayaccess.offsetexists"/>
+      <param type="mixed" variable="$key"/>
+      <return type="boolean"/>
+    </docblock>
+    <parameter name="key" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="offsetGet" start="145" end="148" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Return the field's value from the index information.">This method satisfies the Enumerating Indexes specification's requirement
+that index fields be made accessible under their original names. It may
+also be used to access fields that do not have a helper method.</description>
+      <see value="http://php.net/arrayaccess.offsetget"/>
+      <see value="https://github.com/mongodb/specifications/blob/master/source/enumerate-indexes.rst#getting-full-index-information"/>
+      <param type="mixed" variable="$key"/>
+      <return type="mixed"/>
+    </docblock>
+    <parameter name="key" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="offsetSet" start="156" end="159" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Not supported."/>
+      <see value="http://php.net/arrayaccess.offsetset"/>
+      <throws type="object">
+        <type full="MongoDB\Exception\BadMethodCallException" namespace="MongoDB\Exception" name="BadMethodCallException"/>
+      </throws>
+    </docblock>
+    <parameter name="key" byreference="false" type="{unknown}"/>
+    <parameter name="value" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="offsetUnset" start="167" end="170" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Not supported."/>
+      <see value="http://php.net/arrayaccess.offsetunset"/>
+      <throws type="object">
+        <type full="MongoDB\Exception\BadMethodCallException" namespace="MongoDB\Exception" name="BadMethodCallException"/>
+      </throws>
+    </docblock>
+    <parameter name="key" byreference="false" type="{unknown}"/>
+  </method>
+</class>

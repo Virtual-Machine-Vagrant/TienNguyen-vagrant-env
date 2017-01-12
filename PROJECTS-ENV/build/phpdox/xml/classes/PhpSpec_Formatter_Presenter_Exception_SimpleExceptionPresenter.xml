@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="PhpSpec\Formatter\Presenter\Exception\SimpleExceptionPresenter" namespace="PhpSpec\Formatter\Presenter\Exception" name="SimpleExceptionPresenter" abstract="false" final="true" start="24" end="273">
+  <file path="/home/web/example/src/freegame_developer/vendor/phpspec/phpspec/src/PhpSpec/Formatter/Presenter/Exception" file="SimpleExceptionPresenter.php" realpath="/home/web/example/src/freegame_developer/vendor/phpspec/phpspec/src/PhpSpec/Formatter/Presenter/Exception/SimpleExceptionPresenter.php" size="7826" time="2016-01-01T10:17:54+00:00" unixtime="1451643474" sha1="dbcebdd8b394cd2079022a0cef6dd2aa4803bbe5" relative="freegame_developer/vendor/phpspec/phpspec/src/PhpSpec/Formatter/Presenter/Exception/SimpleExceptionPresenter.php"/>
+  <implements full="PhpSpec\Formatter\Presenter\Exception\ExceptionPresenter" namespace="PhpSpec\Formatter\Presenter\Exception" name="ExceptionPresenter"/>
+  <member name="differ" visibility="private" static="false" line="29">
+    <docblock>
+      <description/>
+      <var type="object">
+        <type full="PhpSpec\Formatter\Presenter\Differ\Differ" namespace="PhpSpec\Formatter\Presenter\Differ" name="Differ"/>
+      </var>
+    </docblock>
+  </member>
+  <member name="phpspecPath" visibility="private" static="false" line="34">
+    <docblock>
+      <description/>
+      <var type="string"/>
+    </docblock>
+  </member>
+  <member name="runnerPath" visibility="private" static="false" line="39">
+    <docblock>
+      <description/>
+      <var type="string"/>
+    </docblock>
+  </member>
+  <member name="exceptionElementPresenter" visibility="private" static="false" line="44">
+    <docblock>
+      <description/>
+      <var type="object">
+        <type full="PhpSpec\Formatter\Presenter\Exception\ExceptionElementPresenter" namespace="PhpSpec\Formatter\Presenter\Exception" name="ExceptionElementPresenter"/>
+      </var>
+    </docblock>
+  </member>
+  <member name="callArgumentsPresenter" visibility="private" static="false" line="49">
+    <docblock>
+      <description/>
+      <var type="object">
+        <type full="PhpSpec\Formatter\Presenter\Exception\CallArgumentsPresenter" namespace="PhpSpec\Formatter\Presenter\Exception" name="CallArgumentsPresenter"/>
+      </var>
+    </docblock>
+  </member>
+  <member name="phpspecExceptionPresenter" visibility="private" static="false" line="54">
+    <docblock>
+      <description/>
+      <var type="object">
+        <type full="PhpSpec\Formatter\Presenter\Exception\PhpSpecExceptionPresenter" namespace="PhpSpec\Formatter\Presenter\Exception" name="PhpSpecExceptionPresenter"/>
+      </var>
+    </docblock>
+  </member>
+  <constructor name="__construct" start="62" end="75" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <param type="object" variable="$differ">
+        <type full="PhpSpec\Formatter\Presenter\Differ\Differ" namespace="PhpSpec\Formatter\Presenter\Differ" name="Differ"/>
+      </param>
+      <param type="object" variable="$exceptionElementPresenter">
+        <type full="PhpSpec\Formatter\Presenter\Exception\ExceptionElementPresenter" namespace="PhpSpec\Formatter\Presenter\Exception" name="ExceptionElementPresenter"/>
+      </param>
+      <param type="object" variable="$callArgumentsPresenter">
+        <type full="PhpSpec\Formatter\Presenter\Exception\CallArgumentsPresenter" namespace="PhpSpec\Formatter\Presenter\Exception" name="CallArgumentsPresenter"/>
+      </param>
+      <param type="object" variable="$phpspecExceptionPresenter">
+        <type full="PhpSpec\Formatter\Presenter\Exception\PhpSpecExceptionPresenter" namespace="PhpSpec\Formatter\Presenter\Exception" name="PhpSpecExceptionPresenter"/>
+      </param>
+    </docblock>
+    <parameter name="differ" byreference="false" type="object">
+      <type full="PhpSpec\Formatter\Presenter\Differ\Differ" namespace="PhpSpec\Formatter\Presenter\Differ" name="Differ"/>
+    </parameter>
+    <parameter name="exceptionElementPresenter" byreference="false" type="object">
+      <type full="PhpSpec\Formatter\Presenter\Exception\ExceptionElementPresenter" namespace="PhpSpec\Formatter\Presenter\Exception" name="ExceptionElementPresenter"/>
+    </parameter>
+    <parameter name="callArgumentsPresenter" byreference="false" type="object">
+      <type full="PhpSpec\Formatter\Presenter\Exception\CallArgumentsPresenter" namespace="PhpSpec\Formatter\Presenter\Exception" name="CallArgumentsPresenter"/>
+    </parameter>
+    <parameter name="phpspecExceptionPresenter" byreference="false" type="object">
+      <type full="PhpSpec\Formatter\Presenter\Exception\PhpSpecExceptionPresenter" namespace="PhpSpec\Formatter\Presenter\Exception" name="PhpSpecExceptionPresenter"/>
+    </parameter>
+  </constructor>
+  <method name="presentException" start="82" end="97" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <param type="object" variable="$exception">
+        <type full="\Exception" namespace="" name="Exception"/>
+      </param>
+      <param type="object" variable="$verbose">
+        <type full="PhpSpec\Formatter\Presenter\Exception\bool" namespace="PhpSpec\Formatter\Presenter\Exception" name="bool"/>
+      </param>
+      <return type="string"/>
+    </docblock>
+    <parameter name="exception" byreference="false" type="object">
+      <type full="Exception" namespace="" name="Exception"/>
+    </parameter>
+    <parameter name="verbose" byreference="false" type="boolean" default="false"/>
+  </method>
+  <method name="getVerbosePresentation" start="104" end="121" abstract="false" final="false" static="false" visibility="private">
+    <docblock>
+      <description/>
+      <param type="object" variable="$exception">
+        <type full="\Exception" namespace="" name="Exception"/>
+      </param>
+      <param type="string" variable="$presentation"/>
+      <return type="string"/>
+    </docblock>
+    <parameter name="exception" byreference="false" type="object">
+      <type full="Exception" namespace="" name="Exception"/>
+    </parameter>
+    <parameter name="presentation" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="presentExceptionDifference" start="128" end="131" abstract="false" final="false" static="false" visibility="private">
+    <docblock>
+      <description/>
+      <param type="object" variable="$exception">
+        <type full="PhpSpec\Exception\Example\NotEqualException" namespace="PhpSpec\Exception\Example" name="NotEqualException"/>
+      </param>
+      <return type="string"/>
+    </docblock>
+    <parameter name="exception" byreference="false" type="object">
+      <type full="PhpSpec\Exception\Example\NotEqualException" namespace="PhpSpec\Exception\Example" name="NotEqualException"/>
+    </parameter>
+  </method>
+  <method name="presentExceptionStackTrace" start="138" end="162" abstract="false" final="false" static="false" visibility="private">
+    <docblock>
+      <description/>
+      <param type="object" variable="$exception">
+        <type full="\Exception" namespace="" name="Exception"/>
+      </param>
+      <return type="string"/>
+    </docblock>
+    <parameter name="exception" byreference="false" type="object">
+      <type full="Exception" namespace="" name="Exception"/>
+    </parameter>
+  </method>
+  <method name="presentExceptionTraceHeader" start="169" end="172" abstract="false" final="false" static="false" visibility="private">
+    <docblock>
+      <description/>
+      <param type="string" variable="$header"/>
+      <return type="string"/>
+    </docblock>
+    <parameter name="header" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="presentExceptionTraceMethod" start="182" end="185" abstract="false" final="false" static="false" visibility="private">
+    <docblock>
+      <description/>
+      <param type="string" variable="$class"/>
+      <param type="string" variable="$type"/>
+      <param type="string" variable="$method"/>
+      <param type="array" variable="$args"/>
+      <return type="string"/>
+    </docblock>
+    <parameter name="class" byreference="false" type="{unknown}"/>
+    <parameter name="type" byreference="false" type="{unknown}"/>
+    <parameter name="method" byreference="false" type="{unknown}"/>
+    <parameter name="args" byreference="false" type="array"/>
+  </method>
+  <method name="presentExceptionTraceFunction" start="193" end="196" abstract="false" final="false" static="false" visibility="private">
+    <docblock>
+      <description/>
+      <param type="string" variable="$function"/>
+      <param type="array" variable="$args"/>
+      <return type="string"/>
+    </docblock>
+    <parameter name="function" byreference="false" type="{unknown}"/>
+    <parameter name="args" byreference="false" type="array"/>
+  </method>
+  <method name="presentExceptionTraceLocation" start="205" end="213" abstract="false" final="false" static="false" visibility="private">
+    <docblock>
+      <description/>
+      <param type="int" variable="$offset"/>
+      <param type="string" variable="$file"/>
+      <param type="int" variable="$line"/>
+      <return type="string"/>
+    </docblock>
+    <parameter name="offset" byreference="false" type="{unknown}"/>
+    <parameter name="file" byreference="false" type="{unknown}"/>
+    <parameter name="line" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="shouldStopTracePresentation" start="219" end="222" abstract="false" final="false" static="false" visibility="private">
+    <docblock>
+      <description/>
+      <param type="array" variable="$call"/>
+      <return type="object">
+        <type full="PhpSpec\Formatter\Presenter\Exception\bool" namespace="PhpSpec\Formatter\Presenter\Exception" name="bool"/>
+      </return>
+    </docblock>
+    <parameter name="call" byreference="false" type="array"/>
+  </method>
+  <method name="shouldSkipTracePresentation" start="228" end="235" abstract="false" final="false" static="false" visibility="private">
+    <docblock>
+      <description/>
+      <param type="array" variable="$call"/>
+      <return type="object">
+        <type full="PhpSpec\Formatter\Presenter\Exception\bool" namespace="PhpSpec\Formatter\Presenter\Exception" name="bool"/>
+      </return>
+    </docblock>
+    <parameter name="call" byreference="false" type="array"/>
+  </method>
+  <method name="presentExceptionTraceDetails" start="242" end="271" abstract="false" final="false" static="false" visibility="private">
+    <docblock>
+      <description/>
+      <param type="array" variable="$call"/>
+      <param type="int" variable="$offset"/>
+      <return type="string"/>
+    </docblock>
+    <parameter name="call" byreference="false" type="array"/>
+    <parameter name="offset" byreference="false" type="{unknown}"/>
+  </method>
+</class>

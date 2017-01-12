@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="Psy\ConfigPaths" namespace="Psy" name="ConfigPaths" abstract="false" final="false" start="19" end="183">
+  <file path="/home/web/example/src/freegame_developer/vendor/psy/psysh/src/Psy" file="ConfigPaths.php" realpath="/home/web/example/src/freegame_developer/vendor/psy/psysh/src/Psy/ConfigPaths.php" size="4818" time="2016-03-09T05:03:14+00:00" unixtime="1457499794" sha1="b5b0f08043423019c121b6c5974497febf7b7ee4" relative="freegame_developer/vendor/psy/psysh/src/Psy/ConfigPaths.php"/>
+  <docblock>
+    <description compact="A Psy Shell configuration path helper."/>
+  </docblock>
+  <method name="getConfigDirs" start="31" end="36" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description compact="Get potential config directory paths.">Returns `~/.psysh`, `%APPDATA%/PsySH` (when on Windows), and all
+XDG Base Directory config directories:
+
+    http://standards.freedesktop.org/basedir-spec/basedir-spec-latest.html</description>
+      <return type="array" of="object">
+        <type full="Psy\string" namespace="Psy" name="string"/>
+      </return>
+    </docblock>
+  </method>
+  <method name="getHomeConfigDirs" start="48" end="53" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description compact="Get potential home config directory paths.">Returns `~/.psysh`, `%APPDATA%/PsySH` (when on Windows), and the
+XDG Base Directory home config directory:
+
+    http://standards.freedesktop.org/basedir-spec/basedir-spec-latest.html</description>
+      <return type="array" of="object">
+        <type full="Psy\string" namespace="Psy" name="string"/>
+      </return>
+    </docblock>
+  </method>
+  <method name="getCurrentConfigDir" start="67" end="77" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description compact="Get the current home config directory.">Returns the highest precedence home config directory which actually
+exists. If none of them exists, returns the highest precedence home
+config directory (`%APPDATA%/PsySH` on Windows, `~/.config/psysh`
+everywhere else).</description>
+      <see value="self::getHomeConfigDirs"/>
+      <return type="string"/>
+    </docblock>
+  </method>
+  <method name="getConfigFiles" start="87" end="92" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description compact="Find real config files in config directories."/>
+      <param description="Config file names" type="array" variable="$names" of="object">
+        <type full="Psy\string" namespace="Psy" name="string"/>
+      </param>
+      <param description="Optionally use a specific config directory" type="string" variable="$configDir"/>
+      <return type="array" of="object">
+        <type full="Psy\string" namespace="Psy" name="string"/>
+      </return>
+    </docblock>
+    <parameter name="names" byreference="false" type="array"/>
+    <parameter name="configDir" byreference="false" type="{unknown}" default="" constant="null"/>
+  </method>
+  <method name="getDataDirs" start="106" end="111" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description compact="Get potential data directory paths.">If a `dataDir` option was explicitly set, returns an array containing
+just that directory.
+
+Otherwise, it returns `~/.psysh` and all XDG Base Directory data directories:
+
+    http://standards.freedesktop.org/basedir-spec/basedir-spec-latest.html</description>
+      <return type="array" of="object">
+        <type full="Psy\string" namespace="Psy" name="string"/>
+      </return>
+    </docblock>
+  </method>
+  <method name="getDataFiles" start="121" end="126" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description compact="Find real data files in config directories."/>
+      <param description="Config file names" type="array" variable="$names" of="object">
+        <type full="Psy\string" namespace="Psy" name="string"/>
+      </param>
+      <param description="Optionally use a specific config directory" type="string" variable="$dataDir"/>
+      <return type="array" of="object">
+        <type full="Psy\string" namespace="Psy" name="string"/>
+      </return>
+    </docblock>
+    <parameter name="names" byreference="false" type="array"/>
+    <parameter name="dataDir" byreference="false" type="{unknown}" default="" constant="null"/>
+  </method>
+  <method name="getRuntimeDir" start="135" end="140" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description compact="Get a runtime directory.">Defaults to  `/psysh` inside the system's temp dir.</description>
+      <return type="string"/>
+    </docblock>
+  </method>
+  <method name="getDirNames" start="142" end="167" abstract="false" final="false" static="true" visibility="private">
+    <parameter name="baseDirs" byreference="false" type="array"/>
+    <inline>
+      <comment value="Add ~/.psysh" line="148"/>
+      <comment value="Add some Windows specific ones :)" line="153"/>
+    </inline>
+  </method>
+  <method name="getRealFiles" start="169" end="182" abstract="false" final="false" static="true" visibility="private">
+    <parameter name="dirNames" byreference="false" type="array"/>
+    <parameter name="fileNames" byreference="false" type="array"/>
+  </method>
+</class>

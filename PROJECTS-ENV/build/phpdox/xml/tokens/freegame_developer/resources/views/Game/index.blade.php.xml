@@ -1,0 +1,315 @@
+<?xml version="1.0"?>
+<source xmlns="http://xml.phpdox.net/token">
+  <file xmlns="http://xml.phpdox.net/src" path="/home/web/example/src/freegame_developer/resources/views/Game" file="index.blade.php" realpath="/home/web/example/src/freegame_developer/resources/views/Game/index.blade.php" size="3649" time="2016-11-16T01:52:54+00:00" unixtime="1479261174" sha1="bdc6a2375cd354a1bca13bb0023c89b65e02cc73" relative="freegame_developer/resources/views/Game/index.blade.php"/>
+  <line no="1">
+    <token name="T_INLINE_HTML">@extends('layout')</token>
+  </line>
+  <line no="2"/>
+  <line no="3">
+    <token name="T_INLINE_HTML">@section('content')</token>
+  </line>
+  <line no="4"/>
+  <line no="5">
+    <token name="T_INLINE_HTML">    &lt;header id="gnavi"&gt;</token>
+  </line>
+  <line no="6">
+    <token name="T_INLINE_HTML">    @include('partials.breadcrumbs', [</token>
+  </line>
+  <line no="7">
+    <token name="T_INLINE_HTML">        'breadcrumbs' =&gt; array_merge(</token>
+  </line>
+  <line no="8">
+    <token name="T_INLINE_HTML">            $formData['menuName'],</token>
+  </line>
+  <line no="9">
+    <token name="T_INLINE_HTML">            [</token>
+  </line>
+  <line no="10">
+    <token name="T_INLINE_HTML">                [$formData['screenName']]</token>
+  </line>
+  <line no="11">
+    <token name="T_INLINE_HTML">            ]</token>
+  </line>
+  <line no="12"/>
+  <line no="13">
+    <token name="T_INLINE_HTML">        )</token>
+  </line>
+  <line no="14">
+    <token name="T_INLINE_HTML">    ])</token>
+  </line>
+  <line no="15">
+    <token name="T_INLINE_HTML">        &lt;!-- [#gnavi] --&gt;</token>
+  </line>
+  <line no="16">
+    <token name="T_INLINE_HTML">    &lt;/header&gt;</token>
+  </line>
+  <line no="17"/>
+  <line no="18">
+    <token name="T_INLINE_HTML">    &lt;section&gt;</token>
+  </line>
+  <line no="19">
+    <token name="T_INLINE_HTML">        &lt;div class="c-area"&gt;</token>
+  </line>
+  <line no="20">
+    <token name="T_INLINE_HTML">            &lt;h2 class="c-headline"&gt;&lt;i class="fa fa-gamepad"&gt;&lt;/i&gt;&#x30B2;&#x30FC;&#x30E0;&#x60C5;&#x5831;&#x7BA1;&#x7406;&lt;/h2&gt;</token>
+  </line>
+  <line no="21">
+    <token name="T_INLINE_HTML">            &lt;table class="c-table"&gt;</token>
+  </line>
+  <line no="22">
+    <token name="T_INLINE_HTML">                &lt;colgroup&gt;</token>
+  </line>
+  <line no="23">
+    <token name="T_INLINE_HTML">                    &lt;col class="col-s"&gt;</token>
+  </line>
+  <line no="24">
+    <token name="T_INLINE_HTML">                    &lt;col class="null"&gt;</token>
+  </line>
+  <line no="25">
+    <token name="T_INLINE_HTML">                &lt;/colgroup&gt;</token>
+  </line>
+  <line no="26">
+    <token name="T_INLINE_HTML">                &lt;tbody&gt;</token>
+  </line>
+  <line no="27">
+    <token name="T_INLINE_HTML">                &lt;tr&gt;</token>
+  </line>
+  <line no="28">
+    <token name="T_INLINE_HTML">                    &lt;th&gt;&#x30A2;&#x30D7;&#x30EA;ID(app_id)&lt;/th&gt;</token>
+  </line>
+  <line no="29">
+    <token name="T_INLINE_HTML">                    &lt;td&gt;{{ $game['id'] }}&lt;/td&gt;</token>
+  </line>
+  <line no="30">
+    <token name="T_INLINE_HTML">                &lt;/tr&gt;</token>
+  </line>
+  <line no="31">
+    <token name="T_INLINE_HTML">                &lt;tr&gt;</token>
+  </line>
+  <line no="32">
+    <token name="T_INLINE_HTML">                    &lt;th&gt;&#x30A2;&#x30D7;&#x30EA;&#x30AD;&#x30FC;(app_key)&lt;/th&gt;</token>
+  </line>
+  <line no="33">
+    <token name="T_INLINE_HTML">                    &lt;td&gt;{{ $game['upload_image_dirname'] }}&lt;/td&gt;</token>
+  </line>
+  <line no="34">
+    <token name="T_INLINE_HTML">                &lt;/tr&gt;</token>
+  </line>
+  <line no="35">
+    <token name="T_INLINE_HTML">                &lt;tr&gt;</token>
+  </line>
+  <line no="36">
+    <token name="T_INLINE_HTML">                    &lt;th&gt;&#x30D7;&#x30ED;&#x30C0;&#x30AF;&#x30C8;ID(product_id)&lt;/th&gt;</token>
+  </line>
+  <line no="37">
+    <token name="T_INLINE_HTML">                    &lt;td&gt;{{ $game['product_id'] }}&lt;/td&gt;</token>
+  </line>
+  <line no="38">
+    <token name="T_INLINE_HTML">                &lt;/tr&gt;</token>
+  </line>
+  <line no="39">
+    <token name="T_INLINE_HTML">                &lt;tr&gt;</token>
+  </line>
+  <line no="40">
+    <token name="T_INLINE_HTML">                    &lt;th&gt;&#x30B2;&#x30FC;&#x30E0;&#x540D;&lt;/th&gt;</token>
+  </line>
+  <line no="41">
+    <token name="T_INLINE_HTML">                    &lt;td&gt;{{ $game['title'] }}&lt;/td&gt;</token>
+  </line>
+  <line no="42">
+    <token name="T_INLINE_HTML">                &lt;/tr&gt;</token>
+  </line>
+  <line no="43">
+    <token name="T_INLINE_HTML">                &lt;tr&gt;</token>
+  </line>
+  <line no="44">
+    <token name="T_INLINE_HTML">                    &lt;th&gt;&#x30B2;&#x30FC;&#x30E0;&#x540D;(&#x77ED;&#x7E2E;&#x7528;) &lt;/th&gt;</token>
+  </line>
+  <line no="45">
+    <token name="T_INLINE_HTML">                    &lt;td&gt;{{ $game['title_short'] }}&lt;/td&gt;</token>
+  </line>
+  <line no="46">
+    <token name="T_INLINE_HTML">                &lt;/tr&gt;</token>
+  </line>
+  <line no="47">
+    <token name="T_INLINE_HTML">                &lt;tr&gt;</token>
+  </line>
+  <line no="48">
+    <token name="T_INLINE_HTML">                    &lt;th&gt;&#x30B2;&#x30FC;&#x30E0;&#x540D;(&#x3088;&#x307F;&#x304C;&#x306A;)&lt;/th&gt;</token>
+  </line>
+  <line no="49">
+    <token name="T_INLINE_HTML">                    &lt;td&gt;{{ $game['title_ruby'] }}&lt;/td&gt;</token>
+  </line>
+  <line no="50">
+    <token name="T_INLINE_HTML">                &lt;/tr&gt;</token>
+  </line>
+  <line no="51">
+    <token name="T_INLINE_HTML">                &lt;tr&gt;</token>
+  </line>
+  <line no="52">
+    <token name="T_INLINE_HTML">                    &lt;th&gt;&#x30B3;&#x30F3;&#x30B7;&#x30E5;&#x30FC;&#x30DE;&#x30FC;&#x30AD;&#x30FC;&lt;/th&gt;</token>
+  </line>
+  <line no="53">
+    <token name="T_INLINE_HTML">                    &lt;td&gt;{{ $game['consumer_key'] }}&lt;/td&gt;</token>
+  </line>
+  <line no="54">
+    <token name="T_INLINE_HTML">                &lt;/tr&gt;</token>
+  </line>
+  <line no="55">
+    <token name="T_INLINE_HTML">                &lt;tr&gt;</token>
+  </line>
+  <line no="56">
+    <token name="T_INLINE_HTML">                    &lt;th&gt;&#x30B3;&#x30F3;&#x30B7;&#x30E5;&#x30FC;&#x30DE;&#x30FC;&#x30B7;&#x30FC;&#x30AF;&#x30EC;&#x30C3;&#x30C8;&lt;/th&gt;</token>
+  </line>
+  <line no="57">
+    <token name="T_INLINE_HTML">                    &lt;td&gt;{{ $game['consumer_secret'] }}&lt;/td&gt;</token>
+  </line>
+  <line no="58">
+    <token name="T_INLINE_HTML">                &lt;/tr&gt;</token>
+  </line>
+  <line no="59">
+    <token name="T_INLINE_HTML">                &lt;tr&gt;</token>
+  </line>
+  <line no="60">
+    <token name="T_INLINE_HTML">                    &lt;th&gt;URL&lt;/th&gt;</token>
+  </line>
+  <line no="61">
+    <token name="T_INLINE_HTML">                    &lt;td&gt;{{ $game['url'] }}&lt;/td&gt;</token>
+  </line>
+  <line no="62">
+    <token name="T_INLINE_HTML">                &lt;/tr&gt;</token>
+  </line>
+  <line no="63">
+    <token name="T_INLINE_HTML">                &lt;tr&gt;</token>
+  </line>
+  <line no="64">
+    <token name="T_INLINE_HTML">                    &lt;th&gt;&#x30B3;&#x30FC;&#x30EB;&#x30D0;&#x30C3;&#x30AF;URL&lt;/th&gt;</token>
+  </line>
+  <line no="65">
+    <token name="T_INLINE_HTML">                    &lt;td&gt;{{ $game['callbackurl'] }}&lt;/td&gt;</token>
+  </line>
+  <line no="66">
+    <token name="T_INLINE_HTML">                &lt;/tr&gt;</token>
+  </line>
+  <line no="67">
+    <token name="T_INLINE_HTML">                &lt;tr&gt;</token>
+  </line>
+  <line no="68">
+    <token name="T_INLINE_HTML">                    &lt;th&gt;&#x30BF;&#x30A4;&#x30D7;&lt;/th&gt;</token>
+  </line>
+  <line no="69">
+    <token name="T_INLINE_HTML">                    @if($game['adult'] == 1)</token>
+  </line>
+  <line no="70">
+    <token name="T_INLINE_HTML">                    &lt;td&gt;&#x30A2;&#x30C0;&#x30EB;&#x30C8;&lt;/td&gt;</token>
+  </line>
+  <line no="71">
+    <token name="T_INLINE_HTML">                    @endif</token>
+  </line>
+  <line no="72">
+    <token name="T_INLINE_HTML">                    @if($game['general'] == 1)</token>
+  </line>
+  <line no="73">
+    <token name="T_INLINE_HTML">                        &lt;td&gt;&#x4E00;&#x822C;&lt;/td&gt;</token>
+  </line>
+  <line no="74">
+    <token name="T_INLINE_HTML">                    @endif</token>
+  </line>
+  <line no="75">
+    <token name="T_INLINE_HTML">                &lt;/tr&gt;</token>
+  </line>
+  <line no="76">
+    <token name="T_INLINE_HTML">                &lt;tr&gt;</token>
+  </line>
+  <line no="77">
+    <token name="T_INLINE_HTML">                    &lt;th&gt;&#x30E1;&#x30A4;&#x30F3;&#x30B8;&#x30E3;&#x30F3;&#x30EB;&lt;/th&gt;</token>
+  </line>
+  <line no="78">
+    <token name="T_INLINE_HTML">                    &lt;td&gt;{{ $mainGenreName }}&lt;/td&gt;</token>
+  </line>
+  <line no="79">
+    <token name="T_INLINE_HTML">                &lt;/tr&gt;</token>
+  </line>
+  <line no="80">
+    <token name="T_INLINE_HTML">                &lt;tr&gt;</token>
+  </line>
+  <line no="81">
+    <token name="T_INLINE_HTML">                    &lt;th&gt;&#x30B5;&#x30D6;&#x30B8;&#x30E3;&#x30F3;&#x30EB;&lt;/th&gt;</token>
+  </line>
+  <line no="82">
+    <token name="T_INLINE_HTML">                    &lt;td&gt;{{ $subGenreName }}&lt;/td&gt;</token>
+  </line>
+  <line no="83">
+    <token name="T_INLINE_HTML">                &lt;/tr&gt;</token>
+  </line>
+  <line no="84">
+    <token name="T_INLINE_HTML">                &lt;tr&gt;</token>
+  </line>
+  <line no="85">
+    <token name="T_INLINE_HTML">                    &lt;th&gt;&#x7D39;&#x4ECB;&#x6587;&lt;/th&gt;</token>
+  </line>
+  <line no="86">
+    <token name="T_INLINE_HTML">                    &lt;td&gt;{{ $game['description_middle'] }}&lt;/td&gt;</token>
+  </line>
+  <line no="87">
+    <token name="T_INLINE_HTML">                &lt;/tr&gt;</token>
+  </line>
+  <line no="88">
+    <token name="T_INLINE_HTML">                &lt;tr&gt;</token>
+  </line>
+  <line no="89">
+    <token name="T_INLINE_HTML">                    &lt;th&gt;&#x30B5;&#x30E0;&#x30CD;&#x30A4;&#x30EB;&lt;/th&gt;</token>
+  </line>
+  <line no="90">
+    <token name="T_INLINE_HTML">                    &lt;td&gt;</token>
+  </line>
+  <line no="91">
+    <token name="T_INLINE_HTML">                        &lt;img src="{{ $imageUrl['thumb_60'] }}" alt="" class="w-auto mg-b6 mg-r6"&gt;</token>
+  </line>
+  <line no="92">
+    <token name="T_INLINE_HTML">                        &lt;img src="{{ $imageUrl['thumb_80'] }}" alt="" class="w-auto mg-b6 mg-r6"&gt;</token>
+  </line>
+  <line no="93">
+    <token name="T_INLINE_HTML">                        &lt;img src="{{ $imageUrl['thumb_200'] }}" alt="" class="w-auto mg-b6 mg-r6"&gt;</token>
+  </line>
+  <line no="94">
+    <token name="T_INLINE_HTML">                    &lt;/td&gt;</token>
+  </line>
+  <line no="95">
+    <token name="T_INLINE_HTML">                &lt;/tr&gt;</token>
+  </line>
+  <line no="96"/>
+  <line no="97">
+    <token name="T_INLINE_HTML">                &lt;/tbody&gt;</token>
+  </line>
+  <line no="98">
+    <token name="T_INLINE_HTML">                &lt;!-- /.c-table --&gt;</token>
+  </line>
+  <line no="99">
+    <token name="T_INLINE_HTML">            &lt;/table&gt;</token>
+  </line>
+  <line no="100">
+    <token name="T_INLINE_HTML">            &lt;div class="center"&gt;</token>
+  </line>
+  <line no="101">
+    <token name="T_INLINE_HTML">                &lt;a href="{{ URL::route('Game.edit') }}" class="button is-primary is-medium"&gt;&lt;i class="fa fa-pencil"&gt;&lt;/i&gt;&#x7DE8;&#x96C6;&lt;/a&gt;</token>
+  </line>
+  <line no="102">
+    <token name="T_INLINE_HTML">            &lt;/div&gt;</token>
+  </line>
+  <line no="103">
+    <token name="T_INLINE_HTML">            &lt;!-- /.c-area --&gt;</token>
+  </line>
+  <line no="104">
+    <token name="T_INLINE_HTML">        &lt;/div&gt;</token>
+  </line>
+  <line no="105">
+    <token name="T_INLINE_HTML">    &lt;/section&gt;</token>
+  </line>
+  <line no="106"/>
+  <line no="107"/>
+  <line no="108">
+    <token name="T_INLINE_HTML">@endsection</token>
+  </line>
+  <line no="109"/>
+</source>

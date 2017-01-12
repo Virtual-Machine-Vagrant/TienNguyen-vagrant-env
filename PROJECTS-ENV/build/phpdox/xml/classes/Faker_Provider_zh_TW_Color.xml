@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="Faker\Provider\zh_TW\Color" namespace="Faker\Provider\zh_TW" name="Color" abstract="false" final="false" start="5" end="66">
+  <file path="/home/web/example/src/freegame_developer/vendor/fzaninotto/faker/src/Faker/Provider/zh_TW" file="Color.php" realpath="/home/web/example/src/freegame_developer/vendor/fzaninotto/faker/src/Faker/Provider/zh_TW/Color.php" size="3967" time="2015-05-29T06:29:14+00:00" unixtime="1432880954" sha1="0135867c42f7230b4902977ff5934ed91376958e" relative="freegame_developer/vendor/fzaninotto/faker/src/Faker/Provider/zh_TW/Color.php"/>
+  <extends full="Faker\Provider\Color" namespace="Faker\Provider" name="Color"/>
+  <member name="safeColorNames" type="array" default="" visibility="protected" static="true" line="10">
+    <docblock>
+      <description/>
+      <link value="http://zh.wikipedia.org/zh-tw/%E9%A2%9C%E8%89%B2%E5%88%97%E8%A1%A8"/>
+    </docblock>
+  </member>
+  <member name="allColorNames" type="array" default="" visibility="protected" static="true" line="16"/>
+</class>

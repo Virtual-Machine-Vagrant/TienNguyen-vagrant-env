@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="spec\PhpSpec\Locator\PSR0\PSR0ResourceSpec" namespace="spec\PhpSpec\Locator\PSR0" name="PSR0ResourceSpec" abstract="false" final="false" start="9" end="109">
+  <file path="/home/web/example/src/freegame_developer/vendor/phpspec/phpspec/spec/PhpSpec/Locator/PSR0" file="PSR0ResourceSpec.php" realpath="/home/web/example/src/freegame_developer/vendor/phpspec/phpspec/spec/PhpSpec/Locator/PSR0/PSR0ResourceSpec.php" size="3521" time="2016-01-01T10:17:54+00:00" unixtime="1451643474" sha1="ff5c56d3dab1305d490ff6b16b9a77407d18e810" relative="freegame_developer/vendor/phpspec/phpspec/spec/PhpSpec/Locator/PSR0/PSR0ResourceSpec.php"/>
+  <extends full="PhpSpec\ObjectBehavior" namespace="PhpSpec" name="ObjectBehavior"/>
+  <method name="let" start="11" end="16" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="locator" byreference="false" type="object">
+      <type full="PhpSpec\Locator\PSR0\PSR0Locator" namespace="PhpSpec\Locator\PSR0" name="PSR0Locator"/>
+    </parameter>
+  </method>
+  <method name="it_uses_last_segment_as_name" start="18" end="21" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="it_uses_last_segment_plus_Spec_suffix_as_specName" start="23" end="26" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="it_is_a_resource" start="28" end="31" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="it_generates_src_filename_from_provided_parts_using_locator" start="33" end="38" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="locator" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="it_generates_src_namespace_from_provided_parts_using_locator" start="40" end="45" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="locator" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="it_generates_proper_src_namespace_even_if_there_is_only_one_part" start="47" end="53" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="locator" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="it_generates_src_classname_from_provided_parts_using_locator" start="55" end="60" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="locator" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="it_generates_proper_src_classname_for_empty_locator_namespace" start="62" end="67" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="locator" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="it_generates_spec_filename_from_provided_parts_using_locator" start="69" end="74" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="locator" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="it_generates_spec_namespace_from_provided_parts_using_locator" start="76" end="81" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="locator" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="it_generates_proper_spec_namespace_even_if_there_is_only_one_part" start="83" end="89" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="locator" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="it_generates_spec_classname_from_provided_parts_using_locator" start="91" end="96" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="locator" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="it_does_not_split_underscores_when_locator_has_psr4_prefix" start="98" end="108" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="locator" byreference="false" type="{unknown}"/>
+  </method>
+</class>

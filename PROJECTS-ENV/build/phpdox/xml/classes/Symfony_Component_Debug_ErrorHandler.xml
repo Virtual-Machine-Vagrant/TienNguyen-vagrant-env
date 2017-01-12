@@ -1,0 +1,288 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="Symfony\Component\Debug\ErrorHandler" namespace="Symfony\Component\Debug" name="ErrorHandler" abstract="false" final="false" start="47" end="732">
+  <file path="/home/web/example/src/freegame_developer/vendor/symfony/debug" file="ErrorHandler.php" realpath="/home/web/example/src/freegame_developer/vendor/symfony/debug/ErrorHandler.php" size="27613" time="2016-09-06T07:26:07+00:00" unixtime="1473146767" sha1="010c3224eb812dc47b6c24711896fe52649cc1e9" relative="freegame_developer/vendor/symfony/debug/ErrorHandler.php"/>
+  <docblock>
+    <description compact="A generic ErrorHandler for the PHP engine.">Provides five bit fields that control how errors are handled:
+- thrownErrors: errors thrown as \ErrorException
+- loggedErrors: logged errors, when not @-silenced
+- scopedErrors: errors thrown or logged with their local context
+- tracedErrors: errors logged with their stack trace, only once for repeated errors
+- screamedErrors: never @-silenced errors
+
+Each error level can be logged by a dedicated PSR-3 logger object.
+Screaming only applies to logging.
+Throwing takes precedence over logging.
+Uncaught exceptions are logged as E_ERROR.
+E_DEPRECATED and E_USER_DEPRECATED levels never throw.
+E_RECOVERABLE_ERROR and E_USER_ERROR levels always throw.
+Non catchable errors that can be detected at shutdown time are logged when the scream bit field allows so.
+As errors have a performance cost, repeated errors are all logged, so that the developer
+can see them and weight them as more important to fix than others of the same level.</description>
+    <author value="Nicolas Grekas &lt;p@tchwork.com&gt;"/>
+  </docblock>
+  <constant type="integer" name="TYPE_DEPRECATION" value="100">
+    <docblock>
+      <description/>
+      <deprecated value="since version 2.6, to be removed in 3.0."/>
+    </docblock>
+  </constant>
+  <member name="levels" type="array" default="" visibility="private" static="false" line="54"/>
+  <member name="loggers" type="array" default="" visibility="private" static="false" line="72"/>
+  <member name="thrownErrors" type="integer" default="0x1FFF" visibility="private" static="false" line="90"/>
+  <member name="scopedErrors" type="integer" default="0x1FFF" visibility="private" static="false" line="91"/>
+  <member name="tracedErrors" type="integer" default="0x77FB" visibility="private" static="false" line="92"/>
+  <member name="screamedErrors" type="integer" default="0x55" visibility="private" static="false" line="93"/>
+  <member name="loggedErrors" type="integer" default="0" visibility="private" static="false" line="94"/>
+  <member name="loggedTraces" type="array" default="" visibility="private" static="false" line="96"/>
+  <member name="isRecursive" type="integer" default="0" visibility="private" static="false" line="97"/>
+  <member name="isRoot" type="boolean" default="false" visibility="private" static="false" line="98"/>
+  <member name="exceptionHandler" visibility="private" static="false" line="99"/>
+  <member name="reservedMemory" visibility="private" static="true" line="101"/>
+  <member name="stackedErrors" type="array" default="" visibility="private" static="true" line="102"/>
+  <member name="stackedErrorLevels" type="array" default="" visibility="private" static="true" line="103"/>
+  <member name="displayErrors" type="integer" default="0x1FFF" visibility="private" static="false" line="110">
+    <docblock>
+      <description compact="Same init value as thrownErrors."/>
+      <deprecated value="since version 2.6, to be removed in 3.0."/>
+    </docblock>
+  </member>
+  <method name="register" start="120" end="158" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description compact="Registers the error handler."/>
+      <param description="The handler to register, or @deprecated (since version 2.6, to be removed in 3.0) bit field of thrown levels" type="object" variable="$handler">
+        <type full="Symfony\Component\Debug\self|null|int" namespace="Symfony\Component\Debug" name="self|null|int"/>
+      </param>
+      <param description="Whether to replace or not any existing handler" type="object" variable="$replace">
+        <type full="Symfony\Component\Debug\bool" namespace="Symfony\Component\Debug" name="bool"/>
+      </param>
+      <return description="The registered error handler" resolution="self" type="object">
+        <type full="Symfony\Component\Debug\ErrorHandler" namespace="Symfony\Component\Debug" name="ErrorHandler"/>
+      </return>
+    </docblock>
+    <parameter name="handler" byreference="false" type="{unknown}" default="" constant="null"/>
+    <parameter name="replace" byreference="false" type="boolean" default="true"/>
+  </method>
+  <method name="setDefaultLogger" start="167" end="190" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Sets a logger to non assigned errors levels."/>
+      <param description="A PSR-3 logger to put as default for the given levels" type="object" variable="$logger">
+        <type full="Psr\Log\LoggerInterface" namespace="Psr\Log" name="LoggerInterface"/>
+      </param>
+      <param description="An array map of E_* to LogLevel::* or an integer bit field of E_* constants" type="object" variable="$levels">
+        <type full="Symfony\Component\Debug\array|int" namespace="Symfony\Component\Debug" name="array|int"/>
+      </param>
+      <param description="Whether to replace or not any existing logger" type="object" variable="$replace">
+        <type full="Symfony\Component\Debug\bool" namespace="Symfony\Component\Debug" name="bool"/>
+      </param>
+    </docblock>
+    <parameter name="logger" byreference="false" type="object">
+      <type full="Psr\Log\LoggerInterface" namespace="Psr\Log" name="LoggerInterface"/>
+    </parameter>
+    <parameter name="levels" byreference="false" type="{unknown}" default="" constant="null"/>
+    <parameter name="replace" byreference="false" type="boolean" default="false"/>
+  </method>
+  <method name="setLoggers" start="201" end="227" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Sets a logger for each error level."/>
+      <param description="Error levels to [LoggerInterface|null, LogLevel::*] map" type="array" variable="$loggers"/>
+      <return description="The previous map" type="array"/>
+      <throws type="object">
+        <type full="\InvalidArgumentException" namespace="" name="InvalidArgumentException"/>
+      </throws>
+    </docblock>
+    <parameter name="loggers" byreference="false" type="array"/>
+  </method>
+  <method name="setExceptionHandler" start="238" end="247" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Sets a user exception handler."/>
+      <param description="A handler that will be called on Exception" type="object" variable="$handler">
+        <type full="Symfony\Component\Debug\callable" namespace="Symfony\Component\Debug" name="callable"/>
+      </param>
+      <return description="The previous exception handler" type="object">
+        <type full="Symfony\Component\Debug\callable|null" namespace="Symfony\Component\Debug" name="callable|null"/>
+      </return>
+      <throws type="object">
+        <type full="\InvalidArgumentException" namespace="" name="InvalidArgumentException"/>
+      </throws>
+    </docblock>
+    <parameter name="handler" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="throwAt" start="257" end="270" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Sets the PHP error levels that throw an exception when a PHP error occurs."/>
+      <param description="A bit field of E_* constants for thrown errors" type="int" variable="$levels"/>
+      <param description="Replace or amend the previous value" type="object" variable="$replace">
+        <type full="Symfony\Component\Debug\bool" namespace="Symfony\Component\Debug" name="bool"/>
+      </param>
+      <return description="The previous value" type="int"/>
+    </docblock>
+    <parameter name="levels" byreference="false" type="{unknown}"/>
+    <parameter name="replace" byreference="false" type="boolean" default="false"/>
+    <inline>
+      <comment value="$this-&gt;displayErrors is @deprecated since version 2.6" line="266"/>
+    </inline>
+  </method>
+  <method name="scopeAt" start="280" end="289" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Sets the PHP error levels for which local variables are preserved."/>
+      <param description="A bit field of E_* constants for scoped errors" type="int" variable="$levels"/>
+      <param description="Replace or amend the previous value" type="object" variable="$replace">
+        <type full="Symfony\Component\Debug\bool" namespace="Symfony\Component\Debug" name="bool"/>
+      </param>
+      <return description="The previous value" type="int"/>
+    </docblock>
+    <parameter name="levels" byreference="false" type="{unknown}"/>
+    <parameter name="replace" byreference="false" type="boolean" default="false"/>
+  </method>
+  <method name="traceAt" start="299" end="308" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Sets the PHP error levels for which the stack trace is preserved."/>
+      <param description="A bit field of E_* constants for traced errors" type="int" variable="$levels"/>
+      <param description="Replace or amend the previous value" type="object" variable="$replace">
+        <type full="Symfony\Component\Debug\bool" namespace="Symfony\Component\Debug" name="bool"/>
+      </param>
+      <return description="The previous value" type="int"/>
+    </docblock>
+    <parameter name="levels" byreference="false" type="{unknown}"/>
+    <parameter name="replace" byreference="false" type="boolean" default="false"/>
+  </method>
+  <method name="screamAt" start="318" end="327" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Sets the error levels where the @-operator is ignored."/>
+      <param description="A bit field of E_* constants for screamed errors" type="int" variable="$levels"/>
+      <param description="Replace or amend the previous value" type="object" variable="$replace">
+        <type full="Symfony\Component\Debug\bool" namespace="Symfony\Component\Debug" name="bool"/>
+      </param>
+      <return description="The previous value" type="int"/>
+    </docblock>
+    <parameter name="levels" byreference="false" type="{unknown}"/>
+    <parameter name="replace" byreference="false" type="boolean" default="false"/>
+  </method>
+  <method name="reRegister" start="332" end="347" abstract="false" final="false" static="false" visibility="private">
+    <docblock>
+      <description compact="Re-registers as a PHP error handler if levels changed."/>
+    </docblock>
+    <parameter name="prev" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="handleError" start="365" end="461" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Handles errors by filtering then logging them according to the configured bit fields."/>
+      <param description="One of the E_* constants" type="int" variable="$type"/>
+      <param type="string" variable="$message"/>
+      <param type="string" variable="$file"/>
+      <param type="int" variable="$line"/>
+      <param type="array" variable="$context"/>
+      <param type="array" variable="$backtrace"/>
+      <return description="Returns false when no handling happens so that the PHP engine can handle the error itself" type="object">
+        <type full="Symfony\Component\Debug\bool" namespace="Symfony\Component\Debug" name="bool"/>
+      </return>
+      <throws description="When $this-&gt;thrownErrors requests so" type="object">
+        <type full="\ErrorException" namespace="" name="ErrorException"/>
+      </throws>
+      <internal/>
+    </docblock>
+    <parameter name="type" byreference="false" type="{unknown}"/>
+    <parameter name="message" byreference="false" type="{unknown}"/>
+    <parameter name="file" byreference="false" type="{unknown}"/>
+    <parameter name="line" byreference="false" type="{unknown}"/>
+    <parameter name="context" byreference="false" type="array"/>
+    <parameter name="backtrace" byreference="false" type="{unknown}" default="" constant="null"/>
+    <inline>
+      <comment value="For duplicated errors, log the trace only once" line="410"/>
+    </inline>
+  </method>
+  <method name="handleException" start="471" end="529" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Handles an exception by logging then forwarding it to another handler."/>
+      <param description="An exception to handle" type="object" variable="$exception">
+        <type full="\Exception|\Throwable" namespace="\Exception|" name="Throwable"/>
+      </param>
+      <param description="An array as returned by error_get_last()" type="array" variable="$error"/>
+      <internal/>
+    </docblock>
+    <parameter name="exception" byreference="false" type="{unknown}"/>
+    <parameter name="error" byreference="false" type="{unknown}" default="" constant="null"/>
+  </method>
+  <method name="handleFatalError" start="538" end="587" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description compact="Shutdown registered function for handling PHP fatal errors."/>
+      <param description="An array as returned by error_get_last()" type="array" variable="$error"/>
+      <internal/>
+    </docblock>
+    <parameter name="error" byreference="false" type="{unknown}" default="" constant="null"/>
+  </method>
+  <method name="stackErrors" start="600" end="603" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description compact="Configures the error handler for delayed handling.">Ensures also that non-catchable fatal errors are never silenced.
+
+As shown by http://bugs.php.net/42098 and http://bugs.php.net/60724
+PHP has a compile stage where it behaves unusually. To workaround it,
+we plug an error handler that only stacks errors for later.
+
+The most important feature of this is to prevent
+autoloading until unstackErrors() is called.</description>
+    </docblock>
+  </method>
+  <method name="unstackErrors" start="608" end="628" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description compact="Unstacks stacked errors and forwards to the logger."/>
+    </docblock>
+  </method>
+  <method name="getFatalErrorHandlers" start="637" end="644" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Gets the fatal error handlers.">Override this method if you want to define more fatal error handlers.</description>
+      <return description="An array of FatalErrorHandlerInterface" type="array" of="object">
+        <type full="Symfony\Component\Debug\FatalErrorHandlerInterface" namespace="Symfony\Component\Debug" name="FatalErrorHandlerInterface"/>
+      </return>
+    </docblock>
+  </method>
+  <method name="setLevel" start="653" end="659" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Sets the level at which the conversion to Exception is done."/>
+      <param description="The level (null to use the error_reporting() value and 0 to disable)" type="object" variable="$level">
+        <type full="Symfony\Component\Debug\int|null" namespace="Symfony\Component\Debug" name="int|null"/>
+      </param>
+      <deprecated value="since version 2.6, to be removed in 3.0. Use throwAt() instead."/>
+    </docblock>
+    <parameter name="level" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="setDisplayErrors" start="668" end="679" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Sets the display_errors flag value."/>
+      <param description="The display_errors flag value" type="int" variable="$displayErrors"/>
+      <deprecated value="since version 2.6, to be removed in 3.0. Use throwAt() instead."/>
+    </docblock>
+    <parameter name="displayErrors" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="setLogger" start="689" end="709" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description compact="Sets a logger for the given channel."/>
+      <param description="A logger interface" type="object" variable="$logger">
+        <type full="Psr\Log\LoggerInterface" namespace="Psr\Log" name="LoggerInterface"/>
+      </param>
+      <param description="The channel associated with the logger (deprecation, emergency or scream)" type="string" variable="$channel"/>
+      <deprecated value="since version 2.6, to be removed in 3.0. Use setLoggers() or setDefaultLogger() instead."/>
+    </docblock>
+    <parameter name="logger" byreference="false" type="object">
+      <type full="Psr\Log\LoggerInterface" namespace="Psr\Log" name="LoggerInterface"/>
+    </parameter>
+    <parameter name="channel" byreference="false" type="string" default="'deprecation'"/>
+  </method>
+  <method name="handle" start="714" end="719" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <deprecated value="since version 2.6, to be removed in 3.0. Use handleError() instead."/>
+    </docblock>
+    <parameter name="level" byreference="false" type="{unknown}"/>
+    <parameter name="message" byreference="false" type="{unknown}"/>
+    <parameter name="file" byreference="false" type="string" default="'unknown'"/>
+    <parameter name="line" byreference="false" type="integer" default="0"/>
+    <parameter name="context" byreference="false" type="array" default=""/>
+  </method>
+  <method name="handleFatal" start="726" end="731" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Handles PHP fatal errors."/>
+      <deprecated value="since version 2.6, to be removed in 3.0. Use handleFatalError() instead."/>
+    </docblock>
+  </method>
+</class>

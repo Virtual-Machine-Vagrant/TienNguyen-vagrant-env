@@ -1,0 +1,273 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="phpseclib\Crypt\DES" namespace="phpseclib\Crypt" name="DES" abstract="false" final="false" start="52" end="1443">
+  <file path="/home/web/example/src/freegame_developer/vendor/phpseclib/phpseclib/phpseclib/Crypt" file="DES.php" realpath="/home/web/example/src/freegame_developer/vendor/phpseclib/phpseclib/phpseclib/Crypt/DES.php" size="71489" time="2016-10-04T00:57:04+00:00" unixtime="1475542624" sha1="42e99d493faf265f944f4db42658c8f5fb7fed9e" relative="freegame_developer/vendor/phpseclib/phpseclib/phpseclib/Crypt/DES.php"/>
+  <docblock>
+    <description compact="Pure-PHP implementation of DES."/>
+    <package value="DES"/>
+    <author value="Jim Wigginton &lt;terrafrost@php.net&gt;"/>
+    <access value="public"/>
+  </docblock>
+  <extends full="phpseclib\Crypt\Base" namespace="phpseclib\Crypt" name="Base"/>
+  <constant type="integer" name="ENCRYPT" value="0">
+    <docblock>
+      <description compact="Contains $keys[self::ENCRYPT]"/>
+    </docblock>
+  </constant>
+  <constant type="integer" name="DECRYPT" value="1">
+    <docblock>
+      <description compact="Contains $keys[self::DECRYPT]"/>
+    </docblock>
+  </constant>
+  <member name="block_size" type="integer" default="8" visibility="public" static="false" line="76">
+    <docblock>
+      <description compact="Block Length of the cipher"/>
+      <see value="\phpseclib\Crypt\Base::block_size"/>
+      <var type="int"/>
+      <access value="private"/>
+    </docblock>
+  </member>
+  <member name="key_length" type="integer" default="8" visibility="public" static="false" line="85">
+    <docblock>
+      <description compact="Key Length (in bytes)"/>
+      <see value="\phpseclib\Crypt\Base::setKeyLength()"/>
+      <var type="int"/>
+      <access value="private"/>
+    </docblock>
+  </member>
+  <member name="cipher_name_mcrypt" type="string" default="'des'" visibility="public" static="false" line="94">
+    <docblock>
+      <description compact="The mcrypt specific name of the cipher"/>
+      <see value="\phpseclib\Crypt\Base::cipher_name_mcrypt"/>
+      <var type="string"/>
+      <access value="private"/>
+    </docblock>
+  </member>
+  <member name="openssl_mode_names" type="array" default="" visibility="public" static="false" line="103">
+    <docblock>
+      <description compact="The OpenSSL names of the cipher / modes"/>
+      <see value="\phpseclib\Crypt\Base::openssl_mode_names"/>
+      <var type="array"/>
+      <access value="private"/>
+    </docblock>
+  </member>
+  <member name="cfb_init_len" type="integer" default="500" visibility="public" static="false" line="118">
+    <docblock>
+      <description compact="Optimizing value while CFB-encrypting"/>
+      <see value="\phpseclib\Crypt\Base::cfb_init_len"/>
+      <var type="int"/>
+      <access value="private"/>
+    </docblock>
+  </member>
+  <member name="des_rounds" type="integer" default="1" visibility="public" static="false" line="130">
+    <docblock>
+      <description compact="Switch for DES/3DES encryption">Used only if $engine == self::ENGINE_INTERNAL</description>
+      <see value="self::_setupKey()"/>
+      <see value="self::_processBlock()"/>
+      <var type="int"/>
+      <access value="private"/>
+    </docblock>
+  </member>
+  <member name="key_length_max" type="integer" default="8" visibility="public" static="false" line="139">
+    <docblock>
+      <description compact="max possible size of $key"/>
+      <see value="self::setKey()"/>
+      <var type="string"/>
+      <access value="private"/>
+    </docblock>
+  </member>
+  <member name="keys" visibility="public" static="false" line="148">
+    <docblock>
+      <description compact="The Key Schedule"/>
+      <see value="self::_setupKey()"/>
+      <var type="array"/>
+      <access value="private"/>
+    </docblock>
+  </member>
+  <member name="shuffle" type="array" default="" visibility="public" static="false" line="162">
+    <docblock>
+      <description compact="Shuffle table.">For each byte value index, the entry holds an 8-byte string
+with each byte containing all bits in the same state as the
+corresponding bit in the index value.</description>
+      <see value="self::_processBlock()"/>
+      <see value="self::_setupKey()"/>
+      <var type="array"/>
+      <access value="private"/>
+    </docblock>
+  </member>
+  <member name="ipmap" type="array" default="" visibility="public" static="false" line="301">
+    <docblock>
+      <description compact="IP mapping helper table.">Indexing this table with each source byte performs the initial bit permutation.</description>
+      <var type="array"/>
+      <access value="private"/>
+    </docblock>
+  </member>
+  <member name="invipmap" type="array" default="" visibility="public" static="false" line="343">
+    <docblock>
+      <description compact="Inverse IP mapping helper table.">Indexing this table with a byte value reverses the bit order.</description>
+      <var type="array"/>
+      <access value="private"/>
+    </docblock>
+  </member>
+  <member name="sbox1" type="array" default="" visibility="public" static="false" line="387">
+    <docblock>
+      <description compact="Pre-permuted S-box1">Each box ($sbox1-$sbox8) has been vectorized, then each value pre-permuted using the
+P table: concatenation can then be replaced by exclusive ORs.</description>
+      <var type="array"/>
+      <access value="private"/>
+    </docblock>
+  </member>
+  <member name="sbox2" type="array" default="" visibility="public" static="false" line="412">
+    <docblock>
+      <description compact="Pre-permuted S-box2"/>
+      <var type="array"/>
+      <access value="private"/>
+    </docblock>
+  </member>
+  <member name="sbox3" type="array" default="" visibility="public" static="false" line="437">
+    <docblock>
+      <description compact="Pre-permuted S-box3"/>
+      <var type="array"/>
+      <access value="private"/>
+    </docblock>
+  </member>
+  <member name="sbox4" type="array" default="" visibility="public" static="false" line="462">
+    <docblock>
+      <description compact="Pre-permuted S-box4"/>
+      <var type="array"/>
+      <access value="private"/>
+    </docblock>
+  </member>
+  <member name="sbox5" type="array" default="" visibility="public" static="false" line="487">
+    <docblock>
+      <description compact="Pre-permuted S-box5"/>
+      <var type="array"/>
+      <access value="private"/>
+    </docblock>
+  </member>
+  <member name="sbox6" type="array" default="" visibility="public" static="false" line="512">
+    <docblock>
+      <description compact="Pre-permuted S-box6"/>
+      <var type="array"/>
+      <access value="private"/>
+    </docblock>
+  </member>
+  <member name="sbox7" type="array" default="" visibility="public" static="false" line="537">
+    <docblock>
+      <description compact="Pre-permuted S-box7"/>
+      <var type="array"/>
+      <access value="private"/>
+    </docblock>
+  </member>
+  <member name="sbox8" type="array" default="" visibility="public" static="false" line="562">
+    <docblock>
+      <description compact="Pre-permuted S-box8"/>
+      <var type="array"/>
+      <access value="private"/>
+    </docblock>
+  </member>
+  <method name="isValidEngine" start="591" end="601" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Test for engine validity">This is mainly just a wrapper to set things up for \phpseclib\Crypt\Base::isValidEngine()</description>
+      <see value="\phpseclib\Crypt\Base::isValidEngine()"/>
+      <param type="int" variable="$engine"/>
+      <access value="public"/>
+      <return type="object">
+        <type full="phpseclib\Crypt\bool" namespace="phpseclib\Crypt" name="bool"/>
+      </return>
+    </docblock>
+    <parameter name="engine" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="setKey" start="618" end="628" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Sets the key.">Keys can be of any length.  DES, itself, uses 64-bit keys (eg. strlen($key) == 8), however, we
+only use the first eight, if $key has more then eight characters in it, and pad $key with the
+null byte if it is less then eight characters long.
+
+DES also requires that every eighth bit be a parity bit, however, we'll ignore that.
+
+If the key is not explicitly set, it'll be assumed to be all zero's.</description>
+      <see value="\phpseclib\Crypt\Base::setKey()"/>
+      <access value="public"/>
+      <param type="string" variable="$key"/>
+    </docblock>
+    <parameter name="key" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="We check/cut here only up to max length of the key." line="620"/>
+      <comment value="Key padding to the proper length will be done in _setupKey()" line="621"/>
+      <comment value="Sets the key" line="626"/>
+    </inline>
+  </method>
+  <method name="_encryptBlock" start="640" end="643" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Encrypts a block"/>
+      <see value="\phpseclib\Crypt\Base::_encryptBlock()"/>
+      <see value="\phpseclib\Crypt\Base::encrypt()"/>
+      <see value="self::encrypt()"/>
+      <access value="private"/>
+      <param type="string" variable="$in"/>
+      <return type="string"/>
+    </docblock>
+    <parameter name="in" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="_decryptBlock" start="655" end="658" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Decrypts a block"/>
+      <see value="\phpseclib\Crypt\Base::_decryptBlock()"/>
+      <see value="\phpseclib\Crypt\Base::decrypt()"/>
+      <see value="self::decrypt()"/>
+      <access value="private"/>
+      <param type="string" variable="$in"/>
+      <return type="string"/>
+    </docblock>
+    <parameter name="in" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="_processBlock" start="674" end="747" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Encrypts or decrypts a 64-bit block">$mode should be either self::ENCRYPT or self::DECRYPT.  See
+{@link http://en.wikipedia.org/wiki/Image:Feistel.png Feistel.png} to get a general
+idea of what this function does.</description>
+      <see value="self::_encryptBlock()"/>
+      <see value="self::_decryptBlock()"/>
+      <access value="private"/>
+      <param type="string" variable="$block"/>
+      <param type="int" variable="$mode"/>
+      <return type="string"/>
+    </docblock>
+    <parameter name="block" byreference="false" type="{unknown}"/>
+    <parameter name="mode" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="Do the initial IP permutation." line="696"/>
+      <comment value="Extract L0 and R0." line="708"/>
+      <comment value="Perform the inverse IP permutation." line="738"/>
+    </inline>
+  </method>
+  <method name="_setupKey" start="755" end="1282" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Creates the key schedule"/>
+      <see value="\phpseclib\Crypt\Base::_setupKey()"/>
+      <access value="private"/>
+    </docblock>
+    <inline>
+      <comment value="Mapping tables for the PC-2 transformation." line="802"/>
+    </inline>
+  </method>
+  <method name="_setupInlineCrypt" start="1290" end="1442" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Setup the performance-optimized function for de/encrypt()"/>
+      <see value="\phpseclib\Crypt\Base::_setupInlineCrypt()"/>
+      <access value="private"/>
+    </docblock>
+    <inline>
+      <comment value="Engine configuration for:" line="1294"/>
+      <comment value="-  DES ($des_rounds == 1) or" line="1295"/>
+      <comment value="- 3DES ($des_rounds == 3)" line="1296"/>
+      <comment value="We create max. 10 hi-optimized code for memory reason. Means: For each $key one ultra fast inline-crypt function." line="1299"/>
+      <comment value="(Currently, for DES, one generated $lambda_function cost on php5.5@32bit ~135kb unfreeable mem and ~230kb on php5.5@64bit)" line="1300"/>
+      <comment value="(Currently, for TripleDES, one generated $lambda_function cost on php5.5@32bit ~240kb unfreeable mem and ~340kb on php5.5@64bit)" line="1301"/>
+      <comment value="After that, we'll still create very fast optimized code but not the hi-ultimative code, for each $mode one" line="1302"/>
+      <comment value="Generation of a unique hash for our generated code" line="1305"/>
+      <comment value="Is there a re-usable $lambda_functions in there? If not, we have to create it." line="1316"/>
+      <comment value="Set the inline-crypt function as callback in: $this-&gt;inline_crypt" line="1440"/>
+    </inline>
+  </method>
+</class>

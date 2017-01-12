@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="phpDocumentor\Reflection\DocBlock\Tags\MethodTest" namespace="phpDocumentor\Reflection\DocBlock\Tags" name="MethodTest" abstract="false" final="false" start="31" end="437">
+  <file path="/home/web/example/src/freegame_developer/vendor/phpdocumentor/reflection-docblock/tests/unit/DocBlock/Tags" file="MethodTest.php" realpath="/home/web/example/src/freegame_developer/vendor/phpdocumentor/reflection-docblock/tests/unit/DocBlock/Tags/MethodTest.php" size="14071" time="2016-09-30T07:12:33+00:00" unixtime="1475219553" sha1="4d7b15c99617fe3124c14a15f538831f4e698f60" relative="freegame_developer/vendor/phpdocumentor/reflection-docblock/tests/unit/DocBlock/Tags/MethodTest.php"/>
+  <docblock>
+    <description/>
+    <coversdefaultclass value="\phpDocumentor\Reflection\DocBlock\Tags\Method"/>
+    <covers value="::&lt;private&gt;"/>
+  </docblock>
+  <extends full="PHPUnit_Framework_TestCase" namespace="" name="PHPUnit_Framework_TestCase"/>
+  <method name="testIfCorrectTagNameIsReturned" start="37" end="42" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <uses value="\phpDocumentor\Reflection\DocBlock\Tags\Method::__construct"/>
+      <covers value="\phpDocumentor\Reflection\DocBlock\Tags\BaseTag::getName"/>
+    </docblock>
+  </method>
+  <method name="testIfTagCanBeRenderedUsingDefaultFormatter" start="53" end="65" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <uses value="\phpDocumentor\Reflection\DocBlock\Tags\Method::__construct"/>
+      <uses value="\phpDocumentor\Reflection\DocBlock\Tags\Method::isStatic"/>
+      <uses value="\phpDocumentor\Reflection\DocBlock\Tags\Method::__toString"/>
+      <uses value="\phpDocumentor\Reflection\DocBlock\Tags\Formatter\PassthroughFormatter"/>
+      <uses value="\phpDocumentor\Reflection\DocBlock\Description"/>
+      <covers value="\phpDocumentor\Reflection\DocBlock\Tags\BaseTag::render"/>
+      <covers value="\phpDocumentor\Reflection\DocBlock\Tags\BaseTag::getName"/>
+    </docblock>
+  </method>
+  <method name="testIfTagCanBeRenderedUsingSpecificFormatter" start="72" end="80" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <uses value="\phpDocumentor\Reflection\DocBlock\Tags\Method::__construct"/>
+      <uses value="\phpDocumentor\Reflection\DocBlock\Description"/>
+      <covers value="\phpDocumentor\Reflection\DocBlock\Tags\BaseTag::render"/>
+    </docblock>
+  </method>
+  <method name="testHasMethodName" start="86" end="93" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <covers value="::__construct"/>
+      <covers value="::getMethodName"/>
+    </docblock>
+  </method>
+  <method name="testHasArguments" start="99" end="108" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <covers value="::__construct"/>
+      <covers value="::getArguments"/>
+    </docblock>
+  </method>
+  <method name="testArgumentsMayBePassedAsString" start="114" end="124" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <covers value="::__construct"/>
+      <covers value="::getArguments"/>
+    </docblock>
+  </method>
+  <method name="testArgumentTypeCanBeInferredAsVoid" start="130" end="140" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <covers value="::__construct"/>
+      <covers value="::getArguments"/>
+    </docblock>
+  </method>
+  <method name="testRestArgumentIsParsedAsRegularArg" start="145" end="167" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <covers value="::create"/>
+    </docblock>
+  </method>
+  <method name="testHasReturnType" start="173" end="180" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <covers value="::__construct"/>
+      <covers value="::getReturnType"/>
+    </docblock>
+  </method>
+  <method name="testReturnTypeCanBeInferredAsVoid" start="186" end="191" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <covers value="::__construct"/>
+      <covers value="::getReturnType"/>
+    </docblock>
+  </method>
+  <method name="testMethodCanBeStatic" start="197" end="206" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <covers value="::__construct"/>
+      <covers value="::isStatic"/>
+    </docblock>
+  </method>
+  <method name="testHasDescription" start="213" end="220" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <covers value="::__construct"/>
+      <covers value="\phpDocumentor\Reflection\DocBlock\Tags\BaseTag::getDescription"/>
+      <uses value="\phpDocumentor\Reflection\DocBlock\Description"/>
+    </docblock>
+  </method>
+  <method name="testStringRepresentationIsReturned" start="228" end="240" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <covers value="::__construct"/>
+      <covers value="::__toString"/>
+      <uses value="\phpDocumentor\Reflection\DocBlock\Description"/>
+      <uses value="\phpDocumentor\Reflection\DocBlock\Tags\Method::isStatic"/>
+    </docblock>
+  </method>
+  <method name="testFactoryMethod" start="251" end="277" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <covers value="::create"/>
+      <uses value="\phpDocumentor\Reflection\DocBlock\Tags\Method::&lt;public&gt;"/>
+      <uses value="\phpDocumentor\Reflection\DocBlock\DescriptionFactory"/>
+      <uses value="\phpDocumentor\Reflection\TypeResolver"/>
+      <uses value="\phpDocumentor\Reflection\DocBlock\Description"/>
+      <uses value="\phpDocumentor\Reflection\Fqsen"/>
+      <uses value="\phpDocumentor\Reflection\Types\Context"/>
+    </docblock>
+  </method>
+  <method name="collectionReturnTypesProvider" start="279" end="287" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testCollectionReturnTypes" start="305" end="322" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <dataprovider value="collectionReturnTypesProvider"/>
+      <covers value="::create"/>
+      <uses value="\phpDocumentor\Reflection\DocBlock\Tags\Method::&lt;public&gt;"/>
+      <uses value="\phpDocumentor\Reflection\DocBlock\Description"/>
+      <uses value="\phpDocumentor\Reflection\DocBlock\DescriptionFactory"/>
+      <uses value="\phpDocumentor\Reflection\TypeResolver"/>
+      <uses value="\phpDocumentor\Reflection\Types\Array_"/>
+      <uses value="\phpDocumentor\Reflection\Types\Compound"/>
+      <uses value="\phpDocumentor\Reflection\Types\Integer"/>
+      <uses value="\phpDocumentor\Reflection\Types\Object_"/>
+      <param type="string" variable="$returnType"/>
+      <param type="string" variable="$expectedType"/>
+      <param type="string" variable="$expectedValueType"/>
+      <param description="null $expectedKeyType" type="string"/>
+    </docblock>
+    <parameter name="returnType" byreference="false" type="{unknown}"/>
+    <parameter name="expectedType" byreference="false" type="{unknown}"/>
+    <parameter name="expectedValueType" byreference="false" type="{unknown}" default="" constant="null"/>
+    <parameter name="expectedKeyType" byreference="false" type="{unknown}" default="" constant="null"/>
+  </method>
+  <method name="testFactoryMethodFailsIfBodyIsNotString" start="328" end="331" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <covers value="::create"/>
+      <expectedexception value="\InvalidArgumentException"/>
+    </docblock>
+  </method>
+  <method name="testFactoryMethodFailsIfBodyIsEmpty" start="337" end="340" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <covers value="::create"/>
+      <expectedexception value="\InvalidArgumentException"/>
+    </docblock>
+  </method>
+  <method name="testFactoryMethodReturnsNullIfBodyIsIncorrect" start="346" end="349" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <covers value="::create"/>
+      <expectedexception value="\InvalidArgumentException"/>
+    </docblock>
+  </method>
+  <method name="testFactoryMethodFailsIfResolverIsNull" start="355" end="358" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <covers value="::create"/>
+      <expectedexception value="\InvalidArgumentException"/>
+    </docblock>
+  </method>
+  <method name="testFactoryMethodFailsIfDescriptionFactoryIsNull" start="364" end="367" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <covers value="::create"/>
+      <expectedexception value="\InvalidArgumentException"/>
+    </docblock>
+  </method>
+  <method name="testCreationFailsIfBodyIsNotString" start="373" end="376" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <covers value="::__construct"/>
+      <expectedexception value="\InvalidArgumentException"/>
+    </docblock>
+  </method>
+  <method name="testCreationFailsIfBodyIsEmpty" start="382" end="385" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <covers value="::__construct"/>
+      <expectedexception value="\InvalidArgumentException"/>
+    </docblock>
+  </method>
+  <method name="testCreationFailsIfStaticIsNotBoolean" start="391" end="394" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <covers value="::__construct"/>
+      <expectedexception value="\InvalidArgumentException"/>
+    </docblock>
+  </method>
+  <method name="testCreationFailsIfArgumentRecordContainsInvalidEntry" start="400" end="403" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <covers value="::__construct"/>
+      <expectedexception value="\InvalidArgumentException"/>
+    </docblock>
+  </method>
+  <method name="testCreateMethodParenthesisMissing" start="414" end="436" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <covers value="::create"/>
+      <uses value="\phpDocumentor\Reflection\DocBlock\Tags\Method::&lt;public&gt;"/>
+      <uses value="\phpDocumentor\Reflection\DocBlock\DescriptionFactory"/>
+      <uses value="\phpDocumentor\Reflection\TypeResolver"/>
+      <uses value="\phpDocumentor\Reflection\DocBlock\Description"/>
+      <uses value="\phpDocumentor\Reflection\Fqsen"/>
+      <uses value="\phpDocumentor\Reflection\Types\Context"/>
+    </docblock>
+  </method>
+</class>

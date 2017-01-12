@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="GrahamCampbell\Flysystem\Adapters\SftpConnector" namespace="GrahamCampbell\Flysystem\Adapters" name="SftpConnector" abstract="false" final="false" start="22" end="47">
+  <file path="/home/web/example/src/freegame_developer/vendor/graham-campbell/flysystem/src/Adapters" file="SftpConnector.php" realpath="/home/web/example/src/freegame_developer/vendor/graham-campbell/flysystem/src/Adapters/SftpConnector.php" size="1014" time="2016-04-26T14:23:32+00:00" unixtime="1461680612" sha1="c75d94b03e60d10adf0f0b8f860dc593016a2943" relative="freegame_developer/vendor/graham-campbell/flysystem/src/Adapters/SftpConnector.php"/>
+  <docblock>
+    <description compact="This is the sftp connector class."/>
+    <author value="Graham Campbell &lt;graham@alt-three.com&gt;"/>
+  </docblock>
+  <implements full="GrahamCampbell\Manager\ConnectorInterface" namespace="GrahamCampbell\Manager" name="ConnectorInterface"/>
+  <method name="connect" start="31" end="34" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Establish an adapter connection."/>
+      <param type="array" variable="$config" of="object">
+        <type full="GrahamCampbell\Flysystem\Adapters\string" namespace="GrahamCampbell\Flysystem\Adapters" name="string"/>
+      </param>
+      <return type="object">
+        <type full="\League\Flysystem\Sftp\SftpAdapter" namespace="\League\Flysystem\Sftp" name="SftpAdapter"/>
+      </return>
+    </docblock>
+    <parameter name="config" byreference="false" type="array"/>
+  </method>
+  <method name="getAdapter" start="43" end="46" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Get the sftp adapter."/>
+      <param type="array" variable="$config" of="object">
+        <type full="GrahamCampbell\Flysystem\Adapters\string" namespace="GrahamCampbell\Flysystem\Adapters" name="string"/>
+      </param>
+      <return type="object">
+        <type full="\League\Flysystem\Sftp\SftpAdapter" namespace="\League\Flysystem\Sftp" name="SftpAdapter"/>
+      </return>
+    </docblock>
+    <parameter name="config" byreference="false" type="array"/>
+  </method>
+</class>

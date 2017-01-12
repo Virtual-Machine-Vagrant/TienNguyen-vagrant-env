@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="Symfony\Component\Finder\Tests\GlobTest" namespace="Symfony\Component\Finder\Tests" name="GlobTest" abstract="false" final="false" start="16" end="25">
+  <file path="/home/web/example/src/freegame_developer/vendor/symfony/finder/Tests" file="GlobTest.php" realpath="/home/web/example/src/freegame_developer/vendor/symfony/finder/Tests/GlobTest.php" size="726" time="2016-09-16T16:53:37+00:00" unixtime="1474044817" sha1="4055a84c603d4a3dc1075c2639703ae4ccb419d2" relative="freegame_developer/vendor/symfony/finder/Tests/GlobTest.php"/>
+  <extends full="PHPUnit_Framework_TestCase" namespace="" name="PHPUnit_Framework_TestCase"/>
+  <method name="testGlobToRegexDelimiters" start="18" end="24" abstract="false" final="false" static="false" visibility="public"/>
+</class>

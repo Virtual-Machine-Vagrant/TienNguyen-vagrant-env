@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="SebastianBergmann\Environment\Runtime" namespace="SebastianBergmann\Environment" name="Runtime" abstract="false" final="false" start="16" end="194">
+  <file path="/home/web/example/src/freegame_developer/vendor/sebastian/environment/src" file="Runtime.php" realpath="/home/web/example/src/freegame_developer/vendor/sebastian/environment/src/Runtime.php" size="4735" time="2016-08-18T05:49:44+00:00" unixtime="1471499384" sha1="84580f9a271333aee96672fd10fe495ea11d0a04" relative="freegame_developer/vendor/sebastian/environment/src/Runtime.php"/>
+  <docblock>
+    <description compact="Utility class for HHVM/PHP environment handling."/>
+  </docblock>
+  <member name="binary" visibility="private" static="true" line="21">
+    <docblock>
+      <description/>
+      <var type="string"/>
+    </docblock>
+  </member>
+  <method name="canCollectCodeCoverage" start="29" end="32" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Returns true when Xdebug is supported or the runtime used is PHPDBG (PHP &gt;= 7.0)."/>
+      <return type="object">
+        <type full="SebastianBergmann\Environment\bool" namespace="SebastianBergmann\Environment" name="bool"/>
+      </return>
+    </docblock>
+  </method>
+  <method name="getBinary" start="40" end="96" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Returns the path to the binary of the current runtime.">Appends ' --php' to the path when the runtime is HHVM.</description>
+      <return type="string"/>
+    </docblock>
+    <inline>
+      <comment value="HHVM" line="42"/>
+      <comment value="PHP &gt;= 5.4.0" line="51"/>
+      <comment value="PHP &lt; 5.4.0" line="58"/>
+    </inline>
+  </method>
+  <method name="getNameWithVersion" start="101" end="104" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <return type="string"/>
+    </docblock>
+  </method>
+  <method name="getName" start="109" end="118" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <return type="string"/>
+    </docblock>
+  </method>
+  <method name="getVendorUrl" start="123" end="130" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <return type="string"/>
+    </docblock>
+  </method>
+  <method name="getVersion" start="135" end="142" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <return type="string"/>
+    </docblock>
+  </method>
+  <method name="hasXdebug" start="149" end="152" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Returns true when the runtime used is PHP and Xdebug is loaded."/>
+      <return type="object">
+        <type full="SebastianBergmann\Environment\bool" namespace="SebastianBergmann\Environment" name="bool"/>
+      </return>
+    </docblock>
+  </method>
+  <method name="isHHVM" start="159" end="162" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Returns true when the runtime used is HHVM."/>
+      <return type="object">
+        <type full="SebastianBergmann\Environment\bool" namespace="SebastianBergmann\Environment" name="bool"/>
+      </return>
+    </docblock>
+  </method>
+  <method name="isPHP" start="169" end="172" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Returns true when the runtime used is PHP without the PHPDBG SAPI."/>
+      <return type="object">
+        <type full="SebastianBergmann\Environment\bool" namespace="SebastianBergmann\Environment" name="bool"/>
+      </return>
+    </docblock>
+  </method>
+  <method name="isPHPDBG" start="179" end="182" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Returns true when the runtime used is PHP with the PHPDBG SAPI."/>
+      <return type="object">
+        <type full="SebastianBergmann\Environment\bool" namespace="SebastianBergmann\Environment" name="bool"/>
+      </return>
+    </docblock>
+  </method>
+  <method name="hasPHPDBGCodeCoverage" start="190" end="193" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Returns true when the runtime used is PHP with the PHPDBG SAPI and the phpdbg_*_oplog() functions are available (PHP &gt;= 7.0)."/>
+      <return type="object">
+        <type full="SebastianBergmann\Environment\bool" namespace="SebastianBergmann\Environment" name="bool"/>
+      </return>
+    </docblock>
+  </method>
+</class>

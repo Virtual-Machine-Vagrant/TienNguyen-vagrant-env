@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="Psr\Log\Test\DummyTest" namespace="Psr\Log\Test" name="DummyTest" abstract="false" final="false" start="135" end="140">
+  <file path="/home/web/example/src/freegame_developer/vendor/psr/log/Psr/Log/Test" file="LoggerInterfaceTest.php" realpath="/home/web/example/src/freegame_developer/vendor/psr/log/Psr/Log/Test/LoggerInterfaceTest.php" size="4597" time="2016-10-10T12:19:37+00:00" unixtime="1476101977" sha1="aa10760e5c21cd62e533199caebccd89cea1834a" relative="freegame_developer/vendor/psr/log/Psr/Log/Test/LoggerInterfaceTest.php"/>
+  <method name="__toString" start="137" end="139" abstract="false" final="false" static="false" visibility="public"/>
+</class>

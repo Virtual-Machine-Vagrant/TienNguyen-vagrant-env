@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="Symfony\Component\Debug\Debug" namespace="Symfony\Component\Debug" name="Debug" abstract="false" final="false" start="19" end="62">
+  <file path="/home/web/example/src/freegame_developer/vendor/symfony/debug" file="Debug.php" realpath="/home/web/example/src/freegame_developer/vendor/symfony/debug/Debug.php" size="1721" time="2016-09-06T07:26:07+00:00" unixtime="1473146767" sha1="5949563460ddcd7743eadca02904eb640e67b2c5" relative="freegame_developer/vendor/symfony/debug/Debug.php"/>
+  <docblock>
+    <description compact="Registers all the debug tools."/>
+    <author value="Fabien Potencier &lt;fabien@symfony.com&gt;"/>
+  </docblock>
+  <member name="enabled" type="boolean" default="false" visibility="private" static="true" line="21"/>
+  <method name="enable" start="34" end="61" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description compact="Enables the debug tools.">This method registers an error handler and an exception handler.
+
+If the Symfony ClassLoader component is available, a special
+class loader is also registered.</description>
+      <param description="The level of error reporting you want" type="int" variable="$errorReportingLevel"/>
+      <param description="Whether to display errors (for development) or just log them (for production)" type="object" variable="$displayErrors">
+        <type full="Symfony\Component\Debug\bool" namespace="Symfony\Component\Debug" name="bool"/>
+      </param>
+    </docblock>
+    <parameter name="errorReportingLevel" byreference="false" type="{unknown}" default="" constant="null"/>
+    <parameter name="displayErrors" byreference="false" type="boolean" default="true"/>
+  </method>
+</class>

@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="Jenssegers\Mongodb\Eloquent\Builder" namespace="Jenssegers\Mongodb\Eloquent" name="Builder" abstract="false" final="false" start="9" end="241">
+  <file path="/home/web/example/src/freegame_developer/vendor/jenssegers/mongodb/src/Jenssegers/Mongodb/Eloquent" file="Builder.php" realpath="/home/web/example/src/freegame_developer/vendor/jenssegers/mongodb/src/Jenssegers/Mongodb/Eloquent/Builder.php" size="7577" time="2016-10-07T08:39:24+00:00" unixtime="1475829564" sha1="4f1dcd5076a92d2e09838794a0ca4b1b0ecd0850" relative="freegame_developer/vendor/jenssegers/mongodb/src/Jenssegers/Mongodb/Eloquent/Builder.php"/>
+  <extends full="Illuminate\Database\Eloquent\Builder" namespace="Illuminate\Database\Eloquent" name="Builder"/>
+  <member name="passthru" type="array" default="" visibility="protected" static="false" line="16">
+    <docblock>
+      <description compact="The methods that should be returned from query builder."/>
+      <var type="array"/>
+    </docblock>
+  </member>
+  <method name="update" start="28" end="39" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Update a record in the database."/>
+      <param type="array" variable="$values"/>
+      <param type="array" variable="$options"/>
+      <return type="int"/>
+    </docblock>
+    <parameter name="values" byreference="false" type="array"/>
+    <parameter name="options" byreference="false" type="array" default=""/>
+    <inline>
+      <comment value="Intercept operations on embedded models and delegate logic" line="30"/>
+      <comment value="to the parent relation instance." line="31"/>
+    </inline>
+  </method>
+  <method name="insert" start="47" end="58" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Insert a new record into the database."/>
+      <param type="array" variable="$values"/>
+      <return type="object">
+        <type full="Jenssegers\Mongodb\Eloquent\bool" namespace="Jenssegers\Mongodb\Eloquent" name="bool"/>
+      </return>
+    </docblock>
+    <parameter name="values" byreference="false" type="array"/>
+    <inline>
+      <comment value="Intercept operations on embedded models and delegate logic" line="49"/>
+      <comment value="to the parent relation instance." line="50"/>
+    </inline>
+  </method>
+  <method name="insertGetId" start="67" end="78" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Insert a new record and get the value of the primary key."/>
+      <param type="array" variable="$values"/>
+      <param type="string" variable="$sequence"/>
+      <return type="int"/>
+    </docblock>
+    <parameter name="values" byreference="false" type="array"/>
+    <parameter name="sequence" byreference="false" type="{unknown}" default="" constant="null"/>
+    <inline>
+      <comment value="Intercept operations on embedded models and delegate logic" line="69"/>
+      <comment value="to the parent relation instance." line="70"/>
+    </inline>
+  </method>
+  <method name="delete" start="85" end="96" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Delete a record from the database."/>
+      <return type="mixed"/>
+    </docblock>
+    <inline>
+      <comment value="Intercept operations on embedded models and delegate logic" line="87"/>
+      <comment value="to the parent relation instance." line="88"/>
+    </inline>
+  </method>
+  <method name="increment" start="106" end="126" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Increment a column's value by a given amount."/>
+      <param type="string" variable="$column"/>
+      <param type="int" variable="$amount"/>
+      <param type="array" variable="$extra"/>
+      <return type="int"/>
+    </docblock>
+    <parameter name="column" byreference="false" type="{unknown}"/>
+    <parameter name="amount" byreference="false" type="integer" default="1"/>
+    <parameter name="extra" byreference="false" type="array" default=""/>
+    <inline>
+      <comment value="Intercept operations on embedded models and delegate logic" line="108"/>
+      <comment value="to the parent relation instance." line="109"/>
+    </inline>
+  </method>
+  <method name="decrement" start="136" end="154" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Decrement a column's value by a given amount."/>
+      <param type="string" variable="$column"/>
+      <param type="int" variable="$amount"/>
+      <param type="array" variable="$extra"/>
+      <return type="int"/>
+    </docblock>
+    <parameter name="column" byreference="false" type="{unknown}"/>
+    <parameter name="amount" byreference="false" type="integer" default="1"/>
+    <parameter name="extra" byreference="false" type="array" default=""/>
+    <inline>
+      <comment value="Intercept operations on embedded models and delegate logic" line="138"/>
+      <comment value="to the parent relation instance." line="139"/>
+    </inline>
+  </method>
+  <method name="addHasWhere" start="166" end="209" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Add the &quot;has&quot; condition where clause to the query."/>
+      <param type="object" variable="$hasQuery">
+        <type full="\Illuminate\Database\Eloquent\Builder" namespace="\Illuminate\Database\Eloquent" name="Builder"/>
+      </param>
+      <param type="object" variable="$relation">
+        <type full="\Illuminate\Database\Eloquent\Relations\Relation" namespace="\Illuminate\Database\Eloquent\Relations" name="Relation"/>
+      </param>
+      <param type="string" variable="$operator"/>
+      <param type="int" variable="$count"/>
+      <param type="string" variable="$boolean"/>
+      <return type="object">
+        <type full="\Illuminate\Database\Eloquent\Builder" namespace="\Illuminate\Database\Eloquent" name="Builder"/>
+      </return>
+    </docblock>
+    <parameter name="hasQuery" byreference="false" type="object">
+      <type full="Illuminate\Database\Eloquent\Builder" namespace="Illuminate\Database\Eloquent" name="Builder"/>
+    </parameter>
+    <parameter name="relation" byreference="false" type="object">
+      <type full="Illuminate\Database\Eloquent\Relations\Relation" namespace="Illuminate\Database\Eloquent\Relations" name="Relation"/>
+    </parameter>
+    <parameter name="operator" byreference="false" type="{unknown}"/>
+    <parameter name="count" byreference="false" type="{unknown}"/>
+    <parameter name="boolean" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="Get the number of related objects for each possible parent." line="170"/>
+      <comment value="Remove unwanted related objects based on the operator and count." line="176"/>
+      <comment value="If the operator is &lt;, &lt;= or !=, we will use whereNotIn." line="196"/>
+      <comment value="If we are comparing to 0, we need an additional $not flip." line="199"/>
+      <comment value="All related ids." line="204"/>
+      <comment value="Add whereIn to the query." line="207"/>
+    </inline>
+  </method>
+  <method name="raw" start="217" end="240" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Create a raw database expression."/>
+      <param type="object" variable="$expression">
+        <type full="Jenssegers\Mongodb\Eloquent\closure" namespace="Jenssegers\Mongodb\Eloquent" name="closure"/>
+      </param>
+      <return type="mixed"/>
+    </docblock>
+    <parameter name="expression" byreference="false" type="{unknown}" default="" constant="null"/>
+    <inline>
+      <comment value="Get raw results from the query builder." line="219"/>
+      <comment value="Convert MongoCursor results to a collection of models." line="222"/>
+    </inline>
+  </method>
+</class>

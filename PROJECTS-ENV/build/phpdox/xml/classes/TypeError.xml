@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="TypeError" namespace="" name="TypeError" abstract="false" final="false" start="38" end="41">
+  <file path="/home/web/example/src/freegame_developer/vendor/paragonie/random_compat/lib" file="error_polyfill.php" realpath="/home/web/example/src/freegame_developer/vendor/paragonie/random_compat/lib/error_polyfill.php" size="1533" time="2016-03-18T20:34:03+00:00" unixtime="1458333243" sha1="3a172c5ecc4d0dca6c95e8e8f011cdf8450ae51c" relative="freegame_developer/vendor/paragonie/random_compat/lib/error_polyfill.php"/>
+  <extends full="Error" namespace="" name="Error"/>
+</class>

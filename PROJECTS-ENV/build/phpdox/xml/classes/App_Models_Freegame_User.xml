@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="App\Models\Freegame\User" namespace="App\Models\Freegame" name="User" abstract="false" final="false" start="5" end="44">
+  <file path="/home/web/example/src/freegame_developer/app/Models/Freegame" file="User.php" realpath="/home/web/example/src/freegame_developer/app/Models/Freegame/User.php" size="1199" time="2016-11-28T03:00:57+00:00" unixtime="1480302057" sha1="fa58607692d2b005114f1915a4c9171203fddb9b" relative="freegame_developer/app/Models/Freegame/User.php"/>
+  <extends full="App\Models\Freegame\Freegame" namespace="App\Models\Freegame" name="Freegame"/>
+  <member name="table" type="string" default="'user'" visibility="protected" static="false" line="7"/>
+  <member name="timestamps" type="boolean" default="false" visibility="public" static="false" line="9"/>
+  <method name="getUserInfoByMemberIds" start="16" end="26" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="get user infomation by list member id"/>
+      <param type="string" variable="$memberId"/>
+      <return type="object"/>
+    </docblock>
+    <parameter name="conditions" byreference="false" type="{unknown}"/>
+    <parameter name="pagination" byreference="false" type="boolean" default="true"/>
+  </method>
+  <method name="getUserInfoByIds" start="33" end="43" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="get user infomation by list id"/>
+      <param type="string" variable="$memberId"/>
+      <return type="object"/>
+    </docblock>
+    <parameter name="conditions" byreference="false" type="{unknown}"/>
+    <parameter name="pagination" byreference="false" type="boolean" default="true"/>
+  </method>
+</class>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="PHP_CodeCoverage_Report_XML_Tests" namespace="" name="PHP_CodeCoverage_Report_XML_Tests" abstract="false" final="false" start="14" end="45">
+  <file path="/home/web/example/src/freegame_developer/vendor/phpunit/php-code-coverage/src/CodeCoverage/Report/XML" file="Tests.php" realpath="/home/web/example/src/freegame_developer/vendor/phpunit/php-code-coverage/src/CodeCoverage/Report/XML/Tests.php" size="1494" time="2015-10-06T15:47:00+00:00" unixtime="1444146420" sha1="f7ea3c11d884c39cde3cab57b87f148a94cce3a5" relative="freegame_developer/vendor/phpunit/php-code-coverage/src/CodeCoverage/Report/XML/Tests.php"/>
+  <docblock>
+    <description/>
+    <since value="Class available since Release 2.0.0"/>
+  </docblock>
+  <member name="contextNode" visibility="private" static="false" line="16"/>
+  <member name="codeMap" type="array" default="" visibility="private" static="false" line="18"/>
+  <constructor name="__construct" start="27" end="30" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="context" byreference="false" type="object">
+      <type full="DOMElement" namespace="" name="DOMElement"/>
+    </parameter>
+  </constructor>
+  <method name="addTest" start="32" end="44" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="test" byreference="false" type="{unknown}"/>
+    <parameter name="result" byreference="false" type="array"/>
+  </method>
+</class>

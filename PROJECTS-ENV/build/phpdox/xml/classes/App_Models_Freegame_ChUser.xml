@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="App\Models\Freegame\ChUser" namespace="App\Models\Freegame" name="ChUser" abstract="false" final="false" start="5" end="34">
+  <file path="/home/web/example/src/freegame_developer/app/Models/Freegame" file="ChUser.php" realpath="/home/web/example/src/freegame_developer/app/Models/Freegame/ChUser.php" size="713" time="2016-11-28T03:00:57+00:00" unixtime="1480302057" sha1="7fb0b6632927c21ae0851c897f5d8cba6c85ed28" relative="freegame_developer/app/Models/Freegame/ChUser.php"/>
+  <extends full="App\Models\Freegame\Freegame" namespace="App\Models\Freegame" name="Freegame"/>
+  <member name="table" type="string" default="'ch_user'" visibility="protected" static="false" line="7"/>
+  <member name="timestamps" type="boolean" default="false" visibility="public" static="false" line="9"/>
+  <method name="getIdByMemberId" start="16" end="21" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="get user id by member id"/>
+      <param type="string" variable="$memberId"/>
+      <return type="object"/>
+    </docblock>
+    <parameter name="memberId" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="getListMemberIdByIds" start="28" end="33" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Get list member id by list id"/>
+      <param type="array" variable="$memberIds"/>
+      <return type="object"/>
+    </docblock>
+    <parameter name="memberIds" byreference="false" type="{unknown}"/>
+  </method>
+</class>

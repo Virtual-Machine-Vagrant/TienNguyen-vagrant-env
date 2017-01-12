@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="PhpSpec\Process\ReRunner\PassthruReRunner" namespace="PhpSpec\Process\ReRunner" name="PassthruReRunner" abstract="false" final="false" start="19" end="68">
+  <file path="/home/web/example/src/freegame_developer/vendor/phpspec/phpspec/src/PhpSpec/Process/ReRunner" file="PassthruReRunner.php" realpath="/home/web/example/src/freegame_developer/vendor/phpspec/phpspec/src/PhpSpec/Process/ReRunner/PassthruReRunner.php" size="1863" time="2016-01-01T10:17:54+00:00" unixtime="1451643474" sha1="205459bf76e375a3c47ba29314a3d70a174e27c9" relative="freegame_developer/vendor/phpspec/phpspec/src/PhpSpec/Process/ReRunner/PassthruReRunner.php"/>
+  <extends full="PhpSpec\Process\ReRunner\PhpExecutableReRunner" namespace="PhpSpec\Process\ReRunner" name="PhpExecutableReRunner"/>
+  <member name="executionContext" visibility="private" static="false" line="24">
+    <docblock>
+      <description/>
+      <var type="object">
+        <type full="PhpSpec\Process\Context\ExecutionContextInterface" namespace="PhpSpec\Process\Context" name="ExecutionContextInterface"/>
+      </var>
+    </docblock>
+  </member>
+  <method name="withExecutionContext" start="31" end="37" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description/>
+      <param type="object" variable="$phpExecutableFinder">
+        <type full="Symfony\Component\Process\PhpExecutableFinder" namespace="Symfony\Component\Process" name="PhpExecutableFinder"/>
+      </param>
+      <param type="object" variable="$executionContext">
+        <type full="PhpSpec\Process\Context\ExecutionContextInterface" namespace="PhpSpec\Process\Context" name="ExecutionContextInterface"/>
+      </param>
+      <return resolution="static" type="object">
+        <type full="PhpSpec\Process\ReRunner\PassthruReRunner" namespace="PhpSpec\Process\ReRunner" name="PassthruReRunner"/>
+      </return>
+    </docblock>
+    <parameter name="phpExecutableFinder" byreference="false" type="object">
+      <type full="Symfony\Component\Process\PhpExecutableFinder" namespace="Symfony\Component\Process" name="PhpExecutableFinder"/>
+    </parameter>
+    <parameter name="executionContext" byreference="false" type="object">
+      <type full="PhpSpec\Process\Context\ExecutionContextInterface" namespace="PhpSpec\Process\Context" name="ExecutionContextInterface"/>
+    </parameter>
+  </method>
+  <method name="isSupported" start="42" end="48" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <return type="boolean"/>
+    </docblock>
+  </method>
+  <method name="reRunSuite" start="50" end="56" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="buildArgString" start="58" end="67" abstract="false" final="false" static="false" visibility="private"/>
+</class>

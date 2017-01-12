@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="App\Models\Freegame\ApplicationGenreRef" namespace="App\Models\Freegame" name="ApplicationGenreRef" abstract="false" final="false" start="5" end="60">
+  <file path="/home/web/example/src/freegame_developer/app/Models/Freegame" file="ApplicationGenreRef.php" realpath="/home/web/example/src/freegame_developer/app/Models/Freegame/ApplicationGenreRef.php" size="1434" time="2016-11-16T01:52:54+00:00" unixtime="1479261174" sha1="d63937916c2f815e41da8b6bc31a1531a304495e" relative="freegame_developer/app/Models/Freegame/ApplicationGenreRef.php"/>
+  <extends full="App\Models\Freegame\Freegame" namespace="App\Models\Freegame" name="Freegame"/>
+  <member name="table" type="string" default="'application_genre_ref'" visibility="protected" static="false" line="7"/>
+  <member name="timestamps" type="boolean" default="false" visibility="public" static="false" line="9"/>
+  <method name="getApplicationGenreRefById" start="17" end="23" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Get application genre ref by id"/>
+      <param type="integer" variable="$appId"/>
+      <return type="object"/>
+    </docblock>
+    <parameter name="appId" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="updateGenreRef" start="33" end="41" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Update genre ref"/>
+      <param type="integer" variable="$appId"/>
+      <param type="integer" variable="$mainGenreId"/>
+      <param type="integer" variable="$subGenreId"/>
+      <return type="boolean"/>
+    </docblock>
+    <parameter name="appId" byreference="false" type="{unknown}"/>
+    <parameter name="mainGenreId" byreference="false" type="{unknown}"/>
+    <parameter name="subGenreId" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="createGameGenreRef" start="51" end="59" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Create genre ref"/>
+      <param type="integer" variable="$appId"/>
+      <param type="integer" variable="$mainGenreId"/>
+      <param type="integer" variable="$subGenreId"/>
+      <return type="boolean"/>
+    </docblock>
+    <parameter name="appId" byreference="false" type="{unknown}"/>
+    <parameter name="mainGenreId" byreference="false" type="{unknown}"/>
+    <parameter name="subGenreId" byreference="false" type="{unknown}"/>
+  </method>
+</class>

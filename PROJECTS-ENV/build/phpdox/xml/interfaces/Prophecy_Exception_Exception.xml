@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface xmlns="http://xml.phpdox.net/src" full="Prophecy\Exception\Exception" namespace="Prophecy\Exception" name="Exception" abstract="false" final="false" start="20" end="26">
+  <file path="/home/web/example/src/freegame_developer/vendor/phpspec/prophecy/src/Prophecy/Exception" file="Exception.php" realpath="/home/web/example/src/freegame_developer/vendor/phpspec/prophecy/src/Prophecy/Exception/Exception.php" size="555" time="2016-06-07T08:13:47+00:00" unixtime="1465287227" sha1="516e4a685835df9721b88c915d6e22a590e97091" relative="freegame_developer/vendor/phpspec/prophecy/src/Prophecy/Exception/Exception.php"/>
+  <docblock>
+    <description compact="Core Prophecy exception interface.">All Prophecy exceptions implement it.</description>
+    <author value="Konstantin Kudryashov &lt;ever.zet@gmail.com&gt;"/>
+  </docblock>
+  <method name="getMessage" start="25" end="25" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <return type="string"/>
+    </docblock>
+  </method>
+</interface>

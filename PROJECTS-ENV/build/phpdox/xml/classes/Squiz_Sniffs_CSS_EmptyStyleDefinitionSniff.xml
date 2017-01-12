@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="Squiz_Sniffs_CSS_EmptyStyleDefinitionSniff" namespace="" name="Squiz_Sniffs_CSS_EmptyStyleDefinitionSniff" abstract="false" final="false" start="28" end="73">
+  <file path="/home/web/example/src/freegame_developer/vendor/squizlabs/php_codesniffer/CodeSniffer/Standards/Squiz/Sniffs/CSS" file="EmptyStyleDefinitionSniff.php" realpath="/home/web/example/src/freegame_developer/vendor/squizlabs/php_codesniffer/CodeSniffer/Standards/Squiz/Sniffs/CSS/EmptyStyleDefinitionSniff.php" size="2131" time="2016-01-19T23:39:10+00:00" unixtime="1453246750" sha1="d147b4aaf643f805b28c377a87fc31dac6cad52b" relative="freegame_developer/vendor/squizlabs/php_codesniffer/CodeSniffer/Standards/Squiz/Sniffs/CSS/EmptyStyleDefinitionSniff.php"/>
+  <docblock>
+    <description compact="Squiz_Sniffs_CSS_EmptyStyleDefinitionSniff.">Ensure that style definitions are not empty.</description>
+    <category value="PHP"/>
+    <package value="PHP_CodeSniffer"/>
+    <author value="Greg Sherwood &lt;gsherwood@squiz.net&gt;"/>
+    <copyright value="2006-2014 Squiz Pty Ltd (ABN 77 084 670 600)"/>
+    <license name="https://github.com/squizlabs/PHP_CodeSniffer/blob/master/licence.txt BSD Licence"/>
+    <version value="Release: @package_version@"/>
+    <link value="http://pear.php.net/package/PHP_CodeSniffer"/>
+  </docblock>
+  <implements full="PHP_CodeSniffer_Sniff" namespace="" name="PHP_CodeSniffer_Sniff"/>
+  <member name="supportedTokenizers" type="array" default="" visibility="public" static="false" line="36">
+    <docblock>
+      <description compact="A list of tokenizers this sniff supports."/>
+      <var type="array"/>
+    </docblock>
+  </member>
+  <method name="register" start="44" end="48" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Returns the token types that this sniff is interested in."/>
+      <return type="array" of="int"/>
+    </docblock>
+  </method>
+  <method name="process" start="60" end="70" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Processes the tokens that this sniff is interested in."/>
+      <param description="The file where the token was found." type="object" variable="$phpcsFile">
+        <type full="PHP_CodeSniffer_File" namespace="" name="PHP_CodeSniffer_File"/>
+      </param>
+      <param description="The position in the stack where" type="int" variable="$stackPtr">the token was found.</param>
+      <return type="object">
+        <type full="void" namespace="" name="void"/>
+      </return>
+    </docblock>
+    <parameter name="phpcsFile" byreference="false" type="object">
+      <type full="PHP_CodeSniffer_File" namespace="" name="PHP_CodeSniffer_File"/>
+    </parameter>
+    <parameter name="stackPtr" byreference="false" type="{unknown}"/>
+  </method>
+</class>

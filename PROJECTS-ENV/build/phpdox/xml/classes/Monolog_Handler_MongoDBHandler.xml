@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="Monolog\Handler\MongoDBHandler" namespace="Monolog\Handler" name="MongoDBHandler" abstract="false" final="false" start="28" end="59">
+  <file path="/home/web/example/src/freegame_developer/vendor/monolog/monolog/src/Monolog/Handler" file="MongoDBHandler.php" realpath="/home/web/example/src/freegame_developer/vendor/monolog/monolog/src/Monolog/Handler/MongoDBHandler.php" size="1606" time="2016-07-29T03:23:52+00:00" unixtime="1469762632" sha1="8a9676df4952078bee84acb2f68b2be1e5bf4b62" relative="freegame_developer/vendor/monolog/monolog/src/Monolog/Handler/MongoDBHandler.php"/>
+  <docblock>
+    <description compact="Logs to a MongoDB database.">usage example:
+
+  $log = new Logger('application');
+  $mongodb = new MongoDBHandler(new \Mongo("mongodb://localhost:27017"), "logs", "prod");
+  $log-&gt;pushHandler($mongodb);</description>
+    <author value="Thomas Tourlourat &lt;thomas@tourlourat.com&gt;"/>
+  </docblock>
+  <extends full="Monolog\Handler\AbstractProcessingHandler" namespace="Monolog\Handler" name="AbstractProcessingHandler"/>
+  <member name="mongoCollection" visibility="protected" static="false" line="30"/>
+  <constructor name="__construct" start="32" end="41" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="mongo" byreference="false" type="{unknown}"/>
+    <parameter name="database" byreference="false" type="{unknown}"/>
+    <parameter name="collection" byreference="false" type="{unknown}"/>
+    <parameter name="level" byreference="false" type="{unknown}" default="" constant="Logger::DEBUG"/>
+    <parameter name="bubble" byreference="false" type="boolean" default="true"/>
+  </constructor>
+  <method name="write" start="43" end="50" abstract="false" final="false" static="false" visibility="protected">
+    <parameter name="record" byreference="false" type="array"/>
+  </method>
+  <method name="getDefaultFormatter" start="55" end="58" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="{@inheritDoc}"/>
+    </docblock>
+  </method>
+</class>

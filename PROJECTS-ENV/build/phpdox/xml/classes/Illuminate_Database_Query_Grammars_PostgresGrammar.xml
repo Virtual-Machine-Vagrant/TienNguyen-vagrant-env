@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="Illuminate\Database\Query\Grammars\PostgresGrammar" namespace="Illuminate\Database\Query\Grammars" name="PostgresGrammar" abstract="false" final="false" start="7" end="245">
+  <file path="/home/web/example/src/freegame_developer/vendor/laravel/framework/src/Illuminate/Database/Query/Grammars" file="PostgresGrammar.php" realpath="/home/web/example/src/freegame_developer/vendor/laravel/framework/src/Illuminate/Database/Query/Grammars/PostgresGrammar.php" size="7069" time="2016-02-24T15:13:21+00:00" unixtime="1456326801" sha1="8396d7b4f587ac062ee6ed74addc7bf6d0e19ef4" relative="freegame_developer/vendor/laravel/framework/src/Illuminate/Database/Query/Grammars/PostgresGrammar.php"/>
+  <extends full="Illuminate\Database\Query\Grammars\Grammar" namespace="Illuminate\Database\Query\Grammars" name="Grammar"/>
+  <member name="operators" type="array" default="" visibility="protected" static="false" line="14">
+    <docblock>
+      <description compact="All of the available clause operators."/>
+      <var type="array"/>
+    </docblock>
+  </member>
+  <method name="compileLock" start="27" end="34" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Compile the lock into SQL."/>
+      <param type="object" variable="$query">
+        <type full="\Illuminate\Database\Query\Builder" namespace="\Illuminate\Database\Query" name="Builder"/>
+      </param>
+      <param type="object" variable="$value">
+        <type full="Illuminate\Database\Query\Grammars\bool|string" namespace="Illuminate\Database\Query\Grammars" name="bool|string"/>
+      </param>
+      <return type="string"/>
+    </docblock>
+    <parameter name="query" byreference="false" type="object">
+      <type full="Illuminate\Database\Query\Builder" namespace="Illuminate\Database\Query" name="Builder"/>
+    </parameter>
+    <parameter name="value" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="whereDate" start="43" end="48" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Compile a &quot;where date&quot; clause."/>
+      <param type="object" variable="$query">
+        <type full="\Illuminate\Database\Query\Builder" namespace="\Illuminate\Database\Query" name="Builder"/>
+      </param>
+      <param type="array" variable="$where"/>
+      <return type="string"/>
+    </docblock>
+    <parameter name="query" byreference="false" type="object">
+      <type full="Illuminate\Database\Query\Builder" namespace="Illuminate\Database\Query" name="Builder"/>
+    </parameter>
+    <parameter name="where" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="whereDay" start="57" end="60" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Compile a &quot;where day&quot; clause."/>
+      <param type="object" variable="$query">
+        <type full="\Illuminate\Database\Query\Builder" namespace="\Illuminate\Database\Query" name="Builder"/>
+      </param>
+      <param type="array" variable="$where"/>
+      <return type="string"/>
+    </docblock>
+    <parameter name="query" byreference="false" type="object">
+      <type full="Illuminate\Database\Query\Builder" namespace="Illuminate\Database\Query" name="Builder"/>
+    </parameter>
+    <parameter name="where" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="whereMonth" start="69" end="72" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Compile a &quot;where month&quot; clause."/>
+      <param type="object" variable="$query">
+        <type full="\Illuminate\Database\Query\Builder" namespace="\Illuminate\Database\Query" name="Builder"/>
+      </param>
+      <param type="array" variable="$where"/>
+      <return type="string"/>
+    </docblock>
+    <parameter name="query" byreference="false" type="object">
+      <type full="Illuminate\Database\Query\Builder" namespace="Illuminate\Database\Query" name="Builder"/>
+    </parameter>
+    <parameter name="where" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="whereYear" start="81" end="84" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Compile a &quot;where year&quot; clause."/>
+      <param type="object" variable="$query">
+        <type full="\Illuminate\Database\Query\Builder" namespace="\Illuminate\Database\Query" name="Builder"/>
+      </param>
+      <param type="array" variable="$where"/>
+      <return type="string"/>
+    </docblock>
+    <parameter name="query" byreference="false" type="object">
+      <type full="Illuminate\Database\Query\Builder" namespace="Illuminate\Database\Query" name="Builder"/>
+    </parameter>
+    <parameter name="where" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="dateBasedWhere" start="94" end="99" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Compile a date based where clause."/>
+      <param type="string" variable="$type"/>
+      <param type="object" variable="$query">
+        <type full="\Illuminate\Database\Query\Builder" namespace="\Illuminate\Database\Query" name="Builder"/>
+      </param>
+      <param type="array" variable="$where"/>
+      <return type="string"/>
+    </docblock>
+    <parameter name="type" byreference="false" type="{unknown}"/>
+    <parameter name="query" byreference="false" type="object">
+      <type full="Illuminate\Database\Query\Builder" namespace="Illuminate\Database\Query" name="Builder"/>
+    </parameter>
+    <parameter name="where" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="compileUpdate" start="108" end="122" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Compile an update statement into SQL."/>
+      <param type="object" variable="$query">
+        <type full="\Illuminate\Database\Query\Builder" namespace="\Illuminate\Database\Query" name="Builder"/>
+      </param>
+      <param type="array" variable="$values"/>
+      <return type="string"/>
+    </docblock>
+    <parameter name="query" byreference="false" type="object">
+      <type full="Illuminate\Database\Query\Builder" namespace="Illuminate\Database\Query" name="Builder"/>
+    </parameter>
+    <parameter name="values" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="Each one of the columns in the update statements needs to be wrapped in the" line="112"/>
+      <comment value="keyword identifiers, also a place-holder needs to be created for each of" line="113"/>
+      <comment value="the values in the list of bindings so we can make the sets statements." line="114"/>
+    </inline>
+  </method>
+  <method name="compileUpdateColumns" start="130" end="142" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Compile the columns for the update statement."/>
+      <param type="array" variable="$values"/>
+      <return type="string"/>
+    </docblock>
+    <parameter name="values" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="When gathering the columns for an update statement, we'll wrap each of the" line="134"/>
+      <comment value="columns and convert it to a parameter value. Then we will concatenate a" line="135"/>
+      <comment value="list of the columns that can be added into this update query clauses." line="136"/>
+    </inline>
+  </method>
+  <method name="compileUpdateFrom" start="150" end="168" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Compile the &quot;from&quot; clause for an update with a join."/>
+      <param type="object" variable="$query">
+        <type full="\Illuminate\Database\Query\Builder" namespace="\Illuminate\Database\Query" name="Builder"/>
+      </param>
+      <return type="object">
+        <type full="Illuminate\Database\Query\Grammars\string|null" namespace="Illuminate\Database\Query\Grammars" name="string|null"/>
+      </return>
+    </docblock>
+    <parameter name="query" byreference="false" type="object">
+      <type full="Illuminate\Database\Query\Builder" namespace="Illuminate\Database\Query" name="Builder"/>
+    </parameter>
+    <inline>
+      <comment value="When using Postgres, updates with joins list the joined tables in the from" line="158"/>
+      <comment value="clause, which is different than other systems like MySQL. Here, we will" line="159"/>
+      <comment value="compile out the tables that are joined and add them to a from clause." line="160"/>
+    </inline>
+  </method>
+  <method name="compileUpdateWheres" start="176" end="194" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Compile the additional where clauses for updates with joins."/>
+      <param type="object" variable="$query">
+        <type full="\Illuminate\Database\Query\Builder" namespace="\Illuminate\Database\Query" name="Builder"/>
+      </param>
+      <return type="string"/>
+    </docblock>
+    <parameter name="query" byreference="false" type="object">
+      <type full="Illuminate\Database\Query\Builder" namespace="Illuminate\Database\Query" name="Builder"/>
+    </parameter>
+    <inline>
+      <comment value="Once we compile the join constraints, we will either use them as the where" line="184"/>
+      <comment value="clause or append them to the existing base where clauses. If we need to" line="185"/>
+      <comment value="strip the leading boolean we will do so when using as the only where." line="186"/>
+    </inline>
+  </method>
+  <method name="compileUpdateJoinWheres" start="202" end="216" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Compile the &quot;join&quot; clauses for an update."/>
+      <param type="object" variable="$query">
+        <type full="\Illuminate\Database\Query\Builder" namespace="\Illuminate\Database\Query" name="Builder"/>
+      </param>
+      <return type="string"/>
+    </docblock>
+    <parameter name="query" byreference="false" type="object">
+      <type full="Illuminate\Database\Query\Builder" namespace="Illuminate\Database\Query" name="Builder"/>
+    </parameter>
+    <inline>
+      <comment value="Here we will just loop through all of the join constraints and compile them" line="206"/>
+      <comment value="all out then implode them. This should give us &quot;where&quot; like syntax after" line="207"/>
+      <comment value="everything has been built and then we will join it to the real wheres." line="208"/>
+    </inline>
+  </method>
+  <method name="compileInsertGetId" start="226" end="233" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Compile an insert and get ID statement into SQL."/>
+      <param type="object" variable="$query">
+        <type full="\Illuminate\Database\Query\Builder" namespace="\Illuminate\Database\Query" name="Builder"/>
+      </param>
+      <param type="array" variable="$values"/>
+      <param type="string" variable="$sequence"/>
+      <return type="string"/>
+    </docblock>
+    <parameter name="query" byreference="false" type="object">
+      <type full="Illuminate\Database\Query\Builder" namespace="Illuminate\Database\Query" name="Builder"/>
+    </parameter>
+    <parameter name="values" byreference="false" type="{unknown}"/>
+    <parameter name="sequence" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="compileTruncate" start="241" end="244" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Compile a truncate table statement into SQL."/>
+      <param type="object" variable="$query">
+        <type full="\Illuminate\Database\Query\Builder" namespace="\Illuminate\Database\Query" name="Builder"/>
+      </param>
+      <return type="array"/>
+    </docblock>
+    <parameter name="query" byreference="false" type="object">
+      <type full="Illuminate\Database\Query\Builder" namespace="Illuminate\Database\Query" name="Builder"/>
+    </parameter>
+  </method>
+</class>

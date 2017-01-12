@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="Barryvdh\Debugbar\Facade" namespace="Barryvdh\Debugbar" name="Facade" abstract="false" final="false" start="3" end="12">
+  <file path="/home/web/example/src/freegame_developer/vendor/barryvdh/laravel-debugbar/src" file="Facade.php" realpath="/home/web/example/src/freegame_developer/vendor/barryvdh/laravel-debugbar/src/Facade.php" size="222" time="2016-09-15T14:05:56+00:00" unixtime="1473948356" sha1="eddea9e99ff1edd0ee04bfd805787121b098eaf2" relative="freegame_developer/vendor/barryvdh/laravel-debugbar/src/Facade.php"/>
+  <extends full="Illuminate\Support\Facades\Facade" namespace="Illuminate\Support\Facades" name="Facade"/>
+  <method name="getFacadeAccessor" start="8" end="11" abstract="false" final="false" static="true" visibility="protected">
+    <docblock>
+      <description compact="{@inheritDoc}"/>
+    </docblock>
+  </method>
+</class>

@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface xmlns="http://xml.phpdox.net/src" full="Illuminate\Contracts\Filesystem\Cloud" namespace="Illuminate\Contracts\Filesystem" name="Cloud" abstract="false" final="false" start="5" end="8">
+  <file path="/home/web/example/src/freegame_developer/vendor/laravel/framework/src/Illuminate/Contracts/Filesystem" file="Cloud.php" realpath="/home/web/example/src/freegame_developer/vendor/laravel/framework/src/Illuminate/Contracts/Filesystem/Cloud.php" size="97" time="2016-02-24T15:13:21+00:00" unixtime="1456326801" sha1="4edb407d74e17706b643758c76e8f3af2348e6b9" relative="freegame_developer/vendor/laravel/framework/src/Illuminate/Contracts/Filesystem/Cloud.php"/>
+  <extends full="Illuminate\Contracts\Filesystem\Filesystem" namespace="Illuminate\Contracts\Filesystem" name="Filesystem"/>
+</interface>

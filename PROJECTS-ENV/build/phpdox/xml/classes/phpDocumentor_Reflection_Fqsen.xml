@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="phpDocumentor\Reflection\Fqsen" namespace="phpDocumentor\Reflection" name="Fqsen" abstract="false" final="true" start="19" end="78">
+  <file path="/home/web/example/src/freegame_developer/vendor/phpdocumentor/reflection-common/src" file="Fqsen.php" realpath="/home/web/example/src/freegame_developer/vendor/phpdocumentor/reflection-common/src/Fqsen.php" size="1675" time="2015-12-27T11:43:31+00:00" unixtime="1451216611" sha1="42e3d251529c0a496043522f1d72c468f1d8a33a" relative="freegame_developer/vendor/phpdocumentor/reflection-common/src/Fqsen.php"/>
+  <docblock>
+    <description compact="Value Object for Fqsen."/>
+    <link value="https://github.com/phpDocumentor/fig-standards/blob/master/proposed/phpdoc-meta.md"/>
+  </docblock>
+  <member name="fqsen" visibility="private" static="false" line="24">
+    <docblock>
+      <description/>
+      <var description="full quallified class name" type="string"/>
+    </docblock>
+  </member>
+  <member name="name" visibility="private" static="false" line="29">
+    <docblock>
+      <description/>
+      <var description="name of the element without path." type="string"/>
+    </docblock>
+  </member>
+  <constructor name="__construct" start="38" end="57" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Initializes the object."/>
+      <param type="string" variable="$fqsen"/>
+      <throws description="when $fqsen is not matching the format." type="object">
+        <type full="\InvalidArgumentException" namespace="" name="InvalidArgumentException"/>
+      </throws>
+    </docblock>
+    <parameter name="fqsen" byreference="false" type="{unknown}"/>
+  </constructor>
+  <method name="__toString" start="64" end="67" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="converts this class to string."/>
+      <return type="string"/>
+    </docblock>
+  </method>
+  <method name="getName" start="74" end="77" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Returns the name of the element without path."/>
+      <return type="string"/>
+    </docblock>
+  </method>
+</class>

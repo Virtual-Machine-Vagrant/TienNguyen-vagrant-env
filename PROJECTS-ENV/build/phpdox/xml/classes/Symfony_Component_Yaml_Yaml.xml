@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="Symfony\Component\Yaml\Yaml" namespace="Symfony\Component\Yaml" name="Yaml" abstract="false" final="false" start="21" end="118">
+  <file path="/home/web/example/src/freegame_developer/vendor/symfony/yaml" file="Yaml.php" realpath="/home/web/example/src/freegame_developer/vendor/symfony/yaml/Yaml.php" size="3988" time="2016-10-24T18:41:13+00:00" unixtime="1477334473" sha1="868437250d935df04d9c1243903e981a5b5f76b5" relative="freegame_developer/vendor/symfony/yaml/Yaml.php"/>
+  <docblock>
+    <description compact="Yaml offers convenience methods to load and dump YAML."/>
+    <author value="Fabien Potencier &lt;fabien@symfony.com&gt;"/>
+  </docblock>
+  <constant type="integer" name="DUMP_OBJECT" value="1"/>
+  <constant type="integer" name="PARSE_EXCEPTION_ON_INVALID_TYPE" value="2"/>
+  <constant type="integer" name="PARSE_OBJECT" value="4"/>
+  <constant type="integer" name="PARSE_OBJECT_FOR_MAP" value="8"/>
+  <constant type="integer" name="DUMP_EXCEPTION_ON_INVALID_TYPE" value="16"/>
+  <constant type="integer" name="PARSE_DATETIME" value="32"/>
+  <constant type="integer" name="DUMP_OBJECT_AS_MAP" value="64"/>
+  <constant type="integer" name="DUMP_MULTI_LINE_LITERAL_BLOCK" value="128"/>
+  <method name="parse" start="48" end="79" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description compact="Parses YAML into a PHP value.">Usage:
+ &lt;code&gt;
+  $array = Yaml::parse(file_get_contents('config.yml'));
+  print_r($array);
+ &lt;/code&gt;</description>
+      <param description="A string containing YAML" type="string" variable="$input"/>
+      <param description="A bit field of PARSE_* constants to customize the YAML parser behavior" type="int" variable="$flags"/>
+      <return description="The YAML converted to a PHP value" type="mixed"/>
+      <throws description="If the YAML is not valid" type="object">
+        <type full="Symfony\Component\Yaml\Exception\ParseException" namespace="Symfony\Component\Yaml\Exception" name="ParseException"/>
+      </throws>
+    </docblock>
+    <parameter name="input" byreference="false" type="{unknown}"/>
+    <parameter name="flags" byreference="false" type="integer" default="0"/>
+  </method>
+  <method name="dump" start="94" end="117" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description compact="Dumps a PHP value to a YAML string.">The dump method, when supplied with an array, will do its best
+to convert the array into friendly YAML.</description>
+      <param description="The PHP value" type="mixed" variable="$input"/>
+      <param description="The level where you switch to inline YAML" type="int" variable="$inline"/>
+      <param description="The amount of spaces to use for indentation of nested nodes" type="int" variable="$indent"/>
+      <param description="A bit field of DUMP_* constants to customize the dumped YAML string" type="int" variable="$flags"/>
+      <return description="A YAML string representing the original PHP value" type="string"/>
+    </docblock>
+    <parameter name="input" byreference="false" type="{unknown}"/>
+    <parameter name="inline" byreference="false" type="integer" default="2"/>
+    <parameter name="indent" byreference="false" type="integer" default="4"/>
+    <parameter name="flags" byreference="false" type="integer" default="0"/>
+  </method>
+</class>

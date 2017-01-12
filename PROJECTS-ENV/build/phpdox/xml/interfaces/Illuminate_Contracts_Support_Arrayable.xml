@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface xmlns="http://xml.phpdox.net/src" full="Illuminate\Contracts\Support\Arrayable" namespace="Illuminate\Contracts\Support" name="Arrayable" abstract="false" final="false" start="5" end="13">
+  <file path="/home/web/example/src/freegame_developer/vendor/laravel/framework/src/Illuminate/Contracts/Support" file="Arrayable.php" realpath="/home/web/example/src/freegame_developer/vendor/laravel/framework/src/Illuminate/Contracts/Support/Arrayable.php" size="184" time="2016-02-24T15:13:21+00:00" unixtime="1456326801" sha1="a06db2560e82cd0b0f50e445b2b2caa17922fa6b" relative="freegame_developer/vendor/laravel/framework/src/Illuminate/Contracts/Support/Arrayable.php"/>
+  <method name="toArray" start="12" end="12" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Get the instance as an array."/>
+      <return type="array"/>
+    </docblock>
+  </method>
+</interface>

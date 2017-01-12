@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="PhpSpec\Formatter\Presenter\Value\ArrayTypePresenter" namespace="PhpSpec\Formatter\Presenter\Value" name="ArrayTypePresenter" abstract="false" final="true" start="16" end="43">
+  <file path="/home/web/example/src/freegame_developer/vendor/phpspec/phpspec/src/PhpSpec/Formatter/Presenter/Value" file="ArrayTypePresenter.php" realpath="/home/web/example/src/freegame_developer/vendor/phpspec/phpspec/src/PhpSpec/Formatter/Presenter/Value/ArrayTypePresenter.php" size="884" time="2016-01-01T10:17:54+00:00" unixtime="1451643474" sha1="e785c6efcbfc6ed99a20753318bf138b6e277694" relative="freegame_developer/vendor/phpspec/phpspec/src/PhpSpec/Formatter/Presenter/Value/ArrayTypePresenter.php"/>
+  <implements full="PhpSpec\Formatter\Presenter\Value\TypePresenter" namespace="PhpSpec\Formatter\Presenter\Value" name="TypePresenter"/>
+  <method name="supports" start="22" end="25" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <param type="mixed" variable="$value"/>
+      <return type="object">
+        <type full="PhpSpec\Formatter\Presenter\Value\bool" namespace="PhpSpec\Formatter\Presenter\Value" name="bool"/>
+      </return>
+    </docblock>
+    <parameter name="value" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="present" start="31" end="34" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <param type="mixed" variable="$value"/>
+      <return type="string"/>
+    </docblock>
+    <parameter name="value" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="getPriority" start="39" end="42" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <return type="int"/>
+    </docblock>
+  </method>
+</class>

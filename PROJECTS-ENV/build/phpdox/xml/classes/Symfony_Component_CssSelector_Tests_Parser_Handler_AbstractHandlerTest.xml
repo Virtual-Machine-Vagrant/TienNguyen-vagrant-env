@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="Symfony\Component\CssSelector\Tests\Parser\Handler\AbstractHandlerTest" namespace="Symfony\Component\CssSelector\Tests\Parser\Handler" name="AbstractHandlerTest" abstract="true" final="false" start="21" end="69">
+  <file path="/home/web/example/src/freegame_developer/vendor/symfony/css-selector/Tests/Parser/Handler" file="AbstractHandlerTest.php" realpath="/home/web/example/src/freegame_developer/vendor/symfony/css-selector/Tests/Parser/Handler/AbstractHandlerTest.php" size="2248" time="2016-09-06T07:26:07+00:00" unixtime="1473146767" sha1="eb5fca4385c02b2dd32d33cb05815508a4acdb82" relative="freegame_developer/vendor/symfony/css-selector/Tests/Parser/Handler/AbstractHandlerTest.php"/>
+  <docblock>
+    <description/>
+    <author value="Jean-François Simon &lt;contact@jfsimon.fr&gt;"/>
+  </docblock>
+  <extends full="PHPUnit_Framework_TestCase" namespace="" name="PHPUnit_Framework_TestCase"/>
+  <method name="testHandleValue" start="24" end="32" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <dataprovider value="getHandleValueTestData"/>
+    </docblock>
+    <parameter name="value" byreference="false" type="{unknown}"/>
+    <parameter name="expectedToken" byreference="false" type="object">
+      <type full="Symfony\Component\CssSelector\Parser\Token" namespace="Symfony\Component\CssSelector\Parser" name="Token"/>
+    </parameter>
+    <parameter name="remainingContent" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="testDontHandleValue" start="35" end="43" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <dataprovider value="getDontHandleValueTestData"/>
+    </docblock>
+    <parameter name="value" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="getHandleValueTestData" start="45" end="45" abstract="true" final="false" static="false" visibility="public"/>
+  <method name="getDontHandleValueTestData" start="47" end="47" abstract="true" final="false" static="false" visibility="public"/>
+  <method name="generateHandler" start="49" end="49" abstract="true" final="false" static="false" visibility="protected"/>
+  <method name="assertStreamEmpty" start="51" end="57" abstract="false" final="false" static="false" visibility="protected">
+    <parameter name="stream" byreference="false" type="object">
+      <type full="Symfony\Component\CssSelector\Parser\TokenStream" namespace="Symfony\Component\CssSelector\Parser" name="TokenStream"/>
+    </parameter>
+  </method>
+  <method name="assertRemainingContent" start="59" end="68" abstract="false" final="false" static="false" visibility="protected">
+    <parameter name="reader" byreference="false" type="object">
+      <type full="Symfony\Component\CssSelector\Parser\Reader" namespace="Symfony\Component\CssSelector\Parser" name="Reader"/>
+    </parameter>
+    <parameter name="remainingContent" byreference="false" type="{unknown}"/>
+  </method>
+</class>

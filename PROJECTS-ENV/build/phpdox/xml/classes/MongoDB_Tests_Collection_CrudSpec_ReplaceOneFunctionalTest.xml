@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="MongoDB\Tests\Collection\CrudSpec\ReplaceOneFunctionalTest" namespace="MongoDB\Tests\Collection\CrudSpec" name="ReplaceOneFunctionalTest" abstract="false" final="false" start="10" end="119">
+  <file path="/home/web/example/src/freegame_developer/vendor/mongodb/mongodb/tests/Collection/CrudSpec" file="ReplaceOneFunctionalTest.php" realpath="/home/web/example/src/freegame_developer/vendor/mongodb/mongodb/tests/Collection/CrudSpec/ReplaceOneFunctionalTest.php" size="3838" time="2016-09-23T19:38:29+00:00" unixtime="1474659509" sha1="5f66e5e8528942a9fd77216833958dac5eeb2e9c" relative="freegame_developer/vendor/mongodb/mongodb/tests/Collection/CrudSpec/ReplaceOneFunctionalTest.php"/>
+  <docblock>
+    <description compact="CRUD spec functional tests for replaceOne()."/>
+    <see value="https://github.com/mongodb/specifications/tree/master/source/crud/tests"/>
+  </docblock>
+  <extends full="MongoDB\Tests\Collection\CrudSpec\FunctionalTestCase" namespace="MongoDB\Tests\Collection\CrudSpec" name="FunctionalTestCase"/>
+  <member name="omitModifiedCount" visibility="private" static="false" line="12"/>
+  <method name="setUp" start="14" end="21" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testReplaceOneWhenManyDocumentsMatch" start="23" end="39" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testReplaceOneWhenOneDocumentMatches" start="41" end="57" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testReplaceOneWhenNoDocumentsMatch" start="59" end="75" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testReplaceOneWithUpsertWhenNoDocumentsMatchWithAnIdSpecified" start="77" end="96" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testReplaceOneWithUpsertWhenNoDocumentsMatchWithoutAnIdSpecified" start="98" end="118" abstract="false" final="false" static="false" visibility="public">
+    <inline>
+      <comment value="Server 2.4 and earlier requires any custom ID to also be in the replacement document" line="101"/>
+    </inline>
+  </method>
+</class>

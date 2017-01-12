@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="phpseclib\Crypt\Twofish" namespace="phpseclib\Crypt" name="Twofish" abstract="false" final="false" start="48" end="808">
+  <file path="/home/web/example/src/freegame_developer/vendor/phpseclib/phpseclib/phpseclib/Crypt" file="Twofish.php" realpath="/home/web/example/src/freegame_developer/vendor/phpseclib/phpseclib/phpseclib/Crypt/Twofish.php" size="37062" time="2016-10-04T00:57:04+00:00" unixtime="1475542624" sha1="a712b95d4b91b3ea89db9b5758badef31dd18888" relative="freegame_developer/vendor/phpseclib/phpseclib/phpseclib/Crypt/Twofish.php"/>
+  <docblock>
+    <description compact="Pure-PHP implementation of Twofish."/>
+    <package value="Twofish"/>
+    <author value="Jim Wigginton &lt;terrafrost@php.net&gt;"/>
+    <author value="Hans-Juergen Petrich &lt;petrich@tronic-media.com&gt;"/>
+    <access value="public"/>
+  </docblock>
+  <extends full="phpseclib\Crypt\Base" namespace="phpseclib\Crypt" name="Base"/>
+  <member name="cipher_name_mcrypt" type="string" default="'twofish'" visibility="public" static="false" line="57">
+    <docblock>
+      <description compact="The mcrypt specific name of the cipher"/>
+      <see value="\phpseclib\Crypt\Base::cipher_name_mcrypt"/>
+      <var type="string"/>
+      <access value="private"/>
+    </docblock>
+  </member>
+  <member name="cfb_init_len" type="integer" default="800" visibility="public" static="false" line="66">
+    <docblock>
+      <description compact="Optimizing value while CFB-encrypting"/>
+      <see value="\phpseclib\Crypt\Base::cfb_init_len"/>
+      <var type="int"/>
+      <access value="private"/>
+    </docblock>
+  </member>
+  <member name="q0" type="array" default="" visibility="public" static="false" line="74">
+    <docblock>
+      <description compact="Q-Table"/>
+      <var type="array"/>
+      <access value="private"/>
+    </docblock>
+  </member>
+  <member name="q1" type="array" default="" visibility="public" static="false" line="115">
+    <docblock>
+      <description compact="Q-Table"/>
+      <var type="array"/>
+      <access value="private"/>
+    </docblock>
+  </member>
+  <member name="m0" type="array" default="" visibility="public" static="false" line="156">
+    <docblock>
+      <description compact="M-Table"/>
+      <var type="array"/>
+      <access value="private"/>
+    </docblock>
+  </member>
+  <member name="m1" type="array" default="" visibility="public" static="false" line="197">
+    <docblock>
+      <description compact="M-Table"/>
+      <var type="array"/>
+      <access value="private"/>
+    </docblock>
+  </member>
+  <member name="m2" type="array" default="" visibility="public" static="false" line="238">
+    <docblock>
+      <description compact="M-Table"/>
+      <var type="array"/>
+      <access value="private"/>
+    </docblock>
+  </member>
+  <member name="m3" type="array" default="" visibility="public" static="false" line="279">
+    <docblock>
+      <description compact="M-Table"/>
+      <var type="array"/>
+      <access value="private"/>
+    </docblock>
+  </member>
+  <member name="K" type="array" default="" visibility="public" static="false" line="320">
+    <docblock>
+      <description compact="The Key Schedule Array"/>
+      <var type="array"/>
+      <access value="private"/>
+    </docblock>
+  </member>
+  <member name="S0" type="array" default="" visibility="public" static="false" line="328">
+    <docblock>
+      <description compact="The Key depended S-Table 0"/>
+      <var type="array"/>
+      <access value="private"/>
+    </docblock>
+  </member>
+  <member name="S1" type="array" default="" visibility="public" static="false" line="336">
+    <docblock>
+      <description compact="The Key depended S-Table 1"/>
+      <var type="array"/>
+      <access value="private"/>
+    </docblock>
+  </member>
+  <member name="S2" type="array" default="" visibility="public" static="false" line="344">
+    <docblock>
+      <description compact="The Key depended S-Table 2"/>
+      <var type="array"/>
+      <access value="private"/>
+    </docblock>
+  </member>
+  <member name="S3" type="array" default="" visibility="public" static="false" line="352">
+    <docblock>
+      <description compact="The Key depended S-Table 3"/>
+      <var type="array"/>
+      <access value="private"/>
+    </docblock>
+  </member>
+  <member name="kl" visibility="public" static="false" line="360">
+    <docblock>
+      <description compact="Holds the last used key"/>
+      <var type="array"/>
+      <access value="private"/>
+    </docblock>
+  </member>
+  <member name="key_length" type="integer" default="16" visibility="public" static="false" line="369">
+    <docblock>
+      <description compact="The Key Length (in bytes)"/>
+      <see value="Crypt_Twofish::setKeyLength()"/>
+      <var type="int"/>
+      <access value="private"/>
+    </docblock>
+  </member>
+  <method name="setKeyLength" start="379" end="393" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Sets the key length.">Valid key lengths are 128, 192 or 256 bits</description>
+      <access value="public"/>
+      <param type="int" variable="$length"/>
+    </docblock>
+    <parameter name="length" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="_setupKey" start="401" end="500" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Setup the key (expansion)"/>
+      <see value="\phpseclib\Crypt\Base::_setupKey()"/>
+      <access value="private"/>
+    </docblock>
+    <inline>
+      <comment value="Key expanding and generating the key-depended s-boxes" line="409"/>
+    </inline>
+  </method>
+  <method name="_mdsrem" start="510" end="548" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="_mdsrem function using by the twofish cipher algorithm"/>
+      <access value="private"/>
+      <param type="string" variable="$A"/>
+      <param type="string" variable="$B"/>
+      <return type="array"/>
+    </docblock>
+    <parameter name="A" byreference="false" type="{unknown}"/>
+    <parameter name="B" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="No gain by unrolling this loop." line="512"/>
+    </inline>
+  </method>
+  <method name="_encryptBlock" start="557" end="604" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Encrypts a block"/>
+      <access value="private"/>
+      <param type="string" variable="$in"/>
+      <return type="string"/>
+    </docblock>
+    <parameter name="in" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="@codingStandardsIgnoreStart" line="598"/>
+      <comment value="@codingStandardsIgnoreEnd" line="603"/>
+    </inline>
+  </method>
+  <method name="_decryptBlock" start="613" end="660" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Decrypts a block"/>
+      <access value="private"/>
+      <param type="string" variable="$in"/>
+      <return type="string"/>
+    </docblock>
+    <parameter name="in" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="@codingStandardsIgnoreStart" line="654"/>
+      <comment value="@codingStandardsIgnoreEnd" line="659"/>
+    </inline>
+  </method>
+  <method name="_setupInlineCrypt" start="668" end="807" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Setup the performance-optimized function for de/encrypt()"/>
+      <see value="\phpseclib\Crypt\Base::_setupInlineCrypt()"/>
+      <access value="private"/>
+    </docblock>
+    <inline>
+      <comment value="Max. 10 Ultra-Hi-optimized inline-crypt functions. After that, we'll (still) create very fast code, but not the ultimate fast one." line="672"/>
+      <comment value="(Currently, for Crypt_Twofish, one generated $lambda_function cost on php5.5@32bit ~140kb unfreeable mem and ~240kb on php5.5@64bit)" line="673"/>
+      <comment value="Generation of a unique hash for our generated code" line="676"/>
+    </inline>
+  </method>
+</class>

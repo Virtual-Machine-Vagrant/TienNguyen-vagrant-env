@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="PHP_CodeCoverage_Report_XML_Directory" namespace="" name="PHP_CodeCoverage_Report_XML_Directory" abstract="false" final="false" start="14" end="16">
+  <file path="/home/web/example/src/freegame_developer/vendor/phpunit/php-code-coverage/src/CodeCoverage/Report/XML" file="Directory.php" realpath="/home/web/example/src/freegame_developer/vendor/phpunit/php-code-coverage/src/CodeCoverage/Report/XML/Directory.php" size="393" time="2015-10-06T15:47:00+00:00" unixtime="1444146420" sha1="878cc53c7c724973b7fc398df369d1dade92ed81" relative="freegame_developer/vendor/phpunit/php-code-coverage/src/CodeCoverage/Report/XML/Directory.php"/>
+  <docblock>
+    <description/>
+    <since value="Class available since Release 2.0.0"/>
+  </docblock>
+  <extends full="PHP_CodeCoverage_Report_XML_Node" namespace="" name="PHP_CodeCoverage_Report_XML_Node"/>
+</class>

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="App\Http\Controllers\GameController" namespace="App\Http\Controllers" name="GameController" abstract="false" final="false" start="9" end="123">
+  <file path="/home/web/example/src/freegame_developer/app/Http/Controllers" file="GameController.php" realpath="/home/web/example/src/freegame_developer/app/Http/Controllers/GameController.php" size="3788" time="2016-12-01T09:32:03+00:00" unixtime="1480584723" sha1="a6bab19292f9a511831744398aa02af7d73f627f" relative="freegame_developer/app/Http/Controllers/GameController.php"/>
+  <extends full="App\Http\Controllers\Controller" namespace="App\Http\Controllers" name="Controller"/>
+  <member name="gameService" visibility="protected" static="false" line="11"/>
+  <constructor name="__construct" start="13" end="23" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="gameService" byreference="false" type="object">
+      <type full="App\Services\GameService" namespace="App\Services" name="GameService"/>
+    </parameter>
+  </constructor>
+  <method name="index" start="31" end="42" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Show game info"/>
+      <param type="object" variable="$request">
+        <type full="Illuminate\Http\Request" namespace="Illuminate\Http" name="Request"/>
+      </param>
+      <return type="object">
+        <type full="App\Http\Controllers\Response" namespace="App\Http\Controllers" name="Response"/>
+      </return>
+    </docblock>
+    <parameter name="request" byreference="false" type="object">
+      <type full="Illuminate\Http\Request" namespace="Illuminate\Http" name="Request"/>
+    </parameter>
+  </method>
+  <method name="edit" start="50" end="78" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Edit game"/>
+      <param type="object" variable="$request">
+        <type full="Illuminate\Http\Request" namespace="Illuminate\Http" name="Request"/>
+      </param>
+      <return type="object">
+        <type full="App\Http\Controllers\response" namespace="App\Http\Controllers" name="response"/>
+      </return>
+    </docblock>
+    <parameter name="request" byreference="false" type="object">
+      <type full="Illuminate\Http\Request" namespace="Illuminate\Http" name="Request"/>
+    </parameter>
+  </method>
+  <method name="editConfirm" start="86" end="94" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Confirm Game edit"/>
+      <param type="object" variable="$request">
+        <type full="App\Http\Requests\GameRequest" namespace="App\Http\Requests" name="GameRequest"/>
+      </param>
+      <return type="object">
+        <type full="App\Http\Controllers\response" namespace="App\Http\Controllers" name="response"/>
+      </return>
+    </docblock>
+    <parameter name="request" byreference="false" type="object">
+      <type full="App\Http\Requests\GameRequest" namespace="App\Http\Requests" name="GameRequest"/>
+    </parameter>
+  </method>
+  <method name="update" start="101" end="122" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Update the Game."/>
+      <param type="object" variable="$request">
+        <type full="App\Http\Requests\GameRequest" namespace="App\Http\Requests" name="GameRequest"/>
+      </param>
+    </docblock>
+    <parameter name="request" byreference="false" type="object">
+      <type full="App\Http\Requests\GameRequest" namespace="App\Http\Requests" name="GameRequest"/>
+    </parameter>
+  </method>
+</class>

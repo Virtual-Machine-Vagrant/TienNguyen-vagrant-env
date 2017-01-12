@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="Jenssegers\Mongodb\Connection" namespace="Jenssegers\Mongodb" name="Connection" abstract="false" final="false" start="5" end="221">
+  <file path="/home/web/example/src/freegame_developer/vendor/jenssegers/mongodb/src/Jenssegers/Mongodb" file="Connection.php" realpath="/home/web/example/src/freegame_developer/vendor/jenssegers/mongodb/src/Jenssegers/Mongodb/Connection.php" size="5300" time="2016-10-07T08:39:24+00:00" unixtime="1475829564" sha1="9eb34c90cbb563f42202d7529f9a350b2ed2c701" relative="freegame_developer/vendor/jenssegers/mongodb/src/Jenssegers/Mongodb/Connection.php"/>
+  <extends full="Illuminate\Database\Connection" namespace="Illuminate\Database" name="Connection"/>
+  <member name="db" visibility="protected" static="false" line="12">
+    <docblock>
+      <description compact="The MongoDB database handler."/>
+      <var type="object">
+        <type full="\MongoDB\Database" namespace="\MongoDB" name="Database"/>
+      </var>
+    </docblock>
+  </member>
+  <member name="connection" visibility="protected" static="false" line="19">
+    <docblock>
+      <description compact="The MongoDB connection handler."/>
+      <var type="object">
+        <type full="\MongoDB\Client" namespace="\MongoDB" name="Client"/>
+      </var>
+    </docblock>
+  </member>
+  <constructor name="__construct" start="26" end="43" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Create a new database connection instance."/>
+      <param type="array" variable="$config"/>
+    </docblock>
+    <parameter name="config" byreference="false" type="array"/>
+    <inline>
+      <comment value="Build the connection string" line="30"/>
+      <comment value="You can pass options directly to the MongoDB constructor" line="33"/>
+      <comment value="Create the connection" line="36"/>
+      <comment value="Select database" line="39"/>
+    </inline>
+  </constructor>
+  <method name="getDefaultPostProcessor" start="50" end="53" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Get the default post processor instance."/>
+      <return type="object">
+        <type full="Jenssegers\Mongodb\Query\Processor" namespace="Jenssegers\Mongodb\Query" name="Processor"/>
+      </return>
+    </docblock>
+  </method>
+  <method name="collection" start="61" end="68" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Begin a fluent query against a database collection."/>
+      <param type="string" variable="$collection"/>
+      <return type="object">
+        <type full="Jenssegers\Mongodb\Query\Builder" namespace="Jenssegers\Mongodb\Query" name="Builder"/>
+      </return>
+    </docblock>
+    <parameter name="collection" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="table" start="76" end="79" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Begin a fluent query against a database collection."/>
+      <param type="string" variable="$table"/>
+      <return type="object">
+        <type full="Jenssegers\Mongodb\Query\Builder" namespace="Jenssegers\Mongodb\Query" name="Builder"/>
+      </return>
+    </docblock>
+    <parameter name="table" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="getCollection" start="87" end="90" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Get a MongoDB collection."/>
+      <param type="string" variable="$name"/>
+      <return type="object">
+        <type full="Jenssegers\Mongodb\Collection" namespace="Jenssegers\Mongodb" name="Collection"/>
+      </return>
+    </docblock>
+    <parameter name="name" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="getSchemaBuilder" start="97" end="100" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Get a schema builder instance for the connection."/>
+      <return type="object">
+        <type full="Jenssegers\Mongodb\Schema\Builder" namespace="Jenssegers\Mongodb\Schema" name="Builder"/>
+      </return>
+    </docblock>
+  </method>
+  <method name="getMongoDB" start="107" end="110" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Get the MongoDB database object."/>
+      <return type="object">
+        <type full="\MongoDB\Database" namespace="\MongoDB" name="Database"/>
+      </return>
+    </docblock>
+  </method>
+  <method name="getMongoClient" start="117" end="120" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="return MongoDB object."/>
+      <return type="object">
+        <type full="\MongoDB\Client" namespace="\MongoDB" name="Client"/>
+      </return>
+    </docblock>
+  </method>
+  <method name="createConnection" start="130" end="148" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Create a new MongoDB connection."/>
+      <param type="string" variable="$dsn"/>
+      <param type="array" variable="$config"/>
+      <param type="array" variable="$options"/>
+      <return type="object">
+        <type full="Jenssegers\Mongodb\MongoDB" namespace="Jenssegers\Mongodb" name="MongoDB"/>
+      </return>
+    </docblock>
+    <parameter name="dsn" byreference="false" type="{unknown}"/>
+    <parameter name="config" byreference="false" type="array"/>
+    <parameter name="options" byreference="false" type="array"/>
+    <inline>
+      <comment value="By default driver options is an empty array." line="132"/>
+      <comment value="Check if the credentials are not already set in the options" line="139"/>
+    </inline>
+  </method>
+  <method name="disconnect" start="153" end="156" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Disconnect from the underlying MongoDB connection."/>
+    </docblock>
+  </method>
+  <method name="getDsn" start="164" end="187" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Create a DSN string from a configuration."/>
+      <param type="array" variable="$config"/>
+      <return type="string"/>
+    </docblock>
+    <parameter name="config" byreference="false" type="array"/>
+    <inline>
+      <comment value="First we will create the basic DSN setup as well as the port if it is in" line="166"/>
+      <comment value="in the configuration options. This will give us the basic DSN we will" line="167"/>
+      <comment value="need to establish the MongoDB and return them back for use." line="168"/>
+      <comment value="Check if the user passed a complete dsn to the configuration." line="171"/>
+      <comment value="Treat host option as array of hosts" line="176"/>
+    </inline>
+  </method>
+  <method name="getElapsedTime" start="195" end="198" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Get the elapsed time since a given starting point."/>
+      <param type="int" variable="$start"/>
+      <return type="float"/>
+    </docblock>
+    <parameter name="start" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="getDriverName" start="205" end="208" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Get the PDO driver name."/>
+      <return type="string"/>
+    </docblock>
+  </method>
+  <method name="__call" start="217" end="220" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Dynamically pass methods to the connection."/>
+      <param type="string" variable="$method"/>
+      <param type="array" variable="$parameters"/>
+      <return type="mixed"/>
+    </docblock>
+    <parameter name="method" byreference="false" type="{unknown}"/>
+    <parameter name="parameters" byreference="false" type="{unknown}"/>
+  </method>
+</class>

@@ -1,0 +1,1456 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="phpseclib\Net\SSH2" namespace="phpseclib\Net" name="SSH2" abstract="false" final="false" start="71" end="4188">
+  <file path="/home/web/example/src/freegame_developer/vendor/phpseclib/phpseclib/phpseclib/Net" file="SSH2.php" realpath="/home/web/example/src/freegame_developer/vendor/phpseclib/phpseclib/phpseclib/Net/SSH2.php" size="142049" time="2016-10-04T00:57:04+00:00" unixtime="1475542624" sha1="4b8a3269b7fb4d1bfc438a531f5675b44b01ba52" relative="freegame_developer/vendor/phpseclib/phpseclib/phpseclib/Net/SSH2.php"/>
+  <docblock>
+    <description compact="Pure-PHP implementation of SSHv2."/>
+    <package value="SSH2"/>
+    <author value="Jim Wigginton &lt;terrafrost@php.net&gt;"/>
+    <access value="public"/>
+  </docblock>
+  <constant type="integer" name="MASK_CONSTRUCTOR" value="0x00000001"/>
+  <constant type="integer" name="MASK_CONNECTED" value="0x00000002"/>
+  <constant type="integer" name="MASK_LOGIN_REQ" value="0x00000004"/>
+  <constant type="integer" name="MASK_LOGIN" value="0x00000008"/>
+  <constant type="integer" name="MASK_SHELL" value="0x00000010"/>
+  <constant type="integer" name="MASK_WINDOW_ADJUST" value="0x00000020"/>
+  <constant type="integer" name="CHANNEL_EXEC" value="0"/>
+  <constant type="integer" name="CHANNEL_SHELL" value="1"/>
+  <constant type="integer" name="CHANNEL_SUBSYSTEM" value="2"/>
+  <constant type="integer" name="CHANNEL_AGENT_FORWARD" value="3"/>
+  <constant type="integer" name="LOG_SIMPLE" value="1">
+    <docblock>
+      <description compact="Returns the message numbers"/>
+    </docblock>
+  </constant>
+  <constant type="integer" name="LOG_COMPLEX" value="2">
+    <docblock>
+      <description compact="Returns the message content"/>
+    </docblock>
+  </constant>
+  <constant type="integer" name="LOG_REALTIME" value="3">
+    <docblock>
+      <description compact="Outputs the content real-time"/>
+    </docblock>
+  </constant>
+  <constant type="integer" name="LOG_REALTIME_FILE" value="4">
+    <docblock>
+      <description compact="Dumps the content real-time to a file"/>
+    </docblock>
+  </constant>
+  <constant type="integer" name="READ_SIMPLE" value="1">
+    <docblock>
+      <description compact="Returns when a string matching $expect exactly is found"/>
+    </docblock>
+  </constant>
+  <constant type="integer" name="READ_REGEX" value="2">
+    <docblock>
+      <description compact="Returns when a string matching the regular expression $expect is found"/>
+    </docblock>
+  </constant>
+  <constant type="integer" name="LOG_MAX_SIZE" value="1048576">
+    <docblock>
+      <description compact="Make sure that the log never gets larger than this"/>
+    </docblock>
+  </constant>
+  <member name="identifier" visibility="public" static="false" line="155">
+    <docblock>
+      <description compact="The SSH identifier"/>
+      <var type="string"/>
+      <access value="private"/>
+    </docblock>
+  </member>
+  <member name="fsock" visibility="public" static="false" line="163">
+    <docblock>
+      <description compact="The Socket Object"/>
+      <var type="object"/>
+      <access value="private"/>
+    </docblock>
+  </member>
+  <member name="bitmap" type="integer" default="0" visibility="public" static="false" line="174">
+    <docblock>
+      <description compact="Execution Bitmap">The bits that are set represent functions that have been called already.  This is used to determine
+if a requisite function has been successfully executed.  If not, an error should be thrown.</description>
+      <var type="int"/>
+      <access value="private"/>
+    </docblock>
+  </member>
+  <member name="errors" type="array" default="" visibility="public" static="false" line="184">
+    <docblock>
+      <description compact="Error information"/>
+      <see value="self::getErrors()"/>
+      <see value="self::getLastError()"/>
+      <var type="string"/>
+      <access value="private"/>
+    </docblock>
+  </member>
+  <member name="server_identifier" type="boolean" default="false" visibility="public" static="false" line="193">
+    <docblock>
+      <description compact="Server Identifier"/>
+      <see value="self::getServerIdentification()"/>
+      <var type="object">
+        <type full="phpseclib\Net\array|false" namespace="phpseclib\Net" name="array|false"/>
+      </var>
+      <access value="private"/>
+    </docblock>
+  </member>
+  <member name="kex_algorithms" type="boolean" default="false" visibility="public" static="false" line="202">
+    <docblock>
+      <description compact="Key Exchange Algorithms"/>
+      <see value="self::getKexAlgorithims()"/>
+      <var type="object">
+        <type full="phpseclib\Net\array|false" namespace="phpseclib\Net" name="array|false"/>
+      </var>
+      <access value="private"/>
+    </docblock>
+  </member>
+  <member name="kex_dh_group_size_min" type="integer" default="1536" visibility="public" static="false" line="211">
+    <docblock>
+      <description compact="Minimum Diffie-Hellman Group Bit Size in RFC 4419 Key Exchange Methods"/>
+      <see value="self::_key_exchange()"/>
+      <var type="int"/>
+      <access value="private"/>
+    </docblock>
+  </member>
+  <member name="kex_dh_group_size_preferred" type="integer" default="2048" visibility="public" static="false" line="220">
+    <docblock>
+      <description compact="Preferred Diffie-Hellman Group Bit Size in RFC 4419 Key Exchange Methods"/>
+      <see value="self::_key_exchange()"/>
+      <var type="int"/>
+      <access value="private"/>
+    </docblock>
+  </member>
+  <member name="kex_dh_group_size_max" type="integer" default="4096" visibility="public" static="false" line="229">
+    <docblock>
+      <description compact="Maximum Diffie-Hellman Group Bit Size in RFC 4419 Key Exchange Methods"/>
+      <see value="self::_key_exchange()"/>
+      <var type="int"/>
+      <access value="private"/>
+    </docblock>
+  </member>
+  <member name="server_host_key_algorithms" type="boolean" default="false" visibility="public" static="false" line="238">
+    <docblock>
+      <description compact="Server Host Key Algorithms"/>
+      <see value="self::getServerHostKeyAlgorithms()"/>
+      <var type="object">
+        <type full="phpseclib\Net\array|false" namespace="phpseclib\Net" name="array|false"/>
+      </var>
+      <access value="private"/>
+    </docblock>
+  </member>
+  <member name="encryption_algorithms_client_to_server" type="boolean" default="false" visibility="public" static="false" line="247">
+    <docblock>
+      <description compact="Encryption Algorithms: Client to Server"/>
+      <see value="self::getEncryptionAlgorithmsClient2Server()"/>
+      <var type="object">
+        <type full="phpseclib\Net\array|false" namespace="phpseclib\Net" name="array|false"/>
+      </var>
+      <access value="private"/>
+    </docblock>
+  </member>
+  <member name="encryption_algorithms_server_to_client" type="boolean" default="false" visibility="public" static="false" line="256">
+    <docblock>
+      <description compact="Encryption Algorithms: Server to Client"/>
+      <see value="self::getEncryptionAlgorithmsServer2Client()"/>
+      <var type="object">
+        <type full="phpseclib\Net\array|false" namespace="phpseclib\Net" name="array|false"/>
+      </var>
+      <access value="private"/>
+    </docblock>
+  </member>
+  <member name="mac_algorithms_client_to_server" type="boolean" default="false" visibility="public" static="false" line="265">
+    <docblock>
+      <description compact="MAC Algorithms: Client to Server"/>
+      <see value="self::getMACAlgorithmsClient2Server()"/>
+      <var type="object">
+        <type full="phpseclib\Net\array|false" namespace="phpseclib\Net" name="array|false"/>
+      </var>
+      <access value="private"/>
+    </docblock>
+  </member>
+  <member name="mac_algorithms_server_to_client" type="boolean" default="false" visibility="public" static="false" line="274">
+    <docblock>
+      <description compact="MAC Algorithms: Server to Client"/>
+      <see value="self::getMACAlgorithmsServer2Client()"/>
+      <var type="object">
+        <type full="phpseclib\Net\array|false" namespace="phpseclib\Net" name="array|false"/>
+      </var>
+      <access value="private"/>
+    </docblock>
+  </member>
+  <member name="compression_algorithms_client_to_server" type="boolean" default="false" visibility="public" static="false" line="283">
+    <docblock>
+      <description compact="Compression Algorithms: Client to Server"/>
+      <see value="self::getCompressionAlgorithmsClient2Server()"/>
+      <var type="object">
+        <type full="phpseclib\Net\array|false" namespace="phpseclib\Net" name="array|false"/>
+      </var>
+      <access value="private"/>
+    </docblock>
+  </member>
+  <member name="compression_algorithms_server_to_client" type="boolean" default="false" visibility="public" static="false" line="292">
+    <docblock>
+      <description compact="Compression Algorithms: Server to Client"/>
+      <see value="self::getCompressionAlgorithmsServer2Client()"/>
+      <var type="object">
+        <type full="phpseclib\Net\array|false" namespace="phpseclib\Net" name="array|false"/>
+      </var>
+      <access value="private"/>
+    </docblock>
+  </member>
+  <member name="languages_server_to_client" type="boolean" default="false" visibility="public" static="false" line="301">
+    <docblock>
+      <description compact="Languages: Server to Client"/>
+      <see value="self::getLanguagesServer2Client()"/>
+      <var type="object">
+        <type full="phpseclib\Net\array|false" namespace="phpseclib\Net" name="array|false"/>
+      </var>
+      <access value="private"/>
+    </docblock>
+  </member>
+  <member name="languages_client_to_server" type="boolean" default="false" visibility="public" static="false" line="310">
+    <docblock>
+      <description compact="Languages: Client to Server"/>
+      <see value="self::getLanguagesClient2Server()"/>
+      <var type="object">
+        <type full="phpseclib\Net\array|false" namespace="phpseclib\Net" name="array|false"/>
+      </var>
+      <access value="private"/>
+    </docblock>
+  </member>
+  <member name="encrypt_block_size" type="integer" default="8" visibility="public" static="false" line="327">
+    <docblock>
+      <description compact="Block Size for Server to Client Encryption">"Note that the length of the concatenation of 'packet_length',
+ 'padding_length', 'payload', and 'random padding' MUST be a multiple
+ of the cipher block size or 8, whichever is larger.  This constraint
+ MUST be enforced, even when using stream ciphers."
+
+ -- http://tools.ietf.org/html/rfc4253#section-6</description>
+      <see value="self::__construct()"/>
+      <see value="self::_send_binary_packet()"/>
+      <var type="int"/>
+      <access value="private"/>
+    </docblock>
+  </member>
+  <member name="decrypt_block_size" type="integer" default="8" visibility="public" static="false" line="337">
+    <docblock>
+      <description compact="Block Size for Client to Server Encryption"/>
+      <see value="self::__construct()"/>
+      <see value="self::_get_binary_packet()"/>
+      <var type="int"/>
+      <access value="private"/>
+    </docblock>
+  </member>
+  <member name="decrypt" type="boolean" default="false" visibility="public" static="false" line="346">
+    <docblock>
+      <description compact="Server to Client Encryption Object"/>
+      <see value="self::_get_binary_packet()"/>
+      <var type="object"/>
+      <access value="private"/>
+    </docblock>
+  </member>
+  <member name="encrypt" type="boolean" default="false" visibility="public" static="false" line="355">
+    <docblock>
+      <description compact="Client to Server Encryption Object"/>
+      <see value="self::_send_binary_packet()"/>
+      <var type="object"/>
+      <access value="private"/>
+    </docblock>
+  </member>
+  <member name="hmac_create" type="boolean" default="false" visibility="public" static="false" line="364">
+    <docblock>
+      <description compact="Client to Server HMAC Object"/>
+      <see value="self::_send_binary_packet()"/>
+      <var type="object"/>
+      <access value="private"/>
+    </docblock>
+  </member>
+  <member name="hmac_check" type="boolean" default="false" visibility="public" static="false" line="373">
+    <docblock>
+      <description compact="Server to Client HMAC Object"/>
+      <see value="self::_get_binary_packet()"/>
+      <var type="object"/>
+      <access value="private"/>
+    </docblock>
+  </member>
+  <member name="hmac_size" type="boolean" default="false" visibility="public" static="false" line="386">
+    <docblock>
+      <description compact="Size of server to client HMAC">We need to know how big the HMAC will be for the server to client direction so that we know how many bytes to read.
+For the client to server side, the HMAC object will make the HMAC as long as it needs to be.  All we need to do is
+append it.</description>
+      <see value="self::_get_binary_packet()"/>
+      <var type="int"/>
+      <access value="private"/>
+    </docblock>
+  </member>
+  <member name="server_public_host_key" visibility="public" static="false" line="395">
+    <docblock>
+      <description compact="Server Public Host Key"/>
+      <see value="self::getServerPublicHostKey()"/>
+      <var type="string"/>
+      <access value="private"/>
+    </docblock>
+  </member>
+  <member name="session_id" type="boolean" default="false" visibility="public" static="false" line="410">
+    <docblock>
+      <description compact="Session identifier">"The exchange hash H from the first key exchange is additionally
+ used as the session identifier, which is a unique identifier for
+ this connection."
+
+ -- http://tools.ietf.org/html/rfc4253#section-7.2</description>
+      <see value="self::_key_exchange()"/>
+      <var type="string"/>
+      <access value="private"/>
+    </docblock>
+  </member>
+  <member name="exchange_hash" type="boolean" default="false" visibility="public" static="false" line="421">
+    <docblock>
+      <description compact="Exchange hash">The current exchange hash</description>
+      <see value="self::_key_exchange()"/>
+      <var type="string"/>
+      <access value="private"/>
+    </docblock>
+  </member>
+  <member name="message_numbers" type="array" default="" visibility="public" static="false" line="430">
+    <docblock>
+      <description compact="Message Numbers"/>
+      <see value="self::__construct()"/>
+      <var type="array"/>
+      <access value="private"/>
+    </docblock>
+  </member>
+  <member name="disconnect_reasons" type="array" default="" visibility="public" static="false" line="439">
+    <docblock>
+      <description compact="Disconnection Message 'reason codes' defined in RFC4253"/>
+      <see value="self::__construct()"/>
+      <var type="array"/>
+      <access value="private"/>
+    </docblock>
+  </member>
+  <member name="channel_open_failure_reasons" type="array" default="" visibility="public" static="false" line="448">
+    <docblock>
+      <description compact="SSH_MSG_CHANNEL_OPEN_FAILURE 'reason codes', defined in RFC4254"/>
+      <see value="self::__construct()"/>
+      <var type="array"/>
+      <access value="private"/>
+    </docblock>
+  </member>
+  <member name="terminal_modes" type="array" default="" visibility="public" static="false" line="458">
+    <docblock>
+      <description compact="Terminal Modes"/>
+      <link value="http://tools.ietf.org/html/rfc4254#section-8"/>
+      <see value="self::__construct()"/>
+      <var type="array"/>
+      <access value="private"/>
+    </docblock>
+  </member>
+  <member name="channel_extended_data_type_codes" type="array" default="" visibility="public" static="false" line="468">
+    <docblock>
+      <description compact="SSH_MSG_CHANNEL_EXTENDED_DATA's data_type_codes"/>
+      <link value="http://tools.ietf.org/html/rfc4254#section-5.2"/>
+      <see value="self::__construct()"/>
+      <var type="array"/>
+      <access value="private"/>
+    </docblock>
+  </member>
+  <member name="send_seq_no" type="integer" default="0" visibility="public" static="false" line="479">
+    <docblock>
+      <description compact="Send Sequence Number">See 'Section 6.4.  Data Integrity' of rfc4253 for more info.</description>
+      <see value="self::_send_binary_packet()"/>
+      <var type="int"/>
+      <access value="private"/>
+    </docblock>
+  </member>
+  <member name="get_seq_no" type="integer" default="0" visibility="public" static="false" line="490">
+    <docblock>
+      <description compact="Get Sequence Number">See 'Section 6.4.  Data Integrity' of rfc4253 for more info.</description>
+      <see value="self::_get_binary_packet()"/>
+      <var type="int"/>
+      <access value="private"/>
+    </docblock>
+  </member>
+  <member name="server_channels" type="array" default="" visibility="public" static="false" line="502">
+    <docblock>
+      <description compact="Server Channels">Maps client channels to server channels</description>
+      <see value="self::_get_channel_packet()"/>
+      <see value="self::exec()"/>
+      <var type="array"/>
+      <access value="private"/>
+    </docblock>
+  </member>
+  <member name="channel_buffers" type="array" default="" visibility="public" static="false" line="515">
+    <docblock>
+      <description compact="Channel Buffers">If a client requests a packet from one channel but receives two packets from another those packets should
+be placed in a buffer</description>
+      <see value="self::_get_channel_packet()"/>
+      <see value="self::exec()"/>
+      <var type="array"/>
+      <access value="private"/>
+    </docblock>
+  </member>
+  <member name="channel_status" type="array" default="" visibility="public" static="false" line="526">
+    <docblock>
+      <description compact="Channel Status">Contains the type of the last sent message</description>
+      <see value="self::_get_channel_packet()"/>
+      <var type="array"/>
+      <access value="private"/>
+    </docblock>
+  </member>
+  <member name="packet_size_client_to_server" type="array" default="" visibility="public" static="false" line="537">
+    <docblock>
+      <description compact="Packet Size">Maximum packet size indexed by channel</description>
+      <see value="self::_send_channel_packet()"/>
+      <var type="array"/>
+      <access value="private"/>
+    </docblock>
+  </member>
+  <member name="message_number_log" type="array" default="" visibility="public" static="false" line="546">
+    <docblock>
+      <description compact="Message Number Log"/>
+      <see value="self::getLog()"/>
+      <var type="array"/>
+      <access value="private"/>
+    </docblock>
+  </member>
+  <member name="message_log" type="array" default="" visibility="public" static="false" line="555">
+    <docblock>
+      <description compact="Message Log"/>
+      <see value="self::getLog()"/>
+      <var type="array"/>
+      <access value="private"/>
+    </docblock>
+  </member>
+  <member name="window_size" type="integer" default="0x7FFFFFFF" visibility="public" static="false" line="567">
+    <docblock>
+      <description compact="The Window Size">Bytes the other party can send before it must wait for the window to be adjusted (0x7FFFFFFF = 2GB)</description>
+      <var type="int"/>
+      <see value="self::_send_channel_packet()"/>
+      <see value="self::exec()"/>
+      <access value="private"/>
+    </docblock>
+  </member>
+  <member name="window_size_server_to_client" type="array" default="" visibility="public" static="false" line="578">
+    <docblock>
+      <description compact="Window size, server to client">Window size indexed by channel</description>
+      <see value="self::_send_channel_packet()"/>
+      <var type="array"/>
+      <access value="private"/>
+    </docblock>
+  </member>
+  <member name="window_size_client_to_server" type="array" default="" visibility="public" static="false" line="589">
+    <docblock>
+      <description compact="Window size, client to server">Window size indexed by channel</description>
+      <see value="self::_get_channel_packet()"/>
+      <var type="array"/>
+      <access value="private"/>
+    </docblock>
+  </member>
+  <member name="signature" type="string" default="''" visibility="public" static="false" line="600">
+    <docblock>
+      <description compact="Server signature">Verified against $this-&gt;session_id</description>
+      <see value="self::getServerPublicHostKey()"/>
+      <var type="string"/>
+      <access value="private"/>
+    </docblock>
+  </member>
+  <member name="signature_format" type="string" default="''" visibility="public" static="false" line="611">
+    <docblock>
+      <description compact="Server signature format">ssh-rsa or ssh-dss.</description>
+      <see value="self::getServerPublicHostKey()"/>
+      <var type="string"/>
+      <access value="private"/>
+    </docblock>
+  </member>
+  <member name="interactiveBuffer" type="string" default="''" visibility="public" static="false" line="620">
+    <docblock>
+      <description compact="Interactive Buffer"/>
+      <see value="self::read()"/>
+      <var type="array"/>
+      <access value="private"/>
+    </docblock>
+  </member>
+  <member name="log_size" visibility="public" static="false" line="632">
+    <docblock>
+      <description compact="Current log size">Should never exceed self::LOG_MAX_SIZE</description>
+      <see value="self::_send_binary_packet()"/>
+      <see value="self::_get_binary_packet()"/>
+      <var type="int"/>
+      <access value="private"/>
+    </docblock>
+  </member>
+  <member name="timeout" visibility="public" static="false" line="640">
+    <docblock>
+      <description compact="Timeout"/>
+      <see value="self::setTimeout()"/>
+      <access value="private"/>
+    </docblock>
+  </member>
+  <member name="curTimeout" visibility="public" static="false" line="648">
+    <docblock>
+      <description compact="Current Timeout"/>
+      <see value="self::_get_channel_packet()"/>
+      <access value="private"/>
+    </docblock>
+  </member>
+  <member name="realtime_log_file" visibility="public" static="false" line="657">
+    <docblock>
+      <description compact="Real-time log file pointer"/>
+      <see value="self::_append_log()"/>
+      <var type="resource"/>
+      <access value="private"/>
+    </docblock>
+  </member>
+  <member name="realtime_log_size" visibility="public" static="false" line="666">
+    <docblock>
+      <description compact="Real-time log file size"/>
+      <see value="self::_append_log()"/>
+      <var type="int"/>
+      <access value="private"/>
+    </docblock>
+  </member>
+  <member name="signature_validated" type="boolean" default="false" visibility="public" static="false" line="675">
+    <docblock>
+      <description compact="Has the signature been validated?"/>
+      <see value="self::getServerPublicHostKey()"/>
+      <var type="object">
+        <type full="phpseclib\Net\bool" namespace="phpseclib\Net" name="bool"/>
+      </var>
+      <access value="private"/>
+    </docblock>
+  </member>
+  <member name="realtime_log_wrap" visibility="public" static="false" line="683">
+    <docblock>
+      <description compact="Real-time log file wrap boolean"/>
+      <see value="self::_append_log()"/>
+      <access value="private"/>
+    </docblock>
+  </member>
+  <member name="quiet_mode" type="boolean" default="false" visibility="public" static="false" line="691">
+    <docblock>
+      <description compact="Flag to suppress stderr from output"/>
+      <see value="self::enableQuietMode()"/>
+      <access value="private"/>
+    </docblock>
+  </member>
+  <member name="last_packet" visibility="public" static="false" line="699">
+    <docblock>
+      <description compact="Time of first network activity"/>
+      <var type="int"/>
+      <access value="private"/>
+    </docblock>
+  </member>
+  <member name="exit_status" visibility="public" static="false" line="707">
+    <docblock>
+      <description compact="Exit status returned from ssh if any"/>
+      <var type="int"/>
+      <access value="private"/>
+    </docblock>
+  </member>
+  <member name="request_pty" type="boolean" default="false" visibility="public" static="false" line="716">
+    <docblock>
+      <description compact="Flag to request a PTY when using exec()"/>
+      <var type="object">
+        <type full="phpseclib\Net\bool" namespace="phpseclib\Net" name="bool"/>
+      </var>
+      <see value="self::enablePTY()"/>
+      <access value="private"/>
+    </docblock>
+  </member>
+  <member name="in_request_pty_exec" type="boolean" default="false" visibility="public" static="false" line="724">
+    <docblock>
+      <description compact="Flag set while exec() is running when using enablePTY()"/>
+      <var type="object">
+        <type full="phpseclib\Net\bool" namespace="phpseclib\Net" name="bool"/>
+      </var>
+      <access value="private"/>
+    </docblock>
+  </member>
+  <member name="in_subsystem" visibility="public" static="false" line="732">
+    <docblock>
+      <description compact="Flag set after startSubsystem() is called"/>
+      <var type="object">
+        <type full="phpseclib\Net\bool" namespace="phpseclib\Net" name="bool"/>
+      </var>
+      <access value="private"/>
+    </docblock>
+  </member>
+  <member name="stdErrorLog" visibility="public" static="false" line="740">
+    <docblock>
+      <description compact="Contents of stdError"/>
+      <var type="string"/>
+      <access value="private"/>
+    </docblock>
+  </member>
+  <member name="last_interactive_response" type="string" default="''" visibility="public" static="false" line="749">
+    <docblock>
+      <description compact="The Last Interactive Response"/>
+      <see value="self::_keyboard_interactive_process()"/>
+      <var type="string"/>
+      <access value="private"/>
+    </docblock>
+  </member>
+  <member name="keyboard_requests_responses" type="array" default="" visibility="public" static="false" line="758">
+    <docblock>
+      <description compact="Keyboard Interactive Request / Responses"/>
+      <see value="self::_keyboard_interactive_process()"/>
+      <var type="array"/>
+      <access value="private"/>
+    </docblock>
+  </member>
+  <member name="banner_message" type="string" default="''" visibility="public" static="false" line="771">
+    <docblock>
+      <description compact="Banner Message">Quoting from the RFC, "in some jurisdictions, sending a warning message before
+authentication may be relevant for getting legal protection."</description>
+      <see value="self::_filter()"/>
+      <see value="self::getBannerMessage()"/>
+      <var type="string"/>
+      <access value="private"/>
+    </docblock>
+  </member>
+  <member name="is_timeout" type="boolean" default="false" visibility="public" static="false" line="780">
+    <docblock>
+      <description compact="Did read() timeout or return normally?"/>
+      <see value="self::isTimeout()"/>
+      <var type="object">
+        <type full="phpseclib\Net\bool" namespace="phpseclib\Net" name="bool"/>
+      </var>
+      <access value="private"/>
+    </docblock>
+  </member>
+  <member name="log_boundary" type="string" default="':'" visibility="public" static="false" line="789">
+    <docblock>
+      <description compact="Log Boundary"/>
+      <see value="self::_format_log()"/>
+      <var type="string"/>
+      <access value="private"/>
+    </docblock>
+  </member>
+  <member name="log_long_width" type="integer" default="65" visibility="public" static="false" line="798">
+    <docblock>
+      <description compact="Log Long Width"/>
+      <see value="self::_format_log()"/>
+      <var type="int"/>
+      <access value="private"/>
+    </docblock>
+  </member>
+  <member name="log_short_width" type="integer" default="16" visibility="public" static="false" line="807">
+    <docblock>
+      <description compact="Log Short Width"/>
+      <see value="self::_format_log()"/>
+      <var type="int"/>
+      <access value="private"/>
+    </docblock>
+  </member>
+  <member name="host" visibility="public" static="false" line="817">
+    <docblock>
+      <description compact="Hostname"/>
+      <see value="self::__construct()"/>
+      <see value="self::_connect()"/>
+      <var type="string"/>
+      <access value="private"/>
+    </docblock>
+  </member>
+  <member name="port" visibility="public" static="false" line="827">
+    <docblock>
+      <description compact="Port Number"/>
+      <see value="self::__construct()"/>
+      <see value="self::_connect()"/>
+      <var type="int"/>
+      <access value="private"/>
+    </docblock>
+  </member>
+  <member name="windowColumns" type="integer" default="80" visibility="public" static="false" line="838">
+    <docblock>
+      <description compact="Number of columns for terminal window size"/>
+      <see value="self::getWindowColumns()"/>
+      <see value="self::setWindowColumns()"/>
+      <see value="self::setWindowSize()"/>
+      <var type="int"/>
+      <access value="private"/>
+    </docblock>
+  </member>
+  <member name="windowRows" type="integer" default="24" visibility="public" static="false" line="849">
+    <docblock>
+      <description compact="Number of columns for terminal window size"/>
+      <see value="self::getWindowRows()"/>
+      <see value="self::setWindowRows()"/>
+      <see value="self::setWindowSize()"/>
+      <var type="int"/>
+      <access value="private"/>
+    </docblock>
+  </member>
+  <member name="crypto_engine" type="boolean" default="false" visibility="public" static="false" line="859">
+    <docblock>
+      <description compact="Crypto Engine"/>
+      <see value="self::setCryptoEngine()"/>
+      <see value="self::_key_exchange()"/>
+      <var type="int"/>
+      <access value="private"/>
+    </docblock>
+  </member>
+  <member name="agent" visibility="public" static="false" line="867">
+    <docblock>
+      <description compact="A System_SSH_Agent for use in the SSH2 Agent Forwarding scenario"/>
+      <var type="object">
+        <type full="phpseclib\Net\System_SSH_Agent" namespace="phpseclib\Net" name="System_SSH_Agent"/>
+      </var>
+      <access value="private"/>
+    </docblock>
+  </member>
+  <constructor name="__construct" start="881" end="972" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Default Constructor.">$host can either be a string, representing the host, or a stream resource.</description>
+      <param type="mixed" variable="$host"/>
+      <param type="int" variable="$port"/>
+      <param type="int" variable="$timeout"/>
+      <see value="self::login()"/>
+      <return type="object">
+        <type full="\phpseclib\Net\SSH2" namespace="\phpseclib\Net" name="SSH2"/>
+      </return>
+      <access value="public"/>
+    </docblock>
+    <parameter name="host" byreference="false" type="{unknown}"/>
+    <parameter name="port" byreference="false" type="integer" default="22"/>
+    <parameter name="timeout" byreference="false" type="integer" default="10"/>
+  </constructor>
+  <method name="setCryptoEngine" start="983" end="986" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Set Crypto Engine Mode">Possible $engine values:
+CRYPT_MODE_INTERNAL, CRYPT_MODE_MCRYPT</description>
+      <param type="int" variable="$engine"/>
+      <access value="private"/>
+    </docblock>
+    <parameter name="engine" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="_connect" start="994" end="1122" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Connect to an SSHv2 server"/>
+      <return type="object">
+        <type full="phpseclib\Net\bool" namespace="phpseclib\Net" name="bool"/>
+      </return>
+      <access value="private"/>
+    </docblock>
+    <inline>
+      <comment value="According to the SSH2 specs," line="1024"/>
+      <comment xmlns="http://xml.phpdox.net/src" value="&quot;The server MAY send other lines of data before sending the version" line="1025"/>
+      <comment xmlns="http://xml.phpdox.net/src" value="string.  Each line SHOULD be terminated by a Carriage Return and Line" line="1026"/>
+      <comment xmlns="http://xml.phpdox.net/src" value="Feed.  Such lines MUST NOT begin with &quot;SSH-&quot;, and SHOULD be encoded" line="1027"/>
+      <comment xmlns="http://xml.phpdox.net/src" value="in ISO-10646 UTF-8 [RFC3629] (language is not specified).  Clients" line="1028"/>
+      <comment xmlns="http://xml.phpdox.net/src" value="MUST be able to process such lines.&quot;" line="1029"/>
+    </inline>
+  </method>
+  <method name="_generate_identifier" start="1132" end="1158" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Generates the SSH identifier">You should overwrite this method in your own class if you want to use another identifier</description>
+      <access value="protected"/>
+      <return type="string"/>
+    </docblock>
+  </method>
+  <method name="_key_exchange" start="1166" end="1772" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Key Exchange"/>
+      <param type="string" variable="$kexinit_payload_server"/>
+      <access value="private"/>
+    </docblock>
+    <parameter name="kexinit_payload_server" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="some SSH servers have buggy implementations of some of the above algorithms" line="1286"/>
+      <comment value="skip past the message number (it should be SSH_MSG_KEXINIT)" line="1304"/>
+      <comment value="the sending of SSH2_MSG_KEXINIT could go in one of two places.  this is the second place." line="1340"/>
+      <comment value="here ends the second place." line="1372"/>
+      <comment value="we need to decide upon the symmetric encryption algorithms before we do the diffie-hellman key exchange" line="1374"/>
+      <comment value="we don't initialize any crypto-objects, yet - we do that, later. for now, we need the lengths to make the" line="1375"/>
+      <comment value="diffie-hellman key exchange as fast as possible" line="1376"/>
+      <comment value="through diffie-hellman key exchange a symmetric key is obtained" line="1391"/>
+      <comment value="Only relevant in diffie-hellman-group-exchange-sha{1,256}, otherwise empty." line="1398"/>
+      <comment value="The &quot;arcfour128&quot; algorithm is the RC4 cipher, as described in" line="1667"/>
+      <comment xmlns="http://xml.phpdox.net/src" value="[SCHNEIER], using a 128-bit key.  The first 1536 bytes of keystream" line="1668"/>
+      <comment xmlns="http://xml.phpdox.net/src" value="generated by the cipher MUST be discarded, and the first byte of the" line="1669"/>
+      <comment xmlns="http://xml.phpdox.net/src" value="first encrypted packet MUST be encrypted using the 1537th byte of" line="1670"/>
+      <comment xmlns="http://xml.phpdox.net/src" value="keystream." line="1671"/>
+      <comment xmlns="http://xml.phpdox.net/src" value="-- http://tools.ietf.org/html/rfc4345#section-4" line="1672"/>
+      <comment value="ie. $mac_algorithm == 'none'" line="1687"/>
+    </inline>
+  </method>
+  <method name="_encryption_algorithm_to_key_size" start="1781" end="1811" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Maps an encryption algorithm name to the number of key bytes."/>
+      <param description="Name of the encryption algorithm" type="string" variable="$algorithm"/>
+      <return description="Number of bytes as an integer or null for unknown" type="object">
+        <type full="phpseclib\Net\int|null" namespace="phpseclib\Net" name="int|null"/>
+      </return>
+      <access value="private"/>
+    </docblock>
+    <parameter name="algorithm" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="_encryption_algorithm_to_crypt_instance" start="1821" end="1855" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Maps an encryption algorithm name to an instance of a subclass of \phpseclib\Crypt\Base."/>
+      <param description="Name of the encryption algorithm" type="string" variable="$algorithm"/>
+      <return description="Instance of \phpseclib\Crypt\Base or null for unknown" type="mixed"/>
+      <access value="private"/>
+    </docblock>
+    <parameter name="algorithm" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="login" start="1869" end="1873" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Login">The $password parameter can be a plaintext password, a \phpseclib\Crypt\RSA object or an array</description>
+      <param type="string" variable="$username"/>
+      <param type="mixed" variable="$password"/>
+      <param type="mixed" variable="$..."/>
+      <return type="object">
+        <type full="phpseclib\Net\bool" namespace="phpseclib\Net" name="bool"/>
+      </return>
+      <see value="self::_login()"/>
+      <access value="public"/>
+    </docblock>
+    <parameter name="username" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="_login" start="1885" end="1904" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Login Helper"/>
+      <param type="string" variable="$username"/>
+      <param type="mixed" variable="$password"/>
+      <param type="mixed" variable="$..."/>
+      <return type="object">
+        <type full="phpseclib\Net\bool" namespace="phpseclib\Net" name="bool"/>
+      </return>
+      <see value="self::_login_helper()"/>
+      <access value="private"/>
+    </docblock>
+    <parameter name="username" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="_login_helper" start="1916" end="2076" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Login Helper"/>
+      <param type="string" variable="$username"/>
+      <param type="string" variable="$password"/>
+      <return type="object">
+        <type full="phpseclib\Net\bool" namespace="phpseclib\Net" name="bool"/>
+      </return>
+      <access value="private"/>
+      <internal>It might be worthwhile, at some point, to protect against <link xmlns="http://xml.phpdox.net/src" value="http://tools.ietf.org/html/rfc4251#section-9.3.9 traffic analysis"/></internal>
+    </docblock>
+    <parameter name="username" byreference="false" type="{unknown}"/>
+    <parameter name="password" byreference="false" type="{unknown}" default="" constant="null"/>
+    <inline>
+      <comment value="remove the username and password from the logged packet" line="2015"/>
+    </inline>
+  </method>
+  <method name="_keyboard_interactive_login" start="2088" end="2110" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Login via keyboard-interactive authentication">See <link xmlns="http://xml.phpdox.net/src" value="http://tools.ietf.org/html/rfc4256 RFC4256"/> for details.  This is not a full-featured keyboard-interactive authenticator.
+</description>
+      <param type="string" variable="$username"/>
+      <param type="string" variable="$password"/>
+      <return type="object">
+        <type full="phpseclib\Net\bool" namespace="phpseclib\Net" name="bool"/>
+      </return>
+      <access value="private"/>
+    </docblock>
+    <parameter name="username" byreference="false" type="{unknown}"/>
+    <parameter name="password" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="_keyboard_interactive_process" start="2119" end="2224" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Handle the keyboard-interactive requests / responses."/>
+      <param type="string" variable="$responses..."/>
+      <return type="object">
+        <type full="phpseclib\Net\bool" namespace="phpseclib\Net" name="bool"/>
+      </return>
+      <access value="private"/>
+    </docblock>
+  </method>
+  <method name="_ssh_agent_login" start="2234" end="2245" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Login with an ssh-agent provided key"/>
+      <param type="string" variable="$username"/>
+      <param type="object" variable="$agent">
+        <type full="\phpseclib\System\SSH\Agent" namespace="\phpseclib\System\SSH" name="Agent"/>
+      </param>
+      <return type="object">
+        <type full="phpseclib\Net\bool" namespace="phpseclib\Net" name="bool"/>
+      </return>
+      <access value="private"/>
+    </docblock>
+    <parameter name="username" byreference="false" type="{unknown}"/>
+    <parameter name="agent" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="_privatekey_login" start="2257" end="2349" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Login with an RSA private key"/>
+      <param type="string" variable="$username"/>
+      <param type="object" variable="$password">
+        <type full="\phpseclib\Crypt\RSA" namespace="\phpseclib\Crypt" name="RSA"/>
+      </param>
+      <return type="object">
+        <type full="phpseclib\Net\bool" namespace="phpseclib\Net" name="bool"/>
+      </return>
+      <access value="private"/>
+      <internal>It might be worthwhile, at some point, to protect against <link xmlns="http://xml.phpdox.net/src" value="http://tools.ietf.org/html/rfc4251#section-9.3.9 traffic analysis"/></internal>
+    </docblock>
+    <parameter name="username" byreference="false" type="{unknown}"/>
+    <parameter name="privatekey" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="see http://tools.ietf.org/html/rfc4253#page-15" line="2259"/>
+    </inline>
+  </method>
+  <method name="setTimeout" start="2360" end="2363" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Set Timeout">$ssh-&gt;exec('ping 127.0.0.1'); on a Linux host will never return and will run indefinitely.  setTimeout() makes it so it'll timeout.
+Setting $timeout to false or 0 will mean there is no timeout.</description>
+      <param type="mixed" variable="$timeout"/>
+      <access value="public"/>
+    </docblock>
+    <parameter name="timeout" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="getStdError" start="2370" end="2373" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Get the output from stdError"/>
+      <access value="public"/>
+    </docblock>
+  </method>
+  <method name="exec" start="2386" end="2523" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Execute Command">If $callback is set to false then \phpseclib\Net\SSH2::_get_channel_packet(self::CHANNEL_EXEC) will need to be called manually.
+In all likelihood, this is not a feature you want to be taking advantage of.</description>
+      <param type="string" variable="$command"/>
+      <param type="object" variable="$callback">
+        <type full="phpseclib\Net\Callback" namespace="phpseclib\Net" name="Callback"/>
+      </param>
+      <return type="string"/>
+      <access value="public"/>
+    </docblock>
+    <parameter name="command" byreference="false" type="{unknown}"/>
+    <parameter name="callback" byreference="false" type="{unknown}" default="" constant="null"/>
+    <inline>
+      <comment value="RFC4254 defines the (client) window size as &quot;bytes the other party can send before it must wait for the window to" line="2396"/>
+      <comment value="be adjusted&quot;.  0x7FFFFFFF is, at 2GB, the max size.  technically, it should probably be decremented, but," line="2397"/>
+      <comment value="honestly, if you're transferring more than 2GB, you probably shouldn't be using phpseclib, anyway." line="2398"/>
+      <comment value="see http://tools.ietf.org/html/rfc4254#section-5.2 for more info" line="2399"/>
+      <comment value="0x8000 is the maximum max packet size, per http://tools.ietf.org/html/rfc4253#section-6.1, although since PuTTy" line="2401"/>
+      <comment value="uses 0x4000, that's what will be used here, as well." line="2402"/>
+      <comment value="sending a pty-req SSH_MSG_CHANNEL_REQUEST message is unnecessary and, in fact, in most cases, slows things" line="2468"/>
+      <comment value="down.  the one place where it might be desirable is if you're doing something like \phpseclib\Net\SSH2::exec('ping localhost &amp;')." line="2469"/>
+      <comment value="with a pty-req SSH_MSG_CHANNEL_REQUEST, exec() will return immediately and the ping process will then" line="2470"/>
+      <comment value="then immediately terminate.  without such a request exec() will loop indefinitely.  the ping process won't end but" line="2471"/>
+      <comment value="neither will your script." line="2472"/>
+      <comment value="although, in theory, the size of SSH_MSG_CHANNEL_REQUEST could exceed the maximum packet size established by" line="2474"/>
+      <comment value="SSH_MSG_CHANNEL_OPEN_CONFIRMATION, RFC4254#section-5.1 states that the &quot;maximum packet size&quot; refers to the" line="2475"/>
+      <comment value="&quot;maximum size of an individual data packet&quot;. ie. SSH_MSG_CHANNEL_DATA.  RFC4254#section-5.2 corroborates." line="2476"/>
+    </inline>
+  </method>
+  <method name="_initShell" start="2533" end="2627" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Creates an interactive shell"/>
+      <see value="self::read()"/>
+      <see value="self::write()"/>
+      <return type="object">
+        <type full="phpseclib\Net\bool" namespace="phpseclib\Net" name="bool"/>
+      </return>
+      <access value="private"/>
+    </docblock>
+  </method>
+  <method name="_get_interactive_channel" start="2637" end="2647" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Return the channel to be used with read() / write()"/>
+      <see value="self::read()"/>
+      <see value="self::write()"/>
+      <return type="int"/>
+      <access value="public"/>
+    </docblock>
+  </method>
+  <method name="_get_open_channel" start="2655" end="2665" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Return an available open channel"/>
+      <return type="int"/>
+      <access value="public"/>
+    </docblock>
+  </method>
+  <method name="read" start="2679" end="2714" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Returns the output of an interactive shell">Returns when there's a match for $expect, which can take the form of a string literal or,
+if $mode == self::READ_REGEX, a regular expression.</description>
+      <see value="self::write()"/>
+      <param type="string" variable="$expect"/>
+      <param type="int" variable="$mode"/>
+      <return type="string"/>
+      <access value="public"/>
+    </docblock>
+    <parameter name="expect" byreference="false" type="string" default="''"/>
+    <parameter name="mode" byreference="false" type="{unknown}" default="" constant="self::READ_SIMPLE"/>
+  </method>
+  <method name="write" start="2724" end="2737" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Inputs a command into an interactive shell."/>
+      <see value="self::read()"/>
+      <param type="string" variable="$cmd"/>
+      <return type="object">
+        <type full="phpseclib\Net\bool" namespace="phpseclib\Net" name="bool"/>
+      </return>
+      <access value="public"/>
+    </docblock>
+    <parameter name="cmd" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="startSubsystem" start="2753" end="2806" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Start a subsystem.">Right now only one subsystem at a time is supported. To support multiple subsystem's stopSubsystem() could accept
+a string that contained the name of the subsystem, but at that point, only one subsystem of each type could be opened.
+To support multiple subsystem's of the same name maybe it'd be best if startSubsystem() generated a new channel id and
+returns that and then that that was passed into stopSubsystem() but that'll be saved for a future date and implemented
+if there's sufficient demand for such a feature.</description>
+      <see value="self::stopSubsystem()"/>
+      <param type="string" variable="$subsystem"/>
+      <return type="object">
+        <type full="phpseclib\Net\bool" namespace="phpseclib\Net" name="bool"/>
+      </return>
+      <access value="public"/>
+    </docblock>
+    <parameter name="subsystem" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="stopSubsystem" start="2815" end="2820" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Stops a subsystem."/>
+      <see value="self::startSubsystem()"/>
+      <return type="object">
+        <type full="phpseclib\Net\bool" namespace="phpseclib\Net" name="bool"/>
+      </return>
+      <access value="public"/>
+    </docblock>
+  </method>
+  <method name="reset" start="2829" end="2832" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Closes a channel">If read() timed out you might want to just close the channel and have it auto-restart on the next read() call</description>
+      <access value="public"/>
+    </docblock>
+  </method>
+  <method name="isTimeout" start="2841" end="2844" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Is timeout?">Did exec() or read() return because they timed out or because they encountered the end?</description>
+      <access value="public"/>
+    </docblock>
+  </method>
+  <method name="disconnect" start="2851" end="2857" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Disconnect"/>
+      <access value="public"/>
+    </docblock>
+  </method>
+  <destructor name="__destruct" start="2867" end="2870" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Destructor.">Will be called, automatically, if you're supporting just PHP5.  If you're supporting PHP4, you'll need to call
+disconnect().</description>
+      <access value="public"/>
+    </docblock>
+  </destructor>
+  <method name="isConnected" start="2878" end="2881" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Is the connection still active?"/>
+      <return type="object">
+        <type full="phpseclib\Net\bool" namespace="phpseclib\Net" name="bool"/>
+      </return>
+      <access value="public"/>
+    </docblock>
+  </method>
+  <method name="isAuthenticated" start="2889" end="2892" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Have you successfully been logged in?"/>
+      <return type="object">
+        <type full="phpseclib\Net\bool" namespace="phpseclib\Net" name="bool"/>
+      </return>
+      <access value="public"/>
+    </docblock>
+  </method>
+  <method name="_get_binary_packet" start="2903" end="2985" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Gets Binary Packets">See '6. Binary Packet Protocol' of rfc4253 for more info.</description>
+      <see value="self::_send_binary_packet()"/>
+      <return type="string"/>
+      <access value="private"/>
+    </docblock>
+    <inline>
+      <comment value="quoting &lt;http://tools.ietf.org/html/rfc4253#section-6.1&gt;," line="2930"/>
+      <comment value="&quot;implementations SHOULD check that the packet length is reasonable&quot;" line="2931"/>
+      <comment value="PuTTY uses 0x9000 as the actual max packet size and so to shall we" line="2932"/>
+      <comment value="should leave $raw empty" line="2955"/>
+      <comment value="if ($this-&gt;decompress) {" line="2969"/>
+      <comment value="$payload = gzinflate(substr($payload, 2));" line="2970"/>
+      <comment value="}" line="2971"/>
+    </inline>
+  </method>
+  <method name="_filter" start="2996" end="3112" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Filter Binary Packets">Because some binary packets need to be ignored...</description>
+      <see value="self::_get_binary_packet()"/>
+      <return type="string"/>
+      <access value="private"/>
+    </docblock>
+    <parameter name="payload" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="see http://tools.ietf.org/html/rfc4252#section-5.4; only called when the encryption has been activated and when we haven't already logged in" line="3026"/>
+      <comment value="only called when we've already logged in" line="3034"/>
+    </inline>
+  </method>
+  <method name="enableQuietMode" start="3121" end="3124" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Enable Quiet Mode">Suppress stderr from output</description>
+      <access value="public"/>
+    </docblock>
+  </method>
+  <method name="disableQuietMode" start="3133" end="3136" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Disable Quiet Mode">Show stderr in output</description>
+      <access value="public"/>
+    </docblock>
+  </method>
+  <method name="isQuietModeEnabled" start="3146" end="3149" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Returns whether Quiet Mode is enabled or not"/>
+      <see value="self::enableQuietMode()"/>
+      <see value="self::disableQuietMode()"/>
+      <access value="public"/>
+      <return type="object">
+        <type full="phpseclib\Net\bool" namespace="phpseclib\Net" name="bool"/>
+      </return>
+    </docblock>
+  </method>
+  <method name="enablePTY" start="3156" end="3159" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Enable request-pty when using exec()"/>
+      <access value="public"/>
+    </docblock>
+  </method>
+  <method name="disablePTY" start="3166" end="3169" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Disable request-pty when using exec()"/>
+      <access value="public"/>
+    </docblock>
+  </method>
+  <method name="isPTYEnabled" start="3179" end="3182" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Returns whether request-pty is enabled or not"/>
+      <see value="self::enablePTY()"/>
+      <see value="self::disablePTY()"/>
+      <access value="public"/>
+      <return type="object">
+        <type full="phpseclib\Net\bool" namespace="phpseclib\Net" name="bool"/>
+      </return>
+    </docblock>
+  </method>
+  <method name="_get_channel_packet" start="3193" end="3400" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Gets channel data">Returns the data as a string if it's available and false if not.</description>
+      <param variable="$client_channel"/>
+      <return type="mixed"/>
+      <access value="private"/>
+    </docblock>
+    <parameter name="client_channel" byreference="false" type="{unknown}"/>
+    <parameter name="skip_extended" byreference="false" type="boolean" default="false"/>
+  </method>
+  <method name="_send_binary_packet" start="3413" end="3461" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Sends Binary Packets">See '6. Binary Packet Protocol' of rfc4253 for more info.</description>
+      <param type="string" variable="$data"/>
+      <param type="string" variable="$logged"/>
+      <see value="self::_get_binary_packet()"/>
+      <return type="object">
+        <type full="phpseclib\Net\bool" namespace="phpseclib\Net" name="bool"/>
+      </return>
+      <access value="private"/>
+    </docblock>
+    <parameter name="data" byreference="false" type="{unknown}"/>
+    <parameter name="logged" byreference="false" type="{unknown}" default="" constant="null"/>
+    <inline>
+      <comment value="if ($this-&gt;compress) {" line="3421"/>
+      <comment value="// the -4 removes the checksum:" line="3422"/>
+      <comment value="// http://php.net/function.gzcompress#57710" line="3423"/>
+      <comment value="$data = substr(gzcompress($data), 0, -4);" line="3424"/>
+      <comment value="}" line="3425"/>
+      <comment value="4 (packet length) + 1 (padding length) + 4 (minimal padding amount) == 9" line="3427"/>
+      <comment value="round up to the nearest $this-&gt;encrypt_block_size" line="3429"/>
+      <comment value="subtracting strlen($data) is obvious - subtracting 5 is necessary because of packet_length and padding_length" line="3431"/>
+      <comment value="we subtract 4 from packet_length because the packet_length field isn't supposed to include itself" line="3435"/>
+    </inline>
+  </method>
+  <method name="_append_log" start="3471" end="3537" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Logs data packets">Makes sure that only the last 1MB worth of packets will be logged</description>
+      <param type="string" variable="$data"/>
+      <access value="private"/>
+    </docblock>
+    <parameter name="message_number" byreference="false" type="{unknown}"/>
+    <parameter name="message" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="remove the byte identifying the message type from all but the first two messages (ie. the identification strings)" line="3473"/>
+    </inline>
+  </method>
+  <method name="_send_channel_packet" start="3549" end="3583" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Sends channel data">Spans multiple SSH_MSG_CHANNEL_DATAs if appropriate</description>
+      <param type="int" variable="$client_channel"/>
+      <param type="string" variable="$data"/>
+      <return type="object">
+        <type full="phpseclib\Net\bool" namespace="phpseclib\Net" name="bool"/>
+      </return>
+      <access value="private"/>
+    </docblock>
+    <parameter name="client_channel" byreference="false" type="{unknown}"/>
+    <parameter name="data" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="_close_channel" start="3597" end="3621" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Closes and flushes a channel">\phpseclib\Net\SSH2 doesn't properly close most channels.  For exec() channels are normally closed by the server
+and for SFTP channels are presumably closed when the client disconnects.  This functions is intended
+for SCP more than anything.</description>
+      <param type="int" variable="$client_channel"/>
+      <param type="object" variable="$want_reply">
+        <type full="phpseclib\Net\bool" namespace="phpseclib\Net" name="bool"/>
+      </param>
+      <return type="object">
+        <type full="phpseclib\Net\bool" namespace="phpseclib\Net" name="bool"/>
+      </return>
+      <access value="private"/>
+    </docblock>
+    <parameter name="client_channel" byreference="false" type="{unknown}"/>
+    <parameter name="want_reply" byreference="false" type="boolean" default="false"/>
+    <inline>
+      <comment value="see http://tools.ietf.org/html/rfc4254#section-5.3" line="3599"/>
+    </inline>
+  </method>
+  <method name="_disconnect" start="3630" end="3639" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Disconnect"/>
+      <param type="int" variable="$reason"/>
+      <return type="object">
+        <type full="phpseclib\Net\bool" namespace="phpseclib\Net" name="bool"/>
+      </return>
+      <access value="private"/>
+    </docblock>
+    <parameter name="reason" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="_string_shift" start="3651" end="3656" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="String Shift">Inspired by array_shift</description>
+      <param type="string" variable="$string"/>
+      <param type="int" variable="$index"/>
+      <return type="string"/>
+      <access value="private"/>
+    </docblock>
+    <parameter name="string" byreference="true" type="{unknown}"/>
+    <parameter name="index" byreference="false" type="integer" default="1"/>
+  </method>
+  <method name="_define_array" start="3668" end="3680" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Define Array">Takes any number of arrays whose indices are integers and whose values are strings and defines a bunch of
+named constants from it, using the value as the name of the constant and the index as the value of the constant.
+If any of the constants that would be defined already exists, none of the constants will be defined.</description>
+      <param type="array" variable="$array"/>
+      <access value="private"/>
+    </docblock>
+  </method>
+  <method name="getLog" start="3690" end="3706" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Returns a log of the packets that have been sent and received.">Returns a string if NET_SSH2_LOGGING == self::LOG_COMPLEX, an array if NET_SSH2_LOGGING == self::LOG_SIMPLE and false if !defined('NET_SSH2_LOGGING')</description>
+      <access value="public"/>
+      <return type="object">
+        <type full="phpseclib\Net\array|false|string" namespace="phpseclib\Net" name="array|false|string"/>
+      </return>
+    </docblock>
+  </method>
+  <method name="_format_log" start="3716" end="3740" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Formats a log for printing"/>
+      <param type="array" variable="$message_log"/>
+      <param type="array" variable="$message_number_log"/>
+      <access value="private"/>
+      <return type="string"/>
+    </docblock>
+    <parameter name="message_log" byreference="false" type="{unknown}"/>
+    <parameter name="message_number_log" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="_format_log_helper" start="3751" end="3754" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Helper function for _format_log">For use with preg_replace_callback()</description>
+      <param type="array" variable="$matches"/>
+      <access value="private"/>
+      <return type="string"/>
+    </docblock>
+    <parameter name="matches" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="_on_channel_open" start="3765" end="3770" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Helper function for agent-&gt;_on_channel_open()">Used when channels are created to inform agent
+of said channel opening. Must be called after
+channel open confirmation received</description>
+      <access value="private"/>
+    </docblock>
+  </method>
+  <method name="_array_intersect_first" start="3781" end="3789" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Returns the first value of the intersection of two arrays or false if the intersection is empty. The order is defined by the first parameter."/>
+      <param type="array" variable="$array1"/>
+      <param type="array" variable="$array2"/>
+      <return description="False if intersection is empty, else intersected value." type="mixed"/>
+      <access value="private"/>
+    </docblock>
+    <parameter name="array1" byreference="false" type="{unknown}"/>
+    <parameter name="array2" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="getErrors" start="3797" end="3800" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Returns all errors"/>
+      <return type="array" of="object">
+        <type full="phpseclib\Net\string" namespace="phpseclib\Net" name="string"/>
+      </return>
+      <access value="public"/>
+    </docblock>
+  </method>
+  <method name="getLastError" start="3808" end="3815" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Returns the last error"/>
+      <return type="string"/>
+      <access value="public"/>
+    </docblock>
+  </method>
+  <method name="getServerIdentification" start="3823" end="3828" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Return the server identification."/>
+      <return type="string"/>
+      <access value="public"/>
+    </docblock>
+  </method>
+  <method name="getKexAlgorithms" start="3836" end="3841" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Return a list of the key exchange algorithms the server supports."/>
+      <return type="array"/>
+      <access value="public"/>
+    </docblock>
+  </method>
+  <method name="getServerHostKeyAlgorithms" start="3849" end="3854" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Return a list of the host key (public key) algorithms the server supports."/>
+      <return type="array"/>
+      <access value="public"/>
+    </docblock>
+  </method>
+  <method name="getEncryptionAlgorithmsClient2Server" start="3862" end="3867" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Return a list of the (symmetric key) encryption algorithms the server supports, when receiving stuff from the client."/>
+      <return type="array"/>
+      <access value="public"/>
+    </docblock>
+  </method>
+  <method name="getEncryptionAlgorithmsServer2Client" start="3875" end="3880" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Return a list of the (symmetric key) encryption algorithms the server supports, when sending stuff to the client."/>
+      <return type="array"/>
+      <access value="public"/>
+    </docblock>
+  </method>
+  <method name="getMACAlgorithmsClient2Server" start="3888" end="3893" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Return a list of the MAC algorithms the server supports, when receiving stuff from the client."/>
+      <return type="array"/>
+      <access value="public"/>
+    </docblock>
+  </method>
+  <method name="getMACAlgorithmsServer2Client" start="3901" end="3906" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Return a list of the MAC algorithms the server supports, when sending stuff to the client."/>
+      <return type="array"/>
+      <access value="public"/>
+    </docblock>
+  </method>
+  <method name="getCompressionAlgorithmsClient2Server" start="3914" end="3919" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Return a list of the compression algorithms the server supports, when receiving stuff from the client."/>
+      <return type="array"/>
+      <access value="public"/>
+    </docblock>
+  </method>
+  <method name="getCompressionAlgorithmsServer2Client" start="3927" end="3932" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Return a list of the compression algorithms the server supports, when sending stuff to the client."/>
+      <return type="array"/>
+      <access value="public"/>
+    </docblock>
+  </method>
+  <method name="getLanguagesServer2Client" start="3940" end="3945" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Return a list of the languages the server supports, when sending stuff to the client."/>
+      <return type="array"/>
+      <access value="public"/>
+    </docblock>
+  </method>
+  <method name="getLanguagesClient2Server" start="3953" end="3958" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Return a list of the languages the server supports, when receiving stuff from the client."/>
+      <return type="array"/>
+      <access value="public"/>
+    </docblock>
+  </method>
+  <method name="getBannerMessage" start="3969" end="3972" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Returns the banner message.">Quoting from the RFC, "in some jurisdictions, sending a warning message before
+authentication may be relevant for getting legal protection."</description>
+      <return type="string"/>
+      <access value="public"/>
+    </docblock>
+  </method>
+  <method name="getServerPublicHostKey" start="3983" end="4116" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Returns the server public host key.">Caching this the first time you connect to a server and checking the result on subsequent connections
+is recommended.  Returns false if the server signature is not signed correctly with the public host key.</description>
+      <return type="mixed"/>
+      <access value="public"/>
+    </docblock>
+  </method>
+  <method name="getExitStatus" start="4124" end="4130" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Returns the exit status of an SSH command or false."/>
+      <return type="object">
+        <type full="phpseclib\Net\false|int" namespace="phpseclib\Net" name="false|int"/>
+      </return>
+      <access value="public"/>
+    </docblock>
+  </method>
+  <method name="getWindowColumns" start="4138" end="4141" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Returns the number of columns for the terminal window size."/>
+      <return type="int"/>
+      <access value="public"/>
+    </docblock>
+  </method>
+  <method name="getWindowRows" start="4149" end="4152" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Returns the number of rows for the terminal window size."/>
+      <return type="int"/>
+      <access value="public"/>
+    </docblock>
+  </method>
+  <method name="setWindowColumns" start="4160" end="4163" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Sets the number of columns for the terminal window size."/>
+      <param type="int" variable="$value"/>
+      <access value="public"/>
+    </docblock>
+    <parameter name="value" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="setWindowRows" start="4171" end="4174" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Sets the number of rows for the terminal window size."/>
+      <param type="int" variable="$value"/>
+      <access value="public"/>
+    </docblock>
+    <parameter name="value" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="setWindowSize" start="4183" end="4187" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Sets the number of columns and rows for the terminal window size."/>
+      <param type="int" variable="$columns"/>
+      <param type="int" variable="$rows"/>
+      <access value="public"/>
+    </docblock>
+    <parameter name="columns" byreference="false" type="integer" default="80"/>
+    <parameter name="rows" byreference="false" type="integer" default="24"/>
+  </method>
+</class>

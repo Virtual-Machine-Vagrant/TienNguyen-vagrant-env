@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="spec\PhpSpec\Formatter\Presenter\Exception\HtmlPhpSpecExceptionPresenterSpec" namespace="spec\PhpSpec\Formatter\Presenter\Exception" name="HtmlPhpSpecExceptionPresenterSpec" abstract="false" final="false" start="8" end="14">
+  <file path="/home/web/example/src/freegame_developer/vendor/phpspec/phpspec/spec/PhpSpec/Formatter/Presenter/Exception" file="HtmlPhpSpecExceptionPresenterSpec.php" realpath="/home/web/example/src/freegame_developer/vendor/phpspec/phpspec/spec/PhpSpec/Formatter/Presenter/Exception/HtmlPhpSpecExceptionPresenterSpec.php" size="343" time="2016-01-01T10:17:54+00:00" unixtime="1451643474" sha1="62b28fc53d2f991cb4c2cd162c946ee59d425cbb" relative="freegame_developer/vendor/phpspec/phpspec/spec/PhpSpec/Formatter/Presenter/Exception/HtmlPhpSpecExceptionPresenterSpec.php"/>
+  <extends full="PhpSpec\ObjectBehavior" namespace="PhpSpec" name="ObjectBehavior"/>
+  <method name="it_is_a_phpspec_exception_presenter" start="10" end="13" abstract="false" final="false" static="false" visibility="public"/>
+</class>

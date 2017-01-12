@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="Illuminate\Html\HtmlServiceProvider" namespace="Illuminate\Html" name="HtmlServiceProvider" abstract="false" final="false" start="5" end="67">
+  <file path="/home/web/example/src/freegame_developer/vendor/illuminate/html" file="HtmlServiceProvider.php" realpath="/home/web/example/src/freegame_developer/vendor/illuminate/html/HtmlServiceProvider.php" size="1216" time="2015-01-01T16:31:18+00:00" unixtime="1420129878" sha1="78094405f14fae656288ecfabfcd256e56c54946" relative="freegame_developer/vendor/illuminate/html/HtmlServiceProvider.php"/>
+  <extends full="Illuminate\Support\ServiceProvider" namespace="Illuminate\Support" name="ServiceProvider"/>
+  <member name="defer" type="boolean" default="true" visibility="protected" static="false" line="12">
+    <docblock>
+      <description compact="Indicates if loading of the provider is deferred."/>
+      <var type="object">
+        <type full="Illuminate\Html\bool" namespace="Illuminate\Html" name="bool"/>
+      </var>
+    </docblock>
+  </member>
+  <method name="register" start="19" end="27" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Register the service provider."/>
+      <return type="object">
+        <type full="Illuminate\Html\void" namespace="Illuminate\Html" name="void"/>
+      </return>
+    </docblock>
+  </method>
+  <method name="registerHtmlBuilder" start="34" end="40" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Register the HTML builder instance."/>
+      <return type="object">
+        <type full="Illuminate\Html\void" namespace="Illuminate\Html" name="void"/>
+      </return>
+    </docblock>
+  </method>
+  <method name="registerFormBuilder" start="47" end="55" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Register the form builder instance."/>
+      <return type="object">
+        <type full="Illuminate\Html\void" namespace="Illuminate\Html" name="void"/>
+      </return>
+    </docblock>
+  </method>
+  <method name="provides" start="62" end="65" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Get the services provided by the provider."/>
+      <return type="array"/>
+    </docblock>
+  </method>
+</class>

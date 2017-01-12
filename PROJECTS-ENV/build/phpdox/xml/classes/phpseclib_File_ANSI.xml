@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="phpseclib\File\ANSI" namespace="phpseclib\File" name="ANSI" abstract="false" final="false" start="30" end="574">
+  <file path="/home/web/example/src/freegame_developer/vendor/phpseclib/phpseclib/phpseclib/File" file="ANSI.php" realpath="/home/web/example/src/freegame_developer/vendor/phpseclib/phpseclib/phpseclib/File/ANSI.php" size="20123" time="2016-10-04T00:57:04+00:00" unixtime="1475542624" sha1="41006347d6dedf2897bca182725881e965906433" relative="freegame_developer/vendor/phpseclib/phpseclib/phpseclib/File/ANSI.php"/>
+  <docblock>
+    <description compact="Pure-PHP ANSI Decoder"/>
+    <package value="ANSI"/>
+    <author value="Jim Wigginton &lt;terrafrost@php.net&gt;"/>
+    <access value="public"/>
+  </docblock>
+  <member name="max_x" visibility="public" static="false" line="38">
+    <docblock>
+      <description compact="Max Width"/>
+      <var type="int"/>
+      <access value="private"/>
+    </docblock>
+  </member>
+  <member name="max_y" visibility="public" static="false" line="46">
+    <docblock>
+      <description compact="Max Height"/>
+      <var type="int"/>
+      <access value="private"/>
+    </docblock>
+  </member>
+  <member name="max_history" visibility="public" static="false" line="54">
+    <docblock>
+      <description compact="Max History"/>
+      <var type="int"/>
+      <access value="private"/>
+    </docblock>
+  </member>
+  <member name="history" visibility="public" static="false" line="62">
+    <docblock>
+      <description compact="History"/>
+      <var type="array"/>
+      <access value="private"/>
+    </docblock>
+  </member>
+  <member name="history_attrs" visibility="public" static="false" line="70">
+    <docblock>
+      <description compact="History Attributes"/>
+      <var type="array"/>
+      <access value="private"/>
+    </docblock>
+  </member>
+  <member name="x" visibility="public" static="false" line="78">
+    <docblock>
+      <description compact="Current Column"/>
+      <var type="int"/>
+      <access value="private"/>
+    </docblock>
+  </member>
+  <member name="y" visibility="public" static="false" line="86">
+    <docblock>
+      <description compact="Current Row"/>
+      <var type="int"/>
+      <access value="private"/>
+    </docblock>
+  </member>
+  <member name="old_x" visibility="public" static="false" line="94">
+    <docblock>
+      <description compact="Old Column"/>
+      <var type="int"/>
+      <access value="private"/>
+    </docblock>
+  </member>
+  <member name="old_y" visibility="public" static="false" line="102">
+    <docblock>
+      <description compact="Old Row"/>
+      <var type="int"/>
+      <access value="private"/>
+    </docblock>
+  </member>
+  <member name="base_attr_cell" visibility="public" static="false" line="110">
+    <docblock>
+      <description compact="An empty attribute cell"/>
+      <var type="object"/>
+      <access value="private"/>
+    </docblock>
+  </member>
+  <member name="attr_cell" visibility="public" static="false" line="118">
+    <docblock>
+      <description compact="The current attribute cell"/>
+      <var type="object"/>
+      <access value="private"/>
+    </docblock>
+  </member>
+  <member name="attr_row" visibility="public" static="false" line="126">
+    <docblock>
+      <description compact="An empty attribute row"/>
+      <var type="array"/>
+      <access value="private"/>
+    </docblock>
+  </member>
+  <member name="screen" visibility="public" static="false" line="134">
+    <docblock>
+      <description compact="The current screen text"/>
+      <var type="array"/>
+      <access value="private"/>
+    </docblock>
+  </member>
+  <member name="attrs" visibility="public" static="false" line="142">
+    <docblock>
+      <description compact="The current screen attributes"/>
+      <var type="array"/>
+      <access value="private"/>
+    </docblock>
+  </member>
+  <member name="ansi" visibility="public" static="false" line="150">
+    <docblock>
+      <description compact="Current ANSI code"/>
+      <var type="string"/>
+      <access value="private"/>
+    </docblock>
+  </member>
+  <member name="tokenization" visibility="public" static="false" line="158">
+    <docblock>
+      <description compact="Tokenization"/>
+      <var type="array"/>
+      <access value="private"/>
+    </docblock>
+  </member>
+  <constructor name="__construct" start="166" end="180" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Default Constructor."/>
+      <return type="object">
+        <type full="\phpseclib\File\ANSI" namespace="\phpseclib\File" name="ANSI"/>
+      </return>
+      <access value="public"/>
+    </docblock>
+  </constructor>
+  <method name="setDimensions" start="191" end="201" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Set terminal width and height">Resets the screen as well</description>
+      <param type="int" variable="$x"/>
+      <param type="int" variable="$y"/>
+      <access value="public"/>
+    </docblock>
+    <parameter name="x" byreference="false" type="{unknown}"/>
+    <parameter name="y" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="setHistory" start="210" end="213" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Set the number of lines that should be logged past the terminal height"/>
+      <param type="int" variable="$x"/>
+      <param type="int" variable="$y"/>
+      <access value="public"/>
+    </docblock>
+    <parameter name="history" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="loadString" start="221" end="225" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Load a string"/>
+      <param type="string" variable="$source"/>
+      <access value="public"/>
+    </docblock>
+    <parameter name="source" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="appendString" start="233" end="425" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Appdend a string"/>
+      <param type="string" variable="$source"/>
+      <access value="public"/>
+    </docblock>
+    <parameter name="source" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="_newLine" start="434" end="455" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Add a new line">Also update the $this-&gt;screen and $this-&gt;history buffers</description>
+      <access value="private"/>
+    </docblock>
+    <inline>
+      <comment value="if ($this-&gt;y &lt; $this-&gt;max_y) {" line="436"/>
+      <comment value="$this-&gt;y++;" line="437"/>
+      <comment value="}" line="438"/>
+    </inline>
+  </method>
+  <method name="_processCoordinate" start="463" end="512" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Returns the current coordinate without preformating"/>
+      <access value="private"/>
+      <return type="string"/>
+    </docblock>
+    <parameter name="last_attr" byreference="false" type="{unknown}"/>
+    <parameter name="cur_attr" byreference="false" type="{unknown}"/>
+    <parameter name="char" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="_getScreen" start="520" end="536" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Returns the current screen without preformating"/>
+      <access value="private"/>
+      <return type="string"/>
+    </docblock>
+    <inline>
+      <comment value="close any remaining open tags" line="533"/>
+    </inline>
+  </method>
+  <method name="getScreen" start="544" end="547" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Returns the current screen"/>
+      <access value="public"/>
+      <return type="string"/>
+    </docblock>
+  </method>
+  <method name="getHistory" start="555" end="573" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Returns the current screen and the x previous lines"/>
+      <access value="public"/>
+      <return type="string"/>
+    </docblock>
+  </method>
+</class>

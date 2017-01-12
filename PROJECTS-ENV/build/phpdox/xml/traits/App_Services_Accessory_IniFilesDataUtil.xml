@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<trait xmlns="http://xml.phpdox.net/src" full="App\Services\Accessory\IniFilesDataUtil" namespace="App\Services\Accessory" name="IniFilesDataUtil" abstract="false" final="false" start="6" end="103">
+  <file path="/home/web/example/src/freegame_developer/app/Services/Accessory" file="IniFilesDataUtil.php" realpath="/home/web/example/src/freegame_developer/app/Services/Accessory/IniFilesDataUtil.php" size="2851" time="2016-10-31T07:00:31+00:00" unixtime="1477897231" sha1="9958bb72356e81c742700de325fd722ff056725f" relative="freegame_developer/app/Services/Accessory/IniFilesDataUtil.php"/>
+  <method name="iniFilesEncode" start="14" end="17" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Encode for IniFiles"/>
+      <param type="string" variable="$data"/>
+      <return type="string"/>
+    </docblock>
+    <parameter name="data" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="iniFilesDecode" start="24" end="27" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Decode for IniFiles"/>
+      <param type="string" variable="$data"/>
+      <return type="string"/>
+    </docblock>
+    <parameter name="data" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="iniFilesCreateRecord" start="36" end="50" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="IniFiles create new record"/>
+      <param type="array" variable="$currentRecordList"/>
+      <param type="array" variable="$newRecord"/>
+      <param type="integer" variable="$no"/>
+      <return type="array"/>
+    </docblock>
+    <parameter name="currentRecordList" byreference="false" type="{unknown}"/>
+    <parameter name="newRecord" byreference="false" type="{unknown}"/>
+    <parameter name="no" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="iniFilesDeleteRecord" start="58" end="69" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="IniFiles delete one record"/>
+      <param type="array" variable="$currentRecordList"/>
+      <param type="integer" variable="$no"/>
+      <return type="array"/>
+    </docblock>
+    <parameter name="currentRecordList" byreference="false" type="{unknown}"/>
+    <parameter name="no" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="iniFilesSortList" start="77" end="102" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="IniFiles delete one record"/>
+      <param type="array" variable="$currentRecordList"/>
+      <param type="integer" variable="$no"/>
+      <return type="array"/>
+    </docblock>
+    <parameter name="currentRecordList" byreference="false" type="{unknown}"/>
+    <parameter name="sortList" byreference="false" type="{unknown}"/>
+    <parameter name="expired" byreference="false" type="boolean" default="true"/>
+  </method>
+</trait>

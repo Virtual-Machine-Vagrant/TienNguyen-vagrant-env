@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="App\Services\CbtService" namespace="App\Services" name="CbtService" abstract="false" final="false" start="8" end="320">
+  <file path="/home/web/example/src/freegame_developer/app/Services" file="CbtService.php" realpath="/home/web/example/src/freegame_developer/app/Services/CbtService.php" size="9712" time="2016-12-02T07:23:20+00:00" unixtime="1480663400" sha1="0f481574afba5bb6e34179e8ff7b2bcf45f9297a" relative="freegame_developer/app/Services/CbtService.php"/>
+  <extends full="App\Services\CustomService" namespace="App\Services" name="CustomService"/>
+  <member name="user" visibility="protected" static="false" line="10"/>
+  <constructor name="__construct" start="12" end="15" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="user" byreference="false" type="object">
+      <type full="App\Models\NetgameCstool\User" namespace="App\Models\NetgameCstool" name="User"/>
+    </parameter>
+  </constructor>
+  <method name="getList" start="23" end="45" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="gameId" byreference="false" type="{unknown}"/>
+    <parameter name="condition" byreference="false" type="{unknown}"/>
+    <parameter name="isDownload" byreference="false" type="boolean" default="false"/>
+  </method>
+  <method name="getData" start="53" end="62" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Get data by user_id"/>
+      <param type="integer" variable="$gameId"/>
+      <param type="integer" variable="$userId"/>
+      <return type="array"/>
+    </docblock>
+    <parameter name="gameId" byreference="false" type="{unknown}"/>
+    <parameter name="userId" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="update" start="70" end="81" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Update user"/>
+      <param type="integer" variable="$gameId"/>
+      <param type="array" variable="$condition"/>
+      <return type="boolean"/>
+    </docblock>
+    <parameter name="gameId" byreference="false" type="{unknown}"/>
+    <parameter name="condition" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="createFromUpload" start="89" end="107" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Create form upload csv file"/>
+      <param type="array" variable="$gameData"/>
+      <param type="object" variable="$request">
+        <type full="App\Services\ReleaseUserRequest" namespace="App\Services" name="ReleaseUserRequest"/>
+      </param>
+      <return type="boolean"/>
+    </docblock>
+    <parameter name="gameData" byreference="false" type="{unknown}"/>
+    <parameter name="request" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="uploadCsv" start="114" end="122" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Upload csv file"/>
+      <param type="object" variable="$request">
+        <type full="App\Services\CbtRequest" namespace="App\Services" name="CbtRequest"/>
+      </param>
+      <return type="string"/>
+    </docblock>
+    <parameter name="request" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="readUploadFile" start="130" end="134" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Handle upload service"/>
+      <param type="array" variable="$gameData"/>
+      <param type="object" variable="$request">
+        <type full="App\Services\CbtRequest" namespace="App\Services" name="CbtRequest"/>
+      </param>
+      <return type="array"/>
+    </docblock>
+    <parameter name="gameData" byreference="false" type="{unknown}"/>
+    <parameter name="request" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="readDataUploadFile" start="142" end="169" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Read uploaded data"/>
+      <param type="object" variable="$request">
+        <type full="App\Services\CbtRequest" namespace="App\Services" name="CbtRequest"/>
+      </param>
+      <param type="string" variable="$fileName"/>
+      <return type="object">
+        <type full="App\Services\Array" namespace="App\Services" name="Array"/>
+      </return>
+    </docblock>
+    <parameter name="request" byreference="false" type="{unknown}"/>
+    <parameter name="fileName" byreference="false" type="string" default="''"/>
+  </method>
+  <method name="checkUploadFile" start="178" end="220" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="check upload file is validate"/>
+      <param type="array" variable="$gameData"/>
+      <param type="object" variable="$request">
+        <type full="App\Services\CbtRequest" namespace="App\Services" name="CbtRequest"/>
+      </param>
+      <param type="array" variable="$uploadData"/>
+      <return type="array"/>
+    </docblock>
+    <parameter name="gameData" byreference="false" type="{unknown}"/>
+    <parameter name="request" byreference="false" type="{unknown}"/>
+    <parameter name="uploadData" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="checkErrors" start="232" end="252" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Check data in line errors"/>
+      <param type="integer" variable="$line"/>
+      <param type="array" variable="$itemData"/>
+      <param type="array" variable="$rules"/>
+      <param type="array" variable="$attribute"/>
+      <param type="array" variable="$messages"/>
+      <param type="array" variable="$listUsers"/>
+      <return type="array"/>
+    </docblock>
+    <parameter name="line" byreference="false" type="{unknown}"/>
+    <parameter name="itemData" byreference="false" type="{unknown}"/>
+    <parameter name="rules" byreference="false" type="{unknown}"/>
+    <parameter name="attribute" byreference="false" type="{unknown}"/>
+    <parameter name="messages" byreference="false" type="{unknown}"/>
+    <parameter name="listUsers" byreference="true" type="{unknown}"/>
+  </method>
+  <method name="getFormData" start="258" end="261" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Get form data"/>
+      <return type="array"/>
+    </docblock>
+  </method>
+  <method name="getSearchConditions" start="269" end="299" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Get search conditions"/>
+      <param type="array" variable="$condition"/>
+      <param type="boolean" variable="$pagination"/>
+      <return type="array"/>
+    </docblock>
+    <parameter name="condition" byreference="false" type="{unknown}"/>
+    <parameter name="pagination" byreference="false" type="boolean" default="true"/>
+    <inline>
+      <comment value="Condition query" line="272"/>
+      <comment value="Pagination" line="289"/>
+    </inline>
+  </method>
+  <method name="requestUrl" start="306" end="319" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Get search param from url"/>
+      <param type="object" variable="$request">
+        <type full="App\Services\request" namespace="App\Services" name="request"/>
+      </param>
+      <return type="array"/>
+    </docblock>
+    <parameter name="request" byreference="false" type="{unknown}"/>
+  </method>
+</class>

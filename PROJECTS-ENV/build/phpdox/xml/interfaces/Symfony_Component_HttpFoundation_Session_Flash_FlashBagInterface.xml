@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface xmlns="http://xml.phpdox.net/src" full="Symfony\Component\HttpFoundation\Session\Flash\FlashBagInterface" namespace="Symfony\Component\HttpFoundation\Session\Flash" name="FlashBagInterface" abstract="false" final="false" start="21" end="95">
+  <file path="/home/web/example/src/freegame_developer/vendor/symfony/http-foundation/Session/Flash" file="FlashBagInterface.php" realpath="/home/web/example/src/freegame_developer/vendor/symfony/http-foundation/Session/Flash/FlashBagInterface.php" size="1986" time="2016-10-24T14:36:35+00:00" unixtime="1477319795" sha1="52bde2c117d5b5ad1fe94150aa2f008a016c3153" relative="freegame_developer/vendor/symfony/http-foundation/Session/Flash/FlashBagInterface.php"/>
+  <docblock>
+    <description compact="FlashBagInterface."/>
+    <author value="Drak &lt;drak@zikula.org&gt;"/>
+  </docblock>
+  <extends full="Symfony\Component\HttpFoundation\Session\SessionBagInterface" namespace="Symfony\Component\HttpFoundation\Session" name="SessionBagInterface"/>
+  <method name="add" start="29" end="29" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Adds a flash message for type."/>
+      <param type="string" variable="$type"/>
+      <param type="string" variable="$message"/>
+    </docblock>
+    <parameter name="type" byreference="false" type="{unknown}"/>
+    <parameter name="message" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="set" start="37" end="37" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Registers a message for a given type."/>
+      <param type="string" variable="$type"/>
+      <param type="object" variable="$message">
+        <type full="Symfony\Component\HttpFoundation\Session\Flash\string|array" namespace="Symfony\Component\HttpFoundation\Session\Flash" name="string|array"/>
+      </param>
+    </docblock>
+    <parameter name="type" byreference="false" type="{unknown}"/>
+    <parameter name="message" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="peek" start="47" end="47" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Gets flash messages for a given type."/>
+      <param description="Message category type" type="string" variable="$type"/>
+      <param description="Default value if $type does not exist" type="array" variable="$default"/>
+      <return type="array"/>
+    </docblock>
+    <parameter name="type" byreference="false" type="{unknown}"/>
+    <parameter name="default" byreference="false" type="array" default=""/>
+  </method>
+  <method name="peekAll" start="54" end="54" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Gets all flash messages."/>
+      <return type="array"/>
+    </docblock>
+  </method>
+  <method name="get" start="64" end="64" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Gets and clears flash from the stack."/>
+      <param type="string" variable="$type"/>
+      <param description="Default value if $type does not exist" type="array" variable="$default"/>
+      <return type="array"/>
+    </docblock>
+    <parameter name="type" byreference="false" type="{unknown}"/>
+    <parameter name="default" byreference="false" type="array" default=""/>
+  </method>
+  <method name="all" start="71" end="71" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Gets and clears flashes from the stack."/>
+      <return type="array"/>
+    </docblock>
+  </method>
+  <method name="setAll" start="78" end="78" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Sets all flash messages."/>
+      <param type="array" variable="$messages"/>
+    </docblock>
+    <parameter name="messages" byreference="false" type="array"/>
+  </method>
+  <method name="has" start="87" end="87" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Has flash messages for a given type?"/>
+      <param type="string" variable="$type"/>
+      <return type="object">
+        <type full="Symfony\Component\HttpFoundation\Session\Flash\bool" namespace="Symfony\Component\HttpFoundation\Session\Flash" name="bool"/>
+      </return>
+    </docblock>
+    <parameter name="type" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="keys" start="94" end="94" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Returns a list of all defined types."/>
+      <return type="array"/>
+    </docblock>
+  </method>
+</interface>

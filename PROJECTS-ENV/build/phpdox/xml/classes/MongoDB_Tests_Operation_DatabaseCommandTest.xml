@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="MongoDB\Tests\Operation\DatabaseCommandTest" namespace="MongoDB\Tests\Operation" name="DatabaseCommandTest" abstract="false" final="false" start="7" end="41">
+  <file path="/home/web/example/src/freegame_developer/vendor/mongodb/mongodb/tests/Operation" file="DatabaseCommandTest.php" realpath="/home/web/example/src/freegame_developer/vendor/mongodb/mongodb/tests/Operation/DatabaseCommandTest.php" size="1089" time="2016-09-23T19:38:29+00:00" unixtime="1474659509" sha1="9c87af6451f64f6b9a91c73f6bad26d5d9dee8e7" relative="freegame_developer/vendor/mongodb/mongodb/tests/Operation/DatabaseCommandTest.php"/>
+  <extends full="MongoDB\Tests\Operation\TestCase" namespace="MongoDB\Tests\Operation" name="TestCase"/>
+  <method name="testConstructorCommandArgumentTypeCheck" start="13" end="16" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <expectedexception value="MongoDB\Exception\InvalidArgumentException"/>
+      <dataprovider value="provideInvalidDocumentValues"/>
+    </docblock>
+    <parameter name="command" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="testConstructorOptionTypeChecks" start="22" end="25" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <expectedexception value="MongoDB\Exception\InvalidArgumentException"/>
+      <dataprovider value="provideInvalidConstructorOptions"/>
+    </docblock>
+    <parameter name="options" byreference="false" type="array"/>
+  </method>
+  <method name="provideInvalidConstructorOptions" start="27" end="40" abstract="false" final="false" static="false" visibility="public"/>
+</class>

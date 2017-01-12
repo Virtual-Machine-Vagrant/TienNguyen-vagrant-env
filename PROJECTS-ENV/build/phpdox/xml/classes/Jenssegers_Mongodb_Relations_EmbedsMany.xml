@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="Jenssegers\Mongodb\Relations\EmbedsMany" namespace="Jenssegers\Mongodb\Relations" name="EmbedsMany" abstract="false" final="false" start="8" end="343">
+  <file path="/home/web/example/src/freegame_developer/vendor/jenssegers/mongodb/src/Jenssegers/Mongodb/Relations" file="EmbedsMany.php" realpath="/home/web/example/src/freegame_developer/vendor/jenssegers/mongodb/src/Jenssegers/Mongodb/Relations/EmbedsMany.php" size="9053" time="2016-10-07T08:39:24+00:00" unixtime="1475829564" sha1="c43e3b21668884ad5e384396f7c0857319e1c754" relative="freegame_developer/vendor/jenssegers/mongodb/src/Jenssegers/Mongodb/Relations/EmbedsMany.php"/>
+  <extends full="Jenssegers\Mongodb\Relations\EmbedsOneOrMany" namespace="Jenssegers\Mongodb\Relations" name="EmbedsOneOrMany"/>
+  <method name="initRelation" start="16" end="23" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Initialize the relation on a set of models."/>
+      <param type="array" variable="$models"/>
+      <param type="string" variable="$relation"/>
+    </docblock>
+    <parameter name="models" byreference="false" type="array"/>
+    <parameter name="relation" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="getResults" start="30" end="33" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Get the results of the relationship."/>
+      <return type="object">
+        <type full="\Illuminate\Database\Eloquent\Collection" namespace="\Illuminate\Database\Eloquent" name="Collection"/>
+      </return>
+    </docblock>
+  </method>
+  <method name="performInsert" start="41" end="64" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Save a new model and attach it to the parent model."/>
+      <param type="object" variable="$model">
+        <type full="\Illuminate\Database\Eloquent\Model" namespace="\Illuminate\Database\Eloquent" name="Model"/>
+      </param>
+      <return type="object">
+        <type full="\Illuminate\Database\Eloquent\Model" namespace="\Illuminate\Database\Eloquent" name="Model"/>
+      </return>
+    </docblock>
+    <parameter name="model" byreference="false" type="object">
+      <type full="Illuminate\Database\Eloquent\Model" namespace="Illuminate\Database\Eloquent" name="Model"/>
+    </parameter>
+    <inline>
+      <comment value="Generate a new key if needed." line="43"/>
+      <comment value="For deeply nested documents, let the parent handle the changes." line="48"/>
+      <comment value="Push the new model to the database." line="55"/>
+      <comment value="Attach the model to its parent." line="58"/>
+    </inline>
+  </method>
+  <method name="performUpdate" start="72" end="97" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Save an existing model and attach it to the parent model."/>
+      <param type="object" variable="$model">
+        <type full="\Illuminate\Database\Eloquent\Model" namespace="\Illuminate\Database\Eloquent" name="Model"/>
+      </param>
+      <return type="object">
+        <type full="Jenssegers\Mongodb\Relations\Model|bool" namespace="Jenssegers\Mongodb\Relations" name="Model|bool"/>
+      </return>
+    </docblock>
+    <parameter name="model" byreference="false" type="object">
+      <type full="Illuminate\Database\Eloquent\Model" namespace="Illuminate\Database\Eloquent" name="Model"/>
+    </parameter>
+    <inline>
+      <comment value="For deeply nested documents, let the parent handle the changes." line="74"/>
+      <comment value="Get the correct foreign key value." line="81"/>
+      <comment value="Use array dot notation for better update behavior." line="84"/>
+      <comment value="Update document in database." line="87"/>
+      <comment value="Attach the model to its parent." line="91"/>
+    </inline>
+  </method>
+  <method name="performDelete" start="105" end="124" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Delete an existing model and detach it from the parent model."/>
+      <param type="object" variable="$model">
+        <type full="Illuminate\Database\Eloquent\Model" namespace="Illuminate\Database\Eloquent" name="Model"/>
+      </param>
+      <return type="int"/>
+    </docblock>
+    <parameter name="model" byreference="false" type="object">
+      <type full="Illuminate\Database\Eloquent\Model" namespace="Illuminate\Database\Eloquent" name="Model"/>
+    </parameter>
+    <inline>
+      <comment value="For deeply nested documents, let the parent handle the changes." line="107"/>
+      <comment value="Get the correct foreign key value." line="114"/>
+    </inline>
+  </method>
+  <method name="associate" start="132" end="139" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Associate the model instance to the given parent, without saving it to the database."/>
+      <param type="object" variable="$model">
+        <type full="\Illuminate\Database\Eloquent\Model" namespace="\Illuminate\Database\Eloquent" name="Model"/>
+      </param>
+      <return type="object">
+        <type full="\Illuminate\Database\Eloquent\Model" namespace="\Illuminate\Database\Eloquent" name="Model"/>
+      </return>
+    </docblock>
+    <parameter name="model" byreference="false" type="object">
+      <type full="Illuminate\Database\Eloquent\Model" namespace="Illuminate\Database\Eloquent" name="Model"/>
+    </parameter>
+  </method>
+  <method name="dissociate" start="147" end="168" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Dissociate the model instance from the given parent, without saving it to the database."/>
+      <param type="mixed" variable="$ids"/>
+      <return type="int"/>
+    </docblock>
+    <parameter name="ids" byreference="false" type="array" default=""/>
+    <inline>
+      <comment value="Remove the document from the parent model." line="155"/>
+      <comment value="We return the total number of deletes for the operation. The developers" line="164"/>
+      <comment value="can then check this number as a boolean type value or get this total count" line="165"/>
+      <comment value="of records deleted for logging, etc." line="166"/>
+    </inline>
+  </method>
+  <method name="destroy" start="176" end="193" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Destroy the embedded models for the given IDs."/>
+      <param type="mixed" variable="$ids"/>
+      <return type="int"/>
+    </docblock>
+    <parameter name="ids" byreference="false" type="array" default=""/>
+    <inline>
+      <comment value="Get all models matching the given ids." line="182"/>
+      <comment value="Pull the documents from the database." line="185"/>
+    </inline>
+  </method>
+  <method name="delete" start="200" end="210" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Delete all embedded models."/>
+      <return type="int"/>
+    </docblock>
+    <inline>
+      <comment value="Overwrite the local key with an empty array." line="202"/>
+    </inline>
+  </method>
+  <method name="detach" start="218" end="221" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Destroy alias."/>
+      <param type="mixed" variable="$ids"/>
+      <return type="int"/>
+    </docblock>
+    <parameter name="ids" byreference="false" type="array" default=""/>
+  </method>
+  <method name="attach" start="229" end="232" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Save alias."/>
+      <param type="object" variable="$model">
+        <type full="\Illuminate\Database\Eloquent\Model" namespace="\Illuminate\Database\Eloquent" name="Model"/>
+      </param>
+      <return type="object">
+        <type full="\Illuminate\Database\Eloquent\Model" namespace="\Illuminate\Database\Eloquent" name="Model"/>
+      </return>
+    </docblock>
+    <parameter name="model" byreference="false" type="object">
+      <type full="Illuminate\Database\Eloquent\Model" namespace="Illuminate\Database\Eloquent" name="Model"/>
+    </parameter>
+  </method>
+  <method name="associateNew" start="240" end="253" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Associate a new model instance to the given parent, without saving it to the database."/>
+      <param type="object" variable="$model">
+        <type full="\Illuminate\Database\Eloquent\Model" namespace="\Illuminate\Database\Eloquent" name="Model"/>
+      </param>
+      <return type="object">
+        <type full="\Illuminate\Database\Eloquent\Model" namespace="\Illuminate\Database\Eloquent" name="Model"/>
+      </return>
+    </docblock>
+    <parameter name="model" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="Create a new key if needed." line="242"/>
+      <comment value="Add the new model to the embedded documents." line="249"/>
+    </inline>
+  </method>
+  <method name="associateExisting" start="261" end="279" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Associate an existing model instance to the given parent, without saving it to the database."/>
+      <param type="object" variable="$model">
+        <type full="\Illuminate\Database\Eloquent\Model" namespace="\Illuminate\Database\Eloquent" name="Model"/>
+      </param>
+      <return type="object">
+        <type full="\Illuminate\Database\Eloquent\Model" namespace="\Illuminate\Database\Eloquent" name="Model"/>
+      </return>
+    </docblock>
+    <parameter name="model" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="Get existing embedded documents." line="263"/>
+      <comment value="Replace the document in the parent model." line="270"/>
+    </inline>
+  </method>
+  <method name="paginate" start="287" end="302" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Get a paginator for the &quot;select&quot; statement."/>
+      <param type="int" variable="$perPage"/>
+      <return type="object">
+        <type full="\Illuminate\Pagination\Paginator" namespace="\Illuminate\Pagination" name="Paginator"/>
+      </return>
+    </docblock>
+    <parameter name="perPage" byreference="false" type="{unknown}" default="" constant="null"/>
+  </method>
+  <method name="getEmbedded" start="309" end="312" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Get the embedded records array."/>
+      <return type="array"/>
+    </docblock>
+  </method>
+  <method name="setEmbedded" start="319" end="326" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Set the embedded records array."/>
+      <param type="array" variable="$models"/>
+    </docblock>
+    <parameter name="models" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="__call" start="335" end="342" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Handle dynamic method calls to the relationship."/>
+      <param type="string" variable="$method"/>
+      <param type="array" variable="$parameters"/>
+      <return type="mixed"/>
+    </docblock>
+    <parameter name="method" byreference="false" type="{unknown}"/>
+    <parameter name="parameters" byreference="false" type="{unknown}"/>
+  </method>
+</class>

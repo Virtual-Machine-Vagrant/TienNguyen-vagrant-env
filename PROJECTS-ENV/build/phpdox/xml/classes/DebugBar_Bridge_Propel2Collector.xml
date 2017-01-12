@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="DebugBar\Bridge\Propel2Collector" namespace="DebugBar\Bridge" name="Propel2Collector" abstract="false" final="false" start="36" end="307">
+  <file path="/home/web/example/src/freegame_developer/vendor/maximebf/debugbar/src/DebugBar/Bridge" file="Propel2Collector.php" realpath="/home/web/example/src/freegame_developer/vendor/maximebf/debugbar/src/DebugBar/Bridge/Propel2Collector.php" size="8927" time="2016-09-15T14:01:59+00:00" unixtime="1473948119" sha1="a3687cc8c9f1603db0c01102fce20ef613258bc6" relative="freegame_developer/vendor/maximebf/debugbar/src/DebugBar/Bridge/Propel2Collector.php"/>
+  <docblock>
+    <description compact="A Propel logger which acts as a data collector">http://propelorm.org/
+
+Will log queries and display them using the SQLQueries widget.
+
+Example:
+&lt;code&gt;
+$debugbar-&gt;addCollector(new \DebugBar\Bridge\Propel2Collector(\Propel\Runtime\Propel::getServiceContainer()-&gt;getReadConnection()));
+&lt;/code&gt;</description>
+  </docblock>
+  <extends full="DebugBar\DataCollector\DataCollector" namespace="DebugBar\DataCollector" name="DataCollector"/>
+  <implements full="DebugBar\DataCollector\Renderable" namespace="DebugBar\DataCollector" name="Renderable"/>
+  <implements full="DebugBar\DataCollector\AssetProvider" namespace="DebugBar\DataCollector" name="AssetProvider"/>
+  <member name="handler" type="{unknown}" default="" constant="null" visibility="protected" static="false" line="41">
+    <docblock>
+      <description/>
+      <var type="object">
+        <type full="DebugBar\Bridge\null|TestHandler" namespace="DebugBar\Bridge" name="null|TestHandler"/>
+      </var>
+    </docblock>
+  </member>
+  <member name="logger" type="{unknown}" default="" constant="null" visibility="protected" static="false" line="46">
+    <docblock>
+      <description/>
+      <var type="object">
+        <type full="DebugBar\Bridge\null|Logger" namespace="DebugBar\Bridge" name="null|Logger"/>
+      </var>
+    </docblock>
+  </member>
+  <member name="config" type="array" default="" visibility="protected" static="false" line="51">
+    <docblock>
+      <description/>
+      <var type="array"/>
+    </docblock>
+  </member>
+  <member name="errors" type="array" default="" visibility="protected" static="false" line="56">
+    <docblock>
+      <description/>
+      <var type="array"/>
+    </docblock>
+  </member>
+  <member name="queryCount" type="integer" default="0" visibility="protected" static="false" line="61">
+    <docblock>
+      <description/>
+      <var type="int"/>
+    </docblock>
+  </member>
+  <constructor name="__construct" start="66" end="94" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <param description="Propel connection" type="object" variable="$connection">
+        <type full="Propel\Runtime\Connection\ConnectionInterface" namespace="Propel\Runtime\Connection" name="ConnectionInterface"/>
+      </param>
+    </docblock>
+    <parameter name="connection" byreference="false" type="object">
+      <type full="Propel\Runtime\Connection\ConnectionInterface" namespace="Propel\Runtime\Connection" name="ConnectionInterface"/>
+    </parameter>
+    <parameter name="logMethods" byreference="false" type="array" default=""/>
+  </constructor>
+  <method name="getHandler" start="99" end="102" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <return type="object">
+        <type full="DebugBar\Bridge\TestHandler|null" namespace="DebugBar\Bridge" name="TestHandler|null"/>
+      </return>
+    </docblock>
+  </method>
+  <method name="getConfig" start="107" end="110" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <return type="array"/>
+    </docblock>
+  </method>
+  <method name="getLogger" start="115" end="118" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <return type="object">
+        <type full="DebugBar\Bridge\Logger|null" namespace="DebugBar\Bridge" name="Logger|null"/>
+      </return>
+    </docblock>
+  </method>
+  <method name="getDefaultLogger" start="123" end="126" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description/>
+      <return type="object">
+        <type full="Psr\Log\LoggerInterface" namespace="Psr\Log" name="LoggerInterface"/>
+      </return>
+    </docblock>
+  </method>
+  <method name="getQueryCount" start="131" end="134" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description/>
+      <return type="int"/>
+    </docblock>
+  </method>
+  <method name="getStatements" start="141" end="217" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description/>
+      <param type="array" variable="$records"/>
+      <param type="array" variable="$config"/>
+      <return type="array"/>
+    </docblock>
+    <parameter name="records" byreference="false" type="{unknown}"/>
+    <parameter name="config" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="collect" start="222" end="263" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <return type="array"/>
+    </docblock>
+  </method>
+  <method name="getName" start="268" end="276" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <return type="string"/>
+    </docblock>
+  </method>
+  <method name="getWidgets" start="281" end="295" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <return type="array"/>
+    </docblock>
+  </method>
+  <method name="getAssets" start="300" end="306" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <return type="array"/>
+    </docblock>
+  </method>
+</class>

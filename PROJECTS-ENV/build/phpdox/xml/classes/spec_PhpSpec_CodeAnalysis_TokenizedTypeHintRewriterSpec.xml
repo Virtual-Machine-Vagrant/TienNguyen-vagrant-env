@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="spec\PhpSpec\CodeAnalysis\TokenizedTypeHintRewriterSpec" namespace="spec\PhpSpec\CodeAnalysis" name="TokenizedTypeHintRewriterSpec" abstract="false" final="false" start="11" end="180">
+  <file path="/home/web/example/src/freegame_developer/vendor/phpspec/phpspec/spec/PhpSpec/CodeAnalysis" file="TokenizedTypeHintRewriterSpec.php" realpath="/home/web/example/src/freegame_developer/vendor/phpspec/phpspec/spec/PhpSpec/CodeAnalysis/TokenizedTypeHintRewriterSpec.php" size="3930" time="2016-01-01T10:17:54+00:00" unixtime="1451643474" sha1="354c756fd15c1b91769fa010747ee423b5a61cf8" relative="freegame_developer/vendor/phpspec/phpspec/spec/PhpSpec/CodeAnalysis/TokenizedTypeHintRewriterSpec.php"/>
+  <extends full="PhpSpec\ObjectBehavior" namespace="PhpSpec" name="ObjectBehavior"/>
+  <method name="let" start="13" end="16" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="typeHintIndex" byreference="false" type="object">
+      <type full="PhpSpec\Loader\Transformer\TypeHintIndex" namespace="PhpSpec\Loader\Transformer" name="TypeHintIndex"/>
+    </parameter>
+    <parameter name="namespaceResolver" byreference="false" type="object">
+      <type full="PhpSpec\CodeAnalysis\NamespaceResolver" namespace="PhpSpec\CodeAnalysis" name="NamespaceResolver"/>
+    </parameter>
+  </method>
+  <method name="it_is_a_typehint_rewriter" start="18" end="21" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="it_leaves_alone_specs_with_no_typehints" start="23" end="46" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="it_removes_typehints_from_single_argument_methods" start="48" end="71" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="it_does_not_remove_typehints_in_methods" start="73" end="104" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="it_removes_typehints_for_multiple_arguments_in_methods" start="106" end="129" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="it_indexes_typehints_that_are_removed" start="131" end="153" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="typeHintIndex" byreference="false" type="object">
+      <type full="PhpSpec\Loader\Transformer\TypeHintIndex" namespace="PhpSpec\Loader\Transformer" name="TypeHintIndex"/>
+    </parameter>
+    <parameter name="namespaceResolver" byreference="false" type="object">
+      <type full="PhpSpec\CodeAnalysis\NamespaceResolver" namespace="PhpSpec\CodeAnalysis" name="NamespaceResolver"/>
+    </parameter>
+  </method>
+  <method name="it_indexes_invalid_typehints" start="155" end="179" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="typeHintIndex" byreference="false" type="object">
+      <type full="PhpSpec\Loader\Transformer\TypeHintIndex" namespace="PhpSpec\Loader\Transformer" name="TypeHintIndex"/>
+    </parameter>
+    <parameter name="namespaceResolver" byreference="false" type="object">
+      <type full="PhpSpec\CodeAnalysis\NamespaceResolver" namespace="PhpSpec\CodeAnalysis" name="NamespaceResolver"/>
+    </parameter>
+  </method>
+</class>

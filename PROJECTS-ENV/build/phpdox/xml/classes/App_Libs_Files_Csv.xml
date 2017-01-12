@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="App\Libs\Files\Csv" namespace="App\Libs\Files" name="Csv" abstract="false" final="false" start="7" end="165">
+  <file path="/home/web/example/src/freegame_developer/app/Libs/Files" file="Csv.php" realpath="/home/web/example/src/freegame_developer/app/Libs/Files/Csv.php" size="4091" time="2016-10-31T07:00:31+00:00" unixtime="1477897231" sha1="314bafab563bc24106748e519306ce523ac1be4f" relative="freegame_developer/app/Libs/Files/Csv.php"/>
+  <extends full="App\Libs\Files\File" namespace="App\Libs\Files" name="File"/>
+  <member name="csvFromArray" type="{unknown}" default="" constant="null" visibility="protected" static="false" line="10"/>
+  <member name="csvFromString" type="{unknown}" default="" constant="null" visibility="protected" static="false" line="13"/>
+  <member name="csvFromFile" type="{unknown}" default="" constant="null" visibility="protected" static="false" line="16"/>
+  <member name="readableList" type="array" default="" visibility="protected" static="false" line="19"/>
+  <method name="setCsvFromArray" start="28" end="33" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Set CSV from array"/>
+      <access value="public"/>
+      <param type="array" variable="$csvFromArray"/>
+      <return type="object">
+        <type full="App\Libs\Files\$this" namespace="App\Libs\Files" name="$this"/>
+      </return>
+    </docblock>
+    <parameter name="csvFromArray" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="setCsvFromString" start="42" end="47" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Set CSV from string"/>
+      <access value="public"/>
+      <param type="string" variable="$csvFromString"/>
+      <return type="object">
+        <type full="App\Libs\Files\$this" namespace="App\Libs\Files" name="$this"/>
+      </return>
+    </docblock>
+    <parameter name="csvFromString" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="setCsvFromFile" start="56" end="61" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Set CSV from file"/>
+      <access value="public"/>
+      <param type="string" variable="$csvFromFile"/>
+      <return type="object">
+        <type full="App\Libs\Files\$this" namespace="App\Libs\Files" name="$this"/>
+      </return>
+    </docblock>
+    <parameter name="csvFromFile" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="setHeader" start="70" end="74" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Set header"/>
+      <access value="public"/>
+      <param type="array" variable="$headerList"/>
+      <return type="object">
+        <type full="App\Libs\Files\$this" namespace="App\Libs\Files" name="$this"/>
+      </return>
+    </docblock>
+    <parameter name="headerList" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="resetAttributeWhenAssignData" start="83" end="95" abstract="false" final="false" static="false" visibility="private">
+    <docblock>
+      <description compact="Reset attribute when assign data"/>
+      <access value="private"/>
+      <param type="string" variable="$typeSet"/>
+      <return type="object">
+        <type full="App\Libs\Files\none" namespace="App\Libs\Files" name="none"/>
+      </return>
+    </docblock>
+    <parameter name="typeSet" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="makeCsvStringFromArray" start="107" end="136" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Make CSV string from array"/>
+      <access value="public"/>
+      <param type="array" variable="$csvFromArray"/>
+      <param type="boolean" variable="$showHeader"/>
+      <param type="string" variable="$charCode"/>
+      <param type="string" variable="$delimiter"/>
+      <return type="object">
+        <type full="App\Libs\Files\$this" namespace="App\Libs\Files" name="$this"/>
+      </return>
+    </docblock>
+    <parameter name="showHeader" byreference="false" type="boolean" default="false"/>
+    <parameter name="charsetCode" byreference="false" type="string" default="'SJIS'"/>
+    <parameter name="delimiter" byreference="false" type="string" default="','"/>
+    <parameter name="breakLine" byreference="false" type="string" default="&quot;\r\n&quot;"/>
+  </method>
+  <method name="makeCsvArrayFromFile" start="145" end="164" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Make CSV array from file"/>
+      <access value="public"/>
+      <param type="boolean" variable="$ignoreTopLine"/>
+      <return type="object">
+        <type full="App\Libs\Files\$this" namespace="App\Libs\Files" name="$this"/>
+      </return>
+    </docblock>
+    <parameter name="ignoreTopLine" byreference="false" type="boolean" default="false"/>
+  </method>
+</class>

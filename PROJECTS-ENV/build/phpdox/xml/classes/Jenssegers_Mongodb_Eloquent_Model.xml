@@ -1,0 +1,318 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="Jenssegers\Mongodb\Eloquent\Model" namespace="Jenssegers\Mongodb\Eloquent" name="Model" abstract="true" final="false" start="15" end="566">
+  <file path="/home/web/example/src/freegame_developer/vendor/jenssegers/mongodb/src/Jenssegers/Mongodb/Eloquent" file="Model.php" realpath="/home/web/example/src/freegame_developer/vendor/jenssegers/mongodb/src/Jenssegers/Mongodb/Eloquent/Model.php" size="15777" time="2016-10-07T08:39:24+00:00" unixtime="1475829564" sha1="f155142c0f23cadc1813f5c084382e099f02932d" relative="freegame_developer/vendor/jenssegers/mongodb/src/Jenssegers/Mongodb/Eloquent/Model.php"/>
+  <extends full="Illuminate\Database\Eloquent\Model" namespace="Illuminate\Database\Eloquent" name="Model"/>
+  <uses full="Jenssegers\Mongodb\Eloquent\HybridRelations" namespace="Jenssegers\Mongodb\Eloquent" name="HybridRelations" start="17" end="17"/>
+  <member name="collection" visibility="protected" static="false" line="24">
+    <docblock>
+      <description compact="The collection associated with the model."/>
+      <var type="string"/>
+    </docblock>
+  </member>
+  <member name="primaryKey" type="string" default="'_id'" visibility="protected" static="false" line="31">
+    <docblock>
+      <description compact="The primary key for the model."/>
+      <var type="string"/>
+    </docblock>
+  </member>
+  <member name="parentRelation" visibility="protected" static="false" line="38">
+    <docblock>
+      <description compact="The parent relation instance."/>
+      <var type="object">
+        <type full="Illuminate\Database\Eloquent\Relations\Relation" namespace="Illuminate\Database\Eloquent\Relations" name="Relation"/>
+      </var>
+    </docblock>
+  </member>
+  <method name="getIdAttribute" start="46" end="60" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Custom accessor for the model's id."/>
+      <param type="mixed" variable="$value"/>
+      <return type="mixed"/>
+    </docblock>
+    <parameter name="value" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="If we don't have a value for 'id', we will use the Mongo '_id' value." line="48"/>
+      <comment value="This allows us to work with models in a more sql-like way." line="49"/>
+      <comment value="Convert ObjectID to string." line="54"/>
+    </inline>
+  </method>
+  <method name="getQualifiedKeyName" start="67" end="70" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Get the table qualified key name."/>
+      <return type="string"/>
+    </docblock>
+  </method>
+  <method name="embedsMany" start="81" end="105" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Define an embedded one-to-many relationship."/>
+      <param type="string" variable="$related"/>
+      <param type="string" variable="$localKey"/>
+      <param type="string" variable="$foreignKey"/>
+      <param type="string" variable="$relation"/>
+      <return type="object">
+        <type full="\Jenssegers\Mongodb\Relations\EmbedsMany" namespace="\Jenssegers\Mongodb\Relations" name="EmbedsMany"/>
+      </return>
+    </docblock>
+    <parameter name="related" byreference="false" type="{unknown}"/>
+    <parameter name="localKey" byreference="false" type="{unknown}" default="" constant="null"/>
+    <parameter name="foreignKey" byreference="false" type="{unknown}" default="" constant="null"/>
+    <parameter name="relation" byreference="false" type="{unknown}" default="" constant="null"/>
+    <inline>
+      <comment value="If no relation name was given, we will use this debug backtrace to extract" line="83"/>
+      <comment value="the calling method's name and use that as the relationship name as most" line="84"/>
+      <comment value="of the time this will be what we desire to use for the relatinoships." line="85"/>
+    </inline>
+  </method>
+  <method name="embedsOne" start="116" end="140" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Define an embedded one-to-many relationship."/>
+      <param type="string" variable="$related"/>
+      <param type="string" variable="$localKey"/>
+      <param type="string" variable="$foreignKey"/>
+      <param type="string" variable="$relation"/>
+      <return type="object">
+        <type full="\Jenssegers\Mongodb\Relations\EmbedsOne" namespace="\Jenssegers\Mongodb\Relations" name="EmbedsOne"/>
+      </return>
+    </docblock>
+    <parameter name="related" byreference="false" type="{unknown}"/>
+    <parameter name="localKey" byreference="false" type="{unknown}" default="" constant="null"/>
+    <parameter name="foreignKey" byreference="false" type="{unknown}" default="" constant="null"/>
+    <parameter name="relation" byreference="false" type="{unknown}" default="" constant="null"/>
+    <inline>
+      <comment value="If no relation name was given, we will use this debug backtrace to extract" line="118"/>
+      <comment value="the calling method's name and use that as the relationship name as most" line="119"/>
+      <comment value="of the time this will be what we desire to use for the relatinoships." line="120"/>
+    </inline>
+  </method>
+  <method name="fromDateTime" start="148" end="161" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Convert a DateTime to a storable UTCDateTime object."/>
+      <param type="object" variable="$value">
+        <type full="Jenssegers\Mongodb\Eloquent\DateTime|int" namespace="Jenssegers\Mongodb\Eloquent" name="DateTime|int"/>
+      </param>
+      <return type="object">
+        <type full="MongoDB\BSON\UTCDateTime" namespace="MongoDB\BSON" name="UTCDateTime"/>
+      </return>
+    </docblock>
+    <parameter name="value" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="If the value is already a UTCDateTime instance, we don't need to parse it." line="150"/>
+      <comment value="Let Eloquent convert the value to a DateTime instance." line="155"/>
+    </inline>
+  </method>
+  <method name="asDateTime" start="169" end="177" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Return a timestamp as DateTime object."/>
+      <param type="mixed" variable="$value"/>
+      <return type="object">
+        <type full="DateTime" namespace="" name="DateTime"/>
+      </return>
+    </docblock>
+    <parameter name="value" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="Convert UTCDateTime instances." line="171"/>
+    </inline>
+  </method>
+  <method name="getDateFormat" start="184" end="187" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Get the format for database stored dates."/>
+      <return type="string"/>
+    </docblock>
+  </method>
+  <method name="freshTimestamp" start="194" end="197" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Get a fresh timestamp for the model."/>
+      <return type="object">
+        <type full="MongoDB\BSON\UTCDateTime" namespace="MongoDB\BSON" name="UTCDateTime"/>
+      </return>
+    </docblock>
+  </method>
+  <method name="getTable" start="204" end="207" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Get the table associated with the model."/>
+      <return type="string"/>
+    </docblock>
+  </method>
+  <method name="getAttribute" start="215" end="263" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Get an attribute from the model."/>
+      <param type="string" variable="$key"/>
+      <return type="mixed"/>
+    </docblock>
+    <parameter name="key" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="Check if the key is an array dot notation." line="217"/>
+      <comment value="If the &quot;attribute&quot; exists as a method on the model, it may be an" line="224"/>
+      <comment value="embedded model. If so, we need to return the result before it" line="225"/>
+      <comment value="is handled by the parent method." line="226"/>
+    </inline>
+  </method>
+  <method name="getAttributeFromArray" start="271" end="283" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Get an attribute from the $attributes array."/>
+      <param type="string" variable="$key"/>
+      <return type="mixed"/>
+    </docblock>
+    <parameter name="key" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="Support keys in dot notation." line="273"/>
+    </inline>
+  </method>
+  <method name="setAttribute" start="291" end="312" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Set a given attribute on the model."/>
+      <param type="string" variable="$key"/>
+      <param type="mixed" variable="$value"/>
+    </docblock>
+    <parameter name="key" byreference="false" type="{unknown}"/>
+    <parameter name="value" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="Convert _id to ObjectID." line="293"/>
+    </inline>
+  </method>
+  <method name="attributesToArray" start="319" end="341" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Convert the model's attributes to an array."/>
+      <return type="array"/>
+    </docblock>
+    <inline>
+      <comment value="Because the original Eloquent never returns objects, we convert" line="323"/>
+      <comment value="MongoDB related objects to a string representation. This kind" line="324"/>
+      <comment value="of mimics the SQL behaviour so that dates are formatted" line="325"/>
+      <comment value="nicely when your models are converted to JSON." line="326"/>
+      <comment value="Convert dot-notation dates." line="333"/>
+    </inline>
+  </method>
+  <method name="getCasts" start="348" end="351" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Get the casts array."/>
+      <return type="array"/>
+    </docblock>
+  </method>
+  <method name="originalIsNumericallyEquivalent" start="359" end="373" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Determine if the new and old values for a given key are numerically equivalent."/>
+      <param type="string" variable="$key"/>
+      <return type="object">
+        <type full="Jenssegers\Mongodb\Eloquent\bool" namespace="Jenssegers\Mongodb\Eloquent" name="bool"/>
+      </return>
+    </docblock>
+    <parameter name="key" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="Date comparison." line="364"/>
+    </inline>
+  </method>
+  <method name="drop" start="381" end="394" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Remove one or more fields."/>
+      <param type="mixed" variable="$columns"/>
+      <return type="int"/>
+    </docblock>
+    <parameter name="columns" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="Unset attributes" line="387"/>
+      <comment value="Perform unset only on current document" line="392"/>
+    </inline>
+  </method>
+  <method name="push" start="401" end="425" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Append one or more values to an array."/>
+      <return type="mixed"/>
+    </docblock>
+  </method>
+  <method name="pull" start="434" end="446" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Remove one or more values from an array."/>
+      <param type="string" variable="$column"/>
+      <param type="mixed" variable="$values"/>
+      <return type="mixed"/>
+    </docblock>
+    <parameter name="column" byreference="false" type="{unknown}"/>
+    <parameter name="values" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="Do batch pull by default." line="436"/>
+    </inline>
+  </method>
+  <method name="pushAttributeValues" start="455" end="471" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Append one or more values to the underlying attribute value and sync with original."/>
+      <param type="string" variable="$column"/>
+      <param type="array" variable="$values"/>
+      <param type="object" variable="$unique">
+        <type full="Jenssegers\Mongodb\Eloquent\bool" namespace="Jenssegers\Mongodb\Eloquent" name="bool"/>
+      </param>
+    </docblock>
+    <parameter name="column" byreference="false" type="{unknown}"/>
+    <parameter name="values" byreference="false" type="array"/>
+    <parameter name="unique" byreference="false" type="boolean" default="false"/>
+  </method>
+  <method name="pullAttributeValues" start="479" end="494" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Remove one or more values to the underlying attribute value and sync with original."/>
+      <param type="string" variable="$column"/>
+      <param type="array" variable="$values"/>
+    </docblock>
+    <parameter name="column" byreference="false" type="{unknown}"/>
+    <parameter name="values" byreference="false" type="array"/>
+  </method>
+  <method name="setParentRelation" start="501" end="504" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Set the parent relation."/>
+      <param type="object" variable="$relation">
+        <type full="\Illuminate\Database\Eloquent\Relations\Relation" namespace="\Illuminate\Database\Eloquent\Relations" name="Relation"/>
+      </param>
+    </docblock>
+    <parameter name="relation" byreference="false" type="object">
+      <type full="Illuminate\Database\Eloquent\Relations\Relation" namespace="Illuminate\Database\Eloquent\Relations" name="Relation"/>
+    </parameter>
+  </method>
+  <method name="getParentRelation" start="511" end="514" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Get the parent relation."/>
+      <return type="object">
+        <type full="\Illuminate\Database\Eloquent\Relations\Relation" namespace="\Illuminate\Database\Eloquent\Relations" name="Relation"/>
+      </return>
+    </docblock>
+  </method>
+  <method name="newEloquentBuilder" start="522" end="525" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Create a new Eloquent query builder for the model."/>
+      <param type="object" variable="$query">
+        <type full="\Jenssegers\Mongodb\Query\Builder" namespace="\Jenssegers\Mongodb\Query" name="Builder"/>
+      </param>
+      <return type="object">
+        <type full="\Jenssegers\Mongodb\Eloquent\Builder|static" namespace="\Jenssegers\Mongodb\Eloquent" name="Builder|static"/>
+      </return>
+    </docblock>
+    <parameter name="query" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="newBaseQueryBuilder" start="532" end="537" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Get a new query builder instance for the connection."/>
+      <return type="object">
+        <type full="Jenssegers\Mongodb\Eloquent\Builder" namespace="Jenssegers\Mongodb\Eloquent" name="Builder"/>
+      </return>
+    </docblock>
+  </method>
+  <method name="removeTableFromKey" start="545" end="548" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="We just return original key here in order to support keys in dot-notation"/>
+      <param type="string" variable="$key"/>
+      <return type="string"/>
+    </docblock>
+    <parameter name="key" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="__call" start="557" end="565" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Handle dynamic method calls into the method."/>
+      <param type="string" variable="$method"/>
+      <param type="array" variable="$parameters"/>
+      <return type="mixed"/>
+    </docblock>
+    <parameter name="method" byreference="false" type="{unknown}"/>
+    <parameter name="parameters" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="Unset method" line="559"/>
+    </inline>
+  </method>
+</class>

@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="PEAR_Sniffs_Functions_FunctionDeclarationSniff" namespace="" name="PEAR_Sniffs_Functions_FunctionDeclarationSniff" abstract="false" final="false" start="28" end="409">
+  <file path="/home/web/example/src/freegame_developer/vendor/squizlabs/php_codesniffer/CodeSniffer/Standards/PEAR/Sniffs/Functions" file="FunctionDeclarationSniff.php" realpath="/home/web/example/src/freegame_developer/vendor/squizlabs/php_codesniffer/CodeSniffer/Standards/PEAR/Sniffs/Functions/FunctionDeclarationSniff.php" size="16864" time="2016-01-19T23:39:10+00:00" unixtime="1453246750" sha1="d51aeb0f7508c791645ab6f79632ede25bc5cb97" relative="freegame_developer/vendor/squizlabs/php_codesniffer/CodeSniffer/Standards/PEAR/Sniffs/Functions/FunctionDeclarationSniff.php"/>
+  <docblock>
+    <description compact="PEAR_Sniffs_Functions_FunctionDeclarationSniff.">Ensure single and multi-line function declarations are defined correctly.</description>
+    <category value="PHP"/>
+    <package value="PHP_CodeSniffer"/>
+    <author value="Greg Sherwood &lt;gsherwood@squiz.net&gt;"/>
+    <copyright value="2006-2014 Squiz Pty Ltd (ABN 77 084 670 600)"/>
+    <license name="https://github.com/squizlabs/PHP_CodeSniffer/blob/master/licence.txt BSD Licence"/>
+    <version value="Release: @package_version@"/>
+    <link value="http://pear.php.net/package/PHP_CodeSniffer"/>
+  </docblock>
+  <implements full="PHP_CodeSniffer_Sniff" namespace="" name="PHP_CodeSniffer_Sniff"/>
+  <member name="indent" type="integer" default="4" visibility="public" static="false" line="36">
+    <docblock>
+      <description compact="The number of spaces code should be indented."/>
+      <var type="int"/>
+    </docblock>
+  </member>
+  <method name="register" start="44" end="51" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Returns an array of tokens this test wants to listen for."/>
+      <return type="array"/>
+    </docblock>
+  </method>
+  <method name="process" start="63" end="195" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Processes this test, when one of its tokens is encountered."/>
+      <param description="The file being scanned." type="object" variable="$phpcsFile">
+        <type full="PHP_CodeSniffer_File" namespace="" name="PHP_CodeSniffer_File"/>
+      </param>
+      <param description="The position of the current token" type="int" variable="$stackPtr">in the stack passed in $tokens.</param>
+      <return type="object">
+        <type full="void" namespace="" name="void"/>
+      </return>
+    </docblock>
+    <parameter name="phpcsFile" byreference="false" type="object">
+      <type full="PHP_CodeSniffer_File" namespace="" name="PHP_CodeSniffer_File"/>
+    </parameter>
+    <parameter name="stackPtr" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="Must be one space after the FUNCTION keyword." line="78"/>
+      <comment value="Must be one space before the opening parenthesis. For closures, this is" line="100"/>
+      <comment value="enforced by the first check because there is no content between the keywords" line="101"/>
+      <comment value="and the opening parenthesis." line="102"/>
+      <comment value="end if" line="120"/>
+      <comment value="Must be one space before and after USE keyword for closures." line="122"/>
+      <comment value="end if" line="168"/>
+      <comment value="Check if this is a single line or multi-line declaration." line="170"/>
+    </inline>
+  </method>
+  <method name="processSingleLineDeclaration" start="211" end="230" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Processes single-line declarations.">Just uses the Generic BSD-Allman brace sniff.</description>
+      <param description="The file being scanned." type="object" variable="$phpcsFile">
+        <type full="PHP_CodeSniffer_File" namespace="" name="PHP_CodeSniffer_File"/>
+      </param>
+      <param description="The position of the current token" type="int" variable="$stackPtr">in the stack passed in $tokens.</param>
+      <param description="The stack of tokens that make up" type="array" variable="$tokens">the file.</param>
+      <return type="object">
+        <type full="void" namespace="" name="void"/>
+      </return>
+    </docblock>
+    <parameter name="phpcsFile" byreference="false" type="object">
+      <type full="PHP_CodeSniffer_File" namespace="" name="PHP_CodeSniffer_File"/>
+    </parameter>
+    <parameter name="stackPtr" byreference="false" type="{unknown}"/>
+    <parameter name="tokens" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="processMultiLineDeclaration" start="244" end="406" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Processes multi-line declarations."/>
+      <param description="The file being scanned." type="object" variable="$phpcsFile">
+        <type full="PHP_CodeSniffer_File" namespace="" name="PHP_CodeSniffer_File"/>
+      </param>
+      <param description="The position of the current token" type="int" variable="$stackPtr">in the stack passed in $tokens.</param>
+      <param description="The stack of tokens that make up" type="array" variable="$tokens">the file.</param>
+      <return type="object">
+        <type full="void" namespace="" name="void"/>
+      </return>
+    </docblock>
+    <parameter name="phpcsFile" byreference="false" type="object">
+      <type full="PHP_CodeSniffer_File" namespace="" name="PHP_CodeSniffer_File"/>
+    </parameter>
+    <parameter name="stackPtr" byreference="false" type="{unknown}"/>
+    <parameter name="tokens" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="We need to work out how far indented the function" line="246"/>
+      <comment value="declaration itself is, so we can work out how far to" line="247"/>
+      <comment value="indent parameters." line="248"/>
+      <comment value="The closing parenthesis must be on a new line, even" line="261"/>
+      <comment value="when checking abstract function definitions." line="262"/>
+      <comment value="If this is a closure and is using a USE statement, the closing" line="281"/>
+      <comment value="parenthesis we need to look at from now on is the closing parenthesis" line="282"/>
+      <comment value="of the USE statement." line="283"/>
+      <comment value="end if" line="307"/>
+      <comment value="Each line between the parenthesis should be indented 4 spaces." line="309"/>
+      <comment value="end for" line="365"/>
+      <comment value="The opening brace needs to be one space away from the closing parenthesis." line="371"/>
+      <comment value="end if" line="404"/>
+    </inline>
+  </method>
+</class>

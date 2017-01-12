@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="Monolog\Handler\RotatingFileHandlerTest" namespace="Monolog\Handler" name="RotatingFileHandlerTest" abstract="false" final="false" start="20" end="211">
+  <file path="/home/web/example/src/freegame_developer/vendor/monolog/monolog/tests/Monolog/Handler" file="RotatingFileHandlerTest.php" realpath="/home/web/example/src/freegame_developer/vendor/monolog/monolog/tests/Monolog/Handler/RotatingFileHandlerTest.php" size="7873" time="2016-07-29T03:23:52+00:00" unixtime="1469762632" sha1="451581455ba6a5d3fc9f53fb212af3f4c2520e76" relative="freegame_developer/vendor/monolog/monolog/tests/Monolog/Handler/RotatingFileHandlerTest.php"/>
+  <docblock>
+    <description/>
+    <covers value="Monolog\Handler\RotatingFileHandler"/>
+  </docblock>
+  <extends full="Monolog\TestCase" namespace="Monolog" name="TestCase"/>
+  <member name="lastError" visibility="public" static="false" line="28">
+    <docblock>
+      <description compact="This var should be private but then the anonymous function in the `setUp` method won't be able to set it. `$this` cant't be used in the anonymous function in `setUp` because PHP 5.3 does not support it."/>
+    </docblock>
+  </member>
+  <method name="setUp" start="30" end="46" abstract="false" final="false" static="false" visibility="public">
+    <inline>
+      <comment value="workaround with &amp;$self used for PHP 5.3" line="39"/>
+    </inline>
+  </method>
+  <method name="assertErrorWasTriggered" start="48" end="61" abstract="false" final="false" static="false" visibility="private">
+    <parameter name="code" byreference="false" type="{unknown}"/>
+    <parameter name="message" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="testRotationCreatesNewFile" start="63" end="74" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testRotation" start="79" end="105" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <dataprovider value="rotationTests"/>
+    </docblock>
+    <parameter name="createFile" byreference="false" type="{unknown}"/>
+    <parameter name="dateFormat" byreference="false" type="{unknown}"/>
+    <parameter name="timeCallback" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="rotationTests" start="107" end="136" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testAllowOnlyFixedDefinedDateFormats" start="141" end="153" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <dataprovider value="dateFormatProvider"/>
+    </docblock>
+    <parameter name="dateFormat" byreference="false" type="{unknown}"/>
+    <parameter name="valid" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="dateFormatProvider" start="155" end="164" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testDisallowFilenameFormatsWithoutDate" start="169" end="179" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <dataprovider value="filenameFormatProvider"/>
+    </docblock>
+    <parameter name="filenameFormat" byreference="false" type="{unknown}"/>
+    <parameter name="valid" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="filenameFormatProvider" start="181" end="192" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testReuseCurrentFile" start="194" end="202" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="tearDown" start="204" end="210" abstract="false" final="false" static="false" visibility="public"/>
+</class>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="phpDocumentor\Reflection\FqsenTest" namespace="phpDocumentor\Reflection" name="FqsenTest" abstract="false" final="false" start="18" end="88">
+  <file path="/home/web/example/src/freegame_developer/vendor/phpdocumentor/reflection-common/tests/unit" file="FqsenTest.php" realpath="/home/web/example/src/freegame_developer/vendor/phpdocumentor/reflection-common/tests/unit/FqsenTest.php" size="2269" time="2015-12-27T11:43:31+00:00" unixtime="1451216611" sha1="70e1d7dfe9bc8c0492e9d2f5320dd7610fcb5036" relative="freegame_developer/vendor/phpdocumentor/reflection-common/tests/unit/FqsenTest.php"/>
+  <docblock>
+    <description compact="Class FqsenTest"/>
+    <coversdefaultclass value="phpDocumentor\Reflection\Fqsen"/>
+  </docblock>
+  <extends full="PHPUnit_Framework_TestCase" namespace="" name="PHPUnit_Framework_TestCase"/>
+  <method name="testValidFormats" start="25" end="29" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <param type="string" variable="$fqsen"/>
+      <covers value="::__construct"/>
+      <dataprovider value="validFqsenProvider"/>
+    </docblock>
+    <parameter name="fqsen" byreference="false" type="{unknown}"/>
+    <parameter name="name" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="validFqsenProvider" start="36" end="51" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Data provider for ValidFormats tests. Contains a complete list from psr-5 draft."/>
+      <return type="array"/>
+    </docblock>
+  </method>
+  <method name="testInValidFormats" start="59" end="62" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <param type="string" variable="$fqsen"/>
+      <covers value="::__construct"/>
+      <dataprovider value="invalidFqsenProvider"/>
+      <expectedexception value="\InvalidArgumentException"/>
+    </docblock>
+    <parameter name="fqsen" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="invalidFqsenProvider" start="69" end="76" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Data provider for invalidFormats tests. Contains a complete list from psr-5 draft."/>
+      <return type="array"/>
+    </docblock>
+  </method>
+  <method name="testToString" start="82" end="87" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <covers value="::__construct"/>
+      <covers value="::__toString"/>
+    </docblock>
+  </method>
+</class>

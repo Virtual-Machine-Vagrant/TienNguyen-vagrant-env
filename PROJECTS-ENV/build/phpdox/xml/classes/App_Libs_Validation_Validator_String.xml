@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="App\Libs\Validation\Validator\String" namespace="App\Libs\Validation\Validator" name="String" abstract="false" final="false" start="7" end="260">
+  <file path="/home/web/example/src/freegame_developer/app/Libs/Validation/Validator" file="String.php" realpath="/home/web/example/src/freegame_developer/app/Libs/Validation/Validator/String.php" size="8912" time="2016-12-22T03:19:40+00:00" unixtime="1482376780" sha1="dd77e54f87dcda8591e23cfa18e0de4e380cf483" relative="freegame_developer/app/Libs/Validation/Validator/String.php"/>
+  <extends full="Illuminate\Validation\Validator" namespace="Illuminate\Validation" name="Validator"/>
+  <member name="platformDependentCharacters" type="array" default="" visibility="private" static="true" line="9"/>
+  <method name="validateHiraganaOnly" start="57" end="66" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description compact="Validate hiragana_only"/>
+      <param type="string" variable="$attribute"/>
+      <param type="string" variable="$value"/>
+      <param type="array" variable="$parameters"/>
+      <return type="boolean"/>
+    </docblock>
+    <parameter name="attribute" byreference="false" type="{unknown}"/>
+    <parameter name="value" byreference="false" type="{unknown}"/>
+    <parameter name="parameters" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="旧処理と同じチェック方法" line="60"/>
+      <comment value="一つも一致しなければ false" line="61"/>
+    </inline>
+  </method>
+  <method name="validateAlfaNumLineOnly" start="75" end="82" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description compact="Validate alfa_num_line_only"/>
+      <param type="string" variable="$attribute"/>
+      <param type="string" variable="$value"/>
+      <param type="array" variable="$parameters"/>
+      <return type="boolean"/>
+    </docblock>
+    <parameter name="attribute" byreference="false" type="{unknown}"/>
+    <parameter name="value" byreference="false" type="{unknown}"/>
+    <parameter name="parameters" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="validateAlfaNumLine" start="91" end="98" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description compact="Validate alfa_num_line"/>
+      <param type="string" variable="$attribute"/>
+      <param type="string" variable="$value"/>
+      <param type="array" variable="$parameters"/>
+      <return type="boolean"/>
+    </docblock>
+    <parameter name="attribute" byreference="false" type="{unknown}"/>
+    <parameter name="value" byreference="false" type="{unknown}"/>
+    <parameter name="parameters" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="validateAlfaNumNewLineOnly" start="107" end="114" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description compact="Validate alfa_num_new_line_only"/>
+      <param type="string" variable="$attribute"/>
+      <param type="string" variable="$value"/>
+      <param type="array" variable="$parameters"/>
+      <return type="boolean"/>
+    </docblock>
+    <parameter name="attribute" byreference="false" type="{unknown}"/>
+    <parameter name="value" byreference="false" type="{unknown}"/>
+    <parameter name="parameters" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="validateSpecialCharacters" start="123" end="130" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description compact="Validate special_characters"/>
+      <param type="string" variable="$attribute"/>
+      <param type="string" variable="$value"/>
+      <param type="array" variable="$parameters"/>
+      <return type="boolean"/>
+    </docblock>
+    <parameter name="attribute" byreference="false" type="{unknown}"/>
+    <parameter name="value" byreference="false" type="{unknown}"/>
+    <parameter name="parameters" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="validateNewLine" start="139" end="146" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description compact="Validate new_line"/>
+      <param type="string" variable="$attribute"/>
+      <param type="string" variable="$value"/>
+      <param type="array" variable="$parameters"/>
+      <return type="boolean"/>
+    </docblock>
+    <parameter name="attribute" byreference="false" type="{unknown}"/>
+    <parameter name="value" byreference="false" type="{unknown}"/>
+    <parameter name="parameters" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="validatePlatformDependent" start="155" end="183" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description compact="Validate platform_dependent"/>
+      <param type="string" variable="$attribute"/>
+      <param type="string" variable="$value"/>
+      <param type="array" variable="$parameters"/>
+      <return type="boolean"/>
+    </docblock>
+    <parameter name="attribute" byreference="false" type="{unknown}"/>
+    <parameter name="value" byreference="false" type="{unknown}"/>
+    <parameter name="parameters" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="・13区の特殊文字（0x8740～0x879F 83文字）" line="157"/>
+      <comment xmlns="http://xml.phpdox.net/src" value="・NEC選定IBM拡張文字（0xED40～0xEEFC　374文字）" line="158"/>
+      <comment xmlns="http://xml.phpdox.net/src" value="・IBM拡張文字（0xFA40～0xFC4B　388文字）" line="159"/>
+      <comment value="比較用の文字を格納する" line="163"/>
+      <comment value="1文字ずつに分解" line="166"/>
+      <comment value="1文字ずつ比較" line="171"/>
+      <comment value="機種依存無" line="181"/>
+    </inline>
+  </method>
+  <method name="validatePictureCharacters" start="192" end="211" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description compact="Validate picture_characters"/>
+      <param type="string" variable="$attribute"/>
+      <param type="string" variable="$value"/>
+      <param type="array" variable="$parameters"/>
+      <return type="boolean"/>
+    </docblock>
+    <parameter name="attribute" byreference="false" type="{unknown}"/>
+    <parameter name="value" byreference="false" type="{unknown}"/>
+    <parameter name="parameters" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="docomo絵文字判定開始" line="195"/>
+      <todo value="：リプレース前の処理からAU・SoftBankの絵文字には未対応になっている" line="204"/>
+      <comment value="Au絵文字判定(未)" line="206"/>
+      <comment value="SoftBank絵文字判定(未)" line="208"/>
+    </inline>
+  </method>
+  <method name="validateAlfaNumOnly" start="220" end="227" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description compact="Validate alfa_num_only"/>
+      <param type="string" variable="$attribute"/>
+      <param type="string" variable="$value"/>
+      <param type="array" variable="$parameters"/>
+      <return type="boolean"/>
+    </docblock>
+    <parameter name="attribute" byreference="false" type="{unknown}"/>
+    <parameter name="value" byreference="false" type="{unknown}"/>
+    <parameter name="parameters" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="validateAlfaNumDotOnly" start="236" end="243" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description compact="Validate alfa_num_dot_only"/>
+      <param type="string" variable="$attribute"/>
+      <param type="string" variable="$value"/>
+      <param type="array" variable="$parameters"/>
+      <return type="boolean"/>
+    </docblock>
+    <parameter name="attribute" byreference="false" type="{unknown}"/>
+    <parameter name="value" byreference="false" type="{unknown}"/>
+    <parameter name="parameters" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="validateAlfaNumLineDotOnly" start="252" end="259" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description compact="Validate alfa_num_line_dot_only"/>
+      <param type="string" variable="$attribute"/>
+      <param type="string" variable="$value"/>
+      <param type="array" variable="$parameters"/>
+      <return type="boolean"/>
+    </docblock>
+    <parameter name="attribute" byreference="false" type="{unknown}"/>
+    <parameter name="value" byreference="false" type="{unknown}"/>
+    <parameter name="parameters" byreference="false" type="{unknown}"/>
+  </method>
+</class>

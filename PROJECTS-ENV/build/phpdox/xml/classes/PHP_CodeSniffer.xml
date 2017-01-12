@@ -1,0 +1,766 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="PHP_CodeSniffer" namespace="" name="PHP_CodeSniffer" abstract="false" final="false" start="68" end="2516">
+  <file path="/home/web/example/src/freegame_developer/vendor/squizlabs/php_codesniffer" file="CodeSniffer.php" realpath="/home/web/example/src/freegame_developer/vendor/squizlabs/php_codesniffer/CodeSniffer.php" size="85676" time="2016-01-19T23:39:10+00:00" unixtime="1453246750" sha1="fc8c82abef43bc42c312d4a7a1bed79ea5a2cfa3" relative="freegame_developer/vendor/squizlabs/php_codesniffer/CodeSniffer.php"/>
+  <docblock>
+    <description compact="PHP_CodeSniffer tokenizes PHP code and detects violations of a defined set of coding standards.">Standards are specified by classes that implement the PHP_CodeSniffer_Sniff
+interface. A sniff registers what token types it wishes to listen for, then
+PHP_CodeSniffer encounters that token, the sniff is invoked and passed
+information about where the token was found in the stack, and the token stack
+itself.
+
+Sniff files and their containing class must be prefixed with Sniff, and
+have an extension of .php.
+
+Multiple PHP_CodeSniffer operations can be performed by re-calling the
+process function with different parameters.</description>
+    <category value="PHP"/>
+    <package value="PHP_CodeSniffer"/>
+    <author value="Greg Sherwood &lt;gsherwood@squiz.net&gt;"/>
+    <author value="Marc McIntyre &lt;mmcintyre@squiz.net&gt;"/>
+    <copyright value="2006-2014 Squiz Pty Ltd (ABN 77 084 670 600)"/>
+    <license name="https://github.com/squizlabs/PHP_CodeSniffer/blob/master/licence.txt BSD Licence"/>
+    <version value="Release: @package_version@"/>
+    <link value="http://pear.php.net/package/PHP_CodeSniffer"/>
+  </docblock>
+  <constant type="string" name="VERSION" value="'2.5.1'">
+    <docblock>
+      <description compact="The current version."/>
+      <var type="string"/>
+    </docblock>
+  </constant>
+  <constant type="string" name="STABILITY" value="'stable'">
+    <docblock>
+      <description compact="Package stability; either stable, beta or alpha."/>
+      <var type="string"/>
+    </docblock>
+  </constant>
+  <member name="file" type="string" default="''" visibility="protected" static="false" line="90">
+    <docblock>
+      <description compact="The file or directory that is currently being processed."/>
+      <var type="string"/>
+    </docblock>
+  </member>
+  <member name="rulesetDirs" type="array" default="" visibility="protected" static="true" line="102">
+    <docblock>
+      <description compact="The directories that the processed rulesets are in.">This is declared static because it is also used in the
+autoloader to look for sniffs outside the PHPCS install.
+This way, standards designed to be installed inside PHPCS can
+also be used from outside the PHPCS Standards directory.</description>
+      <var type="string"/>
+    </docblock>
+  </member>
+  <member name="cli" type="{unknown}" default="" constant="null" visibility="public" static="false" line="109">
+    <docblock>
+      <description compact="The CLI object controlling the run."/>
+      <var type="object">
+        <type full="PHP_CodeSniffer_CLI" namespace="" name="PHP_CodeSniffer_CLI"/>
+      </var>
+    </docblock>
+  </member>
+  <member name="reporting" type="{unknown}" default="" constant="null" visibility="public" static="false" line="116">
+    <docblock>
+      <description compact="The Reporting object controlling report generation."/>
+      <var type="object">
+        <type full="PHP_CodeSniffer_Reporting" namespace="" name="PHP_CodeSniffer_Reporting"/>
+      </var>
+    </docblock>
+  </member>
+  <member name="listeners" type="array" default="" visibility="protected" static="false" line="123">
+    <docblock>
+      <description compact="An array of sniff objects that are being used to check files."/>
+      <var type="object">
+        <type full="array(PHP_CodeSniffer_Sniff)" namespace="" name="array(PHP_CodeSniffer_Sniff)"/>
+      </var>
+    </docblock>
+  </member>
+  <member name="sniffs" type="array" default="" visibility="protected" static="false" line="130">
+    <docblock>
+      <description compact="An array of sniffs that are being used to check files."/>
+      <var type="object">
+        <type full="array(string)" namespace="" name="array(string)"/>
+      </var>
+    </docblock>
+  </member>
+  <member name="_tokenListeners" type="array" default="" visibility="private" static="false" line="137">
+    <docblock>
+      <description compact="The listeners array, indexed by token type."/>
+      <var type="array"/>
+    </docblock>
+  </member>
+  <member name="ruleset" type="array" default="" visibility="protected" static="false" line="147">
+    <docblock>
+      <description compact="An array of rules from the ruleset.xml file.">It may be empty, indicating that the ruleset does not override
+any of the default sniff settings.</description>
+      <var type="array"/>
+    </docblock>
+  </member>
+  <member name="ignorePatterns" type="array" default="" visibility="protected" static="false" line="154">
+    <docblock>
+      <description compact="An array of patterns to use for skipping files."/>
+      <var type="array"/>
+    </docblock>
+  </member>
+  <member name="allowedFileExtensions" type="array" default="" visibility="public" static="false" line="161">
+    <docblock>
+      <description compact="An array of extensions for files we will check."/>
+      <var type="array"/>
+    </docblock>
+  </member>
+  <member name="defaultFileExtensions" type="array" default="" visibility="public" static="false" line="173">
+    <docblock>
+      <description compact="An array of default extensions and associated tokenizers.">If no extensions are set, these will be used as the defaults.
+If extensions are set, these will be used when the correct tokenizer
+can not be determined, such as when checking a passed filename instead
+of files in a directory.</description>
+      <var type="array"/>
+    </docblock>
+  </member>
+  <member name="allowedTypes" type="array" default="" visibility="public" static="true" line="185">
+    <docblock>
+      <description compact="An array of variable types for param/var we will check."/>
+      <var type="object">
+        <type full="array(string)" namespace="" name="array(string)"/>
+      </var>
+    </docblock>
+  </member>
+  <constructor name="__construct" start="217" end="260" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Constructs a PHP_CodeSniffer object."/>
+      <param description="The verbosity level." type="int" variable="$verbosity">1: Print progress information.
+                           2: Print tokenizer debug information.
+                           3: Print sniff debug information.</param>
+      <param description="The number of spaces each tab represents." type="int" variable="$tabWidth">If greater than zero, tabs will be replaced
+                           by spaces before testing each file.</param>
+      <param description="The charset of the sniffed files." type="string" variable="$encoding">This is important for some reports that output
+                           with utf-8 encoding as you don't want it double
+                           encoding messages.</param>
+      <param description="If TRUE, will stop after each file with errors" type="object" variable="$interactive">and wait for user input.<type full="bool" namespace="" name="bool"/></param>
+      <see value="process()"/>
+    </docblock>
+    <parameter name="verbosity" byreference="false" type="integer" default="0"/>
+    <parameter name="tabWidth" byreference="false" type="integer" default="0"/>
+    <parameter name="encoding" byreference="false" type="string" default="'iso-8859-1'"/>
+    <parameter name="interactive" byreference="false" type="boolean" default="false"/>
+    <inline>
+      <comment value="Set default CLI object in case someone is running us" line="251"/>
+      <comment value="without using the command line script." line="252"/>
+    </inline>
+  </constructor>
+  <method name="autoload" start="270" end="306" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description compact="Autoload static method for loading classes and interfaces."/>
+      <param description="The name of the class or interface." type="string" variable="$className"/>
+      <return type="object">
+        <type full="void" namespace="" name="void"/>
+      </return>
+    </docblock>
+    <parameter name="className" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="end if" line="301"/>
+      <comment value="Everything else." line="303"/>
+    </inline>
+  </method>
+  <method name="setVerbosity" start="319" end="325" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Sets the verbosity level."/>
+      <param description="The verbosity level." type="int" variable="$verbosity">1: Print progress information.
+                      2: Print tokenizer debug information.
+                      3: Print sniff debug information.</param>
+      <return type="object">
+        <type full="void" namespace="" name="void"/>
+      </return>
+    </docblock>
+    <parameter name="verbosity" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="setTabWidth" start="337" end="343" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Sets the tab width."/>
+      <param description="The number of spaces each tab represents." type="int" variable="$tabWidth">If greater than zero, tabs will be replaced
+                     by spaces before testing each file.</param>
+      <return type="object">
+        <type full="void" namespace="" name="void"/>
+      </return>
+    </docblock>
+    <parameter name="tabWidth" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="setEncoding" start="356" end="362" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Sets the encoding."/>
+      <param description="The charset of the sniffed files." type="string" variable="$encoding">This is important for some reports that output
+                        with utf-8 encoding as you don't want it double
+                        encoding messages.</param>
+      <return type="object">
+        <type full="void" namespace="" name="void"/>
+      </return>
+    </docblock>
+    <parameter name="encoding" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="setInteractive" start="373" end="379" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Sets the interactive flag."/>
+      <param description="If TRUE, will stop after each file with errors" type="object" variable="$interactive">and wait for user input.<type full="bool" namespace="" name="bool"/></param>
+      <return type="object">
+        <type full="void" namespace="" name="void"/>
+      </return>
+    </docblock>
+    <parameter name="interactive" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="setAllowedFileExtensions" start="393" end="416" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Sets an array of file extensions that we will allow checking of.">If the extension is one of the defaults, a specific tokenizer
+will be used. Otherwise, the PHP tokenizer will be used for
+all extensions passed.</description>
+      <param description="An array of file extensions." type="array" variable="$extensions"/>
+      <return type="object">
+        <type full="void" namespace="" name="void"/>
+      </return>
+    </docblock>
+    <parameter name="extensions" byreference="false" type="array"/>
+  </method>
+  <method name="setIgnorePatterns" start="431" end="435" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Sets an array of ignore patterns that we use to skip files and folders.">Patterns are not case sensitive.</description>
+      <param description="An array of ignore patterns. The pattern is the key" type="array" variable="$patterns">and the value is either "absolute" or "relative",
+                       depending on how the pattern should be applied to a
+                       file path.</param>
+      <return type="object">
+        <type full="void" namespace="" name="void"/>
+      </return>
+    </docblock>
+    <parameter name="patterns" byreference="false" type="array"/>
+  </method>
+  <method name="getIgnorePatterns" start="449" end="461" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Gets the array of ignore patterns.">Optionally takes a listener to get ignore patterns specified
+for that sniff only.</description>
+      <param description="The listener to get patterns for. If NULL, all" type="string" variable="$listener">patterns are returned.</param>
+      <return type="array"/>
+    </docblock>
+    <parameter name="listener" byreference="false" type="{unknown}" default="" constant="null"/>
+  </method>
+  <method name="setCli" start="471" end="475" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Sets the internal CLI object."/>
+      <param description="The CLI object controlling the run." type="object" variable="$cli"/>
+      <return type="object">
+        <type full="void" namespace="" name="void"/>
+      </return>
+    </docblock>
+    <parameter name="cli" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="process" start="492" end="498" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Start a PHP_CodeSniffer run."/>
+      <param description="The files and directories to process. For" type="object" variable="$files">directories, each sub directory will also
+                                  be traversed for source files.<type full="string|array" namespace="" name="string|array"/></param>
+      <param description="The set of code sniffs we are testing" type="object" variable="$standards">against.<type full="string|array" namespace="" name="string|array"/></param>
+      <param description="The sniff codes to restrict the" type="array" variable="$restrictions">violations to.</param>
+      <param description="If true, don't recurse into directories." type="boolean" variable="$local"/>
+      <return type="object">
+        <type full="void" namespace="" name="void"/>
+      </return>
+    </docblock>
+    <parameter name="files" byreference="false" type="{unknown}"/>
+    <parameter name="standards" byreference="false" type="{unknown}"/>
+    <parameter name="restrictions" byreference="false" type="array" default=""/>
+    <parameter name="local" byreference="false" type="boolean" default="false"/>
+  </method>
+  <method name="initStandard" start="510" end="568" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Initialise the standard that the run will use."/>
+      <param description="The set of code sniffs we are testing" type="object" variable="$standards">against.<type full="string|array" namespace="" name="string|array"/></param>
+      <param description="The sniff codes to restrict the" type="array" variable="$restrictions"/>
+      <return type="object">
+        <type full="void" namespace="" name="void"/>
+      </return>
+    </docblock>
+    <parameter name="standards" byreference="false" type="{unknown}"/>
+    <parameter name="restrictions" byreference="false" type="array" default=""/>
+    <inline>
+      <comment value="Reset the members." line="514"/>
+      <comment value="Ensure this option is enabled or else line endings will not always" line="521"/>
+      <comment value="be detected properly for files created on a Mac with the /r line ending." line="522"/>
+      <comment value="end foreach" line="552"/>
+    </inline>
+  </method>
+  <method name="processFiles" start="582" end="673" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Processes the files/directories that PHP_CodeSniffer was constructed with."/>
+      <param description="The files and directories to process. For" type="object" variable="$files">directories, each sub directory will also
+                           be traversed for source files.<type full="string|array" namespace="" name="string|array"/></param>
+      <param description="If true, don't recurse into directories." type="boolean" variable="$local"/>
+      <return type="object">
+        <type full="void" namespace="" name="void"/>
+      </return>
+      <throws description="If files are invalid." type="object">
+        <type full="PHP_CodeSniffer_Exception" namespace="" name="PHP_CodeSniffer_Exception"/>
+      </throws>
+    </docblock>
+    <parameter name="files" byreference="false" type="{unknown}"/>
+    <parameter name="local" byreference="false" type="boolean" default="false"/>
+    <inline>
+      <comment value="end foreach" line="664"/>
+    </inline>
+  </method>
+  <method name="processRuleset" start="689" end="890" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Processes a single ruleset and returns a list of the sniffs it represents.">Rules founds within the ruleset are processed immediately, but sniff classes
+are not registered by this method.</description>
+      <param description="The path to a ruleset XML file." type="string" variable="$rulesetPath"/>
+      <param description="How many nested processing steps we are in. This" type="int" variable="$depth">is only used for debug output.</param>
+      <return type="array"/>
+      <throws description="If the ruleset path is invalid." type="object">
+        <type full="PHP_CodeSniffer_Exception" namespace="" name="PHP_CodeSniffer_Exception"/>
+      </throws>
+    </docblock>
+    <parameter name="rulesetPath" byreference="false" type="{unknown}"/>
+    <parameter name="depth" byreference="false" type="integer" default="0"/>
+    <inline>
+      <comment value="end foreach" line="767"/>
+      <comment value="Process custom command line arguments." line="769"/>
+      <comment value="end foreach" line="791"/>
+      <comment value="Set custom php ini values as CLI args." line="793"/>
+      <comment value="end foreach" line="819"/>
+      <comment value="Process custom sniff config settings." line="837"/>
+      <comment value="Process custom ignore pattern rules." line="850"/>
+      <comment value="Merge our own sniff list with our externally included" line="877"/>
+      <comment value="sniff list, but filter out any excluded sniffs." line="878"/>
+    </inline>
+  </method>
+  <method name="_expandSniffDirectory" start="902" end="955" abstract="false" final="false" static="false" visibility="private">
+    <docblock>
+      <description compact="Expands a directory into a list of sniff files within."/>
+      <param description="The path to a directory." type="string" variable="$directory"/>
+      <param description="How many nested processing steps we are in. This" type="int" variable="$depth">is only used for debug output.</param>
+      <return type="array"/>
+    </docblock>
+    <parameter name="directory" byreference="false" type="{unknown}"/>
+    <parameter name="depth" byreference="false" type="integer" default="0"/>
+    <inline>
+      <comment value="end foreach" line="951"/>
+    </inline>
+  </method>
+  <method name="_expandRulesetReference" start="970" end="1138" abstract="false" final="false" static="false" visibility="private">
+    <docblock>
+      <description compact="Expands a ruleset reference into a list of sniff files."/>
+      <param description="The reference from the ruleset XML file." type="string" variable="$ref"/>
+      <param description="The directory of the ruleset XML file, used to" type="string" variable="$rulesetDir">evaluate relative paths.</param>
+      <param description="How many nested processing steps we are in. This" type="int" variable="$depth">is only used for debug output.</param>
+      <return type="array"/>
+      <throws description="If the reference is invalid." type="object">
+        <type full="PHP_CodeSniffer_Exception" namespace="" name="PHP_CodeSniffer_Exception"/>
+      </throws>
+    </docblock>
+    <parameter name="ref" byreference="false" type="{unknown}"/>
+    <parameter name="rulesetDir" byreference="false" type="{unknown}"/>
+    <parameter name="depth" byreference="false" type="integer" default="0"/>
+    <inline>
+      <comment value="Ignore internal sniffs codes as they are used to only" line="972"/>
+      <comment value="hide and change internal messages." line="973"/>
+      <comment value="As sniffs can't begin with a full stop, assume references in" line="983"/>
+      <comment value="this format are relative paths and attempt to convert them" line="984"/>
+      <comment value="to absolute paths. If this fails, let the reference run through" line="985"/>
+      <comment value="the normal checks and have it fail as normal." line="986"/>
+      <comment value="As sniffs can't begin with a tilde, assume references in" line="998"/>
+      <comment value="this format at relative to the user's home directory." line="999"/>
+      <comment value="end if" line="1096"/>
+      <comment value="end if" line="1136"/>
+    </inline>
+  </method>
+  <method name="_processRule" start="1150" end="1269" abstract="false" final="false" static="false" visibility="private">
+    <docblock>
+      <description compact="Processes a rule from a ruleset XML file, overriding built-in defaults."/>
+      <param description="The rule object from a ruleset XML file." type="object" variable="$rule">
+        <type full="SimpleXMLElement" namespace="" name="SimpleXMLElement"/>
+      </param>
+      <param description="How many nested processing steps we are in." type="int" variable="$depth">This is only used for debug output.</param>
+      <return type="object">
+        <type full="void" namespace="" name="void"/>
+      </return>
+    </docblock>
+    <parameter name="rule" byreference="false" type="{unknown}"/>
+    <parameter name="depth" byreference="false" type="integer" default="0"/>
+    <inline>
+      <comment value="Custom severity." line="1154"/>
+      <comment value="Custom message type." line="1169"/>
+      <comment value="Custom message." line="1184"/>
+      <comment value="Custom properties." line="1199"/>
+      <comment value="end if" line="1246"/>
+      <comment value="Ignore patterns." line="1248"/>
+    </inline>
+  </method>
+  <method name="_shouldProcessElement" start="1281" end="1306" abstract="false" final="false" static="false" visibility="private">
+    <docblock>
+      <description compact="Determine if an element should be processed or ignored."/>
+      <param description="An object from a ruleset XML file." type="object" variable="$element">
+        <type full="SimpleXMLElement" namespace="" name="SimpleXMLElement"/>
+      </param>
+      <param description="How many nested processing steps we are in." type="int" variable="$depth">This is only used for debug output.</param>
+      <return type="object">
+        <type full="bool" namespace="" name="bool"/>
+      </return>
+    </docblock>
+    <parameter name="element" byreference="false" type="{unknown}"/>
+    <parameter name="depth" byreference="false" type="integer" default="0"/>
+  </method>
+  <method name="registerSniffs" start="1319" end="1378" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Loads and stores sniffs objects used for sniffing files."/>
+      <param description="Paths to the sniff files to register." type="array" variable="$files"/>
+      <param description="The sniff class names to restrict the allowed" type="array" variable="$restrictions">listeners to.</param>
+      <return type="object">
+        <type full="void" namespace="" name="void"/>
+      </return>
+      <throws description="If a sniff file path is invalid." type="object">
+        <type full="PHP_CodeSniffer_Exception" namespace="" name="PHP_CodeSniffer_Exception"/>
+      </throws>
+    </docblock>
+    <parameter name="files" byreference="false" type="{unknown}"/>
+    <parameter name="restrictions" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="end foreach" line="1374"/>
+    </inline>
+  </method>
+  <method name="populateTokenListeners" start="1387" end="1460" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Populates the array of PHP_CodeSniffer_Sniff's for this file."/>
+      <return type="object">
+        <type full="void" namespace="" name="void"/>
+      </return>
+      <throws description="If sniff registration fails." type="object">
+        <type full="PHP_CodeSniffer_Exception" namespace="" name="PHP_CodeSniffer_Exception"/>
+      </throws>
+    </docblock>
+    <inline>
+      <comment value="Construct a list of listeners indexed by token being listened for." line="1389"/>
+      <comment value="end foreach" line="1458"/>
+    </inline>
+  </method>
+  <method name="setSniffProperty" start="1472" end="1493" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Set a single property for a sniff."/>
+      <param description="The class name of the sniff." type="string" variable="$listenerClass"/>
+      <param description="The name of the property to change." type="string" variable="$name"/>
+      <param description="The new value of the property." type="string" variable="$value"/>
+      <return type="object">
+        <type full="void" namespace="" name="void"/>
+      </return>
+    </docblock>
+    <parameter name="listenerClass" byreference="false" type="{unknown}"/>
+    <parameter name="name" byreference="false" type="{unknown}"/>
+    <parameter name="value" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="Setting a property for a sniff we are not using." line="1474"/>
+      <comment value="Special case for booleans." line="1484"/>
+    </inline>
+  </method>
+  <method name="getFilesToProcess" start="1509" end="1557" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Get a list of files that will be processed.">If passed directories, this method will find all files within them.
+The method will also perform file extension and ignore pattern filtering.</description>
+      <param description="A list of file or directory paths to process." type="string" variable="$paths"/>
+      <param description="If true, only process 1 level of files in directories" type="boolean" variable="$local"/>
+      <return type="array"/>
+      <throws description="If there was an error opening a directory." type="object">
+        <type full="Exception" namespace="" name="Exception"/>
+      </throws>
+      <see value="shouldProcessFile()"/>
+    </docblock>
+    <parameter name="paths" byreference="false" type="{unknown}"/>
+    <parameter name="local" byreference="false" type="boolean" default="false"/>
+    <inline>
+      <comment value="end foreach" line="1553"/>
+    </inline>
+  </method>
+  <method name="shouldProcessFile" start="1570" end="1602" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Checks filtering rules to see if a file should be checked.">Checks both file extension filters and path ignore filters.</description>
+      <param description="The path to the file being checked." type="string" variable="$path"/>
+      <param description="The directory to use for relative path checks." type="string" variable="$basedir"/>
+      <return type="object">
+        <type full="bool" namespace="" name="bool"/>
+      </return>
+    </docblock>
+    <parameter name="path" byreference="false" type="{unknown}"/>
+    <parameter name="basedir" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="Check that the file's extension is one we are checking." line="1572"/>
+      <comment value="We are strict about checking the extension and we don't" line="1573"/>
+      <comment value="let files through with no extension or that start with a dot." line="1574"/>
+      <comment value="Checking multi-part file extensions, so need to create a" line="1581"/>
+      <comment value="complete extension list and make sure one is allowed." line="1582"/>
+      <comment value="If the file's path matches one of our ignore patterns, skip it." line="1595"/>
+    </inline>
+  </method>
+  <method name="shouldIgnoreFile" start="1613" end="1662" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Checks filtering rules to see if a file should be ignored."/>
+      <param description="The path to the file being checked." type="string" variable="$path"/>
+      <param description="The directory to use for relative path checks." type="string" variable="$basedir"/>
+      <return type="object">
+        <type full="bool" namespace="" name="bool"/>
+      </return>
+    </docblock>
+    <parameter name="path" byreference="false" type="{unknown}"/>
+    <parameter name="basedir" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="end foreach" line="1658"/>
+    </inline>
+  </method>
+  <method name="processFile" start="1680" end="1798" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Run the code sniffs over a single given file.">Processes the file and runs the PHP_CodeSniffer sniffs to verify that it
+conforms with the standard. Returns the processed file object, or NULL
+if no file was processed due to error.</description>
+      <param description="The file to process." type="string" variable="$file"/>
+      <param description="The contents to parse. If NULL, the content" type="string" variable="$contents">is taken from the file system.</param>
+      <return type="object">
+        <type full="PHP_CodeSniffer_File" namespace="" name="PHP_CodeSniffer_File"/>
+      </return>
+      <throws description="If the file could not be processed." type="object">
+        <type full="PHP_CodeSniffer_Exception" namespace="" name="PHP_CodeSniffer_Exception"/>
+      </throws>
+      <see value="_processFile()"/>
+    </docblock>
+    <parameter name="file" byreference="false" type="{unknown}"/>
+    <parameter name="contents" byreference="false" type="{unknown}" default="" constant="null"/>
+    <inline>
+      <comment value="Before we go and spend time tokenizing this file, just check" line="1691"/>
+      <comment value="to see if there is a tag up top to indicate that the whole" line="1692"/>
+      <comment value="file should be ignored. It must be on one of the first two lines." line="1693"/>
+      <comment value="end if" line="1711"/>
+      <comment value="end try" line="1747"/>
+      <comment value="Running interactively." line="1758"/>
+      <comment xmlns="http://xml.phpdox.net/src" value="Print the error report for the current file and then wait for user input." line="1759"/>
+      <comment value="Get current violations and then clear the list to make sure" line="1763"/>
+      <comment value="we only print violations for a single file each time." line="1764"/>
+      <comment value="end while" line="1794"/>
+    </inline>
+  </method>
+  <method name="_processFile" start="1813" end="1860" abstract="false" final="false" static="false" visibility="private">
+    <docblock>
+      <description compact="Process the sniffs for a single file.">Does raw processing only. No interactive support or error checking.</description>
+      <param description="The file to process." type="string" variable="$file"/>
+      <param description="The contents to parse. If NULL, the content" type="string" variable="$contents">is taken from the file system.</param>
+      <return type="object">
+        <type full="PHP_CodeSniffer_File" namespace="" name="PHP_CodeSniffer_File"/>
+      </return>
+      <see value="processFile()"/>
+    </docblock>
+    <parameter name="file" byreference="false" type="{unknown}"/>
+    <parameter name="contents" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="generateDocs" start="1872" end="1883" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Generates documentation for a coding standard."/>
+      <param description="The standard to generate docs for" type="string" variable="$standard"/>
+      <param description="A list of sniffs to limit the docs to." type="array" variable="$sniffs"/>
+      <param description="The name of the generator class to use." type="string" variable="$generator"/>
+      <return type="object">
+        <type full="void" namespace="" name="void"/>
+      </return>
+    </docblock>
+    <parameter name="standard" byreference="false" type="{unknown}"/>
+    <parameter name="sniffs" byreference="false" type="array" default=""/>
+    <parameter name="generator" byreference="false" type="string" default="'Text'"/>
+  </method>
+  <method name="getSniffs" start="1891" end="1895" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Gets the array of PHP_CodeSniffer_Sniff's."/>
+      <return type="array" of="object">
+        <type full="PHP_CodeSniffer_Sniff" namespace="" name="PHP_CodeSniffer_Sniff"/>
+      </return>
+    </docblock>
+  </method>
+  <method name="getTokenSniffs" start="1903" end="1907" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Gets the array of PHP_CodeSniffer_Sniff's indexed by token type."/>
+      <return type="array"/>
+    </docblock>
+  </method>
+  <method name="isCamelCaps" start="1930" end="1992" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description compact="Returns true if the specified string is in the camel caps format."/>
+      <param description="The string the verify." type="string" variable="$string"/>
+      <param description="If true, check to see if the string is in the" type="boolean" variable="$classFormat">class format. Class format strings must start
+                            with a capital letter and contain no
+                            underscores.</param>
+      <param description="If true, the first character in the string" type="boolean" variable="$public">must be an a-z character. If false, the
+                            character must be an underscore. This
+                            argument is only applicable if $classFormat
+                            is false.</param>
+      <param description="If true, the string must not have two capital" type="boolean" variable="$strict">letters next to each other. If false, a
+                            relaxed camel caps policy is used to allow
+                            for acronyms.</param>
+      <return type="boolean"/>
+    </docblock>
+    <parameter name="string" byreference="false" type="{unknown}"/>
+    <parameter name="classFormat" byreference="false" type="boolean" default="false"/>
+    <parameter name="public" byreference="false" type="boolean" default="true"/>
+    <parameter name="strict" byreference="false" type="boolean" default="true"/>
+    <inline>
+      <comment value="Check the first character first." line="1936"/>
+      <comment value="Check that the name only contains legal characters." line="1958"/>
+      <comment value="end if" line="1988"/>
+    </inline>
+  </method>
+  <method name="isUnderscoreName" start="2002" end="2030" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description compact="Returns true if the specified string is in the underscore caps format."/>
+      <param description="The string to verify." type="string" variable="$string"/>
+      <return type="boolean"/>
+    </docblock>
+    <parameter name="string" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="If there are space in the name, it can't be valid." line="2004"/>
+    </inline>
+  </method>
+  <method name="suggestType" start="2043" end="2100" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description compact="Returns a valid variable type for param/var tag.">If type is not one of the standard type, it must be a custom type.
+Returns the correct type name suggestion if type name is invalid.</description>
+      <param description="The variable type to process." type="string" variable="$varType"/>
+      <return type="string"/>
+    </docblock>
+    <parameter name="varType" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="end if" line="2098"/>
+    </inline>
+  </method>
+  <method name="prepareForOutput" start="2113" end="2128" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description compact="Prepares token content for output to screen.">Replaces invisible characters so they are visible. On non-Windows
+OSes it will also colour the invisible characters.</description>
+      <param description="The content to prepare." type="string" variable="$content"/>
+      <return type="string"/>
+    </docblock>
+    <parameter name="content" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="getInstalledStandardPaths" start="2136" end="2155" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description compact="Get a list paths where standards are installed."/>
+      <return type="array"/>
+    </docblock>
+  </method>
+  <method name="getInstalledStandards" start="2175" end="2209" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description compact="Get a list of all coding standards installed.">Coding standards are directories located in the
+CodeSniffer/Standards directory. Valid coding standards
+include a Sniffs subdirectory.</description>
+      <param description="If true, the special &quot;Generic&quot;" type="boolean" variable="$includeGeneric">coding standard will be included
+                               if installed.</param>
+      <param description="A specific directory to look for standards" type="string" variable="$standardsDir">in. If not specified, PHP_CodeSniffer will
+                               look in its default locations.</param>
+      <return type="array"/>
+      <see value="isInstalledStandard()"/>
+    </docblock>
+    <parameter name="includeGeneric" byreference="false" type="boolean" default="false"/>
+    <parameter name="standardsDir" byreference="false" type="string" default="''"/>
+    <inline>
+      <comment value="end foreach" line="2205"/>
+    </inline>
+  </method>
+  <method name="isInstalledStandard" start="2224" end="2253" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description compact="Determine if a standard is installed.">Coding standards are directories located in the
+CodeSniffer/Standards directory. Valid coding standards
+include a ruleset.xml file.</description>
+      <param description="The name of the coding standard." type="string" variable="$standard"/>
+      <return type="boolean"/>
+      <see value="getInstalledStandards()"/>
+    </docblock>
+    <parameter name="standard" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="end if" line="2249"/>
+    </inline>
+  </method>
+  <method name="getInstalledStandardPath" start="2267" end="2285" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description compact="Return the path of an installed coding standard.">Coding standards are directories located in the
+CodeSniffer/Standards directory. Valid coding standards
+include a ruleset.xml file.</description>
+      <param description="The name of the coding standard." type="string" variable="$standard"/>
+      <return type="object">
+        <type full="string|null" namespace="" name="string|null"/>
+      </return>
+    </docblock>
+    <parameter name="standard" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="getConfigData" start="2300" end="2314" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description compact="Get a single config value.">Config data is stored in the data dir, in a file called
+CodeSniffer.conf. It is a simple PHP array.</description>
+      <param description="The name of the config value." type="string" variable="$key"/>
+      <return type="object">
+        <type full="string|null" namespace="" name="string|null"/>
+      </return>
+      <see value="setConfigData()"/>
+      <see value="getAllConfigData()"/>
+    </docblock>
+    <parameter name="key" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="setConfigData" start="2335" end="2388" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description compact="Set a single config value.">Config data is stored in the data dir, in a file called
+CodeSniffer.conf. It is a simple PHP array.</description>
+      <param description="The name of the config value." type="string" variable="$key"/>
+      <param description="The value to set. If null, the config" type="object" variable="$value">entry is deleted, reverting it to the
+                          default value.<type full="string|null" namespace="" name="string|null"/></param>
+      <param description="Set this config data temporarily for this" type="boolean" variable="$temp">script run. This will not write the config
+                          data to the config file.</param>
+      <return type="boolean"/>
+      <see value="getConfigData()"/>
+      <throws description="If the config file can not be written." type="object">
+        <type full="PHP_CodeSniffer_Exception" namespace="" name="PHP_CodeSniffer_Exception"/>
+      </throws>
+    </docblock>
+    <parameter name="key" byreference="false" type="{unknown}"/>
+    <parameter name="value" byreference="false" type="{unknown}"/>
+    <parameter name="temp" byreference="false" type="boolean" default="false"/>
+    <inline>
+      <comment value="end if" line="2362"/>
+    </inline>
+  </method>
+  <method name="getAllConfigData" start="2397" end="2426" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description compact="Get all config data in an array."/>
+      <return description="string&gt;" type="object">
+        <type full="array&lt;string" namespace="" name="array&lt;string"/>
+      </return>
+      <see value="getConfigData()"/>
+    </docblock>
+  </method>
+  <method name="isPharFile" start="2436" end="2444" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description compact="Return TRUE, if the path is a phar file."/>
+      <param description="The path to use." type="string" variable="$path"/>
+      <return type="mixed"/>
+    </docblock>
+    <parameter name="path" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="realpath" start="2456" end="2492" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description compact="CodeSniffer alternative for realpath.">Allows for phar support.</description>
+      <param description="The path to use." type="string" variable="$path"/>
+      <return type="mixed"/>
+    </docblock>
+    <parameter name="path" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="Support the path replacement of ~ with the user's home directory." line="2458"/>
+      <comment value="No extra work needed if this is not a phar file." line="2466"/>
+      <comment value="Before trying to break down the file path," line="2471"/>
+      <comment value="check if it exists first because it will mostly not" line="2472"/>
+      <comment value="change after running the below code." line="2473"/>
+    </inline>
+  </method>
+  <method name="chdir" start="2504" end="2513" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description compact="CodeSniffer alternative for chdir().">Allows for phar support.</description>
+      <param description="The path to use." type="string" variable="$path"/>
+      <return type="object">
+        <type full="void" namespace="" name="void"/>
+      </return>
+    </docblock>
+    <parameter name="path" byreference="false" type="{unknown}"/>
+  </method>
+</class>

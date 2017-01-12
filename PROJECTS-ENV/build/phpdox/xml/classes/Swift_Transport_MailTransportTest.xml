@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="Swift_Transport_MailTransportTest" namespace="" name="Swift_Transport_MailTransportTest" abstract="false" final="false" start="3" end="505">
+  <file path="/home/web/example/src/freegame_developer/vendor/swiftmailer/swiftmailer/tests/unit/Swift/Transport" file="MailTransportTest.php" realpath="/home/web/example/src/freegame_developer/vendor/swiftmailer/swiftmailer/tests/unit/Swift/Transport/MailTransportTest.php" size="16924" time="2016-07-08T11:51:25+00:00" unixtime="1467978685" sha1="58ec6e1176cf8082e51615e4522baa86ef5d275a" relative="freegame_developer/vendor/swiftmailer/swiftmailer/tests/unit/Swift/Transport/MailTransportTest.php"/>
+  <extends full="SwiftMailerTestCase" namespace="" name="SwiftMailerTestCase"/>
+  <method name="testTransportInvokesMailOncePerMessage" start="5" end="18" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testTransportUsesToFieldBodyInSending" start="20" end="40" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testTransportUsesSubjectFieldBodyInSending" start="42" end="62" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testTransportUsesBodyOfMessage" start="64" end="85" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testTransportSettingUsingReturnPathForExtraParams" start="87" end="106" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testTransportSettingEmptyExtraParams" start="108" end="131" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testTransportSettingSettingExtraParamsWithF" start="133" end="159" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testTransportSettingSettingExtraParamsWithoutF" start="161" end="187" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testTransportUsesHeadersFromMessage" start="189" end="210" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testTransportReturnsCountOfAllRecipientsIfInvokerReturnsTrue" start="212" end="233" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testTransportReturnsZeroIfInvokerReturnsFalse" start="235" end="256" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testToHeaderIsRemovedFromHeaderSetDuringSending" start="258" end="280" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testSubjectHeaderIsRemovedFromHeaderSetDuringSending" start="282" end="304" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testToHeaderIsPutBackAfterSending" start="306" end="328" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testSubjectHeaderIsPutBackAfterSending" start="330" end="352" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testMessageHeadersOnlyHavePHPEolsDuringSending" start="354" end="391" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testExceptionWhenNoRecipients" start="397" end="408" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <expectedexception value="Swift_TransportException"/>
+      <expectedexceptionmessage value="Cannot send message without a recipient"/>
+    </docblock>
+  </method>
+  <method name="noExceptionWhenRecipientsExistProvider" start="410" end="417" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testNoExceptionWhenRecipientsExist" start="424" end="436" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <dataprovider value="noExceptionWhenRecipientsExistProvider"/>
+      <param type="string" variable="$header"/>
+    </docblock>
+    <parameter name="header" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="_createTransport" start="440" end="443" abstract="false" final="false" static="false" visibility="private">
+    <parameter name="invoker" byreference="false" type="{unknown}"/>
+    <parameter name="dispatcher" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="_createEventDispatcher" start="445" end="448" abstract="false" final="false" static="false" visibility="private"/>
+  <method name="_createInvoker" start="450" end="453" abstract="false" final="false" static="false" visibility="private"/>
+  <method name="_createMessage" start="455" end="463" abstract="false" final="false" static="false" visibility="private">
+    <parameter name="headers" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="_createMessageWithRecipient" start="465" end="471" abstract="false" final="false" static="false" visibility="private">
+    <parameter name="headers" byreference="false" type="{unknown}"/>
+    <parameter name="recipient" byreference="false" type="array" default=""/>
+  </method>
+  <method name="_createHeaders" start="473" end="499" abstract="false" final="false" static="false" visibility="private">
+    <parameter name="headers" byreference="false" type="array" default=""/>
+  </method>
+  <method name="_createHeader" start="501" end="504" abstract="false" final="false" static="false" visibility="private"/>
+</class>

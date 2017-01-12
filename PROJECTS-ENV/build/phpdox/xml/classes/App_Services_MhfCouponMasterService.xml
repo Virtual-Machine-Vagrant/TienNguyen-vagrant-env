@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="App\Services\MhfCouponMasterService" namespace="App\Services" name="MhfCouponMasterService" abstract="false" final="false" start="11" end="238">
+  <file path="/home/web/example/src/freegame_developer/app/Services" file="MhfCouponMasterService.php" realpath="/home/web/example/src/freegame_developer/app/Services/MhfCouponMasterService.php" size="7731" time="2017-01-03T08:24:56+00:00" unixtime="1483431896" sha1="259d830bb6d5af237ec72d347310fdfc6b06d858" relative="freegame_developer/app/Services/MhfCouponMasterService.php"/>
+  <extends full="App\Services\CustomService" namespace="App\Services" name="CustomService"/>
+  <member name="mhfRights" visibility="protected" static="false" line="13"/>
+  <member name="mhfCoupon" visibility="protected" static="false" line="14"/>
+  <member name="sbxMhfCoupon" visibility="protected" static="false" line="15"/>
+  <constructor name="__construct" start="17" end="25" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="mhfRights" byreference="false" type="object">
+      <type full="App\Models\NetgameCsTool\MhfRights" namespace="App\Models\NetgameCsTool" name="MhfRights"/>
+    </parameter>
+    <parameter name="mhfCoupon" byreference="false" type="object">
+      <type full="App\Models\NetgameCsTool\MhfCoupon" namespace="App\Models\NetgameCsTool" name="MhfCoupon"/>
+    </parameter>
+    <parameter name="sbxMhfCoupon" byreference="false" type="object">
+      <type full="App\Models\NetgameCsTool\SbxMhfCoupon" namespace="App\Models\NetgameCsTool" name="SbxMhfCoupon"/>
+    </parameter>
+  </constructor>
+  <method name="getLists" start="32" end="39" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Get mhfright lists"/>
+      <param type="array" variable="$condition"/>
+      <param type="array" variable="$game"/>
+      <return type="array"/>
+    </docblock>
+    <parameter name="condition" byreference="false" type="{unknown}"/>
+    <parameter name="game" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="getFormData" start="45" end="54" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Get values init for multi page"/>
+      <return type="array"/>
+    </docblock>
+  </method>
+  <method name="formatConditions" start="60" end="84" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="format condition"/>
+      <param type="array" variable="$condition"/>
+      <return type="array"/>
+    </docblock>
+    <parameter name="condition" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="revertSearchConditions" start="90" end="106" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="revert search condition"/>
+      <param type="array" variable="$conditions"/>
+      <return type="array"/>
+    </docblock>
+    <parameter name="conditions" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="getListsMhfRights" start="112" end="120" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Get lists Mhf Rights"/>
+      <param type="integer" variable="$gameId"/>
+      <return type="array"/>
+    </docblock>
+    <parameter name="gameId" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="getDisplayTitleMhfRight" start="126" end="129" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Get display title Mhf Rights"/>
+      <param type="integer" variable="$params"/>
+      <return type="object"/>
+    </docblock>
+    <parameter name="params" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="storeMhfCouponMaster" start="136" end="151" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="store MhfCouponMaster"/>
+      <param type="array" variable="$params"/>
+      <return type="boolean"/>
+    </docblock>
+    <parameter name="params" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="updateMhfCouponMaster" start="158" end="173" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="update MhfCouponMaster"/>
+      <param type="array" variable="$params"/>
+      <return type="boolean"/>
+    </docblock>
+    <parameter name="params" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="formatValue" start="181" end="194" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="format value before insert"/>
+      <param type="array" variable="$params"/>
+      <param type="string" variable="$sandbox|null"/>
+      <return type="array"/>
+    </docblock>
+    <parameter name="params" byreference="false" type="{unknown}"/>
+    <parameter name="sandbox" byreference="false" type="{unknown}" default="" constant="null"/>
+  </method>
+  <method name="requestUrl" start="201" end="217" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Get search param from url"/>
+      <param type="object" variable="$request">
+        <type full="App\Services\request" namespace="App\Services" name="request"/>
+      </param>
+      <return type="array"/>
+    </docblock>
+    <parameter name="request" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="checkDuplicatesPrefix" start="224" end="227" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="check duplicates prefix"/>
+      <param type="array" variable="$params"/>
+      <return type="boolean"/>
+    </docblock>
+    <parameter name="params" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="getMhfCouponEdit" start="234" end="237" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="get Mhf Coupon edit by id"/>
+      <param type="array" variable="$params"/>
+      <return type="object"/>
+    </docblock>
+    <parameter name="params" byreference="false" type="{unknown}"/>
+  </method>
+</class>

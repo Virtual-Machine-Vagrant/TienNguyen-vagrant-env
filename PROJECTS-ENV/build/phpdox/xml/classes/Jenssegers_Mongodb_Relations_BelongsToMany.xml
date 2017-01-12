@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="Jenssegers\Mongodb\Relations\BelongsToMany" namespace="Jenssegers\Mongodb\Relations" name="BelongsToMany" abstract="false" final="false" start="7" end="313">
+  <file path="/home/web/example/src/freegame_developer/vendor/jenssegers/mongodb/src/Jenssegers/Mongodb/Relations" file="BelongsToMany.php" realpath="/home/web/example/src/freegame_developer/vendor/jenssegers/mongodb/src/Jenssegers/Mongodb/Relations/BelongsToMany.php" size="9026" time="2016-10-07T08:39:24+00:00" unixtime="1475829564" sha1="64e09d1653c62440047039c0c0f2725b6fdcee06" relative="freegame_developer/vendor/jenssegers/mongodb/src/Jenssegers/Mongodb/Relations/BelongsToMany.php"/>
+  <extends full="Illuminate\Database\Eloquent\Relations\BelongsToMany" namespace="Illuminate\Database\Eloquent\Relations" name="BelongsToMany"/>
+  <method name="hydratePivotRelation" start="14" end="17" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Hydrate the pivot table relationship on the models."/>
+      <param type="array" variable="$models"/>
+    </docblock>
+    <parameter name="models" byreference="false" type="array"/>
+    <inline>
+      <comment value="Do nothing." line="16"/>
+    </inline>
+  </method>
+  <method name="getSelectColumns" start="25" end="28" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Set the select clause for the relation query."/>
+      <param type="array" variable="$columns"/>
+      <return type="object">
+        <type full="\Illuminate\Database\Eloquent\Relations\BelongsToMany" namespace="\Illuminate\Database\Eloquent\Relations" name="BelongsToMany"/>
+      </return>
+    </docblock>
+    <parameter name="columns" byreference="false" type="array" default=""/>
+  </method>
+  <method name="addConstraints" start="33" end="38" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Set the base constraints on the relation query."/>
+    </docblock>
+  </method>
+  <method name="setWhere" start="45" end="52" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Set the where clause for the relation query."/>
+      <return type="object">
+        <type full="Jenssegers\Mongodb\Relations\$this" namespace="Jenssegers\Mongodb\Relations" name="$this"/>
+      </return>
+    </docblock>
+  </method>
+  <method name="save" start="62" end="69" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Save a new model and attach it to the parent model."/>
+      <param type="object" variable="$model">
+        <type full="\Illuminate\Database\Eloquent\Model" namespace="\Illuminate\Database\Eloquent" name="Model"/>
+      </param>
+      <param type="array" variable="$joining"/>
+      <param type="object" variable="$touch">
+        <type full="Jenssegers\Mongodb\Relations\bool" namespace="Jenssegers\Mongodb\Relations" name="bool"/>
+      </param>
+      <return type="object">
+        <type full="\Illuminate\Database\Eloquent\Model" namespace="\Illuminate\Database\Eloquent" name="Model"/>
+      </return>
+    </docblock>
+    <parameter name="model" byreference="false" type="object">
+      <type full="Illuminate\Database\Eloquent\Model" namespace="Illuminate\Database\Eloquent" name="Model"/>
+    </parameter>
+    <parameter name="joining" byreference="false" type="array" default=""/>
+    <parameter name="touch" byreference="false" type="boolean" default="true"/>
+  </method>
+  <method name="create" start="79" end="91" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Create a new instance of the related model."/>
+      <param type="array" variable="$attributes"/>
+      <param type="array" variable="$joining"/>
+      <param type="object" variable="$touch">
+        <type full="Jenssegers\Mongodb\Relations\bool" namespace="Jenssegers\Mongodb\Relations" name="bool"/>
+      </param>
+      <return type="object">
+        <type full="\Illuminate\Database\Eloquent\Model" namespace="\Illuminate\Database\Eloquent" name="Model"/>
+      </return>
+    </docblock>
+    <parameter name="attributes" byreference="false" type="array"/>
+    <parameter name="joining" byreference="false" type="array" default=""/>
+    <parameter name="touch" byreference="false" type="boolean" default="true"/>
+    <inline>
+      <comment value="Once we save the related model, we need to attach it to the base model via" line="83"/>
+      <comment value="through intermediate table so we'll use the existing &quot;attach&quot; method to" line="84"/>
+      <comment value="accomplish this which will insert the record and any more attributes." line="85"/>
+    </inline>
+  </method>
+  <method name="sync" start="100" end="151" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Sync the intermediate tables with a list of IDs or collection of models."/>
+      <param type="array" variable="$ids"/>
+      <param type="object" variable="$detaching">
+        <type full="Jenssegers\Mongodb\Relations\bool" namespace="Jenssegers\Mongodb\Relations" name="bool"/>
+      </param>
+      <return type="array"/>
+    </docblock>
+    <parameter name="ids" byreference="false" type="{unknown}"/>
+    <parameter name="detaching" byreference="false" type="boolean" default="true"/>
+    <inline>
+      <comment value="First we need to attach any of the associated models that are not currently" line="110"/>
+      <comment value="in this joining table. We'll spin through the given IDs, checking to see" line="111"/>
+      <comment value="if they exist in the array of current ones, and if not we will insert." line="112"/>
+      <comment value="See issue #256." line="115"/>
+      <comment value="We need to make sure we pass a clean array, so that it is not interpreted" line="124"/>
+      <comment value="as an associative array." line="125"/>
+      <comment value="Next, we will take the differences of the currents and given IDs and detach" line="128"/>
+      <comment value="all of the entities that exist in the &quot;current&quot; array but are not in the" line="129"/>
+      <comment value="the array of the IDs given to the method which will complete the sync." line="130"/>
+      <comment value="Now we are finally ready to attach the new records. Note that we'll disable" line="139"/>
+      <comment value="touching until after the entire operation is complete so we don't fire a" line="140"/>
+      <comment value="ton of touch operations until we are totally done syncing the records." line="141"/>
+    </inline>
+  </method>
+  <method name="updateExistingPivot" start="160" end="163" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Update an existing pivot record on the table."/>
+      <param type="mixed" variable="$id"/>
+      <param type="array" variable="$attributes"/>
+      <param type="object" variable="$touch">
+        <type full="Jenssegers\Mongodb\Relations\bool" namespace="Jenssegers\Mongodb\Relations" name="bool"/>
+      </param>
+    </docblock>
+    <parameter name="id" byreference="false" type="{unknown}"/>
+    <parameter name="attributes" byreference="false" type="array"/>
+    <parameter name="touch" byreference="false" type="boolean" default="true"/>
+    <inline>
+      <comment value="Do nothing, we have no pivot table." line="162"/>
+    </inline>
+  </method>
+  <method name="attach" start="172" end="200" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Attach a model to the parent."/>
+      <param type="mixed" variable="$id"/>
+      <param type="array" variable="$attributes"/>
+      <param type="object" variable="$touch">
+        <type full="Jenssegers\Mongodb\Relations\bool" namespace="Jenssegers\Mongodb\Relations" name="bool"/>
+      </param>
+    </docblock>
+    <parameter name="id" byreference="false" type="{unknown}"/>
+    <parameter name="attributes" byreference="false" type="array" default=""/>
+    <parameter name="touch" byreference="false" type="boolean" default="true"/>
+    <inline>
+      <comment value="Attach the new ids to the parent model." line="194"/>
+    </inline>
+  </method>
+  <method name="detach" start="209" end="238" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Detach models from the relationship."/>
+      <param type="object" variable="$ids">
+        <type full="Jenssegers\Mongodb\Relations\int|array" namespace="Jenssegers\Mongodb\Relations" name="int|array"/>
+      </param>
+      <param type="object" variable="$touch">
+        <type full="Jenssegers\Mongodb\Relations\bool" namespace="Jenssegers\Mongodb\Relations" name="bool"/>
+      </param>
+      <return type="int"/>
+    </docblock>
+    <parameter name="ids" byreference="false" type="array" default=""/>
+    <parameter name="touch" byreference="false" type="boolean" default="true"/>
+    <inline>
+      <comment value="If associated IDs were passed to the method we will only delete those" line="217"/>
+      <comment value="associations, otherwise all of the association ties will be broken." line="218"/>
+      <comment value="We'll return the numbers of affected rows when we do the deletes." line="219"/>
+      <comment value="Detach all ids from the parent model." line="222"/>
+      <comment value="Prepare the query to select all related objects." line="225"/>
+      <comment value="Remove the relation to the parent." line="230"/>
+    </inline>
+  </method>
+  <method name="buildDictionary" start="246" end="262" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Build model dictionary keyed by the relation's foreign key."/>
+      <param type="object" variable="$results">
+        <type full="\Illuminate\Database\Eloquent\Collection" namespace="\Illuminate\Database\Eloquent" name="Collection"/>
+      </param>
+      <return type="array"/>
+    </docblock>
+    <parameter name="results" byreference="false" type="object">
+      <type full="Illuminate\Database\Eloquent\Collection" namespace="Illuminate\Database\Eloquent" name="Collection"/>
+    </parameter>
+    <inline>
+      <comment value="First we will build a dictionary of child models keyed by the foreign key" line="250"/>
+      <comment value="of the relation so that we will easily and quickly match them to their" line="251"/>
+      <comment value="parents without having a possibly slow inner loops for every models." line="252"/>
+    </inline>
+  </method>
+  <method name="newPivotQuery" start="269" end="272" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Create a new query builder for the related model."/>
+      <return type="object">
+        <type full="\Illuminate\Database\Query\Builder" namespace="\Illuminate\Database\Query" name="Builder"/>
+      </return>
+    </docblock>
+  </method>
+  <method name="newRelatedQuery" start="279" end="282" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Create a new query builder for the related model."/>
+      <return type="object">
+        <type full="\Illuminate\Database\Query\Builder" namespace="\Illuminate\Database\Query" name="Builder"/>
+      </return>
+    </docblock>
+  </method>
+  <method name="getForeignKey" start="289" end="292" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Get the fully qualified foreign key for the relation."/>
+      <return type="string"/>
+    </docblock>
+  </method>
+  <method name="formatSyncList" start="302" end="312" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Format the sync list so that it is keyed by ID. (Legacy Support) The original function has been renamed to formatRecordsList since Laravel 5.3"/>
+      <deprecated/>
+      <param type="array" variable="$records"/>
+      <return type="array"/>
+    </docblock>
+    <parameter name="records" byreference="false" type="array"/>
+  </method>
+</class>

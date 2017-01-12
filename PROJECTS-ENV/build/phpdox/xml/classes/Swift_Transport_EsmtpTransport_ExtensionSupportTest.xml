@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="Swift_Transport_EsmtpTransport_ExtensionSupportTest" namespace="" name="Swift_Transport_EsmtpTransport_ExtensionSupportTest" abstract="false" final="false" start="11" end="528">
+  <file path="/home/web/example/src/freegame_developer/vendor/swiftmailer/swiftmailer/tests/unit/Swift/Transport/EsmtpTransport" file="ExtensionSupportTest.php" realpath="/home/web/example/src/freegame_developer/vendor/swiftmailer/swiftmailer/tests/unit/Swift/Transport/EsmtpTransport/ExtensionSupportTest.php" size="19149" time="2016-07-08T11:51:25+00:00" unixtime="1467978685" sha1="e9205c4cbeecde624daf13f6b2aff144d8e6ed11" relative="freegame_developer/vendor/swiftmailer/swiftmailer/tests/unit/Swift/Transport/EsmtpTransport/ExtensionSupportTest.php"/>
+  <extends full="Swift_Transport_EsmtpTransportTest" namespace="" name="Swift_Transport_EsmtpTransportTest"/>
+  <method name="testExtensionHandlersAreSortedAsNeeded" start="13" end="38" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testHandlersAreNotifiedOfParams" start="40" end="84" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testSupportedExtensionHandlersAreRunAfterEhlo" start="86" end="137" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testExtensionsCanModifyMailFromParams" start="139" end="223" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testExtensionsCanModifyRcptParams" start="225" end="309" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testExtensionsAreNotifiedOnCommand" start="311" end="371" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testChainOfCommandAlgorithmWhenNotifyingExtensions" start="373" end="434" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testExtensionsCanExposeMixinMethods" start="436" end="463" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testMixinMethodsBeginningWithSetAndNullReturnAreFluid" start="465" end="496" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testMixinSetterWhichReturnValuesAreNotFluid" start="498" end="527" abstract="false" final="false" static="false" visibility="public"/>
+</class>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="Faker\Provider\sl_SI\Internet" namespace="Faker\Provider\sl_SI" name="Internet" abstract="false" final="false" start="5" end="11">
+  <file path="/home/web/example/src/freegame_developer/vendor/fzaninotto/faker/src/Faker/Provider/sl_SI" file="Internet.php" realpath="/home/web/example/src/freegame_developer/vendor/fzaninotto/faker/src/Faker/Provider/sl_SI/Internet.php" size="325" time="2015-05-29T06:29:14+00:00" unixtime="1432880954" sha1="292b83af04ac148c8b69a943092639814c2063f2" relative="freegame_developer/vendor/fzaninotto/faker/src/Faker/Provider/sl_SI/Internet.php"/>
+  <extends full="Faker\Provider\Internet" namespace="Faker\Provider" name="Internet"/>
+  <member name="freeEmailDomain" type="array" default="" visibility="protected" static="true" line="8"/>
+  <member name="tld" type="array" default="" visibility="protected" static="true" line="10"/>
+</class>

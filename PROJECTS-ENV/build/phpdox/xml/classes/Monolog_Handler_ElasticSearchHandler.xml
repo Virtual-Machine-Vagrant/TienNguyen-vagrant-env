@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="Monolog\Handler\ElasticSearchHandler" namespace="Monolog\Handler" name="ElasticSearchHandler" abstract="false" final="false" start="36" end="128">
+  <file path="/home/web/example/src/freegame_developer/vendor/monolog/monolog/src/Monolog/Handler" file="ElasticSearchHandler.php" realpath="/home/web/example/src/freegame_developer/vendor/monolog/monolog/src/Monolog/Handler/ElasticSearchHandler.php" size="3417" time="2016-07-29T03:23:52+00:00" unixtime="1469762632" sha1="e37b26721afc464ef64c3c01f12e7bc18186662a" relative="freegame_developer/vendor/monolog/monolog/src/Monolog/Handler/ElasticSearchHandler.php"/>
+  <docblock>
+    <description compact="Elastic Search handler">Usage example:
+
+   $client = new \Elastica\Client();
+   $options = array(
+       'index' =&gt; 'elastic_index_name',
+       'type' =&gt; 'elastic_doc_type',
+   );
+   $handler = new ElasticSearchHandler($client, $options);
+   $log = new Logger('application');
+   $log-&gt;pushHandler($handler);</description>
+    <author value="Jelle Vink &lt;jelle.vink@gmail.com&gt;"/>
+  </docblock>
+  <extends full="Monolog\Handler\AbstractProcessingHandler" namespace="Monolog\Handler" name="AbstractProcessingHandler"/>
+  <member name="client" visibility="protected" static="false" line="41">
+    <docblock>
+      <description/>
+      <var type="object">
+        <type full="Elastica\Client" namespace="Elastica" name="Client"/>
+      </var>
+    </docblock>
+  </member>
+  <member name="options" type="array" default="" visibility="protected" static="false" line="46">
+    <docblock>
+      <description/>
+      <var description="Handler config options" type="array"/>
+    </docblock>
+  </member>
+  <constructor name="__construct" start="54" end="66" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <param description="Elastica Client object" type="object" variable="$client">
+        <type full="Elastica\Client" namespace="Elastica" name="Client"/>
+      </param>
+      <param description="Handler configuration" type="array" variable="$options"/>
+      <param description="The minimum logging level at which this handler will be triggered" type="int" variable="$level"/>
+      <param description="Whether the messages that are handled can bubble up the stack or not" type="object" variable="$bubble">
+        <type full="Monolog\Handler\Boolean" namespace="Monolog\Handler" name="Boolean"/>
+      </param>
+    </docblock>
+    <parameter name="client" byreference="false" type="object">
+      <type full="Elastica\Client" namespace="Elastica" name="Client"/>
+    </parameter>
+    <parameter name="options" byreference="false" type="array" default=""/>
+    <parameter name="level" byreference="false" type="{unknown}" default="" constant="Logger::DEBUG"/>
+    <parameter name="bubble" byreference="false" type="boolean" default="true"/>
+  </constructor>
+  <method name="write" start="71" end="74" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="{@inheritDoc}"/>
+    </docblock>
+    <parameter name="record" byreference="false" type="array"/>
+  </method>
+  <method name="setFormatter" start="79" end="85" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="{@inheritdoc}"/>
+    </docblock>
+    <parameter name="formatter" byreference="false" type="object">
+      <type full="Monolog\Formatter\FormatterInterface" namespace="Monolog\Formatter" name="FormatterInterface"/>
+    </parameter>
+  </method>
+  <method name="getOptions" start="91" end="94" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Getter options"/>
+      <return type="array"/>
+    </docblock>
+  </method>
+  <method name="getDefaultFormatter" start="99" end="102" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="{@inheritDoc}"/>
+    </docblock>
+  </method>
+  <method name="handleBatch" start="107" end="111" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="{@inheritdoc}"/>
+    </docblock>
+    <parameter name="records" byreference="false" type="array"/>
+  </method>
+  <method name="bulkSend" start="118" end="127" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Use Elasticsearch bulk API to send list of documents"/>
+      <param type="array" variable="$documents"/>
+      <throws type="object">
+        <type full="\RuntimeException" namespace="" name="RuntimeException"/>
+      </throws>
+    </docblock>
+    <parameter name="documents" byreference="false" type="array"/>
+  </method>
+</class>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface xmlns="http://xml.phpdox.net/src" full="Swift_Encoder" namespace="" name="Swift_Encoder" abstract="false" final="false" start="16" end="28">
+  <file path="/home/web/example/src/freegame_developer/vendor/swiftmailer/swiftmailer/lib/classes/Swift" file="Encoder.php" realpath="/home/web/example/src/freegame_developer/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Encoder.php" size="734" time="2016-07-08T11:51:25+00:00" unixtime="1467978685" sha1="1d65d8d9465aee61214de296a7a3c65ef810913c" relative="freegame_developer/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Encoder.php"/>
+  <docblock>
+    <description compact="Interface for all Encoder schemes."/>
+    <author value="Chris Corbyn"/>
+  </docblock>
+  <extends full="Swift_Mime_CharsetObserver" namespace="" name="Swift_Mime_CharsetObserver"/>
+  <method name="encodeString" start="27" end="27" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Encode a given string to produce an encoded string."/>
+      <param type="string" variable="$string"/>
+      <param description="if first line needs to be shorter" type="int" variable="$firstLineOffset"/>
+      <param description="- 0 indicates the default length for this encoding" type="int" variable="$maxLineLength"/>
+      <return type="string"/>
+    </docblock>
+    <parameter name="string" byreference="false" type="{unknown}"/>
+    <parameter name="firstLineOffset" byreference="false" type="integer" default="0"/>
+    <parameter name="maxLineLength" byreference="false" type="integer" default="0"/>
+  </method>
+</interface>

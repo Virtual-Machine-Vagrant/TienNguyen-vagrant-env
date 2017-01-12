@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="DebugBar\PhpHttpDriver" namespace="DebugBar" name="PhpHttpDriver" abstract="false" final="false" start="16" end="70">
+  <file path="/home/web/example/src/freegame_developer/vendor/maximebf/debugbar/src/DebugBar" file="PhpHttpDriver.php" realpath="/home/web/example/src/freegame_developer/vendor/maximebf/debugbar/src/DebugBar/PhpHttpDriver.php" size="1250" time="2016-09-15T14:01:59+00:00" unixtime="1473948119" sha1="17b8ffb19283f3f74522930eaefaacc51efc97ce" relative="freegame_developer/vendor/maximebf/debugbar/src/DebugBar/PhpHttpDriver.php"/>
+  <docblock>
+    <description compact="HTTP driver for native php"/>
+  </docblock>
+  <implements full="DebugBar\HttpDriverInterface" namespace="DebugBar" name="HttpDriverInterface"/>
+  <method name="setHeaders" start="21" end="26" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <param type="array" variable="$headers"/>
+    </docblock>
+    <parameter name="headers" byreference="false" type="array"/>
+  </method>
+  <method name="isSessionStarted" start="31" end="34" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <return type="object">
+        <type full="DebugBar\bool" namespace="DebugBar" name="bool"/>
+      </return>
+    </docblock>
+  </method>
+  <method name="setSessionValue" start="40" end="43" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <param type="string" variable="$name"/>
+      <param type="string" variable="$value"/>
+    </docblock>
+    <parameter name="name" byreference="false" type="{unknown}"/>
+    <parameter name="value" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="hasSessionValue" start="49" end="52" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <param type="string" variable="$name"/>
+      <return type="object">
+        <type full="DebugBar\bool" namespace="DebugBar" name="bool"/>
+      </return>
+    </docblock>
+    <parameter name="name" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="getSessionValue" start="58" end="61" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <param type="string" variable="$name"/>
+      <return type="mixed"/>
+    </docblock>
+    <parameter name="name" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="deleteSessionValue" start="66" end="69" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <param type="string" variable="$name"/>
+    </docblock>
+    <parameter name="name" byreference="false" type="{unknown}"/>
+  </method>
+</class>

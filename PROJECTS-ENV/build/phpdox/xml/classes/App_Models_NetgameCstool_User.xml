@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="App\Models\NetgameCstool\User" namespace="App\Models\NetgameCstool" name="User" abstract="false" final="false" start="5" end="89">
+  <file path="/home/web/example/src/freegame_developer/app/Models/NetgameCstool" file="User.php" realpath="/home/web/example/src/freegame_developer/app/Models/NetgameCstool/User.php" size="2491" time="2016-12-09T02:17:29+00:00" unixtime="1481249849" sha1="e39c97577c8eb969825052f96097251c9ded5cfe" relative="freegame_developer/app/Models/NetgameCstool/User.php"/>
+  <extends full="App\Models\NetgameCstool\NetgameCstool" namespace="App\Models\NetgameCstool" name="NetgameCstool"/>
+  <member name="table" type="string" default="'user'" visibility="protected" static="false" line="7"/>
+  <member name="timestamps" type="boolean" default="false" visibility="public" static="false" line="9"/>
+  <member name="guarded" type="array" default="" visibility="protected" static="false" line="11"/>
+  <member name="dates" type="array" default="" visibility="protected" static="false" line="13"/>
+  <method name="getList" start="22" end="48" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Get user list by condition"/>
+      <param type="array" variable="$condition"/>
+      <return type="object">
+        <type full="App\Models\NetgameCstool\Object" namespace="App\Models\NetgameCstool" name="Object"/>
+      </return>
+    </docblock>
+    <parameter name="condition" byreference="false" type="array" default=""/>
+  </method>
+  <method name="getOne" start="55" end="60" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Get user by condition"/>
+      <param type="array" variable="$condition"/>
+      <return type="object">
+        <type full="App\Models\NetgameCstool\Object" namespace="App\Models\NetgameCstool" name="Object"/>
+      </return>
+    </docblock>
+    <parameter name="condition" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="add" start="67" end="74" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Insert user"/>
+      <param type="array" variable="$params"/>
+      <param type="boolean"/>
+    </docblock>
+    <parameter name="params" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="edit" start="82" end="88" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Update user"/>
+      <param type="array" variable="$updateData"/>
+      <param type="array" variable="$conditions"/>
+      <return type="boolean"/>
+    </docblock>
+    <parameter name="updateData" byreference="false" type="{unknown}"/>
+    <parameter name="conditions" byreference="false" type="{unknown}"/>
+  </method>
+</class>

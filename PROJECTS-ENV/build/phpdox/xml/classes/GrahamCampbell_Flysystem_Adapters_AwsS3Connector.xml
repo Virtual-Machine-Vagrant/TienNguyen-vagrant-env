@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="GrahamCampbell\Flysystem\Adapters\AwsS3Connector" namespace="GrahamCampbell\Flysystem\Adapters" name="AwsS3Connector" abstract="false" final="false" start="25" end="137">
+  <file path="/home/web/example/src/freegame_developer/vendor/graham-campbell/flysystem/src/Adapters" file="AwsS3Connector.php" realpath="/home/web/example/src/freegame_developer/vendor/graham-campbell/flysystem/src/Adapters/AwsS3Connector.php" size="3596" time="2016-04-26T14:23:32+00:00" unixtime="1461680612" sha1="31b878c7843da0d3bf8558620dae4a1b1cc32e4c" relative="freegame_developer/vendor/graham-campbell/flysystem/src/Adapters/AwsS3Connector.php"/>
+  <docblock>
+    <description compact="This is the awss3 connector class."/>
+    <author value="Graham Campbell &lt;graham@alt-three.com&gt;"/>
+    <author value="Raul Ruiz &lt;publiux@gmail.com&gt;"/>
+  </docblock>
+  <implements full="GrahamCampbell\Manager\ConnectorInterface" namespace="GrahamCampbell\Manager" name="ConnectorInterface"/>
+  <method name="connect" start="34" end="41" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Establish an adapter connection."/>
+      <param type="array" variable="$config" of="object">
+        <type full="GrahamCampbell\Flysystem\Adapters\string" namespace="GrahamCampbell\Flysystem\Adapters" name="string"/>
+      </param>
+      <return type="object">
+        <type full="\League\Flysystem\AwsS3v3\AwsS3Adapter" namespace="\League\Flysystem\AwsS3v3" name="AwsS3Adapter"/>
+      </return>
+    </docblock>
+    <parameter name="config" byreference="false" type="array"/>
+  </method>
+  <method name="getAuth" start="52" end="89" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Get the authentication data."/>
+      <param type="array" variable="$config" of="object">
+        <type full="GrahamCampbell\Flysystem\Adapters\string" namespace="GrahamCampbell\Flysystem\Adapters" name="string"/>
+      </param>
+      <throws type="object">
+        <type full="\InvalidArgumentException" namespace="" name="InvalidArgumentException"/>
+      </throws>
+      <return type="array" of="object">
+        <type full="GrahamCampbell\Flysystem\Adapters\string" namespace="GrahamCampbell\Flysystem\Adapters" name="string"/>
+      </return>
+    </docblock>
+    <parameter name="config" byreference="false" type="array"/>
+  </method>
+  <method name="getClient" start="98" end="101" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Get the awss3 client."/>
+      <param type="array" variable="$auth" of="object">
+        <type full="GrahamCampbell\Flysystem\Adapters\string" namespace="GrahamCampbell\Flysystem\Adapters" name="string"/>
+      </param>
+      <return type="object">
+        <type full="\Aws\S3\S3Client" namespace="\Aws\S3" name="S3Client"/>
+      </return>
+    </docblock>
+    <parameter name="auth" byreference="false" type="array"/>
+  </method>
+  <method name="getConfig" start="112" end="123" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Get the configuration."/>
+      <param type="array" variable="$config" of="object">
+        <type full="GrahamCampbell\Flysystem\Adapters\string" namespace="GrahamCampbell\Flysystem\Adapters" name="string"/>
+      </param>
+      <throws type="object">
+        <type full="\InvalidArgumentException" namespace="" name="InvalidArgumentException"/>
+      </throws>
+      <return type="array"/>
+    </docblock>
+    <parameter name="config" byreference="false" type="array"/>
+  </method>
+  <method name="getAdapter" start="133" end="136" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Get the awss3 adapter."/>
+      <param type="object" variable="$client">
+        <type full="\Aws\S3\S3Client" namespace="\Aws\S3" name="S3Client"/>
+      </param>
+      <param type="array" variable="$config" of="object">
+        <type full="GrahamCampbell\Flysystem\Adapters\string" namespace="GrahamCampbell\Flysystem\Adapters" name="string"/>
+      </param>
+      <return type="object">
+        <type full="\League\Flysystem\AwsS3v3\AwsS3Adapter" namespace="\League\Flysystem\AwsS3v3" name="AwsS3Adapter"/>
+      </return>
+    </docblock>
+    <parameter name="client" byreference="false" type="object">
+      <type full="Aws\S3\S3Client" namespace="Aws\S3" name="S3Client"/>
+    </parameter>
+    <parameter name="config" byreference="false" type="array"/>
+  </method>
+</class>

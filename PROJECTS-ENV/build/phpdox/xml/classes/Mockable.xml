@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="Mockable" namespace="" name="Mockable" abstract="false" final="false" start="2" end="28">
+  <file path="/home/web/example/src/freegame_developer/vendor/phpunit/phpunit-mock-objects/tests/_fixture" file="Mockable.php" realpath="/home/web/example/src/freegame_developer/vendor/phpunit/phpunit-mock-objects/tests/_fixture/Mockable.php" size="505" time="2015-10-02T06:51:40+00:00" unixtime="1443768700" sha1="0b078340d662cb032d6cd8848979656d3062d147" relative="freegame_developer/vendor/phpunit/phpunit-mock-objects/tests/_fixture/Mockable.php"/>
+  <member name="constructorArgs" visibility="public" static="false" line="4"/>
+  <member name="cloned" visibility="public" static="false" line="5"/>
+  <constructor name="__construct" start="7" end="10" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="arg1" byreference="false" type="{unknown}" default="" constant="null"/>
+    <parameter name="arg2" byreference="false" type="{unknown}" default="" constant="null"/>
+  </constructor>
+  <method name="mockableMethod" start="12" end="16" abstract="false" final="false" static="false" visibility="public">
+    <inline>
+      <comment value="something different from NULL" line="14"/>
+    </inline>
+  </method>
+  <method name="anotherMockableMethod" start="18" end="22" abstract="false" final="false" static="false" visibility="public">
+    <inline>
+      <comment value="something different from NULL" line="20"/>
+    </inline>
+  </method>
+  <method name="__clone" start="24" end="27" abstract="false" final="false" static="false" visibility="public"/>
+</class>

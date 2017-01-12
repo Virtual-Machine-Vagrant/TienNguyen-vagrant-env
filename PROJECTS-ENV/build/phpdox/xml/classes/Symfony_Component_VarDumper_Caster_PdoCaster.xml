@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="Symfony\Component\VarDumper\Caster\PdoCaster" namespace="Symfony\Component\VarDumper\Caster" name="PdoCaster" abstract="false" final="false" start="21" end="114">
+  <file path="/home/web/example/src/freegame_developer/vendor/symfony/var-dumper/Caster" file="PdoCaster.php" realpath="/home/web/example/src/freegame_developer/vendor/symfony/var-dumper/Caster/PdoCaster.php" size="3306" time="2016-10-06T08:40:01+00:00" unixtime="1475743201" sha1="add73625c0a7e143418324e1db09a8276e4dc367" relative="freegame_developer/vendor/symfony/var-dumper/Caster/PdoCaster.php"/>
+  <docblock>
+    <description compact="Casts PDO related classes to array representation."/>
+    <author value="Nicolas Grekas &lt;p@tchwork.com&gt;"/>
+  </docblock>
+  <member name="pdoAttributes" type="array" default="" visibility="private" static="true" line="23"/>
+  <method name="castPdo" start="60" end="101" abstract="false" final="false" static="true" visibility="public">
+    <parameter name="c" byreference="false" type="object">
+      <type full="PDO" namespace="" name="PDO"/>
+    </parameter>
+    <parameter name="a" byreference="false" type="array"/>
+    <parameter name="stub" byreference="false" type="object">
+      <type full="Symfony\Component\VarDumper\Cloner\Stub" namespace="Symfony\Component\VarDumper\Cloner" name="Stub"/>
+    </parameter>
+    <parameter name="isNested" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="castPdoStatement" start="103" end="113" abstract="false" final="false" static="true" visibility="public">
+    <parameter name="c" byreference="false" type="object">
+      <type full="PDOStatement" namespace="" name="PDOStatement"/>
+    </parameter>
+    <parameter name="a" byreference="false" type="array"/>
+    <parameter name="stub" byreference="false" type="object">
+      <type full="Symfony\Component\VarDumper\Cloner\Stub" namespace="Symfony\Component\VarDumper\Cloner" name="Stub"/>
+    </parameter>
+    <parameter name="isNested" byreference="false" type="{unknown}"/>
+  </method>
+</class>

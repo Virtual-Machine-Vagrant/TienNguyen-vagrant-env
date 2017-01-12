@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="App\Models\NetgameCstool\InfoImage" namespace="App\Models\NetgameCstool" name="InfoImage" abstract="false" final="false" start="7" end="117">
+  <file path="/home/web/example/src/freegame_developer/app/Models/NetgameCstool" file="InfoImage.php" realpath="/home/web/example/src/freegame_developer/app/Models/NetgameCstool/InfoImage.php" size="3290" time="2016-12-13T02:05:42+00:00" unixtime="1481594742" sha1="907b6c6051113c5139367a7eee576ec71c97af0c" relative="freegame_developer/app/Models/NetgameCstool/InfoImage.php"/>
+  <extends full="App\Models\NetgameCstool\NetgameCstool" namespace="App\Models\NetgameCstool" name="NetgameCstool"/>
+  <member name="table" type="string" default="'info_image'" visibility="protected" static="false" line="9"/>
+  <member name="fillable" type="array" default="" visibility="protected" static="false" line="10"/>
+  <member name="primaryKey" type="string" default="'info_image_id'" visibility="protected" static="false" line="11"/>
+  <member name="timestamps" type="boolean" default="false" visibility="public" static="false" line="12"/>
+  <method name="insertImage" start="20" end="32" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Insert upload image"/>
+      <param type="array" variable="$params"/>
+      <return type="array"/>
+    </docblock>
+    <parameter name="params" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="updateImage" start="39" end="54" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Update Image"/>
+      <param type="array" variable="$params"/>
+      <param type="integer" variable="$image_id"/>
+      <return/>
+    </docblock>
+    <parameter name="params" byreference="false" type="{unknown}"/>
+    <parameter name="image_id" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="getTitleImageById" start="60" end="64" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="get title image by id"/>
+      <param type="integer" variable="$imageId"/>
+      <return type="array"/>
+    </docblock>
+    <parameter name="imageId" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="getInfoImageList" start="72" end="79" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="get info image list"/>
+      <param type="integer" variable="$gameId"/>
+      <param type="integer" variable="infoId"/>
+      <return type="array"/>
+    </docblock>
+    <parameter name="gameId" byreference="false" type="{unknown}"/>
+    <parameter name="infoId" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="getImageFlagByGameIdAndInfoId" start="85" end="91" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="get image flag by game id and info id"/>
+      <param type="array" variable="$params"/>
+      <return type="array"/>
+    </docblock>
+    <parameter name="params" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="deleteInfoImage" start="97" end="102" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="delete info image"/>
+      <param type="array" variable="$params"/>
+      <return type="object">
+        <type full="App\Models\NetgameCstool\bolean" namespace="App\Models\NetgameCstool" name="bolean"/>
+      </return>
+    </docblock>
+    <parameter name="params" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="updateImageFlag" start="109" end="116" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="update image falge"/>
+      <param type="array" variable="$params"/>
+      <param type="integer" variable="$image_id"/>
+      <return type="object">
+        <type full="App\Models\NetgameCstool\bolean" namespace="App\Models\NetgameCstool" name="bolean"/>
+      </return>
+    </docblock>
+    <parameter name="params" byreference="false" type="{unknown}"/>
+    <parameter name="image_id" byreference="false" type="{unknown}"/>
+  </method>
+</class>

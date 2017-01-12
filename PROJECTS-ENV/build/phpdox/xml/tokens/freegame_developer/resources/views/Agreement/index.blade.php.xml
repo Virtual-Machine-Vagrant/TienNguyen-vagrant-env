@@ -1,0 +1,202 @@
+<?xml version="1.0"?>
+<source xmlns="http://xml.phpdox.net/token">
+  <file xmlns="http://xml.phpdox.net/src" path="/home/web/example/src/freegame_developer/resources/views/Agreement" file="index.blade.php" realpath="/home/web/example/src/freegame_developer/resources/views/Agreement/index.blade.php" size="3084" time="2016-12-06T02:39:57+00:00" unixtime="1480991997" sha1="26907e0923777ac08eabdf062d0d575cce3943a8" relative="freegame_developer/resources/views/Agreement/index.blade.php"/>
+  <line no="1">
+    <token name="T_INLINE_HTML">@extends('layout')</token>
+  </line>
+  <line no="2"/>
+  <line no="3">
+    <token name="T_INLINE_HTML">@section('content')</token>
+  </line>
+  <line no="4"/>
+  <line no="5">
+    <token name="T_INLINE_HTML">&lt;header id="gnavi"&gt;</token>
+  </line>
+  <line no="6">
+    <token name="T_INLINE_HTML">    @include('partials.breadcrumbs', [</token>
+  </line>
+  <line no="7">
+    <token name="T_INLINE_HTML">        'breadcrumbs' =&gt; array_merge(</token>
+  </line>
+  <line no="8">
+    <token name="T_INLINE_HTML">            $formData['menuName'], [$formData['screenName']]</token>
+  </line>
+  <line no="9">
+    <token name="T_INLINE_HTML">        )</token>
+  </line>
+  <line no="10">
+    <token name="T_INLINE_HTML">    ])</token>
+  </line>
+  <line no="11">
+    <token name="T_INLINE_HTML">&lt;/header&gt;</token>
+  </line>
+  <line no="12">
+    <token name="T_INLINE_HTML">@include('partials.errormessage', ['errors' =&gt; $errors])</token>
+  </line>
+  <line no="13"/>
+  <line no="14">
+    <token name="T_INLINE_HTML">&lt;section&gt;</token>
+  </line>
+  <line no="15">
+    <token name="T_INLINE_HTML">    &lt;div class="c-area"&gt;</token>
+  </line>
+  <line no="16">
+    <token name="T_INLINE_HTML">        &lt;h2 class="c-headline"&gt;&lt;i class="fa fa-list-ol"&gt;&lt;/i&gt;&#x5229;&#x7528;&#x898F;&#x7D04;&#x4E00;&#x89A7;&lt;/h2&gt;</token>
+  </line>
+  <line no="17"/>
+  <line no="18">
+    <token name="T_INLINE_HTML">        &lt;div class="mg-b20 clearfix"&gt;</token>
+  </line>
+  <line no="19">
+    <token name="T_INLINE_HTML">            &lt;a href="{{ route('Agreement.create') }}" class="button is-primary"&gt;&lt;i class="fa fa-plus"&gt;&lt;/i&gt;&#x65B0;&#x898F;&#x8FFD;&#x52A0;&lt;/a&gt;</token>
+  </line>
+  <line no="20">
+    <token name="T_INLINE_HTML">        &lt;/div&gt;</token>
+  </line>
+  <line no="21">
+    <token name="T_INLINE_HTML">        @if (count($listAgreement) &gt; 0)</token>
+  </line>
+  <line no="22">
+    <token name="T_INLINE_HTML">        &lt;div class="c-pager"&gt;</token>
+  </line>
+  <line no="23">
+    <token name="T_INLINE_HTML">            @include('partials.paginator', array('paginator' =&gt; $listAgreement, 'from' =&gt; $pagerView['from'], 'to' =&gt; $pagerView['to']))</token>
+  </line>
+  <line no="24">
+    <token name="T_INLINE_HTML">            @include('partials.paginatorperpage', ['paginator' =&gt; $listAgreement])</token>
+  </line>
+  <line no="25">
+    <token name="T_INLINE_HTML">            &lt;!-- /.c-pager --&gt;</token>
+  </line>
+  <line no="26">
+    <token name="T_INLINE_HTML">        &lt;/div&gt;</token>
+  </line>
+  <line no="27">
+    <token name="T_INLINE_HTML">        &lt;div class="area-scroll"&gt;</token>
+  </line>
+  <line no="28">
+    <token name="T_INLINE_HTML">            &lt;table class="c-table is-scroll"&gt;</token>
+  </line>
+  <line no="29">
+    <token name="T_INLINE_HTML">                &lt;thead&gt;</token>
+  </line>
+  <line no="30">
+    <token name="T_INLINE_HTML">                    &lt;tr&gt;</token>
+  </line>
+  <line no="31">
+    <token name="T_INLINE_HTML">                        &lt;th&gt;&#x8868;&#x793A;&#x9806;&lt;/th&gt;</token>
+  </line>
+  <line no="32">
+    <token name="T_INLINE_HTML">                        &lt;th&gt;&#x4F5C;&#x6210;&#x65E5;&lt;/th&gt;</token>
+  </line>
+  <line no="33">
+    <token name="T_INLINE_HTML">                        &lt;th&gt;&#x66F4;&#x65B0;&#x65E5;&lt;/th&gt;</token>
+  </line>
+  <line no="34">
+    <token name="T_INLINE_HTML">                        &lt;th&gt;&#x30BF;&#x30A4;&#x30C8;&#x30EB;&lt;/th&gt;</token>
+  </line>
+  <line no="35">
+    <token name="T_INLINE_HTML">                        &lt;th&gt;&#x30B9;&#x30C6;&#x30FC;&#x30BF;&#x30B9;&lt;/th&gt;</token>
+  </line>
+  <line no="36">
+    <token name="T_INLINE_HTML">                        &lt;th&gt;&#x7DE8;&#x96C6;&#xFF0F;&#x524A;&#x9664;&lt;/th&gt;</token>
+  </line>
+  <line no="37">
+    <token name="T_INLINE_HTML">                    &lt;/tr&gt;</token>
+  </line>
+  <line no="38">
+    <token name="T_INLINE_HTML">                &lt;/thead&gt;</token>
+  </line>
+  <line no="39">
+    <token name="T_INLINE_HTML">                &lt;tbody&gt;</token>
+  </line>
+  <line no="40">
+    <token name="T_INLINE_HTML">                @foreach ($listAgreement as $result)</token>
+  </line>
+  <line no="41">
+    <token name="T_INLINE_HTML">                    &lt;tr&gt;</token>
+  </line>
+  <line no="42">
+    <token name="T_INLINE_HTML">                        &lt;td&gt;{{ (isset($result['sort'])) ? $result['sort']: '' }}&lt;/td&gt;</token>
+  </line>
+  <line no="43">
+    <token name="T_INLINE_HTML">                        &lt;td&gt;{{ (isset($result['created_at'])) ? date('Y/m/d', strtotime($result['created_at'])): '' }}&lt;/td&gt;</token>
+  </line>
+  <line no="44">
+    <token name="T_INLINE_HTML">                        &lt;td&gt;{{ (isset($result['updated_at'])) ? date('Y/m/d', strtotime($result['updated_at'])): '' }}&lt;/td&gt;</token>
+  </line>
+  <line no="45">
+    <token name="T_INLINE_HTML">                        &lt;td class="nowrap"&gt;{{ (isset($result['title'])) ? str_limit($result['title'], $formData['limitText']): '' }}&lt;/td&gt;</token>
+  </line>
+  <line no="46">
+    <token name="T_INLINE_HTML">                        &lt;td&gt;{{ (isset($result['deleted_at'])) ? '&#x975E;&#x8868;&#x793A;' : '&#x8868;&#x793A;' }}&lt;/td&gt;</token>
+  </line>
+  <line no="47">
+    <token name="T_INLINE_HTML">                        &lt;td&gt;</token>
+  </line>
+  <line no="48">
+    <token name="T_INLINE_HTML">                            &lt;a href="{{ route('Agreement.edit',$params + ['id' =&gt; $result['id']]) }}" class="button"&gt;&lt;i class="fa fa-pencil"&gt;&lt;/i&gt;&#x7DE8;&#x96C6;&lt;/a&gt;</token>
+  </line>
+  <line no="49">
+    <token name="T_INLINE_HTML">                            &lt;a href="{{ route('Agreement.deleteconfirm', $params + ['id' =&gt; $result['id']]) }}" class="button is-danger"&gt;&lt;i class="fa fa-trash-o"&gt;&lt;/i&gt;&#x524A;&#x9664;&lt;/a&gt;</token>
+  </line>
+  <line no="50">
+    <token name="T_INLINE_HTML">                        &lt;/td&gt;</token>
+  </line>
+  <line no="51">
+    <token name="T_INLINE_HTML">                    &lt;/tr&gt;</token>
+  </line>
+  <line no="52">
+    <token name="T_INLINE_HTML">                @endforeach</token>
+  </line>
+  <line no="53">
+    <token name="T_INLINE_HTML">                &lt;/tbody&gt;</token>
+  </line>
+  <line no="54">
+    <token name="T_INLINE_HTML">                &lt;!-- /.c-table --&gt;</token>
+  </line>
+  <line no="55">
+    <token name="T_INLINE_HTML">            &lt;/table&gt;</token>
+  </line>
+  <line no="56">
+    <token name="T_INLINE_HTML">        &lt;/div&gt;</token>
+  </line>
+  <line no="57"/>
+  <line no="58">
+    <token name="T_INLINE_HTML">        &lt;div class="c-pager"&gt;</token>
+  </line>
+  <line no="59">
+    <token name="T_INLINE_HTML">            @include('partials.paginator', array('paginator' =&gt; $listAgreement, 'from' =&gt; $pagerView['from'], 'to' =&gt; $pagerView['to']))</token>
+  </line>
+  <line no="60">
+    <token name="T_INLINE_HTML">            @include('partials.paginatorperpage', ['paginator' =&gt; $listAgreement])</token>
+  </line>
+  <line no="61">
+    <token name="T_INLINE_HTML">            &lt;!-- /.c-pager --&gt;</token>
+  </line>
+  <line no="62">
+    <token name="T_INLINE_HTML">        &lt;/div&gt;</token>
+  </line>
+  <line no="63">
+    <token name="T_INLINE_HTML">        @else</token>
+  </line>
+  <line no="64">
+    <token name="T_INLINE_HTML">            &lt;p class="c-notregist"&gt;&lt;i class="fa fa-close"&gt;&lt;/i&gt;&#x767B;&#x9332;&#x3055;&#x308C;&#x3066;&#x3044;&#x308B;&#x30C7;&#x30FC;&#x30BF;&#x304C;&#x3042;&#x308A;&#x307E;&#x305B;&#x3093;&#x3002;&lt;/p&gt;</token>
+  </line>
+  <line no="65">
+    <token name="T_INLINE_HTML">        @endif</token>
+  </line>
+  <line no="66">
+    <token name="T_INLINE_HTML">        &lt;!-- /.c-area --&gt;</token>
+  </line>
+  <line no="67">
+    <token name="T_INLINE_HTML">    &lt;/div&gt;</token>
+  </line>
+  <line no="68">
+    <token name="T_INLINE_HTML">&lt;/section&gt;</token>
+  </line>
+  <line no="69">
+    <token name="T_INLINE_HTML">@endsection</token>
+  </line>
+  <line no="70"/>
+</source>

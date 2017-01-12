@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="App\Models\NetgameCstool\Account" namespace="App\Models\NetgameCstool" name="Account" abstract="false" final="false" start="9" end="161">
+  <file path="/home/web/example/src/freegame_developer/app/Models/NetgameCstool" file="Account.php" realpath="/home/web/example/src/freegame_developer/app/Models/NetgameCstool/Account.php" size="3948" time="2016-11-16T01:52:54+00:00" unixtime="1479261174" sha1="e554648f71cb2d4aaf34b400386df3cbea8d09fb" relative="freegame_developer/app/Models/NetgameCstool/Account.php"/>
+  <extends full="App\Models\NetgameCstool\NetgameCstool" namespace="App\Models\NetgameCstool" name="NetgameCstool"/>
+  <implements full="Illuminate\Contracts\Auth\Authenticatable" namespace="Illuminate\Contracts\Auth" name="Authenticatable"/>
+  <uses full="Illuminate\Auth\Authenticatable" namespace="Illuminate\Auth" name="Authenticatable" start="11" end="11"/>
+  <member name="table" type="string" default="'account'" visibility="protected" static="false" line="13"/>
+  <member name="guarded" type="array" default="" visibility="protected" static="false" line="15"/>
+  <member name="primaryKey" type="string" default="'account_id'" visibility="protected" static="false" line="19"/>
+  <member name="hidden" type="array" default="" visibility="protected" static="false" line="21"/>
+  <member name="timestamps" type="boolean" default="false" visibility="public" static="false" line="25"/>
+  <method name="setPasswordAttribute" start="33" end="44" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Set password attribute"/>
+      <param type="string" variable="$password"/>
+      <return type="string"/>
+    </docblock>
+    <parameter name="password" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="setLoginIdAttribute" start="52" end="63" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Set login id attribute"/>
+      <param type="string" variable="$loginId"/>
+      <return type="string"/>
+    </docblock>
+    <parameter name="loginId" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="getOneByLoginId" start="71" end="79" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Get one by login_id"/>
+      <param type="string" variable="$loginId"/>
+      <return type="object"/>
+    </docblock>
+    <parameter name="loginId" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="getOneForAuth" start="88" end="99" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Get one for auth"/>
+      <param type="string" variable="$loginId"/>
+      <param type="string" variable="$password"/>
+      <return type="object"/>
+    </docblock>
+    <parameter name="loginId" byreference="false" type="{unknown}"/>
+    <parameter name="password" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="getOne" start="107" end="111" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Get one"/>
+      <param type="integer" variable="$accountId"/>
+      <return type="object"/>
+    </docblock>
+    <parameter name="accountId" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="edit" start="120" end="134" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Update account"/>
+      <param type="array" variable="$updateData"/>
+      <param type="array" variable="$conditions"/>
+      <return type="boolean"/>
+    </docblock>
+    <parameter name="updateData" byreference="false" type="{unknown}"/>
+    <parameter name="conditions" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="updateLoginAttemp" start="143" end="160" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Update login fail"/>
+      <param type="array" variable="$updateData"/>
+      <param type="string" variable="$loginId"/>
+      <return type="boolean"/>
+    </docblock>
+    <parameter name="updateData" byreference="false" type="{unknown}"/>
+    <parameter name="loginId" byreference="false" type="{unknown}"/>
+  </method>
+</class>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="App\Models\Freegame\ApplicationMainGenre" namespace="App\Models\Freegame" name="ApplicationMainGenre" abstract="false" final="false" start="5" end="49">
+  <file path="/home/web/example/src/freegame_developer/app/Models/Freegame" file="ApplicationMainGenre.php" realpath="/home/web/example/src/freegame_developer/app/Models/Freegame/ApplicationMainGenre.php" size="1011" time="2016-11-16T01:52:54+00:00" unixtime="1479261174" sha1="831cdd185a0232502c867801450aeec37f84415f" relative="freegame_developer/app/Models/Freegame/ApplicationMainGenre.php"/>
+  <extends full="App\Models\Freegame\Freegame" namespace="App\Models\Freegame" name="Freegame"/>
+  <member name="table" type="string" default="'application_main_genre'" visibility="protected" static="false" line="7"/>
+  <member name="timestamps" type="boolean" default="false" visibility="public" static="false" line="9"/>
+  <method name="getApplicationMainGenreName" start="18" end="26" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Get application main genre name"/>
+      <param type="integer" variable="$appId"/>
+      <return type="object"/>
+    </docblock>
+    <parameter name="appId" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="getList" start="33" end="37" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Get list application main genre"/>
+      <return description="object" type="array"/>
+    </docblock>
+  </method>
+  <method name="getById" start="44" end="48" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Get by id"/>
+      <return type="object"/>
+    </docblock>
+    <parameter name="id" byreference="false" type="{unknown}"/>
+  </method>
+</class>

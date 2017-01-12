@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="spec\Prophecy\Doubler\ClassPatch\MagicalApi" namespace="spec\Prophecy\Doubler\ClassPatch" name="MagicalApi" abstract="false" final="false" start="83" end="92">
+  <file path="/home/web/example/src/freegame_developer/vendor/phpspec/prophecy/spec/Prophecy/Doubler/ClassPatch" file="MagicCallPatchSpec.php" realpath="/home/web/example/src/freegame_developer/vendor/phpspec/prophecy/spec/Prophecy/Doubler/ClassPatch/MagicCallPatchSpec.php" size="2668" time="2016-06-07T08:13:47+00:00" unixtime="1465287227" sha1="f1a2cc8b08adafa604d1587acfd3f7c261b00fbf" relative="freegame_developer/vendor/phpspec/prophecy/spec/Prophecy/Doubler/ClassPatch/MagicCallPatchSpec.php"/>
+  <docblock>
+    <description/>
+    <method value="void undefinedMethod()"/>
+  </docblock>
+  <method name="definedMethod" start="88" end="91" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <return type="object">
+        <type full="spec\Prophecy\Doubler\ClassPatch\void" namespace="spec\Prophecy\Doubler\ClassPatch" name="void"/>
+      </return>
+    </docblock>
+  </method>
+</class>

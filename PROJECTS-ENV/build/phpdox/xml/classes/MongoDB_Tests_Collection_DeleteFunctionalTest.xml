@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="MongoDB\Tests\Collection\DeleteFunctionalTest" namespace="MongoDB\Tests\Collection" name="DeleteFunctionalTest" abstract="false" final="false" start="10" end="94">
+  <file path="/home/web/example/src/freegame_developer/vendor/mongodb/mongodb/tests/Operation" file="DeleteFunctionalTest.php" realpath="/home/web/example/src/freegame_developer/vendor/mongodb/mongodb/tests/Operation/DeleteFunctionalTest.php" size="2679" time="2016-09-23T19:38:29+00:00" unixtime="1474659509" sha1="d81b9936a1f4c43f3b1928ff06748fa6abf95322" relative="freegame_developer/vendor/mongodb/mongodb/tests/Operation/DeleteFunctionalTest.php"/>
+  <extends full="MongoDB\Tests\Collection\FunctionalTestCase" namespace="MongoDB\Tests\Collection" name="FunctionalTestCase"/>
+  <method name="testDeleteOne" start="12" end="30" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testDeleteMany" start="32" end="49" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testUnacknowledgedWriteConcern" start="51" end="62" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testUnacknowledgedWriteConcernAccessesDeletedCount" start="69" end="72" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <depends value="testUnacknowledgedWriteConcern"/>
+      <expectedexception value="MongoDB\Exception\BadMethodCallException"/>
+      <expectedexceptionmessageregexp value="/[\w:\\]+ should not be called for an unacknowledged write result/"/>
+    </docblock>
+    <parameter name="result" byreference="false" type="object">
+      <type full="MongoDB\DeleteResult" namespace="MongoDB" name="DeleteResult"/>
+    </parameter>
+  </method>
+  <method name="createFixtures" start="79" end="93" abstract="false" final="false" static="false" visibility="private">
+    <docblock>
+      <description compact="Create data fixtures."/>
+      <param type="integer" variable="$n"/>
+    </docblock>
+    <parameter name="n" byreference="false" type="{unknown}"/>
+  </method>
+</class>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="App\Providers\CustomValidationServiceProvider" namespace="App\Providers" name="CustomValidationServiceProvider" abstract="false" final="false" start="8" end="72">
+  <file path="/home/web/example/src/freegame_developer/app/Providers" file="CustomValidationServiceProvider.php" realpath="/home/web/example/src/freegame_developer/app/Providers/CustomValidationServiceProvider.php" size="2075" time="2016-10-31T07:00:31+00:00" unixtime="1477897231" sha1="aecb7beed74e0c2303f740df01dd8c17717dbb18" relative="freegame_developer/app/Providers/CustomValidationServiceProvider.php"/>
+  <extends full="Illuminate\Support\ServiceProvider" namespace="Illuminate\Support" name="ServiceProvider"/>
+  <method name="boot" start="15" end="18" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Bootstrap any application services."/>
+      <return type="object">
+        <type full="App\Providers\void" namespace="App\Providers" name="void"/>
+      </return>
+    </docblock>
+  </method>
+  <method name="register" start="25" end="28" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Register any application services."/>
+      <return type="object">
+        <type full="App\Providers\void" namespace="App\Providers" name="void"/>
+      </return>
+    </docblock>
+  </method>
+  <method name="injectCustomValidationMethods" start="36" end="71" abstract="false" final="false" static="false" visibility="private">
+    <docblock>
+      <description compact="Inject custom validation classes."/>
+      <param type="object">
+        <type full="App\Providers\none" namespace="App\Providers" name="none"/>
+      </param>
+      <return type="object">
+        <type full="App\Providers\none" namespace="App\Providers" name="none"/>
+      </return>
+    </docblock>
+  </method>
+</class>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="Faker\Provider\es_AR\Company" namespace="Faker\Provider\es_AR" name="Company" abstract="false" final="false" start="5" end="66">
+  <file path="/home/web/example/src/freegame_developer/vendor/fzaninotto/faker/src/Faker/Provider/es_AR" file="Company.php" realpath="/home/web/example/src/freegame_developer/vendor/fzaninotto/faker/src/Faker/Provider/es_AR/Company.php" size="7974" time="2015-05-29T06:29:14+00:00" unixtime="1432880954" sha1="ec93f0c355725cffdf9338f0e24c0a578a337f54" relative="freegame_developer/vendor/fzaninotto/faker/src/Faker/Provider/es_AR/Company.php"/>
+  <extends full="Faker\Provider\Company" namespace="Faker\Provider" name="Company"/>
+  <member name="formats" type="array" default="" visibility="protected" static="true" line="7"/>
+  <member name="catchPhraseWords" type="array" default="" visibility="protected" static="true" line="15"/>
+  <member name="bsWords" type="array" default="" visibility="protected" static="true" line="27"/>
+  <member name="companySuffix" type="array" default="" visibility="protected" static="true" line="39"/>
+  <method name="catchPhrase" start="44" end="52" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <example value="'Robust full-range hub'"/>
+    </docblock>
+  </method>
+  <method name="bs" start="57" end="65" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description/>
+      <example value="'integrate extensible convergence'"/>
+    </docblock>
+  </method>
+</class>

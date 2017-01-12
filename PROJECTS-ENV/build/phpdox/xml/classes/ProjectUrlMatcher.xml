@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="ProjectUrlMatcher" namespace="" name="ProjectUrlMatcher" abstract="false" final="false" start="13" end="50">
+  <file path="/home/web/example/src/freegame_developer/vendor/symfony/routing/Tests/Fixtures/dumper" file="url_matcher3.php" realpath="/home/web/example/src/freegame_developer/vendor/symfony/routing/Tests/Fixtures/dumper/url_matcher3.php" size="1447" time="2016-08-16T10:55:04+00:00" unixtime="1471344904" sha1="b9a10bec3adfa7b2ea225c7212b5f6dcd59d9225" relative="freegame_developer/vendor/symfony/routing/Tests/Fixtures/dumper/url_matcher3.php"/>
+  <docblock>
+    <description compact="ProjectUrlMatcher.">This class has been auto-generated
+by the Symfony Routing Component.</description>
+  </docblock>
+  <extends full="Symfony\Component\Routing\Matcher\UrlMatcher" namespace="Symfony\Component\Routing\Matcher" name="UrlMatcher"/>
+  <constructor name="__construct" start="18" end="21" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Constructor."/>
+    </docblock>
+    <parameter name="context" byreference="false" type="object">
+      <type full="Symfony\Component\Routing\RequestContext" namespace="Symfony\Component\Routing" name="RequestContext"/>
+    </parameter>
+  </constructor>
+  <method name="match" start="23" end="49" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="pathinfo" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="with-condition" line="43"/>
+    </inline>
+  </method>
+</class>

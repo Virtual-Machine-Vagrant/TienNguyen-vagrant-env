@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="Jenssegers\Mongodb\Schema\Blueprint" namespace="Jenssegers\Mongodb\Schema" name="Blueprint" abstract="false" final="false" start="6" end="271">
+  <file path="/home/web/example/src/freegame_developer/vendor/jenssegers/mongodb/src/Jenssegers/Mongodb/Schema" file="Blueprint.php" realpath="/home/web/example/src/freegame_developer/vendor/jenssegers/mongodb/src/Jenssegers/Mongodb/Schema/Blueprint.php" size="6434" time="2016-10-07T08:39:24+00:00" unixtime="1475829564" sha1="b6bb7e9f93394c1f025b4670b9e78d523f2eb874" relative="freegame_developer/vendor/jenssegers/mongodb/src/Jenssegers/Mongodb/Schema/Blueprint.php"/>
+  <extends full="Illuminate\Database\Schema\Blueprint" namespace="Illuminate\Database\Schema" name="Blueprint"/>
+  <member name="connection" visibility="protected" static="false" line="13">
+    <docblock>
+      <description compact="The MongoConnection object for this blueprint."/>
+      <var type="object">
+        <type full="Jenssegers\Mongodb\Schema\MongoConnection" namespace="Jenssegers\Mongodb\Schema" name="MongoConnection"/>
+      </var>
+    </docblock>
+  </member>
+  <member name="collection" visibility="protected" static="false" line="20">
+    <docblock>
+      <description compact="The MongoCollection object for this blueprint."/>
+      <var type="object">
+        <type full="Jenssegers\Mongodb\Schema\MongoCollection" namespace="Jenssegers\Mongodb\Schema" name="MongoCollection"/>
+      </var>
+    </docblock>
+  </member>
+  <member name="columns" type="array" default="" visibility="protected" static="false" line="27">
+    <docblock>
+      <description compact="Fluent columns."/>
+      <var type="array"/>
+    </docblock>
+  </member>
+  <constructor name="__construct" start="35" end="40" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Create a new schema blueprint."/>
+      <param type="string" variable="$table"/>
+      <param type="object" variable="$callback">
+        <type full="Closure" namespace="" name="Closure"/>
+      </param>
+    </docblock>
+    <parameter name="connection" byreference="false" type="object">
+      <type full="Illuminate\Database\Connection" namespace="Illuminate\Database" name="Connection"/>
+    </parameter>
+    <parameter name="collection" byreference="false" type="{unknown}"/>
+  </constructor>
+  <method name="index" start="51" end="70" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Specify an index for the collection."/>
+      <param type="object" variable="$columns">
+        <type full="Jenssegers\Mongodb\Schema\string|array" namespace="Jenssegers\Mongodb\Schema" name="string|array"/>
+      </param>
+      <param type="array" variable="$options"/>
+      <param type="string" variable="$name"/>
+      <param type="object" variable="$algorithm">
+        <type full="Jenssegers\Mongodb\Schema\string|null" namespace="Jenssegers\Mongodb\Schema" name="string|null"/>
+      </param>
+      <return type="object">
+        <type full="Jenssegers\Mongodb\Schema\Blueprint" namespace="Jenssegers\Mongodb\Schema" name="Blueprint"/>
+      </return>
+    </docblock>
+    <parameter name="columns" byreference="false" type="{unknown}" default="" constant="null"/>
+    <parameter name="name" byreference="false" type="{unknown}" default="" constant="null"/>
+    <parameter name="algorithm" byreference="false" type="{unknown}" default="" constant="null"/>
+    <parameter name="options" byreference="false" type="array" default=""/>
+    <inline>
+      <comment value="Columns are passed as a default array." line="55"/>
+    </inline>
+  </method>
+  <method name="primary" start="81" end="84" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Specify the primary key(s) for the table."/>
+      <param type="object" variable="$columns">
+        <type full="Jenssegers\Mongodb\Schema\string|array" namespace="Jenssegers\Mongodb\Schema" name="string|array"/>
+      </param>
+      <param type="string" variable="$name"/>
+      <param type="object" variable="$algorithm">
+        <type full="Jenssegers\Mongodb\Schema\string|null" namespace="Jenssegers\Mongodb\Schema" name="string|null"/>
+      </param>
+      <param type="array" variable="$options"/>
+      <return type="object">
+        <type full="\Illuminate\Support\Fluent" namespace="\Illuminate\Support" name="Fluent"/>
+      </return>
+    </docblock>
+    <parameter name="columns" byreference="false" type="{unknown}" default="" constant="null"/>
+    <parameter name="name" byreference="false" type="{unknown}" default="" constant="null"/>
+    <parameter name="algorithm" byreference="false" type="{unknown}" default="" constant="null"/>
+    <parameter name="options" byreference="false" type="array" default=""/>
+  </method>
+  <method name="dropIndex" start="92" end="113" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Indicate that the given index should be dropped."/>
+      <param type="object" variable="$columns">
+        <type full="Jenssegers\Mongodb\Schema\string|array" namespace="Jenssegers\Mongodb\Schema" name="string|array"/>
+      </param>
+      <return type="object">
+        <type full="Jenssegers\Mongodb\Schema\Blueprint" namespace="Jenssegers\Mongodb\Schema" name="Blueprint"/>
+      </return>
+    </docblock>
+    <parameter name="columns" byreference="false" type="{unknown}" default="" constant="null"/>
+    <inline>
+      <comment value="Columns are passed as a default array." line="96"/>
+    </inline>
+  </method>
+  <method name="unique" start="124" end="133" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Specify a unique index for the collection."/>
+      <param type="object" variable="$columns">
+        <type full="Jenssegers\Mongodb\Schema\string|array" namespace="Jenssegers\Mongodb\Schema" name="string|array"/>
+      </param>
+      <param type="string" variable="$name"/>
+      <param type="object" variable="$algorithm">
+        <type full="Jenssegers\Mongodb\Schema\string|null" namespace="Jenssegers\Mongodb\Schema" name="string|null"/>
+      </param>
+      <param type="array" variable="$options"/>
+      <return type="object">
+        <type full="Jenssegers\Mongodb\Schema\Blueprint" namespace="Jenssegers\Mongodb\Schema" name="Blueprint"/>
+      </return>
+    </docblock>
+    <parameter name="columns" byreference="false" type="{unknown}" default="" constant="null"/>
+    <parameter name="name" byreference="false" type="{unknown}" default="" constant="null"/>
+    <parameter name="algorithm" byreference="false" type="{unknown}" default="" constant="null"/>
+    <parameter name="options" byreference="false" type="array" default=""/>
+  </method>
+  <method name="background" start="141" end="148" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Specify a non blocking index for the collection."/>
+      <param type="object" variable="$columns">
+        <type full="Jenssegers\Mongodb\Schema\string|array" namespace="Jenssegers\Mongodb\Schema" name="string|array"/>
+      </param>
+      <return type="object">
+        <type full="Jenssegers\Mongodb\Schema\Blueprint" namespace="Jenssegers\Mongodb\Schema" name="Blueprint"/>
+      </return>
+    </docblock>
+    <parameter name="columns" byreference="false" type="{unknown}" default="" constant="null"/>
+  </method>
+  <method name="sparse" start="157" end="166" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Specify a sparse index for the collection."/>
+      <param type="object" variable="$columns">
+        <type full="Jenssegers\Mongodb\Schema\string|array" namespace="Jenssegers\Mongodb\Schema" name="string|array"/>
+      </param>
+      <param type="array" variable="$options"/>
+      <return type="object">
+        <type full="Jenssegers\Mongodb\Schema\Blueprint" namespace="Jenssegers\Mongodb\Schema" name="Blueprint"/>
+      </return>
+    </docblock>
+    <parameter name="columns" byreference="false" type="{unknown}" default="" constant="null"/>
+    <parameter name="options" byreference="false" type="array" default=""/>
+  </method>
+  <method name="expire" start="176" end="183" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Specify the number of seconds after wich a document should be considered expired based, on the given single-field index containing a date."/>
+      <param type="object" variable="$columns">
+        <type full="Jenssegers\Mongodb\Schema\string|array" namespace="Jenssegers\Mongodb\Schema" name="string|array"/>
+      </param>
+      <param type="int" variable="$seconds"/>
+      <return type="object">
+        <type full="Jenssegers\Mongodb\Schema\Blueprint" namespace="Jenssegers\Mongodb\Schema" name="Blueprint"/>
+      </return>
+    </docblock>
+    <parameter name="columns" byreference="false" type="{unknown}"/>
+    <parameter name="seconds" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="create" start="190" end="198" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Indicate that the table needs to be created."/>
+      <return type="object">
+        <type full="Jenssegers\Mongodb\Schema\bool" namespace="Jenssegers\Mongodb\Schema" name="bool"/>
+      </return>
+    </docblock>
+    <inline>
+      <comment value="Ensure the collection is created." line="196"/>
+    </inline>
+  </method>
+  <method name="drop" start="205" end="208" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Indicate that the collection should be dropped."/>
+      <return type="object">
+        <type full="Jenssegers\Mongodb\Schema\bool" namespace="Jenssegers\Mongodb\Schema" name="bool"/>
+      </return>
+    </docblock>
+  </method>
+  <method name="addColumn" start="218" end="223" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Add a new column to the blueprint."/>
+      <param type="string" variable="$type"/>
+      <param type="string" variable="$name"/>
+      <param type="array" variable="$parameters"/>
+      <return type="object">
+        <type full="Jenssegers\Mongodb\Schema\Blueprint" namespace="Jenssegers\Mongodb\Schema" name="Blueprint"/>
+      </return>
+    </docblock>
+    <parameter name="type" byreference="false" type="{unknown}"/>
+    <parameter name="name" byreference="false" type="{unknown}"/>
+    <parameter name="parameters" byreference="false" type="array" default=""/>
+  </method>
+  <method name="sparse_and_unique" start="232" end="242" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Specify a sparse and unique index for the collection."/>
+      <param type="object" variable="$columns">
+        <type full="Jenssegers\Mongodb\Schema\string|array" namespace="Jenssegers\Mongodb\Schema" name="string|array"/>
+      </param>
+      <param type="array" variable="$options"/>
+      <return type="object">
+        <type full="Jenssegers\Mongodb\Schema\Blueprint" namespace="Jenssegers\Mongodb\Schema" name="Blueprint"/>
+      </return>
+    </docblock>
+    <parameter name="columns" byreference="false" type="{unknown}" default="" constant="null"/>
+    <parameter name="options" byreference="false" type="array" default=""/>
+  </method>
+  <method name="fluent" start="250" end="259" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Allow fluent columns."/>
+      <param type="object" variable="$columns">
+        <type full="Jenssegers\Mongodb\Schema\string|array" namespace="Jenssegers\Mongodb\Schema" name="string|array"/>
+      </param>
+      <return type="object">
+        <type full="Jenssegers\Mongodb\Schema\string|array" namespace="Jenssegers\Mongodb\Schema" name="string|array"/>
+      </return>
+    </docblock>
+    <parameter name="columns" byreference="false" type="{unknown}" default="" constant="null"/>
+  </method>
+  <method name="__call" start="266" end="270" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Allows the use of unsupported schema methods."/>
+      <return type="object">
+        <type full="Jenssegers\Mongodb\Schema\Blueprint" namespace="Jenssegers\Mongodb\Schema" name="Blueprint"/>
+      </return>
+    </docblock>
+    <parameter name="method" byreference="false" type="{unknown}"/>
+    <parameter name="args" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="Dummy." line="268"/>
+    </inline>
+  </method>
+</class>

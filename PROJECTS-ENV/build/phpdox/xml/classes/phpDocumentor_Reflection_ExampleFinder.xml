@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="phpDocumentor\Reflection\ExampleFinder" namespace="phpDocumentor\Reflection" name="ExampleFinder" abstract="false" final="false" start="20" end="170">
+  <file path="/home/web/example/src/freegame_developer/vendor/phpdocumentor/reflection-docblock/src/DocBlock" file="ExampleFinder.php" realpath="/home/web/example/src/freegame_developer/vendor/phpdocumentor/reflection-docblock/src/DocBlock/ExampleFinder.php" size="4809" time="2016-09-30T07:12:33+00:00" unixtime="1475219553" sha1="a3d22b961d6779586fcfd49e43735953458cf33d" relative="freegame_developer/vendor/phpdocumentor/reflection-docblock/src/DocBlock/ExampleFinder.php"/>
+  <docblock>
+    <description compact="Class used to find an example file's location based on a given ExampleDescriptor."/>
+  </docblock>
+  <member name="sourceDirectory" type="string" default="''" visibility="private" static="false" line="23">
+    <docblock>
+      <var type="string"/>
+    </docblock>
+  </member>
+  <member name="exampleDirectories" type="array" default="" visibility="private" static="false" line="26">
+    <docblock>
+      <var type="array" of="object">
+        <type full="phpDocumentor\Reflection\string" namespace="phpDocumentor\Reflection" name="string"/>
+      </var>
+    </docblock>
+  </member>
+  <method name="find" start="35" end="45" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Attempts to find the example contents for the given descriptor."/>
+      <param type="object" variable="$example">
+        <type full="phpDocumentor\Reflection\DocBlock\Tags\Example" namespace="phpDocumentor\Reflection\DocBlock\Tags" name="Example"/>
+      </param>
+      <return type="string"/>
+    </docblock>
+    <parameter name="example" byreference="false" type="object">
+      <type full="phpDocumentor\Reflection\DocBlock\Tags\Example" namespace="phpDocumentor\Reflection\DocBlock\Tags" name="Example"/>
+    </parameter>
+  </method>
+  <method name="setSourceDirectory" start="54" end="57" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Registers the project's root directory where an 'examples' folder can be expected."/>
+      <param type="string" variable="$directory"/>
+      <return type="object">
+        <type full="phpDocumentor\Reflection\void" namespace="phpDocumentor\Reflection" name="void"/>
+      </return>
+    </docblock>
+    <parameter name="directory" byreference="false" type="string" default="''"/>
+  </method>
+  <method name="getSourceDirectory" start="64" end="67" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Returns the project's root directory where an 'examples' folder can be expected."/>
+      <return type="string"/>
+    </docblock>
+  </method>
+  <method name="setExampleDirectories" start="74" end="77" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Registers a series of directories that may contain examples."/>
+      <param type="array" variable="$directories" of="object">
+        <type full="phpDocumentor\Reflection\string" namespace="phpDocumentor\Reflection" name="string"/>
+      </param>
+    </docblock>
+    <parameter name="directories" byreference="false" type="array"/>
+  </method>
+  <method name="getExampleDirectories" start="84" end="87" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Returns a series of directories that may contain examples."/>
+      <return type="array" of="object">
+        <type full="phpDocumentor\Reflection\string" namespace="phpDocumentor\Reflection" name="string"/>
+      </return>
+    </docblock>
+  </method>
+  <method name="getExampleFileContents" start="104" end="127" abstract="false" final="false" static="false" visibility="private">
+    <docblock>
+      <description compact="Attempts to find the requested example file and returns its contents or null if no file was found.">This method will try several methods in search of the given example file, the first one it encounters is
+returned:
+
+1. Iterates through all examples folders for the given filename
+2. Checks the source folder for the given filename
+3. Checks the 'examples' folder in the current working directory for examples
+4. Checks the path relative to the current working directory for the given filename</description>
+      <param type="string" variable="$filename"/>
+      <return type="object">
+        <type full="phpDocumentor\Reflection\string|null" namespace="phpDocumentor\Reflection" name="string|null"/>
+      </return>
+    </docblock>
+    <parameter name="filename" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="getExamplePathFromExampleDirectory" start="136" end="139" abstract="false" final="false" static="false" visibility="private">
+    <docblock>
+      <description compact="Get example filepath based on the example directory inside your project."/>
+      <param type="string" variable="$file"/>
+      <return type="string"/>
+    </docblock>
+    <parameter name="file" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="constructExamplePath" start="149" end="152" abstract="false" final="false" static="false" visibility="private">
+    <docblock>
+      <description compact="Returns a path to the example file in the given directory.."/>
+      <param type="string" variable="$directory"/>
+      <param type="string" variable="$file"/>
+      <return type="string"/>
+    </docblock>
+    <parameter name="directory" byreference="false" type="{unknown}"/>
+    <parameter name="file" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="getExamplePathFromSource" start="161" end="169" abstract="false" final="false" static="false" visibility="private">
+    <docblock>
+      <description compact="Get example filepath based on sourcecode."/>
+      <param type="string" variable="$file"/>
+      <return type="string"/>
+    </docblock>
+    <parameter name="file" byreference="false" type="{unknown}"/>
+  </method>
+</class>

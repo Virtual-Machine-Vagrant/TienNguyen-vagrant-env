@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="Hamcrest\Core\IsEqualTest" namespace="Hamcrest\Core" name="IsEqualTest" abstract="false" final="false" start="19" end="102">
+  <file path="/home/web/example/src/freegame_developer/vendor/hamcrest/hamcrest-php/tests/Hamcrest/Core" file="IsEqualTest.php" realpath="/home/web/example/src/freegame_developer/vendor/hamcrest/hamcrest-php/tests/Hamcrest/Core/IsEqualTest.php" size="2766" time="2015-05-11T14:41:42+00:00" unixtime="1431355302" sha1="9d20861537e1139d1ef5b7422e679b95f6222bd8" relative="freegame_developer/vendor/hamcrest/hamcrest-php/tests/Hamcrest/Core/IsEqualTest.php"/>
+  <extends full="Hamcrest\AbstractMatcherTest" namespace="Hamcrest" name="AbstractMatcherTest"/>
+  <method name="createMatcher" start="22" end="25" abstract="false" final="false" static="false" visibility="protected"/>
+  <method name="testComparesObjectsUsingEqualityOperator" start="27" end="36" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testCanCompareNullValues" start="38" end="44" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testComparesTheElementsOfAnArray" start="46" end="57" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testComparesTheElementsOfAnArrayOfPrimitiveTypes" start="59" end="70" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testRecursivelyTestsElementsOfArrays" start="72" end="83" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testIncludesTheResultOfCallingToStringOnItsArgumentInTheDescription" start="85" end="90" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testReturnsAnObviousDescriptionIfCreatedWithANestedMatcherByMistake" start="92" end="96" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="testReturnsGoodDescriptionIfCreatedWithNullReference" start="98" end="101" abstract="false" final="false" static="false" visibility="public"/>
+</class>
