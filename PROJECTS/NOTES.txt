@@ -1,0 +1,157 @@
+Default folders and files
+composer.phar
+NOTES.txt
+/PROJECTS
+/puppet
+setup_dev.sh
+Vagrantfile
+
+————————————————————
+Install mysql
+
+$ sudo apt-get install mysql-client
+$ sudo apt-get install mysql-server
+$ sudo apt-get update
+————————————————————
+
+https://github.com/arkady-emelyanov/vagrant-puppet-demo
+
+Setup
+
+$ vagrant up
+$ vagrant reload --provision
+$ vagrant ssh
+
+Download composer
+$ php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
+$ php -r "if (hash_file('SHA384', 'composer-setup.php') === 'aa96f26c2b67226a324c27919f1eb05f21c248b987e6195cad9690d5c1ff713d53020a02ac8c217dbf90a7eacc9d141d') { echo 'Installer verified'; } else { echo 'Installer corrupt'; unlink('composer-setup.php'); } echo PHP_EOL;"
+$ php composer-setup.php 
+$ mv composer.phar /usr/local/bin/composer
+$ php -r "unlink('composer-setup.php');" 
+
+$ php composer.phar install
+$ ./setup_dev.sh
+
+————————————————————
+https://github.com/ChuckHeintzelman/l5beauty
+
+Setup 
+$ ./setup_dev.sh
+
+————————————————————
+php composer.phar create-project pyrocms/pyrocms
+————————————————————
+Integrating site "l5beauty" and https://packagist.org/packages/october/cms
+
+After cloning "l5beauty"
+$ vagrant ssh
+$ ./setup_dev.sh
+$ php composer.phar install --prefer-dist  <= What to do when composer fails to update your vendor packages?
+$ php -r "eval('?>'.file_get_contents('https://octobercms.com/api/installer'));"
+
+————————————————————
+octobercms
+https://octobercms.com/docs/console/commands#console-install
+https://github.com/octobercms/october
+https://octobercms.com/docs/setup/configuration
+https://octobercms.com/blog/post/setting-local-october-cms-environment-vagrant-configuration-tutorial
+
+$ php -r "eval('?>'.file_get_contents('https://octobercms.com/api/installer'));"
+$ php artisan october:install
+$ ./setup_dev.sh
+$ php artisan october:mirror public/
+————————————————————
+Codeception 2.2 this module only works for Laravel 5.1 
+http://codeception.com/docs/modules/Laravel5
+https://github.com/janhenkgerritsen/codeception-laravel5-sample
+————————————————————
+sudo apt-get install php5-mcrypt      # If you have not installed it yet.
+sudo php5enmod mcrypt                 # We have to enable the module after installation as it's not being done by default.
+sudo service apache2 restart          # Or sudo service nginx restart if using nginx.
+————————————————————
+http://codeception.com/for/laravel
+
+1. Copy files of Basic dev ==> $ vagrant up
+2. Create basic laravel project ==> $ php composer.phar create-project laravel/laravel blog "5.1.*"
+3. Install Codeception ==> 
+$ sudo curl -LsS http://codeception.com/codecept.phar -o /usr/local/bin/codecept
+$ sudo chmod a+x /usr/local/bin/codecept
+$ codecept
+4. Setup test folder and some configuration files ==> $ codecept bootstrap
+5. Ex. ==> $ codecept generate:cept acceptance Welcome
+————————————————————
+Upgrade php from 5.5.9 to 5.6.4
+
+$ sudo apt-get -y update
+$ sudo add-apt-repository ppa:ondrej/php
+$ sudo apt-get -y update
+$ sudo apt-get -y install php5.6 php5.6-mcrypt php5.6-mbstring php5.6-curl php5.6-cli php5.6-mysql php5.6-gd php5.6-intl php5.6-xsl php5.6-zip
+$ php -v
+————————————————————
+Upgrade php from 5.6.29 to 7.0.x - http://askubuntu.com/questions/565784/how-do-i-upgrade-php-version-to-the-latest-stable-released-version
+
+
+$ sudo apt-get install php7.0
+————————————————————
+Class 'Pusher' not found when installing koel
+ $ composer require pusher/pusher-php-server --no-scripts
+ ————————————————————
+Install mysql 
+https://www.digitalocean.com/community/tutorials/how-to-install-mysql-on-ubuntu-14-04
+ ————————————————————
+Install Yarn
+https://yarnpkg.com/en/docs/install#linux-tab
+https://github.com/yarnpkg/yarn/issues/601
+
+$sudo apt-get install yarn
+
+Error when installing:
+The following signatures couldn't be verified because the public key is not available: NO_PUBKEY 9334A25F8507EFA5
+==> run these command lines:
+$ sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 9334A25F8507EFA5
+$ sudo apt-get update 
+
+Error 2: Yarn requires Node.js 4.0 or higher to be installed.
+$ wget -qO- https://deb.nodesource.com/setup_4.x | sudo bash -
+$ sudo apt-get install nodejs
+ ————————————————————
+Install laravel gitscrum (PHP 5.7 and Laravel 5.3)
+
+Composer install error - requires ext_curl when it's actualy enabled
+http://stackoverflow.com/questions/19335305/composer-install-error-requires-ext-curl-when-its-actualy-enabled
+http://askubuntu.com/questions/794813/why-isnt-composer-updated
+
+on php7 run for example:
+
+> sudo apt-get install php-curl
+> sudo apt-get install php-mbstring
+> sudo apt-get install php-xml
+
+for every missing extension. Then:
+
+> sudo apt-get update
+
+and finally (in the project's root folder):
+
+> composer install
+
+http://stackoverflow.com/questions/19910042/locate-the-nginx-conf-file-my-nginx-is-actually-using
+
+$ nginx -t
+ ————————————————————
+Check code automatically
+$ ./vendor/bin/phpcs tests
+ ————————————————————
+Install phpdox (Code review)
+https://github.com/theseer/phpdox
+http://phpdox.de/getting-started.html
+
+
+$ wget https://github.com/theseer/phpdox/releases/download/0.9.0/phpdox-0.9.0.phar
+$ chmod +x phpdox-0.9.0.phar
+$ sudo mv phpdox-0.9.0.phar /usr/bin/phpdox
+$ phpdox --version
+$ phpdox --skel > phpdox.xml.dist
+$ phpdox
+ ————————————————————
+
