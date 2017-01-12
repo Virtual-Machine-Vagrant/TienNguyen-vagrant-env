@@ -1,0 +1,1 @@
+{"virtualbox":{"/var/www/html":{"owner":"www-data","group":"www-data","guestpath":"/var/www/html","hostpath":"/Volumes/Data/2016/vagrant-env/vagrant-kanboard","disabled":false,"__vagrantfile":true}}}
