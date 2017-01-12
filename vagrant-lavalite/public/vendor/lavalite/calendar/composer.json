@@ -1,0 +1,21 @@
+{
+    "name": "lavalite/calendar",
+    "description": "Calendar package for lavalite.",
+    "keywords": ["lavalite", "Calendar"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Lavalite",
+            "email": "info@lavalite.org"
+        }
+    ],
+    "require": {
+        "php": ">=5.5.9"
+    },
+    "autoload": {
+        "psr-4": {
+            "Lavalite\\Calendar\\": "src/Lavalite/Calendar"
+        }
+    },
+    "minimum-stability": "dev"
+}

@@ -1,0 +1,26 @@
+{
+    "name": "litepie/hashids",
+    "description": "The Litepie hashid package",
+    "keywords": ["lavalite", "hash", "hashid"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Renfos Technologies",
+            "email": "info@renfos.com"
+        },
+        {
+            "name": "George John",
+            "email": "george@renfos.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.5.9",
+        "hashids/hashids": "1.0.5"
+    },
+    "autoload": {
+        "psr-4": {
+            "Litepie\\Hashids\\": ""
+        }
+    },
+    "minimum-stability": "dev"
+}

@@ -1,0 +1,21 @@
+{
+    "name": "litepie/menu",
+    "description": "Menu package for Lavalite framework",
+    "keywords": ["lavalite",  "menu", "dropdown", "dropdown-menu", "laravel"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Lava Lite",
+            "email": "info@lavalite.org"
+        }
+    ],
+    "require": {
+        "php": ">=5.5.9"
+    },
+    "autoload": {
+        "psr-4": {
+            "Litepie\\Menu\\": ""
+        }
+    },
+    "minimum-stability": "dev"
+}

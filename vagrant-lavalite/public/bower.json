@@ -1,0 +1,29 @@
+{
+    "name": "lavalite",
+    "version": "4.1",
+    "main": "",
+    "ignore": [
+    ],
+    "dependencies": {
+        "bootstrap": "*",
+        "DataTables":"*",
+        "datatables-bootstrap3-plugin" : "*",
+        "dropzone":"*",
+        "font-awesome":"*",
+        "fullcalendar":"*",
+        "iCheck":"*",
+        "ionicons":"*",
+        "jquery": "*",
+        "jquery-timeago": "*",
+        "jquery-ui": "*",
+        "jquery-validation" : "*",
+        "nestable-2" : "*",
+        "pickadate":"*",
+        "simple-line-icons":"*",
+        "Sortable" : "*",
+        "summernote":"*",
+        "sweetalert" : "*",
+        "toastr":"*",
+        "waves":"*"
+    }
+}

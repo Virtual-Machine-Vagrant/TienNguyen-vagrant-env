@@ -1,0 +1,21 @@
+{
+    "name": "litecms/portfolio",
+    "description": "Portfolio package for litecms.",
+    "keywords": ["lavalite", "lavalite" , "Portfolio"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Litecms",
+            "email": "info@lavalite.org"
+        }
+    ],
+    "require": {
+        "php": ">=5.5.9"
+    },
+    "autoload": {
+        "psr-4": {
+            "Litecms\\Portfolio\\": "src/Litecms/Portfolio"
+        }
+    },
+    "minimum-stability": "dev"
+}

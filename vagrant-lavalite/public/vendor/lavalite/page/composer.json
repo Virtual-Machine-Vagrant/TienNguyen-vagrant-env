@@ -1,0 +1,22 @@
+{
+    "name": "lavalite/page",
+    "description": "Page package for Lavalite framework",
+    "keywords": ["lavalite", "page", "laravel"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Lava Lite",
+            "email": "info@lavalite.org"
+        }
+    ],
+    "require": {
+        "php": ">=5.5.9"
+    },
+    "autoload": {
+
+        "psr-4": {
+            "Lavalite\\Page\\": "src/Lavalite/Page"
+        }
+    },
+    "minimum-stability": "dev"
+}

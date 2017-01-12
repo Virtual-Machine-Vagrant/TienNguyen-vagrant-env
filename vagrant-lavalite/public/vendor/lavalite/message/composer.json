@@ -1,0 +1,21 @@
+{
+    "name": "lavalite/message",
+    "description": "Message package for lavalite.",
+    "keywords": ["lavalite", "Message"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Lavalite",
+            "email": "info@lavalite.org"
+        }
+    ],
+    "require": {
+        "php": ">=5.5.9"
+    },
+    "autoload": {
+        "psr-4": {
+            "Lavalite\\Message\\": "src/Lavalite/Message"
+        }
+    },
+    "minimum-stability": "dev"
+}

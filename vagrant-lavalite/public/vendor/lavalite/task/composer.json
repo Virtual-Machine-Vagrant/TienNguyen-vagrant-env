@@ -1,0 +1,21 @@
+{
+    "name": "lavalite/task",
+    "description": "Task package for lavalite.",
+    "keywords": ["lavalite", "Task"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Lavalite",
+            "email": "info@lavalite.org"
+        }
+    ],
+    "require": {
+        "php": ">=5.5.9"
+    },
+    "autoload": {
+        "psr-4": {
+            "Lavalite\\Task\\": "src/Lavalite/Task"
+        }
+    },
+    "minimum-stability": "dev"
+}

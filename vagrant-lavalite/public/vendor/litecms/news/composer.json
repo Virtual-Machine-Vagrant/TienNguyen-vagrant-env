@@ -1,0 +1,21 @@
+{
+    "name": "litecms/news",
+    "description": "News package for litecms.",
+    "keywords": ["lavalite","litecms", "News"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Litecms",
+            "email": "info@lavalite.org"
+        }
+    ],
+    "require": {
+        "php": ">=5.5.9"
+    },
+    "autoload": {
+        "psr-4": {
+            "Litecms\\News\\": "src/Litecms/News"
+        }
+    },
+    "minimum-stability": "dev"
+}

@@ -1,0 +1,23 @@
+{
+    "name": "lavalite/settings",
+    "description": "Settings for Lavalite framework",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Lava Lite",
+            "email": "info@lavalite.org"
+        }
+    ],
+    "require": {
+        "php": ">=5.5.9"
+    },
+    "autoload": {
+        "classmap": [
+            "src"
+        ],
+        "psr-4": {
+            "Lavalite\\Settings\\": "src/Lavalite/Settings"
+        }
+    },
+    "minimum-stability": "dev"
+}

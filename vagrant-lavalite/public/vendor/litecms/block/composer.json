@@ -1,0 +1,21 @@
+{
+    "name": "litecms/block",
+    "description": "Block package for litecms.",
+    "keywords": ["lavalite","litecms", "Block"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Litecms",
+            "email": "info@lavalite.org"
+        }
+    ],
+    "require": {
+        "php": ">=5.5.9"
+    },
+    "autoload": {
+        "psr-4": {
+            "Litecms\\Block\\": "src/Litecms/Block"
+        }
+    },
+    "minimum-stability": "dev"
+}
