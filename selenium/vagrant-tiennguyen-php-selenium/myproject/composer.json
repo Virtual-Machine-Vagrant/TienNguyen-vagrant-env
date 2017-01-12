@@ -1,0 +1,49 @@
+{
+    "name": "phpunit/phpunit-selenium-nguyentien",
+    "description": "Selenium Server integration for PHPUnit",
+    "type": "library",
+    "keywords": [
+        "xunit",
+        "phpunit",
+        "testing",
+        "selenium"
+    ],
+    "homepage": "http://www.phpunit.de/",
+    "license": "BSD-3-Clause",
+    "authors": [
+        {
+            "name": "Tien Nguyen",
+            "email": "nguyen.tien@mulodo.com",
+            "role": "developer"
+        },
+        {
+            "name": "Anna Nguyen",
+            "email": "vytien@gmail.com",
+            "role": "developer"
+        }
+    ],
+    "support": {
+        "issues": "https://github.com/nguyen-tien-mulodo",
+        "irc": "irc://irc.freenode.net/phpunit"
+    },
+    "require": {
+        "php": ">=5.6",
+        "phpunit/phpunit": "~5.0",
+        "sebastian/comparator": "~1.0",
+        "ext-curl": "*",
+        "ext-dom": "*"
+    },
+    "require-dev": {
+       "phing/phing": "2.*",
+        "phpunit/phpunit-selenium": "^3.0",
+        "phpunit/php-code-coverage": "^4.0"
+    },
+    "autoload": {
+        "classmap": [
+            ""
+        ]
+    },
+    "include-path": [
+        ""
+    ]
+}

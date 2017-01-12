@@ -1,0 +1,107 @@
+/*
+ * DO NOT EDIT.  THIS FILE IS GENERATED FROM ../../../dist/idl/nsICookiePromptService.idl
+ */
+
+#ifndef __gen_nsICookiePromptService_h__
+#define __gen_nsICookiePromptService_h__
+
+
+#ifndef __gen_nsISupports_h__
+#include "nsISupports.h"
+#endif
+
+/* For IDL files that don't want to include root IDL files. */
+#ifndef NS_NO_VTABLE
+#define NS_NO_VTABLE
+#endif
+class mozIDOMWindowProxy; /* forward declaration */
+
+class nsICookie; /* forward declaration */
+
+
+/* starting interface:    nsICookiePromptService */
+#define NS_ICOOKIEPROMPTSERVICE_IID_STR "65ca07c3-6241-4de1-bf41-3336470499db"
+
+#define NS_ICOOKIEPROMPTSERVICE_IID \
+  {0x65ca07c3, 0x6241, 0x4de1, \
+    { 0xbf, 0x41, 0x33, 0x36, 0x47, 0x04, 0x99, 0xdb }}
+
+class NS_NO_VTABLE nsICookiePromptService : public nsISupports {
+ public:
+
+  NS_DECLARE_STATIC_IID_ACCESSOR(NS_ICOOKIEPROMPTSERVICE_IID)
+
+  enum {
+    DENY_COOKIE = 0U,
+    ACCEPT_COOKIE = 1U,
+    ACCEPT_SESSION_COOKIE = 2U
+  };
+
+  /* long cookieDialog (in mozIDOMWindowProxy parent, in nsICookie cookie, in ACString hostname, in long cookiesFromHost, in boolean changingCookie, out boolean rememberDecision); */
+  NS_IMETHOD CookieDialog(mozIDOMWindowProxy *parent, nsICookie *cookie, const nsACString & hostname, int32_t cookiesFromHost, bool changingCookie, bool *rememberDecision, int32_t *_retval) = 0;
+
+};
+
+  NS_DEFINE_STATIC_IID_ACCESSOR(nsICookiePromptService, NS_ICOOKIEPROMPTSERVICE_IID)
+
+/* Use this macro when declaring classes that implement this interface. */
+#define NS_DECL_NSICOOKIEPROMPTSERVICE \
+  NS_IMETHOD CookieDialog(mozIDOMWindowProxy *parent, nsICookie *cookie, const nsACString & hostname, int32_t cookiesFromHost, bool changingCookie, bool *rememberDecision, int32_t *_retval) override; 
+
+/* Use this macro when declaring the members of this interface when the
+   class doesn't implement the interface. This is useful for forwarding. */
+#define NS_DECL_NON_VIRTUAL_NSICOOKIEPROMPTSERVICE \
+  NS_METHOD CookieDialog(mozIDOMWindowProxy *parent, nsICookie *cookie, const nsACString & hostname, int32_t cookiesFromHost, bool changingCookie, bool *rememberDecision, int32_t *_retval); 
+
+/* Use this macro to declare functions that forward the behavior of this interface to another object. */
+#define NS_FORWARD_NSICOOKIEPROMPTSERVICE(_to) \
+  NS_IMETHOD CookieDialog(mozIDOMWindowProxy *parent, nsICookie *cookie, const nsACString & hostname, int32_t cookiesFromHost, bool changingCookie, bool *rememberDecision, int32_t *_retval) override { return _to CookieDialog(parent, cookie, hostname, cookiesFromHost, changingCookie, rememberDecision, _retval); } 
+
+/* Use this macro to declare functions that forward the behavior of this interface to another object in a safe way. */
+#define NS_FORWARD_SAFE_NSICOOKIEPROMPTSERVICE(_to) \
+  NS_IMETHOD CookieDialog(mozIDOMWindowProxy *parent, nsICookie *cookie, const nsACString & hostname, int32_t cookiesFromHost, bool changingCookie, bool *rememberDecision, int32_t *_retval) override { return !_to ? NS_ERROR_NULL_POINTER : _to->CookieDialog(parent, cookie, hostname, cookiesFromHost, changingCookie, rememberDecision, _retval); } 
+
+#if 0
+/* Use the code below as a template for the implementation class for this interface. */
+
+/* Header file */
+class nsCookiePromptService : public nsICookiePromptService
+{
+public:
+  NS_DECL_ISUPPORTS
+  NS_DECL_NSICOOKIEPROMPTSERVICE
+
+  nsCookiePromptService();
+
+private:
+  ~nsCookiePromptService();
+
+protected:
+  /* additional members */
+};
+
+/* Implementation file */
+NS_IMPL_ISUPPORTS(nsCookiePromptService, nsICookiePromptService)
+
+nsCookiePromptService::nsCookiePromptService()
+{
+  /* member initializers and constructor code */
+}
+
+nsCookiePromptService::~nsCookiePromptService()
+{
+  /* destructor code */
+}
+
+/* long cookieDialog (in mozIDOMWindowProxy parent, in nsICookie cookie, in ACString hostname, in long cookiesFromHost, in boolean changingCookie, out boolean rememberDecision); */
+NS_IMETHODIMP nsCookiePromptService::CookieDialog(mozIDOMWindowProxy *parent, nsICookie *cookie, const nsACString & hostname, int32_t cookiesFromHost, bool changingCookie, bool *rememberDecision, int32_t *_retval)
+{
+    return NS_ERROR_NOT_IMPLEMENTED;
+}
+
+/* End of implementation class template. */
+#endif
+
+#define NS_COOKIEPROMPTSERVICE_CONTRACTID "@mozilla.org/embedcomp/cookieprompt-service;1"
+
+#endif /* __gen_nsICookiePromptService_h__ */

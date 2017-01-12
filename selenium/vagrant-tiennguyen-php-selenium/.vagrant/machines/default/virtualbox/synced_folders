@@ -1,0 +1,1 @@
+{"virtualbox":{"/var/www/html":{"guestpath":"/var/www/html","hostpath":"/Volumes/Data/2016/vagrant-env/vagrant-tiennguyen-php-selenium","disabled":false},"/vagrant":{"guestpath":"/vagrant","hostpath":"/Volumes/Data/2016/vagrant-env/vagrant-tiennguyen-php-selenium","disabled":false}}}
