@@ -1,0 +1,11 @@
+{
+     "browsers": {
+          "Mozilla Firefox": {
+               "path": "/usr/bin/firefox",
+               "cmd": "-new-window",
+               "icon": "ff"
+          }
+     },
+     "testsDir": "/home/vagrant/DMM_Admin/DMM_Client",
+     "hostname": "192.168.55.44"
+}

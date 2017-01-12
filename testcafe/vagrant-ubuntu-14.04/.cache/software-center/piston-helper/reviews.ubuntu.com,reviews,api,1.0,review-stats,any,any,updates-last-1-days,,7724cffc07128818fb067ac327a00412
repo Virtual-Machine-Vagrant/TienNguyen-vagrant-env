@@ -1,0 +1,31 @@
+status: 200
+content-length: 368
+expires: Fri, 11 Nov 2016 12:02:19 GMT
+content-location: https://reviews.ubuntu.com/reviews/api/1.0/review-stats/any/any/updates-last-1-days/
+strict-transport-security: max-age=15768000; includeSubDomains; preload
+vary: Accept,Accept-Encoding
+server: gunicorn/19.3.0
+last-modified: Fri, 11 Nov 2016 08:02:19 GMT
+-content-encoding: gzip
+x-bzr-revision-number: 321
+cache-control: max-age=14400
+date: Fri, 11 Nov 2016 08:02:50 GMT
+content-type: application/json; charset=utf-8
+-varied-accept-encoding: gzip, deflate
+
+[
+    {
+        "ratings_total": 65, 
+        "ratings_average": "4.38", 
+        "app_name": "", 
+        "package_name": "anki", 
+        "histogram": "[5, 3, 0, 11, 46]"
+    }, 
+    {
+        "ratings_total": 125, 
+        "ratings_average": "4.65", 
+        "app_name": "", 
+        "package_name": "kolourpaint4", 
+        "histogram": "[2, 1, 4, 25, 93]"
+    }
+]

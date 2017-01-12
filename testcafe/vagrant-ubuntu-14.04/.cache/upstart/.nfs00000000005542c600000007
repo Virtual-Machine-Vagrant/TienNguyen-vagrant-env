@@ -1,0 +1,111 @@
+gnome-session-is-accelerated: llvmpipe detected.
+GNOME_KEYRING_CONTROL=/run/user/1000/keyring-SFvObc
+SSH_AUTH_SOCK=/run/user/1000/keyring-SFvObc/ssh
+GPG_AGENT_INFO=/run/user/1000/keyring-SFvObc/gpg:0:1
+GNOME_KEYRING_CONTROL=/run/user/1000/keyring-SFvObc
+SSH_AUTH_SOCK=/run/user/1000/keyring-SFvObc/ssh
+GPG_AGENT_INFO=/run/user/1000/keyring-SFvObc/gpg:0:1
+GNOME_KEYRING_CONTROL=/run/user/1000/keyring-SFvObc
+SSH_AUTH_SOCK=/run/user/1000/keyring-SFvObc/ssh
+GPG_AGENT_INFO=/run/user/1000/keyring-SFvObc/gpg:0:1
+GNOME_KEYRING_CONTROL=/run/user/1000/keyring-SFvObc
+SSH_AUTH_SOCK=/run/user/1000/keyring-SFvObc/ssh
+GPG_AGENT_INFO=/run/user/1000/keyring-SFvObc/gpg:0:1
+lock: No locks available
+Connection failure: Connection refused
+pa_context_connect() failed: Connection refused
+gnome-session[3682]: WARNING: App 'pulseaudio.desktop' exited with code 1
+compiz (core) - Info: Loading plugin: core
+compiz (core) - Info: Starting plugin: core
+compiz (core) - Info: Loading plugin: ccp
+compiz (core) - Info: Starting plugin: ccp
+compizconfig - Info: Backend     : gsettings
+compizconfig - Info: Integration : true
+compizconfig - Info: Profile     : unity
+
+(process:3910): indicator-application-service-WARNING **: Unable to get watcher name 'org.kde.StatusNotifierWatcher'
+
+(process:3910): indicator-application-service-WARNING **: Name Lost
+vmware-user: could not open /proc/fs/vmblock/dev
+
+** (process:3924): CRITICAL **: bluez.vala:104: GDBus.Error:org.freedesktop.DBus.Error.ServiceUnknown: The name org.bluez was not provided by any .service files
+compiz (core) - Info: Loading plugin: composite
+compiz (core) - Info: Starting plugin: composite
+compiz (core) - Info: Loading plugin: opengl
+compiz (core) - Info: Starting plugin: opengl
+
+(nautilus:3921): IBUS-WARNING **: The owner of /home/vagrant/.config/ibus/bus is not vagrant!
+compiz (core) - Info: Loading plugin: compiztoolbox
+compiz (core) - Info: Starting plugin: compiztoolbox
+compiz (core) - Info: Loading plugin: mousepoll
+compiz (core) - Info: Starting plugin: mousepoll
+compiz (core) - Info: Loading plugin: commands
+compiz (core) - Info: Starting plugin: commands
+compiz (core) - Info: Loading plugin: grid
+compiz (core) - Info: Starting plugin: grid
+compiz (core) - Info: Loading plugin: move
+compiz (core) - Info: Starting plugin: move
+compiz (core) - Info: Loading plugin: copytex
+compiz (core) - Info: Starting plugin: copytex
+compiz (core) - Info: Loading plugin: snap
+compiz (core) - Info: Starting plugin: snap
+compiz (core) - Info: Loading plugin: resize
+compiz (core) - Info: Starting plugin: resize
+compiz (core) - Info: Loading plugin: vpswitch
+compiz (core) - Info: Starting plugin: vpswitch
+compiz (core) - Info: Loading plugin: regex
+compiz (core) - Info: Starting plugin: regex
+compiz (core) - Info: Loading plugin: wall
+compiz (core) - Info: Starting plugin: wall
+compiz (core) - Info: Loading plugin: place
+compiz (core) - Info: Starting plugin: place
+compiz (core) - Info: Loading plugin: imgpng
+compiz (core) - Info: Starting plugin: imgpng
+compiz (core) - Info: Loading plugin: session
+compiz (core) - Info: Starting plugin: session
+I/O warning : failed to load external entity "/home/vagrant/.compiz/session/102d7edae2c25bd222147910354473130400000036820001"
+compiz (core) - Info: Loading plugin: unitymtgrabhandles
+compiz (core) - Info: Starting plugin: unitymtgrabhandles
+compiz (core) - Info: Loading plugin: animation
+compiz (core) - Info: Starting plugin: animation
+compiz (core) - Info: Loading plugin: fade
+compiz (core) - Info: Starting plugin: fade
+compiz (core) - Info: Loading plugin: workarounds
+compiz (core) - Info: Starting plugin: workarounds
+compiz (core) - Info: Loading plugin: expo
+compiz (core) - Info: Starting plugin: expo
+compiz (core) - Info: Loading plugin: scale
+compiz (core) - Info: Starting plugin: scale
+compiz (core) - Info: Loading plugin: ezoom
+compiz (core) - Info: Starting plugin: ezoom
+compiz (core) - Info: Loading plugin: unityshell
+compiz (core) - Info: Starting plugin: unityshell
+WARN  2016-11-14 06:06:51 unity.glib.dbus.server GLibDBusServer.cpp:579 Can't register object 'org.gnome.Shell' yet as we don't have a connection, waiting for it...
+ERROR 2016-11-14 06:06:52 unity.debug.interface DebugDBusInterface.cpp:216 Unable to load entry point in libxpathselect: libxpathselect.so.1.4: cannot open shared object file: No such file or directory
+WARN  2016-11-14 06:06:52 xim.controller XIMController.cpp:103 IBus natively supported.
+WARN  2016-11-14 06:06:53 unity.glib.dbus.server GLibDBusServer.cpp:579 Can't register object 'com.canonical.Unity.Launcher' yet as we don't have a connection, waiting for it...
+Nautilus-Share-Message: Called "net usershare info" but it failed: 'net usershare' returned error 255: net usershare: cannot open usershare directory /var/lib/samba/usershares. Error No such file or directory
+Please ask your system administrator to enable user sharing.
+
+WARN  2016-11-14 06:06:53 unity.glib.dbus.server GLibDBusServer.cpp:579 Can't register object 'com.canonical.Unity.Dash' yet as we don't have a connection, waiting for it...
+WARN  2016-11-14 06:06:53 unityn_param_values == 4 <unknown>:0 The owner of /home/vagrant/.config/ibus/bus is not vagrant!
+WARN  2016-11-14 06:06:53 unity.glib.dbus.server GLibDBusServer.cpp:579 Can't register object 'org.gnome.SessionManager.EndSessionDialog' yet as we don't have a connection, waiting for it...
+WARN  2016-11-14 06:06:53 unity.glib.dbus.server GLibDBusServer.cpp:579 Can't register object 'com.canonical.Unity.Session' yet as we don't have a connection, waiting for it...
+WARN  2016-11-14 06:06:53 unity.glib.dbus.server GLibDBusServer.cpp:579 Can't register object 'org.gnome.ScreenSaver' yet as we don't have a connection, waiting for it...
+compiz (core) - Warn: Attempted to restack relative to 0x28000dc which is not a child of the root window or a window compiz owns
+WARN  2016-11-14 06:06:55 unityo (appinfo2) <unknown>:0 g_settings_set_value: value for key 'visual-bell-type' in schema 'org.gnome.desktop.wm.preferences' is outside of valid range
+WARN  2016-11-14 06:06:55 unityo (appinfo2) <unknown>:0 g_settings_set_value: value for key 'visual-bell-type' in schema 'org.gnome.desktop.wm.preferences' is outside of valid range
+ERROR 2016-11-14 06:06:55 unity.glib.dbus.server GLibDBusServer.cpp:524 DBus name lost 'org.gnome.Shell'
+ERROR 2016-11-14 06:06:55 unity.glib.dbus.server GLibDBusServer.cpp:524 DBus name lost 'com.canonical.Unity'
+
+(nm-applet:3912): nm-applet-WARNING **: Could not find ShellVersion property on org.gnome.Shell after 5 tries
+
+(zeitgeist-datahub:4053): GLib-GObject-WARNING **: invalid (NULL) pointer instance
+
+(zeitgeist-datahub:4053): GLib-GObject-CRITICAL **: g_signal_connect_data: assertion 'G_TYPE_CHECK_INSTANCE (instance)' failed
+
+** (zeitgeist-datahub:4053): WARNING **: downloads-directory-provider.vala:120: Couldn't process /home/vagrant/.Xauthority-c: Error when getting information for file '/home/vagrant/.Xauthority-c': No such file or directory
+
+** (zeitgeist-datahub:4053): WARNING **: downloads-directory-provider.vala:120: Couldn't process /home/vagrant/.Xauthority-l: Error when getting information for file '/home/vagrant/.Xauthority-l': No such file or directory
+
+** (zeitgeist-datahub:4053): WARNING **: downloads-directory-provider.vala:120: Couldn't process /home/vagrant/.Xauthority-n: Error when getting information for file '/home/vagrant/.Xauthority-n': No such file or directory

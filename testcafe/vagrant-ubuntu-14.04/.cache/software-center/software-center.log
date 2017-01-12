@@ -1,0 +1,89 @@
+2016-11-11 06:37:01,767 - softwarecenter.ui.gtk3.app - INFO - setting up proxy 'None'
+2016-11-11 06:37:03,552 - softwarecenter.region - WARNING - failed to use geoclue: 'org.freedesktop.Geoclue.Error.notAvailable: Geoclue master client has no usable Address providers'
+2016-11-11 06:37:03,990 - softwarecenter.backend.reviews - WARNING - Could not get usefulness from server, no username in config file
+2016-11-11 06:37:04,036 - softwarecenter.plugin - INFO - activating plugin '<module 'webapps_activation' from '/usr/share/software-center/softwarecenter/plugins/webapps_activation.pyc'>'
+2016-11-11 06:37:04,593 - softwarecenter.db.pkginfo_impl.aptcache - INFO - aptcache.open()
+2016-11-11 06:37:09,442 - softwarecenter.backend.reviews - WARNING - error creating bsddb: '(22, 'Invalid argument -- BDB0054 illegal flag combination specified to DB_ENV->open')' (corrupted?)
+2016-11-11 06:37:09,444 - softwarecenter.backend.reviews - ERROR - trying to repair DB failed
+Traceback (most recent call last):
+  File "/usr/share/software-center/softwarecenter/backend/reviews/__init__.py", line 358, in _save_review_stats_cache_blocking
+    self._dump_bsddbm_for_unity(outfile, outdir)
+  File "/usr/share/software-center/softwarecenter/backend/reviews/__init__.py", line 377, in _dump_bsddbm_for_unity
+    0600)
+DBInvalidArgError: (22, 'Invalid argument -- BDB0054 illegal flag combination specified to DB_ENV->open')
+2016-11-11 06:37:09,531 - softwarecenter.ui.gtk3.views.lobbyview - WARNING - skipping exhibit for: 'u'leadwerks\r\nleadwerks-indie'' not available
+2016-11-11 06:37:18,346 - softwarecenter.db.utils - INFO - software-center-agent finished with status 0
+2016-11-11 06:37:31,466 - softwarecenter.backend - WARNING - _on_trans_error: 'TransactionFailed(u'error-dep-resolution-failed:  The following packages have unmet dependencies:\n\nwine1.6: Depends: wine1.6-amd64 (= 1:1.6.2-0ubuntu4) but 1:1.6.2-0ubuntu4 is to be installed\n         Depends: wine1.6-i386 (= 1:1.6.2-0ubuntu4) but it is not going to be installed\n',)' '<AptTransaction object at 0x7f0a804537d0 (aptdaemon+client+AptTransaction at 0x1ec5f40)>' 'wine1.6'
+2016-11-11 06:37:31,721 - softwarecenter.backend - ERROR - error in _on_trans_finished 'Error: Package dependencies cannot be resolved
+This error could be caused by required additional software packages which are missing or not installable. Furthermore there could be a conflict between software packages which are not allowed to be installed at the same time.
+
+The following packages have unmet dependencies:
+
+wine1.6: Depends: wine1.6-amd64 (= 1:1.6.2-0ubuntu4) but 1:1.6.2-0ubuntu4 is to be installed
+         Depends: wine1.6-i386 (= 1:1.6.2-0ubuntu4) but it is not going to be installed
+'
+2016-11-11 06:38:16,380 - softwarecenter.db.pkginfo_impl.aptcache - INFO - aptcache.open()
+2016-11-11 06:38:49,674 - softwarecenter.ui.gtk3.app - INFO - found a running software-center on dbus, reconnecting
+2016-11-11 06:46:40,013 - softwarecenter.backend - WARNING - _on_trans_error: 'TransactionFailed(u'error-dep-resolution-failed:  The following packages have unmet dependencies:\n\nwine1.6: Depends: wine1.6-amd64 (= 1:1.6.2-0ubuntu4) but 1:1.6.2-0ubuntu4 is to be installed\n         Depends: wine1.6-i386 (= 1:1.6.2-0ubuntu4) but it is not going to be installed\n',)' '<AptTransaction object at 0x7f0a8054d8c0 (aptdaemon+client+AptTransaction at 0x37c0c40)>' 'wine1.6'
+2016-11-11 06:46:40,351 - softwarecenter.fixme - WARNING - logs to the root logger: '('/usr/share/software-center/softwarecenter/backend/installbackend_impl/aptd.py', 1090, '_call_apport_recoverable_error')'
+2016-11-11 06:46:40,351 - root - WARNING - /usr/share/apport/recoverable_problem returned '1' ('', 'ERROR: Cannot create report: [Errno 17] File exists: '/var/crash/_usr_share_software-center_software-center.1000.crash'
+')
+2016-11-11 06:46:40,385 - softwarecenter.backend - ERROR - error in _on_trans_finished 'Error: Package dependencies cannot be resolved
+This error could be caused by required additional software packages which are missing or not installable. Furthermore there could be a conflict between software packages which are not allowed to be installed at the same time.
+
+The following packages have unmet dependencies:
+
+wine1.6: Depends: wine1.6-amd64 (= 1:1.6.2-0ubuntu4) but 1:1.6.2-0ubuntu4 is to be installed
+         Depends: wine1.6-i386 (= 1:1.6.2-0ubuntu4) but it is not going to be installed
+'
+2016-11-11 06:46:42,403 - softwarecenter.db.pkginfo_impl.aptcache - INFO - aptcache.open()
+2016-11-11 06:46:50,232 - softwarecenter.db.pkginfo_impl.aptcache - WARNING - broken packages encountered while getting deps for wine
+2016-11-11 06:46:51,599 - softwarecenter.backend - WARNING - _on_trans_error: 'TransactionFailed(u'error-dep-resolution-failed:  The following packages have unmet dependencies:\n\nwine: ',)' '<AptTransaction object at 0x7f0a8007e5a0 (aptdaemon+client+AptTransaction at 0x378b2c0)>' 'wine'
+2016-11-11 06:46:51,742 - softwarecenter.fixme - WARNING - logs to the root logger: '('/usr/share/software-center/softwarecenter/backend/installbackend_impl/aptd.py', 1090, '_call_apport_recoverable_error')'
+2016-11-11 06:46:51,742 - root - WARNING - /usr/share/apport/recoverable_problem returned '1' ('', 'ERROR: Cannot create report: [Errno 17] File exists: '/var/crash/_usr_share_software-center_software-center.1000.crash'
+')
+2016-11-11 06:46:51,747 - softwarecenter.backend - ERROR - error in _on_trans_finished 'Error: Package dependencies cannot be resolved
+This error could be caused by required additional software packages which are missing or not installable. Furthermore there could be a conflict between software packages which are not allowed to be installed at the same time.
+
+The following packages have unmet dependencies:
+
+wine: '
+2016-11-11 06:46:58,593 - softwarecenter.db.pkginfo_impl.aptcache - INFO - aptcache.open()
+2016-11-11 06:47:11,758 - softwarecenter.backend - WARNING - _on_trans_error: 'NotAuthorizedError(u"('system-bus-name', {'name':  ':1.579'}): org.debian.apt.install-or-remove-packages",)' '<AptTransaction object at 0x7f0a801ec870 (aptdaemon+client+AptTransaction at 0x1eba680)>' 'q4wine'
+2016-11-11 06:47:11,764 - softwarecenter.backend - ERROR - error in _on_trans_finished 'Error: You are not allowed to perform this action
+You don't have the required privileges to perform this action.
+
+org.freedesktop.PolicyKit.Error.NotAuthorized: ('system-bus-name', {'name': ':1.579'}): org.debian.apt.install-or-remove-packages'
+2016-11-11 06:47:13,317 - softwarecenter.db.pkginfo_impl.aptcache - INFO - aptcache.open()
+2016-11-11 08:02:42,753 - softwarecenter.ui.gtk3.app - INFO - setting up proxy 'None'
+2016-11-11 08:02:47,142 - softwarecenter.region - WARNING - failed to use geoclue: 'org.freedesktop.Geoclue.Error.notAvailable: Geoclue master client has no usable Address providers'
+2016-11-11 08:02:48,243 - softwarecenter.backend.reviews - WARNING - Could not get usefulness from server, no username in config file
+2016-11-11 08:02:48,294 - softwarecenter.plugin - INFO - activating plugin '<module 'webapps_activation' from '/usr/share/software-center/softwarecenter/plugins/webapps_activation.pyc'>'
+2016-11-11 08:02:48,691 - softwarecenter.db.pkginfo_impl.aptcache - INFO - aptcache.open()
+2016-11-11 08:02:54,401 - softwarecenter.backend.reviews - WARNING - error creating bsddb: '(22, 'Invalid argument -- BDB0054 illegal flag combination specified to DB_ENV->open')' (corrupted?)
+2016-11-11 08:02:54,418 - softwarecenter.backend.reviews - ERROR - trying to repair DB failed
+Traceback (most recent call last):
+  File "/usr/share/software-center/softwarecenter/backend/reviews/__init__.py", line 358, in _save_review_stats_cache_blocking
+    self._dump_bsddbm_for_unity(outfile, outdir)
+  File "/usr/share/software-center/softwarecenter/backend/reviews/__init__.py", line 377, in _dump_bsddbm_for_unity
+    0600)
+DBInvalidArgError: (22, 'Invalid argument -- BDB0054 illegal flag combination specified to DB_ENV->open')
+2016-11-11 08:02:54,530 - softwarecenter.ui.gtk3.views.lobbyview - WARNING - skipping exhibit for: 'u'leadwerks\r\nleadwerks-indie'' not available
+2016-11-11 08:03:05,608 - softwarecenter.db.utils - INFO - software-center-agent finished with status 1
+2016-11-11 08:03:32,461 - softwarecenter.fixme - WARNING - logs to the root logger: '('/usr/share/software-center/softwarecenter/db/database.py', 204, '_get_new_xapiandb')'
+2016-11-11 08:03:32,460 - root - WARNING - failed to add sca db Couldn't detect type of database
+2016-11-14 06:29:45,718 - softwarecenter.ui.gtk3.app - INFO - setting up proxy 'None'
+2016-11-14 06:29:46,087 - softwarecenter.fixme - WARNING - logs to the root logger: '('/usr/share/software-center/softwarecenter/db/database.py', 204, '_get_new_xapiandb')'
+2016-11-14 06:29:46,087 - root - WARNING - failed to add sca db Couldn't detect type of database
+2016-11-14 06:29:49,286 - softwarecenter.region - WARNING - failed to use geoclue: 'org.freedesktop.Geoclue.Error.notAvailable: Geoclue master client has no usable Address providers'
+2016-11-14 06:29:50,274 - softwarecenter.backend.reviews - WARNING - Could not get usefulness from server, no username in config file
+2016-11-14 06:29:50,302 - softwarecenter.plugin - INFO - activating plugin '<module 'webapps_activation' from '/usr/share/software-center/softwarecenter/plugins/webapps_activation.pyc'>'
+2016-11-14 06:29:50,648 - softwarecenter.db.pkginfo_impl.aptcache - INFO - aptcache.open()
+2016-11-14 06:29:56,002 - softwarecenter.backend.reviews - WARNING - error creating bsddb: '(22, 'Invalid argument -- BDB0054 illegal flag combination specified to DB_ENV->open')' (corrupted?)
+2016-11-14 06:29:56,021 - softwarecenter.backend.reviews - ERROR - trying to repair DB failed
+Traceback (most recent call last):
+  File "/usr/share/software-center/softwarecenter/backend/reviews/__init__.py", line 358, in _save_review_stats_cache_blocking
+    self._dump_bsddbm_for_unity(outfile, outdir)
+  File "/usr/share/software-center/softwarecenter/backend/reviews/__init__.py", line 377, in _dump_bsddbm_for_unity
+    0600)
+DBInvalidArgError: (22, 'Invalid argument -- BDB0054 illegal flag combination specified to DB_ENV->open')

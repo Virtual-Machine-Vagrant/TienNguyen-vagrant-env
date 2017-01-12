@@ -1,0 +1,475 @@
+gnome-session-is-accelerated: llvmpipe detected.
+GNOME_KEYRING_CONTROL=/run/user/1000/keyring-B9AQ5r
+SSH_AUTH_SOCK=/run/user/1000/keyring-B9AQ5r/ssh
+GPG_AGENT_INFO=/run/user/1000/keyring-B9AQ5r/gpg:0:1
+GNOME_KEYRING_CONTROL=/run/user/1000/keyring-B9AQ5r
+SSH_AUTH_SOCK=/run/user/1000/keyring-B9AQ5r/ssh
+GPG_AGENT_INFO=/run/user/1000/keyring-B9AQ5r/gpg:0:1
+GNOME_KEYRING_CONTROL=/run/user/1000/keyring-B9AQ5r
+SSH_AUTH_SOCK=/run/user/1000/keyring-B9AQ5r/ssh
+GPG_AGENT_INFO=/run/user/1000/keyring-B9AQ5r/gpg:0:1
+GNOME_KEYRING_CONTROL=/run/user/1000/keyring-B9AQ5r
+SSH_AUTH_SOCK=/run/user/1000/keyring-B9AQ5r/ssh
+GPG_AGENT_INFO=/run/user/1000/keyring-B9AQ5r/gpg:0:1
+Connection failure: Connection refused
+pa_context_connect() failed: Connection refused
+gnome-session[2825]: WARNING: App 'pulseaudio.desktop' exited with code 1
+compiz (core) - Info: Loading plugin: core
+compiz (core) - Info: Starting plugin: core
+compiz (core) - Info: Loading plugin: ccp
+compiz (core) - Info: Starting plugin: ccp
+compizconfig - Info: Backend     : gsettings
+compizconfig - Info: Integration : true
+compizconfig - Info: Profile     : unity
+
+(process:3006): indicator-application-service-WARNING **: Unable to get watcher name 'org.kde.StatusNotifierWatcher'
+
+(process:3006): indicator-application-service-WARNING **: Name Lost
+vmware-user: could not open /proc/fs/vmblock/dev
+compiz (core) - Info: Loading plugin: composite
+
+** (process:3021): CRITICAL **: bluez.vala:104: GDBus.Error:org.freedesktop.DBus.Error.ServiceUnknown: The name org.bluez was not provided by any .service files
+compiz (core) - Info: Starting plugin: composite
+compiz (core) - Info: Loading plugin: opengl
+compiz (core) - Info: Starting plugin: opengl
+compiz (core) - Info: Loading plugin: compiztoolbox
+compiz (core) - Info: Starting plugin: compiztoolbox
+compiz (core) - Info: Loading plugin: mousepoll
+compiz (core) - Info: Starting plugin: mousepoll
+compiz (core) - Info: Loading plugin: commands
+compiz (core) - Info: Starting plugin: commands
+compiz (core) - Info: Loading plugin: grid
+
+(nautilus:3020): IBUS-WARNING **: The owner of /home/vagrant/.config/ibus/bus is not vagrant!
+compiz (core) - Info: Starting plugin: grid
+compiz (core) - Info: Loading plugin: move
+compiz (core) - Info: Starting plugin: move
+compiz (core) - Info: Loading plugin: copytex
+compiz (core) - Info: Starting plugin: copytex
+compiz (core) - Info: Loading plugin: snap
+compiz (core) - Info: Starting plugin: snap
+compiz (core) - Info: Loading plugin: resize
+compiz (core) - Info: Starting plugin: resize
+compiz (core) - Info: Loading plugin: vpswitch
+compiz (core) - Info: Starting plugin: vpswitch
+compiz (core) - Info: Loading plugin: regex
+compiz (core) - Info: Starting plugin: regex
+compiz (core) - Info: Loading plugin: wall
+compiz (core) - Info: Starting plugin: wall
+compiz (core) - Info: Loading plugin: place
+compiz (core) - Info: Starting plugin: place
+compiz (core) - Info: Loading plugin: imgpng
+compiz (core) - Info: Starting plugin: imgpng
+compiz (core) - Info: Loading plugin: session
+compiz (core) - Info: Starting plugin: session
+I/O warning : failed to load external entity "/home/vagrant/.compiz/session/102304a49731aaf214147910419332457500000028250001"
+compiz (core) - Info: Loading plugin: unitymtgrabhandles
+compiz (core) - Info: Starting plugin: unitymtgrabhandles
+compiz (core) - Info: Loading plugin: animation
+compiz (core) - Info: Starting plugin: animation
+compiz (core) - Info: Loading plugin: fade
+compiz (core) - Info: Starting plugin: fade
+compiz (core) - Info: Loading plugin: workarounds
+compiz (core) - Info: Starting plugin: workarounds
+compiz (core) - Info: Loading plugin: expo
+compiz (core) - Info: Starting plugin: expo
+compiz (core) - Info: Loading plugin: scale
+compiz (core) - Info: Starting plugin: scale
+compiz (core) - Info: Loading plugin: ezoom
+compiz (core) - Info: Starting plugin: ezoom
+compiz (core) - Info: Loading plugin: unityshell
+compiz (core) - Info: Starting plugin: unityshell
+WARN  2016-11-14 06:16:43 unity.glib.dbus.server GLibDBusServer.cpp:579 Can't register object 'org.gnome.Shell' yet as we don't have a connection, waiting for it...
+ERROR 2016-11-14 06:16:43 unity.debug.interface DebugDBusInterface.cpp:216 Unable to load entry point in libxpathselect: libxpathselect.so.1.4: cannot open shared object file: No such file or directory
+WARN  2016-11-14 06:16:44 xim.controller XIMController.cpp:103 IBus natively supported.
+Nautilus-Share-Message: Called "net usershare info" but it failed: 'net usershare' returned error 255: net usershare: cannot open usershare directory /var/lib/samba/usershares. Error No such file or directory
+Please ask your system administrator to enable user sharing.
+
+WARN  2016-11-14 06:16:44 unity.glib.dbus.server GLibDBusServer.cpp:579 Can't register object 'com.canonical.Unity.Launcher' yet as we don't have a connection, waiting for it...
+WARN  2016-11-14 06:16:44 unity.glib.dbus.server GLibDBusServer.cpp:579 Can't register object 'com.canonical.Unity.Dash' yet as we don't have a connection, waiting for it...
+WARN  2016-11-14 06:16:44 unityn_param_values == 4 <unknown>:0 The owner of /home/vagrant/.config/ibus/bus is not vagrant!
+WARN  2016-11-14 06:16:44 unity.glib.dbus.server GLibDBusServer.cpp:579 Can't register object 'org.gnome.SessionManager.EndSessionDialog' yet as we don't have a connection, waiting for it...
+WARN  2016-11-14 06:16:44 unity.glib.dbus.server GLibDBusServer.cpp:579 Can't register object 'com.canonical.Unity.Session' yet as we don't have a connection, waiting for it...
+WARN  2016-11-14 06:16:44 unity.glib.dbus.server GLibDBusServer.cpp:579 Can't register object 'org.gnome.ScreenSaver' yet as we don't have a connection, waiting for it...
+compiz (core) - Warn: Attempted to restack relative to 0x28000dc which is not a child of the root window or a window compiz owns
+ERROR 2016-11-14 06:16:46 unity.glib.dbus.server GLibDBusServer.cpp:524 DBus name lost 'org.gnome.Shell'
+ERROR 2016-11-14 06:16:46 unity.glib.dbus.server GLibDBusServer.cpp:524 DBus name lost 'com.canonical.Unity'
+
+(nm-applet:3008): nm-applet-WARNING **: Could not find ShellVersion property on org.gnome.Shell after 5 tries
+
+(zeitgeist-datahub:3310): GLib-GObject-WARNING **: invalid (NULL) pointer instance
+
+(zeitgeist-datahub:3310): GLib-GObject-CRITICAL **: g_signal_connect_data: assertion 'G_TYPE_CHECK_INSTANCE (instance)' failed
+
+(firefox:3506): GLib-GObject-CRITICAL **: g_object_ref: assertion 'object->ref_count > 0' failed
+
+(firefox:3506): GLib-GObject-CRITICAL **: g_object_unref: assertion 'object->ref_count > 0' failed
+
+(firefox:3506): GLib-GObject-CRITICAL **: g_object_ref: assertion 'object->ref_count > 0' failed
+
+(firefox:3506): GLib-GObject-CRITICAL **: g_object_unref: assertion 'object->ref_count > 0' failed
+
+(firefox:3506): IBUS-WARNING **: The owner of /home/vagrant/.config/ibus/bus is not vagrant!
+
+(nautilus:3020): GLib-CRITICAL **: Source ID 259 was not found when attempting to remove it
+
+(nautilus:3020): GLib-CRITICAL **: Source ID 260 was not found when attempting to remove it
+
+(nautilus:3020): GLib-CRITICAL **: Source ID 261 was not found when attempting to remove it
+ERROR 2016-11-14 06:19:28 unityfree <unknown>:0 g_variant_get_type: assertion 'value != NULL' failed
+ERROR 2016-11-14 06:19:28 unityfree <unknown>:0 g_variant_type_is_subtype_of: assertion 'g_variant_type_check (type)' failed
+ERROR 2016-11-14 06:19:28 unity.filemanager.gnome GnomeFileManager.cpp:60 Locations value type is not matching the expected one!
+gnome-session[2825]: Gdk-WARNING: gnome-session: Fatal IO error 11 (Resource temporarily unavailable) on X server :0.
+
+
+(update-notifier:3442): Gdk-WARNING **: update-notifier: Fatal IO error 11 (Resource temporarily unavailable) on X server :0.
+
+
+(telepathy-indicator:3283): Gdk-WARNING **: telepathy-indicator: Fatal IO error 11 (Resource temporarily unavailable) on X server :0.
+
+
+(nm-applet:3008): Gdk-WARNING **: nm-applet: Fatal IO error 11 (Resource temporarily unavailable) on X server :0.
+
+
+(unity-fallback-mount-helper:3005): Gdk-WARNING **: unity-fallback-mount-helper: Fatal IO error 11 (Resource temporarily unavailable) on X server :0.
+
+gnome-session-is-accelerated: llvmpipe detected.
+GNOME_KEYRING_CONTROL=/run/user/1000/keyring-7ibJ5q
+SSH_AUTH_SOCK=/run/user/1000/keyring-7ibJ5q/ssh
+GPG_AGENT_INFO=/run/user/1000/keyring-7ibJ5q/gpg:0:1
+GNOME_KEYRING_CONTROL=/run/user/1000/keyring-7ibJ5q
+SSH_AUTH_SOCK=/run/user/1000/keyring-7ibJ5q/ssh
+GPG_AGENT_INFO=/run/user/1000/keyring-7ibJ5q/gpg:0:1
+GNOME_KEYRING_CONTROL=/run/user/1000/keyring-7ibJ5q
+SSH_AUTH_SOCK=/run/user/1000/keyring-7ibJ5q/ssh
+GPG_AGENT_INFO=/run/user/1000/keyring-7ibJ5q/gpg:0:1
+GNOME_KEYRING_CONTROL=/run/user/1000/keyring-7ibJ5q
+SSH_AUTH_SOCK=/run/user/1000/keyring-7ibJ5q/ssh
+GPG_AGENT_INFO=/run/user/1000/keyring-7ibJ5q/gpg:0:1
+Connection failure: Connection refused
+pa_context_connect() failed: Connection refused
+gnome-session[2915]: WARNING: App 'pulseaudio.desktop' exited with code 1
+compiz (core) - Info: Loading plugin: core
+compiz (core) - Info: Starting plugin: core
+compiz (core) - Info: Loading plugin: ccp
+compiz (core) - Info: Starting plugin: ccp
+compizconfig - Info: Backend     : gsettings
+compizconfig - Info: Integration : true
+compizconfig - Info: Profile     : unity
+vmware-user: could not open /proc/fs/vmblock/dev
+
+(process:3102): indicator-application-service-WARNING **: Name Lost
+compiz (core) - Info: Loading plugin: composite
+compiz (core) - Info: Starting plugin: composite
+
+** (process:3116): CRITICAL **: bluez.vala:104: GDBus.Error:org.freedesktop.DBus.Error.ServiceUnknown: The name org.bluez was not provided by any .service files
+compiz (core) - Info: Loading plugin: opengl
+compiz (core) - Info: Starting plugin: opengl
+compiz (core) - Info: Loading plugin: compiztoolbox
+compiz (core) - Info: Starting plugin: compiztoolbox
+compiz (core) - Info: Loading plugin: mousepoll
+compiz (core) - Info: Starting plugin: mousepoll
+compiz (core) - Info: Loading plugin: commands
+compiz (core) - Info: Starting plugin: commands
+compiz (core) - Info: Loading plugin: grid
+compiz (core) - Info: Starting plugin: grid
+compiz (core) - Info: Loading plugin: move
+compiz (core) - Info: Starting plugin: move
+compiz (core) - Info: Loading plugin: copytex
+compiz (core) - Info: Starting plugin: copytex
+compiz (core) - Info: Loading plugin: snap
+compiz (core) - Info: Starting plugin: snap
+compiz (core) - Info: Loading plugin: resize
+compiz (core) - Info: Starting plugin: resize
+compiz (core) - Info: Loading plugin: vpswitch
+compiz (core) - Info: Starting plugin: vpswitch
+compiz (core) - Info: Loading plugin: regex
+compiz (core) - Info: Starting plugin: regex
+compiz (core) - Info: Loading plugin: wall
+compiz (core) - Info: Starting plugin: wall
+compiz (core) - Info: Loading plugin: place
+compiz (core) - Info: Starting plugin: place
+compiz (core) - Info: Loading plugin: imgpng
+compiz (core) - Info: Starting plugin: imgpng
+compiz (core) - Info: Loading plugin: session
+compiz (core) - Info: Starting plugin: session
+I/O warning : failed to load external entity "/home/vagrant/.compiz/session/1087e268aa96b1b7c014791047278735600000029150001"
+compiz (core) - Info: Loading plugin: unitymtgrabhandles
+
+(nautilus:3113): IBUS-WARNING **: The owner of /home/vagrant/.config/ibus/bus is not vagrant!
+compiz (core) - Info: Starting plugin: unitymtgrabhandles
+compiz (core) - Info: Loading plugin: animation
+compiz (core) - Info: Starting plugin: animation
+compiz (core) - Info: Loading plugin: fade
+compiz (core) - Info: Starting plugin: fade
+compiz (core) - Info: Loading plugin: workarounds
+compiz (core) - Info: Starting plugin: workarounds
+compiz (core) - Info: Loading plugin: expo
+compiz (core) - Info: Starting plugin: expo
+compiz (core) - Info: Loading plugin: scale
+compiz (core) - Info: Starting plugin: scale
+compiz (core) - Info: Loading plugin: ezoom
+compiz (core) - Info: Starting plugin: ezoom
+compiz (core) - Info: Loading plugin: unityshell
+compiz (core) - Info: Starting plugin: unityshell
+WARN  2016-11-14 06:25:30 unity.glib.dbus.server GLibDBusServer.cpp:579 Can't register object 'org.gnome.Shell' yet as we don't have a connection, waiting for it...
+ERROR 2016-11-14 06:25:30 unity.debug.interface DebugDBusInterface.cpp:216 Unable to load entry point in libxpathselect: libxpathselect.so.1.4: cannot open shared object file: No such file or directory
+WARN  2016-11-14 06:25:30 xim.controller XIMController.cpp:103 IBus natively supported.
+WARN  2016-11-14 06:25:31 unity.glib.dbus.server GLibDBusServer.cpp:579 Can't register object 'com.canonical.Unity.Launcher' yet as we don't have a connection, waiting for it...
+WARN  2016-11-14 06:25:31 unity.glib.dbus.server GLibDBusServer.cpp:579 Can't register object 'com.canonical.Unity.Dash' yet as we don't have a connection, waiting for it...
+Nautilus-Share-Message: Called "net usershare info" but it failed: 'net usershare' returned error 255: net usershare: cannot open usershare directory /var/lib/samba/usershares. Error No such file or directory
+Please ask your system administrator to enable user sharing.
+
+WARN  2016-11-14 06:25:31 unityn_param_values == 4 <unknown>:0 The owner of /home/vagrant/.config/ibus/bus is not vagrant!
+WARN  2016-11-14 06:25:31 unity.glib.dbus.server GLibDBusServer.cpp:579 Can't register object 'org.gnome.SessionManager.EndSessionDialog' yet as we don't have a connection, waiting for it...
+WARN  2016-11-14 06:25:31 unity.glib.dbus.server GLibDBusServer.cpp:579 Can't register object 'com.canonical.Unity.Session' yet as we don't have a connection, waiting for it...
+WARN  2016-11-14 06:25:31 unity.glib.dbus.server GLibDBusServer.cpp:579 Can't register object 'org.gnome.ScreenSaver' yet as we don't have a connection, waiting for it...
+WARN  2016-11-14 06:25:32 unityo (appinfo2) <unknown>:0 g_settings_set_value: value for key 'visual-bell-type' in schema 'org.gnome.desktop.wm.preferences' is outside of valid range
+ERROR 2016-11-14 06:25:32 unity.glib.dbus.server GLibDBusServer.cpp:524 DBus name lost 'org.gnome.Shell'
+ERROR 2016-11-14 06:25:32 unity.glib.dbus.server GLibDBusServer.cpp:524 DBus name lost 'com.canonical.Unity'
+
+(nm-applet:3106): nm-applet-WARNING **: Could not find ShellVersion property on org.gnome.Shell after 5 tries
+
+(zeitgeist-datahub:3269): GLib-GObject-WARNING **: invalid (NULL) pointer instance
+
+(zeitgeist-datahub:3269): GLib-GObject-CRITICAL **: g_signal_connect_data: assertion 'G_TYPE_CHECK_INSTANCE (instance)' failed
+
+(firefox:3478): GLib-GObject-CRITICAL **: g_object_ref: assertion 'object->ref_count > 0' failed
+
+(firefox:3478): GLib-GObject-CRITICAL **: g_object_unref: assertion 'object->ref_count > 0' failed
+
+(firefox:3478): GLib-GObject-CRITICAL **: g_object_ref: assertion 'object->ref_count > 0' failed
+
+(firefox:3478): GLib-GObject-CRITICAL **: g_object_unref: assertion 'object->ref_count > 0' failed
+
+(firefox:3478): IBUS-WARNING **: The owner of /home/vagrant/.config/ibus/bus is not vagrant!
+
+(unity-control-center:3793): IBUS-WARNING **: The owner of /home/vagrant/.config/ibus/bus is not vagrant!
+2016-11-14 06:29:45,718 - softwarecenter.ui.gtk3.app - INFO - setting up proxy 'None'
+2016-11-14 06:29:46,087 - softwarecenter.fixme - WARNING - logs to the root logger: '('/usr/share/software-center/softwarecenter/db/database.py', 204, '_get_new_xapiandb')'
+2016-11-14 06:29:46,087 - root - WARNING - failed to add sca db Couldn't detect type of database
+2016-11-14 06:29:49,286 - softwarecenter.region - WARNING - failed to use geoclue: 'org.freedesktop.Geoclue.Error.notAvailable: Geoclue master client has no usable Address providers'
+2016-11-14 06:29:50,274 - softwarecenter.backend.reviews - WARNING - Could not get usefulness from server, no username in config file
+2016-11-14 06:29:50,302 - softwarecenter.plugin - INFO - activating plugin '<module 'webapps_activation' from '/usr/share/software-center/softwarecenter/plugins/webapps_activation.pyc'>'
+
+(software-center:3853): IBUS-WARNING **: The owner of /home/vagrant/.config/ibus/bus is not vagrant!
+2016-11-14 06:29:50,648 - softwarecenter.db.pkginfo_impl.aptcache - INFO - aptcache.open()
+2016-11-14 06:29:56,002 - softwarecenter.backend.reviews - WARNING - error creating bsddb: '(22, 'Invalid argument -- BDB0054 illegal flag combination specified to DB_ENV->open')' (corrupted?)
+2016-11-14 06:29:56,021 - softwarecenter.backend.reviews - ERROR - trying to repair DB failed
+Traceback (most recent call last):
+  File "/usr/share/software-center/softwarecenter/backend/reviews/__init__.py", line 358, in _save_review_stats_cache_blocking
+    self._dump_bsddbm_for_unity(outfile, outdir)
+  File "/usr/share/software-center/softwarecenter/backend/reviews/__init__.py", line 377, in _dump_bsddbm_for_unity
+    0600)
+DBInvalidArgError: (22, 'Invalid argument -- BDB0054 illegal flag combination specified to DB_ENV->open')
+/usr/lib/python2.7/dist-packages/gi/overrides/GLib.py:535: Warning: Source ID 76 was not found when attempting to remove it
+  return super(MainContext, self).iteration(may_block)
+
+(unity-control-center:3793): GLib-CRITICAL **: Source ID 262 was not found when attempting to remove it
+/usr/lib/python2.7/dist-packages/gi/overrides/GLib.py:535: Warning: Source ID 20 was not found when attempting to remove it
+  return super(MainContext, self).iteration(may_block)
+ERROR 2016-11-14 06:30:08 unity <unknown>:0 AtkObject* unity_a11y_get_accessible(nux::Object*): assertion 'object != NULL' failed
+ERROR 2016-11-14 06:30:08 unity <unknown>:0 AtkObject* unity_a11y_get_accessible(nux::Object*): assertion 'object != NULL' failed
+ERROR 2016-11-14 06:30:08 unity <unknown>:0 AtkObject* unity_a11y_get_accessible(nux::Object*): assertion 'object != NULL' failed
+ERROR 2016-11-14 06:30:08 unity <unknown>:0 AtkObject* unity_a11y_get_accessible(nux::Object*): assertion 'object != NULL' failed
+ERROR 2016-11-14 06:30:08 unity <unknown>:0 AtkObject* unity_a11y_get_accessible(nux::Object*): assertion 'object != NULL' failed
+ERROR 2016-11-14 06:30:08 unity <unknown>:0 AtkObject* unity_a11y_get_accessible(nux::Object*): assertion 'object != NULL' failed
+ERROR 2016-11-14 06:30:08 unity <unknown>:0 AtkObject* unity_a11y_get_accessible(nux::Object*): assertion 'object != NULL' failed
+ERROR 2016-11-14 06:30:08 unity <unknown>:0 AtkObject* unity_a11y_get_accessible(nux::Object*): assertion 'object != NULL' failed
+ERROR 2016-11-14 06:30:08 unity <unknown>:0 AtkObject* unity_a11y_get_accessible(nux::Object*): assertion 'object != NULL' failed
+ERROR 2016-11-14 06:30:08 unity <unknown>:0 AtkObject* unity_a11y_get_accessible(nux::Object*): assertion 'object != NULL' failed
+ERROR 2016-11-14 06:30:08 unity <unknown>:0 AtkObject* unity_a11y_get_accessible(nux::Object*): assertion 'object != NULL' failed
+ERROR 2016-11-14 06:30:08 unity <unknown>:0 AtkObject* unity_a11y_get_accessible(nux::Object*): assertion 'object != NULL' failed
+ERROR 2016-11-14 06:30:08 unity <unknown>:0 atk_object_ref_state_set: assertion 'ATK_IS_OBJECT (accessible)' failed
+ERROR 2016-11-14 06:30:08 unity <unknown>:0 atk_state_set_contains_state: assertion 'ATK_IS_STATE_SET (set)' failed
+ERROR 2016-11-14 06:30:08 unityy <unknown>:0 g_object_unref: assertion 'G_IS_OBJECT (object)' failed
+ERROR 2016-11-14 06:30:10 unity <unknown>:0 AtkObject* unity_a11y_get_accessible(nux::Object*): assertion 'object != NULL' failed
+ERROR 2016-11-14 06:30:10 unity <unknown>:0 AtkObject* unity_a11y_get_accessible(nux::Object*): assertion 'object != NULL' failed
+ERROR 2016-11-14 06:30:10 unity <unknown>:0 AtkObject* unity_a11y_get_accessible(nux::Object*): assertion 'object != NULL' failed
+ERROR 2016-11-14 06:30:10 unity <unknown>:0 AtkObject* unity_a11y_get_accessible(nux::Object*): assertion 'object != NULL' failed
+ERROR 2016-11-14 06:30:10 unity <unknown>:0 AtkObject* unity_a11y_get_accessible(nux::Object*): assertion 'object != NULL' failed
+ERROR 2016-11-14 06:30:10 unity <unknown>:0 AtkObject* unity_a11y_get_accessible(nux::Object*): assertion 'object != NULL' failed
+ERROR 2016-11-14 06:30:10 unity <unknown>:0 AtkObject* unity_a11y_get_accessible(nux::Object*): assertion 'object != NULL' failed
+ERROR 2016-11-14 06:30:10 unity <unknown>:0 AtkObject* unity_a11y_get_accessible(nux::Object*): assertion 'object != NULL' failed
+ERROR 2016-11-14 06:30:10 unity <unknown>:0 AtkObject* unity_a11y_get_accessible(nux::Object*): assertion 'object != NULL' failed
+ERROR 2016-11-14 06:30:10 unity <unknown>:0 AtkObject* unity_a11y_get_accessible(nux::Object*): assertion 'object != NULL' failed
+ERROR 2016-11-14 06:30:10 unity <unknown>:0 AtkObject* unity_a11y_get_accessible(nux::Object*): assertion 'object != NULL' failed
+ERROR 2016-11-14 06:30:10 unity <unknown>:0 AtkObject* unity_a11y_get_accessible(nux::Object*): assertion 'object != NULL' failed
+ERROR 2016-11-14 06:30:10 unity <unknown>:0 AtkObject* unity_a11y_get_accessible(nux::Object*): assertion 'object != NULL' failed
+ERROR 2016-11-14 06:30:10 unity <unknown>:0 AtkObject* unity_a11y_get_accessible(nux::Object*): assertion 'object != NULL' failed
+ERROR 2016-11-14 06:30:10 unity <unknown>:0 AtkObject* unity_a11y_get_accessible(nux::Object*): assertion 'object != NULL' failed
+ERROR 2016-11-14 06:30:10 unity <unknown>:0 AtkObject* unity_a11y_get_accessible(nux::Object*): assertion 'object != NULL' failed
+ERROR 2016-11-14 06:30:10 unity <unknown>:0 AtkObject* unity_a11y_get_accessible(nux::Object*): assertion 'object != NULL' failed
+ERROR 2016-11-14 06:30:10 unity <unknown>:0 AtkObject* unity_a11y_get_accessible(nux::Object*): assertion 'object != NULL' failed
+ERROR 2016-11-14 06:30:11 unity <unknown>:0 AtkObject* unity_a11y_get_accessible(nux::Object*): assertion 'object != NULL' failed
+ERROR 2016-11-14 06:30:11 unity <unknown>:0 AtkObject* unity_a11y_get_accessible(nux::Object*): assertion 'object != NULL' failed
+ERROR 2016-11-14 06:30:11 unity <unknown>:0 AtkObject* unity_a11y_get_accessible(nux::Object*): assertion 'object != NULL' failed
+ERROR 2016-11-14 06:30:11 unity <unknown>:0 AtkObject* unity_a11y_get_accessible(nux::Object*): assertion 'object != NULL' failed
+ERROR 2016-11-14 06:30:11 unity <unknown>:0 AtkObject* unity_a11y_get_accessible(nux::Object*): assertion 'object != NULL' failed
+ERROR 2016-11-14 06:30:11 unity <unknown>:0 AtkObject* unity_a11y_get_accessible(nux::Object*): assertion 'object != NULL' failed
+ERROR 2016-11-14 06:30:11 unity <unknown>:0 AtkObject* unity_a11y_get_accessible(nux::Object*): assertion 'object != NULL' failed
+ERROR 2016-11-14 06:30:11 unity <unknown>:0 AtkObject* unity_a11y_get_accessible(nux::Object*): assertion 'object != NULL' failed
+ERROR 2016-11-14 06:30:11 unity <unknown>:0 AtkObject* unity_a11y_get_accessible(nux::Object*): assertion 'object != NULL' failed
+ERROR 2016-11-14 06:30:11 unity <unknown>:0 AtkObject* unity_a11y_get_accessible(nux::Object*): assertion 'object != NULL' failed
+ERROR 2016-11-14 06:30:11 unity <unknown>:0 AtkObject* unity_a11y_get_accessible(nux::Object*): assertion 'object != NULL' failed
+ERROR 2016-11-14 06:30:11 unity <unknown>:0 AtkObject* unity_a11y_get_accessible(nux::Object*): assertion 'object != NULL' failed
+ERROR 2016-11-14 06:30:12 unity <unknown>:0 AtkObject* unity_a11y_get_accessible(nux::Object*): assertion 'object != NULL' failed
+ERROR 2016-11-14 06:30:12 unity <unknown>:0 AtkObject* unity_a11y_get_accessible(nux::Object*): assertion 'object != NULL' failed
+ERROR 2016-11-14 06:30:12 unity <unknown>:0 AtkObject* unity_a11y_get_accessible(nux::Object*): assertion 'object != NULL' failed
+ERROR 2016-11-14 06:30:12 unity <unknown>:0 AtkObject* unity_a11y_get_accessible(nux::Object*): assertion 'object != NULL' failed
+ERROR 2016-11-14 06:30:12 unity <unknown>:0 AtkObject* unity_a11y_get_accessible(nux::Object*): assertion 'object != NULL' failed
+ERROR 2016-11-14 06:30:12 unity <unknown>:0 AtkObject* unity_a11y_get_accessible(nux::Object*): assertion 'object != NULL' failed
+
+(firefox:3951): GLib-GObject-CRITICAL **: g_object_ref: assertion 'object->ref_count > 0' failed
+
+(firefox:3951): GLib-GObject-CRITICAL **: g_object_unref: assertion 'object->ref_count > 0' failed
+
+(firefox:3951): GLib-GObject-CRITICAL **: g_object_ref: assertion 'object->ref_count > 0' failed
+
+(firefox:3951): GLib-GObject-CRITICAL **: g_object_unref: assertion 'object->ref_count > 0' failed
+
+(firefox:3951): IBUS-WARNING **: The owner of /home/vagrant/.config/ibus/bus is not vagrant!
+
+(firefox:4237): GLib-GObject-CRITICAL **: g_object_ref: assertion 'object->ref_count > 0' failed
+
+(firefox:4237): GLib-GObject-CRITICAL **: g_object_unref: assertion 'object->ref_count > 0' failed
+
+(firefox:4237): GLib-GObject-CRITICAL **: g_object_ref: assertion 'object->ref_count > 0' failed
+
+(firefox:4237): GLib-GObject-CRITICAL **: g_object_unref: assertion 'object->ref_count > 0' failed
+
+(firefox:4237): IBUS-WARNING **: The owner of /home/vagrant/.config/ibus/bus is not vagrant!
+
+(firefox:5011): GLib-GObject-CRITICAL **: g_object_ref: assertion 'object->ref_count > 0' failed
+
+(firefox:5011): GLib-GObject-CRITICAL **: g_object_unref: assertion 'object->ref_count > 0' failed
+
+(firefox:5011): GLib-GObject-CRITICAL **: g_object_ref: assertion 'object->ref_count > 0' failed
+
+(firefox:5011): GLib-GObject-CRITICAL **: g_object_unref: assertion 'object->ref_count > 0' failed
+
+(firefox:5011): IBUS-WARNING **: The owner of /home/vagrant/.config/ibus/bus is not vagrant!
+gnome-session-is-accelerated: llvmpipe detected.
+GNOME_KEYRING_CONTROL=/run/user/1000/keyring-j30egz
+SSH_AUTH_SOCK=/run/user/1000/keyring-j30egz/ssh
+GPG_AGENT_INFO=/run/user/1000/keyring-j30egz/gpg:0:1
+GNOME_KEYRING_CONTROL=/run/user/1000/keyring-j30egz
+SSH_AUTH_SOCK=/run/user/1000/keyring-j30egz/ssh
+GPG_AGENT_INFO=/run/user/1000/keyring-j30egz/gpg:0:1
+GNOME_KEYRING_CONTROL=/run/user/1000/keyring-j30egz
+SSH_AUTH_SOCK=/run/user/1000/keyring-j30egz/ssh
+GPG_AGENT_INFO=/run/user/1000/keyring-j30egz/gpg:0:1
+Connection failure: Connection refused
+pa_context_connect() failed: Connection refused
+GNOME_KEYRING_CONTROL=/run/user/1000/keyring-j30egz
+SSH_AUTH_SOCK=/run/user/1000/keyring-j30egz/ssh
+GPG_AGENT_INFO=/run/user/1000/keyring-j30egz/gpg:0:1
+gnome-session[2937]: WARNING: App 'pulseaudio.desktop' exited with code 1
+compiz (core) - Info: Loading plugin: core
+compiz (core) - Info: Starting plugin: core
+compiz (core) - Info: Loading plugin: ccp
+compiz (core) - Info: Starting plugin: ccp
+compizconfig - Info: Backend     : gsettings
+compizconfig - Info: Integration : true
+compizconfig - Info: Profile     : unity
+
+(process:3133): indicator-application-service-WARNING **: Unable to get watcher name 'org.kde.StatusNotifierWatcher'
+
+(process:3133): indicator-application-service-WARNING **: Name Lost
+vmware-user: could not open /proc/fs/vmblock/dev
+compiz (core) - Info: Loading plugin: composite
+
+** (process:3154): CRITICAL **: bluez.vala:104: GDBus.Error:org.freedesktop.DBus.Error.ServiceUnknown: The name org.bluez was not provided by any .service files
+compiz (core) - Info: Starting plugin: composite
+compiz (core) - Info: Loading plugin: opengl
+compiz (core) - Info: Starting plugin: opengl
+
+(nautilus:3147): IBUS-WARNING **: The owner of /home/vagrant/.config/ibus/bus is not vagrant!
+compiz (core) - Info: Loading plugin: compiztoolbox
+compiz (core) - Info: Starting plugin: compiztoolbox
+compiz (core) - Info: Loading plugin: mousepoll
+compiz (core) - Info: Starting plugin: mousepoll
+compiz (core) - Info: Loading plugin: commands
+compiz (core) - Info: Starting plugin: commands
+compiz (core) - Info: Loading plugin: grid
+compiz (core) - Info: Starting plugin: grid
+compiz (core) - Info: Loading plugin: move
+compiz (core) - Info: Starting plugin: move
+compiz (core) - Info: Loading plugin: copytex
+compiz (core) - Info: Starting plugin: copytex
+compiz (core) - Info: Loading plugin: snap
+compiz (core) - Info: Starting plugin: snap
+compiz (core) - Info: Loading plugin: resize
+compiz (core) - Info: Starting plugin: resize
+compiz (core) - Info: Loading plugin: vpswitch
+compiz (core) - Info: Starting plugin: vpswitch
+compiz (core) - Info: Loading plugin: regex
+compiz (core) - Info: Starting plugin: regex
+compiz (core) - Info: Loading plugin: wall
+compiz (core) - Info: Starting plugin: wall
+compiz (core) - Info: Loading plugin: place
+compiz (core) - Info: Starting plugin: place
+compiz (core) - Info: Loading plugin: imgpng
+compiz (core) - Info: Starting plugin: imgpng
+compiz (core) - Info: Loading plugin: session
+compiz (core) - Info: Starting plugin: session
+I/O warning : failed to load external entity "/home/vagrant/.compiz/session/10756760e4e12251bd147911013970791800000029370001"
+compiz (core) - Info: Loading plugin: unitymtgrabhandles
+compiz (core) - Info: Starting plugin: unitymtgrabhandles
+compiz (core) - Info: Loading plugin: animation
+compiz (core) - Info: Starting plugin: animation
+compiz (core) - Info: Loading plugin: fade
+compiz (core) - Info: Starting plugin: fade
+compiz (core) - Info: Loading plugin: workarounds
+compiz (core) - Info: Starting plugin: workarounds
+compiz (core) - Info: Loading plugin: expo
+compiz (core) - Info: Starting plugin: expo
+compiz (core) - Info: Loading plugin: scale
+compiz (core) - Info: Starting plugin: scale
+compiz (core) - Info: Loading plugin: ezoom
+compiz (core) - Info: Starting plugin: ezoom
+compiz (core) - Info: Loading plugin: unityshell
+compiz (core) - Info: Starting plugin: unityshell
+WARN  2016-11-14 07:55:49 unity.glib.dbus.server GLibDBusServer.cpp:579 Can't register object 'org.gnome.Shell' yet as we don't have a connection, waiting for it...
+ERROR 2016-11-14 07:55:49 unity.debug.interface DebugDBusInterface.cpp:216 Unable to load entry point in libxpathselect: libxpathselect.so.1.4: cannot open shared object file: No such file or directory
+WARN  2016-11-14 07:55:49 xim.controller XIMController.cpp:103 IBus natively supported.
+WARN  2016-11-14 07:55:50 unity.glib.dbus.server GLibDBusServer.cpp:579 Can't register object 'com.canonical.Unity.Launcher' yet as we don't have a connection, waiting for it...
+Nautilus-Share-Message: Called "net usershare info" but it failed: 'net usershare' returned error 255: net usershare: cannot open usershare directory /var/lib/samba/usershares. Error No such file or directory
+Please ask your system administrator to enable user sharing.
+
+WARN  2016-11-14 07:55:50 unity.glib.dbus.server GLibDBusServer.cpp:579 Can't register object 'com.canonical.Unity.Dash' yet as we don't have a connection, waiting for it...
+WARN  2016-11-14 07:55:50 unityn_param_values == 4 <unknown>:0 The owner of /home/vagrant/.config/ibus/bus is not vagrant!
+WARN  2016-11-14 07:55:50 unity.glib.dbus.server GLibDBusServer.cpp:579 Can't register object 'org.gnome.SessionManager.EndSessionDialog' yet as we don't have a connection, waiting for it...
+WARN  2016-11-14 07:55:50 unity.glib.dbus.server GLibDBusServer.cpp:579 Can't register object 'com.canonical.Unity.Session' yet as we don't have a connection, waiting for it...
+WARN  2016-11-14 07:55:50 unity.glib.dbus.server GLibDBusServer.cpp:579 Can't register object 'org.gnome.ScreenSaver' yet as we don't have a connection, waiting for it...
+compiz (core) - Warn: Attempted to restack relative to 0x20000d8 which is not a child of the root window or a window compiz owns
+WARN  2016-11-14 07:55:51 unityo (appinfo2) <unknown>:0 g_settings_set_value: value for key 'visual-bell-type' in schema 'org.gnome.desktop.wm.preferences' is outside of valid range
+ERROR 2016-11-14 07:55:52 unity.glib.dbus.server GLibDBusServer.cpp:524 DBus name lost 'org.gnome.Shell'
+ERROR 2016-11-14 07:55:52 unity.glib.dbus.server GLibDBusServer.cpp:524 DBus name lost 'com.canonical.Unity'
+
+(nm-applet:3136): nm-applet-WARNING **: Could not find ShellVersion property on org.gnome.Shell after 5 tries
+
+** (zeitgeist-datahub:3310): WARNING **: zeitgeist-datahub.vala:229: Unable to get name "org.gnome.zeitgeist.datahub" on the bus!
+
+(firefox:3383): GLib-GObject-CRITICAL **: g_object_ref: assertion 'object->ref_count > 0' failed
+
+(firefox:3383): GLib-GObject-CRITICAL **: g_object_unref: assertion 'object->ref_count > 0' failed
+
+(firefox:3383): GLib-GObject-CRITICAL **: g_object_ref: assertion 'object->ref_count > 0' failed
+
+(firefox:3383): GLib-GObject-CRITICAL **: g_object_unref: assertion 'object->ref_count > 0' failed
+
+(firefox:3383): IBUS-WARNING **: The owner of /home/vagrant/.config/ibus/bus is not vagrant!
+
+(unity-control-center:3498): IBUS-WARNING **: The owner of /home/vagrant/.config/ibus/bus is not vagrant!
+
+(unity-control-center:3498): GLib-GObject-WARNING **: invalid cast from 'GtkTreeView' to 'GtkIconView'
+
+(unity-control-center:3498): Gtk-CRITICAL **: gtk_icon_view_item_activated: assertion 'GTK_IS_ICON_VIEW (icon_view)' failed
+
+(unity-control-center:3498): GLib-GObject-WARNING **: invalid cast from 'GtkTreeView' to 'GtkIconView'
+
+(unity-control-center:3498): Gtk-CRITICAL **: gtk_icon_view_item_activated: assertion 'GTK_IS_ICON_VIEW (icon_view)' failed
+ERROR 2016-11-14 08:07:06 unity <unknown>:0 atk_object_ref_state_set: assertion 'ATK_IS_OBJECT (accessible)' failed
+ERROR 2016-11-14 08:07:06 unity <unknown>:0 atk_state_set_contains_state: assertion 'ATK_IS_STATE_SET (set)' failed
+ERROR 2016-11-14 08:07:06 unityy <unknown>:0 g_object_unref: assertion 'G_IS_OBJECT (object)' failed

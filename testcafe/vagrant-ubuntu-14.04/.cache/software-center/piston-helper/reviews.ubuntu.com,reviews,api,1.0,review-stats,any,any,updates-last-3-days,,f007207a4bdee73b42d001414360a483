@@ -1,0 +1,73 @@
+status: 200
+content-length: 1483
+expires: Mon, 14 Nov 2016 10:28:57 GMT
+content-location: https://reviews.ubuntu.com/reviews/api/1.0/review-stats/any/any/updates-last-3-days/
+strict-transport-security: max-age=15768000; includeSubDomains; preload
+vary: Accept,Accept-Encoding
+server: gunicorn/19.3.0
+last-modified: Mon, 14 Nov 2016 06:28:57 GMT
+-content-encoding: gzip
+x-bzr-revision-number: 321
+cache-control: max-age=14400
+date: Mon, 14 Nov 2016 06:29:52 GMT
+content-type: application/json; charset=utf-8
+-varied-accept-encoding: gzip, deflate
+
+[
+    {
+        "ratings_total": 12, 
+        "ratings_average": "4.58", 
+        "app_name": "", 
+        "package_name": "amsynth", 
+        "histogram": "[0, 0, 0, 5, 7]"
+    }, 
+    {
+        "ratings_total": 215, 
+        "ratings_average": "4.45", 
+        "app_name": "", 
+        "package_name": "deluge", 
+        "histogram": "[12, 9, 9, 25, 160]"
+    }, 
+    {
+        "ratings_total": 227, 
+        "ratings_average": "4.64", 
+        "app_name": "", 
+        "package_name": "keepassx", 
+        "histogram": "[2, 3, 12, 40, 170]"
+    }, 
+    {
+        "ratings_total": 39, 
+        "ratings_average": "2.28", 
+        "app_name": "", 
+        "package_name": "gnome-music", 
+        "histogram": "[15, 13, 2, 3, 6]"
+    }, 
+    {
+        "ratings_total": 510, 
+        "ratings_average": "4.69", 
+        "app_name": "", 
+        "package_name": "audacious", 
+        "histogram": "[13, 4, 15, 65, 413]"
+    }, 
+    {
+        "ratings_total": 1402, 
+        "ratings_average": "4.33", 
+        "app_name": "", 
+        "package_name": "firefox", 
+        "histogram": "[104, 48, 91, 198, 961]"
+    }, 
+    {
+        "ratings_total": 928, 
+        "ratings_average": "4.68", 
+        "app_name": "", 
+        "package_name": "clementine", 
+        "histogram": "[20, 13, 36, 104, 755]"
+    }, 
+    {
+        "ratings_total": 3, 
+        "ratings_average": "4.33", 
+        "app_name": "", 
+        "package_name": "plank", 
+        "histogram": "[0, 0, 1, 0, 2]"
+    }
+]

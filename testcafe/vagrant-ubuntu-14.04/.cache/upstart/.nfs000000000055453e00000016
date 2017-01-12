@@ -1,0 +1,7 @@
+
+(hud-service:2817): IBUS-WARNING **: The owner of /home/vagrant/.config/ibus/bus is not vagrant!
+hud-service: Fatal IO error 11 (Resource temporarily unavailable) on X server :0.
+
+(hud-service:2910): IBUS-WARNING **: The owner of /home/vagrant/.config/ibus/bus is not vagrant!
+
+(hud-service:2934): IBUS-WARNING **: The owner of /home/vagrant/.config/ibus/bus is not vagrant!

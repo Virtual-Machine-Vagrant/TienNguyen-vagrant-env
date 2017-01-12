@@ -1,0 +1,55 @@
+http://portalstack.blogspot.com/2013/11/vagrant-virtualbox-ubuntu-for-linux.html
+
+————————————————
+reset root account
+http://www.psychocats.net/ubuntu/resetpassword
+
+vagrant@vagrant-ubuntu-precise-64:~$ ls /home
+ubuntu  vagrant
+vagrant@vagrant-ubuntu-precise-64:~$ passwd ubuntu
+passwd: You may not view or modify password information for ubuntu.
+vagrant@vagrant-ubuntu-precise-64:~$ sudo passwd ubuntu
+Enter new UNIX password: 
+Retype new UNIX password: 
+passwd: password updated successfully
+
+————————————————
+
+Upgrade Wine from 1.4 to latest by command line
+
+https://wiki.winehq.org/Ubuntu
+
+————————————————
+
+Install Desktop
+
+vagrant ssh;
+sudo apt-get update; sudo apt-get -y install ubuntu-desktop
+vagrant halt;
+
+————————————————
+
+Reboot ubuntu account
+
+Press “Shift” when restarting PC
+enable Network
+click reboot root account
+click resume root account
+
+access terminal of HOST and run these command lines
+vagrant ssh
+sudo passwd root
+Enter new UNIX password: 
+Retype new UNIX password: 
+
+————————————————
+
+Open terminal on Ubuntu: Ctr + Alt + T
+
+————————————————
+
+Upgrade Ubuntu from 12.04 to 14.04 for installing Chrome
+https://www.digitalocean.com/community/tutorials/how-to-upgrade-ubuntu-12-04-lts-to-ubuntu-14-04-lts
+
+
+

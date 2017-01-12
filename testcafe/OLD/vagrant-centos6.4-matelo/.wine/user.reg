@@ -1,0 +1,228 @@
+WINE REGISTRY Version 2
+;; All keys relative to \\User\\S-1-5-21-0-0-0-1000
+
+#arch=win64
+
+[Control Panel\\Accessibility\\Blind Access] 1478507165
+#time=1d238d09544be80
+"On"="0"
+
+[Control Panel\\Accessibility\\Keyboard Preference] 1478507165
+#time=1d238d09544b1f6
+"On"="1"
+
+[Control Panel\\Accessibility\\ShowSounds] 1478507165
+#time=1d238d09544c10a
+"On"="0"
+
+[Control Panel\\Colors] 1478507166
+#time=1d238d095970320
+
+[Control Panel\\Desktop] 1478507165
+#time=1d238d09544c556
+"ActiveWndTrackTimeout"=dword:00000000
+"BlockSendInputResets"="0"
+"CaretWidth"=dword:00000001
+"ClickLockTime"=dword:000004b0
+"DoubleClickHeight"="4"
+"DoubleClickWidth"="4"
+"DragFullWindows"="0"
+"DragHeight"="4"
+"DragWidth"="4"
+"FocusBorderHeight"=dword:00000001
+"FocusBorderWidth"=dword:00000001
+"FontSmoothing"="2"
+"FontSmoothingGamma"=dword:00000000
+"FontSmoothingOrientation"=dword:00000001
+"FontSmoothingType"=dword:00000001
+"ForegroundFlashCount"=dword:00000003
+"ForegroundLockTimeout"=dword:00000000
+"IconTitleWrap"="1"
+"LowPowerActive"="0"
+"MenuShowDelay"="400"
+"UserPreferencesMask"=hex:30,00,00,80,10,00,00,00
+"Wallpaper"=""
+"WheelScrollChars"="3"
+"WheelScrollLines"="3"
+
+[Control Panel\\Desktop\\WindowMetrics] 1478507165
+#time=1d238d09544c2a4
+"BorderWidth"="-15"
+"CaptionHeight"="-270"
+"CaptionWidth"="-270"
+"IconSpacing"="-1125"
+"IconTitleWrap"="1"
+"IconVerticalSpacing"="-1125"
+"MenuHeight"="-270"
+"MenuWidth"="-270"
+"PaddedBorderWidth"="0"
+"ScrollHeight"="-240"
+"ScrollWidth"="-240"
+"Shell Icon Size"="32"
+"SmCaptionHeight"="-225"
+"SmCaptionWidth"="-225"
+
+[Control Panel\\International] 1478507164
+#time=1d238d094daa5ea
+"iCalendarType"="1"
+"iCountry"="1"
+"iCurrDigits"="2"
+"iCurrency"="0"
+"iDate"="0"
+"iDigits"="2"
+"iFirstDayOfWeek"="6"
+"iFirstWeekOfYear"="0"
+"iLDate"="0"
+"iLZero"="1"
+"iMeasure"="1"
+"iNegCurr"="0"
+"iNegNumber"="1"
+"iPaperSize"="1"
+"iTime"="0"
+"iTimePrefix"="0"
+"iTLZero"="0"
+"LC_CTYPE"="00000409"
+"LC_MEASUREMENT"="00000409"
+"LC_MONETARY"="00000409"
+"LC_NUMERIC"="00000409"
+"LC_PAPER"="00000409"
+"LC_TELEPHONE"="00000409"
+"LC_TIME"="00000409"
+"Locale"="00000409"
+"Numshape"="1"
+"s1159"="AM"
+"s2359"="PM"
+"sCountry"="United States"
+"sCurrency"="$"
+"sDate"="/"
+"sDecimal"="."
+"sGrouping"="3;0"
+"sLanguage"="ENU"
+"sList"=","
+"sLongDate"="dddd, MMMM dd, yyyy"
+"sMonDecimalSep"="."
+"sMonGrouping"="3;0"
+"sMonThousandSep"=","
+"sNativeDigits"="0123456789"
+"sNegativeSign"="-"
+"sPositiveSign"=""
+"sShortDate"="M/d/yyyy"
+"sThousand"=","
+"sTime"=":"
+"sTimeFormat"="h:mm:ss tt"
+"sYearMonth"="MMMM, yyyy"
+
+[Control Panel\\Keyboard] 1478507165
+#time=1d238d09544b2d2
+"KeyboardDelay"="1"
+"KeyboardSpeed"="31"
+
+[Control Panel\\Mouse] 1478507165
+#time=1d238d09544c358
+"ActiveWindowTracking"=dword:00000000
+"DoubleClickHeight"="4"
+"DoubleClickSpeed"="500"
+"DoubleClickWidth"="4"
+"MouseHoverHeight"="4"
+"MouseHoverTime"="400"
+"MouseHoverWidth"="4"
+"MouseSensitivity"="10"
+"MouseSpeed"="1"
+"MouseThreshold1"="6"
+"MouseThreshold2"="10"
+"SnapToDefaultButton"="0"
+"SwapMouseButtons"="0"
+
+[Control Panel\\Sound] 1478507165
+#time=1d238d095444e32
+"Beep"="Yes"
+
+[Environment] 1478507196
+#time=1d238d0a7872a4c
+"TEMP"="C:\\users\\vagrant\\Temp"
+"TMP"="C:\\users\\vagrant\\Temp"
+
+[Keyboard Layout\\Preload] 1478507166
+#time=1d238d0958b50c0
+"1"="00000409"
+
+[Software\\Microsoft\\Internet Explorer\\Main\\FeatureControl] 1478507179
+#time=1d238d09d5ee960
+
+[Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\Shell Folders] 1478507195
+#time=1d238d0a75a427a
+"Administrative Tools"="C:\\users\\vagrant\\Start Menu\\Programs\\Administrative Tools"
+"AppData"="C:\\users\\vagrant\\Application Data"
+"Cache"="C:\\users\\vagrant\\Local Settings\\Temporary Internet Files"
+"Cookies"="C:\\users\\vagrant\\Cookies"
+"Desktop"="C:\\users\\vagrant\\Desktop"
+"Favorites"="C:\\users\\vagrant\\Favorites"
+"Fonts"="C:\\windows\\Fonts"
+"History"="C:\\users\\vagrant\\Local Settings\\History"
+"Local AppData"="C:\\users\\vagrant\\Local Settings\\Application Data"
+"My Music"="C:\\users\\vagrant\\My Music"
+"My Pictures"="C:\\users\\vagrant\\My Pictures"
+"My Videos"="C:\\users\\vagrant\\My Videos"
+"NetHood"="C:\\users\\vagrant\\NetHood"
+"Personal"="C:\\users\\vagrant\\My Documents"
+"PrintHood"="C:\\users\\vagrant\\PrintHood"
+"Programs"="C:\\users\\vagrant\\Start Menu\\Programs"
+"Recent"="C:\\users\\vagrant\\Recent"
+"SendTo"="C:\\users\\vagrant\\SendTo"
+"Start Menu"="C:\\users\\vagrant\\Start Menu"
+"StartUp"="C:\\users\\vagrant\\Start Menu\\Programs\\StartUp"
+"Templates"="C:\\users\\vagrant\\Templates"
+"{374DE290-123F-4565-9164-39C4925E467B}"="C:\\users\\vagrant\\Downloads"
+"{4C5C32FF-BB9D-43B0-B5B4-2D72E54EAAA4}"="C:\\users\\vagrant\\Saved Games"
+"{56784854-C6CB-462B-8169-88E350ACB882}"="C:\\users\\vagrant\\Contacts"
+"{7D1D3A04-DEBB-4115-95CF-2F29DA2920DA}"="C:\\users\\vagrant\\Searches"
+"{A520A1A4-1780-4FF6-BD18-167343C5AF16}"="C:\\users\\vagrant\\AppData\\LocalLow"
+"{BFB9D5E0-C6A9-404C-B2B2-AE6DB6AF4968}"="C:\\users\\vagrant\\Links"
+
+[Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\User Shell Folders] 1478507195
+#time=1d238d0a759de98
+"Administrative Tools"=str(2):"%USERPROFILE%\\Start Menu\\Programs\\Administrative Tools"
+"AppData"=str(2):"%USERPROFILE%\\Application Data"
+"Cache"=str(2):"%USERPROFILE%\\Local Settings\\Temporary Internet Files"
+"Cookies"=str(2):"%USERPROFILE%\\Cookies"
+"Desktop"=str(2):"%USERPROFILE%\\Desktop"
+"Favorites"=str(2):"%USERPROFILE%\\Favorites"
+"Fonts"=str(2):"C:\\windows\\Fonts"
+"History"=str(2):"%USERPROFILE%\\Local Settings\\History"
+"Local AppData"=str(2):"%USERPROFILE%\\Local Settings\\Application Data"
+"My Music"=str(2):"%USERPROFILE%\\My Music"
+"My Pictures"=str(2):"%USERPROFILE%\\My Pictures"
+"My Videos"=str(2):"%USERPROFILE%\\My Videos"
+"NetHood"=str(2):"%USERPROFILE%\\NetHood"
+"Personal"=str(2):"%USERPROFILE%\\My Documents"
+"PrintHood"=str(2):"%USERPROFILE%\\PrintHood"
+"Programs"=str(2):"%USERPROFILE%\\Start Menu\\Programs"
+"Recent"=str(2):"%USERPROFILE%\\Recent"
+"SendTo"=str(2):"%USERPROFILE%\\SendTo"
+"Start Menu"=str(2):"%USERPROFILE%\\Start Menu"
+"StartUp"=str(2):"%USERPROFILE%\\Start Menu\\Programs\\StartUp"
+"Templates"=str(2):"%USERPROFILE%\\Templates"
+"{374DE290-123F-4565-9164-39C4925E467B}"=str(2):"%USERPROFILE%\\Downloads"
+"{4C5C32FF-BB9D-43B0-B5B4-2D72E54EAAA4}"=str(2):"%USERPROFILE%\\Saved Games"
+"{56784854-C6CB-462B-8169-88E350ACB882}"=str(2):"%USERPROFILE%\\Contacts"
+"{7D1D3A04-DEBB-4115-95CF-2F29DA2920DA}"=str(2):"%USERPROFILE%\\Searches"
+"{A520A1A4-1780-4FF6-BD18-167343C5AF16}"=str(2):"%USERPROFILE%\\AppData\\LocalLow"
+"{BFB9D5E0-C6A9-404C-B2B2-AE6DB6AF4968}"=str(2):"%USERPROFILE%\\Links"
+
+[Software\\Microsoft\\Windows\\CurrentVersion\\Internet Settings] 1478507200
+#time=1d238d0a9f9eea4
+"ProxyEnable"=dword:00000000
+"User Agent"="Mozilla/4.0 (compatible; MSIE 8.0; Win32)"
+
+[Software\\Wine\\Fonts] 1478595993
+#time=1d2399f66ce3408
+"Codepages"="1252,437"
+"LogPixels"=dword:00000000
+
+[Software\\Wine\\Fonts\\External Fonts] 1478595993
+#time=1d2399f66cf4ce4
+"Marlett (TrueType)"="Z:\\usr\\local\\bin\\..\\share\\wine\\fonts\\marlett.ttf"
+"Symbol (TrueType)"="Z:\\usr\\local\\bin\\..\\share\\wine\\fonts\\symbol.ttf"
+"Tahoma (TrueType)"="Z:\\usr\\local\\bin\\..\\share\\wine\\fonts\\tahoma.ttf"
+"Tahoma Bold (TrueType)"="Z:\\usr\\local\\bin\\..\\share\\wine\\fonts\\tahomabd.ttf"
+"Wingdings (TrueType)"="Z:\\usr\\local\\bin\\..\\share\\wine\\fonts\\wingding.ttf"

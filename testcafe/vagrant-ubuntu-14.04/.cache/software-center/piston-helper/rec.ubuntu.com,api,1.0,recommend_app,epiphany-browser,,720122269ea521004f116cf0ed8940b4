@@ -1,0 +1,16 @@
+status: 301
+content-length: 270
+content-location: http://rec.ubuntu.com/api/1.0/recommend_app/epiphany-browser/
+server: Apache
+location: https://rec.ubuntu.com/api/1.0/recommend_app/epiphany-browser/
+date: Fri, 11 Nov 2016 08:05:15 GMT
+-x-permanent-redirect-url: https://rec.ubuntu.com/api/1.0/recommend_app/epiphany-browser/
+content-type: text/html; charset=iso-8859-1
+
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<html><head>
+<title>301 Moved Permanently</title>
+</head><body>
+<h1>Moved Permanently</h1>
+<p>The document has moved <a href="https://rec.ubuntu.com/api/1.0/recommend_app/epiphany-browser/">here</a>.</p>
+</body></html>

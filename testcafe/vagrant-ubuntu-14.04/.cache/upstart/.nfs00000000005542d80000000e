@@ -1,0 +1,89 @@
+
+(unity-settings-daemon:3674): color-plugin-WARNING **: failed to get edid: unable to get EDID for output
+lock: No locks available
+
+(unity-settings-daemon:3674): Gvc-WARNING **: Failed to connect context: Connection refused
+
+(unity-settings-daemon:3674): keyboard-plugin-WARNING **: Unhandled settings change, key 'input-sources-switcher'
+
+(unity-settings-daemon:3674): keyboard-plugin-WARNING **: Unhandled settings change, key 'bell-custom-file'
+
+(unity-settings-daemon:3674): IBUS-WARNING **: The owner of /home/vagrant/.config/ibus/bus is not vagrant!
+
+(unity-settings-daemon:3674): keyboard-plugin-WARNING **: Unhandled settings change, key 'input-sources-switcher'
+
+(unity-settings-daemon:3674): keyboard-plugin-WARNING **: Unhandled settings change, key 'bell-custom-file'
+
+(unity-settings-daemon:3674): keyboard-plugin-WARNING **: Unhandled settings change, key 'input-sources-switcher'
+
+(unity-settings-daemon:3674): keyboard-plugin-WARNING **: Unhandled settings change, key 'bell-custom-file'
+
+(unity-settings-daemon:3674): keyboard-plugin-WARNING **: Unhandled settings change, key 'input-sources-switcher'
+
+(unity-settings-daemon:3674): keyboard-plugin-WARNING **: Unhandled settings change, key 'bell-custom-file'
+
+(unity-settings-daemon:3674): keyboard-plugin-WARNING **: Unhandled settings change, key 'input-sources-switcher'
+
+(unity-settings-daemon:3674): keyboard-plugin-WARNING **: Unhandled settings change, key 'bell-custom-file'
+
+(unity-settings-daemon:3674): keyboard-plugin-WARNING **: Unhandled settings change, key 'input-sources-switcher'
+
+(unity-settings-daemon:3674): keyboard-plugin-WARNING **: Unhandled settings change, key 'bell-custom-file'
+
+(unity-settings-daemon:3674): keyboard-plugin-WARNING **: Unhandled settings change, key 'input-sources-switcher'
+
+(unity-settings-daemon:3674): keyboard-plugin-WARNING **: Unhandled settings change, key 'bell-custom-file'
+
+(unity-settings-daemon:3674): keyboard-plugin-WARNING **: Unhandled settings change, key 'input-sources-switcher'
+
+(unity-settings-daemon:3674): keyboard-plugin-WARNING **: Unhandled settings change, key 'bell-custom-file'
+
+(unity-settings-daemon:3674): keyboard-plugin-WARNING **: Unhandled settings change, key 'input-sources-switcher'
+
+(unity-settings-daemon:3674): keyboard-plugin-WARNING **: Unhandled settings change, key 'bell-custom-file'
+
+(unity-settings-daemon:3674): color-plugin-WARNING **: unable to get EDID for xrandr-VGA-0: unable to get EDID for output
+
+(unity-settings-daemon:3674): Gvc-WARNING **: Failed to connect context: Connection refused
+
+(gnome-terminal:4158): GLib-GIO-CRITICAL **: g_settings_get: the format string may not contain '&' (key 'monospace-font-name' from schema 'org.gnome.desktop.interface'). This call will probably stop working with a future version of glib.
+
+(gnome-terminal:4158): IBUS-WARNING **: The owner of /home/vagrant/.config/ibus/bus is not vagrant!
+
+(unity-settings-daemon:3674): color-plugin-WARNING **: unable to get EDID for xrandr-VGA-0: unable to get EDID for output
+
+(unity-settings-daemon:3674): color-plugin-WARNING **: unable to get EDID for xrandr-VGA-0: unable to get EDID for output
+
+(unity-settings-daemon:3674): color-plugin-WARNING **: unable to get EDID for xrandr-VGA-0: unable to get EDID for output
+
+(unity-settings-daemon:3674): color-plugin-WARNING **: unable to get EDID for xrandr-VGA-0: unable to get EDID for output
+
+(unity-settings-daemon:3674): color-plugin-WARNING **: unable to get EDID for xrandr-VGA-0: unable to get EDID for output
+
+(unity-settings-daemon:3674): color-plugin-WARNING **: unable to get EDID for xrandr-VGA-0: unable to get EDID for output
+
+(unity-settings-daemon:3674): color-plugin-WARNING **: unable to get EDID for xrandr-VGA-0: unable to get EDID for output
+
+(unity-settings-daemon:3674): color-plugin-WARNING **: unable to get EDID for xrandr-VGA-0: unable to get EDID for output
+
+(unity-settings-daemon:3674): color-plugin-WARNING **: unable to get EDID for xrandr-VGA-0: unable to get EDID for output
+
+(unity-settings-daemon:3674): color-plugin-WARNING **: unable to get EDID for xrandr-VGA-0: unable to get EDID for output
+
+(unity-settings-daemon:3674): color-plugin-WARNING **: unable to get EDID for xrandr-VGA-0: unable to get EDID for output
+
+(unity-settings-daemon:3674): color-plugin-WARNING **: unable to get EDID for xrandr-VGA-0: unable to get EDID for output
+
+(unity-settings-daemon:3674): color-plugin-WARNING **: unable to get EDID for xrandr-VGA-0: unable to get EDID for output
+
+(unity-settings-daemon:3674): color-plugin-WARNING **: unable to get EDID for xrandr-VGA-0: unable to get EDID for output
+
+(unity-settings-daemon:3674): color-plugin-WARNING **: unable to get EDID for xrandr-VGA-0: unable to get EDID for output
+
+(unity-settings-daemon:3674): color-plugin-WARNING **: unable to get EDID for xrandr-VGA-0: unable to get EDID for output
+
+(unity-settings-daemon:3674): color-plugin-WARNING **: unable to get EDID for xrandr-VGA-0: unable to get EDID for output
+
+(unity-settings-daemon:3674): color-plugin-WARNING **: unable to get EDID for xrandr-VGA-0: unable to get EDID for output
+
+(unity-settings-daemon:3674): color-plugin-WARNING **: unable to get EDID for xrandr-VGA-0: unable to get EDID for output

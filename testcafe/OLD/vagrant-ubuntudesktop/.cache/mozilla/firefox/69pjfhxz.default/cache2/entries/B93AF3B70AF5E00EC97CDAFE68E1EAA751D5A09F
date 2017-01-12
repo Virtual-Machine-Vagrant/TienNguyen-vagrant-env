@@ -1,0 +1,756 @@
+<!DOCTYPE html><html lang="ja"><head><meta http-equiv="X-UA-Compatible" content="IE=edge"><link rel="stylesheet" type="text/css" class="ui-stylesheet-TC2b9a6d" href="http://192.168.55.44:1338/tcs84ee3661-1d79-4018-819d-ddc4af6b7723/uistyle.css"><script type="text/javascript" class="script-TC2b9a6d" charset="UTF-8" src="http://192.168.55.44:1338/tcs84ee3661-1d79-4018-819d-ddc4af6b7723/hammerhead.js"></script><script type="text/javascript" class="script-TC2b9a6d" charset="UTF-8" src="http://192.168.55.44:1338/tcs84ee3661-1d79-4018-819d-ddc4af6b7723/testcafe_core.js"></script><script type="text/javascript" class="script-TC2b9a6d" charset="UTF-8" src="http://192.168.55.44:1338/tcs84ee3661-1d79-4018-819d-ddc4af6b7723/testcafe_recorder.js"></script><script type="text/javascript" class="script-TC2b9a6d" charset="UTF-8" src="http://192.168.55.44:1338/tcs84ee3661-1d79-4018-819d-ddc4af6b7723/testcafe_ui_core.js"></script><script type="text/javascript" class="script-TC2b9a6d" charset="UTF-8" src="http://192.168.55.44:1338/tcs84ee3661-1d79-4018-819d-ddc4af6b7723/testcafe_ui_recorder.js"></script><script type="text/javascript" class="script-TC2b9a6d" charset="UTF-8" src="http://192.168.55.44:1338/tcs84ee3661-1d79-4018-819d-ddc4af6b7723/task.js"></script>
+      <meta charset="UTF-8">
+      <title>DMM dev管理サイト</title>
+      
+      <script type="text/javascript" src="http://192.168.55.44:1338/js/jquery-1.8.3.min.js?7929ba6d39aa4465=https%3A%7Clocal-admin-freegames.dmm.com%7C3%7Cr%7Cscript" src_e01a2f_stored="/js/jquery-1.8.3.min.js"></script>
+      <!-- mCustomScrollbar -->
+      <script type="text/javascript" src="http://192.168.55.44:1338/js/jquery.mCustomScrollbar.concat.min.js?7929ba6d39aa4465=https%3A%7Clocal-admin-freegames.dmm.com%7C3%7Cr%7Cscript" src_e01a2f_stored="/js/jquery.mCustomScrollbar.concat.min.js"></script>
+      <link rel="stylesheet" href="http://192.168.55.44:1338/css/jquery.mCustomScrollbar.min.css?7929ba6d39aa4465=https%3A%7Clocal-admin-freegames.dmm.com%7C3%7Cr" href_e01a2f_stored="/css/jquery.mCustomScrollbar.min.css">
+      <!-- jqueryUI -->
+      <script type="text/javascript" src="http://192.168.55.44:1338/js/jquery-ui.min.js?7929ba6d39aa4465=https%3A%7Clocal-admin-freegames.dmm.com%7C3%7Cr%7Cscript" src_e01a2f_stored="/js/jquery-ui.min.js"></script>
+      <link rel="stylesheet" href="http://192.168.55.44:1338/css/jquery-ui.min.css?7929ba6d39aa4465=https%3A%7Clocal-admin-freegames.dmm.com%7C3%7Cr" href_e01a2f_stored="/css/jquery-ui.min.css">
+      <link rel="stylesheet" href="http://192.168.55.44:1338/css/jquery-ui.structure.min.css?7929ba6d39aa4465=https%3A%7Clocal-admin-freegames.dmm.com%7C3%7Cr" href_e01a2f_stored="/css/jquery-ui.structure.min.css">
+      <!-- fancybox -->
+      <script type="text/javascript" src="http://192.168.55.44:1338/js/fancybox/jquery.mousewheel-3.0.4.pack.js?7929ba6d39aa4465=https%3A%7Clocal-admin-freegames.dmm.com%7C3%7Cr%7Cscript" src_e01a2f_stored="/js/fancybox/jquery.mousewheel-3.0.4.pack.js"></script>
+      <script type="text/javascript" src="http://192.168.55.44:1338/js/fancybox/jquery.fancybox-1.3.4.pack.js?7929ba6d39aa4465=https%3A%7Clocal-admin-freegames.dmm.com%7C3%7Cr%7Cscript" src_e01a2f_stored="/js/fancybox/jquery.fancybox-1.3.4.pack.js"></script>
+      <link rel="stylesheet" type="text/css" href="http://192.168.55.44:1338/js/fancybox/jquery.fancybox-1.3.4.css?7929ba6d39aa4465=https%3A%7Clocal-admin-freegames.dmm.com%7C3%7Cr" media="screen" href_e01a2f_stored="/js/fancybox/jquery.fancybox-1.3.4.css">
+      <!-- datetimepicker -->
+      <script type="text/javascript" src="http://192.168.55.44:1338/js/jquery.datetimepicker.full.min.js?7929ba6d39aa4465=https%3A%7Clocal-admin-freegames.dmm.com%7C3%7Cr%7Cscript" src_e01a2f_stored="/js/jquery.datetimepicker.full.min.js"></script>
+      <link rel="stylesheet" href="http://192.168.55.44:1338/css/jquery.datetimepicker.css?7929ba6d39aa4465=https%3A%7Clocal-admin-freegames.dmm.com%7C3%7Cr" href_e01a2f_stored="/css/jquery.datetimepicker.css">
+      <!-- select2 -->
+      <script type="text/javascript" src="http://192.168.55.44:1338/js/select2.full.min.js?7929ba6d39aa4465=https%3A%7Clocal-admin-freegames.dmm.com%7C3%7Cr%7Cscript" src_e01a2f_stored="/js/select2.full.min.js"></script>
+      <link rel="stylesheet" href="http://192.168.55.44:1338/css/select2.css?7929ba6d39aa4465=https%3A%7Clocal-admin-freegames.dmm.com%7C3%7Cr" href_e01a2f_stored="/css/select2.css">
+      <!-- jquery form -->
+      <script type="text/javascript" src="http://192.168.55.44:1338/js/jqueryform/jquery.form.js?7929ba6d39aa4465=https%3A%7Clocal-admin-freegames.dmm.com%7C3%7Cr%7Cscript" src_e01a2f_stored="/js/jqueryform/jquery.form.js"></script>
+      <!-- common -->
+      <script type="text/javascript" src="http://192.168.55.44:1338/js/common.js?7929ba6d39aa4465=https%3A%7Clocal-admin-freegames.dmm.com%7C3%7Cr%7Cscript" src_e01a2f_stored="/js/common.js"></script>
+      <link rel="stylesheet" href="http://192.168.55.44:1338/css/common.css?7929ba6d39aa4465=https%3A%7Clocal-admin-freegames.dmm.com%7C3%7Cr" href_e01a2f_stored="/css/common.css">
+      <script type="text/javascript" src="http://192.168.55.44:1338/js/admin.common.js?7929ba6d39aa4465=https%3A%7Clocal-admin-freegames.dmm.com%7C3%7Cr%7Cscript" src_e01a2f_stored="/js/admin.common.js"></script>
+      <link rel="stylesheet" href="http://192.168.55.44:1338/css/admin.common.css?7929ba6d39aa4465=https%3A%7Clocal-admin-freegames.dmm.com%7C3%7Cr" href_e01a2f_stored="/css/admin.common.css">
+      <script type="text/javascript" src="http://192.168.55.44:1338/js/autosize.js?7929ba6d39aa4465=https%3A%7Clocal-admin-freegames.dmm.com%7C3%7Cr%7Cscript" src_e01a2f_stored="/js/autosize.js"></script>
+
+      
+                           <script type="text/javascript" src="http://192.168.55.44:1338/js/controller/Informations.js?7929ba6d39aa4465=https%3A%7Clocal-admin-freegames.dmm.com%7C3%7Cr%7Cscript" src_e01a2f_stored="/js/controller/Informations.js"></script>
+               
+   </head>
+   <body><script type="text/javascript" class="script-TC2b9a6d">
+if (window.Hammerhead)
+   window.Hammerhead._raiseBodyCreatedEvent();
+var script = document.currentScript || document.scripts[document.scripts.length - 1];
+script.parentNode.removeChild(script);
+</script>
+      <div id="main">
+         <navi id="sidenav">
+            <div id="sidenav_inner" class="mCustomScrollbar" data-mcs-theme="minimal-dark">
+               <h1 class="sidenav_header">
+                  <i class="fa fa-bars fn-sidenavOpen is-opener"></i>
+                  <a href="#">
+                     <img src="https://local-admin-freegames.dmm.com/images/common/logo.png" alt="DMM.com" src_e01a2f_stored="/images/common/logo.png"><br>
+                     <p>デベロッパ管理サイト</p>
+                  </a>
+                  <a href="javascript:void(0)" class="button-clip-icon fn-sidenavOpen"><i class="fa fa-angle-double-left"></i></a>
+                  <!-- /.sidenav_header -->
+               </h1>
+               <ul class="sidenav_primary">
+                  <li>
+                     <div class="has-child"><i class="fa fa-info-circle fa-blue"></i>情報・ドキュメント</div>
+                     <ul class="sidenav_secondary">
+                        <li>
+                           <a href="http://192.168.55.44:1338/informations/info/list?7929ba6d39aa4465=https%3A%7Clocal-admin-freegames.dmm.com%7C3%7Cr" href_e01a2f_stored="https://local-admin-freegames.dmm.com/informations/info/list"><i class="fa fa-caret-right"></i>お知らせ一覧</a>
+                        </li>
+                        <li>
+                           <a href="http://192.168.55.44:1338/informations/failure/list?7929ba6d39aa4465=https%3A%7Clocal-admin-freegames.dmm.com%7C3%7Cr" href_e01a2f_stored="https://local-admin-freegames.dmm.com/informations/failure/list"><i class="fa fa-caret-right"></i>障害一覧</a>
+                        </li>
+                        <li>
+                           <a href="#"><i class="fa fa-caret-right"></i>ドキュメント一覧</a>
+                        </li>
+                        <!-- /.sidenav_secondary -->
+                     </ul>
+                  </li>
+                  <li>
+                     <div class="has-child"><i class="fa fa-gamepad fa-purple"></i>ゲーム管理</div>
+                     <ul class="sidenav_secondary">
+                        <li>
+                           <div class="has-child"><i class="fa fa-chevron-circle-right"></i>ゲーム設定</div>
+                           <ul class="sidenav_sub">
+                              <li>
+                                 <a href="http://192.168.55.44:1338/applicationsetup/index?7929ba6d39aa4465=https%3A%7Clocal-admin-freegames.dmm.com%7C3%7Cr" href_e01a2f_stored="https://local-admin-freegames.dmm.com/applicationsetup/index"><i class="fa fa-caret-right"></i>アプリ設定一覧</a>
+                              </li>
+                              <li>
+                                 <a href="http://192.168.55.44:1338/applicationrelease/index?7929ba6d39aa4465=https%3A%7Clocal-admin-freegames.dmm.com%7C3%7Cr" href_e01a2f_stored="https://local-admin-freegames.dmm.com/applicationrelease/index"><i class="fa fa-caret-right"></i>ゲーム公開設定一覧</a>
+                              </li>
+                              <li>
+                                 <a href="http://192.168.55.44:1338/gamesetting/index?7929ba6d39aa4465=https%3A%7Clocal-admin-freegames.dmm.com%7C3%7Cr" href_e01a2f_stored="https://local-admin-freegames.dmm.com/gamesetting/index"><i class="fa fa-caret-right"></i>ゲーム設定</a>
+                              </li>
+                              <li>
+                                 <a href="http://192.168.55.44:1338/landingpage/index?7929ba6d39aa4465=https%3A%7Clocal-admin-freegames.dmm.com%7C3%7Cr" href_e01a2f_stored="https://local-admin-freegames.dmm.com/landingpage/index"><i class="fa fa-caret-right"></i>特設ページ登録</a>
+                              </li>
+                              <li>
+                                 <a href="http://192.168.55.44:1338/gameurl/create?7929ba6d39aa4465=https%3A%7Clocal-admin-freegames.dmm.com%7C3%7Cr" href_e01a2f_stored="https://local-admin-freegames.dmm.com/gameurl/create"><i class="fa fa-caret-right"></i>ゲームURL登録</a>
+                              </li>
+                              <li>
+                                 <a href="#"><i class="fa fa-caret-right"></i>Twitter一覧</a>
+                              </li>
+                              <li>
+                                 <a href="http://192.168.55.44:1338/questionnaire/index?7929ba6d39aa4465=https%3A%7Clocal-admin-freegames.dmm.com%7C3%7Cr" href_e01a2f_stored="https://local-admin-freegames.dmm.com/questionnaire/index"><i class="fa fa-caret-right"></i>アンケート一覧</a>
+                              </li>
+                              <!-- /.sidenav_sub -->
+                           </ul>
+                        </li>
+                        <li>
+                           <div class="has-child"><i class="fa fa-chevron-circle-right"></i>ジャンル設定</div>
+                           <ul class="sidenav_sub">
+                              <li>
+                                 <a href="http://192.168.55.44:1338/gamegenre/index?7929ba6d39aa4465=https%3A%7Clocal-admin-freegames.dmm.com%7C3%7Cr" href_e01a2f_stored="https://local-admin-freegames.dmm.com/gamegenre/index"><i class="fa fa-caret-right"></i>ゲームジャンル</a>
+                              </li>
+                              <li>
+                                 <a href="#"><i class="fa fa-caret-right"></i>タグ一覧</a>
+                              </li>
+                              <li>
+                                 <a href="#"><i class="fa fa-caret-right"></i>ブランド一覧</a>
+                              </li>
+                              <li>
+                                 <a href="http://192.168.55.44:1338/brandref/index?7929ba6d39aa4465=https%3A%7Clocal-admin-freegames.dmm.com%7C3%7Cr" href_e01a2f_stored="https://local-admin-freegames.dmm.com/brandref/index"><i class="fa fa-caret-right"></i>ブランド紐付一覧</a>
+                              </li>
+                              <li>
+                                 <a href="http://192.168.55.44:1338/producer/index?7929ba6d39aa4465=https%3A%7Clocal-admin-freegames.dmm.com%7C3%7Cr" href_e01a2f_stored="https://local-admin-freegames.dmm.com/producer/index"><i class="fa fa-caret-right"></i>プロデューサー一覧</a>
+                              </li>
+                              <li>
+                                 <a href="http://192.168.55.44:1338/label/index?7929ba6d39aa4465=https%3A%7Clocal-admin-freegames.dmm.com%7C3%7Cr" href_e01a2f_stored="https://local-admin-freegames.dmm.com/label/index"><i class="fa fa-caret-right"></i>レーベル一覧</a>
+                              </li>
+                              <!-- /.sidenav_sub -->
+                           </ul>
+                        </li>
+                        <li>
+                           <div class="has-child"><i class="fa fa-chevron-circle-right"></i>マーケ設定</div>
+                           <ul class="sidenav_sub">
+                              <li>
+                                 <a href="http://192.168.55.44:1338/admagetag/index?7929ba6d39aa4465=https%3A%7Clocal-admin-freegames.dmm.com%7C3%7Cr" href_e01a2f_stored="https://local-admin-freegames.dmm.com/admagetag/index"><i class="fa fa-caret-right"></i>admageタグ一覧</a>
+                              </li>
+                              <li>
+                                 <a href="http://192.168.55.44:1338/dmpmanagement/index?7929ba6d39aa4465=https%3A%7Clocal-admin-freegames.dmm.com%7C3%7Cr" href_e01a2f_stored="https://local-admin-freegames.dmm.com/dmpmanagement/index"><i class="fa fa-caret-right"></i>DMP管理一覧</a>
+                              </li>
+                              <li>
+                                 <a href="http://192.168.55.44:1338/dmpmanagement/eventtype/index?7929ba6d39aa4465=https%3A%7Clocal-admin-freegames.dmm.com%7C3%7Cr" href_e01a2f_stored="https://local-admin-freegames.dmm.com/dmpmanagement/eventtype/index"><i class="fa fa-caret-right"></i>DMPイベント種別一覧</a>
+                              </li>
+                              <!-- /.sidenav_sub -->
+                           </ul>
+                        </li>
+                        <li>
+                           <div class="has-child"><i class="fa fa-chevron-circle-right"></i>アプリ設定</div>
+                           <ul class="sidenav_sub">
+                              <li>
+                                 <a href="#"><i class="fa fa-caret-right"></i>アプリ情報追加</a>
+                              </li>
+                              <li>
+                                 <a href="#"><i class="fa fa-caret-right"></i>アプリ情報登録</a>
+                              </li>
+                              <li>
+                                 <a href="http://192.168.55.44:1338/applicationdownload/index?7929ba6d39aa4465=https%3A%7Clocal-admin-freegames.dmm.com%7C3%7Cr" href_e01a2f_stored="https://local-admin-freegames.dmm.com/applicationdownload/index"><i class="fa fa-caret-right"></i>アプリダウンロード先一覧</a>
+                              </li>
+                              <!-- /.sidenav_sub -->
+                           </ul>
+                        </li>
+                        <li>
+                           <div class="has-child"><i class="fa fa-chevron-circle-right"></i>画像設定</div>
+                           <ul class="sidenav_sub">
+                              <li>
+                                 <a href="#"><i class="fa fa-caret-right"></i>画像アップロード</a>
+                              </li>
+                              <li>
+                                 <a href="#"><i class="fa fa-caret-right"></i>画像反映</a>
+                              </li>
+                              <!-- /.sidenav_sub -->
+                           </ul>
+                        </li>
+                        <!-- /.sidenav_secondary -->
+                     </ul>
+                  </li>
+                  <li>
+                     <div class="has-child"><i class="fa fa-file-text-o fa-purple"></i>ゲーム申請管理</div>
+                     <ul class="sidenav_secondary">
+                        <li>
+                           <a href="#"><i class="fa fa-caret-right"></i>ゲーム申請一覧</a>
+                        </li>
+                        <li>
+                           <a href="#"><i class="fa fa-caret-right"></i>ゲーム画像申請一覧</a>
+                        </li>
+                        <!-- /.sidenav_secondary -->
+                     </ul>
+                  </li>
+                  <li>
+                     <div class="has-child"><i class="fa fa-sitemap fa-green"></i>サイト管理</div>
+                     <ul class="sidenav_secondary">
+                        <li>
+                           <div class="has-child"><i class="fa fa-chevron-circle-right"></i>バナー表示設定</div>
+                           <ul class="sidenav_sub">
+                              <li>
+                                 <p>ローテバナー</p>
+                                 <a href="http://192.168.55.44:1338/banner/index?7929ba6d39aa4465=https%3A%7Clocal-admin-freegames.dmm.com%7C3%7Cr" href_e01a2f_stored="https://local-admin-freegames.dmm.com/banner/index"><i class="fa fa-desktop"></i>設定</a>
+                                 <a href="http://192.168.55.44:1338/bannersp/index?7929ba6d39aa4465=https%3A%7Clocal-admin-freegames.dmm.com%7C3%7Cr" href_e01a2f_stored="https://local-admin-freegames.dmm.com/bannersp/index"><i class="fa fa-mobile-phone"></i>設定</a>
+                                 <a href="http://192.168.55.44:1338/bannerandroid/index?7929ba6d39aa4465=https%3A%7Clocal-admin-freegames.dmm.com%7C3%7Cr" href_e01a2f_stored="https://local-admin-freegames.dmm.com/bannerandroid/index"><i class="fa fa-android"></i>設定</a>
+                              </li>
+                              <li>
+                                 <p>女性向け ローテバナー</p>
+                                 <a href="http://192.168.55.44:1338/bannergirlssp/index?7929ba6d39aa4465=https%3A%7Clocal-admin-freegames.dmm.com%7C3%7Cr" href_e01a2f_stored="https://local-admin-freegames.dmm.com/bannergirlssp/index"><i class="fa fa-mobile-phone"></i>設定</a>
+                                 <a href="http://192.168.55.44:1338/bannergirlsandroid/index?7929ba6d39aa4465=https%3A%7Clocal-admin-freegames.dmm.com%7C3%7Cr" href_e01a2f_stored="https://local-admin-freegames.dmm.com/bannergirlsandroid/index"><i class="fa fa-android"></i>設定</a>
+                              </li>
+                              <li>
+                                 <p>ヘッダーフッターバナー</p>
+                                 <a href="http://192.168.55.44:1338/headerfooterbannersp/index?7929ba6d39aa4465=https%3A%7Clocal-admin-freegames.dmm.com%7C3%7Cr" href_e01a2f_stored="https://local-admin-freegames.dmm.com/headerfooterbannersp/index"><i class="fa fa-mobile-phone"></i>設定</a>
+                                 <a href="http://192.168.55.44:1338/headerfooterbannerandroid/index?7929ba6d39aa4465=https%3A%7Clocal-admin-freegames.dmm.com%7C3%7Cr" href_e01a2f_stored="https://local-admin-freegames.dmm.com/headerfooterbannerandroid/index"><i class="fa fa-android"></i>設定</a>
+                              </li>
+                              <li>
+                                 <p>ピックアップゲーム</p>
+                                 <a href="http://192.168.55.44:1338/pickupgame/index?7929ba6d39aa4465=https%3A%7Clocal-admin-freegames.dmm.com%7C3%7Cr" href_e01a2f_stored="https://local-admin-freegames.dmm.com/pickupgame/index"><i class="fa fa-desktop"></i>設定</a>
+                              </li>
+                              <!-- /.sidenav_sub -->
+                           </ul>
+                        </li>
+                        <li>
+                           <div class="has-child"><i class="fa fa-chevron-circle-right"></i>おすすめ情報設定</div>
+                           <ul class="sidenav_sub">
+                              <li>
+                                 <p>おすすめ情報</p>
+                                 <a href="http://192.168.55.44:1338/recommendinfo/index?7929ba6d39aa4465=https%3A%7Clocal-admin-freegames.dmm.com%7C3%7Cr" href_e01a2f_stored="https://local-admin-freegames.dmm.com/recommendinfo/index"><i class="fa fa-desktop"></i>設定</a>
+                                 <a href="http://192.168.55.44:1338/recommendinfosp/index?7929ba6d39aa4465=https%3A%7Clocal-admin-freegames.dmm.com%7C3%7Cr" href_e01a2f_stored="https://local-admin-freegames.dmm.com/recommendinfosp/index"><i class="fa fa-mobile-phone"></i>設定</a>
+                                 <a href="http://192.168.55.44:1338/recommendinfoandroid/index?7929ba6d39aa4465=https%3A%7Clocal-admin-freegames.dmm.com%7C3%7Cr" href_e01a2f_stored="https://local-admin-freegames.dmm.com/recommendinfoandroid/index"><i class="fa fa-android"></i>設定</a>
+                              </li>
+                              <li>
+                                 <p>女性向け おすすめ情報</p>
+                                 <a href="http://192.168.55.44:1338/recommendgirlsinfosp/index?7929ba6d39aa4465=https%3A%7Clocal-admin-freegames.dmm.com%7C3%7Cr" href_e01a2f_stored="https://local-admin-freegames.dmm.com/recommendgirlsinfosp/index"><i class="fa fa-mobile-phone"></i>設定</a>
+                                 <a href="http://192.168.55.44:1338/recommendgirlsinfoandroid/index?7929ba6d39aa4465=https%3A%7Clocal-admin-freegames.dmm.com%7C3%7Cr" href_e01a2f_stored="https://local-admin-freegames.dmm.com/recommendgirlsinfoandroid/index"><i class="fa fa-android"></i>設定</a>
+                              </li>
+                              <li>
+                                 <p>あなたにおすすめのゲーム</p>
+                                 <a href="http://192.168.55.44:1338/recommendedyousp/index?7929ba6d39aa4465=https%3A%7Clocal-admin-freegames.dmm.com%7C3%7Cr" href_e01a2f_stored="https://local-admin-freegames.dmm.com/recommendedyousp/index"><i class="fa fa-mobile-phone"></i>設定</a>
+                                 <a href="http://192.168.55.44:1338/recommendedyouandroid/index?7929ba6d39aa4465=https%3A%7Clocal-admin-freegames.dmm.com%7C3%7Cr" href_e01a2f_stored="https://local-admin-freegames.dmm.com/recommendedyouandroid/index"><i class="fa fa-android"></i>設定</a>
+                              </li>
+                              <li>
+                                 <p>ゲーム実行画面 おすすめ枠</p>
+                                 <a href="http://192.168.55.44:1338/recommendgame/index?7929ba6d39aa4465=https%3A%7Clocal-admin-freegames.dmm.com%7C3%7Cr" href_e01a2f_stored="https://local-admin-freegames.dmm.com/recommendgame/index"><i class="fa fa-desktop"></i>設定</a>
+                                 <a href="http://192.168.55.44:1338/recommendgamesp/index?7929ba6d39aa4465=https%3A%7Clocal-admin-freegames.dmm.com%7C3%7Cr" href_e01a2f_stored="https://local-admin-freegames.dmm.com/recommendgamesp/index"><i class="fa fa-mobile-phone"></i>設定</a>
+                                 <a href="http://192.168.55.44:1338/recommendgameandroid/index?7929ba6d39aa4465=https%3A%7Clocal-admin-freegames.dmm.com%7C3%7Cr" href_e01a2f_stored="https://local-admin-freegames.dmm.com/recommendgameandroid/index"><i class="fa fa-android"></i>設定</a>
+                              </li>
+                              <li>
+                                 <p>女性向け ゲーム実行画面 おすすめ枠</p>
+                                 <a href="http://192.168.55.44:1338/recommendgamegirls/index?7929ba6d39aa4465=https%3A%7Clocal-admin-freegames.dmm.com%7C3%7Cr" href_e01a2f_stored="https://local-admin-freegames.dmm.com/recommendgamegirls/index"><i class="fa fa-desktop"></i>設定</a>
+                                 <a href="http://192.168.55.44:1338/recommendgamegirlssp/index?7929ba6d39aa4465=https%3A%7Clocal-admin-freegames.dmm.com%7C3%7Cr" href_e01a2f_stored="https://local-admin-freegames.dmm.com/recommendgamegirlssp/index"><i class="fa fa-mobile-phone"></i>設定</a>
+                                 <a href="http://192.168.55.44:1338/recommendgamegirlsandroid/index?7929ba6d39aa4465=https%3A%7Clocal-admin-freegames.dmm.com%7C3%7Cr" href_e01a2f_stored="https://local-admin-freegames.dmm.com/recommendgamegirlsandroid/index"><i class="fa fa-android"></i>設定</a>
+                              </li>
+                              <li>
+                                 <p>デイリーパチンコ おすすめ枠</p>
+                                 <a href="http://192.168.55.44:1338/recommendeddailypachinkosp/index?7929ba6d39aa4465=https%3A%7Clocal-admin-freegames.dmm.com%7C3%7Cr" href_e01a2f_stored="https://local-admin-freegames.dmm.com/recommendeddailypachinkosp/index"><i class="fa fa-mobile-phone"></i>設定</a>
+                                 <a href="http://192.168.55.44:1338/recommendeddailypachinkoandroid/index?7929ba6d39aa4465=https%3A%7Clocal-admin-freegames.dmm.com%7C3%7Cr" href_e01a2f_stored="https://local-admin-freegames.dmm.com/recommendeddailypachinkoandroid/index"><i class="fa fa-android"></i>設定</a>
+                              </li>
+                              <!-- /.sidenav_sub -->
+                           </ul>
+                        </li>
+                        <li>
+                           <div class="has-child"><i class="fa fa-chevron-circle-right"></i>ゲーム情報公開設定</div>
+                           <ul class="sidenav_sub">
+                              <li>
+                                 <p>リリース前注目タイトル</p>
+                                 <a href="http://192.168.55.44:1338/before/index?7929ba6d39aa4465=https%3A%7Clocal-admin-freegames.dmm.com%7C3%7Cr" href_e01a2f_stored="https://local-admin-freegames.dmm.com/before/index"><i class="fa fa-desktop"></i>設定</a>
+                                 <a href="http://192.168.55.44:1338/beforesp/index?7929ba6d39aa4465=https%3A%7Clocal-admin-freegames.dmm.com%7C3%7Cr" href_e01a2f_stored="https://local-admin-freegames.dmm.com/beforesp/index"><i class="fa fa-mobile-phone"></i>設定</a>
+                              </li>
+                              <li>
+                                 <p>注目度ランキング</p>
+                                 <a href="http://192.168.55.44:1338/recommendedrankingsp/index?7929ba6d39aa4465=https%3A%7Clocal-admin-freegames.dmm.com%7C3%7Cr" href_e01a2f_stored="https://local-admin-freegames.dmm.com/recommendedrankingsp/index"><i class="fa fa-mobile-phone"></i>設定</a>
+                                 <a href="http://192.168.55.44:1338/recommendedrankingandroid/index?7929ba6d39aa4465=https%3A%7Clocal-admin-freegames.dmm.com%7C3%7Cr" href_e01a2f_stored="https://local-admin-freegames.dmm.com/recommendedrankingandroid/index"><i class="fa fa-android"></i>設定</a>
+                              </li>
+                              <li>
+                                 <p>OLGトップ女性向けゲーム</p>
+                                 <a href="http://192.168.55.44:1338/topgirlssp/index?7929ba6d39aa4465=https%3A%7Clocal-admin-freegames.dmm.com%7C3%7Cr" href_e01a2f_stored="https://local-admin-freegames.dmm.com/topgirlssp/index"><i class="fa fa-mobile-phone"></i>設定</a>
+                                 <a href="http://192.168.55.44:1338/topgirlsandroid/index?7929ba6d39aa4465=https%3A%7Clocal-admin-freegames.dmm.com%7C3%7Cr" href_e01a2f_stored="https://local-admin-freegames.dmm.com/topgirlsandroid/index"><i class="fa fa-android"></i>設定</a>
+                              </li>
+                              <li>
+                                 <p>女性向け リリース前注目タイトル</p>
+                                 <a href="http://192.168.55.44:1338/beforegirlssp/index?7929ba6d39aa4465=https%3A%7Clocal-admin-freegames.dmm.com%7C3%7Cr" href_e01a2f_stored="https://local-admin-freegames.dmm.com/beforegirlssp/index"><i class="fa fa-mobile-phone"></i>設定</a>
+                              </li>
+                              <li>
+                                 <p>アプリ紹介枠</p>
+                                 <a href="http://192.168.55.44:1338/applinkregistpc/index?7929ba6d39aa4465=https%3A%7Clocal-admin-freegames.dmm.com%7C3%7Cr" href_e01a2f_stored="https://local-admin-freegames.dmm.com/applinkregistpc/index"><i class="fa fa-desktop"></i>設定</a>
+                                 <a href="http://192.168.55.44:1338/applinkregistsp/index?7929ba6d39aa4465=https%3A%7Clocal-admin-freegames.dmm.com%7C3%7Cr" href_e01a2f_stored="https://local-admin-freegames.dmm.com/applinkregistsp/index"><i class="fa fa-mobile-phone"></i>設定</a>
+                                 <a href="http://192.168.55.44:1338/applinkregistandroid/index?7929ba6d39aa4465=https%3A%7Clocal-admin-freegames.dmm.com%7C3%7Cr" href_e01a2f_stored="https://local-admin-freegames.dmm.com/applinkregistandroid/index"><i class="fa fa-android"></i>設定</a>
+                              </li>
+                              <!-- /.sidenav_sub -->
+                           </ul>
+                        </li>
+                        <li>
+                           <div class="has-child"><i class="fa fa-chevron-circle-right"></i>新着情報設定</div>
+                           <ul class="sidenav_sub">
+                              <li>
+                                 <p>新着</p>
+                                 <a href="http://192.168.55.44:1338/newapplicationsp/index?7929ba6d39aa4465=https%3A%7Clocal-admin-freegames.dmm.com%7C3%7Cr" href_e01a2f_stored="https://local-admin-freegames.dmm.com/newapplicationsp/index"><i class="fa fa-mobile-phone"></i>設定</a>
+                                 <a href="http://192.168.55.44:1338/newapplicationandroid/index?7929ba6d39aa4465=https%3A%7Clocal-admin-freegames.dmm.com%7C3%7Cr" href_e01a2f_stored="https://local-admin-freegames.dmm.com/newapplicationandroid/index"><i class="fa fa-android"></i>設定</a>
+                              </li>
+                              <li>
+                                 <p>女性向け 新着</p>
+                                 <a href="http://192.168.55.44:1338/newapplicationgirlssp/index?7929ba6d39aa4465=https%3A%7Clocal-admin-freegames.dmm.com%7C3%7Cr" href_e01a2f_stored="https://local-admin-freegames.dmm.com/newapplicationgirlssp/index"><i class="fa fa-mobile-phone"></i>設定</a>
+                                 <a href="http://192.168.55.44:1338/newapplicationgirlsandroid/index?7929ba6d39aa4465=https%3A%7Clocal-admin-freegames.dmm.com%7C3%7Cr" href_e01a2f_stored="https://local-admin-freegames.dmm.com/newapplicationgirlsandroid/index"><i class="fa fa-android"></i>設定</a>
+                              </li>
+                              <!-- /.sidenav_sub -->
+                           </ul>
+                        </li>
+                        <li>
+                           <div class="has-child"><i class="fa fa-chevron-circle-right"></i>プロモーション設定</div>
+                           <ul class="sidenav_sub">
+                              <li>
+                                 <p>背景</p>
+                                 <a href="http://192.168.55.44:1338/background/index?7929ba6d39aa4465=https%3A%7Clocal-admin-freegames.dmm.com%7C3%7Cr" href_e01a2f_stored="https://local-admin-freegames.dmm.com/background/index"><i class="fa fa-desktop"></i>設定</a>
+                              </li>
+                              <li>
+                                 <p>キャンペーン枠</p>
+                                 <a href="http://192.168.55.44:1338/campaignframe/index?7929ba6d39aa4465=https%3A%7Clocal-admin-freegames.dmm.com%7C3%7Cr" href_e01a2f_stored="https://local-admin-freegames.dmm.com/campaignframe/index"><i class="fa fa-desktop"></i>設定</a>
+                              </li>
+                              <!-- /.sidenav_sub -->
+                           </ul>
+                        </li>
+                        <!-- /.sidenav_secondary -->
+                     </ul>
+                  </li>
+                  <li>
+                     <div class="has-child"><i class="fa fa-pencil-square-o fa-orange"></i>投稿管理</div>
+                     <ul class="sidenav_secondary">
+                        <li>
+                           <a href="http://192.168.55.44:1338/applicationusertexts/index?7929ba6d39aa4465=https%3A%7Clocal-admin-freegames.dmm.com%7C3%7Cr" href_e01a2f_stored="https://local-admin-freegames.dmm.com/applicationusertexts/index"><i class="fa fa-caret-right"></i>ゲーム自由テキスト</a>
+                        </li>
+                        <li>
+                           <a href="http://192.168.55.44:1338/adminsnstexts/index?7929ba6d39aa4465=https%3A%7Clocal-admin-freegames.dmm.com%7C3%7Cr" href_e01a2f_stored="https://local-admin-freegames.dmm.com/adminsnstexts/index"><i class="fa fa-caret-right"></i>SNS自由テキスト</a>
+                        </li>
+                        <li>
+                           <a href="http://192.168.55.44:1338/reviewtexts/index?7929ba6d39aa4465=https%3A%7Clocal-admin-freegames.dmm.com%7C3%7Cr" href_e01a2f_stored="https://local-admin-freegames.dmm.com/reviewtexts/index"><i class="fa fa-caret-right"></i>レビューテキスト</a>
+                        </li>
+                        <li>
+                           <a href="http://192.168.55.44:1338/messagetexts/index?7929ba6d39aa4465=https%3A%7Clocal-admin-freegames.dmm.com%7C3%7Cr" href_e01a2f_stored="https://local-admin-freegames.dmm.com/messagetexts/index"><i class="fa fa-caret-right"></i>メッセージテキスト</a>
+                        </li>
+                        <li>
+                           <a href="http://192.168.55.44:1338/profileimages/index?7929ba6d39aa4465=https%3A%7Clocal-admin-freegames.dmm.com%7C3%7Cr" href_e01a2f_stored="https://local-admin-freegames.dmm.com/profileimages/index"><i class="fa fa-caret-right"></i>ユーザ画像管理</a>
+                        </li>
+                        <li>
+                           <a href="#"><i class="fa fa-caret-right"></i>コミュニティ管理</a>
+                        </li>
+                        <li>
+                           <a href="http://192.168.55.44:1338/okword/index?7929ba6d39aa4465=https%3A%7Clocal-admin-freegames.dmm.com%7C3%7Cr" href_e01a2f_stored="https://local-admin-freegames.dmm.com/okword/index"><i class="fa fa-caret-right"></i>OKワード一覧</a>
+                        </li>
+                        <li>
+                           <a href="http://192.168.55.44:1338/ngword/index?7929ba6d39aa4465=https%3A%7Clocal-admin-freegames.dmm.com%7C3%7Cr" href_e01a2f_stored="https://local-admin-freegames.dmm.com/ngword/index"><i class="fa fa-caret-right"></i>NGワード一覧</a>
+                        </li>
+                        <!-- /.sidenav_secondary -->
+                     </ul>
+                  </li>
+                  <li>
+                     <div class="has-child"><i class="fa fa-bullhorn fa-orange"></i>告知管理</div>
+                     <ul class="sidenav_secondary">
+                        <li>
+                           <a href="http://192.168.55.44:1338/releaseannounce/index?7929ba6d39aa4465=https%3A%7Clocal-admin-freegames.dmm.com%7C3%7Cr" href_e01a2f_stored="https://local-admin-freegames.dmm.com/releaseannounce/index"><i class="fa fa-caret-right"></i>リリース告知</a>
+                        </li>
+                        <li>
+                           <a href="http://192.168.55.44:1338/staffinformation/index?7929ba6d39aa4465=https%3A%7Clocal-admin-freegames.dmm.com%7C3%7Cr" href_e01a2f_stored="https://local-admin-freegames.dmm.com/staffinformation/index"><i class="fa fa-caret-right"></i>運営からのお知らせ</a>
+                        </li>
+                        <li>
+                           <a href="#"><i class="fa fa-caret-right"></i>負荷対策設定</a>
+                        </li>
+                        <li>
+                           <a href="#"><i class="fa fa-caret-right"></i>PCゲーム実行画面おすすめ枠</a>
+                        </li>
+                        <li>
+                           <a href="#"><i class="fa fa-caret-right"></i>メンテ化対応</a>
+                        </li>
+                        <li>
+                           <a href="http://192.168.55.44:1338/notice/index?7929ba6d39aa4465=https%3A%7Clocal-admin-freegames.dmm.com%7C3%7Cr" href_e01a2f_stored="https://local-admin-freegames.dmm.com/notice/index"><i class="fa fa-caret-right"></i>告知登録</a>
+                        </li>
+                        <!-- /.sidenav_secondary -->
+                     </ul>
+                  </li>
+                  <li>
+                     <div class="has-child"><i class="fa fa-bar-chart fa-red"></i>レポート</div>
+                     <ul class="sidenav_secondary">
+                        <li>
+                           <a href="http://192.168.55.44:1338/inspectiondaily/index?7929ba6d39aa4465=https%3A%7Clocal-admin-freegames.dmm.com%7C3%7Cr" href_e01a2f_stored="https://local-admin-freegames.dmm.com/inspectiondaily/index"><i class="fa fa-caret-right"></i>投稿件数レポート日別</a>
+                        </li>
+                        <li>
+                           <a href="http://192.168.55.44:1338/inspectionhourly/index?7929ba6d39aa4465=https%3A%7Clocal-admin-freegames.dmm.com%7C3%7Cr" href_e01a2f_stored="https://local-admin-freegames.dmm.com/inspectionhourly/index"><i class="fa fa-caret-right"></i>投稿件数レポート時間別</a>
+                        </li>
+                        <li>
+                           <a href="http://192.168.55.44:1338/inspectionmenu/index?7929ba6d39aa4465=https%3A%7Clocal-admin-freegames.dmm.com%7C3%7Cr" href_e01a2f_stored="https://local-admin-freegames.dmm.com/inspectionmenu/index"><i class="fa fa-caret-right"></i>投稿件数レポートメニュー別</a>
+                        </li>
+                        <li>
+                           <a href="http://192.168.55.44:1338/report/index?7929ba6d39aa4465=https%3A%7Clocal-admin-freegames.dmm.com%7C3%7Cr" href_e01a2f_stored="https://local-admin-freegames.dmm.com/report/index"><i class="fa fa-caret-right"></i>CSVダウンロード</a>
+                        </li>
+                        <li>
+                           <a href="http://192.168.55.44:1338/pointreports/index?7929ba6d39aa4465=https%3A%7Clocal-admin-freegames.dmm.com%7C3%7Cr" href_e01a2f_stored="https://local-admin-freegames.dmm.com/pointreports/index"><i class="fa fa-caret-right"></i>課金履歴CSVダウンロード</a>
+                        </li>
+                        <!-- /.sidenav_secondary -->
+                     </ul>
+                  </li>
+                  <li>
+                     <div class="has-child"><i class="fa fa-envelope fa-blue"></i>通報管理</div>
+                     <ul class="sidenav_secondary">
+                        <li>
+                           <a href="http://192.168.55.44:1338/supports?7929ba6d39aa4465=https%3A%7Clocal-admin-freegames.dmm.com%7C3%7Cr" href_e01a2f_stored="https://local-admin-freegames.dmm.com/supports"><i class="fa fa-caret-right"></i>通報一覧</a>
+                        </li>
+                        <!-- /.sidenav_secondary -->
+                     </ul>
+                  </li>
+                  <li>
+                     <div class="has-child"><i class="fa fa-user fa-darkblue"></i>ユーザー管理</div>
+                     <ul class="sidenav_secondary">
+                        <li>
+                           <a href="#"><i class="fa fa-caret-right"></i>ユーザー検索</a>
+                        </li>
+                        <li>
+                           <a href="#"><i class="fa fa-caret-right"></i>メンバーID変換</a>
+                        </li>
+                        <!-- /.sidenav_secondary -->
+                     </ul>
+                  </li>
+                  <li>
+                     <div class="has-child"><i class="fa fa-list-alt fa-darkblue"></i>アカウント管理</div>
+                     <ul class="sidenav_secondary">
+                        <li>
+                           <a href="http://192.168.55.44:1338/sapaccount/index?7929ba6d39aa4465=https%3A%7Clocal-admin-freegames.dmm.com%7C3%7Cr" href_e01a2f_stored="https://local-admin-freegames.dmm.com/sapaccount/index"><i class="fa fa-caret-right"></i>SAPアカウント一覧</a>
+                        </li>
+                        <li>
+                           <a href="#"><i class="fa fa-caret-right"></i>DMMアカウント一覧</a>
+                        </li>
+                        <li>
+                           <a href="http://192.168.55.44:1338/viewsetting/role/index?7929ba6d39aa4465=https%3A%7Clocal-admin-freegames.dmm.com%7C3%7Cr" href_e01a2f_stored="https://local-admin-freegames.dmm.com/viewsetting/role/index"><i class="fa fa-caret-right"></i>閲覧権限一覧</a>
+                        </li>
+                        <!-- /.sidenav_secondary -->
+                     </ul>
+                  </li>
+                  <!-- /.sidenav_primary -->
+               </ul>
+               <ul class="sidenav_other">
+                  <li>
+                     <a href="http://192.168.55.44:1338/inquiry-copy/index?7929ba6d39aa4465=https%3A%7Clocal-admin-freegames.dmm.com%7C3%7Cr" href_e01a2f_stored="https://local-admin-freegames.dmm.com/inquiry-copy/index"><i class="fa fa-caret-right"></i>お問い合わせ通知転送設定</a>
+                  </li>
+                  <!-- /.sidenav_other -->
+               </ul>
+               <!-- [#sidenav_inner] -->
+            </div>
+                        <div class="sidenav_user">
+               <a href="javascript:void(0)" class="button-clip-icon fn-sidenavOpen"><i class="fa fa-angle-double-left"></i></a>
+               <ul class="c-colbox col2">
+                  <li>
+                     <p class="tx-id"><i class="fa fa-user"></i>Developer ID<br>15</p>
+                  </li>
+                  <li><a href="http://192.168.55.44:1338/user/logout?7929ba6d39aa4465=https%3A%7Clocal-admin-freegames.dmm.com%7C3%7Cr" class="button is-small" href_e01a2f_stored="https://local-admin-freegames.dmm.com/user/logout">ログアウト</a></li>
+               </ul>
+               <!-- /.sidenav_user -->
+            </div>
+                        <!-- [#sidenav] -->
+         </navi>
+         <div id="sidenav_popupContainer">
+         </div>
+         <div id="contents">
+            
+<header id="gnavi">
+    <div class="pankuz">
+    <ul>
+        <li><a href="http://192.168.55.44:1338/?7929ba6d39aa4465=https%3A%7Clocal-admin-freegames.dmm.com%7C3%7Cr" href_e01a2f_stored="/">TOP</a></li>
+                                                                  <li><span class="tx-lightgray">情報・ドキュメント</span></li>
+                                                                                              <li>お知らせ・障害報告</li>
+                                        </ul>
+    <!-- /.pankuz -->
+</div>
+    <!-- [#gnavi] -->
+</header>
+
+<section>
+    <div class="c-area">
+        <h2 class="c-headline"><i class="fa fa-info-circle"></i>お知らせ・障害報告</h2>
+
+        <div class="c-pager">
+            <a href="http://192.168.55.44:1338/informations/info/create?7929ba6d39aa4465=https%3A%7Clocal-admin-freegames.dmm.com%7C3%7Cr" class="button is-primary" href_e01a2f_stored="https://local-admin-freegames.dmm.com/informations/info/create"><i class="fa fa-plus"></i>新規追加</a>
+            <!-- /.c-pager -->
+        </div>
+
+        <ul class="c-colbox col1 is-border">
+
+            
+            <li>
+                <table class="c-table">
+                    <colgroup>
+                        <col class="col-xxs">
+                        <col class="null">
+                        <col class="null">
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th>告知日</th>
+                            <th>タイトル</th>
+                            <th>本文</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        
+                        <tr>
+                            <td class="nowrap">2016/11/11</td>
+                            <td class="nowrap">
+
+                                
+                                <span class="tag is-warning">NEW</span>
+
+                                
+                                <a href="http://192.168.55.44:1338/informations/show/727?7929ba6d39aa4465=https%3A%7Clocal-admin-freegames.dmm.com%7C3%7Cr" class="fn-fancybox" href_e01a2f_stored="https://local-admin-freegames.dmm.com/informations/show/727">【メンテナンス】test bla bla</a>
+                            </td>
+                            <td class="nowrap">test bla bla</td>
+                        </tr>
+
+                        
+                        <tr>
+                            <td class="nowrap">2016/11/11</td>
+                            <td class="nowrap">
+
+                                
+                                <span class="tag is-warning">NEW</span>
+
+                                
+                                <a href="http://192.168.55.44:1338/informations/show/726?7929ba6d39aa4465=https%3A%7Clocal-admin-freegames.dmm.com%7C3%7Cr" class="fn-fancybox" href_e01a2f_stored="https://local-admin-freegames.dmm.com/informations/show/726">【メンテナンス】test bla bla</a>
+                            </td>
+                            <td class="nowrap">test bla bla</td>
+                        </tr>
+
+                        
+                    </tbody>
+                    <!-- /.c-table -->
+                </table>
+
+            </li>
+
+            
+            
+            <li>
+                <table class="c-table">
+                    <colgroup>
+                        <col class="col-xxs">
+                        <col class="null">
+                        <col class="null">
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th>告知日</th>
+                            <th>タイトル</th>
+                            <th>本文</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        
+                        <tr>
+                            <td class="nowrap">2016/11/11</td>
+                            <td class="nowrap">
+
+                                
+                                <span class="tag is-warning">NEW</span>
+
+                                
+                                <a href="http://192.168.55.44:1338/informations/show/725?7929ba6d39aa4465=https%3A%7Clocal-admin-freegames.dmm.com%7C3%7Cr" class="fn-fancybox" href_e01a2f_stored="https://local-admin-freegames.dmm.com/informations/show/725">【お知らせ】test bla bla</a>
+                            </td>
+                            <td class="nowrap">test data sample bla bla</td>
+                        </tr>
+
+                        
+                        <tr>
+                            <td class="nowrap">2016/11/10</td>
+                            <td class="nowrap">
+
+                                
+                                <span class="tag is-warning">NEW</span>
+
+                                
+                                <a href="http://192.168.55.44:1338/informations/show/724?7929ba6d39aa4465=https%3A%7Clocal-admin-freegames.dmm.com%7C3%7Cr" class="fn-fancybox" href_e01a2f_stored="https://local-admin-freegames.dmm.com/informations/show/724">【お知らせ】test</a>
+                            </td>
+                            <td class="nowrap">test data</td>
+                        </tr>
+
+                        
+                        <tr>
+                            <td class="nowrap">2016/11/10</td>
+                            <td class="nowrap">
+
+                                
+                                <span class="tag is-warning">NEW</span>
+
+                                
+                                <a href="http://192.168.55.44:1338/informations/show/722?7929ba6d39aa4465=https%3A%7Clocal-admin-freegames.dmm.com%7C3%7Cr" class="fn-fancybox" href_e01a2f_stored="https://local-admin-freegames.dmm.com/informations/show/722">【お知らせ】test</a>
+                            </td>
+                            <td class="nowrap">test data</td>
+                        </tr>
+
+                        
+                        <tr>
+                            <td class="nowrap">2016/11/10</td>
+                            <td class="nowrap">
+
+                                
+                                <span class="tag is-warning">NEW</span>
+
+                                
+                                <a href="http://192.168.55.44:1338/informations/show/721?7929ba6d39aa4465=https%3A%7Clocal-admin-freegames.dmm.com%7C3%7Cr" class="fn-fancybox" href_e01a2f_stored="https://local-admin-freegames.dmm.com/informations/show/721">【お知らせ】test</a>
+                            </td>
+                            <td class="nowrap">test data</td>
+                        </tr>
+
+                        
+                        <tr>
+                            <td class="nowrap">2016/11/10</td>
+                            <td class="nowrap">
+
+                                
+                                <span class="tag is-warning">NEW</span>
+
+                                
+                                <a href="http://192.168.55.44:1338/informations/show/720?7929ba6d39aa4465=https%3A%7Clocal-admin-freegames.dmm.com%7C3%7Cr" class="fn-fancybox" href_e01a2f_stored="https://local-admin-freegames.dmm.com/informations/show/720">【お知らせ】test</a>
+                            </td>
+                            <td class="nowrap">test data</td>
+                        </tr>
+
+                        
+                    </tbody>
+                    <!-- /.c-table -->
+                </table>
+
+            </li>
+
+            
+        </ul>
+
+        <div class="c-pager">
+            <div class="center">
+                <a href="http://192.168.55.44:1338/informations/info/list?7929ba6d39aa4465=https%3A%7Clocal-admin-freegames.dmm.com%7C3%7Cr" class="button" href_e01a2f_stored="https://local-admin-freegames.dmm.com/informations/info/list"><i class="fa fa-angle-double-right"></i>お知らせ一覧</a>
+            </div>
+            <!-- /.c-pager -->
+        </div>
+
+        <ul class="c-colbox col1 is-border">
+
+            
+            <li>
+                <table class="c-table">
+                    <colgroup>
+                        <col class="col-xxs">
+                        <col class="null">
+                        <col class="null">
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th>告知日</th>
+                            <th>タイトル</th>
+                            <th>本文</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        
+                        <tr>
+                            <td class="nowrap">2016/11/10</td>
+                            <td class="nowrap">
+
+                                
+                                <span class="tag is-warning">NEW</span>
+
+                                
+                                <a href="http://192.168.55.44:1338/informations/show/243?7929ba6d39aa4465=https%3A%7Clocal-admin-freegames.dmm.com%7C3%7Cr" class="fn-fancybox" href_e01a2f_stored="https://local-admin-freegames.dmm.com/informations/show/243">【障害報告】脆弱性診断</a>
+                            </td>
+                            <td class="nowrap">&lt;a href ="/documents/download/?filename=%B4%F0%CB%DC%A5%AC%A5%A4%A5%C9%A5%E9%A5%A4%A5%F3_20111205.pdf"&gt;基本ガイドライン&lt;/a&gt;&lt;a href ="/documents/download/?filename=DMM_Platform_%A5%B3%A5%F3%A5%C6%A5%F3%A5%C4%BA%EE%C0%AE%A5%AC%A5%A4%A5%C9%A5%E9%A5%A4%A5%F3ver1.0.pdf"&gt;DMM_Platform_コンテンツ作成ガイドライン&lt;/a&gt;&lt;a href ="/documents/download/?filename=%B4%F0%CB%DC%A5%AC%A5%A4%A5%C9%A5%E9%A5%A4%A5%F3_20111205.pdf"&gt;基本ガイドライン&lt;/a&gt;</td>
+                        </tr>
+
+                        
+                        <tr>
+                            <td class="nowrap">2015/06/30</td>
+                            <td class="nowrap">
+
+                                
+                                <a href="http://192.168.55.44:1338/informations/show/712?7929ba6d39aa4465=https%3A%7Clocal-admin-freegames.dmm.com%7C3%7Cr" class="fn-fancybox" href_e01a2f_stored="https://local-admin-freegames.dmm.com/informations/show/712">【障害報告】障害報告テスト１</a>
+                            </td>
+                            <td class="nowrap">障害報告テスト１</td>
+                        </tr>
+
+                        
+                        <tr>
+                            <td class="nowrap">2014/06/27</td>
+                            <td class="nowrap">
+
+                                
+                                <a href="http://192.168.55.44:1338/informations/show/694?7929ba6d39aa4465=https%3A%7Clocal-admin-freegames.dmm.com%7C3%7Cr" class="fn-fancybox" href_e01a2f_stored="https://local-admin-freegames.dmm.com/informations/show/694">【障害報告】脆弱性3</a>
+                            </td>
+                            <td class="nowrap">脆弱性3&lt;a href ="/documents/download/?filename=%B4%F0%CB%DC%A5%AC%A5%A4%A5%C9%A5%E9%A5%A4%A5%F3_20111205.pdf"&gt;基本ガイドライン&lt;/a&gt;</td>
+                        </tr>
+
+                        
+                        <tr>
+                            <td class="nowrap">2014/06/27</td>
+                            <td class="nowrap">
+
+                                
+                                <a href="http://192.168.55.44:1338/informations/show/693?7929ba6d39aa4465=https%3A%7Clocal-admin-freegames.dmm.com%7C3%7Cr" class="fn-fancybox" href_e01a2f_stored="https://local-admin-freegames.dmm.com/informations/show/693">【障害報告】脆弱性3</a>
+                            </td>
+                            <td class="nowrap">脆弱性3&lt;a href ="/documents/download/?filename=%B4%F0%CB%DC%A5%AC%A5%A4%A5%C9%A5%E9%A5%A4%A5%F3_20111205.pdf"&gt;基本ガイドライン&lt;/a&gt;</td>
+                        </tr>
+
+                        
+                        <tr>
+                            <td class="nowrap">2014/06/27</td>
+                            <td class="nowrap">
+
+                                
+                                <a href="http://192.168.55.44:1338/informations/show/692?7929ba6d39aa4465=https%3A%7Clocal-admin-freegames.dmm.com%7C3%7Cr" class="fn-fancybox" href_e01a2f_stored="https://local-admin-freegames.dmm.com/informations/show/692">【障害報告】脆弱性3</a>
+                            </td>
+                            <td class="nowrap">脆弱性3&lt;a href ="/documents/download/?filename=%B4%F0%CB%DC%A5%AC%A5%A4%A5%C9%A5%E9%A5%A4%A5%F3_20111205.pdf"&gt;基本ガイドライン&lt;/a&gt;</td>
+                        </tr>
+
+                        
+                    </tbody>
+                    <!-- /.c-table -->
+                </table>
+            </li>
+
+            
+        </ul>
+
+        <div class="c-pager">
+            <div class="center">
+                <a href="http://192.168.55.44:1338/informations/failure/list?7929ba6d39aa4465=https%3A%7Clocal-admin-freegames.dmm.com%7C3%7Cr" class="button" href_e01a2f_stored="https://local-admin-freegames.dmm.com/informations/failure/list"><i class="fa fa-angle-double-right"></i>障害報告一覧</a>
+            </div>
+            <!-- /.c-pager -->
+        </div>
+
+        <!-- /.c-area -->
+    </div>
+</section>
+
+<div class="message hidden">お知らせ・障害報告を削除しました。</div>
+
+         </div>
+      </div>
+      <p id="pagetop"><a href="#"><i class="fa fa-angle-double-up"></i>PAGE TOP</a></p>
+      <footer id="footer">
+         <div class="footer_content">
+            <p class="copyright">Copyright © since 1998 DMM ALL rights reserved.</p>
+            <!-- /.footer_content -->
+         </div>
+         <!-- [#footer] -->
+      </footer>
+   
+
+</body></html>VR��(�      X%A�X%A�=.       o    :http://192.168.55.44:1338/informations/index?7929ba6d39aa4465=https%3A%7Clocal-admin-freegames.dmm.com%7C3%7Cr necko:classified 1 strongly-framed 1 request-method GET response-head HTTP/1.1 200 OK
+Server: nginx/1.9.12
+Content-Type: text/html; charset=UTF-8
+X-Powered-By: PHP/5.6.18
+Cache-Control: no-cache
+Date: Fri, 11 Nov 2016 03:46:25 GMT
+Content-Length: 56934
+ original-response-headers Server: nginx/1.9.12
+Content-Type: text/html; charset=UTF-8
+Transfer-Encoding: chunked
+Connection: keep-alive
+X-Powered-By: PHP/5.6.18
+Cache-Control: no-cache
+Date: Fri, 11 Nov 2016 03:46:25 GMT
+Content-Length: 56934
+ charset UTF-8 uncompressed-len 0 predictor::resource-count 29 predictor::http://192.168.55.44:1338/tcs84ee3661-1d79-4018-819d-ddc4af6b7723/uistyle.css 1,1,1478836627,4096 predictor::http://192.168.55.44:1338/tcs84ee3661-1d79-4018-819d-ddc4af6b7723/hammerhead.js 1,1,1478836627,4096 predictor::http://192.168.55.44:1338/tcs84ee3661-1d79-4018-819d-ddc4af6b7723/testcafe_core.js 1,1,1478836627,4096 predictor::http://192.168.55.44:1338/tcs84ee3661-1d79-4018-819d-ddc4af6b7723/testcafe_recorder.js 1,1,1478836627,4096 predictor::http://192.168.55.44:1338/tcs84ee3661-1d79-4018-819d-ddc4af6b7723/testcafe_ui_core.js 1,1,1478836627,4096 predictor::http://192.168.55.44:1338/tcs84ee3661-1d79-4018-819d-ddc4af6b7723/testcafe_ui_recorder.js 1,1,1478836627,4096 predictor::http://192.168.55.44:1338/tcs84ee3661-1d79-4018-819d-ddc4af6b7723/task.js 1,1,1478836627,4097 predictor::http://192.168.55.44:1338/js/jquery-1.8.3.min.js?7929ba6d39aa4465=https%3A%7Clocal-admin-freegames.dmm.com%7C3%7Cr%7Cscript 1,1,1478836627,4096 predictor::http://192.168.55.44:1338/js/jquery.mCustomScrollbar.concat.min.js?7929ba6d39aa4465=https%3A%7Clocal-admin-freegames.dmm.com%7C3%7Cr%7Cscript 1,1,1478836627,4096 predictor::http://192.168.55.44:1338/css/jquery.mCustomScrollbar.min.css?7929ba6d39aa4465=https%3A%7Clocal-admin-freegames.dmm.com%7C3%7Cr 1,1,1478836627,4096 predictor::http://192.168.55.44:1338/js/jquery-ui.min.js?7929ba6d39aa4465=https%3A%7Clocal-admin-freegames.dmm.com%7C3%7Cr%7Cscript 1,1,1478836627,4096 predictor::http://192.168.55.44:1338/css/jquery-ui.min.css?7929ba6d39aa4465=https%3A%7Clocal-admin-freegames.dmm.com%7C3%7Cr 1,1,1478836627,4096 predictor::http://192.168.55.44:1338/css/jquery-ui.structure.min.css?7929ba6d39aa4465=https%3A%7Clocal-admin-freegames.dmm.com%7C3%7Cr 1,1,1478836627,4096 predictor::http://192.168.55.44:1338/js/fancybox/jquery.mousewheel-3.0.4.pack.js?7929ba6d39aa4465=https%3A%7Clocal-admin-freegames.dmm.com%7C3%7Cr%7Cscript 1,1,1478836627,4096 predictor::http://192.168.55.44:1338/js/fancybox/jquery.fancybox-1.3.4.pack.js?7929ba6d39aa4465=https%3A%7Clocal-admin-freegames.dmm.com%7C3%7Cr%7Cscript 1,1,1478836627,4096 predictor::http://192.168.55.44:1338/js/fancybox/jquery.fancybox-1.3.4.css?7929ba6d39aa4465=https%3A%7Clocal-admin-freegames.dmm.com%7C3%7Cr 1,1,1478836627,4096 predictor::http://192.168.55.44:1338/js/jquery.datetimepicker.full.min.js?7929ba6d39aa4465=https%3A%7Clocal-admin-freegames.dmm.com%7C3%7Cr%7Cscript 1,1,1478836627,4096 predictor::http://192.168.55.44:1338/css/jquery.datetimepicker.css?7929ba6d39aa4465=https%3A%7Clocal-admin-freegames.dmm.com%7C3%7Cr 1,1,1478836627,4096 predictor::http://192.168.55.44:1338/js/select2.full.min.js?7929ba6d39aa4465=https%3A%7Clocal-admin-freegames.dmm.com%7C3%7Cr%7Cscript 1,1,1478836627,4096 predictor::http://192.168.55.44:1338/css/select2.css?7929ba6d39aa4465=https%3A%7Clocal-admin-freegames.dmm.com%7C3%7Cr 1,1,1478836627,4096 predictor::http://192.168.55.44:1338/js/jqueryform/jquery.form.js?7929ba6d39aa4465=https%3A%7Clocal-admin-freegames.dmm.com%7C3%7Cr%7Cscript 1,1,1478836627,4096 predictor::http://192.168.55.44:1338/js/common.js?7929ba6d39aa4465=https%3A%7Clocal-admin-freegames.dmm.com%7C3%7Cr%7Cscript 1,1,1478836627,4096 predictor::http://192.168.55.44:1338/css/common.css?7929ba6d39aa4465=https%3A%7Clocal-admin-freegames.dmm.com%7C3%7Cr 1,1,1478836627,4096 predictor::http://192.168.55.44:1338/js/admin.common.js?7929ba6d39aa4465=https%3A%7Clocal-admin-freegames.dmm.com%7C3%7Cr%7Cscript 1,1,1478836627,4096 predictor::http://192.168.55.44:1338/css/admin.common.css?7929ba6d39aa4465=https%3A%7Clocal-admin-freegames.dmm.com%7C3%7Cr 1,1,1478836627,4096 predictor::http://192.168.55.44:1338/js/autosize.js?7929ba6d39aa4465=https%3A%7Clocal-admin-freegames.dmm.com%7C3%7Cr%7Cscript 1,1,1478836627,4096 predictor::http://192.168.55.44:1338/js/controller/Informations.js?7929ba6d39aa4465=https%3A%7Clocal-admin-freegames.dmm.com%7C3%7Cr%7Cscript 1,1,1478836627,4096 predictor::https://local-admin-freegames.dmm.com/images/common/logo.png 1,1,1478836627,4096 predictor::http://192.168.55.44:1338/css?family=Open+Sans:400,400italic,600,600italic,700,700italic&7929ba6d39aa4465=https%3A%7Cfonts.googleapis.com%7C3%7Cr 1,1,1478836627,4096   �f

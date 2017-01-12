@@ -1,0 +1,91 @@
+status: 200
+content-length: 2962
+expires: Fri, 11 Nov 2016 08:10:17 GMT
+content-location: https://reviews.ubuntu.com/reviews/api/1.0/reviews/filter/en/ubuntu/trusty/any/epiphany-browser/page/1/helpful/
+strict-transport-security: max-age=15768000; includeSubDomains; preload
+vary: Accept
+server: gunicorn/19.3.0
+last-modified: Fri, 11 Nov 2016 08:05:17 GMT
+x-bzr-revision-number: 321
+cache-control: max-age=300
+date: Fri, 11 Nov 2016 08:05:17 GMT
+content-type: application/json; charset=utf-8
+
+[
+    {
+        "origin": "ubuntu", 
+        "rating": 1, 
+        "hide": false, 
+        "app_name": "Epiphany Web Browser", 
+        "language": "en", 
+        "reviewer_username": "JmHGnMf", 
+        "usefulness_total": 7, 
+        "usefulness_favorable": 7, 
+        "review_text": "Didn't work in Ubuntu 14.04 LTS.\nCan not handle compressed data at all or\nflash for that matter nice try though!\nNote: It embeds itself into your system you can't\nremove all of it from here.!", 
+        "date_deleted": null, 
+        "summary": "Didn't work in Ubuntu 14.04 LTS.", 
+        "version": "3.10.3-0ubuntu2", 
+        "id": 87778, 
+        "date_created": "2014-06-05 23:06:01", 
+        "reviewer_displayname": "Ray", 
+        "package_name": "epiphany-browser", 
+        "distroseries": "trusty"
+    }, 
+    {
+        "origin": "ubuntu", 
+        "rating": 3, 
+        "hide": false, 
+        "app_name": "Epiphany Web Browser", 
+        "language": "en", 
+        "reviewer_username": "Ln7FrKJ", 
+        "usefulness_total": 2, 
+        "usefulness_favorable": 2, 
+        "review_text": "It's a bit unstable when opening flash content, it will almost imediatelly crash.\nBut if you like a minimalist browser full of opensource goodness then of course you should be using this browser! :)", 
+        "date_deleted": null, 
+        "summary": "Cool minimalist browser", 
+        "version": "3.10.3-0ubuntu2", 
+        "id": 91342, 
+        "date_created": "2014-10-17 15:38:10", 
+        "reviewer_displayname": "Luis Silva", 
+        "package_name": "epiphany-browser", 
+        "distroseries": "trusty"
+    }, 
+    {
+        "origin": "ubuntu", 
+        "rating": 5, 
+        "hide": false, 
+        "app_name": "Epiphany Web Browser", 
+        "language": "en", 
+        "reviewer_username": "dTFME7p", 
+        "usefulness_total": 2, 
+        "usefulness_favorable": 1, 
+        "review_text": "This browser loads up all websites easily while i struggle to get one or two load with firefox", 
+        "date_deleted": null, 
+        "summary": "In my experience has less hiccups than firefox.", 
+        "version": "3.10.3-0ubuntu2", 
+        "id": 98904, 
+        "date_created": "2015-12-12 15:16:58", 
+        "reviewer_displayname": "Darius", 
+        "package_name": "epiphany-browser", 
+        "distroseries": "trusty"
+    }, 
+    {
+        "origin": "ubuntu", 
+        "rating": 5, 
+        "hide": false, 
+        "app_name": "Epiphany Web Browser", 
+        "language": "en", 
+        "reviewer_username": "KQbJGdT", 
+        "usefulness_total": 0, 
+        "usefulness_favorable": 0, 
+        "review_text": "Very Good. ", 
+        "date_deleted": null, 
+        "summary": "Simple and excellant..", 
+        "version": "3.10.3-0ubuntu2", 
+        "id": 96070, 
+        "date_created": "2015-05-01 16:14:31", 
+        "reviewer_displayname": "Rajesh Ojha", 
+        "package_name": "epiphany-browser", 
+        "distroseries": "trusty"
+    }
+]

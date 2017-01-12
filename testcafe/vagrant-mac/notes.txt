@@ -1,0 +1,2 @@
+delete tmp box when installation has problem
+rm ~/.vagrant.d/tmp/*

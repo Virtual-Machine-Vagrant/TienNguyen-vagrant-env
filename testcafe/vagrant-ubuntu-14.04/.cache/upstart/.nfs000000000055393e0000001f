@@ -1,0 +1,878 @@
+gnome-session-is-accelerated: llvmpipe detected.
+GNOME_KEYRING_CONTROL=/run/user/1000/keyring-aGx3oT
+GPG_AGENT_INFO=/run/user/1000/keyring-aGx3oT/gpg:0:1
+SSH_AUTH_SOCK=/run/user/1000/keyring-aGx3oT/ssh
+GNOME_KEYRING_CONTROL=/run/user/1000/keyring-aGx3oT
+GPG_AGENT_INFO=/run/user/1000/keyring-aGx3oT/gpg:0:1
+SSH_AUTH_SOCK=/run/user/1000/keyring-aGx3oT/ssh
+GNOME_KEYRING_CONTROL=/run/user/1000/keyring-aGx3oT
+GPG_AGENT_INFO=/run/user/1000/keyring-aGx3oT/gpg:0:1
+SSH_AUTH_SOCK=/run/user/1000/keyring-aGx3oT/ssh
+GNOME_KEYRING_CONTROL=/run/user/1000/keyring-aGx3oT
+GPG_AGENT_INFO=/run/user/1000/keyring-aGx3oT/gpg:0:1
+SSH_AUTH_SOCK=/run/user/1000/keyring-aGx3oT/ssh
+Connection failure: Connection refused
+pa_context_connect() failed: Connection refused
+gnome-session[2987]: WARNING: App 'pulseaudio.desktop' exited with code 1
+compiz (core) - Info: Loading plugin: core
+compiz (core) - Info: Starting plugin: core
+compiz (core) - Info: Loading plugin: ccp
+compiz (core) - Info: Starting plugin: ccp
+compizconfig - Info: Backend     : gsettings
+compizconfig - Info: Integration : true
+compizconfig - Info: Profile     : unity
+
+(process:3177): indicator-application-service-WARNING **: Unable to get watcher name 'org.kde.StatusNotifierWatcher'
+
+(process:3177): indicator-application-service-WARNING **: Name Lost
+vmware-user: could not open /proc/fs/vmblock/dev
+compiz (core) - Info: Loading plugin: composite
+
+** (process:3197): CRITICAL **: bluez.vala:104: GDBus.Error:org.freedesktop.DBus.Error.ServiceUnknown: The name org.bluez was not provided by any .service files
+compiz (core) - Info: Starting plugin: composite
+compiz (core) - Info: Loading plugin: opengl
+compiz (core) - Info: Starting plugin: opengl
+compiz (core) - Info: Loading plugin: compiztoolbox
+compiz (core) - Info: Starting plugin: compiztoolbox
+compiz (core) - Info: Loading plugin: mousepoll
+compiz (core) - Info: Starting plugin: mousepoll
+compiz (core) - Info: Loading plugin: commands
+compiz (core) - Info: Starting plugin: commands
+compiz (core) - Info: Loading plugin: grid
+compiz (core) - Info: Starting plugin: grid
+compiz (core) - Info: Loading plugin: move
+compiz (core) - Info: Starting plugin: move
+compiz (core) - Info: Loading plugin: copytex
+compiz (core) - Info: Starting plugin: copytex
+compiz (core) - Info: Loading plugin: snap
+
+(nautilus:3194): IBUS-WARNING **: The owner of /home/vagrant/.config/ibus/bus is not vagrant!
+compiz (core) - Info: Starting plugin: snap
+compiz (core) - Info: Loading plugin: resize
+compiz (core) - Info: Starting plugin: resize
+compiz (core) - Info: Loading plugin: vpswitch
+compiz (core) - Info: Starting plugin: vpswitch
+compiz (core) - Info: Loading plugin: regex
+compiz (core) - Info: Starting plugin: regex
+compiz (core) - Info: Loading plugin: wall
+compiz (core) - Info: Starting plugin: wall
+compiz (core) - Info: Loading plugin: place
+compiz (core) - Info: Starting plugin: place
+compiz (core) - Info: Loading plugin: imgpng
+compiz (core) - Info: Starting plugin: imgpng
+compiz (core) - Info: Loading plugin: session
+compiz (core) - Info: Starting plugin: session
+I/O warning : failed to load external entity "/home/vagrant/.compiz/session/108097a5025a2f4f76147885092732253100000029870001"
+compiz (core) - Info: Loading plugin: unitymtgrabhandles
+compiz (core) - Info: Starting plugin: unitymtgrabhandles
+compiz (core) - Info: Loading plugin: animation
+compiz (core) - Info: Starting plugin: animation
+compiz (core) - Info: Loading plugin: fade
+compiz (core) - Info: Starting plugin: fade
+compiz (core) - Info: Loading plugin: workarounds
+compiz (core) - Info: Starting plugin: workarounds
+compiz (core) - Info: Loading plugin: expo
+compiz (core) - Info: Starting plugin: expo
+compiz (core) - Info: Loading plugin: scale
+compiz (core) - Info: Starting plugin: scale
+compiz (core) - Info: Loading plugin: ezoom
+compiz (core) - Info: Starting plugin: ezoom
+compiz (core) - Info: Loading plugin: unityshell
+compiz (core) - Info: Starting plugin: unityshell
+WARN  2016-11-11 07:55:42 unity.glib.dbus.server GLibDBusServer.cpp:579 Can't register object 'org.gnome.Shell' yet as we don't have a connection, waiting for it...
+ERROR 2016-11-11 07:55:42 unity.debug.interface DebugDBusInterface.cpp:216 Unable to load entry point in libxpathselect: libxpathselect.so.1.4: cannot open shared object file: No such file or directory
+WARN  2016-11-11 07:55:42 xim.controller XIMController.cpp:103 IBus natively supported.
+WARN  2016-11-11 07:55:43 unity.glib.dbus.server GLibDBusServer.cpp:579 Can't register object 'com.canonical.Unity.Launcher' yet as we don't have a connection, waiting for it...
+WARN  2016-11-11 07:55:43 unity.glib.dbus.server GLibDBusServer.cpp:579 Can't register object 'com.canonical.Unity.Dash' yet as we don't have a connection, waiting for it...
+WARN  2016-11-11 07:55:43 unityn_param_values == 4 <unknown>:0 The owner of /home/vagrant/.config/ibus/bus is not vagrant!
+WARN  2016-11-11 07:55:44 unity.glib.dbus.server GLibDBusServer.cpp:579 Can't register object 'org.gnome.SessionManager.EndSessionDialog' yet as we don't have a connection, waiting for it...
+WARN  2016-11-11 07:55:44 unity.glib.dbus.server GLibDBusServer.cpp:579 Can't register object 'com.canonical.Unity.Session' yet as we don't have a connection, waiting for it...
+WARN  2016-11-11 07:55:44 unity.glib.dbus.server GLibDBusServer.cpp:579 Can't register object 'org.gnome.ScreenSaver' yet as we don't have a connection, waiting for it...
+compiz (core) - Warn: Attempted to restack relative to 0x2a000da which is not a child of the root window or a window compiz owns
+ERROR 2016-11-11 07:55:45 unity.glib.dbus.server GLibDBusServer.cpp:524 DBus name lost 'org.gnome.Shell'
+ERROR 2016-11-11 07:55:45 unity.glib.dbus.server GLibDBusServer.cpp:524 DBus name lost 'com.canonical.Unity'
+
+(zeitgeist-datahub:3338): GLib-GObject-WARNING **: invalid (NULL) pointer instance
+
+(zeitgeist-datahub:3338): GLib-GObject-CRITICAL **: g_signal_connect_data: assertion 'G_TYPE_CHECK_INSTANCE (instance)' failed
+
+(nm-applet:3179): nm-applet-WARNING **: Could not find ShellVersion property on org.gnome.Shell after 5 tries
+Nautilus-Share-Message: Called "net usershare info" but it failed: 'net usershare' returned error 255: net usershare: cannot open usershare directory /var/lib/samba/usershares. Error No such file or directory
+Please ask your system administrator to enable user sharing.
+
+ERROR 2016-11-11 08:01:36 unity <unknown>:0 atk_object_ref_state_set: assertion 'ATK_IS_OBJECT (accessible)' failed
+ERROR 2016-11-11 08:01:36 unity <unknown>:0 atk_state_set_contains_state: assertion 'ATK_IS_STATE_SET (set)' failed
+ERROR 2016-11-11 08:01:36 unityy <unknown>:0 g_object_unref: assertion 'G_IS_OBJECT (object)' failed
+
+(firefox:4208): GLib-GObject-CRITICAL **: g_object_ref: assertion 'object->ref_count > 0' failed
+
+(firefox:4208): GLib-GObject-CRITICAL **: g_object_unref: assertion 'object->ref_count > 0' failed
+
+(firefox:4208): GLib-GObject-CRITICAL **: g_object_ref: assertion 'object->ref_count > 0' failed
+
+(firefox:4208): GLib-GObject-CRITICAL **: g_object_unref: assertion 'object->ref_count > 0' failed
+
+(firefox:4208): IBUS-WARNING **: The owner of /home/vagrant/.config/ibus/bus is not vagrant!
+2016-11-11 08:02:42,753 - softwarecenter.ui.gtk3.app - INFO - setting up proxy 'None'
+2016-11-11 08:02:47,142 - softwarecenter.region - WARNING - failed to use geoclue: 'org.freedesktop.Geoclue.Error.notAvailable: Geoclue master client has no usable Address providers'
+2016-11-11 08:02:48,243 - softwarecenter.backend.reviews - WARNING - Could not get usefulness from server, no username in config file
+2016-11-11 08:02:48,294 - softwarecenter.plugin - INFO - activating plugin '<module 'webapps_activation' from '/usr/share/software-center/softwarecenter/plugins/webapps_activation.pyc'>'
+
+(software-center:4312): IBUS-WARNING **: The owner of /home/vagrant/.config/ibus/bus is not vagrant!
+2016-11-11 08:02:48,691 - softwarecenter.db.pkginfo_impl.aptcache - INFO - aptcache.open()
+2016-11-11 08:02:54,401 - softwarecenter.backend.reviews - WARNING - error creating bsddb: '(22, 'Invalid argument -- BDB0054 illegal flag combination specified to DB_ENV->open')' (corrupted?)
+2016-11-11 08:02:54,418 - softwarecenter.backend.reviews - ERROR - trying to repair DB failed
+Traceback (most recent call last):
+  File "/usr/share/software-center/softwarecenter/backend/reviews/__init__.py", line 358, in _save_review_stats_cache_blocking
+    self._dump_bsddbm_for_unity(outfile, outdir)
+  File "/usr/share/software-center/softwarecenter/backend/reviews/__init__.py", line 377, in _dump_bsddbm_for_unity
+    0600)
+DBInvalidArgError: (22, 'Invalid argument -- BDB0054 illegal flag combination specified to DB_ENV->open')
+2016-11-11 08:02:54,530 - softwarecenter.ui.gtk3.views.lobbyview - WARNING - skipping exhibit for: 'u'leadwerks\r\nleadwerks-indie'' not available
+/usr/bin/software-center:184: Warning: Source ID 76 was not found when attempting to remove it
+  Gtk.main()
+/usr/bin/software-center:184: Warning: Source ID 152 was not found when attempting to remove it
+  Gtk.main()
+/usr/lib/python2.7/dist-packages/gi/overrides/GLib.py:535: Warning: Source ID 20 was not found when attempting to remove it
+  return super(MainContext, self).iteration(may_block)
+/usr/share/software-center/softwarecenter/ui/gtk3/widgets/exhibits.py:404: Warning: Source ID 197 was not found when attempting to remove it
+  GLib.source_remove(self._timeout)
+Traceback (most recent call last):
+  File "/usr/share/software-center/update-software-center-agent", line 127, in <module>
+    shutil.rmtree(final_pathname)
+  File "/usr/lib/python2.7/shutil.py", line 256, in rmtree
+    onerror(os.rmdir, path, sys.exc_info())
+  File "/usr/lib/python2.7/shutil.py", line 254, in rmtree
+    os.rmdir(path)
+OSError: [Errno 39] Directory not empty: '/home/vagrant/.cache/software-center/software-center-agent.db'
+2016-11-11 08:03:05,608 - softwarecenter.db.utils - INFO - software-center-agent finished with status 1
+/usr/share/software-center/softwarecenter/ui/gtk3/widgets/exhibits.py:404: Warning: Source ID 343 was not found when attempting to remove it
+  GLib.source_remove(self._timeout)
+/usr/share/software-center/softwarecenter/ui/gtk3/widgets/exhibits.py:404: Warning: Source ID 601 was not found when attempting to remove it
+  GLib.source_remove(self._timeout)
+2016-11-11 08:03:32,461 - softwarecenter.fixme - WARNING - logs to the root logger: '('/usr/share/software-center/softwarecenter/db/database.py', 204, '_get_new_xapiandb')'
+2016-11-11 08:03:32,460 - root - WARNING - failed to add sca db Couldn't detect type of database
+/usr/share/software-center/softwarecenter/ui/gtk3/widgets/searchentry.py:137: Warning: Source ID 1171 was not found when attempting to remove it
+  GLib.source_remove(self._timeout_id)
+/usr/share/software-center/softwarecenter/ui/gtk3/widgets/exhibits.py:404: Warning: Source ID 984 was not found when attempting to remove it
+  GLib.source_remove(self._timeout)
+/usr/share/software-center/softwarecenter/ui/gtk3/widgets/searchentry.py:137: Warning: Source ID 1205 was not found when attempting to remove it
+  GLib.source_remove(self._timeout_id)
+/usr/share/software-center/softwarecenter/ui/gtk3/widgets/searchentry.py:137: Warning: Source ID 1417 was not found when attempting to remove it
+  GLib.source_remove(self._timeout_id)
+/usr/share/software-center/softwarecenter/ui/gtk3/widgets/exhibits.py:404: Warning: Source ID 1227 was not found when attempting to remove it
+  GLib.source_remove(self._timeout)
+/usr/share/software-center/softwarecenter/ui/gtk3/widgets/searchentry.py:137: Warning: Source ID 1496 was not found when attempting to remove it
+  GLib.source_remove(self._timeout_id)
+Traceback (most recent call last):
+  File "/usr/share/software-center/softwarecenter/ui/gtk3/models/appstore2.py", line 394, in buffer_icons
+    doc = db.get_document(m.docid)
+xapian.DocNotFoundError: Document 955 not found
+/usr/share/software-center/softwarecenter/ui/gtk3/widgets/exhibits.py:404: Warning: Source ID 1590 was not found when attempting to remove it
+  GLib.source_remove(self._timeout)
+WARNING:root:failed to add sca db Couldn't detect type of database
+/usr/share/software-center/softwarecenter/ui/gtk3/widgets/exhibits.py:404: Warning: Source ID 1942 was not found when attempting to remove it
+  GLib.source_remove(self._timeout)
+/usr/share/software-center/softwarecenter/ui/gtk3/widgets/exhibits.py:404: Warning: Source ID 2119 was not found when attempting to remove it
+  GLib.source_remove(self._timeout)
+/usr/share/software-center/softwarecenter/ui/gtk3/widgets/exhibits.py:404: Warning: Source ID 2136 was not found when attempting to remove it
+  GLib.source_remove(self._timeout)
+/usr/share/software-center/softwarecenter/ui/gtk3/widgets/exhibits.py:404: Warning: Source ID 2145 was not found when attempting to remove it
+  GLib.source_remove(self._timeout)
+/usr/share/software-center/softwarecenter/ui/gtk3/widgets/exhibits.py:404: Warning: Source ID 2198 was not found when attempting to remove it
+  GLib.source_remove(self._timeout)
+/usr/share/software-center/softwarecenter/ui/gtk3/widgets/exhibits.py:404: Warning: Source ID 2233 was not found when attempting to remove it
+  GLib.source_remove(self._timeout)
+/usr/share/software-center/softwarecenter/ui/gtk3/widgets/exhibits.py:404: Warning: Source ID 2287 was not found when attempting to remove it
+  GLib.source_remove(self._timeout)
+/usr/share/software-center/softwarecenter/ui/gtk3/widgets/searchentry.py:137: Warning: Source ID 1804 was not found when attempting to remove it
+  GLib.source_remove(self._timeout_id)
+/usr/share/software-center/softwarecenter/ui/gtk3/widgets/exhibits.py:404: Warning: Source ID 2324 was not found when attempting to remove it
+  GLib.source_remove(self._timeout)
+/usr/bin/software-center:184: Warning: Source ID 2638 was not found when attempting to remove it
+  Gtk.main()
+/usr/bin/software-center:184: Warning: Source ID 2640 was not found when attempting to remove it
+  Gtk.main()
+/usr/share/software-center/softwarecenter/ui/gtk3/widgets/exhibits.py:404: Warning: Source ID 2682 was not found when attempting to remove it
+  GLib.source_remove(self._timeout)
+/usr/share/software-center/softwarecenter/ui/gtk3/widgets/exhibits.py:404: Warning: Source ID 3644 was not found when attempting to remove it
+  GLib.source_remove(self._timeout)
+/usr/share/software-center/softwarecenter/ui/gtk3/widgets/searchentry.py:137: Warning: Source ID 2476 was not found when attempting to remove it
+  GLib.source_remove(self._timeout_id)
+Traceback (most recent call last):
+  File "/usr/share/software-center/softwarecenter/ui/gtk3/models/appstore2.py", line 394, in buffer_icons
+    doc = db.get_document(m.docid)
+xapian.DocNotFoundError: Document 1275 not found
+/usr/share/software-center/softwarecenter/ui/gtk3/widgets/exhibits.py:404: Warning: Source ID 4807 was not found when attempting to remove it
+  GLib.source_remove(self._timeout)
+/usr/share/software-center/softwarecenter/ui/gtk3/widgets/exhibits.py:404: Warning: Source ID 5562 was not found when attempting to remove it
+  GLib.source_remove(self._timeout)
+/usr/share/software-center/softwarecenter/ui/gtk3/widgets/exhibits.py:404: Warning: Source ID 5702 was not found when attempting to remove it
+  GLib.source_remove(self._timeout)
+/usr/share/software-center/softwarecenter/ui/gtk3/widgets/exhibits.py:404: Warning: Source ID 5742 was not found when attempting to remove it
+  GLib.source_remove(self._timeout)
+/usr/share/software-center/softwarecenter/ui/gtk3/widgets/exhibits.py:404: Warning: Source ID 5768 was not found when attempting to remove it
+  GLib.source_remove(self._timeout)
+/usr/share/software-center/softwarecenter/ui/gtk3/widgets/exhibits.py:404: Warning: Source ID 5867 was not found when attempting to remove it
+  GLib.source_remove(self._timeout)
+/usr/share/software-center/softwarecenter/ui/gtk3/widgets/exhibits.py:404: Warning: Source ID 5990 was not found when attempting to remove it
+  GLib.source_remove(self._timeout)
+Traceback (most recent call last):
+  File "/usr/share/software-center/softwarecenter/ui/gtk3/widgets/apptreeview.py", line 537, in _cell_data_func_cb
+    model.load_range(indices, 5)
+  File "/usr/share/software-center/softwarecenter/ui/gtk3/models/appstore2.py", line 494, in load_range
+    doc = db.get_document(matches[i].docid)
+xapian.DocNotFoundError: Document 1919 not found
+Traceback (most recent call last):
+  File "/usr/share/software-center/softwarecenter/ui/gtk3/widgets/apptreeview.py", line 537, in _cell_data_func_cb
+    model.load_range(indices, 5)
+  File "/usr/share/software-center/softwarecenter/ui/gtk3/models/appstore2.py", line 494, in load_range
+    doc = db.get_document(matches[i].docid)
+xapian.DocNotFoundError: Document 1919 not found
+Traceback (most recent call last):
+  File "/usr/share/software-center/softwarecenter/ui/gtk3/widgets/apptreeview.py", line 537, in _cell_data_func_cb
+    model.load_range(indices, 5)
+  File "/usr/share/software-center/softwarecenter/ui/gtk3/models/appstore2.py", line 494, in load_range
+    doc = db.get_document(matches[i].docid)
+xapian.DocNotFoundError: Document 1919 not found
+Traceback (most recent call last):
+  File "/usr/share/software-center/softwarecenter/ui/gtk3/widgets/apptreeview.py", line 537, in _cell_data_func_cb
+    model.load_range(indices, 5)
+  File "/usr/share/software-center/softwarecenter/ui/gtk3/models/appstore2.py", line 494, in load_range
+    doc = db.get_document(matches[i].docid)
+xapian.DocNotFoundError: Document 1919 not found
+Traceback (most recent call last):
+  File "/usr/share/software-center/softwarecenter/ui/gtk3/widgets/apptreeview.py", line 537, in _cell_data_func_cb
+    model.load_range(indices, 5)
+  File "/usr/share/software-center/softwarecenter/ui/gtk3/models/appstore2.py", line 494, in load_range
+    doc = db.get_document(matches[i].docid)
+xapian.DocNotFoundError: Document 1919 not found
+Traceback (most recent call last):
+  File "/usr/share/software-center/softwarecenter/ui/gtk3/widgets/apptreeview.py", line 537, in _cell_data_func_cb
+    model.load_range(indices, 5)
+  File "/usr/share/software-center/softwarecenter/ui/gtk3/models/appstore2.py", line 494, in load_range
+    doc = db.get_document(matches[i].docid)
+xapian.DocNotFoundError: Document 1919 not found
+Traceback (most recent call last):
+  File "/usr/share/software-center/softwarecenter/ui/gtk3/widgets/apptreeview.py", line 537, in _cell_data_func_cb
+    model.load_range(indices, 5)
+  File "/usr/share/software-center/softwarecenter/ui/gtk3/models/appstore2.py", line 494, in load_range
+    doc = db.get_document(matches[i].docid)
+xapian.DocNotFoundError: Document 1919 not found
+Traceback (most recent call last):
+  File "/usr/share/software-center/softwarecenter/ui/gtk3/widgets/apptreeview.py", line 537, in _cell_data_func_cb
+    model.load_range(indices, 5)
+  File "/usr/share/software-center/softwarecenter/ui/gtk3/models/appstore2.py", line 494, in load_range
+    doc = db.get_document(matches[i].docid)
+xapian.DocNotFoundError: Document 1919 not found
+Traceback (most recent call last):
+  File "/usr/share/software-center/softwarecenter/ui/gtk3/widgets/apptreeview.py", line 537, in _cell_data_func_cb
+    model.load_range(indices, 5)
+  File "/usr/share/software-center/softwarecenter/ui/gtk3/models/appstore2.py", line 494, in load_range
+    doc = db.get_document(matches[i].docid)
+xapian.DocNotFoundError: Document 1919 not found
+Traceback (most recent call last):
+  File "/usr/share/software-center/softwarecenter/ui/gtk3/widgets/apptreeview.py", line 537, in _cell_data_func_cb
+    model.load_range(indices, 5)
+  File "/usr/share/software-center/softwarecenter/ui/gtk3/models/appstore2.py", line 494, in load_range
+    doc = db.get_document(matches[i].docid)
+xapian.DocNotFoundError: Document 1919 not found
+Traceback (most recent call last):
+  File "/usr/share/software-center/softwarecenter/ui/gtk3/widgets/apptreeview.py", line 537, in _cell_data_func_cb
+    model.load_range(indices, 5)
+  File "/usr/share/software-center/softwarecenter/ui/gtk3/models/appstore2.py", line 494, in load_range
+    doc = db.get_document(matches[i].docid)
+xapian.DocNotFoundError: Document 1919 not found
+Traceback (most recent call last):
+  File "/usr/share/software-center/softwarecenter/ui/gtk3/widgets/apptreeview.py", line 537, in _cell_data_func_cb
+    model.load_range(indices, 5)
+  File "/usr/share/software-center/softwarecenter/ui/gtk3/models/appstore2.py", line 494, in load_range
+    doc = db.get_document(matches[i].docid)
+xapian.DocNotFoundError: Document 1919 not found
+Traceback (most recent call last):
+  File "/usr/share/software-center/softwarecenter/ui/gtk3/widgets/apptreeview.py", line 537, in _cell_data_func_cb
+    model.load_range(indices, 5)
+  File "/usr/share/software-center/softwarecenter/ui/gtk3/models/appstore2.py", line 494, in load_range
+    doc = db.get_document(matches[i].docid)
+xapian.DocNotFoundError: Document 1919 not found
+Traceback (most recent call last):
+  File "/usr/share/software-center/softwarecenter/ui/gtk3/widgets/apptreeview.py", line 537, in _cell_data_func_cb
+    model.load_range(indices, 5)
+  File "/usr/share/software-center/softwarecenter/ui/gtk3/models/appstore2.py", line 494, in load_range
+    doc = db.get_document(matches[i].docid)
+xapian.DocNotFoundError: Document 1919 not found
+Traceback (most recent call last):
+  File "/usr/share/software-center/softwarecenter/ui/gtk3/widgets/apptreeview.py", line 537, in _cell_data_func_cb
+    model.load_range(indices, 5)
+  File "/usr/share/software-center/softwarecenter/ui/gtk3/models/appstore2.py", line 494, in load_range
+    doc = db.get_document(matches[i].docid)
+xapian.DocNotFoundError: Document 1919 not found
+Traceback (most recent call last):
+  File "/usr/share/software-center/softwarecenter/ui/gtk3/widgets/apptreeview.py", line 537, in _cell_data_func_cb
+    model.load_range(indices, 5)
+  File "/usr/share/software-center/softwarecenter/ui/gtk3/models/appstore2.py", line 494, in load_range
+    doc = db.get_document(matches[i].docid)
+xapian.DocNotFoundError: Document 1919 not found
+Traceback (most recent call last):
+  File "/usr/share/software-center/softwarecenter/ui/gtk3/widgets/apptreeview.py", line 537, in _cell_data_func_cb
+    model.load_range(indices, 5)
+  File "/usr/share/software-center/softwarecenter/ui/gtk3/models/appstore2.py", line 494, in load_range
+    doc = db.get_document(matches[i].docid)
+xapian.DocNotFoundError: Document 1919 not found
+Traceback (most recent call last):
+  File "/usr/share/software-center/softwarecenter/ui/gtk3/widgets/apptreeview.py", line 537, in _cell_data_func_cb
+    model.load_range(indices, 5)
+  File "/usr/share/software-center/softwarecenter/ui/gtk3/models/appstore2.py", line 494, in load_range
+    doc = db.get_document(matches[i].docid)
+xapian.DocNotFoundError: Document 1919 not found
+Traceback (most recent call last):
+  File "/usr/share/software-center/softwarecenter/ui/gtk3/widgets/apptreeview.py", line 537, in _cell_data_func_cb
+    model.load_range(indices, 5)
+  File "/usr/share/software-center/softwarecenter/ui/gtk3/models/appstore2.py", line 494, in load_range
+    doc = db.get_document(matches[i].docid)
+xapian.DocNotFoundError: Document 1919 not found
+Traceback (most recent call last):
+  File "/usr/share/software-center/softwarecenter/ui/gtk3/widgets/apptreeview.py", line 537, in _cell_data_func_cb
+    model.load_range(indices, 5)
+  File "/usr/share/software-center/softwarecenter/ui/gtk3/models/appstore2.py", line 494, in load_range
+    doc = db.get_document(matches[i].docid)
+xapian.DocNotFoundError: Document 1919 not found
+Traceback (most recent call last):
+  File "/usr/share/software-center/softwarecenter/ui/gtk3/widgets/apptreeview.py", line 537, in _cell_data_func_cb
+    model.load_range(indices, 5)
+  File "/usr/share/software-center/softwarecenter/ui/gtk3/models/appstore2.py", line 494, in load_range
+    doc = db.get_document(matches[i].docid)
+xapian.DocNotFoundError: Document 1919 not found
+Traceback (most recent call last):
+  File "/usr/share/software-center/softwarecenter/ui/gtk3/widgets/apptreeview.py", line 537, in _cell_data_func_cb
+    model.load_range(indices, 5)
+  File "/usr/share/software-center/softwarecenter/ui/gtk3/models/appstore2.py", line 494, in load_range
+    doc = db.get_document(matches[i].docid)
+xapian.DocNotFoundError: Document 1919 not found
+Traceback (most recent call last):
+  File "/usr/share/software-center/softwarecenter/ui/gtk3/widgets/apptreeview.py", line 537, in _cell_data_func_cb
+    model.load_range(indices, 5)
+  File "/usr/share/software-center/softwarecenter/ui/gtk3/models/appstore2.py", line 494, in load_range
+    doc = db.get_document(matches[i].docid)
+xapian.DocNotFoundError: Document 1919 not found
+Traceback (most recent call last):
+  File "/usr/share/software-center/softwarecenter/ui/gtk3/widgets/apptreeview.py", line 537, in _cell_data_func_cb
+    model.load_range(indices, 5)
+  File "/usr/share/software-center/softwarecenter/ui/gtk3/models/appstore2.py", line 494, in load_range
+    doc = db.get_document(matches[i].docid)
+xapian.DocNotFoundError: Document 1919 not found
+Traceback (most recent call last):
+  File "/usr/share/software-center/softwarecenter/ui/gtk3/widgets/apptreeview.py", line 537, in _cell_data_func_cb
+    model.load_range(indices, 5)
+  File "/usr/share/software-center/softwarecenter/ui/gtk3/models/appstore2.py", line 494, in load_range
+    doc = db.get_document(matches[i].docid)
+xapian.DocNotFoundError: Document 1919 not found
+Traceback (most recent call last):
+  File "/usr/share/software-center/softwarecenter/ui/gtk3/widgets/apptreeview.py", line 537, in _cell_data_func_cb
+    model.load_range(indices, 5)
+  File "/usr/share/software-center/softwarecenter/ui/gtk3/models/appstore2.py", line 494, in load_range
+    doc = db.get_document(matches[i].docid)
+xapian.DocNotFoundError: Document 1919 not found
+Traceback (most recent call last):
+  File "/usr/share/software-center/softwarecenter/ui/gtk3/widgets/apptreeview.py", line 537, in _cell_data_func_cb
+    model.load_range(indices, 5)
+  File "/usr/share/software-center/softwarecenter/ui/gtk3/models/appstore2.py", line 494, in load_range
+    doc = db.get_document(matches[i].docid)
+xapian.DocNotFoundError: Document 1919 not found
+Traceback (most recent call last):
+  File "/usr/share/software-center/softwarecenter/ui/gtk3/widgets/apptreeview.py", line 537, in _cell_data_func_cb
+    model.load_range(indices, 5)
+  File "/usr/share/software-center/softwarecenter/ui/gtk3/models/appstore2.py", line 494, in load_range
+    doc = db.get_document(matches[i].docid)
+xapian.DocNotFoundError: Document 1919 not found
+Traceback (most recent call last):
+  File "/usr/share/software-center/softwarecenter/ui/gtk3/widgets/apptreeview.py", line 537, in _cell_data_func_cb
+    model.load_range(indices, 5)
+  File "/usr/share/software-center/softwarecenter/ui/gtk3/models/appstore2.py", line 494, in load_range
+    doc = db.get_document(matches[i].docid)
+xapian.DocNotFoundError: Document 1919 not found
+Traceback (most recent call last):
+  File "/usr/share/software-center/softwarecenter/ui/gtk3/widgets/apptreeview.py", line 537, in _cell_data_func_cb
+    model.load_range(indices, 5)
+  File "/usr/share/software-center/softwarecenter/ui/gtk3/models/appstore2.py", line 494, in load_range
+    doc = db.get_document(matches[i].docid)
+xapian.DocNotFoundError: Document 1919 not found
+Traceback (most recent call last):
+  File "/usr/share/software-center/softwarecenter/ui/gtk3/widgets/apptreeview.py", line 537, in _cell_data_func_cb
+    model.load_range(indices, 5)
+  File "/usr/share/software-center/softwarecenter/ui/gtk3/models/appstore2.py", line 494, in load_range
+    doc = db.get_document(matches[i].docid)
+xapian.DocNotFoundError: Document 1919 not found
+Traceback (most recent call last):
+  File "/usr/share/software-center/softwarecenter/ui/gtk3/widgets/apptreeview.py", line 537, in _cell_data_func_cb
+    model.load_range(indices, 5)
+  File "/usr/share/software-center/softwarecenter/ui/gtk3/models/appstore2.py", line 494, in load_range
+    doc = db.get_document(matches[i].docid)
+xapian.DocNotFoundError: Document 1919 not found
+Traceback (most recent call last):
+  File "/usr/share/software-center/softwarecenter/ui/gtk3/widgets/apptreeview.py", line 537, in _cell_data_func_cb
+    model.load_range(indices, 5)
+  File "/usr/share/software-center/softwarecenter/ui/gtk3/models/appstore2.py", line 494, in load_range
+    doc = db.get_document(matches[i].docid)
+xapian.DocNotFoundError: Document 1919 not found
+Traceback (most recent call last):
+  File "/usr/share/software-center/softwarecenter/ui/gtk3/widgets/apptreeview.py", line 537, in _cell_data_func_cb
+    model.load_range(indices, 5)
+  File "/usr/share/software-center/softwarecenter/ui/gtk3/models/appstore2.py", line 494, in load_range
+    doc = db.get_document(matches[i].docid)
+xapian.DocNotFoundError: Document 1919 not found
+Traceback (most recent call last):
+  File "/usr/share/software-center/softwarecenter/ui/gtk3/widgets/apptreeview.py", line 537, in _cell_data_func_cb
+    model.load_range(indices, 5)
+  File "/usr/share/software-center/softwarecenter/ui/gtk3/models/appstore2.py", line 494, in load_range
+    doc = db.get_document(matches[i].docid)
+xapian.DocNotFoundError: Document 1725 not found
+Traceback (most recent call last):
+  File "/usr/share/software-center/softwarecenter/ui/gtk3/widgets/apptreeview.py", line 537, in _cell_data_func_cb
+    model.load_range(indices, 5)
+  File "/usr/share/software-center/softwarecenter/ui/gtk3/models/appstore2.py", line 494, in load_range
+    doc = db.get_document(matches[i].docid)
+xapian.DocNotFoundError: Document 1567 not found
+Traceback (most recent call last):
+  File "/usr/share/software-center/softwarecenter/ui/gtk3/widgets/apptreeview.py", line 537, in _cell_data_func_cb
+    model.load_range(indices, 5)
+  File "/usr/share/software-center/softwarecenter/ui/gtk3/models/appstore2.py", line 494, in load_range
+    doc = db.get_document(matches[i].docid)
+xapian.DocNotFoundError: Document 1567 not found
+Traceback (most recent call last):
+  File "/usr/share/software-center/softwarecenter/ui/gtk3/widgets/apptreeview.py", line 537, in _cell_data_func_cb
+    model.load_range(indices, 5)
+  File "/usr/share/software-center/softwarecenter/ui/gtk3/models/appstore2.py", line 494, in load_range
+    doc = db.get_document(matches[i].docid)
+xapian.DocNotFoundError: Document 1279 not found
+Traceback (most recent call last):
+  File "/usr/share/software-center/softwarecenter/ui/gtk3/widgets/apptreeview.py", line 537, in _cell_data_func_cb
+    model.load_range(indices, 5)
+  File "/usr/share/software-center/softwarecenter/ui/gtk3/models/appstore2.py", line 494, in load_range
+    doc = db.get_document(matches[i].docid)
+xapian.DocNotFoundError: Document 1279 not found
+Traceback (most recent call last):
+  File "/usr/share/software-center/softwarecenter/ui/gtk3/widgets/apptreeview.py", line 537, in _cell_data_func_cb
+    model.load_range(indices, 5)
+  File "/usr/share/software-center/softwarecenter/ui/gtk3/models/appstore2.py", line 494, in load_range
+    doc = db.get_document(matches[i].docid)
+xapian.DocNotFoundError: Document 1919 not found
+Traceback (most recent call last):
+  File "/usr/share/software-center/softwarecenter/ui/gtk3/widgets/apptreeview.py", line 537, in _cell_data_func_cb
+    model.load_range(indices, 5)
+  File "/usr/share/software-center/softwarecenter/ui/gtk3/models/appstore2.py", line 494, in load_range
+    doc = db.get_document(matches[i].docid)
+xapian.DocNotFoundError: Document 1919 not found
+Traceback (most recent call last):
+  File "/usr/share/software-center/softwarecenter/ui/gtk3/widgets/apptreeview.py", line 537, in _cell_data_func_cb
+    model.load_range(indices, 5)
+  File "/usr/share/software-center/softwarecenter/ui/gtk3/models/appstore2.py", line 494, in load_range
+    doc = db.get_document(matches[i].docid)
+xapian.DocNotFoundError: Document 1919 not found
+Traceback (most recent call last):
+  File "/usr/share/software-center/softwarecenter/ui/gtk3/widgets/apptreeview.py", line 537, in _cell_data_func_cb
+    model.load_range(indices, 5)
+  File "/usr/share/software-center/softwarecenter/ui/gtk3/models/appstore2.py", line 494, in load_range
+    doc = db.get_document(matches[i].docid)
+xapian.DocNotFoundError: Document 1919 not found
+Traceback (most recent call last):
+  File "/usr/share/software-center/softwarecenter/ui/gtk3/widgets/apptreeview.py", line 537, in _cell_data_func_cb
+    model.load_range(indices, 5)
+  File "/usr/share/software-center/softwarecenter/ui/gtk3/models/appstore2.py", line 494, in load_range
+    doc = db.get_document(matches[i].docid)
+xapian.DocNotFoundError: Document 1725 not found
+Traceback (most recent call last):
+  File "/usr/share/software-center/softwarecenter/ui/gtk3/widgets/apptreeview.py", line 537, in _cell_data_func_cb
+    model.load_range(indices, 5)
+  File "/usr/share/software-center/softwarecenter/ui/gtk3/models/appstore2.py", line 494, in load_range
+    doc = db.get_document(matches[i].docid)
+xapian.DocNotFoundError: Document 1725 not found
+Traceback (most recent call last):
+  File "/usr/share/software-center/softwarecenter/ui/gtk3/widgets/apptreeview.py", line 537, in _cell_data_func_cb
+    model.load_range(indices, 5)
+  File "/usr/share/software-center/softwarecenter/ui/gtk3/models/appstore2.py", line 494, in load_range
+    doc = db.get_document(matches[i].docid)
+xapian.DocNotFoundError: Document 1567 not found
+Traceback (most recent call last):
+  File "/usr/share/software-center/softwarecenter/ui/gtk3/widgets/apptreeview.py", line 537, in _cell_data_func_cb
+    model.load_range(indices, 5)
+  File "/usr/share/software-center/softwarecenter/ui/gtk3/models/appstore2.py", line 494, in load_range
+    doc = db.get_document(matches[i].docid)
+xapian.DocNotFoundError: Document 1567 not found
+Traceback (most recent call last):
+  File "/usr/share/software-center/softwarecenter/ui/gtk3/widgets/apptreeview.py", line 537, in _cell_data_func_cb
+    model.load_range(indices, 5)
+  File "/usr/share/software-center/softwarecenter/ui/gtk3/models/appstore2.py", line 494, in load_range
+    doc = db.get_document(matches[i].docid)
+xapian.DocNotFoundError: Document 1279 not found
+Traceback (most recent call last):
+  File "/usr/share/software-center/softwarecenter/ui/gtk3/widgets/apptreeview.py", line 537, in _cell_data_func_cb
+    model.load_range(indices, 5)
+  File "/usr/share/software-center/softwarecenter/ui/gtk3/models/appstore2.py", line 494, in load_range
+    doc = db.get_document(matches[i].docid)
+xapian.DocNotFoundError: Document 1279 not found
+Traceback (most recent call last):
+  File "/usr/share/software-center/softwarecenter/ui/gtk3/widgets/apptreeview.py", line 537, in _cell_data_func_cb
+    model.load_range(indices, 5)
+  File "/usr/share/software-center/softwarecenter/ui/gtk3/models/appstore2.py", line 494, in load_range
+    doc = db.get_document(matches[i].docid)
+xapian.DocNotFoundError: Document 1465 not found
+Traceback (most recent call last):
+  File "/usr/share/software-center/softwarecenter/ui/gtk3/widgets/apptreeview.py", line 537, in _cell_data_func_cb
+    model.load_range(indices, 5)
+  File "/usr/share/software-center/softwarecenter/ui/gtk3/models/appstore2.py", line 494, in load_range
+    doc = db.get_document(matches[i].docid)
+xapian.DocNotFoundError: Document 1725 not found
+Traceback (most recent call last):
+  File "/usr/share/software-center/softwarecenter/ui/gtk3/widgets/apptreeview.py", line 537, in _cell_data_func_cb
+    model.load_range(indices, 5)
+  File "/usr/share/software-center/softwarecenter/ui/gtk3/models/appstore2.py", line 494, in load_range
+    doc = db.get_document(matches[i].docid)
+xapian.DocNotFoundError: Document 1725 not found
+Traceback (most recent call last):
+  File "/usr/share/software-center/softwarecenter/ui/gtk3/widgets/apptreeview.py", line 537, in _cell_data_func_cb
+    model.load_range(indices, 5)
+  File "/usr/share/software-center/softwarecenter/ui/gtk3/models/appstore2.py", line 494, in load_range
+    doc = db.get_document(matches[i].docid)
+xapian.DocNotFoundError: Document 1567 not found
+Traceback (most recent call last):
+  File "/usr/share/software-center/softwarecenter/ui/gtk3/widgets/apptreeview.py", line 537, in _cell_data_func_cb
+    model.load_range(indices, 5)
+  File "/usr/share/software-center/softwarecenter/ui/gtk3/models/appstore2.py", line 494, in load_range
+    doc = db.get_document(matches[i].docid)
+xapian.DocNotFoundError: Document 1567 not found
+Traceback (most recent call last):
+  File "/usr/share/software-center/softwarecenter/ui/gtk3/widgets/apptreeview.py", line 537, in _cell_data_func_cb
+    model.load_range(indices, 5)
+  File "/usr/share/software-center/softwarecenter/ui/gtk3/models/appstore2.py", line 494, in load_range
+    doc = db.get_document(matches[i].docid)
+xapian.DocNotFoundError: Document 1279 not found
+Traceback (most recent call last):
+  File "/usr/share/software-center/softwarecenter/ui/gtk3/widgets/apptreeview.py", line 537, in _cell_data_func_cb
+    model.load_range(indices, 5)
+  File "/usr/share/software-center/softwarecenter/ui/gtk3/models/appstore2.py", line 494, in load_range
+    doc = db.get_document(matches[i].docid)
+xapian.DocNotFoundError: Document 1279 not found
+Traceback (most recent call last):
+  File "/usr/share/software-center/softwarecenter/ui/gtk3/widgets/apptreeview.py", line 537, in _cell_data_func_cb
+    model.load_range(indices, 5)
+  File "/usr/share/software-center/softwarecenter/ui/gtk3/models/appstore2.py", line 494, in load_range
+    doc = db.get_document(matches[i].docid)
+xapian.DocNotFoundError: Document 1725 not found
+Traceback (most recent call last):
+  File "/usr/share/software-center/softwarecenter/ui/gtk3/widgets/apptreeview.py", line 537, in _cell_data_func_cb
+    model.load_range(indices, 5)
+  File "/usr/share/software-center/softwarecenter/ui/gtk3/models/appstore2.py", line 494, in load_range
+    doc = db.get_document(matches[i].docid)
+xapian.DocNotFoundError: Document 1567 not found
+Traceback (most recent call last):
+  File "/usr/share/software-center/softwarecenter/ui/gtk3/widgets/apptreeview.py", line 537, in _cell_data_func_cb
+    model.load_range(indices, 5)
+  File "/usr/share/software-center/softwarecenter/ui/gtk3/models/appstore2.py", line 494, in load_range
+    doc = db.get_document(matches[i].docid)
+xapian.DocNotFoundError: Document 1725 not found
+Traceback (most recent call last):
+  File "/usr/share/software-center/softwarecenter/ui/gtk3/widgets/apptreeview.py", line 537, in _cell_data_func_cb
+    model.load_range(indices, 5)
+  File "/usr/share/software-center/softwarecenter/ui/gtk3/models/appstore2.py", line 494, in load_range
+    doc = db.get_document(matches[i].docid)
+xapian.DocNotFoundError: Document 1725 not found
+Traceback (most recent call last):
+  File "/usr/share/software-center/softwarecenter/ui/gtk3/widgets/apptreeview.py", line 537, in _cell_data_func_cb
+    model.load_range(indices, 5)
+  File "/usr/share/software-center/softwarecenter/ui/gtk3/models/appstore2.py", line 494, in load_range
+    doc = db.get_document(matches[i].docid)
+xapian.DocNotFoundError: Document 1567 not found
+Traceback (most recent call last):
+  File "/usr/share/software-center/softwarecenter/ui/gtk3/widgets/apptreeview.py", line 537, in _cell_data_func_cb
+    model.load_range(indices, 5)
+  File "/usr/share/software-center/softwarecenter/ui/gtk3/models/appstore2.py", line 494, in load_range
+    doc = db.get_document(matches[i].docid)
+xapian.DocNotFoundError: Document 1567 not found
+Traceback (most recent call last):
+  File "/usr/share/software-center/softwarecenter/ui/gtk3/widgets/apptreeview.py", line 537, in _cell_data_func_cb
+    model.load_range(indices, 5)
+  File "/usr/share/software-center/softwarecenter/ui/gtk3/models/appstore2.py", line 494, in load_range
+    doc = db.get_document(matches[i].docid)
+xapian.DocNotFoundError: Document 1725 not found
+Traceback (most recent call last):
+  File "/usr/share/software-center/softwarecenter/ui/gtk3/widgets/apptreeview.py", line 537, in _cell_data_func_cb
+    model.load_range(indices, 5)
+  File "/usr/share/software-center/softwarecenter/ui/gtk3/models/appstore2.py", line 494, in load_range
+    doc = db.get_document(matches[i].docid)
+xapian.DocNotFoundError: Document 1725 not found
+Traceback (most recent call last):
+  File "/usr/share/software-center/softwarecenter/ui/gtk3/widgets/apptreeview.py", line 537, in _cell_data_func_cb
+    model.load_range(indices, 5)
+  File "/usr/share/software-center/softwarecenter/ui/gtk3/models/appstore2.py", line 494, in load_range
+    doc = db.get_document(matches[i].docid)
+xapian.DocNotFoundError: Document 1725 not found
+Traceback (most recent call last):
+  File "/usr/share/software-center/softwarecenter/ui/gtk3/widgets/apptreeview.py", line 537, in _cell_data_func_cb
+    model.load_range(indices, 5)
+  File "/usr/share/software-center/softwarecenter/ui/gtk3/models/appstore2.py", line 494, in load_range
+    doc = db.get_document(matches[i].docid)
+xapian.DocNotFoundError: Document 1725 not found
+Traceback (most recent call last):
+  File "/usr/share/software-center/softwarecenter/ui/gtk3/widgets/apptreeview.py", line 537, in _cell_data_func_cb
+    model.load_range(indices, 5)
+  File "/usr/share/software-center/softwarecenter/ui/gtk3/models/appstore2.py", line 494, in load_range
+    doc = db.get_document(matches[i].docid)
+xapian.DocNotFoundError: Document 1725 not found
+Traceback (most recent call last):
+  File "/usr/share/software-center/softwarecenter/ui/gtk3/widgets/apptreeview.py", line 537, in _cell_data_func_cb
+    model.load_range(indices, 5)
+  File "/usr/share/software-center/softwarecenter/ui/gtk3/models/appstore2.py", line 494, in load_range
+    doc = db.get_document(matches[i].docid)
+xapian.DocNotFoundError: Document 1725 not found
+Traceback (most recent call last):
+  File "/usr/share/software-center/softwarecenter/ui/gtk3/widgets/apptreeview.py", line 537, in _cell_data_func_cb
+    model.load_range(indices, 5)
+  File "/usr/share/software-center/softwarecenter/ui/gtk3/models/appstore2.py", line 494, in load_range
+    doc = db.get_document(matches[i].docid)
+xapian.DocNotFoundError: Document 1567 not found
+Traceback (most recent call last):
+  File "/usr/share/software-center/softwarecenter/ui/gtk3/widgets/apptreeview.py", line 537, in _cell_data_func_cb
+    model.load_range(indices, 5)
+  File "/usr/share/software-center/softwarecenter/ui/gtk3/models/appstore2.py", line 494, in load_range
+    doc = db.get_document(matches[i].docid)
+xapian.DocNotFoundError: Document 1567 not found
+/usr/share/software-center/softwarecenter/ui/gtk3/widgets/exhibits.py:404: Warning: Source ID 6156 was not found when attempting to remove it
+  GLib.source_remove(self._timeout)
+Traceback (most recent call last):
+  File "/usr/share/software-center/softwarecenter/ui/gtk3/widgets/apptreeview.py", line 537, in _cell_data_func_cb
+    model.load_range(indices, 5)
+  File "/usr/share/software-center/softwarecenter/ui/gtk3/models/appstore2.py", line 494, in load_range
+    doc = db.get_document(matches[i].docid)
+xapian.DocNotFoundError: Document 1725 not found
+Traceback (most recent call last):
+  File "/usr/share/software-center/softwarecenter/ui/gtk3/widgets/apptreeview.py", line 537, in _cell_data_func_cb
+    model.load_range(indices, 5)
+  File "/usr/share/software-center/softwarecenter/ui/gtk3/models/appstore2.py", line 494, in load_range
+    doc = db.get_document(matches[i].docid)
+xapian.DocNotFoundError: Document 1725 not found
+Traceback (most recent call last):
+  File "/usr/share/software-center/softwarecenter/ui/gtk3/widgets/apptreeview.py", line 537, in _cell_data_func_cb
+    model.load_range(indices, 5)
+  File "/usr/share/software-center/softwarecenter/ui/gtk3/models/appstore2.py", line 494, in load_range
+    doc = db.get_document(matches[i].docid)
+xapian.DocNotFoundError: Document 1725 not found
+Traceback (most recent call last):
+  File "/usr/share/software-center/softwarecenter/ui/gtk3/widgets/apptreeview.py", line 537, in _cell_data_func_cb
+    model.load_range(indices, 5)
+  File "/usr/share/software-center/softwarecenter/ui/gtk3/models/appstore2.py", line 494, in load_range
+    doc = db.get_document(matches[i].docid)
+xapian.DocNotFoundError: Document 1725 not found
+Traceback (most recent call last):
+  File "/usr/share/software-center/softwarecenter/ui/gtk3/widgets/apptreeview.py", line 537, in _cell_data_func_cb
+    model.load_range(indices, 5)
+  File "/usr/share/software-center/softwarecenter/ui/gtk3/models/appstore2.py", line 494, in load_range
+    doc = db.get_document(matches[i].docid)
+xapian.DocNotFoundError: Document 1567 not found
+Traceback (most recent call last):
+  File "/usr/share/software-center/softwarecenter/ui/gtk3/widgets/apptreeview.py", line 537, in _cell_data_func_cb
+    model.load_range(indices, 5)
+  File "/usr/share/software-center/softwarecenter/ui/gtk3/models/appstore2.py", line 494, in load_range
+    doc = db.get_document(matches[i].docid)
+xapian.DocNotFoundError: Document 1567 not found
+/usr/share/software-center/softwarecenter/ui/gtk3/widgets/exhibits.py:404: Warning: Source ID 6467 was not found when attempting to remove it
+  GLib.source_remove(self._timeout)
+/usr/share/software-center/softwarecenter/ui/gtk3/widgets/exhibits.py:404: Warning: Source ID 6527 was not found when attempting to remove it
+  GLib.source_remove(self._timeout)
+/usr/share/software-center/softwarecenter/ui/gtk3/widgets/exhibits.py:404: Warning: Source ID 6535 was not found when attempting to remove it
+  GLib.source_remove(self._timeout)
+/usr/share/software-center/softwarecenter/ui/gtk3/widgets/exhibits.py:404: Warning: Source ID 7288 was not found when attempting to remove it
+  GLib.source_remove(self._timeout)
+/usr/share/software-center/softwarecenter/ui/gtk3/widgets/exhibits.py:404: Warning: Source ID 7314 was not found when attempting to remove it
+  GLib.source_remove(self._timeout)
+/usr/share/software-center/softwarecenter/ui/gtk3/widgets/exhibits.py:404: Warning: Source ID 7322 was not found when attempting to remove it
+  GLib.source_remove(self._timeout)
+/usr/share/software-center/softwarecenter/ui/gtk3/widgets/exhibits.py:404: Warning: Source ID 7331 was not found when attempting to remove it
+  GLib.source_remove(self._timeout)
+/usr/share/software-center/softwarecenter/ui/gtk3/widgets/exhibits.py:404: Warning: Source ID 7340 was not found when attempting to remove it
+  GLib.source_remove(self._timeout)
+/usr/share/software-center/softwarecenter/ui/gtk3/widgets/exhibits.py:404: Warning: Source ID 7349 was not found when attempting to remove it
+  GLib.source_remove(self._timeout)
+/usr/share/software-center/softwarecenter/ui/gtk3/widgets/exhibits.py:404: Warning: Source ID 7358 was not found when attempting to remove it
+  GLib.source_remove(self._timeout)
+/usr/share/software-center/softwarecenter/ui/gtk3/widgets/exhibits.py:404: Warning: Source ID 7367 was not found when attempting to remove it
+  GLib.source_remove(self._timeout)
+/usr/share/software-center/softwarecenter/ui/gtk3/widgets/exhibits.py:404: Warning: Source ID 7376 was not found when attempting to remove it
+  GLib.source_remove(self._timeout)
+/usr/share/software-center/softwarecenter/ui/gtk3/widgets/exhibits.py:404: Warning: Source ID 7385 was not found when attempting to remove it
+  GLib.source_remove(self._timeout)
+Traceback (most recent call last):
+  File "/usr/share/software-center/softwarecenter/ui/gtk3/widgets/apptreeview.py", line 537, in _cell_data_func_cb
+    model.load_range(indices, 5)
+  File "/usr/share/software-center/softwarecenter/ui/gtk3/models/appstore2.py", line 494, in load_range
+    doc = db.get_document(matches[i].docid)
+xapian.DocNotFoundError: Document 1725 not found
+Traceback (most recent call last):
+  File "/usr/share/software-center/softwarecenter/ui/gtk3/widgets/apptreeview.py", line 537, in _cell_data_func_cb
+    model.load_range(indices, 5)
+  File "/usr/share/software-center/softwarecenter/ui/gtk3/models/appstore2.py", line 494, in load_range
+    doc = db.get_document(matches[i].docid)
+xapian.DocNotFoundError: Document 1725 not found
+Traceback (most recent call last):
+  File "/usr/share/software-center/softwarecenter/ui/gtk3/widgets/apptreeview.py", line 537, in _cell_data_func_cb
+    model.load_range(indices, 5)
+  File "/usr/share/software-center/softwarecenter/ui/gtk3/models/appstore2.py", line 494, in load_range
+    doc = db.get_document(matches[i].docid)
+xapian.DocNotFoundError: Document 1567 not found
+Traceback (most recent call last):
+  File "/usr/share/software-center/softwarecenter/ui/gtk3/widgets/apptreeview.py", line 537, in _cell_data_func_cb
+    model.load_range(indices, 5)
+  File "/usr/share/software-center/softwarecenter/ui/gtk3/models/appstore2.py", line 494, in load_range
+    doc = db.get_document(matches[i].docid)
+xapian.DocNotFoundError: Document 1567 not found
+Traceback (most recent call last):
+  File "/usr/share/software-center/softwarecenter/ui/gtk3/widgets/apptreeview.py", line 537, in _cell_data_func_cb
+    model.load_range(indices, 5)
+  File "/usr/share/software-center/softwarecenter/ui/gtk3/models/appstore2.py", line 494, in load_range
+    doc = db.get_document(matches[i].docid)
+xapian.DocNotFoundError: Document 1279 not found
+Traceback (most recent call last):
+  File "/usr/share/software-center/softwarecenter/ui/gtk3/widgets/apptreeview.py", line 537, in _cell_data_func_cb
+    model.load_range(indices, 5)
+  File "/usr/share/software-center/softwarecenter/ui/gtk3/models/appstore2.py", line 494, in load_range
+    doc = db.get_document(matches[i].docid)
+xapian.DocNotFoundError: Document 1279 not found
+Traceback (most recent call last):
+  File "/usr/share/software-center/softwarecenter/ui/gtk3/widgets/apptreeview.py", line 537, in _cell_data_func_cb
+    model.load_range(indices, 5)
+  File "/usr/share/software-center/softwarecenter/ui/gtk3/models/appstore2.py", line 494, in load_range
+    doc = db.get_document(matches[i].docid)
+xapian.DocNotFoundError: Document 1725 not found
+Traceback (most recent call last):
+  File "/usr/share/software-center/softwarecenter/ui/gtk3/widgets/apptreeview.py", line 537, in _cell_data_func_cb
+    model.load_range(indices, 5)
+  File "/usr/share/software-center/softwarecenter/ui/gtk3/models/appstore2.py", line 494, in load_range
+    doc = db.get_document(matches[i].docid)
+xapian.DocNotFoundError: Document 1567 not found
+Traceback (most recent call last):
+  File "/usr/share/software-center/softwarecenter/ui/gtk3/widgets/apptreeview.py", line 537, in _cell_data_func_cb
+    model.load_range(indices, 5)
+  File "/usr/share/software-center/softwarecenter/ui/gtk3/models/appstore2.py", line 494, in load_range
+    doc = db.get_document(matches[i].docid)
+xapian.DocNotFoundError: Document 1567 not found
+Traceback (most recent call last):
+  File "/usr/share/software-center/softwarecenter/ui/gtk3/widgets/apptreeview.py", line 537, in _cell_data_func_cb
+    model.load_range(indices, 5)
+  File "/usr/share/software-center/softwarecenter/ui/gtk3/models/appstore2.py", line 494, in load_range
+    doc = db.get_document(matches[i].docid)
+xapian.DocNotFoundError: Document 1725 not found
+Traceback (most recent call last):
+  File "/usr/share/software-center/softwarecenter/ui/gtk3/widgets/apptreeview.py", line 537, in _cell_data_func_cb
+    model.load_range(indices, 5)
+  File "/usr/share/software-center/softwarecenter/ui/gtk3/models/appstore2.py", line 494, in load_range
+    doc = db.get_document(matches[i].docid)
+xapian.DocNotFoundError: Document 1725 not found
+Traceback (most recent call last):gnome-session-is-accelerated: llvmpipe detected.
+GNOME_KEYRING_CONTROL=/run/user/1000/keyring-l9D3Vr
+SSH_AUTH_SOCK=/run/user/1000/keyring-l9D3Vr/ssh
+GPG_AGENT_INFO=/run/user/1000/keyring-l9D3Vr/gpg:0:1
+GNOME_KEYRING_CONTROL=/run/user/1000/keyring-l9D3Vr
+SSH_AUTH_SOCK=/run/user/1000/keyring-l9D3Vr/ssh
+GPG_AGENT_INFO=/run/user/1000/keyring-l9D3Vr/gpg:0:1
+GNOME_KEYRING_CONTROL=/run/user/1000/keyring-l9D3Vr
+SSH_AUTH_SOCK=/run/user/1000/keyring-l9D3Vr/ssh
+GPG_AGENT_INFO=/run/user/1000/keyring-l9D3Vr/gpg:0:1
+GNOME_KEYRING_CONTROL=/run/user/1000/keyring-l9D3Vr
+SSH_AUTH_SOCK=/run/user/1000/keyring-l9D3Vr/ssh
+GPG_AGENT_INFO=/run/user/1000/keyring-l9D3Vr/gpg:0:1
+Connection failure: Connection refused
+pa_context_connect() failed: Connection refused
+gnome-session[3004]: WARNING: App 'pulseaudio.desktop' exited with code 1
+compiz (core) - Info: Loading plugin: core
+compiz (core) - Info: Starting plugin: core
+compiz (core) - Info: Loading plugin: ccp
+compiz (core) - Info: Starting plugin: ccp
+compizconfig - Info: Backend     : gsettings
+compizconfig - Info: Integration : true
+compizconfig - Info: Profile     : unity
+
+(process:3203): indicator-application-service-WARNING **: Unable to get watcher name 'org.kde.StatusNotifierWatcher'
+
+(process:3203): indicator-application-service-WARNING **: Name Lost
+vmware-user: could not open /proc/fs/vmblock/dev
+compiz (core) - Info: Loading plugin: composite
+
+** (process:3217): CRITICAL **: bluez.vala:104: GDBus.Error:org.freedesktop.DBus.Error.ServiceUnknown: The name org.bluez was not provided by any .service files
+compiz (core) - Info: Starting plugin: composite
+compiz (core) - Info: Loading plugin: opengl
+compiz (core) - Info: Starting plugin: opengl
+compiz (core) - Info: Loading plugin: compiztoolbox
+compiz (core) - Info: Starting plugin: compiztoolbox
+compiz (core) - Info: Loading plugin: mousepoll
+compiz (core) - Info: Starting plugin: mousepoll
+compiz (core) - Info: Loading plugin: commands
+compiz (core) - Info: Starting plugin: commands
+compiz (core) - Info: Loading plugin: grid
+compiz (core) - Info: Starting plugin: grid
+compiz (core) - Info: Loading plugin: move
+
+(nautilus:3216): IBUS-WARNING **: The owner of /home/vagrant/.config/ibus/bus is not vagrant!
+compiz (core) - Info: Starting plugin: move
+compiz (core) - Info: Loading plugin: copytex
+compiz (core) - Info: Starting plugin: copytex
+compiz (core) - Info: Loading plugin: snap
+compiz (core) - Info: Starting plugin: snap
+compiz (core) - Info: Loading plugin: resize
+compiz (core) - Info: Starting plugin: resize
+compiz (core) - Info: Loading plugin: vpswitch
+compiz (core) - Info: Starting plugin: vpswitch
+compiz (core) - Info: Loading plugin: regex
+compiz (core) - Info: Starting plugin: regex
+compiz (core) - Info: Loading plugin: wall
+compiz (core) - Info: Starting plugin: wall
+compiz (core) - Info: Loading plugin: place
+compiz (core) - Info: Starting plugin: place
+compiz (core) - Info: Loading plugin: imgpng
+compiz (core) - Info: Starting plugin: imgpng
+compiz (core) - Info: Loading plugin: session
+compiz (core) - Info: Starting plugin: session
+I/O warning : failed to load external entity "/home/vagrant/.compiz/session/10ae49b06f22c0d298147909242043261700000030040001"
+compiz (core) - Info: Loading plugin: unitymtgrabhandles
+compiz (core) - Info: Starting plugin: unitymtgrabhandles
+compiz (core) - Info: Loading plugin: animation
+compiz (core) - Info: Starting plugin: animation
+compiz (core) - Info: Loading plugin: fade
+compiz (core) - Info: Starting plugin: fade
+compiz (core) - Info: Loading plugin: workarounds
+compiz (core) - Info: Starting plugin: workarounds
+compiz (core) - Info: Loading plugin: expo
+compiz (core) - Info: Starting plugin: expo
+compiz (core) - Info: Loading plugin: scale
+compiz (core) - Info: Starting plugin: scale
+compiz (core) - Info: Loading plugin: ezoom
+compiz (core) - Info: Starting plugin: ezoom
+compiz (core) - Info: Loading plugin: unityshell
+compiz (core) - Info: Starting plugin: unityshell
+WARN  2016-11-14 03:00:44 unity.glib.dbus.server GLibDBusServer.cpp:579 Can't register object 'org.gnome.Shell' yet as we don't have a connection, waiting for it...
+ERROR 2016-11-14 03:00:45 unity.debug.interface DebugDBusInterface.cpp:216 Unable to load entry point in libxpathselect: libxpathselect.so.1.4: cannot open shared object file: No such file or directory
+WARN  2016-11-14 03:00:45 xim.controller XIMController.cpp:103 IBus natively supported.
+WARN  2016-11-14 03:00:46 unity.glib.dbus.server GLibDBusServer.cpp:579 Can't register object 'com.canonical.Unity.Launcher' yet as we don't have a connection, waiting for it...
+WARN  2016-11-14 03:00:47 unity.glib.dbus.server GLibDBusServer.cpp:579 Can't register object 'com.canonical.Unity.Dash' yet as we don't have a connection, waiting for it...
+Nautilus-Share-Message: Called "net usershare info" but it failed: 'net usershare' returned error 255: net usershare: cannot open usershare directory /var/lib/samba/usershares. Error No such file or directory
+Please ask your system administrator to enable user sharing.
+
+WARN  2016-11-14 03:00:47 unityn_param_values == 4 <unknown>:0 The owner of /home/vagrant/.config/ibus/bus is not vagrant!
+WARN  2016-11-14 03:00:47 unity.glib.dbus.server GLibDBusServer.cpp:579 Can't register object 'org.gnome.SessionManager.EndSessionDialog' yet as we don't have a connection, waiting for it...
+WARN  2016-11-14 03:00:47 unity.glib.dbus.server GLibDBusServer.cpp:579 Can't register object 'com.canonical.Unity.Session' yet as we don't have a connection, waiting for it...
+WARN  2016-11-14 03:00:47 unity.glib.dbus.server GLibDBusServer.cpp:579 Can't register object 'org.gnome.ScreenSaver' yet as we don't have a connection, waiting for it...
+compiz (core) - Warn: Attempted to restack relative to 0x2a000d7 which is not a child of the root window or a window compiz owns
+WARN  2016-11-14 03:00:48 unityo (appinfo2) <unknown>:0 g_settings_set_value: value for key 'visual-bell-type' in schema 'org.gnome.desktop.wm.preferences' is outside of valid range
+ERROR 2016-11-14 03:00:48 unity.glib.dbus.server GLibDBusServer.cpp:524 DBus name lost 'org.gnome.Shell'
+ERROR 2016-11-14 03:00:48 unity.glib.dbus.server GLibDBusServer.cpp:524 DBus name lost 'com.canonical.Unity'
+
+(zeitgeist-datahub:3382): GLib-GObject-WARNING **: invalid (NULL) pointer instance
+
+(zeitgeist-datahub:3382): GLib-GObject-CRITICAL **: g_signal_connect_data: assertion 'G_TYPE_CHECK_INSTANCE (instance)' failed
+
+(polkit-gnome-authentication-agent-1:3209): IBUS-WARNING **: The owner of /home/vagrant/.config/ibus/bus is not vagrant!
+ERROR 2016-11-14 03:14:32 unity <unknown>:0 atk_object_ref_state_set: assertion 'ATK_IS_OBJECT (accessible)' failed
+ERROR 2016-11-14 03:14:32 unity <unknown>:0 atk_state_set_contains_state: assertion 'ATK_IS_STATE_SET (set)' failed
+ERROR 2016-11-14 03:14:32 unityy <unknown>:0 g_object_unref: assertion 'G_IS_OBJECT (object)' failed
+ERROR 2016-11-14 03:33:40 unity <unknown>:0 atk_object_ref_state_set: assertion 'ATK_IS_OBJECT (accessible)' failed
+ERROR 2016-11-14 03:33:40 unity <unknown>:0 atk_state_set_contains_state: assertion 'ATK_IS_STATE_SET (set)' failed
+ERROR 2016-11-14 03:33:40 unityy <unknown>:0 g_object_unref: assertion 'G_IS_OBJECT (object)' failed

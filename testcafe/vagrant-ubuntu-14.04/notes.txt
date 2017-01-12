@@ -1,0 +1,87 @@
+http://portalstack.blogspot.com/2013/11/vagrant-virtualbox-ubuntu-for-linux.html
+
+————————————————
+reset root account
+http://www.psychocats.net/ubuntu/resetpassword
+
+vagrant@vagrant-ubuntu-precise-64:~$ ls /home
+ubuntu  vagrant
+vagrant@vagrant-ubuntu-precise-64:~$ passwd ubuntu
+passwd: You may not view or modify password information for ubuntu.
+vagrant@vagrant-ubuntu-precise-64:~$ sudo passwd ubuntu
+Enter new UNIX password: 
+Retype new UNIX password: 
+passwd: password updated successfully
+
+————————————————
+
+Upgrade Wine from 1.4 to latest by command line
+
+https://wiki.winehq.org/Ubuntu
+
+————————————————
+
+Install Desktop
+
+vagrant ssh;
+sudo apt-get update; sudo apt-get -y install ubuntu-desktop
+vagrant halt;
+
+————————————————
+
+Reboot ubuntu account
+
+Press “Shift” when restarting PC
+enable Network
+click reboot root account
+click resume root account
+
+access terminal of HOST and run these command lines
+vagrant ssh
+sudo passwd root
+Enter new UNIX password: 
+Retype new UNIX password: 
+
+————————————————
+
+Open terminal on Ubuntu: Ctr + Alt + T
+
+————————————————
+
+Upgrade Ubuntu from 12.04 to 14.04 for installing Chrome
+https://www.digitalocean.com/community/tutorials/how-to-upgrade-ubuntu-12-04-lts-to-ubuntu-14-04-lts
+
+————————————————
+
+Install wine 1.6
+
+http://askubuntu.com/questions/471083/wine-issues-with-installing
+http://askubuntu.com/questions/635883/cant-install-wine1-6-on-64bit
+
+Before trying to install wine, add the wine ppa in the sources list by the command 
+  sudo add-apt-repository ppa:ubuntu-wine/ppa. 
+Then update the sources using 
+  sudo apt-get update 
+Now install wine using 
+  sudo apt-get install wine1.6
+————————————————
+
+Download virtual machines
+
+Test Microsoft Edge and versions of IE8 through IE11 using free virtual machines you download and manage locally.
+
+NEW:
+https://atlas.hashicorp.com/Microsoft/boxes/EdgeOnWindows10
+
+OLD:
+https://joecod.es/modernie-for-vagrant-reloaded/
+https://developer.microsoft.com/en-us/microsoft-edge/tools/vms/
+
+————————————————
+
+Open task manager on Ubuntu
+
+sudo apt-get install gnome-system-monitor
+gnome-system-monitor
+
+————————————————

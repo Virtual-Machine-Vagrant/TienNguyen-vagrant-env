@@ -1,0 +1,60 @@
+Activating service name='org.gtk.vfs.Daemon'
+Successfully activated service 'org.gtk.vfs.Daemon'
+Activating service name='org.ayatana.bamf'
+Successfully activated service 'org.ayatana.bamf'
+Activating service name='com.canonical.indicator.keyboard'
+Successfully activated service 'com.canonical.indicator.keyboard'
+Activating service name='org.gnome.evolution.dataserver.Sources2'
+Activating service name='org.gnome.ScreenSaver'
+Activating service name='ca.desrt.dconf'
+Successfully activated service 'ca.desrt.dconf'
+Successfully activated service 'org.gnome.ScreenSaver'
+module-cache-reaper-Message: Scanning data directories
+module-cache-reaper-Message: Scanning cache directories
+Activating service name='org.freedesktop.Notifications'
+Successfully activated service 'org.freedesktop.Notifications'
+Successfully activated service 'org.gnome.evolution.dataserver.Sources2'
+Activating service name='org.gtk.Private.UDisks2VolumeMonitor'
+Activating service name='org.gnome.GConf'
+Successfully activated service 'org.gnome.GConf'
+Successfully activated service 'org.gtk.Private.UDisks2VolumeMonitor'
+Activating service name='org.gtk.Private.MTPVolumeMonitor'
+Successfully activated service 'org.gtk.Private.MTPVolumeMonitor'
+Activating service name='org.gtk.Private.AfcVolumeMonitor'
+Successfully activated service 'org.gtk.Private.AfcVolumeMonitor'
+Activating service name='org.gtk.Private.GPhoto2VolumeMonitor'
+Successfully activated service 'org.gtk.Private.GPhoto2VolumeMonitor'
+Activating service name='org.gtk.vfs.Metadata'
+Successfully activated service 'org.gtk.vfs.Metadata'
+** Message: Lost the name, shutting down.
+Activating service name='org.freedesktop.Telepathy.AccountManager'
+
+(process:4040): accounts-glib-WARNING **: Error opening accounts DB: unable to open database file
+
+(process:4040): GLib-GObject-CRITICAL **: object AgManager 0x7bc8a0 finalized while still in-construction
+
+(process:4040): GLib-GObject-CRITICAL **: Custom constructor for class AgManager returned NULL (which is invalid). Please use GInitable instead.
+
+(process:4040): accounts-glib-CRITICAL **: ag_manager_new_for_service_type: assertion 'AG_IS_MANAGER (manager)' failed
+
+** (process:4040): CRITICAL **: mcp_account_manager_uoa_init: assertion 'self->priv->manager != NULL' failed
+
+(process:4040): mcd-WARNING **: Failed to create file '/home/vagrant/.local/share/telepathy/mission-control/accounts.cfg.MJTJQY': Permission denied
+
+** (process:4040): CRITICAL **: account_manager_uoa_list: assertion 'self->priv->manager != NULL' failed
+
+** (process:4040): CRITICAL **: account_manager_uoa_commit: assertion 'self->priv->manager != NULL' failed
+
+(process:4040): mcd-WARNING **: Failed to create file '/home/vagrant/.local/share/telepathy/mission-control/accounts.cfg.0ZNKQY': Permission denied
+
+** (process:4040): CRITICAL **: account_manager_uoa_ready: assertion 'self->priv->manager != NULL' failed
+Successfully activated service 'org.freedesktop.Telepathy.AccountManager'
+Activating service name='org.gnome.zeitgeist.Engine'
+Activating service name='org.gnome.zeitgeist.SimpleIndexer'
+Successfully activated service 'org.gnome.zeitgeist.Engine'
+
+** (zeitgeist-datahub:4066): WARNING **: zeitgeist-datahub.vala:229: Unable to get name "org.gnome.zeitgeist.datahub" on the bus!
+
+** (zeitgeist-fts:4064): WARNING **: zeitgeist-fts.vala:328: Unable to get write lock on /home/vagrant/.local/share/zeitgeist/fts.index: already locked
+Activated service 'org.gnome.zeitgeist.SimpleIndexer' failed: Process /usr/lib/x86_64-linux-gnu/zeitgeist-fts exited with status 1
+[31m[06:07:07.463566 CRITICAL][0m file ext-fts.c: line 739: unexpected error: Error calling StartServiceByName for org.gnome.zeitgeist.SimpleIndexer: GDBus.Error:org.freedesktop.DBus.Error.Spawn.ChildExited: Process /usr/lib/x86_64-linux-gnu/zeitgeist-fts exited with status 1 (g-dbus-error-quark, 25)

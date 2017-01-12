@@ -1,0 +1,257 @@
+status: 200
+content-length: 5835
+via: 1.1 sumac.canonical.com:3128 (squid/2.7.STABLE7)
+content-location: https://rec.ubuntu.com/api/1.0/recommend_app/epiphany-browser/
+x-cache: MISS from sumac.canonical.com
+x-cache-lookup: HIT from sumac.canonical.com:3128
+expires: Fri, 11 Nov 2016 08:10:17 GMT
+server: Apache
+last-modified: Fri, 11 Nov 2016 08:05:17 GMT
+etag: "e37654bc7cc018608b00b1e5443a2a28"
+strict-transport-security: max-age=2592000
+cache-control: max-age=300
+date: Fri, 11 Nov 2016 08:05:17 GMT
+content-type: application/json; charset=utf-8
+
+{
+    "rid": "dffb0c21a3691c9fedfc8361bcb481ba", 
+    "data": [
+        {
+            "package_name": "iagno", 
+            "similarity": 1.3772
+        }, 
+        {
+            "package_name": "gnobots2", 
+            "similarity": 1.3684
+        }, 
+        {
+            "package_name": "gnotski", 
+            "similarity": 1.3573
+        }, 
+        {
+            "package_name": "glines", 
+            "similarity": 1.3495
+        }, 
+        {
+            "package_name": "gnibbles", 
+            "similarity": 1.3306
+        }, 
+        {
+            "package_name": "gnect", 
+            "similarity": 1.3291
+        }, 
+        {
+            "package_name": "gnotravex", 
+            "similarity": 1.2517
+        }, 
+        {
+            "package_name": "glchess", 
+            "similarity": 1.0137
+        }, 
+        {
+            "package_name": "ekiga", 
+            "similarity": 0.9253
+        }, 
+        {
+            "package_name": "hamster-applet", 
+            "similarity": 0.9036
+        }, 
+        {
+            "package_name": "sound-juicer", 
+            "similarity": 0.7684
+        }, 
+        {
+            "package_name": "quadrapassel", 
+            "similarity": 0.7362
+        }, 
+        {
+            "package_name": "liferea", 
+            "similarity": 0.7042
+        }, 
+        {
+            "package_name": "evolution", 
+            "similarity": 0.5461
+        }, 
+        {
+            "package_name": "gnash", 
+            "similarity": 0.5421
+        }, 
+        {
+            "package_name": "gnome-dictionary", 
+            "similarity": 0.4257
+        }, 
+        {
+            "package_name": "gdebi", 
+            "similarity": 0.4048
+        }, 
+        {
+            "package_name": "cheese", 
+            "similarity": 0.3525
+        }, 
+        {
+            "package_name": "gnome-search-tool", 
+            "similarity": 0.3414
+        }, 
+        {
+            "package_name": "gnome-shell", 
+            "similarity": 0.3327
+        }, 
+        {
+            "package_name": "vinagre", 
+            "similarity": 0.3308
+        }, 
+        {
+            "package_name": "tomboy", 
+            "similarity": 0.3279
+        }, 
+        {
+            "package_name": "spamassassin", 
+            "similarity": 0.2858
+        }, 
+        {
+            "package_name": "inkscape", 
+            "similarity": 0.2606
+        }, 
+        {
+            "package_name": "hamster-indicator", 
+            "similarity": 0.2537
+        }, 
+        {
+            "package_name": "gnome-session-fallback", 
+            "similarity": 0.2478
+        }, 
+        {
+            "package_name": "gnome-panel", 
+            "similarity": 0.2459
+        }, 
+        {
+            "package_name": "mutter", 
+            "similarity": 0.2421
+        }, 
+        {
+            "package_name": "gnome-tweak-tool", 
+            "similarity": 0.2336
+        }, 
+        {
+            "package_name": "tracker-gui", 
+            "similarity": 0.2013
+        }, 
+        {
+            "package_name": "alacarte", 
+            "similarity": 0.2012
+        }, 
+        {
+            "package_name": "mono-runtime", 
+            "similarity": 0.1815
+        }, 
+        {
+            "package_name": "gnumeric", 
+            "similarity": 0.1733
+        }, 
+        {
+            "package_name": "abiword", 
+            "similarity": 0.1607
+        }, 
+        {
+            "package_name": "synaptic", 
+            "similarity": 0.1599
+        }, 
+        {
+            "package_name": "gimp", 
+            "similarity": 0.1548
+        }, 
+        {
+            "package_name": "libreoffice-base", 
+            "similarity": 0.1434
+        }, 
+        {
+            "package_name": "gnome-color-manager", 
+            "similarity": 0.1393
+        }, 
+        {
+            "package_name": "dolphin", 
+            "similarity": 0.1382
+        }, 
+        {
+            "package_name": "systemsettings", 
+            "similarity": 0.1354
+        }, 
+        {
+            "package_name": "kdepim-runtime", 
+            "similarity": 0.1351
+        }, 
+        {
+            "package_name": "dconf-tools", 
+            "similarity": 0.135
+        }, 
+        {
+            "package_name": "okular", 
+            "similarity": 0.1321
+        }, 
+        {
+            "package_name": "gconf-editor", 
+            "similarity": 0.1292
+        }, 
+        {
+            "package_name": "libreoffice", 
+            "similarity": 0.1291
+        }, 
+        {
+            "package_name": "imagemagick", 
+            "similarity": 0.1285
+        }, 
+        {
+            "package_name": "ksysguard", 
+            "similarity": 0.1277
+        }, 
+        {
+            "package_name": "gnome-contacts", 
+            "similarity": 0.1242
+        }, 
+        {
+            "package_name": "ark", 
+            "similarity": 0.1236
+        }, 
+        {
+            "package_name": "compizconfig-settings-manager", 
+            "similarity": 0.1226
+        }, 
+        {
+            "rating": 4.0, 
+            "package_name": "lightspark"
+        }, 
+        {
+            "rating": 4.0, 
+            "package_name": "balazar"
+        }, 
+        {
+            "rating": 4.0, 
+            "package_name": "wicd-gtk"
+        }, 
+        {
+            "rating": 4.0, 
+            "package_name": "gcursor"
+        }, 
+        {
+            "rating": 3.0, 
+            "package_name": "pacman"
+        }, 
+        {
+            "rating": 3.0, 
+            "package_name": "kdebase-runtime"
+        }, 
+        {
+            "rating": 3.0, 
+            "package_name": "gnome-alsamixer"
+        }, 
+        {
+            "rating": 3.0, 
+            "package_name": "arandr"
+        }, 
+        {
+            "rating": 3.0, 
+            "package_name": "indicator-multiload"
+        }
+    ], 
+    "app": "epiphany-browser"
+}

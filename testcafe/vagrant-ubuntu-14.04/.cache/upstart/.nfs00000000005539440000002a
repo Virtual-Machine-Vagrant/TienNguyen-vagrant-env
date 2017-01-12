@@ -1,0 +1,66 @@
+
+(unity-settings-daemon:2974): color-plugin-WARNING **: failed to get edid: unable to get EDID for output
+
+(unity-settings-daemon:2974): Gvc-WARNING **: Failed to connect context: Connection refused
+
+(unity-settings-daemon:2974): IBUS-WARNING **: The owner of /home/vagrant/.config/ibus/bus is not vagrant!
+
+(unity-settings-daemon:2974): color-plugin-WARNING **: unable to get EDID for xrandr-VGA-0: unable to get EDID for output
+
+(unity-settings-daemon:2974): color-plugin-WARNING **: unable to get EDID for xrandr-VGA-0: unable to get EDID for output
+
+(unity-settings-daemon:2974): Gvc-WARNING **: Failed to connect context: Connection refused
+
+(unity-settings-daemon:2997): Gvc-WARNING **: Failed to connect context: Connection refused
+
+(unity-settings-daemon:2997): color-plugin-WARNING **: failed to get edid: unable to get EDID for output
+
+(unity-settings-daemon:2997): color-plugin-WARNING **: unable to get EDID for xrandr-VGA-0: unable to get EDID for output
+
+(unity-settings-daemon:2997): IBUS-WARNING **: The owner of /home/vagrant/.config/ibus/bus is not vagrant!
+
+(unity-settings-daemon:2997): AccountsService-WARNING **: ActUserManager: user (null) has no username (object path: /org/freedesktop/Accounts/User1000, uid: 0)
+
+(unity-settings-daemon:2997): AccountsService-WARNING **: ActUserManager: user (null) has no username (object path: /org/freedesktop/Accounts/User1000, uid: 0)
+
+(unity-settings-daemon:2997): color-plugin-WARNING **: unable to get EDID for xrandr-VGA-0: unable to get EDID for output
+
+(unity-settings-daemon:2997): Gvc-WARNING **: Failed to connect context: Connection refused
+
+(gnome-terminal:11249): GLib-GIO-CRITICAL **: g_settings_get: the format string may not contain '&' (key 'monospace-font-name' from schema 'org.gnome.desktop.interface'). This call will probably stop working with a future version of glib.
+
+(gnome-terminal:11249): IBUS-WARNING **: The owner of /home/vagrant/.config/ibus/bus is not vagrant!
+
+(unity-settings-daemon:2997): color-plugin-WARNING **: unable to get EDID for xrandr-VGA-0: unable to get EDID for output
+
+(unity-settings-daemon:2997): color-plugin-WARNING **: unable to get EDID for xrandr-VGA-0: unable to get EDID for output
+
+(unity-settings-daemon:2997): color-plugin-WARNING **: unable to get EDID for xrandr-VGA-0: unable to get EDID for output
+
+(unity-settings-daemon:2997): color-plugin-WARNING **: unable to get EDID for xrandr-VGA-0: unable to get EDID for output
+
+(unity-settings-daemon:2997): color-plugin-WARNING **: unable to get EDID for xrandr-VGA-0: unable to get EDID for output
+
+(unity-settings-daemon:2997): color-plugin-WARNING **: unable to get EDID for xrandr-VGA-0: unable to get EDID for output
+
+(unity-settings-daemon:2997): color-plugin-WARNING **: unable to get EDID for xrandr-VGA-0: unable to get EDID for output
+
+(unity-settings-daemon:2997): color-plugin-WARNING **: unable to get EDID for xrandr-VGA-0: unable to get EDID for output
+
+(unity-settings-daemon:2997): color-plugin-WARNING **: unable to get EDID for xrandr-VGA-0: unable to get EDID for output
+
+(unity-settings-daemon:2997): color-plugin-WARNING **: unable to get EDID for xrandr-VGA-0: unable to get EDID for output
+
+(unity-settings-daemon:2997): color-plugin-WARNING **: unable to get EDID for xrandr-VGA-0: unable to get EDID for output
+
+(unity-settings-daemon:2997): color-plugin-WARNING **: unable to get EDID for xrandr-VGA-0: unable to get EDID for output
+
+(unity-settings-daemon:2997): color-plugin-WARNING **: unable to get EDID for xrandr-VGA-0: unable to get EDID for output
+
+(unity-settings-daemon:2997): color-plugin-WARNING **: unable to get EDID for xrandr-VGA-0: unable to get EDID for output
+
+(unity-settings-daemon:2997): color-plugin-WARNING **: unable to get EDID for xrandr-VGA-0: unable to get EDID for output
+
+(unity-settings-daemon:2997): color-plugin-WARNING **: unable to get EDID for xrandr-VGA-0: unable to get EDID for output
+
+(unity-settings-daemon:2997): color-plugin-WARNING **: unable to get EDID for xrandr-VGA-0: unable to get EDID for output

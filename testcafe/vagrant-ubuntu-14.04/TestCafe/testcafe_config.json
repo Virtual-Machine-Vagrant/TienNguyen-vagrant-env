@@ -1,0 +1,16 @@
+{
+     "browsers": {
+          "Mozilla Firefox": {
+               "path": "/usr/bin/firefox",
+               "cmd": "-new-window",
+               "icon": "ff"
+          },
+          "google-chrome-stable": {
+               "path": "/usr/bin/google-chrome-stable",
+               "cmd": "--new-window",
+               "icon": "chrome"
+          }
+     },
+     "testsDir": "/home/vagrant/DMM/DMM_Client_Game",
+     "hostname": "192.168.55.44"
+}

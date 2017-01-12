@@ -1,0 +1,11 @@
+Fri Nov 11 07:37:33 UTC 2016 new release available
+Fri Nov 11 07:55:26 UTC 2016 new release available
+Mon Nov 14 03:00:18 UTC 2016 new release available
+Checking for a new Ubuntu release
+/usr/lib/python3/dist-packages/DistUpgrade/DistUpgradeFetcher.py:86: Warning: g_object_ref: assertion 'object->ref_count > 0' failed
+  res = self.widgets.dialog_release_notes.run()
+/usr/lib/python3/dist-packages/DistUpgrade/DistUpgradeFetcher.py:86: Warning: g_object_unref: assertion 'object->ref_count > 0' failed
+  res = self.widgets.dialog_release_notes.run()
+authenticate 'xenial.tar.gz' against 'xenial.tar.gz.gpg' 
+extracting 'xenial.tar.gz'
+Inhibiting until Ctrl+C is pressed...

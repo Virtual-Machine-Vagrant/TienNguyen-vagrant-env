@@ -1,0 +1,33 @@
+2016-11-11 04:05:15,250 - softwarecenter.ui.gtk3.app - INFO - setting up proxy 'None'
+2016-11-11 04:05:15,303 - softwarecenter.db.database - INFO - open() database: path=None use_axi=True use_agent=True
+2016-11-11 04:05:15,861 - softwarecenter.backend.reviews - WARNING - Could not get usefulness from server, no username in config file
+2016-11-11 04:05:16,052 - softwarecenter.ui.gtk3.app - INFO - show_available_packages: search_text is '', app is None.
+2016-11-11 04:05:16,077 - softwarecenter.db.pkginfo_impl.aptcache - INFO - aptcache.open()
+2016-11-11 04:05:22,213 - softwarecenter.fixme - WARNING - logs to the root logger: '('/usr/share/software-center/softwarecenter/utils.py', 201, 'get_title_from_html')'
+2016-11-11 04:05:22,213 - root - WARNING - failed to parse: '<div style="background-color: #161513; width:1680px; height:200px;">
+ <div style="background: url('/site_media/exhibits/2013/09/AAMFP_Leaderboard_700x200_1.jpg') top left no-repeat; width:700px; height:200px;"></div>
+</div>' ('ascii' codec can't encode character u'\xa0' in position 70: ordinal not in range(128))
+2016-11-11 04:05:28,246 - softwarecenter.db.update - INFO - skipping region restricted app: 'Bulleti d'esquerra de Calonge i Sant Antoni ' (not whitelisted)
+2016-11-11 04:05:28,493 - softwarecenter.db.update - INFO - skipping region restricted app: 'Just Play MP3' (not whitelisted)
+2016-11-11 04:05:28,571 - softwarecenter.db.update - INFO - skipping region restricted app: 'reEarCandy' (not whitelisted)
+2016-11-11 04:05:28,676 - softwarecenter.db.update - INFO - skipping region restricted app: '蚂蚁浏览器' (not whitelisted)
+2016-11-11 04:05:28,990 - softwarecenter.db.update - INFO - skipping region restricted app: 'Source Code Analyzer' (not whitelisted)
+2016-11-11 04:05:29,380 - softwarecenter.db.update - INFO - skipping region restricted app: 'Flaggame' (not whitelisted)
+2016-11-11 04:05:29,672 - softwarecenter.db.update - INFO - skipping region restricted app: 'Comentarios Web' (not whitelisted)
+2016-11-11 04:21:13,887 - softwarecenter.ui.gtk3.app - INFO - setting up proxy 'None'
+2016-11-11 04:21:13,895 - softwarecenter.db.database - INFO - open() database: path=None use_axi=True use_agent=True
+2016-11-11 04:21:14,435 - softwarecenter.backend.reviews - WARNING - Could not get usefulness from server, no username in config file
+2016-11-11 04:21:14,604 - softwarecenter.ui.gtk3.app - INFO - show_available_packages: search_text is '', app is None.
+2016-11-11 04:21:14,642 - softwarecenter.db.pkginfo_impl.aptcache - INFO - aptcache.open()
+2016-11-11 04:21:18,786 - softwarecenter.fixme - WARNING - logs to the root logger: '('/usr/share/software-center/softwarecenter/utils.py', 201, 'get_title_from_html')'
+2016-11-11 04:21:18,786 - root - WARNING - failed to parse: '<div style="background-color: #161513; width:1680px; height:200px;">
+ <div style="background: url('/site_media/exhibits/2013/09/AAMFP_Leaderboard_700x200_1.jpg') top left no-repeat; width:700px; height:200px;"></div>
+</div>' ('ascii' codec can't encode character u'\xa0' in position 70: ordinal not in range(128))
+2016-11-11 04:21:25,130 - softwarecenter.db.update - INFO - skipping region restricted app: 'Bulleti d'esquerra de Calonge i Sant Antoni ' (not whitelisted)
+2016-11-11 04:21:25,363 - softwarecenter.db.update - INFO - skipping region restricted app: 'Just Play MP3' (not whitelisted)
+2016-11-11 04:21:25,541 - softwarecenter.db.update - INFO - skipping region restricted app: 'reEarCandy' (not whitelisted)
+2016-11-11 04:21:25,714 - softwarecenter.db.update - INFO - skipping region restricted app: '蚂蚁浏览器' (not whitelisted)
+2016-11-11 04:21:25,997 - softwarecenter.db.update - INFO - skipping region restricted app: 'Source Code Analyzer' (not whitelisted)
+2016-11-11 04:21:26,631 - softwarecenter.db.update - INFO - skipping region restricted app: 'Flaggame' (not whitelisted)
+2016-11-11 04:21:26,952 - softwarecenter.db.update - INFO - skipping region restricted app: 'Comentarios Web' (not whitelisted)
+2016-11-11 04:21:29,943 - softwarecenter.ui.gtk3.app - INFO - software-center-agent finished with status 1
